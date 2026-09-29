@@ -1,5 +1,9 @@
 # TimesFM Lab
 
+## Status
+
+Active research runs in a private playground repository because the evaluation data comes from non-public projects. This public lab records the direction; sanitized methodology and results will be published here once the evaluation reaches its verdict.
+
 ## Why this lab exists
 
 Evaluate Google's TimesFM family for practical time-series forecasting and determine where a pretrained foundation model adds value over simple statistical and domain-specific baselines.
@@ -8,11 +12,12 @@ Evaluate Google's TimesFM family for practical time-series forecasting and deter
 
 - Publisher: Google Research
 - Family: TimesFM
-- Current research target: TimesFM 3.0
 - Purpose: zero-shot time-series forecasting
-- TimesFM 3.0 adds native multivariate forecasting and covariates.
+- Main track: TimesFM 2.5 (200M) — code and pretrained weights under Apache 2.0; the only practical-use candidate in this lab.
+- Reference track: TimesFM 3.0 (330M) — adds native multivariate forecasting and covariates, but its pretrained weights use a separate non-commercial license; research reference only.
+- Dropped: TimesFM 2.0 — superseded by 2.5 for this lab's purposes.
 - Source code: Apache 2.0
-- Important: TimesFM 3.0 pretrained weights currently use a separate non-commercial license; licensing must be checked before any production/commercial use.
+- Licensing must be checked per version before any production or commercial use.
 
 Official references:
 - https://github.com/google-research/timesfm
