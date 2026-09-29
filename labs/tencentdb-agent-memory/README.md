@@ -1,10 +1,30 @@
 # TencentDB Agent Memory Lab
 
+## Status
+
+Active focus of this repository. Upstream verified 2026-09-30; no experiments run yet.
+
 ## Why this lab exists
 
 Evaluate TencentDB Agent Memory as an external memory layer for agents, separately from the quality of the LLM using it.
 
 The interesting question is not merely whether an agent can retrieve stored text. It is whether the memory system improves useful long-running behavior without introducing unacceptable false recall, latency, token cost, storage growth, privacy risk, or operational complexity.
+
+## Upstream snapshot
+
+Verified 2026-09-30 against the `feat/server_team` default branch.
+
+- Publisher: Tencent Cloud (TencentCloud GitHub organization)
+- Upstream repository: https://github.com/TencentCloud/TencentDB-Agent-Memory
+- Documentation: https://tencentcloud.github.io/TencentDB-Agent-Memory/
+- What it is: a self-hosted, local-first "team-level memory hub" for AI agents. Despite the name, the open-source project does not depend on the TencentDB cloud database service. A managed cloud API exists under the same product name (cloud.tencent.com, product 1813); it is a separate subject and not what this lab evaluates.
+- License: MIT (Tencent preamble wrapper; GitHub reports "NOASSERTION" only because the LICENSE file is not verbatim standard MIT — verified against the file directly).
+- Version state: default branch `feat/server_team`, very active (last push 2026-09-29); latest stable release v1.0.3 (2026-09-22); the v2 line is at v2.0.2-beta.3. Experiments must pin a release tag, not track the branch.
+- Architecture: three local services started together (memory-core, memory-hub, proxy) plus a web panel on localhost:8125. Agents integrate through the proxy or through `/v3/tools/*` APIs; adapters exist for Claude Code, Codex, OpenClaw, and others.
+- Memory model: four assets — Chat Memory, Skill, LLM-Wiki, Code-Graph. Chat Memory is distilled in tiers L0 Conversation → L1 Atom → L2 Scenario → L3 Persona.
+- Retrieval: BM25 + vector search fused with RRF. MongoDB is listed as an experimental storage backend.
+- Local requirements: clone, configure `deploy/global-images/.env` with two sets of LLM parameters (memory group and proxy group), run `./start-all.sh`. LLM API endpoints are mandatory inputs.
+- Vendor benchmark: PersonaMem 48% → 76% (+59%) is an upstream marketing claim and context only, not a lab finding.
 
 ## Research scope
 
@@ -29,7 +49,7 @@ Canonical upstream source must be recorded in experiment metadata before executi
 
 ### TAM-001: Local reproducibility
 
-Pin an upstream version and run the smallest local configuration. Record dependencies, storage backend, startup path, and resource use.
+Pin an upstream release tag (not the default branch) and run the smallest local configuration. Record dependencies, storage backend, startup path, resource use, and both LLM endpoint choices — the memory group and the proxy group are separate, behaviorally significant inputs.
 
 ### TAM-002: Remember and retrieve
 

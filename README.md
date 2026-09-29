@@ -12,7 +12,7 @@ The lab is intentionally heterogeneous. A forecasting foundation model, a local 
 | [TimesFM](labs/timesfm/) | Time-series foundation models and forecasting | In progress (private playground) |
 | [Jev](labs/jev/) | Decision-oriented model evaluation | Source verification |
 | [Laya](labs/laya/) | Candidate local/open model | Source verification |
-| [TencentDB Agent Memory](labs/tencentdb-agent-memory/) | Persistent agent memory and retrieval behavior | Planned |
+| [TencentDB Agent Memory](labs/tencentdb-agent-memory/) | Persistent agent memory and retrieval behavior | Upstream verified; experiments pending |
 | [Colibri](labs/colibri/) | Existing public playground | External lab |
 | [Mamba](labs/mamba/) | Existing public playground | External lab |
 
