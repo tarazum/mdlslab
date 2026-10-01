@@ -739,6 +739,84 @@ helper, `run_smoke_arm_e.py`, `run_pilot_arm_e.py`.
   comparability is the point). No confirmatory execution, no held-out
   fixture generation, no CONT-002/CONT-005 work (non-goals).
 
+## 2026-10-02 00:29 — M6 result: exploratory CONT-001 (all arms) + pre-registration v1
+
+Artifacts: `results/CONT-001-exploratory/cont001-exploratory-20261002-000048/`
+(per-arm `arm-<X>/seed-<n>/` traces+summaries+stores, per-arm
+`aggregate-arm-<X>.json`, `cross-arm-table.{json,md}`,
+`pilot-consistency.json`, `repeated-mistake-analysis.{json,md}`); new
+scripts `experiments/CONT-001/run_exploratory_abcde.py` (multi-arm runner,
+aggregation offline-validated against the M1/M5 pilot artifacts BEFORE any
+inference) and `experiments/CONT-001/analyze_repeated_mistakes.py`;
+`docs/EVALUATION-PREP.md` (pre-registration v1, commit `a845fc5`).
+
+- **Run**: arms A–E x predeclared seeds {11,22,33,44,55} (SIZING.md count,
+  no reduction needed) x 10 scenarios = 650 requests, one warm process
+  (preflight warmup 2.4 s, keep_alive 30m), all 25 seed-runs completed, 0
+  budget stops, all traces re-validate from disk. GPU wall under the shared
+  lock 1,543 s (~25.7 min; budget <= 180 min); stage wall clock ~32 min
+  (budget <= 150 min). Model `granite-code:8b`, digest `36c3c3b9683b…a18dd`
+  pinned; temp 0.0, num_ctx 4096, options in every request (PB-071). CN-005
+  attribution snapshot at lock time: nvidia-smi 5,876 MiB, ollama `/api/ps`
+  attributes 5,064.6 MiB to granite-code:8b (the run's own target).
+- **Cross-arm table (mean pass rate, cross-seed spread in brackets — 0.000
+  on every family and arm; per-seed outcomes IDENTICAL within each arm)**:
+
+  | family (probes/seed) | A | B | C | D | E |
+  | --- | --- | --- | --- | --- | --- |
+  | delayed_recall (3) | 0.000 | 1.000 | 1.000 | 1.000 | 1.000 |
+  | distractor_recall (2) | 0.000 | 1.000 | 1.000 | 1.000 | 1.000 |
+  | contradiction_update (2) | 0.000 | 0.500 | 1.000 | 1.000 | 1.000 |
+  | repeated_task (3) | 0.667 | 0.333 | 0.333 | 0.333 | 0.333 |
+  | **overall (10)** | **0.200** | **0.700** | **0.800** | **0.800** | **0.800** |
+
+  Per scenario: dr/dx/cu-0002 all 5/5 for B–E (cu-0001 0/5 for B — CN-008;
+  5/5 for C–E); rt-0001 5/5 everywhere; rt-0002 0/5 everywhere; rt-0003
+  5/5 (A, CN-004 leakage) vs 0/5 (B–E, CN-007 anchoring).
+- **Repeated-mistake rate (primary-endpoint operationalization, strict, own
+  eligible denominators; artifact `repeated-mistake-analysis.*`)**: arm A
+  5/10 = 0.500; arms B/C/D/E 10/10 = 1.000 each. On this suite persistent
+  memory WORSENED repeated mistakes (own-answer anchoring), and arm A's
+  advantage is the CN-004 option-leakage artifact — the v1 contrast is
+  confounded, which is exactly what the pre-registration's fixture v2
+  requirements remove.
+- **Pilot consistency**: 170/170 per-seed per-scenario probe outcome vectors
+  identical to the M1–M5 pilot artifacts on overlapping seeds (arm A 50/50
+  over 5 seeds; B/C/D/E 30/30 each over 3) — deterministic reproduction of
+  every pilot at the outcome level; CN-003 stays token-level only (arm D/E
+  seeds 44/55 +38 tokens, arm A seed 55 −5 tokens, zero outcome changes).
+- **Cost per arm (5 seeds, 130 requests each)**: tokens A 12,385 / B 19,936
+  / C 71,140 / D 85,696 / E 85,696 (E byte-identical to D — CN-010 inert
+  policy actuation, 0 physical injections suite-wide); wall 58–61 s/seed,
+  arm walls 295–300 s. Warm latency (`total_duration`, relative only per
+  CN-002): means A 268.6 / B 215.9 / C 244.6 / D 234.9 / E 242.9 ms (p95
+  465–570 ms).
+- **Pre-registration v1 committed (`a845fc5`) BEFORE any held-out fixture
+  v2 content exists** (none generated in M6): primary endpoint = RM rate per
+  the proposal's definition, mechanically operationalized (initial answer /
+  initial error / own-eligible denominator / strict same-answer recurrence,
+  deterministic arm-blind scoring); primary contrast E−A two-sided; MME
+  |Δ| >= 0.15; decision rule = 95% paired cluster bootstrap over scenarios
+  (10,000 resamples, RNG seed 20261002) excluding 0 AND |Δ̂| >= MME;
+  uncertainty unit justified by the measured 0.000 seed spread; held-out
+  plan: fresh scenarios + fresh seeds {101,202,303,404,505}, RM denominator
+  >= 7/seed incl. a new correction-and-reuse family (CN-007/008), explicit
+  `initial_expected` + `probe.class` fixture fields, no option lists on
+  probe turns (CN-004), probes off session-first turns with expected
+  arm-E actuation >= 1 physical injection/seed stated ex ante (CN-010),
+  self-model estimated only on disjoint calibration scenarios (CN-009),
+  freeze discipline + fail-closed missing-run handling.
+- Open findings disposition this stage: CN-002/003/005 monitoring rules
+  applied (no escalation); CN-004/007/009/010 each annotated with the M6
+  disposition and mapped into EVALUATION-PREP.md (none silently fixed; v1
+  fixtures untouched). No new CN cases (no anomaly: every number reproduced
+  its pilot).
+- Repo note: an independent observer commit (`9591be1`, OBSERVER-NOTES.md)
+  landed mid-run; rebased cleanly, no interaction with M6 scope.
+- M6 exit artifacts complete; ROADMAP M6 marked DONE. Next: M6b
+  (independent pre-registration review, GO/NO-GO) per ROADMAP.
+
+
 
 
 
