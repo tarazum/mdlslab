@@ -1,0 +1,32 @@
+{
+  "id": "rt-0001",
+  "family": "repeated_task",
+  "labels": {
+    "mistake_categories": ["misclassification: product-defect tickets labeled billing"]
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket into exactly one label: billing | bug | account. Ticket: 'The app crashes every time I export a report to PDF.' Answer with the label only."
+        },
+        {
+          "actor": "environment",
+          "text": "For your records, the labeling rubric: crashes, blank outputs, or wrong behavior of a feature are product defects (label: bug); charges, refunds, and invoices are billing; login and access problems are account. Acknowledge in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket into exactly one label: billing | bug | account. Ticket: 'Clicking the export button produces a blank PDF file.' Answer with the label only.",
+          "probe": { "kind": "exact_match", "expected": "bug" }
+        }
+      ]
+    }
+  ]
+}

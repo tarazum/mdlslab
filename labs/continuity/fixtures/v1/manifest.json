@@ -1,0 +1,6 @@
+{
+  "protocol": "continuity-workload",
+  "version": 1,
+  "families": ["delayed_recall", "repeated_task"],
+  "description": "Synthetic multi-session scenarios, public-safe by construction. v1 limitation: environment turns are static (feedback is not conditional on agent answers)."
+}

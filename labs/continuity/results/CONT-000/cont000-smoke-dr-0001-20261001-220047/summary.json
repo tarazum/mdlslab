@@ -1,0 +1,25 @@
+{
+  "scenario": "dr-0001",
+  "family": "delayed_recall",
+  "sessions_planned": 2,
+  "turns": 2,
+  "tokens_total": 209,
+  "probes": [
+    {
+      "kind": "contains",
+      "expected": "7",
+      "observed_normalized": "the verdin isle lighthouse is not mentioned in any of my records. please provide more context or clarify your question.",
+      "passed": false,
+      "turn_ref": "s2t1"
+    }
+  ],
+  "probes_passed": 0,
+  "probes_total": 1,
+  "stopped": false,
+  "budget_violation": null,
+  "duration_s": 26.8,
+  "run_id": "cont000-smoke-dr-0001-20261001-220047",
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true
+}

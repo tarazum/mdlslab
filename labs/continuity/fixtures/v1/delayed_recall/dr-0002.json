@@ -1,0 +1,25 @@
+{
+  "id": "dr-0002",
+  "family": "delayed_recall",
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You keep the records of the observatory on Mount Kest. Note these three facts: the primary mirror is polished every 40 days; the logbook is bound in blue leather; the observatory assistant is named Doran. Reply with a one-line acknowledgment."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "A visitor asks, and you have no paperwork in front of you: what is the name of the observatory assistant on Mount Kest? Answer with just the name.",
+          "probe": { "kind": "contains", "expected": "doran" }
+        }
+      ]
+    }
+  ]
+}
