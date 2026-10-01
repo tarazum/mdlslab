@@ -1,6 +1,6 @@
 # Continuity (Project C)
 
-**Status:** Research proposal (2026-10-01). No implementation or experimental results yet.
+**Status:** In progress (2026-10-01). P0 complete: CONT-000 harness, arm-A smoke, and the P0b variance/headroom pilot (10 scenarios x 5 seeds, see `docs/SIZING.md` and `results/CONT-000/`). Arms B–E and CONT-001 follow `docs/ROADMAP.md`.
 
 ## Purpose
 

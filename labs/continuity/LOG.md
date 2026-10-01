@@ -72,5 +72,35 @@ the full fixture suite, measure spread of candidate endpoints, size CONT-001.
 - Deadline extended to 2026-10-02 11:30 FLEDT; status legend gained SKIPPED; the
   2h automation prompt was updated to match (conditional milestones, no hardcoded time).
 
+## 2026-10-01 22:37 — M1 / P0b result: fixture suite v2 + arm A pilot + sizing
+
+Artifacts: `results/CONT-000/pilot-armA-20261001-222950/` (5 x trace.jsonl/summary.json/
+env.json + aggregate.json); `docs/SIZING.md`; fixtures `fixtures/v1/{distractor_recall,
+contradiction_update}/` + dr-0003, rt-0002, rt-0003 (10 scenarios, 4 families).
+
+- Fixture suite v2: 10 scenarios / 26 turns / 10 probes per seed — delayed_recall 3
+  (incl. 3-session interference variant), distractor_recall 2, contradiction_update 2
+  (corrected-value probes), repeated_task 3. All synthetic; manifest updated.
+- Pilot (arm A, granite-code:8b, digest `36c3c3b9683b…a18dd`, temp 0.0, num_ctx 4096,
+  predeclared seeds {11,22,33,44,55}, one warm process, warmup 2.2 s excluded): all 5
+  seeds completed, all traces re-validate from disk, 0 budget stops, exit 0 under the
+  shared GPU lock. Wall 22:29:41–22:34:58 (~5 min GPU total, budget <= 60 min).
+- Endpoints: delayed_recall 0/3, distractor_recall 0/2, contradiction_update 0/2,
+  repeated_task 2/3 — identical on every seed (spread 0.000; overall arm-A pass 2/10).
+  rt-0001 5/5 (intuitive), rt-0002 0/5 (rubric-dependent; arm A answers `bug`),
+  rt-0003 5/5 (CN-004: `perf` option leaks the rubric answer).
+- Tokens: prompt 10,865 + eval 1,520 = 12,385 total (per request: 83.6 prompt / 11.7
+  eval). Warm inference latency: mean 265.5 ms, p95 527.3 ms; effective wall ~2.3 s per
+  request, ~60 s per seed (CN-002 records the gap).
+- Findings opened this stage: CN-002 (total_duration vs wall gap), CN-003 (temp-0 seed
+  drift: 4/26 answers differ between seeds 11 vs 55, outcomes unchanged), CN-004
+  (rt-0003 option leakage), CN-005 (GPU idle threshold cannot distinguish residency
+  from activity; pilot ran under the lock with the ollama attribution snapshot in
+  aggregate.json — flagged for the shared tooling owner).
+- Sizing recommendation for CONT-001 (SIZING.md): 5 seeds; keep the 10-scenario,
+  2–3-session suite; scale scenarios (not seeds) if more power is needed.
+- M1 exit artifacts complete; ROADMAP M1 marked DONE. Next: M2 (arm B, SQLite
+  persistent memory) per ROADMAP.
+
 
 

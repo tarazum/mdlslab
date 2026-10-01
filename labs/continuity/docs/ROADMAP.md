@@ -8,7 +8,7 @@
 
 | Milestone | Stage | Status |
 | --- | --- | --- |
-| M1 | P0b: fixture suite v2 + arm A variance/headroom pilot + sizing | TODO |
+| M1 | P0b: fixture suite v2 + arm A variance/headroom pilot + sizing | DONE |
 | M2 | P1a: arm B — SQLite persistent memory | TODO |
 | M3 | P1a: arm C — validated self-model | TODO |
 | M4 | P1a: arm D — reflection/consolidation | TODO |

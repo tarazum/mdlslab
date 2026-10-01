@@ -1,0 +1,32 @@
+{
+  "id": "rt-0003",
+  "family": "repeated_task",
+  "labels": {
+    "mistake_categories": ["misclassification: slow-but-working behavior labeled bug"]
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket into exactly one label: billing | bug | account. Ticket: 'The app takes two minutes to open the settings page.' Answer with the label only."
+        },
+        {
+          "actor": "environment",
+          "text": "For your records, the labeling rubric: crashes, freezes, and wrong outputs are bug; charges, refunds, and invoices are billing; login and access problems are account. Additionally, slowness without a crash gets the label perf — do not use bug for slow-but-working behavior. Acknowledge in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket into exactly one label: billing | bug | account | perf. Ticket: 'PDF export works but takes over five minutes to finish.' Answer with the label only.",
+          "probe": { "kind": "exact_match", "expected": "perf" }
+        }
+      ]
+    }
+  ]
+}

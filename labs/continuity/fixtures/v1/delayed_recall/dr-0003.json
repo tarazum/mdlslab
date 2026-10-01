@@ -1,0 +1,38 @@
+{
+  "id": "dr-0003",
+  "family": "delayed_recall",
+  "labels": {
+    "variant": "baseline",
+    "note": "three sessions; interference facts logged between encoding and probe"
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You are the archivist of the Wellspring Museum. Note these records: the bronze sundial in the east garden was cast in 1783; the aviary was donated in 1926. Reply with a one-line acknowledgment."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "One more record for the archive: the observatory wing was opened in 1888. Acknowledge in one line."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "A researcher calls, and the catalog is not at hand: in what year was the bronze sundial in the east garden cast? Answer with just the year.",
+          "probe": { "kind": "contains", "expected": "1783" }
+        }
+      ]
+    }
+  ]
+}

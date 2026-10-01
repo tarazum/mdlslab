@@ -1,0 +1,29 @@
+{
+  "id": "dx-0001",
+  "family": "distractor_recall",
+  "labels": {
+    "variant": "distractor",
+    "note": "semantically related schedule facts; only the express time is probed"
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You dispatch trains at Bramford Junction. Log these departures for the Elmshollow line: the express leaves at 20 minutes past the hour; the freight leaves at 10 minutes to the hour; the maintenance trolley runs only at noon. Reply with a one-line acknowledgment."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "A passenger asks and you have no timetable in front of you: at how many minutes past the hour does the express to Elmshollow leave? Answer with just the number.",
+          "probe": { "kind": "contains", "expected": "20" }
+        }
+      ]
+    }
+  ]
+}

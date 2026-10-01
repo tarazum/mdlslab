@@ -1,6 +1,6 @@
 {
   "protocol": "continuity-workload",
   "version": 1,
-  "families": ["delayed_recall", "repeated_task"],
-  "description": "Synthetic multi-session scenarios, public-safe by construction. v1 limitation: environment turns are static (feedback is not conditional on agent answers)."
+  "families": ["delayed_recall", "distractor_recall", "contradiction_update", "repeated_task"],
+  "description": "Synthetic multi-session scenarios, public-safe by construction (invented names/places, no real data). v1 limitation: environment turns are static (feedback is not conditional on agent answers). distractor_recall: semantically related but irrelevant facts must not change the expected answer. contradiction_update: a fact stated in an early session is corrected in a later one; probes expect the corrected value."
 }

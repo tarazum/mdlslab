@@ -1,0 +1,38 @@
+{
+  "id": "cu-0002",
+  "family": "contradiction_update",
+  "labels": {
+    "variant": "contradiction+distractor",
+    "note": "color corrected in session 2 with a related distractor beacon; probe expects the corrected color"
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You maintain the light registry for the coast watch. Record: the beacon on Thornwick Hill flashes white; the beacon on Marlow Cliff flashes red. Reply with a one-line acknowledgment."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Registry update: after repainting its lenses, the beacon on Thornwick Hill now flashes green, not white. The beacon on Marlow Cliff is unchanged. Acknowledge in one line."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "A sailor asks, registry not at hand: what color does the beacon on Thornwick Hill flash? Answer with just the color.",
+          "probe": { "kind": "contains", "expected": "green" }
+        }
+      ]
+    }
+  ]
+}

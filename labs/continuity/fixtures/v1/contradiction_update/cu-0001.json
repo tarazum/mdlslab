@@ -1,0 +1,38 @@
+{
+  "id": "cu-0001",
+  "family": "contradiction_update",
+  "labels": {
+    "variant": "contradiction",
+    "note": "capacity corrected in session 2; probe in session 3 expects the corrected value"
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You are the registrar of Port Maren. For the records: the mail boat Zephyr is licensed to carry 12 passengers. Reply with a one-line acknowledgment."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Correction for your records: after refitting, the mail boat Zephyr is now licensed to carry 18 passengers, not 12. Acknowledge the correction in one line."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "An inspector asks, and no papers are at hand: how many passengers is the mail boat Zephyr licensed to carry? Answer with just the number.",
+          "probe": { "kind": "contains", "expected": "18" }
+        }
+      ]
+    }
+  ]
+}

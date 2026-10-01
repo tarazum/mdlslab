@@ -1,0 +1,32 @@
+{
+  "id": "rt-0002",
+  "family": "repeated_task",
+  "labels": {
+    "mistake_categories": ["misclassification: export/access tickets labeled bug"]
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket into exactly one label: billing | bug | account. Ticket: 'My invoice shows the wrong VAT amount.' Answer with the label only."
+        },
+        {
+          "actor": "environment",
+          "text": "For your records, our queue convention: tickets about exports, downloads, or file access are handled as account, because they trace back to permissions; payment, invoice, and charge problems are billing; crashes, freezes, and wrong outputs are bug. Acknowledge in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket into exactly one label: billing | bug | account. Ticket: 'I cannot download my report as a PDF file, the download never starts.' Answer with the label only.",
+          "probe": { "kind": "exact_match", "expected": "account" }
+        }
+      ]
+    }
+  ]
+}

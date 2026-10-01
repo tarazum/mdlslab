@@ -1,0 +1,29 @@
+{
+  "id": "dx-0002",
+  "family": "distractor_recall",
+  "labels": {
+    "variant": "distractor",
+    "note": "related vessel names; only the North Harbor pilot boat is probed"
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You keep the vessel registry of the twin harbors. Record: the pilot boat of North Harbor is called the Petrel; the pilot boat of South Harbor is called the Curlew; the ferry of North Harbor is called the Oystercatcher. Reply with a one-line acknowledgment."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "A captain radios in, registry book not at hand: what is the name of the pilot boat of North Harbor? Answer with just the name.",
+          "probe": { "kind": "contains", "expected": "petrel" }
+        }
+      ]
+    }
+  ]
+}
