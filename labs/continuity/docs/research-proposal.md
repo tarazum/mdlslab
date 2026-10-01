@@ -135,6 +135,29 @@ Compare wake-on-input agent, agent with bounded reflection while no user input a
 
 Run the CONT-000 lab-agnostic fixture protocol against both the SQLite baseline and a pinned TencentDB Agent Memory release using compatible runner adapters, identical synthetic episodes, and the same evaluation rules. Reference TAM-001–TAM-008 for upstream setup and underlying memory-specific experiments; do not build a competing TAM harness. **Candidate primary endpoint:** correct delayed-recall rate on a pre-registered held-out question set, with the primary backend contrast specified in advance. Distractors, correction/conflict, storage growth, false recall, latency and cross-model portability are secondary/exploratory measures. The same protocol should be usable by an OCL implementation in a separate private environment; never publish corporate implementation details or real work data.
 
+### CONT-005: Memory Trust Hierarchy (proposed next research cycle; owner-gated)
+
+**Motivation (observations, not proof):** CN-007 records own-answer anchoring: an early incorrect agent answer is stored and later re-injected as if it were useful evidence. CN-008 records a different failure: retrieval surfaces a newer correction, yet the model answers with an older superseded value. CN-009 cautions that a self-model primed with the exact evaluated failure can improve a familiar fixture without showing generalizable learning. See `docs/FINDINGS.md` and the exploratory arm A/B/C results. These failures motivate a focused follow-up **after** the current M4–M7/CONT-001 arc; do not alter its running fixtures, memory injection, evaluation rules or pre-registration.
+
+**Research hypothesis:** tracking provenance, verification status and supersession as first-class memory relations, and resolving conflicts at retrieval/assembly time, can reduce repeated mistakes and stale-fact answers compared with flat episode retrieval under equivalent information and compute budgets. A counter-hypothesis is that rigid source ranking will suppress valid user corrections, propagate falsely authoritative environmental inputs or introduce extra latency and overconfidence.
+
+**Operational design proposal:** preserve an append-only event history and represent derived claims separately from source events. A claim records `claimId`, normalized proposition / subject and predicate, value, `sourceEventIds`, `sourceType` (environment observation, external verified reference, explicit user correction, tool result, agent-generated answer, reflection-derived hypothesis), `verificationStatus` (unverified / independently verified / contradicted / superseded), `observedAt`, `effectiveAt` if applicable, `supersedesClaimIds`, validation evidence and policy/version. Any trust score is a *policy-derived signal*, not a statement that a source is universally true; recency alone must not overrule provenance or explicit evidence. Never silently delete conflicting events or grant the agent's earlier answer the authority of the underlying environment. Reflection may propose claim links and status changes but must cite evidence; deterministic validation commits them. Missing/ambiguous evidence should remain visible as uncertainty, including the option to abstain or ask.
+
+**Candidate controlled arms** (same LLM, fixtures, context/tool/token budget where feasible):
+
+| Arm | Retrieval/assembly behavior |
+| --- | --- |
+| T0 | Current flat episodic memory (frozen baseline) |
+| T1 | Flat memory with visible source-type and timestamp annotations only |
+| T2 | T1 plus deterministic supersession graph and conflict-aware resolution |
+| T3 | T2 plus validated, versioned trust policy and evidence-backed reflection proposals |
+
+Ablate components rather than comparing only T0 vs T3: distinguish extra metadata/prompt hints from actual supersession logic. Provide budget-matched T0 controls when trust annotations consume additional context. Keep independently scored, unseen scenario templates apart from the pilot and any self-model training data; fix source policy before confirmatory runs. Include deliberately unreliable environmental statements, erroneous user corrections and later retractions to avoid simply hard-coding an absolute source ranking. Reuse CONT-000's lab-agnostic fixture/runner contract and cross-reference TAM-002–TAM-007 rather than building a separate benchmark.
+
+**Candidate primary endpoint (freeze before confirmatory evaluation):** repeated-mistake rate on held-out correction-and-reuse task families, measured as independently adjudicated repeated errors per eligible subsequent task. Pre-register one primary contrast (suggested T2 vs T0), direction, minimum meaningful effect, sample sizing and uncertainty method. **Secondary/exploratory:** superseded-fact usage rate; correct correction acceptance; false override of valid older facts; provenance citation accuracy; retrieval vs answer-stage conflict failures; abstention calibration; memory pollution/anchoring; token cost, latency, storage growth and restart persistence. Record retrieval-ranked episodes separately from the final answer so a retrieval success cannot conceal a conflict-resolution failure.
+
+**Entry and exit gates:** wait for the current CONT-001 arc and its owner review; freeze or version its dataset/results first. Begin CONT-005 with a new fixture version and a pilot sufficient to establish headroom/variance. The exit artifact is a reproducible, independent comparison with raw traces, error taxonomy, and an explicit go/no-go recommendation *for the architecture experiment*, not a claim about consciousness. This is a proposed backlog item, **not authorized work within the current autonomous ROADMAP deadline**.
+
 ## 4. Interfaces to define before implementation
 
 - `IInferenceProvider`: generate with exact context and telemetry.
