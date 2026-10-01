@@ -1,4 +1,4 @@
-"""Deterministic scenario runner with budgets and the arm-A/arm-B agents.
+"""Deterministic scenario runner with budgets and the arm-A/arm-B/arm-C agents.
 
 Arm A semantics (unchanged since P0a): the agent sees only the current
 session's exchanges; the context is reset between sessions. This is exactly
@@ -10,6 +10,14 @@ session start (sessions with index >= 2) carrying the keyword-retrieved
 episodes of the same scenario, plus append of both sides of every exchange to
 the store after the exchange completes. The injection rule is fixed and
 documented here so runs are reproducible.
+
+Arm C (M3): arm B + the current self-model summary rendered into the system
+prompt. One extra system message, immediately after the base system prompt,
+in EVERY session (the self-model is session-independent). The block is
+`selfmodel.render_summary` output — measured capability estimates and
+recorded failure patterns, deterministic for a given self-model revision.
+Everything else (base prompt, memory rule, budgets) is identical to arm B.
+Arm A and arm B code paths are unchanged by the arm C addition.
 """
 
 from __future__ import annotations
@@ -21,6 +29,7 @@ from typing import Any
 from .events import EventJournal
 from .memory import MemoryStore
 from .provider import OllamaProvider
+from .selfmodel import render_summary, selfmodel_sha256
 
 ARM_A_SYSTEM_PROMPT = (
     "You are a focused assistant in a controlled evaluation. "
@@ -104,11 +113,14 @@ def run_scenario(
     budget: Budget,
     arm: str = "A",
     memory: MemoryStore | None = None,
+    selfmodel: dict | None = None,
 ) -> dict[str, Any]:
-    if arm not in ("A", "B"):
+    if arm not in ("A", "B", "C"):
         raise ValueError(f"unknown arm: {arm!r}")
-    if arm == "B" and memory is None:
-        raise ValueError("arm B requires a memory store")
+    if arm in ("B", "C") and memory is None:
+        raise ValueError(f"arm {arm} requires a memory store")
+    if arm == "C" and selfmodel is None:
+        raise ValueError("arm C requires a self-model")
     sid = scenario["id"]
     # Arm-A trace payloads stay byte-identical to the M1 pilot (comparability);
     # arm B adds its marker.
@@ -123,8 +135,8 @@ def run_scenario(
         journal.emit(
             "session.start", {"index": session["index"]}, scenario=sid, session=session["index"]
         )
-        # Both arms reset the session-local context; arm A has nothing else
-        # (that reset IS the ablation), arm B re-attaches persistent memory.
+        # All arms reset the session-local context; arm A has nothing else
+        # (that reset IS the ablation), arms B/C re-attach persistent memory.
         context: list[dict] = [{"role": "system", "content": ARM_A_SYSTEM_PROMPT}]
         if arm == "A":
             journal.emit(
@@ -136,10 +148,33 @@ def run_scenario(
         else:
             journal.emit(
                 "session.context_reset",
-                {"reason": "arm-B session-local reset; persistent memory store retained"},
+                {"reason": f"arm-{arm} session-local reset; persistent memory store retained"},
                 scenario=sid,
                 session=session["index"],
             )
+            if arm == "C":
+                # Fixed injection rule: the self-model summary goes into EVERY
+                # session (session-independent), as one system message right
+                # after the base prompt, rendered from the current revision.
+                selfmodel_block = render_summary(selfmodel)
+                context.append({"role": "system", "content": selfmodel_block})
+                journal.emit(
+                    "selfmodel.injected",
+                    {
+                        "agent_id": selfmodel["agentId"],
+                        "revision": selfmodel["revision"],
+                        "sha256": selfmodel_sha256(selfmodel),
+                        "chars": len(selfmodel_block),
+                        "capability_families": [
+                            cap["family"] for cap in selfmodel["capabilities"]
+                        ],
+                        "failure_pattern_ids": [
+                            pat["id"] for pat in selfmodel["knownFailurePatterns"]
+                        ],
+                    },
+                    scenario=sid,
+                    session=session["index"],
+                )
             # Fixed injection rule: retrieve once per session (index >= 2),
             # query = the session's first environment turn, same-scenario scope.
             if session["index"] >= 2:
@@ -188,7 +223,7 @@ def run_scenario(
                 scenario=sid,
                 session=session["index"],
             )
-            if arm == "B":
+            if arm in ("B", "C"):
                 # Remember both sides of the exchange, immediately after it.
                 for role, content in (
                     ("environment", turn["text"]),

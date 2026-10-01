@@ -270,5 +270,112 @@ lock (held ~2.5 min; released clean).
 - M2b exit artifacts complete; ROADMAP M2b marked DONE. Next: M3 (arm C,
   validated self-model) per ROADMAP.
 
+## 2026-10-01 23:07 — start-note: M3 / P1a arm C (validated self-model)
+
+- Contract: `docs/ROADMAP.md` M3 brief. Entry verified: M2 DONE (M2b also
+  DONE, not an M3 dependency); repo clean on `origin/main` (HEAD `aab8deb`
+  after the IN_PROGRESS marker commit); arm-B pilot aggregate exists at
+  `results/CONT-000/pilot-armB-20261001-224636/aggregate.json` — the
+  self-model estimate source. Ollama preflight + digest pin
+  (`36c3c3b9683b…`) happen fail-closed inside the smoke/pilot scripts.
+- Open findings re-read before starting: CN-002 OPEN (budgets by wall clock —
+  applied), CN-003 OPEN (temp-0 seed drift — monitoring; arm C re-runs seeds
+  {11,22,33}), CN-004 OPEN (rt-0003 option leakage — fixture untouched, but
+  directly relevant to interpreting arm C's repeated_task numbers since the
+  self-model failure patterns mention rt-0003), CN-005 OPEN (GPU attribution
+  snapshot under the lock), CN-007 OPEN (own-answer anchoring — SEEDS the
+  self-model's known-failure-patterns per the brief), CN-008 OPEN (no
+  supersession — likewise). This stage embeds CN-007/CN-008 as self-model
+  content with FINDINGS/LOG references; it does not close them.
+- Plan: (1) `src/continuity/selfmodel.py` — versioned JSON self-model store,
+  stdlib only: schema {agentId, revision, capabilities[per-family pass rates
+  with counts + Wilson 95% + binomial SD], knownFailurePatterns[CN-007/CN-008
+  with evidence refs], lastConsolidation, provenance per estimate}; estimates
+  built ONLY from the arm-B aggregate artifact (never self-declared);
+  deterministic `commit()` that validates (schema, revision = old+1,
+  provenance on every estimate) and rejects otherwise; offline selftest.
+  (2) Runner arm=C = arm B (SQLite memory, unchanged injection rule) + the
+  self-model summary as ONE extra system message after the base prompt in
+  every session; new trace event `selfmodel.injected` (revision + sha256).
+  Arm A/B code paths unchanged — verified by re-validating one M1 and one M2
+  trace from disk after the change. (3) Canonical store built at
+  `state/selfmodel.json` (revision 1, provenance = pilot-armB aggregate);
+  each run dir gets a copy + hash for reproducibility. (4) Smoke: dr-0001
+  arm C, seed 42 — gate: probe passes, `selfmodel.injected` visible in the
+  trace, trace re-validates. (5) Mini-pilot: arm C, 10 scenarios x seeds
+  {11,22,33}, one warm process, `results/CONT-000/pilot-armC-<run_id>/`
+  (same layout as arm B) + A-vs-B-vs-C per-family comparison artifact.
+  (6) FINDINGS: expected new CN for estimate/evaluation fixture overlap
+  (self-model measured on the same suite arm C is evaluated on — mini-pilot
+  caveat, CONT-001 design input). No LLM-proposed revisions (M4), no
+  reflection, no world model.
+- Budget: <= 110 min wall clock, <= 30 min GPU (arm B was ~60 s/seed; arm C
+  adds only prompt tokens). GPU lock via `shared/tooling/agent-resource-coordination/lock.py run gpu`.
+
+## 2026-10-01 23:16 — M3 / P1a result: arm C (validated self-model)
+
+Artifacts: `results/CONT-000/cont000-smoke-armC-dr-0001-20261001-230926/`
+(smoke) and `results/CONT-000/pilot-armC-20261001-231050/` (mini-pilot: 3
+seeds x trace.jsonl/summary.json/env.json/memory.sqlite3/memory-export.json
++ selfmodel.json + aggregate.json + `armA-vs-armB-vs-armC.{json,md}`);
+new `src/continuity/selfmodel.py`, runner arm-C wiring + new
+`selfmodel.injected` event type, `run_smoke_arm_c.py`, `run_pilot_arm_c.py`;
+canonical store `state/selfmodel.json` (revision 1, sha256 `67054c3f8cc9…`).
+
+- **Self-model store** (`continuity-selfmodel` v1, stdlib, JSON):
+  agentId `continuity/granite-code:8b@36c3c3b9683b`; capabilities
+  recomputed from the arm-B pilot aggregate (never self-declared):
+  contradiction_update 3/6 rate 0.500 Wilson95 [0.188, 0.812];
+  delayed_recall 9/9 1.000 [0.701, 1.000]; distractor_recall 6/6 1.000
+  [0.610, 1.000]; repeated_task 3/9 0.333 [0.121, 0.646]. Known failure
+  patterns seeded from CN-007/CN-008 evidence with FINDINGS/LOG refs and
+  per-scenario numbers pulled from the aggregate. `lastConsolidation` null
+  (M4). Deterministic `commit()` validates schema, requires revision =
+  previous + 1, and provenance on every estimate; the offline selftest
+  proves tamper-rejection (self-declared rate, missing provenance, and
+  skipped revisions are all refused, nothing written).
+- **Runner arm C = arm B + self-model summary**: `render_summary` block
+  (1,257 chars) as ONE system message immediately after the base system
+  prompt in every session; new `selfmodel.injected` trace event carries
+  revision + sha256. Arm A/B behavior-identity verified: M1 seed-11 and M2
+  seed-11 traces re-validate under the extended event set, the arm-B
+  `session.context_reset` reason string is byte-identical, and the arm-A
+  branch is untouched.
+- **Smoke gate PASSED**: dr-0001 arm C (seed 42, granite-code:8b, digest
+  `36c3c3b9683b…a18dd`, temp 0.0, num_ctx 4096): probe s2t1 expected "7" →
+  observed "7"; `selfmodel.injected` visible in 2/2 sessions (revision 1);
+  trace re-validates; exit 0 under the shared GPU lock.
+- **Mini-pilot (arm C, predeclared seeds {11,22,33}, one warm process,
+  warmup 2.2 s)**: all 3 seeds completed, all traces re-validate from disk,
+  0 budget stops, 78 requests, wall 60.0–69.5 s per seed (total GPU wall
+  ~3.2 min, budget <= 30 min). CN-005 attribution at lock time: only
+  granite-code:8b resident (5,064.6 of 5,982 MiB) — the run's own target.
+- **A/B/C per family (mean pass rates; A 5 seeds, B/C 3 seeds)**:
+  delayed_recall 0.000 / 1.000 / 1.000; distractor_recall 0.000 / 1.000 /
+  1.000; contradiction_update 0.000 / 0.500 / **1.000**; repeated_task
+  0.667 / 0.333 / 0.333. Overall probes per seed: A 2/10, B 7/10, C 8/10.
+  Identical across seeds within each arm (spread 0.000) — no CN-003 seed
+  drift. Artifact: `armA-vs-armB-vs-armC.{json,md}`.
+- **M3 headline**: cu-0001 flipped to PASS 3/3 (answered "18"; arm B
+  answered the superseded "12") — the CN-008 no-supersession pattern
+  recorded in the self-model describes exactly that failure and the model
+  applied the correction. rt-0002 and rt-0003 are UNCHANGED ("bug" 3/3):
+  the CN-007 own-answer-anchoring note did not break anchoring —
+  self-knowledge alone was insufficient there (direct input for M4's
+  reflection/consolidation design). CN-009 opened: the self-model was
+  estimated on the same suite arm C is evaluated on, so the cu-0001 gain
+  partly reflects "told which recorded failure to avoid" — CONT-001 design
+  input.
+- Tokens (78 requests): prompt 41,991 + eval 693 = 42,684 (per request:
+  538.4 prompt / 8.9 eval; arm B was 145.3 / 8.1 — the 1,257-char
+  self-model block raises per-request prompt tokens ~3.7x; eval verbosity
+  unchanged). Warm latency mean 373.3 ms, p95 851.2 ms (CN-002 rule:
+  budgets sized by wall; `total_duration` relative only).
+- Memory evidence: 52 episodes per seed, injection counts per scenario
+  identical to arm B (same harness rule; arm C changes only the prompt).
+- M3 exit artifacts complete; ROADMAP M3 marked DONE. Next: M4 (arm D,
+  reflection/consolidation) per ROADMAP.
+
+
 
 
