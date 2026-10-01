@@ -1,0 +1,136 @@
+{
+  "kind": "cont001-confirmatory-secondary-analyses",
+  "label": "agent-pre-registered, pending owner acceptance",
+  "attribution": "pre-declared secondary contrasts (EVALUATION-PREP.md section 3): mechanism attribution only, exploratory-attribution, never promotable to primary claims; CIs reported, no threshold claims",
+  "rm_rate_contrasts": {
+    "B-A": {
+      "bootstrap_unit": "scenario (paired, same resampled set for both arms)",
+      "resamples": 10000,
+      "rng_seed": 20261002,
+      "redraws": 18,
+      "delta_mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "ci_excludes_zero": false
+    },
+    "C-B": {
+      "bootstrap_unit": "scenario (paired, same resampled set for both arms)",
+      "resamples": 10000,
+      "rng_seed": 20261002,
+      "redraws": 18,
+      "delta_mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "ci_excludes_zero": false
+    },
+    "D-C": {
+      "bootstrap_unit": "scenario (paired, same resampled set for both arms)",
+      "resamples": 10000,
+      "rng_seed": 20261002,
+      "redraws": 0,
+      "delta_mean": 0.5015,
+      "ci95": [
+        0.1429,
+        0.8571
+      ],
+      "ci_excludes_zero": true
+    },
+    "E-D": {
+      "bootstrap_unit": "scenario (paired, same resampled set for both arms)",
+      "resamples": 10000,
+      "rng_seed": 20261002,
+      "redraws": 0,
+      "delta_mean": -0.169,
+      "ci95": [
+        -0.7143,
+        0.4
+      ],
+      "ci_excludes_zero": false
+    }
+  },
+  "family_pass_rate_contrasts": {
+    "delayed_recall": {
+      "E-A": {
+        "pass_rate": {
+          "E": 1.0,
+          "A": 0.0
+        },
+        "delta": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "resamples": 10000
+      },
+      "C-B": {
+        "pass_rate": {
+          "C": 1.0,
+          "B": 1.0
+        },
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "resamples": 10000
+      }
+    },
+    "contradiction_update": {
+      "E-A": {
+        "pass_rate": {
+          "E": 0.5,
+          "A": 0.0
+        },
+        "delta": 0.5,
+        "ci95": [
+          0.0,
+          1.0
+        ],
+        "resamples": 10000
+      },
+      "C-B": {
+        "pass_rate": {
+          "C": 0.5,
+          "B": 1.0
+        },
+        "delta": -0.5,
+        "ci95": [
+          -1.0,
+          0.0
+        ],
+        "resamples": 10000
+      }
+    }
+  },
+  "token_cost_per_arm": {
+    "A": 26329,
+    "B": 46540,
+    "C": 152320,
+    "D": 272795,
+    "E": 278805
+  },
+  "arm_e_policy_actuation": {
+    "expectation_predeclared": ">= 1 physical policy injection per seed (section 6.7)",
+    "physical_injections_by_seed": {
+      "101": 7,
+      "202": 7,
+      "303": 7,
+      "404": 7,
+      "505": 7
+    },
+    "retrieve_actions_by_seed": {
+      "101": 13,
+      "202": 13,
+      "303": 13,
+      "404": 13,
+      "505": 13
+    },
+    "expectation_met": true,
+    "actuation_inert": false,
+    "verdict_predeclared_on_zero": "if the observed physical-injection count is 0 for every seed, arm E is declared 'actuation-inert on fixture v2', the E-D contrast is reported as a null increment WITH that caveat, and no policy-level claim is made"
+  }
+}

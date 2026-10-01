@@ -1,0 +1,343 @@
+{
+  "run_id": "cont001-confirmatory-20261002-005711-armB-seed404",
+  "seed": 404,
+  "arm": "B",
+  "label": "agent-pre-registered, pending owner acceptance",
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-0004",
+      "family": "delayed_recall",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 4,
+      "turns": 2,
+      "tokens_total": 379,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "23:15",
+          "observed_normalized": "23:15",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 5.3
+    },
+    {
+      "scenario": "dr-0005",
+      "family": "delayed_recall",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 4,
+      "turns": 2,
+      "tokens_total": 358,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "9",
+          "observed_normalized": "9 days.",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 5.1
+    },
+    {
+      "scenario": "dr-0006",
+      "family": "delayed_recall",
+      "arm": "B",
+      "sessions_planned": 3,
+      "memory_episodes": 6,
+      "turns": 3,
+      "tokens_total": 511,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "1866",
+          "observed_normalized": "the bronze parish bell was recast in 1866.",
+          "passed": true,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.6
+    },
+    {
+      "scenario": "dx-0003",
+      "family": "distractor_recall",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 4,
+      "turns": 2,
+      "tokens_total": 336,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "10",
+          "observed_normalized": "10",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 4.8
+    },
+    {
+      "scenario": "dx-0004",
+      "family": "distractor_recall",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 4,
+      "turns": 2,
+      "tokens_total": 369,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "wren",
+          "observed_normalized": "the name of the trainer aircraft of two rivers is the wren.",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 5.3
+    },
+    {
+      "scenario": "cu-0003",
+      "family": "contradiction_update",
+      "arm": "B",
+      "sessions_planned": 3,
+      "memory_episodes": 6,
+      "turns": 3,
+      "tokens_total": 547,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "7",
+          "observed_normalized": "the bread stall opens at 7.",
+          "passed": true,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.4
+    },
+    {
+      "scenario": "cu-0004",
+      "family": "contradiction_update",
+      "arm": "B",
+      "sessions_planned": 3,
+      "memory_episodes": 6,
+      "turns": 3,
+      "tokens_total": 491,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "weekend",
+          "observed_normalized": "the west lift runs on weekends only.",
+          "passed": true,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.2
+    },
+    {
+      "scenario": "rt-0004",
+      "family": "repeated_task",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 865,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "data",
+          "observed_normalized": "the ticket 'my trip-cost export still shows yesterday's totals even after i refresh the page' falls under the category of 'data' according to the provided rubric.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.9
+    },
+    {
+      "scenario": "rt-0005",
+      "family": "repeated_task",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 833,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "account",
+          "observed_normalized": "the ticket is classified as account.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.1
+    },
+    {
+      "scenario": "rt-0006",
+      "family": "repeated_task",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 1046,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "perf",
+          "observed_normalized": "the label for this support ticket is data.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.5
+    },
+    {
+      "scenario": "rt-0007",
+      "family": "repeated_task",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 907,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "data",
+          "observed_normalized": "classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'the shared packing list still shows the sleeping-bag items i deleted two days ago.' reply with the label only. the ticket is a bug.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.8
+    },
+    {
+      "scenario": "rt-0008",
+      "family": "repeated_task",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 763,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "billing",
+          "observed_normalized": "billing",
+          "passed": true,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "cr-0001",
+      "family": "correction_reuse",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 1030,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "quarterly",
+          "observed_normalized": "curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.2
+    },
+    {
+      "scenario": "cr-0002",
+      "family": "correction_reuse",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 844,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "transit",
+          "observed_normalized": "merlin, a private motor yacht visiting for the weekend, no passengers for hire, is a transit vessel.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.6
+    }
+  ],
+  "probes_passed": 8,
+  "probes_total": 14,
+  "turns": 45,
+  "tokens_total": 9279,
+  "budget_stops": 0,
+  "wall_s": 111.5,
+  "memory_episodes_total": 90,
+  "memory_export": "memory-export.json",
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true
+}

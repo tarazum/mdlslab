@@ -919,3 +919,131 @@ participate). Zero inference; wall ~20 min (budget <= 30 min).
 
 
 
+
+## 2026-10-02 02:12 — M7 result: confirmatory CONT-001 (agent-pre-registered, pending owner acceptance)
+
+Artifacts: `results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/`
+(fixture-validation.json PASS; frozen-config.json + freeze-verification{,-attempt1}.json;
+calibration/ + selfmodel-v2-calibration.json (revision 1', sha 2ce516bd7402...);
+arm-{A..E}/seed-{101,202,303,404,505}/ traces+summaries+stores; aggregate-arm-<X>.json;
+cross-arm-table.{json,md}; repeated-mistake-analysis.{json,md}; secondary-analyses.json;
+results-summary.md; resume-manifest.json). New scripts:
+`experiments/CONT-001/{validate_fixtures_v2,run_calibration_v2,run_confirmatory_abcde,analyze_confirmatory}.py`;
+new held-out suites `fixtures/v2/` (14 scenarios) and `fixtures/v2-calibration/` (5).
+**Every artifact and number in this entry is labeled: agent-pre-registered, pending
+owner acceptance.**
+
+- **Protocol integrity**: EVALUATION-PREP.md verified byte-identical to the frozen
+  commit `a845fc5` before anything ran (sha256 5910789afeea... both sides). PR-REVIEW
+  verdict GO; ~10 h 53 m remained before the arc deadline at start. Frozen-content
+  digests (fixtures v2, v2-calibration, protocol doc, self-model 1') recorded in
+  frozen-config.json at the freeze commit and re-verified at run start and at
+  analysis time; no drift.
+- **Fixture v2** (held-out; mechanical validator PASS pre-inference, 15 checks
+  E1-E10/C1-C4/A1): 14 scenarios (3 dr + 2 dx + 2 cu + 5 rt + 2 correction_reuse),
+  7 RM-eligible probes/seed (`probe.class="rm_eligible"`, `initial_expected` pinned
+  to exactly s1t1 per PR note 3), NO option lists on any probe turn (CN-004 fix;
+  probes elicit concise label-form answers per PR note 2), every RM probe on s2t2
+  behind a non-probe s2t1 (CN-010 fix), ids/content disjoint from v1 (validated).
+  Two validator FAILs during authoring were fixed by regenerating fixtures
+  (em-dash ASCII; actuation phrasing), never by relaxing the validator.
+- **Calibration (CN-009 fix executed)**: arm B on the disjoint calibration suite
+  (seeds {11,22,33} — the confirmatory seeds {101,202,303,404,505} were never used
+  for calibration), 81 requests, wall 205 s. Revision 1' rates: delayed_recall
+  0.750, distractor_recall 1.000, contradiction_update 1.000, correction_reuse
+  1.000, repeated_task 0.000 (0/18 — granite finds the cal-RT rubric hard; an
+  honest estimate). Provenance.derived_from points at the calibration aggregate
+  only; analysis re-verifies. Guard sizing (cal probes_per_seed > eval per family:
+  4>3, 3>2, 3>2, 6>5, 3>2) kept the reflection double-count guard active: **0
+  in-run capability updates accepted in every D/E seed-run** (6.8 satisfied
+  deterministically, frozen M4 code untouched).
+- **Run**: arms A-E x seeds {101,202,303,404,505} x 45 turns = 1,125 requests,
+  14 probes/seed, one warm process per attempt, temp 0.0 / num_ctx 4096 /
+  options in every request, digest 36c3c3b9683b...a18dd pinned, all 25 seed-runs
+  completed, 0 budget stops, all traces re-validate, 0 exclusions (8.1 clean).
+  GPU total across the four lock sessions (calibration + attempt 1 + resume 1 +
+  resume 2) ~3,080 s measured arm walls + calibration + warmups ≈ **~55 min**
+  (cap 180); stage wall clock ~100 min (cap 150).
+- **Execution incident (recorded, fail-closed path worked)**: attempt 1 (rev
+  66eefc8) crashed in the executor's OWN post-inference instrumentation
+  (`sum()` over an int telemetry counter) after arm C and arm D seed 101's
+  inference completed; arms D(202-505)/E had issued zero evaluation requests.
+  Recovery per 8's infrastructure clause + the M5 traces-are-primary lesson:
+  one-line fix + None-tolerant aggregation (commits c679547, 4e425ea, recorded),
+  arm D seed 101's summary REBUILT offline from its complete attempt-1 trace
+  (zero inference repeated anywhere), never-started seeds ran as their first
+  run, both attempts + revs recorded in resume-manifest.json and
+  freeze-verification-attempt1.json. Frozen content digests unchanged throughout.
+- **PRIMARY RESULT (pre-registered rule, exactly as frozen)**: strict RM rate
+  (per-arm eligible denominators) — A 0/20 = 0.000; B 0/20 = 0.000; C 0/30 =
+  0.000; D 15/30 = 0.500; E 10/30 = 0.333. Primary contrast **RM(E)-RM(A) =
+  +0.333 (harm direction), 95% CI [0.000, 0.750]** (paired cluster bootstrap over
+  7 scenarios, 10,000 resamples, RNG seed 20261002, 18 redraws < 500 limit).
+  CI does NOT exclude 0 (lower bound exactly 0.0) although |0.333| >= MME 0.15 →
+  **verdict: NO CONFIRMATORY DIFFERENCE ESTABLISHED** (both criteria required by
+  the frozen rule; one failed). Underpowered guard not triggered (denominators
+  20/30 >= 10). Sensitivity (a) loose RM = 1.000 for EVERY arm (all eligible
+  probes incorrect everywhere — free-form probes are brutally hard for
+  granite-code:8b without option lists); sensitivity (b) common-eligible E-A =
+  +0.247 CI [0.0, 0.75] — same shape as the primary. Reported plainly: the
+  point estimate leans toward memory-arm harm (arm E repeats its own initial
+  wrong answers more than arm A), but the pre-registered uncertainty rule does
+  not certify it.
+- **Per-seed spread**: RM rate range 0.000 on A/B/C, 0.500 on D, 0.333 on E —
+  zero within-arm seed variation on the primary endpoint EXCEPT one probe
+  elsewhere: arm B rt-0008 seed 101 failed (0) vs passed (1) on seeds
+  202-505 — the run's single outcome-level seed flip → **CN-003 ESCALATED**
+  (see FINDINGS).
+- **Mechanism observations (secondary, exploratory-attribution — never
+  promotable)**: (i) strict RM appears exactly at arm D (D-C = +0.50, CI
+  [0.143, 0.857]) and persists at E (E-D = -0.169, CI [-0.714, 0.400]); the
+  strict repeats are VERBATIM copies of the agent's own earlier degenerate
+  answers (granite parrots its prior reply, and reflection summaries re-inject
+  it) — anchoring-by-parroting, the CN-007 phenomenon surfacing with reflection
+  summaries in context. (ii) delayed_recall E-A = +1.000 CI [1.0, 1.0]: with
+  option leakage removed, arm A passes NOTHING on the whole suite (0/14) while
+  B-E pass all recall probes — persistent memory's recall benefit is unambiguous.
+  (iii) contradiction_update C-B = -0.500 (B 5/5 -> C/D/E 0/5 on cu-0003, the
+  superseded-value trap: with the calibration self-model block in context, C-E
+  answer the superseded value) — a self-model-interference signal, small-n.
+  (iv) correction_reuse 0/5 everywhere: the new family defeats every arm.
+  (v) token cost/arm: A 26,329 / B 46,540 / C 152,320 / D 272,795 / E 278,805.
+- **Arm-E policy actuation (CN-010 fix executed, 6.7)**: **7 physical policy
+  injections per seed** (one per RM scenario, exactly matching the ex-ante
+  simulation), 13 retrieve actions/seed, expectation >= 1/seed MET on every
+  seed; arm E is NOT actuation-inert on v2 — E tokens 278,805 vs D 272,795
+  (+1,202/seed from the injected blocks). No policy-level claim beyond
+  actuation (E-D RM CI spans 0).
+- **PR-REVIEW note 1 (fixture-authoring exposure)** stated in frozen-config.json
+  exactly as the reviewer recommended; the symmetric rule + mechanical validator
+  + freeze + owner gate bound it. The harm-leaning point estimate is reported
+  as plainly as a benefit-leaning one would have been.
+- Same-day lessons (Context -> What happened -> Lesson -> Change):
+  1. Attempt 1 crashed post-inference on `sum(int)`; attempt 2's aggregate then
+     crashed on `wall_s=None` from the offline-rebuilt summary. Lesson: when a
+     resume path introduces Nullable fields, grep every consumer of those fields
+     in the same PR — the second crash was the first crash's shadow. Change:
+     None-tolerant aggregation; offline summary rebuild marked
+     `summary_rebuilt_offline`; resume manifest records both attempts.
+  2. The pre-freeze offline smoke of verify_freeze caught two record/verifier
+     mismatches (key name, provenance path prefix) with zero GPU spent. Lesson:
+     smoke the freeze verifier against the real record BEFORE the run, exactly
+     like the fixture validator. Change: fail-closed exits kept; the smoke
+     steps are recorded here for M8.
+- Open findings disposition this stage: CN-003 ESCALATED (arm B rt-0008 seed
+  101 failed vs passed on seeds 202-505 — the run's single outcome-level seed
+  flip; numbers above); CN-004 CLOSED (v2 has no option lists on probe turns;
+  on the rt-0006 analogue arm A went 5/5 (v1, leaked) -> 0/5 (v2) — leakage
+  gone by construction, validator-enforced); CN-007 annotated (strict RM at
+  D/E via verbatim own-answer parroting; loose RM 1.000 everywhere — the
+  strict/loose gap shows PR note 2's label-form caveat materialized on
+  free-form probes); CN-009 CLOSED (calibration-only self-model executed with
+  provenance; 0 in-run capability updates in every D/E seed-run); CN-010
+  CLOSED (7 physical policy injections per seed, expectation >= 1/seed met;
+  arm E no longer token-identical to D, +1,202 tokens/seed). CN-002/005
+  monitoring rules applied (attribution snapshots in aggregates; wall-clock
+  budgets per CN-002).
+- M7 exit artifacts complete; ROADMAP M7 marked DONE. Next: M8 (housekeeping,
+  arc report, owner morning list) per ROADMAP. The owner accepts or rejects
+  this agent-pre-registered result in the morning list.
+

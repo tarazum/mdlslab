@@ -1,0 +1,626 @@
+{
+  "agentId": "continuity/granite-code:8b@36c3c3b9683b",
+  "capabilities": [
+    {
+      "binomial_sd": 0.0,
+      "family": "contradiction_update",
+      "passed": 9,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 3,
+            "22": 3,
+            "33": 3
+          },
+          "probes_per_seed": 3,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 1.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 9,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 1.0,
+        "low": 0.701
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "correction_reuse",
+      "passed": 9,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 3,
+            "22": 3,
+            "33": 3
+          },
+          "probes_per_seed": 3,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 1.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 9,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 1.0,
+        "low": 0.701
+      }
+    },
+    {
+      "binomial_sd": 0.125,
+      "family": "delayed_recall",
+      "passed": 9,
+      "probes_per_seed": 4,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 3,
+            "22": 3,
+            "33": 3
+          },
+          "probes_per_seed": 4,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 0.75,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 12,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.911,
+        "low": 0.468
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "distractor_recall",
+      "passed": 9,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 3,
+            "22": 3,
+            "33": 3
+          },
+          "probes_per_seed": 3,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 1.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 9,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 1.0,
+        "low": 0.701
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "repeated_task",
+      "passed": 0,
+      "probes_per_seed": 6,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 0,
+            "22": 0,
+            "33": 0
+          },
+          "probes_per_seed": 6,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 0.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 18,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.176,
+        "low": 0.0
+      }
+    }
+  ],
+  "createdUtc": "2026-10-01T22:00:58Z",
+  "format": "continuity-selfmodel",
+  "history": [
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 9
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 1,
+      "updatedUtc": "2026-10-01T22:00:58Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 9
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 2,
+      "updatedUtc": "2026-10-01T22:34:06Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 9
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 3,
+      "updatedUtc": "2026-10-01T22:34:23Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 9
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 4,
+      "updatedUtc": "2026-10-01T22:34:38Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 9
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 5,
+      "updatedUtc": "2026-10-01T22:34:49Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 9
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 6,
+      "updatedUtc": "2026-10-01T22:35:00Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 9
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 7,
+      "updatedUtc": "2026-10-01T22:35:09Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 9
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 8,
+      "updatedUtc": "2026-10-01T22:35:21Z"
+    }
+  ],
+  "knownFailurePatterns": [
+    {
+      "evidence": {
+        "numbers": {
+          "family": "repeated_task",
+          "observed_normalized": [
+            "classify this incident report. report: 'a visitor's badge opens the staff corridor door.' reply with the label only. security",
+            "classify this incident report. report: 'the atrium door handle came off in a visitor's hand.' reply with the label only. security",
+            "classify this incident report. report: 'the booking system drops half of the evening-class sign-ups.' reply with the label only. program",
+            "classify this incident report. report: 'the hall thermostat reads 14 degrees all morning.' reply with the label only. computing",
+            "classify this incident report. report: 'three ceiling lights are flickering in the reading room.' reply with the label only. facilities",
+            "classify this incident report. report: 'thursday's yoga class has no instructor this week.' reply with the label only. computing",
+            "classify this incident report. report: 'thursday's yoga class has no instructor this week.' reply with the label only. facilities"
+          ],
+          "pass_count": 0,
+          "scenario": "cal-RT1",
+          "seeds": 3
+        },
+        "refs": [
+          "labs/continuity/docs/FINDINGS.md#CN-007",
+          "calibration scenario cal-RT1 (v2-calibration suite)"
+        ]
+      },
+      "id": "CN-007",
+      "pattern": "The agent's own early answers, once stored in persistent memory, anchor later answers even when a later session supplies the correcting rubric; an early misclassification can repeat across sessions instead of being revised.",
+      "title": "own-answer anchoring"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "family": "contradiction_update",
+          "observed_normalized": [
+            "platform 1 is 20 meters long.",
+            "platform 2 is 15 meters long.",
+            "the waiting room seats 24 people."
+          ],
+          "pass_count": 9,
+          "scenario": "cal-CU1",
+          "seeds": 3
+        },
+        "refs": [
+          "labs/continuity/docs/FINDINGS.md#CN-008",
+          "calibration scenario cal-CU1 (v2-calibration suite)"
+        ]
+      },
+      "id": "CN-008",
+      "pattern": "When a later session corrects an earlier fact, keyword memory recalls both versions and the superseded value may be repeated even though the correction was retrieved first; conflict resolution is the gap.",
+      "title": "no supersession of corrected facts"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "7",
+          "family": "contradiction_update",
+          "observed_normalized": [
+            "the bread stall opens at seven."
+          ],
+          "pass_count": 0,
+          "scenario": "cu-0003",
+          "seed": 101,
+          "seeds": 1,
+          "turn_ref": "s3t1"
+        },
+        "refs": [
+          "cont001-confirmatory-20261002-005711-armD-seed101/summary.json (reflection pass 14, proposal P-0025)"
+        ]
+      },
+      "id": "REF-0025",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t1 in scenario cu-0003 (family contradiction_update) was answered 'the bread stall opens at seven.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: contradiction_update / cu-0003"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "data",
+          "family": "repeated_task",
+          "observed_normalized": [
+            "understood. i will classify the support ticket into one of the following labels: billing, bug, account, data. based on the information provided, i will reply with the label only."
+          ],
+          "pass_count": 0,
+          "scenario": "rt-0004",
+          "seed": 101,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "cont001-confirmatory-20261002-005711-armD-seed101/summary.json (reflection pass 19, proposal P-0035)"
+        ]
+      },
+      "id": "REF-0035",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario rt-0004 (family repeated_task) was answered 'understood. i will classify the support ticket into one of the following labels: billing, bug, account, data. based on the information provided, i will reply with the label only.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: repeated_task / rt-0004"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "account",
+          "family": "repeated_task",
+          "observed_normalized": [
+            "understood. i will classify the support ticket into one of the following labels: billing, bug, account, data. based on the information provided, i will reply with the label only."
+          ],
+          "pass_count": 0,
+          "scenario": "rt-0005",
+          "seed": 101,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "cont001-confirmatory-20261002-005711-armD-seed101/summary.json (reflection pass 21, proposal P-0040)"
+        ]
+      },
+      "id": "REF-0040",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario rt-0005 (family repeated_task) was answered 'understood. i will classify the support ticket into one of the following labels: billing, bug, account, data. based on the information provided, i will reply with the label only.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: repeated_task / rt-0005"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "perf",
+          "family": "repeated_task",
+          "observed_normalized": [
+            "the support ticket can be classified as a bug."
+          ],
+          "pass_count": 0,
+          "scenario": "rt-0006",
+          "seed": 101,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "cont001-confirmatory-20261002-005711-armD-seed101/summary.json (reflection pass 23, proposal P-0045)"
+        ]
+      },
+      "id": "REF-0045",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario rt-0006 (family repeated_task) was answered 'the support ticket can be classified as a bug.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: repeated_task / rt-0006"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "data",
+          "family": "repeated_task",
+          "observed_normalized": [
+            "classify this support ticket. the desk notes are not at hand. ticket: 'the shared packing list still shows the sleeping-bag items i deleted two days ago.' reply with the label only. the support ticket can be classified as a bug."
+          ],
+          "pass_count": 0,
+          "scenario": "rt-0007",
+          "seed": 101,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "cont001-confirmatory-20261002-005711-armD-seed101/summary.json (reflection pass 25, proposal P-0050)"
+        ]
+      },
+      "id": "REF-0050",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario rt-0007 (family repeated_task) was answered \"classify this support ticket. the desk notes are not at hand. ticket: 'the shared packing list still shows the sleeping-bag items i deleted two days ago.' reply with the label only. the support ticket can be classified as a bug.\" and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: repeated_task / rt-0007"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "billing",
+          "family": "repeated_task",
+          "observed_normalized": [
+            "the support ticket can be classified as a billing issue."
+          ],
+          "pass_count": 0,
+          "scenario": "rt-0008",
+          "seed": 101,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "cont001-confirmatory-20261002-005711-armD-seed101/summary.json (reflection pass 27, proposal P-0055)"
+        ]
+      },
+      "id": "REF-0055",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario rt-0008 (family repeated_task) was answered 'the support ticket can be classified as a billing issue.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: repeated_task / rt-0008"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "quarterly",
+          "family": "correction_reuse",
+          "observed_normalized": [
+            "curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier."
+          ],
+          "pass_count": 0,
+          "scenario": "cr-0001",
+          "seed": 101,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "cont001-confirmatory-20261002-005711-armD-seed101/summary.json (reflection pass 29, proposal P-0059)"
+        ]
+      },
+      "id": "REF-0059",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario cr-0001 (family correction_reuse) was answered 'curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: correction_reuse / cr-0001"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "transit",
+          "family": "correction_reuse",
+          "observed_normalized": [
+            "the request is for a commercial berth."
+          ],
+          "pass_count": 0,
+          "scenario": "cr-0002",
+          "seed": 101,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "cont001-confirmatory-20261002-005711-armD-seed101/summary.json (reflection pass 31, proposal P-0064)"
+        ]
+      },
+      "id": "REF-0064",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario cr-0002 (family correction_reuse) was answered 'the request is for a commercial berth.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: correction_reuse / cr-0002"
+    }
+  ],
+  "lastConsolidation": "2026-10-01T22:35:31Z",
+  "provenance": {
+    "agent_id_basis": {
+      "model": "granite-code:8b",
+      "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd"
+    },
+    "derived_from": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json",
+    "method": "capabilities recomputed from per-family probe counts of the designated calibration run; failure patterns seeded from CN-007/CN-008 evidence in the same calibration aggregate",
+    "note": "calibration-only estimation per docs/EVALUATION-PREP.md 6.8 (CN-009 fix): calibration scenarios are disjoint from the evaluation suite and from fixtures/v1; no M1-M6 or pilot aggregate feeds this store; calibration probes_per_seed per family exceeds the evaluation suite's, so the reflection double-count guard keeps in-run capability updates disabled during the confirmatory run"
+  },
+  "revision": 9,
+  "schemaVersion": 1,
+  "updatedUtc": "2026-10-01T22:35:31Z"
+}

@@ -1,0 +1,159 @@
+{
+  "kind": "cont001-confirmatory-resume-manifest",
+  "label": "agent-pre-registered, pending owner acceptance",
+  "created_utc": "2026-10-01T23:10:55Z",
+  "this_process_git_rev": "4e425ea69f4e430980723175aebb47413d2ab08f",
+  "note": "attempt 1 (git rev 66eefc8...) crashed in the executor's own post-inference instrumentation after arm C and arm D seed 101's inference completed; seeds never started in attempt 1 ran in this process (their FIRST evaluation requests - section 8 infrastructure failure before their first request); arm D seed 101's summary was rebuilt offline from its complete attempt-1 trace; zero inference requests were repeated for any seed",
+  "seeds": [
+    {
+      "arm": "A",
+      "seed": 101,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "A",
+      "seed": 202,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "A",
+      "seed": 303,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "A",
+      "seed": 404,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "A",
+      "seed": 505,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "B",
+      "seed": 101,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "B",
+      "seed": 202,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "B",
+      "seed": 303,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "B",
+      "seed": 404,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "B",
+      "seed": 505,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "C",
+      "seed": 101,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "C",
+      "seed": 202,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "C",
+      "seed": 303,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "C",
+      "seed": 404,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "C",
+      "seed": 505,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "D",
+      "seed": 101,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "66eefc848406b4759066298b07887b2a3972811e"
+    },
+    {
+      "arm": "D",
+      "seed": 202,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "c679547460ebbb7d03e464553a79a3fde056d362"
+    },
+    {
+      "arm": "D",
+      "seed": 303,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "c679547460ebbb7d03e464553a79a3fde056d362"
+    },
+    {
+      "arm": "D",
+      "seed": 404,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "c679547460ebbb7d03e464553a79a3fde056d362"
+    },
+    {
+      "arm": "D",
+      "seed": 505,
+      "action": "loaded_completed_summary_from_disk",
+      "git_rev_of_original_run": "c679547460ebbb7d03e464553a79a3fde056d362"
+    },
+    {
+      "arm": "E",
+      "seed": 101,
+      "action": "inference_executed_this_process",
+      "git_rev": "4e425ea69f4e430980723175aebb47413d2ab08f"
+    },
+    {
+      "arm": "E",
+      "seed": 202,
+      "action": "inference_executed_this_process",
+      "git_rev": "4e425ea69f4e430980723175aebb47413d2ab08f"
+    },
+    {
+      "arm": "E",
+      "seed": 303,
+      "action": "inference_executed_this_process",
+      "git_rev": "4e425ea69f4e430980723175aebb47413d2ab08f"
+    },
+    {
+      "arm": "E",
+      "seed": 404,
+      "action": "inference_executed_this_process",
+      "git_rev": "4e425ea69f4e430980723175aebb47413d2ab08f"
+    },
+    {
+      "arm": "E",
+      "seed": 505,
+      "action": "inference_executed_this_process",
+      "git_rev": "4e425ea69f4e430980723175aebb47413d2ab08f"
+    }
+  ]
+}

@@ -840,6 +840,18 @@ def main() -> int:
         f">= 1/seed met: {actuation['expectation_met']}; actuation-inert: "
         f"{actuation['actuation_inert']}",
         "",
+        "## Execution record (protocol section 8 transparency)",
+        "",
+        "Attempt 1 (git rev 66eefc8) crashed in the executor's own post-inference "
+        "instrumentation after arm C and arm D seed 101's inference completed; "
+        "arms D(202-505)/E had issued zero evaluation requests. Recovery: harness "
+        "fix commits c679547/4e425ea (recorded), arm D seed 101's summary rebuilt "
+        "offline from its complete attempt-1 trace, never-started seeds ran as "
+        "their first run; zero inference requests were repeated for any seed. Both "
+        "attempts are recorded in resume-manifest.json and "
+        "freeze-verification-attempt1.json; frozen-content digests verified "
+        "unchanged throughout (0 exclusions, no halt conditions triggered).",
+        "",
         "## Scope bounds (per the pre-registration, section 9)",
         "",
         "Synthetic public-safe fixtures, one core model at temperature 0.0, the "
@@ -847,7 +859,7 @@ def main() -> int:
         "Determinism caveat PB-071/CN-003 travels with every number.",
         "",
         f"Interpretation and acceptance belong to the owner (ROADMAP morning "
-        "list). {LABEL}.",
+        f"list). {LABEL}.",
     ]
     (run_root / "results-summary.md").write_text("\n".join(summary_lines) + "\n", encoding="utf-8")
     print(f"wrote {run_root / 'results-summary.md'}")

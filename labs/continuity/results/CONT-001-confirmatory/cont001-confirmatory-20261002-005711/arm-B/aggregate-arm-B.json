@@ -1,0 +1,1043 @@
+{
+  "run": {
+    "run_id": "cont001-confirmatory-20261002-005711",
+    "kind": "cont001-confirmatory",
+    "label": "agent-pre-registered, pending owner acceptance",
+    "arm": "B",
+    "arm_description": "A + SQLite persistent memory (keyword retrieval, session-start injection)",
+    "created_utc": "2026-10-01T23:00:52Z",
+    "git_rev": "4e425ea69f4e430980723175aebb47413d2ab08f",
+    "model": "granite-code:8b",
+    "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+    "ollama_version": "0.34.2",
+    "python": "3.12.10",
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "keep_alive": "30m",
+    "seeds_predeclared": [
+      101,
+      202,
+      303,
+      404,
+      505
+    ],
+    "seeds_run": [
+      101,
+      202,
+      303,
+      404,
+      505
+    ],
+    "seeds_skipped": [],
+    "scenario_order": [
+      "dr-0004",
+      "dr-0005",
+      "dr-0006",
+      "dx-0003",
+      "dx-0004",
+      "cu-0003",
+      "cu-0004",
+      "rt-0004",
+      "rt-0005",
+      "rt-0006",
+      "rt-0007",
+      "rt-0008",
+      "cr-0001",
+      "cr-0002"
+    ],
+    "scenario_budget": {
+      "max_turns": 40,
+      "max_total_tokens": 100000,
+      "wall_clock_s": 600.0
+    },
+    "run_wall_clock_guard_s": 7200.0,
+    "arm_wall_s": 559.5,
+    "determinism_caveat": "greedy+seed does not guarantee identical outputs across batch sizes or backends (PB-071)",
+    "gpu_lock_note": "run held the shared gpu lock; wall clock (CN-002 rule) is the budget metric; total_duration is relative-only"
+  },
+  "runs": [
+    {
+      "seed": 101,
+      "run_id": "cont001-confirmatory-20261002-005711-armB-seed101",
+      "dir": "seed-101",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 7,
+      "probes_total": 14,
+      "turns": 45,
+      "tokens_total": 9424,
+      "wall_s": 114.3,
+      "memory_episodes_total": 90
+    },
+    {
+      "seed": 202,
+      "run_id": "cont001-confirmatory-20261002-005711-armB-seed202",
+      "dir": "seed-202",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 14,
+      "turns": 45,
+      "tokens_total": 9279,
+      "wall_s": 111.5,
+      "memory_episodes_total": 90
+    },
+    {
+      "seed": 303,
+      "run_id": "cont001-confirmatory-20261002-005711-armB-seed303",
+      "dir": "seed-303",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 14,
+      "turns": 45,
+      "tokens_total": 9279,
+      "wall_s": 111.8,
+      "memory_episodes_total": 90
+    },
+    {
+      "seed": 404,
+      "run_id": "cont001-confirmatory-20261002-005711-armB-seed404",
+      "dir": "seed-404",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 14,
+      "turns": 45,
+      "tokens_total": 9279,
+      "wall_s": 111.5,
+      "memory_episodes_total": 90
+    },
+    {
+      "seed": 505,
+      "run_id": "cont001-confirmatory-20261002-005711-armB-seed505",
+      "dir": "seed-505",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 14,
+      "turns": 45,
+      "tokens_total": 9279,
+      "wall_s": 110.4,
+      "memory_episodes_total": 90
+    }
+  ],
+  "overall": {
+    "pass_rate_by_seed": {
+      "101": 0.5,
+      "202": 0.571,
+      "303": 0.571,
+      "404": 0.571,
+      "505": 0.571
+    },
+    "probes_per_seed": 14,
+    "spread": {
+      "min": 0.5,
+      "max": 0.571,
+      "range": 0.071,
+      "mean": 0.557
+    }
+  },
+  "per_family": {
+    "delayed_recall": {
+      "pass_rate_by_seed": {
+        "101": 1.0,
+        "202": 1.0,
+        "303": 1.0,
+        "404": 1.0,
+        "505": 1.0
+      },
+      "passed_by_seed": {
+        "101": 3,
+        "202": 3,
+        "303": 3,
+        "404": 3,
+        "505": 3
+      },
+      "probes_per_seed": 3,
+      "spread": {
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0,
+        "mean": 1.0
+      }
+    },
+    "distractor_recall": {
+      "pass_rate_by_seed": {
+        "101": 1.0,
+        "202": 1.0,
+        "303": 1.0,
+        "404": 1.0,
+        "505": 1.0
+      },
+      "passed_by_seed": {
+        "101": 2,
+        "202": 2,
+        "303": 2,
+        "404": 2,
+        "505": 2
+      },
+      "probes_per_seed": 2,
+      "spread": {
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0,
+        "mean": 1.0
+      }
+    },
+    "contradiction_update": {
+      "pass_rate_by_seed": {
+        "101": 1.0,
+        "202": 1.0,
+        "303": 1.0,
+        "404": 1.0,
+        "505": 1.0
+      },
+      "passed_by_seed": {
+        "101": 2,
+        "202": 2,
+        "303": 2,
+        "404": 2,
+        "505": 2
+      },
+      "probes_per_seed": 2,
+      "spread": {
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0,
+        "mean": 1.0
+      }
+    },
+    "repeated_task": {
+      "pass_rate_by_seed": {
+        "101": 0.0,
+        "202": 0.2,
+        "303": 0.2,
+        "404": 0.2,
+        "505": 0.2
+      },
+      "passed_by_seed": {
+        "101": 0,
+        "202": 1,
+        "303": 1,
+        "404": 1,
+        "505": 1
+      },
+      "probes_per_seed": 5,
+      "spread": {
+        "min": 0.0,
+        "max": 0.2,
+        "range": 0.2,
+        "mean": 0.16
+      }
+    },
+    "correction_reuse": {
+      "pass_rate_by_seed": {
+        "101": 0.0,
+        "202": 0.0,
+        "303": 0.0,
+        "404": 0.0,
+        "505": 0.0
+      },
+      "passed_by_seed": {
+        "101": 0,
+        "202": 0,
+        "303": 0,
+        "404": 0,
+        "505": 0
+      },
+      "probes_per_seed": 2,
+      "spread": {
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0,
+        "mean": 0.0
+      }
+    }
+  },
+  "per_scenario": {
+    "dr-0004": {
+      "family": "delayed_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "23:15"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "23:15"
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "23:15"
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "23:15"
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "23:15"
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "23:15"
+          }
+        ]
+      }
+    },
+    "dr-0005": {
+      "family": "delayed_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "9"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "9 days."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "9 days."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "9 days."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "9 days."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "9 days."
+          }
+        ]
+      }
+    },
+    "dr-0006": {
+      "family": "delayed_recall",
+      "probe_results": {
+        "s3t1": {
+          "kind": "contains",
+          "expected": "1866"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze parish bell was recast in 1866."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze parish bell was recast in 1866."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze parish bell was recast in 1866."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze parish bell was recast in 1866."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze parish bell was recast in 1866."
+          }
+        ]
+      }
+    },
+    "dx-0003": {
+      "family": "distractor_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "10"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "10"
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "10"
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "10"
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "10"
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "10"
+          }
+        ]
+      }
+    },
+    "dx-0004": {
+      "family": "distractor_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "wren"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the name of the trainer aircraft of two rivers is the wren."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the name of the trainer aircraft of two rivers is the wren."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the name of the trainer aircraft of two rivers is the wren."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the name of the trainer aircraft of two rivers is the wren."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the name of the trainer aircraft of two rivers is the wren."
+          }
+        ]
+      }
+    },
+    "cu-0003": {
+      "family": "contradiction_update",
+      "probe_results": {
+        "s3t1": {
+          "kind": "contains",
+          "expected": "7"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bread stall opens at 7."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bread stall opens at 7."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bread stall opens at 7."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bread stall opens at 7."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bread stall opens at 7."
+          }
+        ]
+      }
+    },
+    "cu-0004": {
+      "family": "contradiction_update",
+      "probe_results": {
+        "s3t1": {
+          "kind": "contains",
+          "expected": "weekend"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the west lift runs on weekends only."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the west lift runs on weekends only."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the west lift runs on weekends only."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the west lift runs on weekends only."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the west lift runs on weekends only."
+          }
+        ]
+      }
+    },
+    "rt-0004": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t2": {
+          "kind": "exact_match",
+          "expected": "data"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the ticket 'my trip-cost export still shows yesterday's totals even after i refresh the page.' falls under the category of 'data' according to the provided rubric."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the ticket 'my trip-cost export still shows yesterday's totals even after i refresh the page' falls under the category of 'data' according to the provided rubric."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the ticket 'my trip-cost export still shows yesterday's totals even after i refresh the page' falls under the category of 'data' according to the provided rubric."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the ticket 'my trip-cost export still shows yesterday's totals even after i refresh the page' falls under the category of 'data' according to the provided rubric."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the ticket 'my trip-cost export still shows yesterday's totals even after i refresh the page' falls under the category of 'data' according to the provided rubric."
+          }
+        ]
+      }
+    },
+    "rt-0005": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t2": {
+          "kind": "exact_match",
+          "expected": "account"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the ticket is classified as account."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the ticket is classified as account."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the ticket is classified as account."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the ticket is classified as account."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the ticket is classified as account."
+          }
+        ]
+      }
+    },
+    "rt-0006": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t2": {
+          "kind": "exact_match",
+          "expected": "perf"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the label for this support ticket is data."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the label for this support ticket is data."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the label for this support ticket is data."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the label for this support ticket is data."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the label for this support ticket is data."
+          }
+        ]
+      }
+    },
+    "rt-0007": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t2": {
+          "kind": "exact_match",
+          "expected": "data"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'the shared packing list still shows the sleeping-bag items i deleted two days ago.' reply with the label only. the ticket is a bug."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'the shared packing list still shows the sleeping-bag items i deleted two days ago.' reply with the label only. the ticket is a bug."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'the shared packing list still shows the sleeping-bag items i deleted two days ago.' reply with the label only. the ticket is a bug."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'the shared packing list still shows the sleeping-bag items i deleted two days ago.' reply with the label only. the ticket is a bug."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'the shared packing list still shows the sleeping-bag items i deleted two days ago.' reply with the label only. the ticket is a bug."
+          }
+        ]
+      }
+    },
+    "rt-0008": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t2": {
+          "kind": "exact_match",
+          "expected": "billing"
+        }
+      },
+      "pass_count": 4,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'while moving our trip to the new teacher's login the card fee was charged twice; please fix the charge.' reply with the label only. the ticket is classified as billing."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t2",
+            "passed": true,
+            "observed_normalized": "billing"
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t2",
+            "passed": true,
+            "observed_normalized": "billing"
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t2",
+            "passed": true,
+            "observed_normalized": "billing"
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t2",
+            "passed": true,
+            "observed_normalized": "billing"
+          }
+        ]
+      }
+    },
+    "cr-0001": {
+      "family": "correction_reuse",
+      "probe_results": {
+        "s2t2": {
+          "kind": "exact_match",
+          "expected": "quarterly"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier."
+          }
+        ]
+      }
+    },
+    "cr-0002": {
+      "family": "correction_reuse",
+      "probe_results": {
+        "s2t2": {
+          "kind": "exact_match",
+          "expected": "transit"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "merlin, a private motor yacht visiting for the weekend, no passengers for hire, is a transit vessel."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "merlin, a private motor yacht visiting for the weekend, no passengers for hire, is a transit vessel."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "merlin, a private motor yacht visiting for the weekend, no passengers for hire, is a transit vessel."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "merlin, a private motor yacht visiting for the weekend, no passengers for hire, is a transit vessel."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "merlin, a private motor yacht visiting for the weekend, no passengers for hire, is a transit vessel."
+          }
+        ]
+      }
+    }
+  },
+  "request_stats": {
+    "count": 225,
+    "latency_ms": {
+      "mean": 436.8,
+      "median": 369.0,
+      "p90": 812.2,
+      "p95": 1184.6,
+      "min": 81.5,
+      "max": 1348.6
+    },
+    "tokens": {
+      "prompt_sum": 42018,
+      "eval_sum": 4522,
+      "total_sum": 46540,
+      "prompt_mean": 186.7,
+      "eval_mean": 20.1
+    }
+  },
+  "memory_stats": [
+    {
+      "seed": 101,
+      "appended_events": 90,
+      "injected_episodes_by_scenario": {
+        "dr-0004": 2,
+        "dr-0005": 2,
+        "dr-0006": 3,
+        "dx-0003": 2,
+        "dx-0004": 2,
+        "cu-0003": 6,
+        "cu-0004": 6,
+        "rt-0004": 2,
+        "rt-0005": 2,
+        "rt-0006": 3,
+        "rt-0007": 2,
+        "rt-0008": 2,
+        "cr-0001": 4,
+        "cr-0002": 2
+      }
+    },
+    {
+      "seed": 202,
+      "appended_events": 90,
+      "injected_episodes_by_scenario": {
+        "dr-0004": 2,
+        "dr-0005": 2,
+        "dr-0006": 3,
+        "dx-0003": 2,
+        "dx-0004": 2,
+        "cu-0003": 6,
+        "cu-0004": 6,
+        "rt-0004": 2,
+        "rt-0005": 2,
+        "rt-0006": 3,
+        "rt-0007": 2,
+        "rt-0008": 2,
+        "cr-0001": 4,
+        "cr-0002": 2
+      }
+    },
+    {
+      "seed": 303,
+      "appended_events": 90,
+      "injected_episodes_by_scenario": {
+        "dr-0004": 2,
+        "dr-0005": 2,
+        "dr-0006": 3,
+        "dx-0003": 2,
+        "dx-0004": 2,
+        "cu-0003": 6,
+        "cu-0004": 6,
+        "rt-0004": 2,
+        "rt-0005": 2,
+        "rt-0006": 3,
+        "rt-0007": 2,
+        "rt-0008": 2,
+        "cr-0001": 4,
+        "cr-0002": 2
+      }
+    },
+    {
+      "seed": 404,
+      "appended_events": 90,
+      "injected_episodes_by_scenario": {
+        "dr-0004": 2,
+        "dr-0005": 2,
+        "dr-0006": 3,
+        "dx-0003": 2,
+        "dx-0004": 2,
+        "cu-0003": 6,
+        "cu-0004": 6,
+        "rt-0004": 2,
+        "rt-0005": 2,
+        "rt-0006": 3,
+        "rt-0007": 2,
+        "rt-0008": 2,
+        "cr-0001": 4,
+        "cr-0002": 2
+      }
+    },
+    {
+      "seed": 505,
+      "appended_events": 90,
+      "injected_episodes_by_scenario": {
+        "dr-0004": 2,
+        "dr-0005": 2,
+        "dr-0006": 3,
+        "dx-0003": 2,
+        "dx-0004": 2,
+        "cu-0003": 6,
+        "cu-0004": 6,
+        "rt-0004": 2,
+        "rt-0005": 2,
+        "rt-0006": 3,
+        "rt-0007": 2,
+        "rt-0008": 2,
+        "cr-0001": 4,
+        "cr-0002": 2
+      }
+    }
+  ]
+}

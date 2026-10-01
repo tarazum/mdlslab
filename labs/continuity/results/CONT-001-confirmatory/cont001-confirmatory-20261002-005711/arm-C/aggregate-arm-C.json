@@ -1,0 +1,1052 @@
+{
+  "run": {
+    "run_id": "cont001-confirmatory-20261002-005711",
+    "kind": "cont001-confirmatory",
+    "label": "agent-pre-registered, pending owner acceptance",
+    "arm": "C",
+    "arm_description": "B + validated self-model summary in every session prompt",
+    "created_utc": "2026-10-01T23:00:52Z",
+    "git_rev": "4e425ea69f4e430980723175aebb47413d2ab08f",
+    "model": "granite-code:8b",
+    "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+    "ollama_version": "0.34.2",
+    "python": "3.12.10",
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "keep_alive": "30m",
+    "seeds_predeclared": [
+      101,
+      202,
+      303,
+      404,
+      505
+    ],
+    "seeds_run": [
+      101,
+      202,
+      303,
+      404,
+      505
+    ],
+    "seeds_skipped": [],
+    "scenario_order": [
+      "dr-0004",
+      "dr-0005",
+      "dr-0006",
+      "dx-0003",
+      "dx-0004",
+      "cu-0003",
+      "cu-0004",
+      "rt-0004",
+      "rt-0005",
+      "rt-0006",
+      "rt-0007",
+      "rt-0008",
+      "cr-0001",
+      "cr-0002"
+    ],
+    "scenario_budget": {
+      "max_turns": 40,
+      "max_total_tokens": 100000,
+      "wall_clock_s": 600.0
+    },
+    "run_wall_clock_guard_s": 7200.0,
+    "arm_wall_s": 582.7,
+    "determinism_caveat": "greedy+seed does not guarantee identical outputs across batch sizes or backends (PB-071)",
+    "gpu_lock_note": "run held the shared gpu lock; wall clock (CN-002 rule) is the budget metric; total_duration is relative-only",
+    "selfmodel": {
+      "source": "selfmodel-v2-calibration.json in the run root (revision 1', estimated ONLY on the designated calibration suite fixtures/v2-calibration; per-run copies per seed)",
+      "injection_rule": "one system message immediately after the base system prompt in EVERY session; content = selfmodel.render_summary of the revision current at session start",
+      "cn009_fix": "revision 1' provenance.derived_from points at the calibration aggregate only (EVALUATION-PREP.md 6.8); in-run capability updates stay disabled (double-count guard active; calibration probes_per_seed exceeds the evaluation suite's per family)",
+      "agent_id": "continuity/granite-code:8b@36c3c3b9683b",
+      "revision_initial": 1,
+      "sha256_initial": "2ce516bd7402965b5e8eccb72b39b165eee76c5da25a29fcf275727c867d6b28",
+      "estimate_provenance": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+    }
+  },
+  "runs": [
+    {
+      "seed": 101,
+      "run_id": "cont001-confirmatory-20261002-005711-armC-seed101",
+      "dir": "seed-101",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 6,
+      "probes_total": 14,
+      "turns": 45,
+      "tokens_total": 30464,
+      "wall_s": 115.5,
+      "memory_episodes_total": 90
+    },
+    {
+      "seed": 202,
+      "run_id": "cont001-confirmatory-20261002-005711-armC-seed202",
+      "dir": "seed-202",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 6,
+      "probes_total": 14,
+      "turns": 45,
+      "tokens_total": 30464,
+      "wall_s": 117.0,
+      "memory_episodes_total": 90
+    },
+    {
+      "seed": 303,
+      "run_id": "cont001-confirmatory-20261002-005711-armC-seed303",
+      "dir": "seed-303",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 6,
+      "probes_total": 14,
+      "turns": 45,
+      "tokens_total": 30464,
+      "wall_s": 115.8,
+      "memory_episodes_total": 90
+    },
+    {
+      "seed": 404,
+      "run_id": "cont001-confirmatory-20261002-005711-armC-seed404",
+      "dir": "seed-404",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 6,
+      "probes_total": 14,
+      "turns": 45,
+      "tokens_total": 30464,
+      "wall_s": 117.0,
+      "memory_episodes_total": 90
+    },
+    {
+      "seed": 505,
+      "run_id": "cont001-confirmatory-20261002-005711-armC-seed505",
+      "dir": "seed-505",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 6,
+      "probes_total": 14,
+      "turns": 45,
+      "tokens_total": 30464,
+      "wall_s": 117.4,
+      "memory_episodes_total": 90
+    }
+  ],
+  "overall": {
+    "pass_rate_by_seed": {
+      "101": 0.429,
+      "202": 0.429,
+      "303": 0.429,
+      "404": 0.429,
+      "505": 0.429
+    },
+    "probes_per_seed": 14,
+    "spread": {
+      "min": 0.429,
+      "max": 0.429,
+      "range": 0.0,
+      "mean": 0.429
+    }
+  },
+  "per_family": {
+    "delayed_recall": {
+      "pass_rate_by_seed": {
+        "101": 1.0,
+        "202": 1.0,
+        "303": 1.0,
+        "404": 1.0,
+        "505": 1.0
+      },
+      "passed_by_seed": {
+        "101": 3,
+        "202": 3,
+        "303": 3,
+        "404": 3,
+        "505": 3
+      },
+      "probes_per_seed": 3,
+      "spread": {
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0,
+        "mean": 1.0
+      }
+    },
+    "distractor_recall": {
+      "pass_rate_by_seed": {
+        "101": 1.0,
+        "202": 1.0,
+        "303": 1.0,
+        "404": 1.0,
+        "505": 1.0
+      },
+      "passed_by_seed": {
+        "101": 2,
+        "202": 2,
+        "303": 2,
+        "404": 2,
+        "505": 2
+      },
+      "probes_per_seed": 2,
+      "spread": {
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0,
+        "mean": 1.0
+      }
+    },
+    "contradiction_update": {
+      "pass_rate_by_seed": {
+        "101": 0.5,
+        "202": 0.5,
+        "303": 0.5,
+        "404": 0.5,
+        "505": 0.5
+      },
+      "passed_by_seed": {
+        "101": 1,
+        "202": 1,
+        "303": 1,
+        "404": 1,
+        "505": 1
+      },
+      "probes_per_seed": 2,
+      "spread": {
+        "min": 0.5,
+        "max": 0.5,
+        "range": 0.0,
+        "mean": 0.5
+      }
+    },
+    "repeated_task": {
+      "pass_rate_by_seed": {
+        "101": 0.0,
+        "202": 0.0,
+        "303": 0.0,
+        "404": 0.0,
+        "505": 0.0
+      },
+      "passed_by_seed": {
+        "101": 0,
+        "202": 0,
+        "303": 0,
+        "404": 0,
+        "505": 0
+      },
+      "probes_per_seed": 5,
+      "spread": {
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0,
+        "mean": 0.0
+      }
+    },
+    "correction_reuse": {
+      "pass_rate_by_seed": {
+        "101": 0.0,
+        "202": 0.0,
+        "303": 0.0,
+        "404": 0.0,
+        "505": 0.0
+      },
+      "passed_by_seed": {
+        "101": 0,
+        "202": 0,
+        "303": 0,
+        "404": 0,
+        "505": 0
+      },
+      "probes_per_seed": 2,
+      "spread": {
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0,
+        "mean": 0.0
+      }
+    }
+  },
+  "per_scenario": {
+    "dr-0004": {
+      "family": "delayed_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "23:15"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "23:15"
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "23:15"
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "23:15"
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "23:15"
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "23:15"
+          }
+        ]
+      }
+    },
+    "dr-0005": {
+      "family": "delayed_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "9"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "9 days."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "9 days."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "9 days."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "9 days."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "9 days."
+          }
+        ]
+      }
+    },
+    "dr-0006": {
+      "family": "delayed_recall",
+      "probe_results": {
+        "s3t1": {
+          "kind": "contains",
+          "expected": "1866"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze parish bell was recast in 1866."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze parish bell was recast in 1866."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze parish bell was recast in 1866."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze parish bell was recast in 1866."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze parish bell was recast in 1866."
+          }
+        ]
+      }
+    },
+    "dx-0003": {
+      "family": "distractor_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "10"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the first larkhill bus leaves at 10 minutes past the hour."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the first larkhill bus leaves at 10 minutes past the hour."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the first larkhill bus leaves at 10 minutes past the hour."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the first larkhill bus leaves at 10 minutes past the hour."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the first larkhill bus leaves at 10 minutes past the hour."
+          }
+        ]
+      }
+    },
+    "dx-0004": {
+      "family": "distractor_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "wren"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the name of the trainer aircraft of two rivers is the wren."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the name of the trainer aircraft of two rivers is the wren."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the name of the trainer aircraft of two rivers is the wren."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the name of the trainer aircraft of two rivers is the wren."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the name of the trainer aircraft of two rivers is the wren."
+          }
+        ]
+      }
+    },
+    "cu-0003": {
+      "family": "contradiction_update",
+      "probe_results": {
+        "s3t1": {
+          "kind": "contains",
+          "expected": "7"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the bread stall opens at seven."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the bread stall opens at seven."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the bread stall opens at seven."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the bread stall opens at seven."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the bread stall opens at seven."
+          }
+        ]
+      }
+    },
+    "cu-0004": {
+      "family": "contradiction_update",
+      "probe_results": {
+        "s3t1": {
+          "kind": "contains",
+          "expected": "weekend"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the west lift runs on weekends only."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the west lift runs on weekends only."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the west lift runs on weekends only."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the west lift runs on weekends only."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the west lift runs on weekends only."
+          }
+        ]
+      }
+    },
+    "rt-0004": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t2": {
+          "kind": "exact_match",
+          "expected": "data"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "[s1t1|environment] classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'my trip-cost export still shows yesterday's totals even after i refresh the page.' reply with the label only. the ticket is a data issue, so the correct label is \"data\"."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "[s1t1|environment] classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'my trip-cost export still shows yesterday's totals even after i refresh the page.' reply with the label only. the ticket is a data issue, so the correct label is \"data\"."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "[s1t1|environment] classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'my trip-cost export still shows yesterday's totals even after i refresh the page.' reply with the label only. the ticket is a data issue, so the correct label is \"data\"."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "[s1t1|environment] classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'my trip-cost export still shows yesterday's totals even after i refresh the page.' reply with the label only. the ticket is a data issue, so the correct label is \"data\"."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "[s1t1|environment] classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'my trip-cost export still shows yesterday's totals even after i refresh the page.' reply with the label only. the ticket is a data issue, so the correct label is \"data\"."
+          }
+        ]
+      }
+    },
+    "rt-0005": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t2": {
+          "kind": "exact_match",
+          "expected": "account"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "account."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "account."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "account."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "account."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "account."
+          }
+        ]
+      }
+    },
+    "rt-0006": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t2": {
+          "kind": "exact_match",
+          "expected": "perf"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'the route map draws correctly in the end but takes over a minute to appear.' reply with the label only. based on the information provided, the support ticket can be classified as a bug. the ticket mentions that the route map takes a long time to appear, which is a characteristic of a bug. additionally, the ticket does not provide any information about the issue itself, which is a common characteristic of bugs. therefore, the most likely label for this ticket is bug."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'the route map draws correctly in the end but takes over a minute to appear.' reply with the label only. based on the information provided, the support ticket can be classified as a bug. the ticket mentions that the route map takes a long time to appear, which is a characteristic of a bug. additionally, the ticket does not provide any information about the issue itself, which is a common characteristic of bugs. therefore, the most likely label for this ticket is bug."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'the route map draws correctly in the end but takes over a minute to appear.' reply with the label only. based on the information provided, the support ticket can be classified as a bug. the ticket mentions that the route map takes a long time to appear, which is a characteristic of a bug. additionally, the ticket does not provide any information about the issue itself, which is a common characteristic of bugs. therefore, the most likely label for this ticket is bug."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'the route map draws correctly in the end but takes over a minute to appear.' reply with the label only. based on the information provided, the support ticket can be classified as a bug. the ticket mentions that the route map takes a long time to appear, which is a characteristic of a bug. additionally, the ticket does not provide any information about the issue itself, which is a common characteristic of bugs. therefore, the most likely label for this ticket is bug."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "classify this support ticket into exactly one label: billing | bug | account | data. ticket: 'the route map draws correctly in the end but takes over a minute to appear.' reply with the label only. based on the information provided, the support ticket can be classified as a bug. the ticket mentions that the route map takes a long time to appear, which is a characteristic of a bug. additionally, the ticket does not provide any information about the issue itself, which is a common characteristic of bugs. therefore, the most likely label for this ticket is bug."
+          }
+        ]
+      }
+    },
+    "rt-0007": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t2": {
+          "kind": "exact_match",
+          "expected": "data"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the ticket is a billing issue."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the ticket is a billing issue."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the ticket is a billing issue."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the ticket is a billing issue."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "the ticket is a billing issue."
+          }
+        ]
+      }
+    },
+    "rt-0008": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t2": {
+          "kind": "exact_match",
+          "expected": "billing"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "understood. i will classify this ticket as billing."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "understood. i will classify this ticket as billing."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "understood. i will classify this ticket as billing."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "understood. i will classify this ticket as billing."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "understood. i will classify this ticket as billing."
+          }
+        ]
+      }
+    },
+    "cr-0001": {
+      "family": "correction_reuse",
+      "probe_results": {
+        "s2t2": {
+          "kind": "exact_match",
+          "expected": "quarterly"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier."
+          }
+        ]
+      }
+    },
+    "cr-0002": {
+      "family": "correction_reuse",
+      "probe_results": {
+        "s2t2": {
+          "kind": "exact_match",
+          "expected": "transit"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "101": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "merlin, a private motor yacht visiting for the weekend, no passengers for hire, is a transit vessel."
+          }
+        ],
+        "202": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "merlin, a private motor yacht visiting for the weekend, no passengers for hire, is a transit vessel."
+          }
+        ],
+        "303": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "merlin, a private motor yacht visiting for the weekend, no passengers for hire, is a transit vessel."
+          }
+        ],
+        "404": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "merlin, a private motor yacht visiting for the weekend, no passengers for hire, is a transit vessel."
+          }
+        ],
+        "505": [
+          {
+            "turn_ref": "s2t2",
+            "passed": false,
+            "observed_normalized": "merlin, a private motor yacht visiting for the weekend, no passengers for hire, is a transit vessel."
+          }
+        ]
+      }
+    }
+  },
+  "request_stats": {
+    "count": 225,
+    "latency_ms": {
+      "mean": 539.3,
+      "median": 391.6,
+      "p90": 1430.7,
+      "p95": 1485.5,
+      "min": 79.9,
+      "max": 2626.7
+    },
+    "tokens": {
+      "prompt_sum": 146820,
+      "eval_sum": 5500,
+      "total_sum": 152320,
+      "prompt_mean": 652.5,
+      "eval_mean": 24.4
+    }
+  },
+  "memory_stats": [
+    {
+      "seed": 101,
+      "appended_events": 90,
+      "injected_episodes_by_scenario": {
+        "dr-0004": 2,
+        "dr-0005": 2,
+        "dr-0006": 3,
+        "dx-0003": 2,
+        "dx-0004": 2,
+        "cu-0003": 6,
+        "cu-0004": 6,
+        "rt-0004": 2,
+        "rt-0005": 3,
+        "rt-0006": 2,
+        "rt-0007": 2,
+        "rt-0008": 3,
+        "cr-0001": 4,
+        "cr-0002": 2
+      }
+    },
+    {
+      "seed": 202,
+      "appended_events": 90,
+      "injected_episodes_by_scenario": {
+        "dr-0004": 2,
+        "dr-0005": 2,
+        "dr-0006": 3,
+        "dx-0003": 2,
+        "dx-0004": 2,
+        "cu-0003": 6,
+        "cu-0004": 6,
+        "rt-0004": 2,
+        "rt-0005": 3,
+        "rt-0006": 2,
+        "rt-0007": 2,
+        "rt-0008": 3,
+        "cr-0001": 4,
+        "cr-0002": 2
+      }
+    },
+    {
+      "seed": 303,
+      "appended_events": 90,
+      "injected_episodes_by_scenario": {
+        "dr-0004": 2,
+        "dr-0005": 2,
+        "dr-0006": 3,
+        "dx-0003": 2,
+        "dx-0004": 2,
+        "cu-0003": 6,
+        "cu-0004": 6,
+        "rt-0004": 2,
+        "rt-0005": 3,
+        "rt-0006": 2,
+        "rt-0007": 2,
+        "rt-0008": 3,
+        "cr-0001": 4,
+        "cr-0002": 2
+      }
+    },
+    {
+      "seed": 404,
+      "appended_events": 90,
+      "injected_episodes_by_scenario": {
+        "dr-0004": 2,
+        "dr-0005": 2,
+        "dr-0006": 3,
+        "dx-0003": 2,
+        "dx-0004": 2,
+        "cu-0003": 6,
+        "cu-0004": 6,
+        "rt-0004": 2,
+        "rt-0005": 3,
+        "rt-0006": 2,
+        "rt-0007": 2,
+        "rt-0008": 3,
+        "cr-0001": 4,
+        "cr-0002": 2
+      }
+    },
+    {
+      "seed": 505,
+      "appended_events": 90,
+      "injected_episodes_by_scenario": {
+        "dr-0004": 2,
+        "dr-0005": 2,
+        "dr-0006": 3,
+        "dx-0003": 2,
+        "dx-0004": 2,
+        "cu-0003": 6,
+        "cu-0004": 6,
+        "rt-0004": 2,
+        "rt-0005": 3,
+        "rt-0006": 2,
+        "rt-0007": 2,
+        "rt-0008": 3,
+        "cr-0001": 4,
+        "cr-0002": 2
+      }
+    }
+  ]
+}

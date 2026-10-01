@@ -1,0 +1,11 @@
+{
+  "kind": "freeze-verification",
+  "label": "agent-pre-registered, pending owner acceptance",
+  "checked_at_utc": "2026-10-01T23:00:42Z",
+  "git_rev": "4e425ea69f4e430980723175aebb47413d2ab08f",
+  "evaluation_prep_sha256": "d93a1d8e25e6d8b57516240b6c5c0f1553397130655a50dc0175783cc80d5be6",
+  "evaluation_suite_sha256": "2d98f5173ffd2735a4f86fbc0e97c44a4d6de927f2f116a1ff223d8b710ea14e",
+  "calibration_suite_sha256": "3dbc9e23be729dbdd1a7cfb328bba0e4077ed5b027f9672d11cc7ce44b6c14fc",
+  "problems": [],
+  "passed": true
+}

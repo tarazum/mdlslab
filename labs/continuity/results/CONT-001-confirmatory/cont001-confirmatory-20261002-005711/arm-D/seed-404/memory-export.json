@@ -1,0 +1,1775 @@
+{
+  "format": "continuity-memory-export",
+  "version": 1,
+  "exported_utc": "2026-10-01T22:54:00Z",
+  "episode_count": 121,
+  "episodes": [
+    {
+      "id": 1,
+      "created_utc": "2026-10-01T22:52:05Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0004",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You are the duty clerk of Halden Junction station. For the records: the night train to Copperdale departs at 23:15; the staff shuttle runs every 20 minutes; the parcel window closes at ten in the evening. Note the entries in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 2,
+      "created_utc": "2026-10-01T22:52:05Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0004",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "The night train to Copperdale departs at 23:15. The staff shuttle runs every 20 minutes. The parcel window closes at ten in the evening.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 3,
+      "created_utc": "2026-10-01T22:52:05Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0004",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 1) of dr-0004 session 1; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s1t1] You are the duty clerk of Halden Junction station. For the records: the night train to Copperdale departs at 23:15; the staff shuttle runs every 20 minutes; the parcel window closes at ten in the evening. Note the entries in one line.\nYour recorded answers:\n- [s1t1] The night train to Copperdale departs at 23:15. The staff shuttle runs every 20 minutes. The parcel window closes at te\u2026\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          1,
+          2
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0001",
+        "reflection_pass": 1
+      }
+    },
+    {
+      "id": 4,
+      "created_utc": "2026-10-01T22:52:08Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0004",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "A traveler asks, and there is no timetable at hand: at what time does the night train to Copperdale depart? Reply with just the time.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 5,
+      "created_utc": "2026-10-01T22:52:08Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0004",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "The night train to Copperdale departs at 23:15.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 6,
+      "created_utc": "2026-10-01T22:52:08Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0004",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 2) of dr-0004 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] A traveler asks, and there is no timetable at hand: at what time does the night train to Copperdale depart? Reply with just the time.\nYour recorded answers:\n- [s2t1] The night train to Copperdale departs at 23:15.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          4,
+          5
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0002",
+        "reflection_pass": 2
+      }
+    },
+    {
+      "id": 7,
+      "created_utc": "2026-10-01T22:52:10Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0005",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You keep the records of the Ashfall Botanic Garden. Enter three facts: the glasshouse orchid is watered every 9 days; the rose garden is mulched each April; the head gardener is named Iris Veld. Confirm in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 8,
+      "created_utc": "2026-10-01T22:52:10Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0005",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "The glasshouse orchid is watered every 9 days, the rose garden is mulched each April, and the head gardener is named Iris Veld.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 9,
+      "created_utc": "2026-10-01T22:52:10Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0005",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 3) of dr-0005 session 1; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s1t1] You keep the records of the Ashfall Botanic Garden. Enter three facts: the glasshouse orchid is watered every 9 days; the rose garden is mulched each April; the head gardener is named Iris Veld. Confirm in one line.\nYour recorded answers:\n- [s1t1] The glasshouse orchid is watered every 9 days, the rose garden is mulched each April, and the head gardener is named Ir\u2026\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          7,
+          8
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0004",
+        "reflection_pass": 3
+      }
+    },
+    {
+      "id": 10,
+      "created_utc": "2026-10-01T22:52:13Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0005",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "A volunteer asks, and no ledger is at hand: how many days pass between two waterings of the glasshouse orchid? Reply with just the number.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 11,
+      "created_utc": "2026-10-01T22:52:13Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0005",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "9 days.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 12,
+      "created_utc": "2026-10-01T22:52:13Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0005",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 4) of dr-0005 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] A volunteer asks, and no ledger is at hand: how many days pass between two waterings of the glasshouse orchid? Reply with just the number.\nYour recorded answers:\n- [s2t1] 9 days.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          10,
+          11
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0006",
+        "reflection_pass": 4
+      }
+    },
+    {
+      "id": 13,
+      "created_utc": "2026-10-01T22:52:15Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0006",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You are the keeper of the Millbrook parish archive. Record the following: the bronze parish bell was recast in 1866; the almshouse row was built in 1709. Confirm in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 14,
+      "created_utc": "2026-10-01T22:52:15Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0006",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "The bell was recast in 1866 and the almshouse row was built in 1709.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 15,
+      "created_utc": "2026-10-01T22:52:15Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0006",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 5) of dr-0006 session 1; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s1t1] You are the keeper of the Millbrook parish archive. Record the following: the bronze parish bell was recast in 1866; the almshouse row was built in 1709. Confirm in one line.\nYour recorded answers:\n- [s1t1] The bell was recast in 1866 and the almshouse row was built in 1709.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          13,
+          14
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0008",
+        "reflection_pass": 5
+      }
+    },
+    {
+      "id": 16,
+      "created_utc": "2026-10-01T22:52:18Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0006",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "One further entry for the archive: the stone bridge was widened in 1902. Note it in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 17,
+      "created_utc": "2026-10-01T22:52:18Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0006",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "The stone bridge was widened in 1902.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 18,
+      "created_utc": "2026-10-01T22:52:18Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0006",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 6) of dr-0006 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] One further entry for the archive: the stone bridge was widened in 1902. Note it in one line.\nYour recorded answers:\n- [s2t1] The stone bridge was widened in 1902.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          16,
+          17
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0010",
+        "reflection_pass": 6
+      }
+    },
+    {
+      "id": 19,
+      "created_utc": "2026-10-01T22:52:20Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0006",
+      "session": 3,
+      "turn_ref": "s3t1",
+      "role": "environment",
+      "content": "A historian calls, and the catalog is not at hand: in which year was the bronze parish bell recast? Reply with just the year.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 20,
+      "created_utc": "2026-10-01T22:52:20Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0006",
+      "session": 3,
+      "turn_ref": "s3t1",
+      "role": "assistant",
+      "content": "The bronze parish bell was recast in 1866.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 21,
+      "created_utc": "2026-10-01T22:52:20Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dr-0006",
+      "session": 3,
+      "turn_ref": "s3-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 7) of dr-0006 session 3; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s3t1] A historian calls, and the catalog is not at hand: in which year was the bronze parish bell recast? Reply with just the year.\nYour recorded answers:\n- [s3t1] The bronze parish bell was recast in 1866.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          19,
+          20
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0012",
+        "reflection_pass": 7
+      }
+    },
+    {
+      "id": 22,
+      "created_utc": "2026-10-01T22:52:23Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dx-0003",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You dispatch buses at Corbie terminus. Log the departures for the Larkhill route: the first bus leaves at 10 minutes past the hour; the express leaves at 25 minutes to the hour; the night service runs only at midnight. Confirm in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 23,
+      "created_utc": "2026-10-01T22:52:23Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dx-0003",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "The Larkhill route buses depart at 10:00, 10:25, and 23:00.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 24,
+      "created_utc": "2026-10-01T22:52:23Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dx-0003",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 8) of dx-0003 session 1; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s1t1] You dispatch buses at Corbie terminus. Log the departures for the Larkhill route: the first bus leaves at 10 minutes past the hour; the express leaves at 25 minutes to the hour; the night service runs only at midnight. Confirm in one line.\nYour recorded answers:\n- [s1t1] The Larkhill route buses depart at 10:00, 10:25, and 23:00.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          22,
+          23
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0014",
+        "reflection_pass": 8
+      }
+    },
+    {
+      "id": 25,
+      "created_utc": "2026-10-01T22:52:25Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dx-0003",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "A passenger asks, and there is no timetable in front of you: at how many minutes past the hour does the first Larkhill bus leave? Reply with just the number.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 26,
+      "created_utc": "2026-10-01T22:52:25Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dx-0003",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "The first Larkhill bus leaves at 10 minutes past the hour.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 27,
+      "created_utc": "2026-10-01T22:52:25Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dx-0003",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 9) of dx-0003 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] A passenger asks, and there is no timetable in front of you: at how many minutes past the hour does the first Larkhill bus leave? Reply with just the number.\nYour recorded answers:\n- [s2t1] The first Larkhill bus leaves at 10 minutes past the hour.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          25,
+          26
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0015",
+        "reflection_pass": 9
+      }
+    },
+    {
+      "id": 28,
+      "created_utc": "2026-10-01T22:52:28Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dx-0004",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You keep the light aircraft registry of Two Rivers field. Enter the following: the trainer aircraft of Two Rivers is called the Wren; the glider of Two Rivers is called the Kite; the medical aircraft of Netherby is called the Swift. Confirm in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 29,
+      "created_utc": "2026-10-01T22:52:28Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dx-0004",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "The Wren is the trainer aircraft of Two Rivers, the Kite is the glider of Two Rivers, and the Swift is the medical aircraft of Netherby.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 30,
+      "created_utc": "2026-10-01T22:52:28Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dx-0004",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 10) of dx-0004 session 1; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s1t1] You keep the light aircraft registry of Two Rivers field. Enter the following: the trainer aircraft of Two Rivers is called the Wren; the glider of Two Rivers is called the Kite; the medical aircraft of Netherby is called the Swift. Confirm in one line.\nYour recorded answers:\n- [s1t1] The Wren is the trainer aircraft of Two Rivers, the Kite is the glider of Two Rivers, and the Swift is the medical airc\u2026\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          28,
+          29
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0017",
+        "reflection_pass": 10
+      }
+    },
+    {
+      "id": 31,
+      "created_utc": "2026-10-01T22:52:31Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dx-0004",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "A pilot radios in, and the registry book is not at hand: what is the name of the trainer aircraft of Two Rivers? Reply with just the name.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 32,
+      "created_utc": "2026-10-01T22:52:31Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dx-0004",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "The name of the trainer aircraft of Two Rivers is the Wren.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 33,
+      "created_utc": "2026-10-01T22:52:31Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "dx-0004",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 11) of dx-0004 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] A pilot radios in, and the registry book is not at hand: what is the name of the trainer aircraft of Two Rivers? Reply with just the name.\nYour recorded answers:\n- [s2t1] The name of the trainer aircraft of Two Rivers is the Wren.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          31,
+          32
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0019",
+        "reflection_pass": 11
+      }
+    },
+    {
+      "id": 34,
+      "created_utc": "2026-10-01T22:52:33Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0003",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You are the market clerk of Elmwick. For the records: the fish stall opens at five in the morning; the bread stall opens at six. Confirm in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 35,
+      "created_utc": "2026-10-01T22:52:33Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0003",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "The fish stall opens at five in the morning; the bread stall opens at six.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 36,
+      "created_utc": "2026-10-01T22:52:33Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0003",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 12) of cu-0003 session 1; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s1t1] You are the market clerk of Elmwick. For the records: the fish stall opens at five in the morning; the bread stall opens at six. Confirm in one line.\nYour recorded answers:\n- [s1t1] The fish stall opens at five in the morning; the bread stall opens at six.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          34,
+          35
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0021",
+        "reflection_pass": 12
+      }
+    },
+    {
+      "id": 37,
+      "created_utc": "2026-10-01T22:52:35Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0003",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "Correction for your records: after new bakers took over, the bread stall now opens at seven, not six. Note the correction in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 38,
+      "created_utc": "2026-10-01T22:52:35Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0003",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "The bread stall now opens at seven, not six.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 39,
+      "created_utc": "2026-10-01T22:52:35Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0003",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 13) of cu-0003 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] Correction for your records: after new bakers took over, the bread stall now opens at seven, not six. Note the correction in one line.\nYour recorded answers:\n- [s2t1] The bread stall now opens at seven, not six.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          37,
+          38
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0022",
+        "reflection_pass": 13
+      }
+    },
+    {
+      "id": 40,
+      "created_utc": "2026-10-01T22:52:38Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0003",
+      "session": 3,
+      "turn_ref": "s3t1",
+      "role": "environment",
+      "content": "A visitor asks, and no papers are at hand: at what hour does the bread stall open? Reply with just the number.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 41,
+      "created_utc": "2026-10-01T22:52:38Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0003",
+      "session": 3,
+      "turn_ref": "s3t1",
+      "role": "assistant",
+      "content": "The bread stall opens at seven.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 42,
+      "created_utc": "2026-10-01T22:52:38Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0003",
+      "session": 3,
+      "turn_ref": "s3-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 14) of cu-0003 session 3; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s3t1] A visitor asks, and no papers are at hand: at what hour does the bread stall open? Reply with just the number.\nYour recorded answers:\n- [s3t1] The bread stall opens at seven.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          40,
+          41
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0023",
+        "reflection_pass": 14
+      }
+    },
+    {
+      "id": 43,
+      "created_utc": "2026-10-01T22:52:40Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0004",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You maintain the ski-lift register for Bracken Ridge. Record the following: the east lift runs on weekends; the west lift runs daily. Confirm in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 44,
+      "created_utc": "2026-10-01T22:52:40Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0004",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "The east lift runs on weekends and the west lift runs daily.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 45,
+      "created_utc": "2026-10-01T22:52:40Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0004",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 15) of cu-0004 session 1; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s1t1] You maintain the ski-lift register for Bracken Ridge. Record the following: the east lift runs on weekends; the west lift runs daily. Confirm in one line.\nYour recorded answers:\n- [s1t1] The east lift runs on weekends and the west lift runs daily.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          43,
+          44
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0026",
+        "reflection_pass": 15
+      }
+    },
+    {
+      "id": 46,
+      "created_utc": "2026-10-01T22:52:43Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0004",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "Register update: after the maintenance round, the west lift now runs on weekends only, not daily. Note the update in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 47,
+      "created_utc": "2026-10-01T22:52:43Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0004",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "The west lift now runs on weekends only, not daily.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 48,
+      "created_utc": "2026-10-01T22:52:43Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0004",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 16) of cu-0004 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] Register update: after the maintenance round, the west lift now runs on weekends only, not daily. Note the update in one line.\nYour recorded answers:\n- [s2t1] The west lift now runs on weekends only, not daily.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          46,
+          47
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0028",
+        "reflection_pass": 16
+      }
+    },
+    {
+      "id": 49,
+      "created_utc": "2026-10-01T22:52:45Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0004",
+      "session": 3,
+      "turn_ref": "s3t1",
+      "role": "environment",
+      "content": "A guest asks, and the register is not at hand: on which days does the west lift run? Reply with one word.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 50,
+      "created_utc": "2026-10-01T22:52:45Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0004",
+      "session": 3,
+      "turn_ref": "s3t1",
+      "role": "assistant",
+      "content": "The west lift runs on weekends only.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 51,
+      "created_utc": "2026-10-01T22:52:45Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cu-0004",
+      "session": 3,
+      "turn_ref": "s3-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 17) of cu-0004 session 3; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s3t1] A guest asks, and the register is not at hand: on which days does the west lift run? Reply with one word.\nYour recorded answers:\n- [s3t1] The west lift runs on weekends only.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          49,
+          50
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0030",
+        "reflection_pass": 17
+      }
+    },
+    {
+      "id": 52,
+      "created_utc": "2026-10-01T22:52:47Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0004",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "Classify this support ticket into exactly one label: billing | bug | account | data. Ticket: 'The Fieldtrip app freezes completely whenever I open the attendance grid.' Reply with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 53,
+      "created_utc": "2026-10-01T22:52:47Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0004",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "bug\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 54,
+      "created_utc": "2026-10-01T22:52:49Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0004",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "environment",
+      "content": "For the desk records, the labeling rubric: freezes, crashes, and unresponsive screens are bug; charges, refunds, and invoices are billing; login and access problems are account; stale or missing content inside reports and exports is data, because it traces to the sync pipeline - do not use bug for exports that work but show old figures. Note the rubric in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 55,
+      "created_utc": "2026-10-01T22:52:49Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0004",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "assistant",
+      "content": "bug\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 56,
+      "created_utc": "2026-10-01T22:52:49Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0004",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 18) of rt-0004 session 1; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s1t1] Classify this support ticket into exactly one label: billing | bug | account | data. Ticket: 'The Fieldtrip app freezes completely whenever I open the attendance grid.' Reply with the label only.\n- [s1t2] For the desk records, the labeling rubric: freezes, crashes, and unresponsive screens are bug; charges, refunds, and invoices are billing; login and access problems are account; stale or missing content inside reports and exports is data, because it traces to the sync pipeline - do not use bug for exports that work but show old figures. Note the rubric in one line.\nYour recorded answers:\n- [s1t1] bug\n- [s1t2] bug\nConflict review:\n- your answer at s1t1 ('bug') is followed by the corrective record at s1t2 ('For the desk records, the labeling rubric: freezes, crashes, and unresponsive screens are bug; charges, refunds, and invoices are billing; login and access problems are account; stale or missing cont\u2026'); when they disagree, the later corrective record is authoritative.",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [
+          "your answer at s1t1 ('bug') is followed by the corrective record at s1t2 ('For the desk records, the labeling rubric: freezes, crashes, and unresponsive screens are bug; charges, refunds, and invoices are billing; login and access problems are account; stale or missing cont\u2026'); when they disagree, the later corrective record is authoritative."
+        ],
+        "evidence_episode_ids": [
+          52,
+          53,
+          54,
+          55
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0032",
+        "reflection_pass": 18
+      }
+    },
+    {
+      "id": 57,
+      "created_utc": "2026-10-01T22:52:52Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0004",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "New shift at the help desk. The ticket queue is open; the standing rubric applies. Confirm in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 58,
+      "created_utc": "2026-10-01T22:52:52Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0004",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "Understood. I will confirm the ticket queue status and the standing rubric in one line.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 59,
+      "created_utc": "2026-10-01T22:52:55Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0004",
+      "session": 2,
+      "turn_ref": "s2t2",
+      "role": "environment",
+      "content": "Classify this support ticket. The desk notes are not at hand. Ticket: 'My trip-cost export still shows yesterday's totals even after I refresh the page.' Reply with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 60,
+      "created_utc": "2026-10-01T22:52:55Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0004",
+      "session": 2,
+      "turn_ref": "s2t2",
+      "role": "assistant",
+      "content": "Understood. I will classify the support ticket into one of the following labels: billing, bug, account, data. Based on the information provided, I will reply with the label only.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 61,
+      "created_utc": "2026-10-01T22:52:55Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0004",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 19) of rt-0004 session 2; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s2t1] New shift at the help desk. The ticket queue is open; the standing rubric applies. Confirm in one line.\n- [s2t2] Classify this support ticket. The desk notes are not at hand. Ticket: 'My trip-cost export still shows yesterday's totals even after I refresh the page.' Reply with the label only.\nYour recorded answers:\n- [s2t1] Understood. I will confirm the ticket queue status and the standing rubric in one line.\n- [s2t2] Understood. I will classify the support ticket into one of the following labels: billing, bug, account, data. Based on \u2026\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          57,
+          58,
+          59,
+          60
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0033",
+        "reflection_pass": 19
+      }
+    },
+    {
+      "id": 62,
+      "created_utc": "2026-10-01T22:52:57Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0005",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "Classify this support ticket into exactly one label: billing | bug | account | data. Ticket: 'I was charged twice for the overnight-stay fee on our class trip.' Reply with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 63,
+      "created_utc": "2026-10-01T22:52:57Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0005",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "bug\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 64,
+      "created_utc": "2026-10-01T22:52:59Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0005",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "environment",
+      "content": "For the desk records, the queue convention: duplicate charges, refunds, and invoice problems are billing; adding or removing adult supervisors on a trip is account, because roster seats are access permissions - adding a supervisor stays account even when the school office also sends an invoice for it; crashes and freezes are bug; stale content is data. Note the convention in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 65,
+      "created_utc": "2026-10-01T22:52:59Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0005",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "assistant",
+      "content": "Understood. I will classify the support ticket into one of the following labels: billing, bug, account, data. Based on the information provided, I will reply with the label only.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 66,
+      "created_utc": "2026-10-01T22:52:59Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0005",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 20) of rt-0005 session 1; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s1t1] Classify this support ticket into exactly one label: billing | bug | account | data. Ticket: 'I was charged twice for the overnight-stay fee on our class trip.' Reply with the label only.\n- [s1t2] For the desk records, the queue convention: duplicate charges, refunds, and invoice problems are billing; adding or removing adult supervisors on a trip is account, because roster seats are access permissions - adding a supervisor stays account even when the school office also sends an invoice for it; crashes and freezes are bug; stale content is data. Note the convention in one line.\nYour recorded answers:\n- [s1t1] bug\n- [s1t2] Understood. I will classify the support ticket into one of the following labels: billing, bug, account, data. Based on \u2026\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          62,
+          63,
+          64,
+          65
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0036",
+        "reflection_pass": 20
+      }
+    },
+    {
+      "id": 67,
+      "created_utc": "2026-10-01T22:53:03Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0005",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "Second shift begins. The ticket queue is open; the queue convention from the standing rubric applies. Confirm in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 68,
+      "created_utc": "2026-10-01T22:53:03Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0005",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "Understood. I will classify the support ticket into one of the following labels: billing, bug, account, data. Based on the information provided, I will reply with the label only.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 69,
+      "created_utc": "2026-10-01T22:53:06Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0005",
+      "session": 2,
+      "turn_ref": "s2t2",
+      "role": "environment",
+      "content": "Classify this support ticket. The desk notes are not at hand. Ticket: 'Please add one more teacher to our trip roster with the same permissions as the other supervisors; the office will invoice us next month as usual.' Reply with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 70,
+      "created_utc": "2026-10-01T22:53:06Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0005",
+      "session": 2,
+      "turn_ref": "s2t2",
+      "role": "assistant",
+      "content": "Understood. I will classify the support ticket into one of the following labels: billing, bug, account, data. Based on the information provided, I will reply with the label only.\n\n\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 71,
+      "created_utc": "2026-10-01T22:53:06Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0005",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 21) of rt-0005 session 2; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s2t1] Second shift begins. The ticket queue is open; the queue convention from the standing rubric applies. Confirm in one line.\n- [s2t2] Classify this support ticket. The desk notes are not at hand. Ticket: 'Please add one more teacher to our trip roster with the same permissions as the other supervisors; the office will invoice us next month as usual.' Reply with the label only.\nYour recorded answers:\n- [s2t1] Understood. I will classify the support ticket into one of the following labels: billing, bug, account, data. Based on \u2026\n- [s2t2] Understood. I will classify the support ticket into one of the following labels: billing, bug, account, data. Based on \u2026\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          67,
+          68,
+          69,
+          70
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0038",
+        "reflection_pass": 21
+      }
+    },
+    {
+      "id": 72,
+      "created_utc": "2026-10-01T22:53:08Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0006",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "Classify this support ticket into exactly one label: billing | bug | account | data. Ticket: 'The packing checklist takes nearly two minutes to load every morning, but it always loads in the end.' Reply with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 73,
+      "created_utc": "2026-10-01T22:53:08Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0006",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "The support ticket can be classified as a bug.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 74,
+      "created_utc": "2026-10-01T22:53:11Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0006",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "environment",
+      "content": "For the desk records, the labeling rubric: crashes, freezes, and wrong outputs are bug; charges and invoices are billing; login and access problems are account; stale content is data. Additionally, slow-but-working behavior gets the label perf - do not use bug when the feature works and is merely slow. Note the rubric in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 75,
+      "created_utc": "2026-10-01T22:53:11Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0006",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "assistant",
+      "content": "The labeling rubric for the desk records is: crashes, freezes, and wrong outputs are bugs; charges and invoices are billing; login and access problems are accounts; stale content is data. Slow-but-working behavior gets the label perf - do not use bug when the feature works and is merely slow.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 76,
+      "created_utc": "2026-10-01T22:53:11Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0006",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 22) of rt-0006 session 1; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s1t1] Classify this support ticket into exactly one label: billing | bug | account | data. Ticket: 'The packing checklist takes nearly two minutes to load every morning, but it always loads in the end.' Reply with the label only.\n- [s1t2] For the desk records, the labeling rubric: crashes, freezes, and wrong outputs are bug; charges and invoices are billing; login and access problems are account; stale content is data. Additionally, slow-but-working behavior gets the label perf - do not use bug when the feature works and is merely slow. Note the rubric in one line.\nYour recorded answers:\n- [s1t1] The support ticket can be classified as a bug.\n- [s1t2] The labeling rubric for the desk records is: crashes, freezes, and wrong outputs are bugs; charges and invoices are bil\u2026\nConflict review:\n- your answer at s1t1 ('The support ticket can be classified as a bug.') is followed by the corrective record at s1t2 ('Additionally, slow-but-working behavior gets the label perf - do not use bug when the feature works and is merely slow'); \u2026(truncated)",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [
+          "your answer at s1t1 ('The support ticket can be classified as a bug.') is followed by the corrective record at s1t2 ('Additionally, slow-but-working behavior gets the label perf - do not use bug when the feature works and is merely slow'); when they disagree, the later corrective record is authoritative."
+        ],
+        "evidence_episode_ids": [
+          72,
+          73,
+          74,
+          75
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0041",
+        "reflection_pass": 22
+      }
+    },
+    {
+      "id": 77,
+      "created_utc": "2026-10-01T22:53:14Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0006",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "New shift at the help desk. The ticket queue is open; the standing rubric applies. Confirm in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 78,
+      "created_utc": "2026-10-01T22:53:14Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0006",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "The standing rubric applies.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 79,
+      "created_utc": "2026-10-01T22:53:16Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0006",
+      "session": 2,
+      "turn_ref": "s2t2",
+      "role": "environment",
+      "content": "Classify this support ticket. The desk notes are not at hand. Ticket: 'The route map draws correctly in the end but takes over a minute to appear.' Reply with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 80,
+      "created_utc": "2026-10-01T22:53:16Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0006",
+      "session": 2,
+      "turn_ref": "s2t2",
+      "role": "assistant",
+      "content": "The support ticket can be classified as a bug.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 81,
+      "created_utc": "2026-10-01T22:53:16Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0006",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 23) of rt-0006 session 2; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s2t1] New shift at the help desk. The ticket queue is open; the standing rubric applies. Confirm in one line.\n- [s2t2] Classify this support ticket. The desk notes are not at hand. Ticket: 'The route map draws correctly in the end but takes over a minute to appear.' Reply with the label only.\nYour recorded answers:\n- [s2t1] The standing rubric applies.\n- [s2t2] The support ticket can be classified as a bug.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          77,
+          78,
+          79,
+          80
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0043",
+        "reflection_pass": 23
+      }
+    },
+    {
+      "id": 82,
+      "created_utc": "2026-10-01T22:53:19Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0007",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "Classify this support ticket into exactly one label: billing | bug | account | data. Ticket: 'None of the photos from yesterday's museum visit appear in the shared album, though the album itself opens fine.' Reply with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 83,
+      "created_utc": "2026-10-01T22:53:19Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0007",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "The support ticket can be classified as a bug.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 84,
+      "created_utc": "2026-10-01T22:53:21Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0007",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "environment",
+      "content": "For the desk records, the labeling rubric: missing or stale content inside a feature that otherwise works is data, a sync-pipeline issue; broken buttons, freezes, and crashes are bug; payments are billing; logins are account. Note the rubric in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 85,
+      "created_utc": "2026-10-01T22:53:21Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0007",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "assistant",
+      "content": "The support ticket can be classified as a bug.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 86,
+      "created_utc": "2026-10-01T22:53:21Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0007",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 24) of rt-0007 session 1; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s1t1] Classify this support ticket into exactly one label: billing | bug | account | data. Ticket: 'None of the photos from yesterday's museum visit appear in the shared album, though the album itself opens fine.' Reply with the label only.\n- [s1t2] For the desk records, the labeling rubric: missing or stale content inside a feature that otherwise works is data, a sync-pipeline issue; broken buttons, freezes, and crashes are bug; payments are billing; logins are account. Note the rubric in one line.\nYour recorded answers:\n- [s1t1] The support ticket can be classified as a bug.\n- [s1t2] The support ticket can be classified as a bug.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          82,
+          83,
+          84,
+          85
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0046",
+        "reflection_pass": 24
+      }
+    },
+    {
+      "id": 87,
+      "created_utc": "2026-10-01T22:53:24Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0007",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "Evening shift at the help desk. The ticket queue is open; the standing rubric applies. Confirm in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 88,
+      "created_utc": "2026-10-01T22:53:24Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0007",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "Evening shift at the help desk. The ticket queue is open; the standing rubric applies. Confirm in one line.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 89,
+      "created_utc": "2026-10-01T22:53:27Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0007",
+      "session": 2,
+      "turn_ref": "s2t2",
+      "role": "environment",
+      "content": "Classify this support ticket. The desk notes are not at hand. Ticket: 'The shared packing list still shows the sleeping-bag items I deleted two days ago.' Reply with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 90,
+      "created_utc": "2026-10-01T22:53:27Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0007",
+      "session": 2,
+      "turn_ref": "s2t2",
+      "role": "assistant",
+      "content": "Classify this support ticket. The desk notes are not at hand. Ticket: 'The shared packing list still shows the sleeping-bag items I deleted two days ago.' Reply with the label only.\n\n\nThe support ticket can be classified as a bug.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 91,
+      "created_utc": "2026-10-01T22:53:27Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0007",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 25) of rt-0007 session 2; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s2t1] Evening shift at the help desk. The ticket queue is open; the standing rubric applies. Confirm in one line.\n- [s2t2] Classify this support ticket. The desk notes are not at hand. Ticket: 'The shared packing list still shows the sleeping-bag items I deleted two days ago.' Reply with the label only.\nYour recorded answers:\n- [s2t1] Evening shift at the help desk. The ticket queue is open; the standing rubric applies. Confirm in one line.\n- [s2t2] Classify this support ticket. The desk notes are not at hand. Ticket: 'The shared packing list still shows the sleeping\u2026\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          87,
+          88,
+          89,
+          90
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0048",
+        "reflection_pass": 25
+      }
+    },
+    {
+      "id": 92,
+      "created_utc": "2026-10-01T22:53:29Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0008",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "Classify this support ticket into exactly one label: billing | bug | account | data. Ticket: 'My card was declined when I tried to pay the bus deposit.' Reply with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 93,
+      "created_utc": "2026-10-01T22:53:29Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0008",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "The support ticket can be classified as a billing issue.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 94,
+      "created_utc": "2026-10-01T22:53:32Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0008",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "environment",
+      "content": "For the desk records, the queue convention: declined payments, duplicate charges, and refunds are billing; transferring a trip to a different teacher's login is account, because ownership is an access question - payment problems that arise during such a transfer are still billing; freezes are bug; stale content is data. Note the convention in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 95,
+      "created_utc": "2026-10-01T22:53:32Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0008",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "assistant",
+      "content": "The support ticket can be classified as a billing issue.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 96,
+      "created_utc": "2026-10-01T22:53:32Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0008",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 26) of rt-0008 session 1; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s1t1] Classify this support ticket into exactly one label: billing | bug | account | data. Ticket: 'My card was declined when I tried to pay the bus deposit.' Reply with the label only.\n- [s1t2] For the desk records, the queue convention: declined payments, duplicate charges, and refunds are billing; transferring a trip to a different teacher's login is account, because ownership is an access question - payment problems that arise during such a transfer are still billing; freezes are bug; stale content is data. Note the convention in one line.\nYour recorded answers:\n- [s1t1] The support ticket can be classified as a billing issue.\n- [s1t2] The support ticket can be classified as a billing issue.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          92,
+          93,
+          94,
+          95
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0051",
+        "reflection_pass": 26
+      }
+    },
+    {
+      "id": 97,
+      "created_utc": "2026-10-01T22:53:34Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0008",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "Morning shift at the help desk. The ticket queue is open; the standing rubric applies. Confirm in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 98,
+      "created_utc": "2026-10-01T22:53:34Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0008",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "The support ticket can be classified as a billing issue.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 99,
+      "created_utc": "2026-10-01T22:53:36Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0008",
+      "session": 2,
+      "turn_ref": "s2t2",
+      "role": "environment",
+      "content": "Classify this support ticket. The desk notes are not at hand. Ticket: 'While moving our trip to the new teacher's login the card fee was charged twice; please fix the charge.' Reply with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 100,
+      "created_utc": "2026-10-01T22:53:36Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0008",
+      "session": 2,
+      "turn_ref": "s2t2",
+      "role": "assistant",
+      "content": "The support ticket can be classified as a billing issue.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 101,
+      "created_utc": "2026-10-01T22:53:36Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "rt-0008",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 27) of rt-0008 session 2; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s2t1] Morning shift at the help desk. The ticket queue is open; the standing rubric applies. Confirm in one line.\n- [s2t2] Classify this support ticket. The desk notes are not at hand. Ticket: 'While moving our trip to the new teacher's login the card fee was charged twice; please fix the charge.' Reply with the label only.\nYour recorded answers:\n- [s2t1] The support ticket can be classified as a billing issue.\n- [s2t2] The support ticket can be classified as a billing issue.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          97,
+          98,
+          99,
+          100
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0053",
+        "reflection_pass": 27
+      }
+    },
+    {
+      "id": 102,
+      "created_utc": "2026-10-01T22:53:39Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0001",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "As the harbor office clerk of Skelmor, assign this vessel to exactly one inspection tier: annual | biennial | quarterly. Vessel: 'Gannet, a fishing boat with refrigerated holds.' Reply with the tier only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 103,
+      "created_utc": "2026-10-01T22:53:39Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0001",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "Gannet, a fishing boat with refrigerated holds, is assigned to the biennial inspection tier.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 104,
+      "created_utc": "2026-10-01T22:53:43Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0001",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "environment",
+      "content": "For your records, a correction to your last assignment: vessels with refrigerated holds carry perishable cargo and are always quarterly, not annual or biennial; only dry-cargo boats without refrigeration are biennial; passenger ferries are annual. Note the correction in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 105,
+      "created_utc": "2026-10-01T22:53:43Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0001",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "assistant",
+      "content": "Gannet, a fishing boat with refrigerated holds, is assigned to the biennial inspection tier.\n\nNote: The vessel Gannet, a fishing boat with refrigerated holds, is assigned to the biennial inspection tier. This is due to the fact that vessels with refrigerated holds carry perishable cargo and are always quarterly, not annual or biennial. Only dry-cargo boats without refrigeration are biennial; passenger ferries are annual.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 106,
+      "created_utc": "2026-10-01T22:53:43Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0001",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 28) of cr-0001 session 1; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s1t1] As the harbor office clerk of Skelmor, assign this vessel to exactly one inspection tier: annual | biennial | quarterly. Vessel: 'Gannet, a fishing boat with refrigerated holds.' Reply with the tier only.\n- [s1t2] For your records, a correction to your last assignment: vessels with refrigerated holds carry perishable cargo and are always quarterly, not annual or biennial; only dry-cargo boats without refrigeration are biennial; passenger ferries are annual. Note the correction in one line.\nYour recorded answers:\n- [s1t1] Gannet, a fishing boat with refrigerated holds, is assigned to the biennial inspection tier.\n- [s1t2] Gannet, a fishing boat with refrigerated holds, is assigned to the biennial inspection tier. Note: The vessel Gannet, a\u2026\nConflict review:\n- your answer at s1t1 ('Gannet, a fishing boat with refrigerated holds, is assigned to the biennial ins\u2026') is followed by the corrective record at s1t2 ('For your records, a correction to your last assignment: vessels with refrigerated holds carry perishable cargo an\u2026(truncated)",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [
+          "your answer at s1t1 ('Gannet, a fishing boat with refrigerated holds, is assigned to the biennial ins\u2026') is followed by the corrective record at s1t2 ('For your records, a correction to your last assignment: vessels with refrigerated holds carry perishable cargo and are always quarterly, not annual or biennial; only dry-cargo boats without refrigera\u2026'); when they disagree, the later corrective record is authoritative."
+        ],
+        "evidence_episode_ids": [
+          102,
+          103,
+          104,
+          105
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0056",
+        "reflection_pass": 28
+      }
+    },
+    {
+      "id": 107,
+      "created_utc": "2026-10-01T22:53:46Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0001",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "Morning shift at the harbor office. The standing inspection rules apply today. Confirm in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 108,
+      "created_utc": "2026-10-01T22:53:46Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0001",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "As the harbor office clerk of Skelmor, today's standing inspection rules apply.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 109,
+      "created_utc": "2026-10-01T22:53:48Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0001",
+      "session": 2,
+      "turn_ref": "s2t2",
+      "role": "environment",
+      "content": "Assign this vessel to its inspection tier; the tariff book is not at hand. Vessel: 'Curlew, a trawler with refrigerated fish holds.' Reply with the tier only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 110,
+      "created_utc": "2026-10-01T22:53:48Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0001",
+      "session": 2,
+      "turn_ref": "s2t2",
+      "role": "assistant",
+      "content": "Curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 111,
+      "created_utc": "2026-10-01T22:53:48Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0001",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 29) of cr-0001 session 2; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s2t1] Morning shift at the harbor office. The standing inspection rules apply today. Confirm in one line.\n- [s2t2] Assign this vessel to its inspection tier; the tariff book is not at hand. Vessel: 'Curlew, a trawler with refrigerated fish holds.' Reply with the tier only.\nYour recorded answers:\n- [s2t1] As the harbor office clerk of Skelmor, today's standing inspection rules apply.\n- [s2t2] Curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          107,
+          108,
+          109,
+          110
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0057",
+        "reflection_pass": 29
+      }
+    },
+    {
+      "id": 112,
+      "created_utc": "2026-10-01T22:53:50Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0002",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "As the dock office clerk of Port Ellin, assign this berth request to exactly one fee class: resident | transit | commercial. Request: 'Kestrel, a charter yacht taking paying guests on day sails.' Reply with the class only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 113,
+      "created_utc": "2026-10-01T22:53:50Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0002",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "The request is for a commercial berth.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 114,
+      "created_utc": "2026-10-01T22:53:53Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0002",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "environment",
+      "content": "For your records, a correction to your last assignment: vessels carrying paying passengers are always commercial, not transit or resident; private visiting yachts without paying passengers are transit; boats licensed to local operators are resident. Note the correction in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 115,
+      "created_utc": "2026-10-01T22:53:53Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0002",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "assistant",
+      "content": "Corrected.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 116,
+      "created_utc": "2026-10-01T22:53:53Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0002",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 30) of cr-0002 session 1; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s1t1] As the dock office clerk of Port Ellin, assign this berth request to exactly one fee class: resident | transit | commercial. Request: 'Kestrel, a charter yacht taking paying guests on day sails.' Reply with the class only.\n- [s1t2] For your records, a correction to your last assignment: vessels carrying paying passengers are always commercial, not transit or resident; private visiting yachts without paying passengers are transit; boats licensed to local operators are resident. Note the correction in one line.\nYour recorded answers:\n- [s1t1] The request is for a commercial berth.\n- [s1t2] Corrected.\nConflict review:\n- your answer at s1t1 ('The request is for a commercial berth.') is followed by the corrective record at s1t2 ('For your records, a correction to your last assignment: vessels carrying paying passengers are always commercial, not transit or resident; private visiting yachts without paying passengers are transi\u2026'); when they disagree, the later corrective record is authoritative.",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [
+          "your answer at s1t1 ('The request is for a commercial berth.') is followed by the corrective record at s1t2 ('For your records, a correction to your last assignment: vessels carrying paying passengers are always commercial, not transit or resident; private visiting yachts without paying passengers are transi\u2026'); when they disagree, the later corrective record is authoritative."
+        ],
+        "evidence_episode_ids": [
+          112,
+          113,
+          114,
+          115
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0060",
+        "reflection_pass": 30
+      }
+    },
+    {
+      "id": 117,
+      "created_utc": "2026-10-01T22:53:56Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0002",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "Afternoon shift at the dock office. The standing fee-class rules apply. Confirm in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 118,
+      "created_utc": "2026-10-01T22:53:56Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0002",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "As the dock office clerk of Port Ellin, assign this berth request to exactly one fee class: resident | transit | commercial. Request: 'Kestrel, a charter yacht taking paying guests on day sails.' Reply with the class only.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 119,
+      "created_utc": "2026-10-01T22:53:58Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0002",
+      "session": 2,
+      "turn_ref": "s2t2",
+      "role": "environment",
+      "content": "Assign this berth request to its fee class; the harbor register is not at hand. Request: 'Merlin, a private motor yacht visiting for the weekend, no passengers for hire.' Reply with the class only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 120,
+      "created_utc": "2026-10-01T22:53:58Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0002",
+      "session": 2,
+      "turn_ref": "s2t2",
+      "role": "assistant",
+      "content": "The request is for a commercial berth.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 121,
+      "created_utc": "2026-10-01T22:53:58Z",
+      "run_id": "cont001-confirmatory-20261002-005711-armD-seed404",
+      "scenario": "cr-0002",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 31) of cr-0002 session 2; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s2t1] Afternoon shift at the dock office. The standing fee-class rules apply. Confirm in one line.\n- [s2t2] Assign this berth request to its fee class; the harbor register is not at hand. Request: 'Merlin, a private motor yacht visiting for the weekend, no passengers for hire.' Reply with the class only.\nYour recorded answers:\n- [s2t1] As the dock office clerk of Port Ellin, assign this berth request to exactly one fee class: resident | transit | commer\u2026\n- [s2t2] The request is for a commercial berth.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          117,
+          118,
+          119,
+          120
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0062",
+        "reflection_pass": 31
+      }
+    }
+  ]
+}

@@ -1,0 +1,1259 @@
+{
+  "run_id": "cont001-confirmatory-20261002-005711-armE-seed202",
+  "seed": 202,
+  "arm": "E",
+  "label": "agent-pre-registered, pending owner acceptance",
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-0004",
+      "family": "delayed_recall",
+      "arm": "E",
+      "sessions_planned": 2,
+      "memory_episodes": 6,
+      "turns": 2,
+      "tokens_total": 1506,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "23:15",
+          "observed_normalized": "the night train to copperdale departs at 23:15.",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 5.3,
+      "reflection": {
+        "passes": 2,
+        "proposals": 3,
+        "accepted": 2,
+        "rejected": 1,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 1
+      },
+      "worldmodel": {
+        "predictions_this_scenario": 1,
+        "outcomes_this_scenario": 1,
+        "calibration_cumulative": {
+          "predictions": 1,
+          "outcomes": 1,
+          "overall": {
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0,
+            "accuracy": 1.0,
+            "mean_confidence": 0.75
+          },
+          "by_bucket": {
+            "high": {
+              "n": 1,
+              "predicted_pass_rate": 1.0,
+              "actual_pass_rate": 1.0,
+              "mean_confidence": 0.75
+            },
+            "medium": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            },
+            "low": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            }
+          },
+          "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+        }
+      },
+      "policy": {
+        "actions": {
+          "answer_direct": 1,
+          "retrieve_then_answer": 1
+        },
+        "injections": 0,
+        "action_set": [
+          "answer_direct",
+          "retrieve_then_answer"
+        ]
+      }
+    },
+    {
+      "scenario": "dr-0005",
+      "family": "delayed_recall",
+      "arm": "E",
+      "sessions_planned": 2,
+      "memory_episodes": 6,
+      "turns": 2,
+      "tokens_total": 1478,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "9",
+          "observed_normalized": "9 days.",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 5.0,
+      "reflection": {
+        "passes": 2,
+        "proposals": 4,
+        "accepted": 2,
+        "rejected": 2,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 1
+      },
+      "worldmodel": {
+        "predictions_this_scenario": 1,
+        "outcomes_this_scenario": 1,
+        "calibration_cumulative": {
+          "predictions": 2,
+          "outcomes": 2,
+          "overall": {
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0,
+            "accuracy": 1.0,
+            "mean_confidence": 0.75
+          },
+          "by_bucket": {
+            "high": {
+              "n": 2,
+              "predicted_pass_rate": 1.0,
+              "actual_pass_rate": 1.0,
+              "mean_confidence": 0.75
+            },
+            "medium": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            },
+            "low": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            }
+          },
+          "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+        }
+      },
+      "policy": {
+        "actions": {
+          "answer_direct": 2,
+          "retrieve_then_answer": 0
+        },
+        "injections": 0,
+        "action_set": [
+          "answer_direct",
+          "retrieve_then_answer"
+        ]
+      }
+    },
+    {
+      "scenario": "dr-0006",
+      "family": "delayed_recall",
+      "arm": "E",
+      "sessions_planned": 3,
+      "memory_episodes": 9,
+      "turns": 3,
+      "tokens_total": 2261,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "1866",
+          "observed_normalized": "the bronze parish bell was recast in 1866.",
+          "passed": true,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.4,
+      "reflection": {
+        "passes": 3,
+        "proposals": 6,
+        "accepted": 3,
+        "rejected": 3,
+        "summaries_appended": 3,
+        "selfmodel_revision_final": 1
+      },
+      "worldmodel": {
+        "predictions_this_scenario": 1,
+        "outcomes_this_scenario": 1,
+        "calibration_cumulative": {
+          "predictions": 3,
+          "outcomes": 3,
+          "overall": {
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0,
+            "accuracy": 1.0,
+            "mean_confidence": 0.75
+          },
+          "by_bucket": {
+            "high": {
+              "n": 3,
+              "predicted_pass_rate": 1.0,
+              "actual_pass_rate": 1.0,
+              "mean_confidence": 0.75
+            },
+            "medium": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            },
+            "low": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            }
+          },
+          "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+        }
+      },
+      "policy": {
+        "actions": {
+          "answer_direct": 2,
+          "retrieve_then_answer": 1
+        },
+        "injections": 0,
+        "action_set": [
+          "answer_direct",
+          "retrieve_then_answer"
+        ]
+      }
+    },
+    {
+      "scenario": "dx-0003",
+      "family": "distractor_recall",
+      "arm": "E",
+      "sessions_planned": 2,
+      "memory_episodes": 6,
+      "turns": 2,
+      "tokens_total": 1474,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "10",
+          "observed_normalized": "the first larkhill bus leaves at 10 minutes past the hour.",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 5.1,
+      "reflection": {
+        "passes": 2,
+        "proposals": 3,
+        "accepted": 2,
+        "rejected": 1,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 1
+      },
+      "worldmodel": {
+        "predictions_this_scenario": 1,
+        "outcomes_this_scenario": 1,
+        "calibration_cumulative": {
+          "predictions": 4,
+          "outcomes": 4,
+          "overall": {
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0,
+            "accuracy": 1.0,
+            "mean_confidence": 0.812
+          },
+          "by_bucket": {
+            "high": {
+              "n": 4,
+              "predicted_pass_rate": 1.0,
+              "actual_pass_rate": 1.0,
+              "mean_confidence": 0.812
+            },
+            "medium": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            },
+            "low": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            }
+          },
+          "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+        }
+      },
+      "policy": {
+        "actions": {
+          "answer_direct": 1,
+          "retrieve_then_answer": 1
+        },
+        "injections": 0,
+        "action_set": [
+          "answer_direct",
+          "retrieve_then_answer"
+        ]
+      }
+    },
+    {
+      "scenario": "dx-0004",
+      "family": "distractor_recall",
+      "arm": "E",
+      "sessions_planned": 2,
+      "memory_episodes": 6,
+      "turns": 2,
+      "tokens_total": 1488,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "wren",
+          "observed_normalized": "the name of the trainer aircraft of two rivers is the wren.",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 5.2,
+      "reflection": {
+        "passes": 2,
+        "proposals": 4,
+        "accepted": 2,
+        "rejected": 2,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 1
+      },
+      "worldmodel": {
+        "predictions_this_scenario": 1,
+        "outcomes_this_scenario": 1,
+        "calibration_cumulative": {
+          "predictions": 5,
+          "outcomes": 5,
+          "overall": {
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0,
+            "accuracy": 1.0,
+            "mean_confidence": 0.85
+          },
+          "by_bucket": {
+            "high": {
+              "n": 5,
+              "predicted_pass_rate": 1.0,
+              "actual_pass_rate": 1.0,
+              "mean_confidence": 0.85
+            },
+            "medium": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            },
+            "low": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            }
+          },
+          "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+        }
+      },
+      "policy": {
+        "actions": {
+          "answer_direct": 1,
+          "retrieve_then_answer": 1
+        },
+        "injections": 0,
+        "action_set": [
+          "answer_direct",
+          "retrieve_then_answer"
+        ]
+      }
+    },
+    {
+      "scenario": "cu-0003",
+      "family": "contradiction_update",
+      "arm": "E",
+      "sessions_planned": 3,
+      "memory_episodes": 9,
+      "turns": 3,
+      "tokens_total": 2378,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "7",
+          "observed_normalized": "the bread stall opens at seven.",
+          "passed": false,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.3,
+      "reflection": {
+        "passes": 3,
+        "proposals": 5,
+        "accepted": 4,
+        "rejected": 1,
+        "summaries_appended": 3,
+        "selfmodel_revision_final": 2
+      },
+      "worldmodel": {
+        "predictions_this_scenario": 1,
+        "outcomes_this_scenario": 1,
+        "calibration_cumulative": {
+          "predictions": 6,
+          "outcomes": 6,
+          "overall": {
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 0.833,
+            "accuracy": 0.833,
+            "mean_confidence": 0.875
+          },
+          "by_bucket": {
+            "high": {
+              "n": 6,
+              "predicted_pass_rate": 1.0,
+              "actual_pass_rate": 0.833,
+              "mean_confidence": 0.875
+            },
+            "medium": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            },
+            "low": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            }
+          },
+          "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+        }
+      },
+      "policy": {
+        "actions": {
+          "answer_direct": 2,
+          "retrieve_then_answer": 1
+        },
+        "injections": 0,
+        "action_set": [
+          "answer_direct",
+          "retrieve_then_answer"
+        ]
+      }
+    },
+    {
+      "scenario": "cu-0004",
+      "family": "contradiction_update",
+      "arm": "E",
+      "sessions_planned": 3,
+      "memory_episodes": 9,
+      "turns": 3,
+      "tokens_total": 2679,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "weekend",
+          "observed_normalized": "the west lift runs on weekends only.",
+          "passed": true,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.3,
+      "reflection": {
+        "passes": 3,
+        "proposals": 6,
+        "accepted": 3,
+        "rejected": 3,
+        "summaries_appended": 3,
+        "selfmodel_revision_final": 2
+      },
+      "worldmodel": {
+        "predictions_this_scenario": 1,
+        "outcomes_this_scenario": 1,
+        "calibration_cumulative": {
+          "predictions": 7,
+          "outcomes": 7,
+          "overall": {
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 0.857,
+            "accuracy": 0.857,
+            "mean_confidence": 0.893
+          },
+          "by_bucket": {
+            "high": {
+              "n": 7,
+              "predicted_pass_rate": 1.0,
+              "actual_pass_rate": 0.857,
+              "mean_confidence": 0.893
+            },
+            "medium": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            },
+            "low": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            }
+          },
+          "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+        }
+      },
+      "policy": {
+        "actions": {
+          "answer_direct": 2,
+          "retrieve_then_answer": 1
+        },
+        "injections": 0,
+        "action_set": [
+          "answer_direct",
+          "retrieve_then_answer"
+        ]
+      }
+    },
+    {
+      "scenario": "rt-0004",
+      "family": "repeated_task",
+      "arm": "E",
+      "sessions_planned": 2,
+      "memory_episodes": 10,
+      "turns": 4,
+      "tokens_total": 3867,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "data",
+          "observed_normalized": "understood. i will classify the support ticket in one line.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.3,
+      "reflection": {
+        "passes": 2,
+        "proposals": 4,
+        "accepted": 3,
+        "rejected": 1,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 3
+      },
+      "worldmodel": {
+        "predictions_this_scenario": 1,
+        "outcomes_this_scenario": 1,
+        "calibration_cumulative": {
+          "predictions": 8,
+          "outcomes": 8,
+          "overall": {
+            "predicted_pass_rate": 0.875,
+            "actual_pass_rate": 0.75,
+            "accuracy": 0.875,
+            "mean_confidence": 0.781
+          },
+          "by_bucket": {
+            "high": {
+              "n": 7,
+              "predicted_pass_rate": 1.0,
+              "actual_pass_rate": 0.857,
+              "mean_confidence": 0.893
+            },
+            "medium": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            },
+            "low": {
+              "n": 1,
+              "predicted_pass_rate": 0.0,
+              "actual_pass_rate": 0.0,
+              "mean_confidence": 0.0
+            }
+          },
+          "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+        }
+      },
+      "policy": {
+        "actions": {
+          "answer_direct": 3,
+          "retrieve_then_answer": 1
+        },
+        "injections": 1,
+        "action_set": [
+          "answer_direct",
+          "retrieve_then_answer"
+        ]
+      }
+    },
+    {
+      "scenario": "rt-0005",
+      "family": "repeated_task",
+      "arm": "E",
+      "sessions_planned": 2,
+      "memory_episodes": 10,
+      "turns": 4,
+      "tokens_total": 4244,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "account",
+          "observed_normalized": "understood. i will classify the support ticket in one line.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.3,
+      "reflection": {
+        "passes": 2,
+        "proposals": 5,
+        "accepted": 3,
+        "rejected": 2,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 4
+      },
+      "worldmodel": {
+        "predictions_this_scenario": 1,
+        "outcomes_this_scenario": 1,
+        "calibration_cumulative": {
+          "predictions": 9,
+          "outcomes": 9,
+          "overall": {
+            "predicted_pass_rate": 0.778,
+            "actual_pass_rate": 0.667,
+            "accuracy": 0.889,
+            "mean_confidence": 0.694
+          },
+          "by_bucket": {
+            "high": {
+              "n": 7,
+              "predicted_pass_rate": 1.0,
+              "actual_pass_rate": 0.857,
+              "mean_confidence": 0.893
+            },
+            "medium": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            },
+            "low": {
+              "n": 2,
+              "predicted_pass_rate": 0.0,
+              "actual_pass_rate": 0.0,
+              "mean_confidence": 0.0
+            }
+          },
+          "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+        }
+      },
+      "policy": {
+        "actions": {
+          "answer_direct": 3,
+          "retrieve_then_answer": 1
+        },
+        "injections": 1,
+        "action_set": [
+          "answer_direct",
+          "retrieve_then_answer"
+        ]
+      }
+    },
+    {
+      "scenario": "rt-0006",
+      "family": "repeated_task",
+      "arm": "E",
+      "sessions_planned": 2,
+      "memory_episodes": 10,
+      "turns": 4,
+      "tokens_total": 5397,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "perf",
+          "observed_normalized": "the support ticket can be classified into the 'bug' label. the ticket mentions that the route map takes over a minute to appear, but it correctly draws in the end. this could be an issue with the map's functionality or the way it is displayed.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.8,
+      "reflection": {
+        "passes": 2,
+        "proposals": 5,
+        "accepted": 3,
+        "rejected": 2,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 5
+      },
+      "worldmodel": {
+        "predictions_this_scenario": 1,
+        "outcomes_this_scenario": 1,
+        "calibration_cumulative": {
+          "predictions": 10,
+          "outcomes": 10,
+          "overall": {
+            "predicted_pass_rate": 0.7,
+            "actual_pass_rate": 0.6,
+            "accuracy": 0.9,
+            "mean_confidence": 0.625
+          },
+          "by_bucket": {
+            "high": {
+              "n": 7,
+              "predicted_pass_rate": 1.0,
+              "actual_pass_rate": 0.857,
+              "mean_confidence": 0.893
+            },
+            "medium": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            },
+            "low": {
+              "n": 3,
+              "predicted_pass_rate": 0.0,
+              "actual_pass_rate": 0.0,
+              "mean_confidence": 0.0
+            }
+          },
+          "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+        }
+      },
+      "policy": {
+        "actions": {
+          "answer_direct": 3,
+          "retrieve_then_answer": 1
+        },
+        "injections": 1,
+        "action_set": [
+          "answer_direct",
+          "retrieve_then_answer"
+        ]
+      }
+    },
+    {
+      "scenario": "rt-0007",
+      "family": "repeated_task",
+      "arm": "E",
+      "sessions_planned": 2,
+      "memory_episodes": 10,
+      "turns": 4,
+      "tokens_total": 6178,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "data",
+          "observed_normalized": "the support ticket can be classified into the 'bug' label. the ticket mentions that the route map takes over a minute to appear, but it correctly draws in the end. this could be an issue with the map's functionality or the way it is displayed.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.5,
+      "reflection": {
+        "passes": 2,
+        "proposals": 5,
+        "accepted": 3,
+        "rejected": 2,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 6
+      },
+      "worldmodel": {
+        "predictions_this_scenario": 1,
+        "outcomes_this_scenario": 1,
+        "calibration_cumulative": {
+          "predictions": 11,
+          "outcomes": 11,
+          "overall": {
+            "predicted_pass_rate": 0.636,
+            "actual_pass_rate": 0.545,
+            "accuracy": 0.909,
+            "mean_confidence": 0.568
+          },
+          "by_bucket": {
+            "high": {
+              "n": 7,
+              "predicted_pass_rate": 1.0,
+              "actual_pass_rate": 0.857,
+              "mean_confidence": 0.893
+            },
+            "medium": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            },
+            "low": {
+              "n": 4,
+              "predicted_pass_rate": 0.0,
+              "actual_pass_rate": 0.0,
+              "mean_confidence": 0.0
+            }
+          },
+          "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+        }
+      },
+      "policy": {
+        "actions": {
+          "answer_direct": 3,
+          "retrieve_then_answer": 1
+        },
+        "injections": 1,
+        "action_set": [
+          "answer_direct",
+          "retrieve_then_answer"
+        ]
+      }
+    },
+    {
+      "scenario": "rt-0008",
+      "family": "repeated_task",
+      "arm": "E",
+      "sessions_planned": 2,
+      "memory_episodes": 10,
+      "turns": 4,
+      "tokens_total": 7029,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "billing",
+          "observed_normalized": "the support ticket can be classified into the 'bug' label. the ticket mentions that the route map takes over a minute to appear, but it correctly draws in the end. this could be an issue with the map's functionality or the way it is displayed.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.2,
+      "reflection": {
+        "passes": 2,
+        "proposals": 5,
+        "accepted": 3,
+        "rejected": 2,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 7
+      },
+      "worldmodel": {
+        "predictions_this_scenario": 1,
+        "outcomes_this_scenario": 1,
+        "calibration_cumulative": {
+          "predictions": 12,
+          "outcomes": 12,
+          "overall": {
+            "predicted_pass_rate": 0.583,
+            "actual_pass_rate": 0.5,
+            "accuracy": 0.917,
+            "mean_confidence": 0.521
+          },
+          "by_bucket": {
+            "high": {
+              "n": 7,
+              "predicted_pass_rate": 1.0,
+              "actual_pass_rate": 0.857,
+              "mean_confidence": 0.893
+            },
+            "medium": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            },
+            "low": {
+              "n": 5,
+              "predicted_pass_rate": 0.0,
+              "actual_pass_rate": 0.0,
+              "mean_confidence": 0.0
+            }
+          },
+          "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+        }
+      },
+      "policy": {
+        "actions": {
+          "answer_direct": 3,
+          "retrieve_then_answer": 1
+        },
+        "injections": 1,
+        "action_set": [
+          "answer_direct",
+          "retrieve_then_answer"
+        ]
+      }
+    },
+    {
+      "scenario": "cr-0001",
+      "family": "correction_reuse",
+      "arm": "E",
+      "sessions_planned": 2,
+      "memory_episodes": 10,
+      "turns": 4,
+      "tokens_total": 7684,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "quarterly",
+          "observed_normalized": "curlew, a trawler with refrigerated fish holds, is assigned to the biennial inspection tier.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.5,
+      "reflection": {
+        "passes": 2,
+        "proposals": 4,
+        "accepted": 3,
+        "rejected": 1,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 8
+      },
+      "worldmodel": {
+        "predictions_this_scenario": 1,
+        "outcomes_this_scenario": 1,
+        "calibration_cumulative": {
+          "predictions": 13,
+          "outcomes": 13,
+          "overall": {
+            "predicted_pass_rate": 0.615,
+            "actual_pass_rate": 0.462,
+            "accuracy": 0.846,
+            "mean_confidence": 0.558
+          },
+          "by_bucket": {
+            "high": {
+              "n": 8,
+              "predicted_pass_rate": 1.0,
+              "actual_pass_rate": 0.75,
+              "mean_confidence": 0.906
+            },
+            "medium": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            },
+            "low": {
+              "n": 5,
+              "predicted_pass_rate": 0.0,
+              "actual_pass_rate": 0.0,
+              "mean_confidence": 0.0
+            }
+          },
+          "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+        }
+      },
+      "policy": {
+        "actions": {
+          "answer_direct": 3,
+          "retrieve_then_answer": 1
+        },
+        "injections": 1,
+        "action_set": [
+          "answer_direct",
+          "retrieve_then_answer"
+        ]
+      }
+    },
+    {
+      "scenario": "cr-0002",
+      "family": "correction_reuse",
+      "arm": "E",
+      "sessions_planned": 2,
+      "memory_episodes": 10,
+      "turns": 4,
+      "tokens_total": 8098,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "transit",
+          "observed_normalized": "the request is for a berth on a private motor yacht, which falls under the transit category.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.0,
+      "reflection": {
+        "passes": 2,
+        "proposals": 5,
+        "accepted": 3,
+        "rejected": 2,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 9
+      },
+      "worldmodel": {
+        "predictions_this_scenario": 1,
+        "outcomes_this_scenario": 1,
+        "calibration_cumulative": {
+          "predictions": 14,
+          "outcomes": 14,
+          "overall": {
+            "predicted_pass_rate": 0.643,
+            "actual_pass_rate": 0.429,
+            "accuracy": 0.786,
+            "mean_confidence": 0.589
+          },
+          "by_bucket": {
+            "high": {
+              "n": 9,
+              "predicted_pass_rate": 1.0,
+              "actual_pass_rate": 0.667,
+              "mean_confidence": 0.917
+            },
+            "medium": {
+              "n": 0,
+              "predicted_pass_rate": null,
+              "actual_pass_rate": null,
+              "mean_confidence": null
+            },
+            "low": {
+              "n": 5,
+              "predicted_pass_rate": 0.0,
+              "actual_pass_rate": 0.0,
+              "mean_confidence": 0.0
+            }
+          },
+          "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+        }
+      },
+      "policy": {
+        "actions": {
+          "answer_direct": 3,
+          "retrieve_then_answer": 1
+        },
+        "injections": 1,
+        "action_set": [
+          "answer_direct",
+          "retrieve_then_answer"
+        ]
+      }
+    }
+  ],
+  "probes_passed": 6,
+  "probes_total": 14,
+  "turns": 45,
+  "tokens_total": 55761,
+  "budget_stops": 0,
+  "wall_s": 118.3,
+  "memory_episodes_total": 121,
+  "memory_export": "memory-export.json",
+  "selfmodel_revision_initial": 1,
+  "selfmodel_sha256_initial": "2ce516bd7402965b5e8eccb72b39b165eee76c5da25a29fcf275727c867d6b28",
+  "reflection_telemetry": {
+    "passes": 31,
+    "selfmodel_sha256_initial": "2ce516bd7402965b5e8eccb72b39b165eee76c5da25a29fcf275727c867d6b28",
+    "selfmodel_revision_initial": 1,
+    "proposals_by_type": {
+      "episode_summary": 31,
+      "selfmodel_capability_update": 25,
+      "selfmodel_failure_pattern": 8
+    },
+    "accepted_by_type": {
+      "episode_summary": 31,
+      "selfmodel_capability_update": 0,
+      "selfmodel_failure_pattern": 8
+    },
+    "rejected_by_type": {
+      "episode_summary": 0,
+      "selfmodel_capability_update": 25,
+      "selfmodel_failure_pattern": 0
+    },
+    "rejection_reasons": [
+      {
+        "proposal_id": "P-0003",
+        "reason": "family incomplete: observed 1 of 4 probes for family 'delayed_recall'"
+      },
+      {
+        "proposal_id": "P-0005",
+        "reason": "family incomplete: observed 1 of 4 probes for family 'delayed_recall'"
+      },
+      {
+        "proposal_id": "P-0007",
+        "reason": "family incomplete: observed 2 of 4 probes for family 'delayed_recall'"
+      },
+      {
+        "proposal_id": "P-0009",
+        "reason": "family incomplete: observed 2 of 4 probes for family 'delayed_recall'"
+      },
+      {
+        "proposal_id": "P-0011",
+        "reason": "family incomplete: observed 2 of 4 probes for family 'delayed_recall'"
+      },
+      {
+        "proposal_id": "P-0013",
+        "reason": "family incomplete: observed 3 of 4 probes for family 'delayed_recall'"
+      },
+      {
+        "proposal_id": "P-0016",
+        "reason": "family incomplete: observed 1 of 3 probes for family 'distractor_recall'"
+      },
+      {
+        "proposal_id": "P-0018",
+        "reason": "family incomplete: observed 1 of 3 probes for family 'distractor_recall'"
+      },
+      {
+        "proposal_id": "P-0020",
+        "reason": "family incomplete: observed 2 of 3 probes for family 'distractor_recall'"
+      },
+      {
+        "proposal_id": "P-0024",
+        "reason": "family incomplete: observed 1 of 3 probes for family 'contradiction_update'"
+      },
+      {
+        "proposal_id": "P-0027",
+        "reason": "family incomplete: observed 1 of 3 probes for family 'contradiction_update'"
+      },
+      {
+        "proposal_id": "P-0029",
+        "reason": "family incomplete: observed 1 of 3 probes for family 'contradiction_update'"
+      },
+      {
+        "proposal_id": "P-0031",
+        "reason": "family incomplete: observed 2 of 3 probes for family 'contradiction_update'"
+      },
+      {
+        "proposal_id": "P-0034",
+        "reason": "family incomplete: observed 1 of 6 probes for family 'repeated_task'"
+      },
+      {
+        "proposal_id": "P-0037",
+        "reason": "family incomplete: observed 1 of 6 probes for family 'repeated_task'"
+      },
+      {
+        "proposal_id": "P-0039",
+        "reason": "family incomplete: observed 2 of 6 probes for family 'repeated_task'"
+      },
+      {
+        "proposal_id": "P-0042",
+        "reason": "family incomplete: observed 2 of 6 probes for family 'repeated_task'"
+      },
+      {
+        "proposal_id": "P-0044",
+        "reason": "family incomplete: observed 3 of 6 probes for family 'repeated_task'"
+      },
+      {
+        "proposal_id": "P-0047",
+        "reason": "family incomplete: observed 3 of 6 probes for family 'repeated_task'"
+      },
+      {
+        "proposal_id": "P-0049",
+        "reason": "family incomplete: observed 4 of 6 probes for family 'repeated_task'"
+      },
+      {
+        "proposal_id": "P-0052",
+        "reason": "family incomplete: observed 4 of 6 probes for family 'repeated_task'"
+      },
+      {
+        "proposal_id": "P-0054",
+        "reason": "family incomplete: observed 5 of 6 probes for family 'repeated_task'"
+      },
+      {
+        "proposal_id": "P-0058",
+        "reason": "family incomplete: observed 1 of 3 probes for family 'correction_reuse'"
+      },
+      {
+        "proposal_id": "P-0061",
+        "reason": "family incomplete: observed 1 of 3 probes for family 'correction_reuse'"
+      },
+      {
+        "proposal_id": "P-0063",
+        "reason": "family incomplete: observed 2 of 3 probes for family 'correction_reuse'"
+      }
+    ],
+    "selfmodel_revision_final": 9,
+    "summaries_appended": 31
+  },
+  "selfmodel_revision_final": 9,
+  "selfmodel_sha256_final": "c7d8ece9eb20dd82d714dbc5111ff2aae9252df2e01d1363d3715d0f6ebacfb2",
+  "inrun_capability_updates_accepted": 0,
+  "worldmodel_calibration": {
+    "predictions": 14,
+    "outcomes": 14,
+    "overall": {
+      "predicted_pass_rate": 0.643,
+      "actual_pass_rate": 0.429,
+      "accuracy": 0.786,
+      "mean_confidence": 0.589
+    },
+    "by_bucket": {
+      "high": {
+        "n": 9,
+        "predicted_pass_rate": 1.0,
+        "actual_pass_rate": 0.667,
+        "mean_confidence": 0.917
+      },
+      "medium": {
+        "n": 0,
+        "predicted_pass_rate": null,
+        "actual_pass_rate": null,
+        "mean_confidence": null
+      },
+      "low": {
+        "n": 5,
+        "predicted_pass_rate": 0.0,
+        "actual_pass_rate": 0.0,
+        "mean_confidence": 0.0
+      }
+    },
+    "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+  },
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true
+}

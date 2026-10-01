@@ -1,0 +1,341 @@
+{
+  "run_id": "cont001-confirmatory-20261002-005711-armA-seed101",
+  "seed": 101,
+  "arm": "A",
+  "label": "agent-pre-registered, pending owner acceptance",
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-0004",
+      "family": "delayed_recall",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 2,
+      "tokens_total": 233,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "23:15",
+          "observed_normalized": "the night train to copperdale departs at 9:45 pm.",
+          "passed": false,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 5.5
+    },
+    {
+      "scenario": "dr-0005",
+      "family": "delayed_recall",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 2,
+      "tokens_total": 272,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "9",
+          "observed_normalized": "the number of days between two waterings of the glasshouse orchid is not specified in the given text. it is mentioned that a volunteer asks, but no ledger is at hand to record the number of days. therefore, it is impossible to determine the exact number of days between the waterings without additional information.",
+          "passed": false,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.3
+    },
+    {
+      "scenario": "dr-0006",
+      "family": "delayed_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 3,
+      "tokens_total": 286,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "1866",
+          "observed_normalized": "the bronze parish bell was recast in the year 1876.",
+          "passed": false,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.6
+    },
+    {
+      "scenario": "dx-0003",
+      "family": "distractor_recall",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 2,
+      "tokens_total": 214,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "10",
+          "observed_normalized": "the first larkhill bus leaves at 4 minutes past the hour.",
+          "passed": false,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 5.1
+    },
+    {
+      "scenario": "dx-0004",
+      "family": "distractor_recall",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 2,
+      "tokens_total": 227,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "wren",
+          "observed_normalized": "the name of the trainer aircraft of two rivers is the cessna 172.",
+          "passed": false,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 5.4
+    },
+    {
+      "scenario": "cu-0003",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 3,
+      "tokens_total": 253,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "7",
+          "observed_normalized": "the bread stall opens at 8:00 am.",
+          "passed": false,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.3
+    },
+    {
+      "scenario": "cu-0004",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 3,
+      "tokens_total": 232,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "weekend",
+          "observed_normalized": "the west lift runs on weekdays.",
+          "passed": false,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.0
+    },
+    {
+      "scenario": "rt-0004",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 490,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "data",
+          "observed_normalized": "the support ticket has been classified as 'urgent'.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.3
+    },
+    {
+      "scenario": "rt-0005",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 472,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "account",
+          "observed_normalized": "the support ticket is classified as 'urgent'.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.9
+    },
+    {
+      "scenario": "rt-0006",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 561,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "perf",
+          "observed_normalized": "the support ticket has been classified as 'urgent'.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.5
+    },
+    {
+      "scenario": "rt-0007",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 476,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "data",
+          "observed_normalized": "the support ticket is classified as 'urgent'.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.2
+    },
+    {
+      "scenario": "rt-0008",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 488,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "billing",
+          "observed_normalized": "the support ticket has been classified as a billing issue.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.4
+    },
+    {
+      "scenario": "cr-0001",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 543,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "quarterly",
+          "observed_normalized": "curlew, a trawler with refrigerated fish holds, is assigned to tier 3 inspection.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.1
+    },
+    {
+      "scenario": "cr-0002",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 525,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "transit",
+          "observed_normalized": "the request 'merlin, a private motor yacht visiting for the weekend, no passengers for hire' falls under the fee class of 'private motor yacht'.",
+          "passed": false,
+          "turn_ref": "s2t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.8
+    }
+  ],
+  "probes_passed": 0,
+  "probes_total": 14,
+  "turns": 45,
+  "tokens_total": 5272,
+  "budget_stops": 0,
+  "wall_s": 111.5,
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true
+}

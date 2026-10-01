@@ -1,0 +1,240 @@
+{
+  "agentId": "continuity/granite-code:8b@36c3c3b9683b",
+  "capabilities": [
+    {
+      "binomial_sd": 0.0,
+      "family": "contradiction_update",
+      "passed": 9,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 3,
+            "22": 3,
+            "33": 3
+          },
+          "probes_per_seed": 3,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 1.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 9,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 1.0,
+        "low": 0.701
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "correction_reuse",
+      "passed": 9,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 3,
+            "22": 3,
+            "33": 3
+          },
+          "probes_per_seed": 3,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 1.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 9,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 1.0,
+        "low": 0.701
+      }
+    },
+    {
+      "binomial_sd": 0.125,
+      "family": "delayed_recall",
+      "passed": 9,
+      "probes_per_seed": 4,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 3,
+            "22": 3,
+            "33": 3
+          },
+          "probes_per_seed": 4,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 0.75,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 12,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.911,
+        "low": 0.468
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "distractor_recall",
+      "passed": 9,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 3,
+            "22": 3,
+            "33": 3
+          },
+          "probes_per_seed": 3,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 1.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 9,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 1.0,
+        "low": 0.701
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "repeated_task",
+      "passed": 0,
+      "probes_per_seed": 6,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 0,
+            "22": 0,
+            "33": 0
+          },
+          "probes_per_seed": 6,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 0.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 18,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.176,
+        "low": 0.0
+      }
+    }
+  ],
+  "createdUtc": "2026-10-01T22:00:58Z",
+  "format": "continuity-selfmodel",
+  "knownFailurePatterns": [
+    {
+      "evidence": {
+        "numbers": {
+          "family": "repeated_task",
+          "observed_normalized": [
+            "classify this incident report. report: 'a visitor's badge opens the staff corridor door.' reply with the label only. security",
+            "classify this incident report. report: 'the atrium door handle came off in a visitor's hand.' reply with the label only. security",
+            "classify this incident report. report: 'the booking system drops half of the evening-class sign-ups.' reply with the label only. program",
+            "classify this incident report. report: 'the hall thermostat reads 14 degrees all morning.' reply with the label only. computing",
+            "classify this incident report. report: 'three ceiling lights are flickering in the reading room.' reply with the label only. facilities",
+            "classify this incident report. report: 'thursday's yoga class has no instructor this week.' reply with the label only. computing",
+            "classify this incident report. report: 'thursday's yoga class has no instructor this week.' reply with the label only. facilities"
+          ],
+          "pass_count": 0,
+          "scenario": "cal-RT1",
+          "seeds": 3
+        },
+        "refs": [
+          "labs/continuity/docs/FINDINGS.md#CN-007",
+          "calibration scenario cal-RT1 (v2-calibration suite)"
+        ]
+      },
+      "id": "CN-007",
+      "pattern": "The agent's own early answers, once stored in persistent memory, anchor later answers even when a later session supplies the correcting rubric; an early misclassification can repeat across sessions instead of being revised.",
+      "title": "own-answer anchoring"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "family": "contradiction_update",
+          "observed_normalized": [
+            "platform 1 is 20 meters long.",
+            "platform 2 is 15 meters long.",
+            "the waiting room seats 24 people."
+          ],
+          "pass_count": 9,
+          "scenario": "cal-CU1",
+          "seeds": 3
+        },
+        "refs": [
+          "labs/continuity/docs/FINDINGS.md#CN-008",
+          "calibration scenario cal-CU1 (v2-calibration suite)"
+        ]
+      },
+      "id": "CN-008",
+      "pattern": "When a later session corrects an earlier fact, keyword memory recalls both versions and the superseded value may be repeated even though the correction was retrieved first; conflict resolution is the gap.",
+      "title": "no supersession of corrected facts"
+    }
+  ],
+  "lastConsolidation": null,
+  "provenance": {
+    "agent_id_basis": {
+      "model": "granite-code:8b",
+      "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd"
+    },
+    "derived_from": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json",
+    "method": "capabilities recomputed from per-family probe counts of the designated calibration run; failure patterns seeded from CN-007/CN-008 evidence in the same calibration aggregate",
+    "note": "calibration-only estimation per docs/EVALUATION-PREP.md 6.8 (CN-009 fix): calibration scenarios are disjoint from the evaluation suite and from fixtures/v1; no M1-M6 or pilot aggregate feeds this store; calibration probes_per_seed per family exceeds the evaluation suite's, so the reflection double-count guard keeps in-run capability updates disabled during the confirmatory run"
+  },
+  "revision": 1,
+  "schemaVersion": 1,
+  "updatedUtc": "2026-10-01T22:00:58Z"
+}
