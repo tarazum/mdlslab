@@ -32,9 +32,9 @@ The upstream and local status of each candidate must be rechecked and versions p
 
 ## Proposed research milestones
 
-- CONT-000: research design, contracts, synthetic scenarios, measurement harness, local baseline.
+- CONT-000: lab-agnostic synthetic workload protocol, measurement harness, local baseline, early variance/headroom pilot.
 - CONT-001: Does Continuity Matter? Controlled ablation of memory, self-model, reflection, drive, world model.
-- CONT-002: Identity Persistence. Restart, clean-state and cross-model state-portability comparisons.
+- CONT-002: Identity Persistence. Full 2×2 comparison of {core A, core B} × {restored, clean state}, using held-out tasks and a pre-registered retained-benefit endpoint.
 - CONT-003 (candidate): reactive versus bounded continuous background cycles.
 - CONT-004 (candidate): SQLite baseline versus TencentDB memory implementation.
 
