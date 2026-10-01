@@ -13,6 +13,7 @@ The lab is intentionally heterogeneous. A forecasting foundation model, a local 
 | [Jev](labs/jev/) | Decision-oriented model evaluation | Upstream verified; experiments pending |
 | [Laya](labs/laya/) | Candidate local/open model | Source verification |
 | [TencentDB Agent Memory](labs/tencentdb-agent-memory/) | Persistent agent memory and retrieval behavior | Upstream verified; experiments pending |
+| [Continuity (Project C)](labs/continuity/) | Behavioral continuity through memory, self-model, feedback and reflection | Research proposal; no experiments yet |
 | [CLI-Anything](labs/cli-anything/) | Agent tooling and CLI-based software control | Planned |
 | [Colibri](labs/colibri/) | Existing public playground | External lab |
 | [Mamba](labs/mamba/) | Existing public playground | External lab |
