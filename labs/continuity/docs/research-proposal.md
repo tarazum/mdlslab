@@ -88,7 +88,11 @@ Event-driven state machine with run ID, trace ID, versioned prompt/policy/model 
 
 ### CONT-000: foundation
 
-Create synthetic multi-session tasks with verifiable facts, contradictions, tool failures, predictions, repeated task families and delayed recall; define dataset splits and leakage checks. Implement minimal event store, replay, metrics, reproducible configs and a compact local core. Do a single-session smoke test before longitudinal trials.
+Create synthetic multi-session tasks with verifiable facts, contradictions, tool failures, predictions, repeated task families and delayed recall; define dataset splits and leakage checks. Define the fixture suite as a **lab-agnostic workload protocol** with versioned scenario fixtures, expected observations/labels, metric definitions, a runner contract, and a reproducible configuration manifest. A consumer receives fixtures and emits a normalized trace and result regardless of whether it is Continuity, TencentDB Agent Memory (TAM-002–TAM-007), or a private OCL implementation. Do not couple fixture semantics to Continuity's internal self-model or memory APIs. Keep this package inside `labs/continuity/` until a second real consumer demonstrates reuse; only then consider extraction to `shared/` under the root repository policy. Public fixtures and traces must be synthetic and safe to publish.
+
+Implement minimal event store, replay, metrics, reproducible configs and a compact local core. Do a single-session smoke test and **early variance/headroom pilot** before building arms B–E: run arm A with pinned decoding settings over a predeclared seed set, estimate spread of candidate endpoints, and inspect failure rates across scenario families. If A is at ceiling or results are dominated by noise, adjust fixtures or sample size using pilot data *before freezing the confirmatory suite*. Reserve held-out scenarios that are not used for calibration. Greedy decoding alone does not guarantee bit-identical outputs across batch sizes or inference backends.
+
+**Primary endpoint for CONT-000 (feasibility):** proportion of predeclared pilot runs that complete and produce a replayable, schema-valid trace under the configured budget. Variance, headroom, latency, tokens, and calibration of scenario difficulty are secondary diagnostic outputs. Pin the exact pass criterion in the run plan before executing this pilot.
 
 ### CONT-001: Does Continuity Matter?
 
@@ -102,25 +106,34 @@ Run ablations using the *same* base model and identical tasks:
 | D | C + reflection/consolidation |
 | E | D + bounded drive/policy and world model |
 
-Pre-register acceptance conditions and compare across repeated seeded runs. Control inference budget, tool availability, context size, initial knowledge, prompt length and exposure; where one arm requires extra tokens/cycles include budget-matched controls. Rotate scenarios to reduce order effects. Evaluate task completion, retrieval correctness/false recall, stale contradiction rate, repetition of known mistakes, adaptation to feedback, prediction calibration, restart robustness, tool calls, latency, compute/tokens and storage growth. Report uncertainty and failures, not just best runs. An improvement in arm E cannot automatically be attributed to a single component without further ablations.
+**Primary endpoint (to pre-register before confirmatory runs): repeated-mistake rate** on task families previously encountered during the learning sessions. Define a mistake as a repeated occurrence of an independently labelled error category on a subsequent eligible task; denominator is the number of eligible subsequent tasks, scored by a fixed evaluator blind to arm identity where practical. Specify the primary contrast and minimum meaningful improvement between arms A–E in the pre-registration, rather than selecting a favorable pair after observing outcomes.
+
+**Secondary/exploratory outcomes:** task completion, retrieval correctness/false recall, stale contradiction rate, feedback adaptation, prediction calibration, restart robustness, tool calls, latency, compute/tokens and storage growth. Do not promote secondary metrics into retrospective primary success claims.
+
+Compare repeated seeded runs using the variance/headroom pilot from CONT-000 to choose seed count and session count. Control inference budget, tool availability, context size, initial knowledge, prompt length and exposure; where one arm requires extra tokens/cycles include budget-matched controls. Rotate scenarios to reduce order effects. Report effect sizes and uncertainty, including failures and null results, not just best runs. An improvement in arm E cannot automatically be attributed to a single component without further ablations.
 
 ### CONT-002: Identity Persistence
 
-After ~100 controlled synthetic sessions, pause the agent and clear volatile process/context state. Compare:
+After a pilot-justified number of controlled synthetic learning sessions (the earlier "~100" is a sizing hypothesis, not a fixed requirement), pause the agent and clear volatile process/context state. Evaluate the **full 2×2 factorial design**, with the same held-out tasks and the same predeclared number of matched seeds in all four cells:
 
-1. Same model restored with its prior persistent state.
-2. Same model started with a clean persistent state.
-3. Compatible different model restored with the previous state.
+| Cognitive core | Restored learning state | Clean state |
+| --- | --- | --- |
+| Core A (training core) | A + restored | A + clean |
+| Core B (compatible replacement) | B + restored | B + clean |
 
-Use unseen held-out tasks, repeat with several seeds and model pairs, and test sensitivity to irrelevant changes in surface wording. Measure continuity of **observable learned behavior** (recall, policies, corrected mistakes, goal persistence), not metaphysical personal identity. Control transfer effects caused by different models' intrinsic capabilities, prompting and context handling.
+State export/import must have a documented compatibility contract. Clean controls must preserve identical fixed instructions, initial permissions, tools and test budget; they differ only in the learned persistent state. Match evaluation prompts and context budgets as closely as the model adapters allow.
+
+Let `S(X, state)` be a predeclared, independently scored held-out behavioral performance measure (higher is better). Define `ΔA = S(A, restored) − S(A, clean)` and `ΔB = S(B, restored) − S(B, clean)`. **Primary endpoint: retained-benefit ratio `R = ΔB / ΔA`**, estimating the share of measured learned-state benefit that survives core replacement. Pre-register aggregation, minimum meaningful `ΔA`, target ratio/uncertainty criterion and treatment of negative values. If `ΔA` is zero or too close to zero to support a stable ratio, label the primary endpoint non-estimable and report the two deltas with uncertainty as diagnostics; do not cherry-pick another denominator or claim successful transfer.
+
+**Secondary/exploratory outcomes:** recall, retention of corrected mistakes, policy/goal persistence, sensitivity to superficial wording, state import failures, run cost and latency. Use unseen held-out tasks, repeated matched seeds and (where feasible) more than one compatible model pair. This measures continuity of **observable learned behavior**, not metaphysical personal identity. The clean-state B cell is essential to distinguish transfer from B's intrinsic capability differences.
 
 ### CONT-003: Reactive versus continuous (candidate)
 
-Compare wake-on-input agent, agent with bounded reflection while no user input arrives, and a compute-matched control with randomly selected permissible reflection operations. Strictly log every autonomous step and enforce cycle/budget caps. Investigate whether autonomous consolidation adds value beyond spending additional tokens.
+Compare wake-on-input agent, agent with bounded reflection while no user input arrives, and a compute-matched control with randomly selected permissible reflection operations. Strictly log every autonomous step and enforce cycle/budget caps. Investigate whether autonomous consolidation adds value beyond spending additional tokens. **Candidate primary endpoint:** repeated-mistake rate on held-out recurring task families after the idle period; finalize one endpoint and its primary contrast before this experiment is commissioned. Secondary diagnostics include compute, changes proposed/accepted, and trace quality.
 
 ### CONT-004: Memory backend (candidate)
 
-On identical synthetic episodes, compare SQLite baseline with pinned TencentDB Agent Memory release. Include delayed recall, distractors, correction/conflict, storage growth, false recall, latency and cross-model portability. Reuse and cross-reference the existing TencentDB lab's TAM-001 through TAM-008, avoiding duplicate vendor-specific setup.
+Run the CONT-000 lab-agnostic fixture protocol against both the SQLite baseline and a pinned TencentDB Agent Memory release using compatible runner adapters, identical synthetic episodes, and the same evaluation rules. Reference TAM-001–TAM-008 for upstream setup and underlying memory-specific experiments; do not build a competing TAM harness. **Candidate primary endpoint:** correct delayed-recall rate on a pre-registered held-out question set, with the primary backend contrast specified in advance. Distractors, correction/conflict, storage growth, false recall, latency and cross-model portability are secondary/exploratory measures. The same protocol should be usable by an OCL implementation in a separate private environment; never publish corporate implementation details or real work data.
 
 ## 4. Interfaces to define before implementation
 
@@ -132,17 +145,21 @@ On identical synthetic episodes, compare SQLite baseline with pinned TencentDB A
 - `IReflectionEngine`: produce evidence-backed proposals, not direct mutations.
 - `IEnvironment`: synthetic fixtures and allowlisted observable actions.
 - `IExperimentRunner`: pin config, replay, reset, ablate, score and export.
+- `IWorkloadAdapter` (conceptual): accept versioned synthetic fixtures and publish standardized event traces, ground-truth labels, and metric inputs independent of the consuming lab. Keep its initial implementation lab-local.
 
 Contract names are illustrative rather than an instruction to create interfaces before an MVP demonstrates a need.
 
 ## 5. Staged implementation backlog (suggested, not approved)
 
-P0: CONT-000 synthetic fixtures, event schema, deterministic environment, no-memory baseline, minimal adapter, telemetry, basic replay and stop/budget controls.  
-P1: SQLite memory and arm B; measured self-model and arm C; reflection proposals and arm D; explicit world predictions/policy and arm E.  
-P1: Execute CONT-001 repeatedly with held-out tests, data and analysis.  
-P2: CONT-002 reset/restore/state export and alternative-core adaptation.  
-P2: Pinned TencentDB integration and direct comparison (CONT-004); candidate Jev policy adapter.  
+P0a: CONT-000 lab-agnostic synthetic fixture protocol, metric definitions and runner contract (kept lab-local), event schema, deterministic environment, no-memory baseline, minimal adapter, telemetry, basic replay and stop/budget controls.  
+P0b: Early variance/headroom pilot with arm A; size confirmatory trials and document compute budget before implementing further arms. Pre-register a single primary endpoint per experiment and thresholds before confirmatory evaluation.  
+P1a: SQLite memory and arm B; measured self-model and arm C; reflection proposals and arm D; explicit world predictions/policy and arm E.  
+P1b: Execute CONT-001 repeatedly with held-out tests, data and analysis.  
+P2a: CONT-002 complete 2×2 reset/restore/state export and alternative-core adaptation.  
+P2b: Pinned TencentDB integration and direct comparison (CONT-004); candidate Jev policy adapter. TAM-001 and JEV-001 can proceed independently in parallel rather than blocking on Continuity.  
 P3: Reactive/continuous trial with budget-matched random-reflection control (CONT-003); CLI-Anything sandbox, optional Muse Glimmer and other inference providers; TimesFM only with a demonstrated forecasting need.
+
+**Compute feasibility note:** 100 sessions × ~3 turns × ~2–3k tokens is about 0.6–0.9M tokens per arm/seed; across five arms and three seeds, roughly 9–13.5M tokens before extra controls/retries. This is illustrative arithmetic, not a measured runtime estimate. Choose session count from P0b pilot variance and the practical inference throughput; log expected cost and schedule bounded batches. Acquire `shared/tooling/agent-resource-coordination` locks for contended GPU runs.
 
 Avoid creating empty directories or premature shared abstractions. Keep lab-local components until genuine cross-lab reuse appears.
 
@@ -163,7 +180,7 @@ labs/continuity/
   results/
 ```
 
-The existing root `docs/architecture.md` is authoritative for experiment contracts, evidence and status. Cross-lab inputs are references, not vendored code. Keep the public repository free of real personal conversation exports, identifiers, confidential employment or project data, API credentials and private model artifacts. Use synthetic data and publish only sanitized evidence. Pin upstream licenses and versions. All code comments should be in English.
+The existing root `docs/architecture.md` is authoritative for experiment contracts, evidence and status. Cross-lab inputs are references, not vendored code. The CONT-000 fixture protocol is intentionally consumer-neutral but remains in Continuity until another actual consumer demonstrates the need to move it into `shared/`. Keep the public repository free of real personal conversation exports, identifiers, confidential employment or project data, API credentials and private model artifacts. Use synthetic data and publish only sanitized evidence. Pin upstream licenses and versions. All code comments should be in English.
 
 ## 7. What would count as an informative outcome?
 
