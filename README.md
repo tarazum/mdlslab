@@ -10,7 +10,7 @@ The lab is intentionally heterogeneous. A forecasting foundation model, a local 
 | --- | --- | --- |
 | [Muse Glimmer](labs/muse-glimmer/) | Local multimodal agent model, tool use, long tasks, constrained hardware | Planned |
 | [TimesFM](labs/timesfm/) | Time-series foundation models and forecasting | In progress (private playground) |
-| [Jev](labs/jev/) | Decision-oriented model evaluation | Source verification |
+| [Jev](labs/jev/) | Decision-oriented model evaluation | Upstream verified; experiments pending |
 | [Laya](labs/laya/) | Candidate local/open model | Source verification |
 | [TencentDB Agent Memory](labs/tencentdb-agent-memory/) | Persistent agent memory and retrieval behavior | Upstream verified; experiments pending |
 | [CLI-Anything](labs/cli-anything/) | Agent tooling and CLI-based software control | Planned |
