@@ -1,0 +1,29 @@
+{
+  "scenario": "dr-0001",
+  "family": "delayed_recall",
+  "arm": "B",
+  "sessions_planned": 1,
+  "memory_episodes": 2,
+  "turns": 1,
+  "tokens_total": 2726,
+  "probes": [
+    {
+      "kind": "contains",
+      "expected": "7",
+      "observed_normalized": "i don't have records of this lighthouse.",
+      "passed": false,
+      "turn_ref": "s2t1"
+    }
+  ],
+  "probes_passed": 0,
+  "probes_total": 1,
+  "stopped": false,
+  "budget_violation": null,
+  "duration_s": 73.5,
+  "memory_episodes_at_start": 0,
+  "model_digest": "8a0fd5da454e93639b54588bcecd66331a48f121994cc598476ac57f5d0c50c7",
+  "run_id": "cont002-mechanics-20261001-225738-coreB-clean",
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true
+}

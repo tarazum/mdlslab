@@ -1,0 +1,21 @@
+{
+  "scenario": "dr-0001",
+  "family": "delayed_recall",
+  "arm": "B",
+  "sessions_planned": 1,
+  "memory_episodes": 2,
+  "turns": 1,
+  "tokens_total": 112,
+  "probes": [],
+  "probes_passed": 0,
+  "probes_total": 0,
+  "stopped": false,
+  "budget_violation": null,
+  "duration_s": 2.2,
+  "memory_episodes_exported": 2,
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "run_id": "cont002-mechanics-20261001-225738-coreA-learn",
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true
+}

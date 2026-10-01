@@ -1,0 +1,94 @@
+{
+  "kind": "cont002-mechanics-checklist",
+  "run_id": "cont002-mechanics-20261001-225738",
+  "created_utc": "2026-10-01T20:00:52Z",
+  "milestone": "M2b",
+  "claim_scope": "plumbing proof only \u2014 no behavioral claims, no transfer claims, single seed, observation section is not evidence of anything",
+  "checks": {
+    "1_modelfile_import": {
+      "model": "qwen36-35b-a3b:mdlslab",
+      "modelfile": "Modelfile",
+      "from": "C:/Models/qwen36_Q4_K_M/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+      "create_exit": 0,
+      "create_stdout_tail": "",
+      "create_stderr_tail": "a36eff361580e79c5bd6f8e76bffb4ce547f167d53e31a61 100% \u001b[K\nparsing GGUF \u2838 \u001b[K\u001b[?25h\u001b[?2026l\u001b[?2026h\u001b[?25l\u001b[A\u001b[A\u001b[1Ggathering model components \u001b[K\ncopying file sha256:ac0e2c1189e055faa36eff361580e79c5bd6f8e76bffb4ce547f167d53e31a61 100% \u001b[K\nparsing GGUF \u001b[K\nusing existing layer sha256:ac0e2c1189e055faa36eff361580e79c5bd6f8e76bffb4ce547f167d53e31a61 \u001b[K\nwriting manifest \u001b[K\nsuccess \u001b[K\u001b[?25h\u001b[?2026l\n",
+      "create_wall_s": 48.5,
+      "tags_contains_model_after_create": true,
+      "show": {
+        "chat_template_present": true,
+        "chat_template_chars": 8057,
+        "families": [
+          "qwen35moe"
+        ],
+        "parameter_size": "34.7B"
+      },
+      "pass": true
+    },
+    "2_export_schema_valid_roundtrip": {
+      "export_path": "memory-export.json",
+      "format": "continuity-memory-export",
+      "version": 1,
+      "episode_count": 2,
+      "imported_count": 2,
+      "round_trip_episodes_equal": true,
+      "fresh_store": "memory.sqlite3",
+      "probe_query_retrieval_refs": [
+        "s1t1|environment"
+      ],
+      "errors": [],
+      "pass": true
+    },
+    "3_state_renders_into_coreB_context": {
+      "evidence": "memory.injected events in coreB-state/trace.jsonl",
+      "injected_events": 1,
+      "injected": true,
+      "episode_count": 1,
+      "episode_refs": [
+        "s1t1|environment"
+      ],
+      "episode_ids_from_core_a": [
+        1
+      ],
+      "injected_ids_subset_of_export": true,
+      "export_episode_ids": [
+        1,
+        2
+      ],
+      "pass": true
+    },
+    "4_coreB_traces_revalidate": {
+      "coreB_state_trace_valid": true,
+      "coreB_clean_trace_valid": true,
+      "coreA_trace_valid": true,
+      "coreA_trace_errors": [],
+      "pass": true
+    },
+    "5_no_cross_core_errors": {
+      "errors": [],
+      "pass": true
+    }
+  },
+  "observations_only": {
+    "probe_state_run": [
+      {
+        "kind": "contains",
+        "expected": "7",
+        "observed_normalized": "7",
+        "passed": true,
+        "turn_ref": "s2t1"
+      }
+    ],
+    "probe_clean_run": [
+      {
+        "kind": "contains",
+        "expected": "7",
+        "observed_normalized": "i don't have records of this lighthouse.",
+        "passed": false,
+        "turn_ref": "s2t1"
+      }
+    ],
+    "coreB_template_suspect": false,
+    "note": "probe outcomes under a different core are observations only; R ratio and any CONT-002 conclusion are owner-gated"
+  },
+  "digests_file": "model-digests.json"
+}

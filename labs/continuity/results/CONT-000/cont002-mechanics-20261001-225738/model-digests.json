@@ -1,0 +1,50 @@
+{
+  "created_utc": "2026-10-01T19:58:33Z",
+  "ollama_version": "0.34.2",
+  "gpu_at_start": [
+    {
+      "name": "granite-code:8b",
+      "digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+      "size_vram": 5310576065
+    }
+  ],
+  "core_a_model": "granite-code:8b",
+  "core_b_model": "qwen36-35b-a3b:mdlslab",
+  "core_b_created_wall_s": 48.5,
+  "core_b_show": {
+    "chat_template_present": true,
+    "chat_template_chars": 8057,
+    "families": [
+      "qwen35moe"
+    ],
+    "parameter_size": "34.7B"
+  },
+  "tags_before_create": [
+    "gemma4:26b",
+    "nemotron-3.5-lightning:30b",
+    "qwen3.8:27b",
+    "qwen3.6:latest",
+    "granite-code:8b",
+    "starcoder2:instruct",
+    "qwen2.5-coder:32b",
+    "devstral-small-2:latest",
+    "qwen3-coder-next:latest",
+    "qwen3-coder:30b"
+  ],
+  "core_a_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "core_a_warmup_s": 2.3,
+  "core_a_warmup_reply": "Ready.\n",
+  "core_a_learn_wall_s": 8.8,
+  "core_b_digest": "8a0fd5da454e93639b54588bcecd66331a48f121994cc598476ac57f5d0c50c7",
+  "core_b_size_vram": 6175189892,
+  "core_b_load_warmup_s": 39.6,
+  "core_b_warmup_reply": "ready",
+  "core_b_warmup_reply_has_ready": true,
+  "gpu_at_coreB_loaded": [
+    {
+      "name": "qwen36-35b-a3b:mdlslab",
+      "digest": "8a0fd5da454e93639b54588bcecd66331a48f121994cc598476ac57f5d0c50c7",
+      "size_vram": 6175189892
+    }
+  ]
+}

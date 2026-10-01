@@ -189,5 +189,86 @@ aggregate.json + `armA-vs-armB-delayed_recall.{json,md}`); new
 - M2 exit artifacts complete; ROADMAP M2 marked DONE. Next: M2b (conditional)
   then M3 (arm C, validated self-model) per ROADMAP.
 
+## 2026-10-01 22:54 — start-note: M2b / CONT-002 mechanics smoke (owner-ordered)
+
+- Contract: `docs/ROADMAP.md` M2b brief. Entry verified: M2 DONE; local GGUF
+  `C:\Models\qwen36_Q4_K_M\Qwen3.6-35B-A3B-UD-Q4_K_M.gguf` present; ~12.5 h to
+  the arc deadline (>= 45 min condition met); Ollama 0.34.2 up; GPU lock free;
+  no tag collision for the planned import name `qwen36-35b-a3b:mdlslab`
+  (checked `/api/tags`).
+- Open findings re-read before starting: CN-002 OPEN (budget by wall clock —
+  applied: 22 GB core-B load sized by wall, `total_duration` relative only),
+  CN-003 OPEN (temp-0 seed drift — monitoring only, single seed 11), CN-004
+  OPEN (fixture untouched), CN-005 OPEN (GPU attribution snapshot will be
+  recorded in the checklist), CN-007/CN-008 OPEN (arm-B behavior findings,
+  out of scope for a mechanics smoke). This stage is mechanics-only: zero
+  behavioral claims, no R ratio, no model-quality judgments.
+- Plan: one script `experiments/CONT-000/run_cont002_mechanics.py` under the
+  shared GPU lock (single `lock.py run gpu` hold): (1) `ollama create
+  qwen36-35b-a3b:mdlslab` from a Modelfile with only `FROM <local GGUF>` (local
+  import, not a download); (2) core A `granite-code:8b` (digest pinned
+  `36c3c3b9683b…`) runs the dr-0001 LEARNING session only (session 1, seed 11,
+  arm B) and exports `memory-export.json` (continuity-memory-export v1); (3)
+  export imported into a fresh core-B store, round-trip compared; (4) core B
+  runs the dr-0001 HELD-OUT probe session only (session 2) twice — imported
+  state then clean state — sampling options per request (temp 0.0, seed 11,
+  num_ctx 4096, PB-071), keep_alive 45m so the 22 GB load happens once; (5)
+  checklist JSON: import+digest, schema-valid round-trip, `memory.injected`
+  visible in the core-B trace, both traces re-validate from disk, no
+  cross-core errors. Session slicing happens in-script on the validated
+  fixture dict — the fixture file itself is untouched. Probe outcome under
+  B+state, if any, is recorded as an observation only. Garbage core-B output
+  (possible chat-template mismatch) → new CN-NNN; plumbing checks 2-5 can
+  still pass.
+- Budget: <= 45 min wall clock, <= 30 min GPU. Fail-closed: GGUF missing or
+  Ollama unreachable → LOG note, status back to TODO, stop.
+
+## 2026-10-01 23:02 — M2b result: CONT-002 mechanics smoke — ALL 5 CHECKS PASS
+
+Artifacts: `results/CONT-000/cont002-mechanics-20261001-225738/` (Modelfile,
+model-digests.json, checklist.json, coreA/{trace,summary,memory-export.json,
+memory.sqlite3}, coreB-state/…, coreB-clean/…); script
+`experiments/CONT-000/run_cont002_mechanics.py`. Exit 0 under the shared GPU
+lock (held ~2.5 min; released clean).
+
+- **Check 1 — Modelfile import PASS**: `ollama create qwen36-35b-a3b:mdlslab`
+  from `FROM C:/Models/qwen36_Q4_K_M/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf` (local
+  import, no download), wall 48.5 s (disk only). Digest pinned via `/api/ps`
+  after loading (CN-001 method): `8a0fd5da454e…d0c50c7`. `/api/show`: chat
+  template present (8057 chars), families `[qwen35moe]`, parameter size 34.7B.
+  The imported model remains in Ollama for the owner's CONT-002 decision
+  (morning list item 3).
+- **Check 2 — export schema-valid round-trip PASS**: core A exported 2
+  episodes (`continuity-memory-export` v1) after the dr-0001 learning session
+  (session 1 only, seed 11, arm B, digest `36c3c3b9683b…a18dd`, 1 request);
+  fresh-store import 2/2 error-free, re-export byte-equal, retrieval on the
+  probe query deterministic.
+- **Check 3 — state renders into core B's context PASS**: the core-B-state
+  trace's `memory.injected` event shows injected=true, episode_count=1,
+  episode_ids=[1] (`s1t1|environment` — the lighthouse fact learned on core
+  A), ids a subset of the export; the clean run's event shows injected=false.
+- **Check 4 — traces re-validate PASS**: all three traces (coreA, coreB-state,
+  coreB-clean) re-validate from disk (re-verified independently after the
+  run); 0 budget stops.
+- **Check 5 — no cross-core errors PASS**: no provider/HTTP/import errors in
+  any cross-core phase. Core-B warmup reply was "ready" — no chat-template
+  garbage, so no new CN-NNN for template mismatch.
+- **Observations ONLY (no transfer claims, single seed, mechanics smoke)**:
+  the held-out probe (dr-0001 s2t1, expected "7") PASSED under core
+  B+imported state (observed exactly "7", 318 tokens) and FAILED under core
+  B+clean state ("i don't have records of this lighthouse.", 2726 tokens —
+  Qwen3.6 reasons at length without the record). Recorded as plumbing-run
+  by-products; the R ratio and any CONT-002 conclusion remain owner-gated.
+- Mechanics: core-B requests carried their own sampling options
+  (temperature 0.0, seed 11, num_ctx 4096 — PB-071, visible in each
+  `agent.response.options`); the 22 GB MoE loaded with 6.18 GB in VRAM
+  (partial offload, expected on the 8 GB card). CN-005 attribution snapshot
+  recorded: at lock time nvidia-smi 6009 MiB, ollama `/api/ps` attributed
+  5310 MiB to granite-code:8b (the run's own core-A target, no foreign
+  compute). CN-002 rule applied (budgets by wall). CN-003: single seed — not
+  exercised. No fixture changes.
+- M2b exit artifacts complete; ROADMAP M2b marked DONE. Next: M3 (arm C,
+  validated self-model) per ROADMAP.
+
 
 

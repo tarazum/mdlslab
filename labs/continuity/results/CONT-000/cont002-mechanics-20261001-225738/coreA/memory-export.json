@@ -1,0 +1,32 @@
+{
+  "format": "continuity-memory-export",
+  "version": 1,
+  "exported_utc": "2026-10-01T19:58:40Z",
+  "episode_count": 2,
+  "episodes": [
+    {
+      "id": 1,
+      "created_utc": "2026-10-01T19:58:40Z",
+      "run_id": "cont002-mechanics-20261001-225738-coreA-learn",
+      "scenario": "dr-0001",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You are the night-log keeper of Verdin Isle. Log these three observations: the lighthouse on Verdin Isle flashes every 7 minutes; the ferry to Harlow runs only on even-numbered days; the tea shop in the harbor closes at six in the evening. Reply with a one-line acknowledgment.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 2,
+      "created_utc": "2026-10-01T19:58:40Z",
+      "run_id": "cont002-mechanics-20261001-225738-coreA-learn",
+      "scenario": "dr-0001",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "Acknowledged.\n",
+      "importance": 0.5,
+      "meta": {}
+    }
+  ]
+}

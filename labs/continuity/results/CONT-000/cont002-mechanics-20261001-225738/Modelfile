@@ -1,0 +1,2 @@
+# CONT-002 mechanics smoke (M2b) — local import, not a download
+FROM C:/Models/qwen36_Q4_K_M/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf
