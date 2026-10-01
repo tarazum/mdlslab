@@ -1,9 +1,10 @@
 # Continuity — autonomous arc roadmap
 
 - **Arc goal:** from smoke to first ablation signal — complete P0b (pilot + sizing) and P1a (arms B–E as MVPs), and produce a first **exploratory** CONT-001 multi-arm result. The confirmatory CONT-001 run stays owner-gated.
-- **Armed:** 2026-10-01 22:30 FLEDT. **Arc deadline:** 2026-10-02 10:30 FLEDT. After the deadline, every milestone executor must no-op.
+- **Armed:** 2026-10-01 22:30 FLEDT. **Arc deadline:** 2026-10-02 11:30 FLEDT (extended 22:35 per owner: all owner work consolidated at arc end). After the deadline, every milestone executor must no-op.
+- **No milestone waits on the owner.** Every owner decision is collected in the Owner morning list at the end of this file; the chain runs unattended.
 - **Execution model:** one milestone per fresh session. The brief below is the only required reading; the repository is the sole state carrier between sessions (LOG.md, results/, git). Do not rely on conversation history.
-- **Status legend:** TODO / IN_PROGRESS / DONE / BLOCKED (a BLOCKED milestone records why in LOG.md and leaves the rest of the chain to the next executor).
+- **Status legend:** TODO / IN_PROGRESS / DONE / BLOCKED (reason recorded in LOG.md) / SKIPPED (a written condition failed; reason recorded).
 
 | Milestone | Stage | Status |
 | --- | --- | --- |
@@ -12,8 +13,10 @@
 | M3 | P1a: arm C — validated self-model | TODO |
 | M4 | P1a: arm D — reflection/consolidation | TODO |
 | M5 | P1a: arm E — world model + bounded policy | TODO |
-| M6 | Exploratory CONT-001 pass (all arms) + pre-registration draft | TODO |
-| M7 | Buffer: housekeeping, findings triage, arc report | TODO |
+| M6 | Exploratory CONT-001 pass (all arms) + pre-registration v1 committed | TODO |
+| M6b | Independent pre-registration review (GO/NO-GO) | TODO |
+| M7 | Confirmatory CONT-001 (conditional: M6b GO + >= 2h before deadline) | TODO |
+| M8 | Final: housekeeping, arc report, owner morning list | TODO |
 
 ## Executor protocol (every session)
 
@@ -73,21 +76,45 @@
 
 - **Goal:** first multi-arm comparison, explicitly **exploratory**, feeding the pre-registration.
 - **Entry:** M1–M5 DONE.
-- **Scope:** run arms A–E over the full suite with the seed count recommended by SIZING.md (hard cap: 3h GPU total; if over budget, reduce seeds and record the reduction); normalized results table (primary endpoint candidate: repeated-mistake rate / delayed-recall pass rate; report per-arm with spread); write `docs/EVALUATION-PREP.md` — a DRAFT pre-registration for the confirmatory CONT-001 (primary endpoint, contrast, thresholds, aggregation) marked OWNER-GATED; LOG.md with the table.
-- **Non-goals:** any confirmatory claim; promoting secondary metrics; CONT-002.
-- **Exit artifacts:** results/CONT-001-exploratory/…; EVALUATION-PREP.md (draft); LOG.md.
+- **Scope:** run arms A–E over the full suite with the seed count recommended by SIZING.md (hard cap: 3h GPU total; if over budget, reduce seeds and record the reduction); normalized results table (primary endpoint candidate: repeated-mistake rate / delayed-recall pass rate; report per-arm with spread); write `docs/EVALUATION-PREP.md` — pre-registration v1 (primary endpoint, primary contrast, minimum meaningful effect, thresholds, aggregation, missing-run handling, held-out data plan), committed BEFORE any confirmatory data exists; LOG.md with the table.
+- **Non-goals:** executing the confirmatory run (M7); promoting secondary metrics; CONT-002.
+- **Exit artifacts:** results/CONT-001-exploratory/…; EVALUATION-PREP.md; LOG.md.
 - **Budget:** <= 150 min, <= 180 min GPU. (Executor may split into two checkpoints.)
 
-## M7 — buffer / housekeeping / arc report
+## M6b — independent pre-registration review
+
+- **Goal:** a fresh session checks the pre-registration before any confirmatory data exists (author/reviewer separation, same pattern as the proposal/review cycle).
+- **Entry:** M6 DONE.
+- **Scope:** verify against a fixed checklist: the primary endpoint is measurable with the existing harness; the primary contrast and minimum meaningful effect are stated and falsifiable; aggregation and treatment of missing/failed runs are defined; the held-out plan uses scenarios/seeds not used in M6; thresholds are not reverse-engineered from the exploratory results to guarantee success. Write `docs/PR-REVIEW.md` with verdict GO or NO-GO plus reasons. Do NOT edit EVALUATION-PREP.md; if a fix is needed, record it as a required change and verdict NO-GO.
+- **Non-goals:** modifying the pre-registration; running anything.
+- **Exit artifacts:** PR-REVIEW.md; LOG.md; status DONE (record the verdict regardless of GO/NO-GO).
+- **Budget:** <= 30 min, 0 GPU.
+
+## M7 — confirmatory CONT-001 (conditional, agent-pre-registered)
+
+- **Goal:** execute the frozen pre-registration on fresh held-out data, fully autonomously, labeled as pending owner acceptance.
+- **Entry:** M6b DONE with verdict GO **and** at least 2 hours remaining before the arc deadline. If either condition fails, mark M7 SKIPPED with the reason and leave the run to the owner morning list — never run it late or rushed.
+- **Scope:** generate the held-out scenario set per EVALUATION-PREP.md (new scenarios, never used for calibration; synthetic and public-safe); freeze and record the config; run arms A–E exactly per the frozen protocol (GPU cap 3h; if over budget, stop and record — do not silently reduce seeds); produce the analysis strictly as pre-registered; label every artifact and the LOG entry "agent-pre-registered, pending owner acceptance"; no post-hoc metric switching.
+- **Non-goals:** deviating from the frozen protocol; CONT-002; external claims.
+- **Exit artifacts:** results/CONT-001-confirmatory/…; analysis per pre-registration; LOG.md; status DONE or SKIPPED (with reason).
+- **Budget:** <= 150 min, <= 180 min GPU.
+
+## M8 — final: housekeeping, arc report, owner morning list
 
 - **Goal:** close the arc cleanly regardless of where the chain stopped.
-- **Entry:** always available; run when M6 is DONE or the chain is BLOCKED.
-- **Scope:** triage open CN-NNN cases; retry the deferred Mnemosyne consolidation; write `docs/ARC-REPORT.md` (what was achieved, numbers, failures, what is owner-gated next); mark the arc COMPLETE at the top of this file; final LOG.md entry; commit + push; Mnemosyne note.
-- **Non-goals:** new features.
+- **Entry:** always available; run when no earlier milestone is open (or the chain is BLOCKED).
+- **Scope:** triage open CN-NNN cases; retry the deferred Mnemosyne consolidation; write `docs/ARC-REPORT.md` (numbers, failures, what ran and what did not, an explicit "pending owner acceptance" section); assemble the Owner morning list with concrete pointers; mark the arc COMPLETE at the top of this file; final LOG.md entry; commit + push; Mnemosyne note.
+- **Non-goals:** new features; starting M7 if it was skipped.
 - **Exit artifacts:** ARC-REPORT.md; completed statuses; clean git state.
 
-## Owner-gated (never autonomous)
+## Owner morning list (all owner work is here; nothing before it)
 
-- Executing the confirmatory CONT-001 after pre-registration review.
-- Anything in CONT-002 (state export/import experiments) beyond the storage format built in M2.
+1. Read `docs/ARC-REPORT.md`, `docs/SIZING.md`, `docs/PR-REVIEW.md`, and (if M7 ran) the confirmatory results.
+2. Accept or reject the agent-pre-registered confirmatory result: accept / re-run with amendments / discard.
+3. Decide the CONT-002 program: the full 2×2 needs a second compatible local core (~4–5 GB download — owner decision); the M2 storage format is already in place for it.
+4. External actions, publication decisions, any scope change to this roadmap.
+
+## Never autonomous (unchanged)
+
+- CONT-002 experiments beyond the M2 storage format.
 - External actions outside this repository; publication decisions; model downloads > 1 GB.

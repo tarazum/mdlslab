@@ -43,4 +43,34 @@ the full fixture suite, measure spread of candidate endpoints, size CONT-001.
 - M1 (P0b pilot) launched immediately as a background agent; the automation covers M2+.
 - Confirmatory CONT-001, CONT-002 work, external actions stay owner-gated per ROADMAP.
 
+## 2026-10-01 22:33 — start-note: M1 / P0b (fixture suite v2 + arm A pilot + sizing)
+
+- Contract: `docs/ROADMAP.md` M1 brief (P0b). Entry verified: repo clean on `origin/main`
+  (HEAD `50de659`), smoke artifacts under `results/CONT-000/`, Ollama 0.34.2 up,
+  `granite-code:8b` present (digest prefix `36c3c3b9683b`).
+- **Predeclared seed set (before any pilot run): {11, 22, 33, 44, 55}** — fixed in
+  `experiments/CONT-000/run_pilot_arm_a.py` (`SEEDS` constant); the full seed list travels
+  in every `run.start` trace event and in the aggregate. Temperature 0.0, num_ctx 4096,
+  per-request sampling options (PB-071), one warm process for the whole suite x seeds
+  (PB-070).
+- Plan: extend `fixtures/v1` from 3 to 10 scenarios (new families `distractor_recall`,
+  `contradiction_update`; manifest updated); pilot script reusing fixtures/provider/
+  runner/events; one warmup request before the measured runs so latency stats are warm;
+  GPU lock held around the pilot; then `docs/SIZING.md`, README/ROADMAP state updates,
+  commit+push.
+- Budget: <= 90 min wall clock, <= 60 min GPU. Fail-closed if Ollama is unreachable or the
+  model/digest mismatches.
+
+## 2026-10-01 22:35 — arc amendment (owner): owner work moved to arc end
+
+- Owner directive: nothing in the chain may wait on the owner; all owner work is
+  consolidated in the ROADMAP "Owner morning list" at the end of the arc.
+- De-gated per owner delegation: the confirmatory CONT-001 execution is now autonomous
+  via M6b (independent pre-registration review by a fresh session) + conditional M7
+  (frozen protocol, fresh held-out data, labels "agent-pre-registered, pending owner
+  acceptance"). The owner only accepts/rejects in the morning.
+- Deadline extended to 2026-10-02 11:30 FLEDT; status legend gained SKIPPED; the
+  2h automation prompt was updated to match (conditional milestones, no hardcoded time).
+
+
 
