@@ -1,0 +1,86 @@
+{
+  "kind": "cont001-confirmatory-frozen-config",
+  "label": "agent-pre-registered, pending owner acceptance",
+  "created_utc": "2026-10-01T22:02:16Z",
+  "protocol": {
+    "doc": "labs/continuity/docs/EVALUATION-PREP.md",
+    "frozen_commit": "a845fc5",
+    "evaluation_prep_sha256": "d93a1d8e25e6d8b57516240b6c5c0f1553397130655a50dc0175783cc80d5be6",
+    "review": "labs/continuity/docs/PR-REVIEW.md (M6b verdict GO)",
+    "pr_review_sha256": "3f0f71924ac0a6810abfe6e6bad025f58821ee6951c9075bccf81dfa95ecdc9b"
+  },
+  "fixtures": {
+    "evaluation_suite": "labs/continuity/fixtures/v2",
+    "evaluation_suite_sha256": "2d98f5173ffd2735a4f86fbc0e97c44a4d6de927f2f116a1ff223d8b710ea14e",
+    "calibration_suite": "labs/continuity/fixtures/v2-calibration",
+    "calibration_suite_sha256": "3dbc9e23be729dbdd1a7cfb328bba0e4077ed5b027f9672d11cc7ce44b6c14fc",
+    "v1_untouched_sha256": "8a93bfafa5699a076d9973e12eee82c3c521c2f081f0c02d4b8eaf90d35922a8",
+    "validation_verdict": "PASS",
+    "validation_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/fixture-validation.json"
+  },
+  "seeds": {
+    "confirmatory": [
+      101,
+      202,
+      303,
+      404,
+      505
+    ],
+    "calibration": [
+      11,
+      22,
+      33
+    ],
+    "note": "confirmatory seeds never used in M1-M6 or calibration (EVALUATION-PREP.md 6.1)"
+  },
+  "arms": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "model": {
+    "name": "granite-code:8b",
+    "digest_prefix": "36c3c3b9683b",
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "keep_alive": "30m",
+    "options_in_every_request": true,
+    "one_warm_process": true
+  },
+  "selfmodel": {
+    "path": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json",
+    "sha256": "2ce516bd7402965b5e8eccb72b39b165eee76c5da25a29fcf275727c867d6b28",
+    "calibration_aggregate_rel": "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json",
+    "calibration_seeds": [
+      11,
+      22,
+      33
+    ],
+    "provenance_rule": "revision 1' estimated ONLY from the calibration aggregate (6.8); contamination halt if provenance points elsewhere (8)"
+  },
+  "analysis": {
+    "primary_endpoint": "repeated-mistake rate (strict) per EVALUATION-PREP.md 1.1",
+    "primary_contrast": "RM(E) - RM(A), two-sided",
+    "mme": 0.15,
+    "bootstrap": {
+      "unit": "scenario (paired cluster)",
+      "resamples": 10000,
+      "rng_seed": 20261002,
+      "redraw_limit": 500,
+      "ci": "percentile 95%"
+    },
+    "decision_rule": "claim iff CI excludes 0 AND |delta| >= 0.15; else 'no confirmatory difference established'; underpowered guard eligible<10 -> inconclusive"
+  },
+  "budget": {
+    "wall_clock_min": 150,
+    "gpu_min": 180,
+    "stop_rule": "over budget -> stop and record; no silent seed reduction"
+  },
+  "freeze": {
+    "git_rev": "a7394b349345b9c7711bf31000cf63e1ec4fc453",
+    "note": "rev of the freeze-content commit; frozen-config.json itself is committed immediately after and is the only permitted change on top"
+  },
+  "fixture_authoring_exposure_note": "PR-REVIEW.md note 1, stated per its recommendation: the M7 fixture author had seen the M6 exploratory results before authoring v2; bounded by the symmetric decision rule, the mechanical validator (which blocked the known leakage channels CN-004/009/010), the freeze discipline, and the owner acceptance gate"
+}
