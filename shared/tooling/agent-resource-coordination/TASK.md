@@ -2,6 +2,32 @@
 
 **Status:** OPEN (created 2026-10-01, ZCode session, timesfm-playground).
 
+## Accepted directions from review 2026-10-01 (`REVIEW-2026-10-01-claude-code.md`)
+
+Fixed immediately (lock.py v1.1): stale takeovers serialized via a
+`.takeover` guard with identity re-verification; exit code 4 now actually
+returned after a takeover; PID identity hardened with process creation
+time (Windows PID reuse); `platform.node()` host fallback; manual TTL
+default lowered to 45 min; `gpu_at_start` probe snapshot in gpu lock
+records; ollama `/api/ps` added to `gpu` output as attribution.
+
+Deferred to this task (design changes, own iteration with tests):
+
+6. **Shared/exclusive (reader/writer) leases** — review finding 3.
+   Ordinary local-model use takes a *shared* lease (one file per holder in
+   `gpu.shared/`); benchmarks/timing take the *exclusive* lock, granted
+   only when no live shared lease exists and the GPU is idle; a pending
+   exclusive request blocks new shared leases so benchmarks cannot starve.
+   Consumers of one resident ollama model stop serializing needlessly.
+7. **Gateway-held leases** — review question 2: the agent-pool gateway
+   (fronts ollama for several projects) could take the shared lease per
+   request on behalf of callers — the "self-defending entry point" of
+   item 3 for every gateway client, with zero agent behavior required.
+
+Open owner questions from the review: build shared leases before more
+agents rely on the protocol, or is serializing consumers acceptable for
+now? Should the gateway hold leases on behalf of callers?
+
 ## Problem
 
 Owner decision 2026-10-01: written rules (AGENTS.md, PROTOCOL.md) are

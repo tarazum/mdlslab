@@ -28,5 +28,9 @@ depend on an agent having read them.
 
 ## Status
 
-Protocol active since 2026-10-01 (advisory-but-mandatory). Recorded in the
-machine-wide index `C:\projects\CROSS_PROJECT_DECISIONS.md`.
+Protocol active since 2026-10-01 (advisory-but-mandatory). Reviewed the
+same day by the Claude Code (TSE) session — `REVIEW-2026-10-01-claude-code.md`;
+its correctness findings (takeover race, exit code 4, PID reuse) are fixed
+in v1.1, its design findings (shared/exclusive leases, gateway-held
+leases) are accepted directions in TASK.md. Recorded in the machine-wide
+index `C:\projects\CROSS_PROJECT_DECISIONS.md`.

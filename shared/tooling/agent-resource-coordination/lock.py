@@ -19,29 +19,36 @@ Two holding patterns:
 2. `acquire`/`release` (manual, for interactive agent sessions) — no
    durable PID exists, so freshness is time-based: the lock is held while
    its heartbeat (file mtime, refreshable via `touch`) is younger than
-   --ttl-min. Release explicitly when done; a forgotten lock expires by
-   itself. Pass --anchor-pid to bind manual locks to a long-lived process
-   you own (then liveness, not time, decides).
+   --ttl-min (default 45). Release explicitly when done; a forgotten lock
+   expires by itself. Pass --anchor-pid to bind manual locks to a
+   long-lived process you own (then liveness, not time, decides).
 
-In both patterns a stale lock (dead owner PID, or heartbeat/TTL expired,
-or older than the hard --max-age-h cap) is taken over automatically; the
-previous file is parked as <resource>.lock.stale-<timestamp> for
-inspection, never silently deleted.
+Stale handling: a lock whose owner PID is dead (verified by PID AND
+process creation time, to survive Windows PID reuse), whose manual TTL
+expired, or which is older than the hard --max-age-h cap, is taken over.
+Takeovers are serialized by a short-lived `<resource>.lock.takeover`
+guard with re-verification of the lock's identity, so two concurrent
+takeovers cannot both succeed (review 2026-10-01, finding 1). The previous
+file is parked as <resource>.lock.stale-<timestamp>, never silently
+deleted.
 
-GPU ground truth: `gpu` reads total memory.used from nvidia-smi. On
-Windows/WDDM per-process GPU memory is not reported reliably, so the total
-is the signal. --require-idle-gpu makes acquisition fail closed: if the
+GPU ground truth: `gpu` reads total memory.used from nvidia-smi and, when
+an ollama server answers on 127.0.0.1:11434, its resident models with
+VRAM sizes (ollama's own accounting; per-process attribution is
+unavailable on Windows/WDDM). The busy decision uses nvidia-smi only;
+ollama data is attribution info. --require-idle-gpu fails closed: if the
 GPU cannot be measured or is above the threshold, nothing is held and the
 command refuses to proceed. Treat an idle GPU as mandatory for any
 timing/benchmark run, with or without a lock.
 
 Exit codes:
-  0  success
-  1  usage or IO error
-  2  lock held by a live/fresh holder (stdout: holder JSON; stderr: human line)
-  3  GPU busy or unmeasurable
-  4  success after stale-lock takeover (warning on stderr)
- 130  `run`: child interrupted
+  0    success
+  1    usage, IO error, or repeated contention
+  2    lock held by a live/fresh holder (stdout: holder JSON; stderr: human line)
+  3    GPU busy or unmeasurable
+  4    success after stale-lock takeover (warning on stderr; `acquire` only —
+       `run` returns the child's exit code and reports a takeover in its JSON)
+  130  `run`: child interrupted
 
 Examples:
   python lock.py run gpu --holder zcode/timesfm --purpose "phase3 walk-forward" -- python train.py
@@ -58,16 +65,23 @@ import argparse
 import ctypes
 import json
 import os
+import platform
 import subprocess
 import sys
 import time
+import urllib.error
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
 DEFAULT_LOCK_DIR = Path(r"C:\projects\.locks")
 DEFAULT_IDLE_THRESHOLD_MIB = 2048
-DEFAULT_TTL_MIN = 240.0
+DEFAULT_TTL_MIN = 45.0
 DEFAULT_MAX_AGE_H = 24.0
+GUARD_MAX_AGE_S = 30.0  # a .takeover guard older than this is removable
+GUARD_WAIT_S = 5.0  # how long one takeover waits for the guard
+OLLAMA_PS_URL = "http://127.0.0.1:11434/api/ps"
+OLLAMA_TIMEOUT_S = 2.0
 STILL_ACTIVE = 259  # Windows GetExitCodeProcess "still running" code
 STALE_KEEP = 5  # parked stale files kept per resource
 
@@ -83,6 +97,42 @@ def parse_utc(text: str) -> float:
         return 0.0
 
 
+class _FILETIME(ctypes.Structure):
+    _fields_ = [("dwLowDateTime", ctypes.c_ulong), ("dwHighDateTime", ctypes.c_ulong)]
+
+
+def _open_process(pid: int) -> int:
+    kernel32 = ctypes.windll.kernel32
+    PROCESS_QUERY_LIMITED_INFORMATION = 0x1000
+    return kernel32.OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, False, pid)
+
+
+def _process_creation_ts(pid: int) -> float | None:
+    """Process creation time as unix seconds; None when unavailable.
+
+    Comparing PID + creation time survives Windows PID reuse (review
+    2026-10-01, finding 5): a reused PID has a different creation time.
+    """
+    if os.name != "nt":
+        return None
+    handle = _open_process(pid)
+    if not handle:
+        return None
+    try:
+        kernel32 = ctypes.windll.kernel32
+        creation, exit_, kernel, user = _FILETIME(), _FILETIME(), _FILETIME(), _FILETIME()
+        if not kernel32.GetProcessTimes(
+            handle, ctypes.byref(creation), ctypes.byref(exit_), ctypes.byref(kernel), ctypes.byref(user)
+        ):
+            return None
+        ticks = (creation.dwHighDateTime << 32) | creation.dwLowDateTime
+        if ticks == 0:
+            return None
+        return ticks / 1e7 - 11644473600.0  # FILETIME epoch 1601-01-01 -> unix
+    finally:
+        ctypes.windll.kernel32.CloseHandle(handle)
+
+
 def pid_alive(pid: int | None) -> bool:
     """True if a process with this PID exists and is running.
 
@@ -92,12 +142,11 @@ def pid_alive(pid: int | None) -> bool:
     if not pid or pid < 0:
         return False
     if os.name == "nt":
-        kernel32 = ctypes.windll.kernel32
-        PROCESS_QUERY_LIMITED_INFORMATION = 0x1000
-        handle = kernel32.OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, False, pid)
+        handle = _open_process(pid)
         if not handle:
             return False
         try:
+            kernel32 = ctypes.windll.kernel32
             code = ctypes.c_ulong()
             if not kernel32.GetExitCodeProcess(handle, ctypes.byref(code)):
                 return False
@@ -111,6 +160,27 @@ def pid_alive(pid: int | None) -> bool:
         return False
     except PermissionError:
         return True
+
+
+def pid_owner_matches(pid: int | None, started_utc: str | None) -> bool:
+    """PID liveness, disambiguated by process creation time when known."""
+    if not pid_alive(pid):
+        return False
+    if started_utc is None:
+        return True
+    creation = _process_creation_ts(int(pid))  # type: ignore[arg-type]
+    if creation is None:
+        return True  # cannot verify further (non-Windows or access denied)
+    return abs(creation - parse_utc(started_utc)) <= 1.0
+
+
+def pid_started_utc(pid: int | None) -> str | None:
+    if pid is None:
+        return None
+    creation = _process_creation_ts(pid)
+    if creation is None:
+        return None
+    return datetime.fromtimestamp(creation, tz=timezone.utc).isoformat(timespec="seconds")
 
 
 def gpu_state(threshold_mib: int) -> dict:
@@ -140,6 +210,26 @@ def gpu_state(threshold_mib: int) -> dict:
     }
 
 
+def ollama_state() -> dict:
+    """Resident ollama models with VRAM (attribution only, never a decision).
+
+    ollama's own accounting fills the gap nvidia-smi cannot on Windows/WDDM
+    (review 2026-10-01, finding 4). Unreachable server is not an error.
+    """
+    try:
+        with urllib.request.urlopen(OLLAMA_PS_URL, timeout=OLLAMA_TIMEOUT_S) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        models = [
+            {"name": m.get("name"), "size_vram_mib": round(float(m.get("size_vram") or 0) / 2**20, 1)}
+            for m in data.get("models", [])
+        ]
+        return {"ok": True, "models": models}
+    except (OSError, urllib.error.URLError, ValueError):
+        return {"ok": False, "note": "no ollama server on 11434"}
+    except Exception as exc:  # never let attribution break the protocol
+        return {"ok": False, "note": str(exc)[:120]}
+
+
 def lock_path(args: argparse.Namespace, resource: str) -> Path:
     base = Path(os.environ.get("AGENT_LOCK_DIR") or getattr(args, "dir", None) or DEFAULT_LOCK_DIR)
     return base / f"{resource}.lock"
@@ -167,9 +257,10 @@ def is_held(path: Path, record: dict) -> tuple[bool, str]:
     age_h = lock_age_s(path, record) / 3600.0
     max_age_h = float(record.get("max_age_h") or DEFAULT_MAX_AGE_H)
     if pid is not None:
-        if pid_alive(int(pid)) and age_h <= max_age_h:
+        started = record.get("pid_started_utc")
+        if pid_owner_matches(int(pid), started) and age_h <= max_age_h:
             return True, f"owner pid {pid} alive, age {age_h:.1f}h"
-        if not pid_alive(int(pid)):
+        if not pid_owner_matches(int(pid), started):
             return False, f"owner pid {pid} dead"
         return False, f"age {age_h:.1f}h over hard cap {max_age_h}h"
     ttl_min = float(record.get("ttl_min") or DEFAULT_TTL_MIN)
@@ -193,46 +284,100 @@ def park_stale(path: Path, reason: str) -> None:
     print(f"warning: took over {path.name} ({reason}); previous parked at {parked.name}", file=sys.stderr)
 
 
-def write_lock(path: Path, args: argparse.Namespace, resource: str, pid: int | None) -> dict:
+def guarded_park(path: Path, expected: tuple | None, reason: str) -> bool:
+    """Park a stale lock under a takeover guard, re-verifying identity.
+
+    Serializes concurrent takeovers: only the process holding the
+    `<resource>.lock.takeover` guard may park, and it parks only if the
+    lock's (pid, started_utc) still equals what was judged stale
+    (review 2026-10-01, finding 1). Returns True when the park happened
+    (or the lock vanished); False when the state changed or the guard
+    stayed busy — the caller should re-evaluate from scratch.
+    """
+    guard = path.with_name(path.name + ".takeover")
+    deadline = time.time() + GUARD_WAIT_S
+    while time.time() < deadline:
+        try:
+            fd = os.open(guard, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+        except FileExistsError:
+            try:
+                if time.time() - guard.stat().st_mtime > GUARD_MAX_AGE_S:
+                    guard.unlink(missing_ok=True)  # wedged by a crash; age-capped
+                    continue
+            except OSError:
+                pass
+            time.sleep(0.1)
+            continue
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as fh:
+                json.dump({"pid": os.getpid(), "started_utc": utcnow(), "reason": reason}, fh)
+            if not path.exists():
+                return True  # someone else already parked it
+            cur = read_lock(path)
+            identity = (cur.get("pid"), cur.get("started_utc")) if cur else None
+            if identity != expected:
+                return False  # a fresh lock appeared under us; re-evaluate
+            park_stale(path, reason)
+            return True
+        finally:
+            guard.unlink(missing_ok=True)
+    return False
+
+
+def write_lock(
+    path: Path, args: argparse.Namespace, resource: str, pid: int | None, extra: dict
+) -> dict:
     record = {
         "resource": resource,
         "holder": args.holder,
         "project": getattr(args, "project", "") or "",
         "purpose": getattr(args, "purpose", "") or "",
         "pid": pid,
+        "pid_started_utc": pid_started_utc(pid),
         "started_utc": utcnow(),
         "ttl_min": getattr(args, "ttl_min", DEFAULT_TTL_MIN) or DEFAULT_TTL_MIN,
         "max_age_h": getattr(args, "max_age_h", DEFAULT_MAX_AGE_H) or DEFAULT_MAX_AGE_H,
-        "host": os.environ.get("COMPUTERNAME") or os.uname().nodename,
+        "host": platform.node(),
     }
+    record.update(extra)
     fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
     with os.fdopen(fd, "w", encoding="utf-8") as fh:
         json.dump(record, fh, indent=2, ensure_ascii=False)
     return record
 
 
-def acquire_once(args: argparse.Namespace, resource: str, pid: int | None) -> tuple[int, dict]:
-    """One acquire attempt; returns (exit_code, lock_record_or_holder)."""
+def acquire_once(args: argparse.Namespace, resource: str, pid: int | None) -> tuple[int, dict, str]:
+    """One acquire attempt. Returns (exit_code, record, event)."""
     path = lock_path(args, resource)
     path.parent.mkdir(parents=True, exist_ok=True)
+    extra: dict = {}
+    if resource == "gpu":
+        snap = gpu_state(args.threshold_mib)
+        extra["gpu_at_start"] = snap if snap["ok"] else {"probe": "unavailable", "error": snap.get("error")}
     try:
-        record = write_lock(path, args, resource, pid)
+        record = write_lock(path, args, resource, pid, extra)
     except FileExistsError:
         prev = read_lock(path)
-        if prev is None:
-            park_stale(path, "unreadable/corrupt")
-            return 1, {}
-        held, why = is_held(path, prev)
-        if held:
-            print(json.dumps({"acquired": False, "resource": resource, "holder": prev, "why": why}, ensure_ascii=False))
-            print(
-                f"{resource}: held by {prev.get('holder')} (pid {prev.get('pid')}) "
-                f"since {prev.get('started_utc')}; purpose: {prev.get('purpose')}; {why}",
-                file=sys.stderr,
-            )
-            return 2, prev
-        park_stale(path, why)
-        return 1, {}
+        if prev is not None:
+            held, why = is_held(path, prev)
+            if held:
+                print(
+                    json.dumps({"acquired": False, "resource": resource, "holder": prev, "why": why},
+                               ensure_ascii=False)
+                )
+                print(
+                    f"{resource}: held by {prev.get('holder')} (pid {prev.get('pid')}) "
+                    f"since {prev.get('started_utc')}; purpose: {prev.get('purpose')}; {why}",
+                    file=sys.stderr,
+                )
+                return 2, prev, "held"
+            expected = (prev.get("pid"), prev.get("started_utc"))
+            if guarded_park(path, expected, why):
+                return 1, {}, "takeover-parked"
+            return 1, {}, "state-changed"
+        if guarded_park(path, None, "unreadable/corrupt"):
+            return 1, {}, "takeover-parked"
+        return 1, {}, "state-changed"
     if getattr(args, "require_idle_gpu", False):
         state = gpu_state(args.threshold_mib)
         if not state["ok"] or state["busy"]:
@@ -240,9 +385,25 @@ def acquire_once(args: argparse.Namespace, resource: str, pid: int | None) -> tu
             print(json.dumps({"acquired": False, "resource": resource, "gpu": state}, ensure_ascii=False))
             detail = state.get("error") or f"used {state.get('used_mib')} MiB > {state.get('threshold_mib')} MiB"
             print(f"{resource}: refused, GPU not idle ({detail})", file=sys.stderr)
-            return 3, {}
+            return 3, {}, "refused-gpu"
     print(json.dumps({"acquired": True, "resource": resource, "lock": record}, ensure_ascii=False))
-    return 0, record
+    return 0, record, "acquired"
+
+
+def acquire_with_retry(args: argparse.Namespace, resource: str, pid: int | None, attempts: int = 3):
+    """Retry loop around acquire_once; a takeover-park turns success into 4."""
+    took_over = False
+    for i in range(attempts):
+        code, record, event = acquire_once(args, resource, pid)
+        if code == 0:
+            return (4 if took_over else 0), record
+        if code in (2, 3):
+            return code, record
+        if event == "takeover-parked":
+            took_over = True
+        time.sleep(0.05 * (i + 1))
+    print(f"{resource}: could not acquire after {attempts} attempts", file=sys.stderr)
+    return 1, {}
 
 
 def release_quiet(args: argparse.Namespace, resource: str) -> None:
@@ -254,20 +415,13 @@ def release_quiet(args: argparse.Namespace, resource: str) -> None:
 
 
 def cmd_acquire(args: argparse.Namespace) -> int:
-    pid = args.anchor_pid
-    for _attempt in (1, 2):
-        code, _ = acquire_once(args, args.resource, pid)
-        if code != 1:
-            return code
-    print(f"{args.resource}: could not acquire (repeated contention)", file=sys.stderr)
-    return 1
+    code, _ = acquire_with_retry(args, args.resource, args.anchor_pid)
+    return code
 
 
 def cmd_run(args: argparse.Namespace) -> int:
-    code, record = acquire_once(args, args.resource, os.getpid())
-    if code == 1:  # stale takeover happened once; one clean retry
-        code, record = acquire_once(args, args.resource, os.getpid())
-    if code != 0:
+    code, _ = acquire_with_retry(args, args.resource, os.getpid())
+    if code not in (0, 4):
         return code
     child = None
     try:
@@ -341,6 +495,7 @@ def cmd_status(args: argparse.Namespace) -> int:
 
 def cmd_gpu(args: argparse.Namespace) -> int:
     state = gpu_state(args.threshold_mib)
+    state["ollama"] = ollama_state()
     print(json.dumps(state, ensure_ascii=False))
     if not state["ok"] or state["busy"]:
         return 3
@@ -397,7 +552,7 @@ def main(argv: list[str] | None = None) -> int:
     p_status.add_argument("resource", nargs="?", default=None)
     p_status.set_defaults(func=cmd_status)
 
-    p_gpu = sub.add_parser("gpu", help="probe total GPU memory; exit 3 if busy")
+    p_gpu = sub.add_parser("gpu", help="probe total GPU memory (and ollama residents); exit 3 if busy")
     p_gpu.add_argument("--threshold-mib", type=int, default=DEFAULT_IDLE_THRESHOLD_MIB)
     p_gpu.set_defaults(func=cmd_gpu)
 
