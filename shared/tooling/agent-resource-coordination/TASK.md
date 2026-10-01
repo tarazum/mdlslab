@@ -23,6 +23,10 @@ Deferred to this task (design changes, own iteration with tests):
    (fronts ollama for several projects) could take the shared lease per
    request on behalf of callers — the "self-defending entry point" of
    item 3 for every gateway client, with zero agent behavior required.
+   Proposed to the agent-pool repo 2026-10-01 as **AP-014** with design
+   note `C:\projects\agent-pool-develop\docs\PROPOSAL-2026-10-01-gpu-resource-leases.md`
+   (lease format chosen to stay compatible with the shared-lease
+   convention of item 6).
 
 Open owner questions from the review: build shared leases before more
 agents rely on the protocol, or is serializing consumers acceptable for
