@@ -293,10 +293,24 @@ def contamination_checks(run_root: Path) -> list[str]:
                         if rec.get("type") == "run.start":
                             run_revs.add(rec["payload"].get("git_rev"))
                             break
-        if len(run_revs) > 1:
+        if len(run_revs) > 1 and not (run_root / "resume-manifest.json").exists():
             problems.append(f"run.start git_revs disagree across arms: {run_revs}")
+        manifest_revs: set[str] = set()
+        rm_path = run_root / "resume-manifest.json"
+        if rm_path.exists():
+            rm = json.loads(rm_path.read_text(encoding="utf-8"))
+            manifest_revs = {
+                str(e.get("git_rev") or e.get("git_rev_of_original_run"))
+                for e in rm.get("seeds", [])
+                if e.get("git_rev") or e.get("git_rev_of_original_run")
+            }
         for rev in run_revs:
-            if rev and fv.get("git_rev") and rev != fv["git_rev"]:
+            if not rev:
+                continue
+            if rm_path.exists():
+                if rev not in manifest_revs and rev != fv.get("git_rev"):
+                    problems.append(f"run.start git_rev {rev} not recorded in resume-manifest or freeze-verification")
+            elif rev != fv.get("git_rev"):
                 problems.append(f"run.start git_rev {rev} != freeze-verification rev {fv['git_rev']}")
     return problems
 

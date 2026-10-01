@@ -426,7 +426,7 @@ def run_one_seed(
         summary["reflection_telemetry"] = engine.telemetry
         summary["selfmodel_revision_final"] = engine.model["revision"]
         summary["selfmodel_sha256_final"] = selfmodel_sha256(engine.model)
-        capability_updates_accepted = sum(
+        capability_updates_accepted = int(
             engine.telemetry["accepted_by_type"].get("selfmodel_capability_update", 0)
         )
         summary["inrun_capability_updates_accepted"] = capability_updates_accepted
@@ -449,6 +449,163 @@ def run_one_seed(
         },
     )
     journal.close()
+    (out_dir / "summary.json").write_text(
+        json.dumps(summary, indent=2, ensure_ascii=True), encoding="utf-8"
+    )
+    return summary
+
+
+def load_summary(out_dir: Path) -> dict[str, Any] | None:
+    sp = out_dir / "summary.json"
+    if not sp.exists():
+        return None
+    s = json.loads(sp.read_text(encoding="utf-8"))
+    return s if s.get("completed") else None
+
+
+def trace_fully_completed(out_dir: Path, n_scenarios: int) -> bool:
+    """True when a trace shows every scenario ended with no budget stop."""
+    p = out_dir / "trace.jsonl"
+    if not p.exists():
+        return False
+    events = [json.loads(line) for line in p.read_text(encoding="utf-8").splitlines() if line.strip()]
+    ended = sum(1 for e in events if e["type"] == "scenario.end")
+    stopped = any(e["type"] == "budget.stop" for e in events)
+    return ended == n_scenarios and not stopped
+
+
+def rebuild_summary_from_trace(
+    arm: str,
+    seed: int,
+    scenarios: list[dict],
+    out_dir: Path,
+    run_id: str,
+) -> dict[str, Any]:
+    """Deterministic offline rebuild of a seed-run summary from its trace.
+
+    Used ONLY for resume after the attempt-1 harness crash (a post-inference,
+    pre-summary-write `sum(int)` bug in the executor's own instrumentation;
+    zero inference requests are repeated). The trace and memory export are
+    the primary evidence (M5 lesson); every number below is re-derived from
+    them.
+    """
+    events = [
+        json.loads(line)
+        for line in (out_dir / "trace.jsonl").read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    by_scenario: dict[str, list[dict]] = {}
+    for e in events:
+        if e.get("scenario"):
+            by_scenario.setdefault(e["scenario"], []).append(e)
+    scenario_summaries: list[dict[str, Any]] = []
+    for scenario in scenarios:
+        sid = scenario["id"]
+        evs = by_scenario.get(sid, [])
+        probes = [dict(e["payload"]) for e in evs if e["type"] == "probe.result"]
+        end = next((e["payload"] for e in evs if e["type"] == "scenario.end"), {})
+        turns = sum(1 for e in evs if e["type"] == "agent.response")
+        tokens = sum(
+            e["payload"]["usage"]["total_tokens"]
+            for e in evs
+            if e["type"] == "agent.response"
+        )
+        scenario_summaries.append(
+            {
+                "scenario": sid,
+                "family": scenario["family"],
+                "arm": arm,
+                "sessions_planned": len(scenario["sessions"]),
+                "memory_episodes": end.get("memory_episodes", 0),
+                "turns": turns,
+                "tokens_total": tokens,
+                "probes": probes,
+                "probes_passed": sum(1 for p in probes if p["passed"]),
+                "probes_total": len(probes),
+                "stopped": end.get("stopped", False),
+                "budget_violation": end.get("budget_violation"),
+                "duration_s": end.get("duration_s"),
+            }
+        )
+    budget_stops = sum(1 for e in events if e["type"] == "budget.stop")
+    trace_ok, trace_errors = validate_trace(str(out_dir / "trace.jsonl"))
+
+    summary: dict[str, Any] = {
+        "run_id": f"{run_id}-arm{arm}-seed{seed}",
+        "seed": seed,
+        "arm": arm,
+        "label": LABEL,
+        "model": MODEL,
+        "model_digest": next(
+            (e["payload"]["digest"] for e in events if e["type"] == "env.model_pinned"),
+            "unknown",
+        ),
+        "scenario_summaries": scenario_summaries,
+        "probes_passed": sum(s["probes_passed"] for s in scenario_summaries),
+        "probes_total": sum(s["probes_total"] for s in scenario_summaries),
+        "turns": sum(s["turns"] for s in scenario_summaries),
+        "tokens_total": sum(s["tokens_total"] for s in scenario_summaries),
+        "budget_stops": budget_stops,
+        "wall_s": None,
+        "trace_schema_valid": trace_ok,
+        "trace_validation_errors": trace_errors,
+        "completed": (
+            budget_stops == 0
+            and trace_ok
+            and sum(s["probes_total"] for s in scenario_summaries) > 0
+        ),
+        "summary_rebuilt_offline": {
+            "reason": (
+                "attempt-1 harness crash after inference completed but before "
+                "summary.json was written (executor instrumentation bug: sum() "
+                "over an int telemetry counter); deterministic rebuild from "
+                "trace.jsonl; zero inference requests repeated"
+            ),
+            "attempt1_events": len(events),
+        },
+    }
+    mem_export = out_dir / "memory-export.json"
+    if mem_export.exists():
+        summary["memory_episodes_total"] = json.loads(mem_export.read_text(encoding="utf-8"))[
+            "episode_count"
+        ]
+        summary["memory_export"] = "memory-export.json"
+    proposals = [e["payload"] for e in events if e["type"] == "reflection.proposal"]
+    if proposals:
+        run_start = next(e["payload"] for e in events if e["type"] == "run.start")
+        commits = [e["payload"] for e in events if e["type"] == "reflection.commit"]
+        types = sorted({p["type"] for p in proposals})
+        summary["reflection_telemetry"] = {
+            "passes": sum(1 for e in events if e["type"] == "reflection.start"),
+            "selfmodel_revision_initial": run_start.get("selfmodel", {}).get("revision", 1),
+            "proposals_by_type": {t: sum(1 for p in proposals if p["type"] == t) for t in types},
+            "accepted_by_type": {
+                t: sum(1 for p in proposals if p["type"] == t and p["accepted"]) for t in types
+            },
+            "rejected_by_type": {
+                t: sum(1 for p in proposals if p["type"] == t and not p["accepted"]) for t in types
+            },
+            "rejection_reasons": [
+                {"proposal_id": p["proposal_id"], "reason": p["reason"]}
+                for p in proposals
+                if not p["accepted"]
+            ],
+            "selfmodel_revision_final": commits[-1]["selfmodel_revision_after"] if commits else 1,
+            "summaries_appended": sum(
+                1 for p in proposals if p["type"] == "episode_summary" and p["accepted"]
+            ),
+        }
+        summary["selfmodel_revision_initial"] = run_start.get("selfmodel", {}).get("revision", 1)
+        summary["selfmodel_sha256_initial"] = run_start.get("selfmodel", {}).get("sha256")
+        summary["selfmodel_revision_final"] = (
+            commits[-1]["selfmodel_revision_after"] if commits else 1
+        )
+        summary["selfmodel_sha256_final"] = (
+            commits[-1]["selfmodel_sha256_after"] if commits else None
+        )
+        summary["inrun_capability_updates_accepted"] = sum(
+            1 for p in proposals if p["type"] == "selfmodel_capability_update" and p["accepted"]
+        )
     (out_dir / "summary.json").write_text(
         json.dumps(summary, indent=2, ensure_ascii=True), encoding="utf-8"
     )
@@ -941,6 +1098,7 @@ def main() -> int:
     gpu_started = time.monotonic()
     arm_aggregates: dict[str, dict[str, Any]] = {}
     all_ok = True
+    resume_log: list[dict[str, Any]] = []
     for arm in ARMS:
         arm_dir = run_root / f"arm-{arm}"
         arm_dir.mkdir(parents=True, exist_ok=True)
@@ -949,6 +1107,50 @@ def main() -> int:
         seeds_skipped: list[int] = []
         print(f"=== arm {arm} starting ({time.strftime('%H:%M:%S')})")
         for seed in SEEDS:
+            seed_dir = arm_dir / f"seed-{seed}"
+            existing = load_summary(seed_dir)
+            if existing is not None:
+                seeds_run.append(seed)
+                run_summaries.append(existing)
+                trace_rev = None
+                tp = seed_dir / "trace.jsonl"
+                if tp.exists():
+                    for line in tp.read_text(encoding="utf-8").splitlines():
+                        rec = json.loads(line)
+                        if rec.get("type") == "run.start":
+                            trace_rev = rec["payload"].get("git_rev")
+                            break
+                resume_log.append(
+                    {
+                        "arm": arm, "seed": seed,
+                        "action": "loaded_completed_summary_from_disk",
+                        "git_rev_of_original_run": trace_rev,
+                    }
+                )
+                print(
+                    f"--- arm {arm} seed {seed}: completed summary already on disk "
+                    "(resume; no new inference)"
+                )
+                continue
+            if trace_fully_completed(seed_dir, len(scenarios)):
+                seeds_run.append(seed)
+                run_summaries.append(
+                    rebuild_summary_from_trace(arm, seed, scenarios, seed_dir, run_id)
+                )
+                resume_log.append(
+                    {
+                        "arm": arm, "seed": seed,
+                        "action": "summary_rebuilt_offline_from_complete_trace",
+                        "note": "attempt-1 inference complete on disk; zero inference requests repeated",
+                    }
+                )
+                r = run_summaries[-1]
+                print(
+                    f"--- arm {arm} seed {seed}: summary REBUILT from complete "
+                    f"attempt-1 trace (probes {r['probes_passed']}/{r['probes_total']}, "
+                    f"completed={r['completed']}); no new inference"
+                )
+                continue
             elapsed = time.monotonic() - script_started
             if elapsed > RUN_WALL_CLOCK_S:
                 seeds_skipped.append(seed)
@@ -965,6 +1167,13 @@ def main() -> int:
                     arm, seed, scenarios, run_root, run_id, args.base_url, env_common,
                     base_selfmodel, base_sha, selfmodel_source, str(selfmodel_path),
                 )
+            )
+            resume_log.append(
+                {
+                    "arm": arm, "seed": seed,
+                    "action": "inference_executed_this_process",
+                    "git_rev": env_common["git_rev"],
+                }
             )
             r = run_summaries[-1]
             print(
@@ -990,6 +1199,26 @@ def main() -> int:
             f"arm wall {aggregate['run']['arm_wall_s']}s"
         )
     total_gpu_wall_s = time.monotonic() - gpu_started
+
+    resume_manifest = {
+        "kind": "cont001-confirmatory-resume-manifest",
+        "label": LABEL,
+        "created_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "this_process_git_rev": env_common["git_rev"],
+        "note": (
+            "attempt 1 (git rev 66eefc8...) crashed in the executor's own "
+            "post-inference instrumentation after arm C and arm D seed 101's "
+            "inference completed; seeds never started in attempt 1 ran in this "
+            "process (their FIRST evaluation requests - section 8 infrastructure "
+            "failure before their first request); arm D seed 101's summary was "
+            "rebuilt offline from its complete attempt-1 trace; zero inference "
+            "requests were repeated for any seed"
+        ),
+        "seeds": resume_log,
+    }
+    (run_root / "resume-manifest.json").write_text(
+        json.dumps(resume_manifest, indent=2, ensure_ascii=True), encoding="utf-8"
+    )
 
     table = build_cross_arm_table(
         run_id, arm_aggregates, scenarios, env_common, total_gpu_wall_s,
