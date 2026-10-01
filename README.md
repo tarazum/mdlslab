@@ -29,6 +29,10 @@ The lab is intentionally heterogeneous. A forecasting foundation model, a local 
 
 See [Architecture](docs/architecture.md) for the repository model, experiment contract, publication policy, and migration strategy.
 
+## Shared tooling
+
+- [Agent resource coordination](shared/tooling/agent-resource-coordination/) — binding protocol + `lock.py` for concurrent agents sharing one machine's GPU/downloads; enforcement research tracked there.
+
 ## Public repository
 
 Do not commit credentials, private datasets, personal conversations, corporate code, proprietary logs, or restricted model artifacts. Experiments requiring private material should stay outside this repository; only sanitized methodology and results may be published here.
