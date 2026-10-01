@@ -1,0 +1,6 @@
+{
+  "protocol": "continuity-workload",
+  "version": 2,
+  "families": ["delayed_recall", "distractor_recall", "contradiction_update", "repeated_task", "correction_reuse"],
+  "description": "Designated self-model calibration suite for the confirmatory CONT-001 run (docs/EVALUATION-PREP.md section 6.8). Synthetic, public-safe; content and ids disjoint from fixtures/v1 and from the evaluation suite fixtures/v2. Run first on the pinned core (arm B); arm C-E revision 1' is estimated ONLY from this suite's aggregate, with provenance recorded in the self-model store. Calibration probes per family deliberately exceed the evaluation suite's probes per family (dr 4>3, dx 3>2, cu 3>2, rt 6>5, cr 3>2) so the reflection validator's double-count guard rejects every in-run capability update during the confirmatory run (in-run capability updates remain disabled, section 6.8)."
+}

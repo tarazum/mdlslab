@@ -1,0 +1,39 @@
+{
+  "id": "cr-0001",
+  "family": "correction_reuse",
+  "labels": {
+    "variant": "correction-and-reuse",
+    "note": "own initial tier assignment corrected in session 1; probe requires reusing the corrected rule on a new vessel; scored against the corrected value",
+    "rm_eligible": true
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "As the harbor office clerk of Skelmor, assign this vessel to exactly one inspection tier: annual | biennial | quarterly. Vessel: 'Gannet, a fishing boat with refrigerated holds.' Reply with the tier only.",
+          "initial_expected": "quarterly"
+        },
+        {
+          "actor": "environment",
+          "text": "For your records, a correction to your last assignment: vessels with refrigerated holds carry perishable cargo and are always quarterly, not annual or biennial; only dry-cargo boats without refrigeration are biennial; passenger ferries are annual. Note the correction in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Morning shift at the harbor office. The standing inspection rules apply today. Confirm in one line."
+        },
+        {
+          "actor": "environment",
+          "text": "Assign this vessel to its inspection tier; the tariff book is not at hand. Vessel: 'Curlew, a trawler with refrigerated fish holds.' Reply with the tier only.",
+          "probe": { "kind": "exact_match", "expected": "quarterly", "class": "rm_eligible" }
+        }
+      ]
+    }
+  ]
+}

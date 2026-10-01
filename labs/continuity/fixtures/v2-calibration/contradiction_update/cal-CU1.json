@@ -1,0 +1,47 @@
+{
+  "id": "cal-CU1",
+  "family": "contradiction_update",
+  "labels": {
+    "note": "calibration scenario (cal- prefix); three probes so calibration probes_per_seed (3) exceeds the evaluation suite's contradiction_update count (2)"
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You are the stationmaster of Windrow Halt. For the records: platform 1 is 12 meters long; platform 2 is 15 meters long; the waiting room seats 30 people. Confirm in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Corrections for your records: platform 1 has been extended and is now 20 meters long, not 12; the waiting room was refitted and now seats 24, not 30. Platform 2 is unchanged. Note the corrections in one line."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "An inspector asks, no papers at hand: how long is platform 1, in meters? Reply with just the number.",
+          "probe": { "kind": "contains", "expected": "20" }
+        },
+        {
+          "actor": "environment",
+          "text": "No documents at hand: how many people does the waiting room seat? Reply with just the number.",
+          "probe": { "kind": "contains", "expected": "24" }
+        },
+        {
+          "actor": "environment",
+          "text": "The register is not at hand: how long is platform 2, in meters? Reply with just the number.",
+          "probe": { "kind": "contains", "expected": "15" }
+        }
+      ]
+    }
+  ]
+}

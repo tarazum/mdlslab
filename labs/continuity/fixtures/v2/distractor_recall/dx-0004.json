@@ -1,0 +1,29 @@
+{
+  "id": "dx-0004",
+  "family": "distractor_recall",
+  "labels": {
+    "variant": "distractor",
+    "note": "related aircraft names; only the Two Rivers trainer is probed"
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You keep the light aircraft registry of Two Rivers field. Enter the following: the trainer aircraft of Two Rivers is called the Wren; the glider of Two Rivers is called the Kite; the medical aircraft of Netherby is called the Swift. Confirm in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "A pilot radios in, and the registry book is not at hand: what is the name of the trainer aircraft of Two Rivers? Reply with just the name.",
+          "probe": { "kind": "contains", "expected": "wren" }
+        }
+      ]
+    }
+  ]
+}

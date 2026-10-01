@@ -1,0 +1,25 @@
+{
+  "id": "dr-0005",
+  "family": "delayed_recall",
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You keep the records of the Ashfall Botanic Garden. Enter three facts: the glasshouse orchid is watered every 9 days; the rose garden is mulched each April; the head gardener is named Iris Veld. Confirm in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "A volunteer asks, and no ledger is at hand: how many days pass between two waterings of the glasshouse orchid? Reply with just the number.",
+          "probe": { "kind": "contains", "expected": "9" }
+        }
+      ]
+    }
+  ]
+}

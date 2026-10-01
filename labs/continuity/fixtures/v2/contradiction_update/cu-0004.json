@@ -1,0 +1,38 @@
+{
+  "id": "cu-0004",
+  "family": "contradiction_update",
+  "labels": {
+    "variant": "contradiction",
+    "note": "operating days corrected in session 2; probe in session 3 expects the corrected days"
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You maintain the ski-lift register for Bracken Ridge. Record the following: the east lift runs on weekends; the west lift runs daily. Confirm in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Register update: after the maintenance round, the west lift now runs on weekends only, not daily. Note the update in one line."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "A guest asks, and the register is not at hand: on which days does the west lift run? Reply with one word.",
+          "probe": { "kind": "contains", "expected": "weekend" }
+        }
+      ]
+    }
+  ]
+}

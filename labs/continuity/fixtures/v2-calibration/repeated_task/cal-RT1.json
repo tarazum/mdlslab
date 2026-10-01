@@ -1,0 +1,57 @@
+{
+  "id": "cal-RT1",
+  "family": "repeated_task",
+  "labels": {
+    "note": "calibration scenario (cal- prefix); six probes so calibration probes_per_seed (6) exceeds the evaluation suite's repeated_task count (5)"
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Classify this incident report into exactly one label: facilities | computing | security | program. Report: 'The projector in hall B shows no image.' Reply with the label only."
+        },
+        {
+          "actor": "environment",
+          "text": "For the desk records, the routing rubric: building systems, furniture, and lighting are facilities; computers, screens, and software are computing; access badges, theft, and disturbances are security; scheduled activities and classes are program. Note the rubric in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Classify this incident report. Report: 'Three ceiling lights are flickering in the reading room.' Reply with the label only.",
+          "probe": { "kind": "exact_match", "expected": "facilities" }
+        },
+        {
+          "actor": "environment",
+          "text": "Classify this incident report. Report: 'A visitor's badge opens the staff corridor door.' Reply with the label only.",
+          "probe": { "kind": "exact_match", "expected": "security" }
+        },
+        {
+          "actor": "environment",
+          "text": "Classify this incident report. Report: 'The booking system drops half of the evening-class sign-ups.' Reply with the label only.",
+          "probe": { "kind": "exact_match", "expected": "computing" }
+        },
+        {
+          "actor": "environment",
+          "text": "Classify this incident report. Report: 'Thursday's yoga class has no instructor this week.' Reply with the label only.",
+          "probe": { "kind": "exact_match", "expected": "program" }
+        },
+        {
+          "actor": "environment",
+          "text": "Classify this incident report. Report: 'The atrium door handle came off in a visitor's hand.' Reply with the label only.",
+          "probe": { "kind": "exact_match", "expected": "facilities" }
+        },
+        {
+          "actor": "environment",
+          "text": "Classify this incident report. Report: 'The hall thermostat reads 14 degrees all morning.' Reply with the label only.",
+          "probe": { "kind": "exact_match", "expected": "facilities" }
+        }
+      ]
+    }
+  ]
+}

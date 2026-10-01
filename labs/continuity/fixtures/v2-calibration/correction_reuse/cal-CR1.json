@@ -1,0 +1,42 @@
+{
+  "id": "cal-CR1",
+  "family": "correction_reuse",
+  "labels": {
+    "note": "calibration scenario (cal- prefix); three probes so calibration probes_per_seed (3) exceeds the evaluation suite's correction_reuse count (2)"
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "As the depot clerk of Rowfleet, assign this consignment to exactly one delivery band: same-day | next-day | freight. Consignment: 'Two crates of chilled medicine for the clinic.' Reply with the band only."
+        },
+        {
+          "actor": "environment",
+          "text": "For your records, a correction to your last assignment: chilled medical goods always go same-day, not next-day or freight; ordinary parcels go next-day; anything over 30 kilograms goes freight whatever it contains. Note the correction in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Assign this consignment to its delivery band; the tariff sheet is not at hand. Consignment: 'One box of chilled vaccines for the school nurse.' Reply with the band only.",
+          "probe": { "kind": "exact_match", "expected": "same-day" }
+        },
+        {
+          "actor": "environment",
+          "text": "Assign this consignment to its delivery band; no tariff sheet at hand. Consignment: 'A 40-kilogram pallet of garden stone.' Reply with the band only.",
+          "probe": { "kind": "exact_match", "expected": "freight" }
+        },
+        {
+          "actor": "environment",
+          "text": "Assign this consignment to its delivery band; the tariff sheet is not at hand. Consignment: 'A paperback book order for the library.' Reply with the band only.",
+          "probe": { "kind": "exact_match", "expected": "next-day" }
+        }
+      ]
+    }
+  ]
+}

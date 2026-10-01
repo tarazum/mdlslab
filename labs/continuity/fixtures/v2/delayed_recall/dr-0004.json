@@ -1,0 +1,25 @@
+{
+  "id": "dr-0004",
+  "family": "delayed_recall",
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You are the duty clerk of Halden Junction station. For the records: the night train to Copperdale departs at 23:15; the staff shuttle runs every 20 minutes; the parcel window closes at ten in the evening. Note the entries in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "A traveler asks, and there is no timetable at hand: at what time does the night train to Copperdale depart? Reply with just the time.",
+          "probe": { "kind": "contains", "expected": "23:15" }
+        }
+      ]
+    }
+  ]
+}

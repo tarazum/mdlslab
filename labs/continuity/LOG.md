@@ -856,9 +856,66 @@ participate). Zero inference; wall ~20 min (budget <= 30 min).
   pending owner acceptance" labels).
 - ROADMAP M6b marked DONE. Next: M7 (confirmatory CONT-001) per ROADMAP.
 
+## 2026-10-02 00:58 — start-note: M7 / confirmatory CONT-001 (agent-pre-registered)
 
-
-
+- Contract: `docs/ROADMAP.md` M7 brief + `docs/EVALUATION-PREP.md` (FROZEN at
+  `a845fc5`; verified byte-identical to that commit at 00:37 — sha256
+  5910789afeea1576316105cc59d1e0b3b8c8fd65 both sides). M6b verdict GO
+  (PR-REVIEW.md); time check 00:37 FLEDT vs 11:30 deadline → ~10 h 53 min
+  remain, >= 2 h condition holds. Every artifact this stage is labeled
+  "agent-pre-registered, pending owner acceptance".
+- PR-REVIEW non-blocking notes, incorporated ONLY where the frozen plan
+  already allows: (1) fixture-authoring exposure — stated explicitly in the
+  run record (the plan's freeze discipline + owner gate bound it); (2)
+  label-form probe prompts — v2 probes ask "Reply with the label/tier/class
+  only." (concise label-form elicitation is consistent with §6.5 free-form
+  scoring; loose sensitivity still covers degradation); (3) validator pins
+  the `initial_expected`-bearing turn to exactly s1t1 (§1.1/§6.3 consistency
+  check the plan already requires mechanically).
+- Plan: (1) author held-out fixture v2 (`fixtures/v2/`, 14 scenarios: 3 dr +
+  2 dx + 2 cu + 5 rt + 2 correction_reuse = 7 RM-eligible probes/seed,
+  `initial_expected` fixture fields, `probe.class="rm_eligible"` markers, no
+  option lists on ANY probe turn, RM probes on s2t2 behind a non-probe s2t1)
+  + disjoint calibration suite `fixtures/v2-calibration/` (5 scenarios,
+  cal-* ids, seeds {11,22,33}); calibration probes_per_seed per family
+  EXCEEDS the evaluation suite's (dr 4>3, dx 3>2, cu 3>2, rt 6>5, cr 3>2) so
+  the reflection double-count guard rejects every in-run capability update —
+  §6.8 "in-run capability updates remain disabled" holds deterministically
+  without touching the frozen M4 reflection code. (2) Pre-inference
+  mechanical validator `validate_fixtures_v2.py` enforces §6.1–6.6 + the
+  s1t1 pin + an ex-ante arm-E actuation simulation (R2 corrective markers
+  fire on rt-0004/rt-0006/cr-0001/cr-0002 probes; mid-session store growth
+  from the s2t1 exchange yields new episode ids at the probe-turn retrieve —
+  expected >= 1 physical injection per seed, stated ex ante per §6.7).
+  (3) Calibration arm-B run (v1 calibration seeds 11/22/33 — disjoint from
+  the confirmatory seeds, which are never used for calibration per §6.1) →
+  self-model revision 1' built ONLY from the calibration aggregate
+  (`build_from_calibration_aggregate`, mirroring the M3 builder with
+  parameterized CN-007/CN-008 evidence scenarios cal-RT1/cal-CU1;
+  provenance.derived_from points at the calibration artifact — §6.8/§8).
+  (4) Freeze commit: fixtures + calibration artifact + self-model 1' +
+  frozen-config.json (git rev, sha256s, seeds {101,202,303,404,505}, model
+  granite-code:8b digest prefix 36c3c3b9683b, temp 0.0, num_ctx 4096,
+  MME 0.15, bootstrap seed 20261002 / 10,000 resamples) BEFORE the first
+  confirmatory inference request (§6.9). (5) Confirmatory run
+  `run_confirmatory_abcde.py` — the M6 multi-arm runner semantics carried
+  over unchanged (same run_one_seed logic, budgets, injection rules, one
+  warm process, options in every request) with labeled deltas only:
+  confirmatory kind/labels, v2 fixtures, fresh seeds, calibration self-model,
+  freeze verification at start. (6) `analyze_confirmatory.py` executes the
+  pre-registered analysis exactly: RM rate per §1.1 (probe selection by
+  fixture marker, initial_expected from the fixture), primary contrast E−A
+  two-sided, MME 0.15, paired cluster bootstrap over scenarios (10,000
+  resamples, RNG seed 20261002, redraw cap 5%), decision rule per §4,
+  underpowered guard, secondaries as listed in §3 (exploratory-attribution),
+  missing-run handling per §8, contamination halts per §8. (7) Results under
+  results/CONT-001-confirmatory/<run_id>/ + results-summary.md with the
+  plain confirmatory outcome (benefit / harm / no difference / inconclusive
+  — whatever the data shows).
+- Budget: <= 150 min wall, <= 180 min GPU (calibration ~4 min + confirmatory
+  ~50 min estimated at M6's measured ~2.4 s/request × 1,206 requests);
+  shared GPU lock around all inference; stop-and-record on overrun, no
+  silent seed reduction.
 
 
 

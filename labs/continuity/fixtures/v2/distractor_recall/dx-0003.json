@@ -1,0 +1,29 @@
+{
+  "id": "dx-0003",
+  "family": "distractor_recall",
+  "labels": {
+    "variant": "distractor",
+    "note": "semantically related schedule facts; only the first-bus time is probed"
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You dispatch buses at Corbie terminus. Log the departures for the Larkhill route: the first bus leaves at 10 minutes past the hour; the express leaves at 25 minutes to the hour; the night service runs only at midnight. Confirm in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "A passenger asks, and there is no timetable in front of you: at how many minutes past the hour does the first Larkhill bus leave? Reply with just the number.",
+          "probe": { "kind": "contains", "expected": "10" }
+        }
+      ]
+    }
+  ]
+}

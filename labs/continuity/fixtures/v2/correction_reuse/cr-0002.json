@@ -1,0 +1,39 @@
+{
+  "id": "cr-0002",
+  "family": "correction_reuse",
+  "labels": {
+    "variant": "correction-and-reuse",
+    "note": "own initial fee-class assignment corrected in session 1; probe requires reusing the corrected rule on a new berth request; scored against the corrected value",
+    "rm_eligible": true
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "As the dock office clerk of Port Ellin, assign this berth request to exactly one fee class: resident | transit | commercial. Request: 'Kestrel, a charter yacht taking paying guests on day sails.' Reply with the class only.",
+          "initial_expected": "commercial"
+        },
+        {
+          "actor": "environment",
+          "text": "For your records, a correction to your last assignment: vessels carrying paying passengers are always commercial, not transit or resident; private visiting yachts without paying passengers are transit; boats licensed to local operators are resident. Note the correction in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Afternoon shift at the dock office. The standing fee-class rules apply. Confirm in one line."
+        },
+        {
+          "actor": "environment",
+          "text": "Assign this berth request to its fee class; the harbor register is not at hand. Request: 'Merlin, a private motor yacht visiting for the weekend, no passengers for hire.' Reply with the class only.",
+          "probe": { "kind": "exact_match", "expected": "transit", "class": "rm_eligible" }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "cu-0003",
+  "family": "contradiction_update",
+  "labels": {
+    "variant": "contradiction",
+    "note": "opening hour corrected in session 2; probe in session 3 expects the corrected value"
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You are the market clerk of Elmwick. For the records: the fish stall opens at five in the morning; the bread stall opens at six. Confirm in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Correction for your records: after new bakers took over, the bread stall now opens at seven, not six. Note the correction in one line."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "A visitor asks, and no papers are at hand: at what hour does the bread stall open? Reply with just the number.",
+          "probe": { "kind": "contains", "expected": "7" }
+        }
+      ]
+    }
+  ]
+}

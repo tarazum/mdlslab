@@ -1,0 +1,43 @@
+{
+  "id": "cal-DR1",
+  "family": "delayed_recall",
+  "labels": {
+    "note": "calibration scenario (cal- prefix); four probes so calibration probes_per_seed (4) exceeds the evaluation suite's delayed_recall count (3)"
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You are the lighthouse keeper of Cormorant Point. Enter four facts for the log: the main lamp flashes every 11 seconds; the fog horn sounds twice an hour; the keeper's boat is called the Tern; the supply launch arrives on Thursdays. Confirm in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "The log is not at hand: how many seconds pass between two flashes of the main lamp? Reply with just the number.",
+          "probe": { "kind": "contains", "expected": "11" }
+        },
+        {
+          "actor": "environment",
+          "text": "No logbook at hand: what is the keeper's boat called? Reply with just the name.",
+          "probe": { "kind": "contains", "expected": "tern" }
+        },
+        {
+          "actor": "environment",
+          "text": "No papers at hand: on which day does the supply launch arrive? Reply with just the day.",
+          "probe": { "kind": "contains", "expected": "thursday" }
+        },
+        {
+          "actor": "environment",
+          "text": "The logbook is away from the desk: how many times per hour does the fog horn sound? Reply with just the number.",
+          "probe": { "kind": "contains", "expected": "2" }
+        }
+      ]
+    }
+  ]
+}

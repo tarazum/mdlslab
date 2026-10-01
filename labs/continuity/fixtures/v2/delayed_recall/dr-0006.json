@@ -1,0 +1,38 @@
+{
+  "id": "dr-0006",
+  "family": "delayed_recall",
+  "labels": {
+    "variant": "interference",
+    "note": "three sessions; an extra archive fact is entered between encoding and probe"
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You are the keeper of the Millbrook parish archive. Record the following: the bronze parish bell was recast in 1866; the almshouse row was built in 1709. Confirm in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "One further entry for the archive: the stone bridge was widened in 1902. Note it in one line."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "A historian calls, and the catalog is not at hand: in which year was the bronze parish bell recast? Reply with just the year.",
+          "probe": { "kind": "contains", "expected": "1866" }
+        }
+      ]
+    }
+  ]
+}

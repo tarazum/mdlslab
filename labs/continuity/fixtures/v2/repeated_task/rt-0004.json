@@ -1,0 +1,38 @@
+{
+  "id": "rt-0004",
+  "family": "repeated_task",
+  "labels": {
+    "mistake_categories": ["misclassification: stale-content tickets labeled bug"],
+    "rm_eligible": true
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket into exactly one label: billing | bug | account | data. Ticket: 'The Fieldtrip app freezes completely whenever I open the attendance grid.' Reply with the label only.",
+          "initial_expected": "bug"
+        },
+        {
+          "actor": "environment",
+          "text": "For the desk records, the labeling rubric: freezes, crashes, and unresponsive screens are bug; charges, refunds, and invoices are billing; login and access problems are account; stale or missing content inside reports and exports is data, because it traces to the sync pipeline - do not use bug for exports that work but show old figures. Note the rubric in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "New shift at the help desk. The ticket queue is open; the standing rubric applies. Confirm in one line."
+        },
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket. The desk notes are not at hand. Ticket: 'My trip-cost export still shows yesterday's totals even after I refresh the page.' Reply with the label only.",
+          "probe": { "kind": "exact_match", "expected": "data", "class": "rm_eligible" }
+        }
+      ]
+    }
+  ]
+}

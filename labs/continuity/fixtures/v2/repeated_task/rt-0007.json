@@ -1,0 +1,38 @@
+{
+  "id": "rt-0007",
+  "family": "repeated_task",
+  "labels": {
+    "mistake_categories": ["misclassification: missing-content tickets labeled bug"],
+    "rm_eligible": true
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket into exactly one label: billing | bug | account | data. Ticket: 'None of the photos from yesterday's museum visit appear in the shared album, though the album itself opens fine.' Reply with the label only.",
+          "initial_expected": "data"
+        },
+        {
+          "actor": "environment",
+          "text": "For the desk records, the labeling rubric: missing or stale content inside a feature that otherwise works is data, a sync-pipeline issue; broken buttons, freezes, and crashes are bug; payments are billing; logins are account. Note the rubric in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Evening shift at the help desk. The ticket queue is open; the standing rubric applies. Confirm in one line."
+        },
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket. The desk notes are not at hand. Ticket: 'The shared packing list still shows the sleeping-bag items I deleted two days ago.' Reply with the label only.",
+          "probe": { "kind": "exact_match", "expected": "data", "class": "rm_eligible" }
+        }
+      ]
+    }
+  ]
+}

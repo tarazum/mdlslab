@@ -1,0 +1,6 @@
+{
+  "protocol": "continuity-workload",
+  "version": 2,
+  "families": ["delayed_recall", "distractor_recall", "contradiction_update", "repeated_task", "correction_reuse"],
+  "description": "Held-out confirmatory suite (fixture v2, M7) generated per docs/EVALUATION-PREP.md section 6. Synthetic multi-session scenarios, public-safe by construction (invented names/places, no real data). Environment turns are static (feedback is not conditional on agent answers). Additive v2 fields: initial_expected on the session-1 first task turn of every RM-eligible scenario; probe.class = 'rm_eligible' on repeated-mistake probes. Probe turns carry NO option lists (CN-004 fix); RM-eligible probes sit on non-first session turns behind a non-probe environment turn (CN-010 fix). Scenario ids and content are disjoint from fixtures/v1 and from fixtures/v2-calibration."
+}

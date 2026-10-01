@@ -1,0 +1,38 @@
+{
+  "id": "rt-0006",
+  "family": "repeated_task",
+  "labels": {
+    "mistake_categories": ["misclassification: slow-but-working behavior labeled bug"],
+    "rm_eligible": true
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket into exactly one label: billing | bug | account | data. Ticket: 'The packing checklist takes nearly two minutes to load every morning, but it always loads in the end.' Reply with the label only.",
+          "initial_expected": "perf"
+        },
+        {
+          "actor": "environment",
+          "text": "For the desk records, the labeling rubric: crashes, freezes, and wrong outputs are bug; charges and invoices are billing; login and access problems are account; stale content is data. Additionally, slow-but-working behavior gets the label perf - do not use bug when the feature works and is merely slow. Note the rubric in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "New shift at the help desk. The ticket queue is open; the standing rubric applies. Confirm in one line."
+        },
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket. The desk notes are not at hand. Ticket: 'The route map draws correctly in the end but takes over a minute to appear.' Reply with the label only.",
+          "probe": { "kind": "exact_match", "expected": "perf", "class": "rm_eligible" }
+        }
+      ]
+    }
+  ]
+}

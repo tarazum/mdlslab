@@ -1,0 +1,38 @@
+{
+  "id": "rt-0005",
+  "family": "repeated_task",
+  "labels": {
+    "mistake_categories": ["misclassification: roster-seat changes labeled billing"],
+    "rm_eligible": true
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket into exactly one label: billing | bug | account | data. Ticket: 'I was charged twice for the overnight-stay fee on our class trip.' Reply with the label only.",
+          "initial_expected": "billing"
+        },
+        {
+          "actor": "environment",
+          "text": "For the desk records, the queue convention: duplicate charges, refunds, and invoice problems are billing; adding or removing adult supervisors on a trip is account, because roster seats are access permissions - adding a supervisor stays account even when the school office also sends an invoice for it; crashes and freezes are bug; stale content is data. Note the convention in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Second shift begins. The ticket queue is open; the queue convention from the standing rubric applies. Confirm in one line."
+        },
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket. The desk notes are not at hand. Ticket: 'Please add one more teacher to our trip roster with the same permissions as the other supervisors; the office will invoice us next month as usual.' Reply with the label only.",
+          "probe": { "kind": "exact_match", "expected": "account", "class": "rm_eligible" }
+        }
+      ]
+    }
+  ]
+}

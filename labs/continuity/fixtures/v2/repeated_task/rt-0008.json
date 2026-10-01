@@ -1,0 +1,38 @@
+{
+  "id": "rt-0008",
+  "family": "repeated_task",
+  "labels": {
+    "mistake_categories": ["misclassification: payment-during-transfer tickets labeled account"],
+    "rm_eligible": true
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket into exactly one label: billing | bug | account | data. Ticket: 'My card was declined when I tried to pay the bus deposit.' Reply with the label only.",
+          "initial_expected": "billing"
+        },
+        {
+          "actor": "environment",
+          "text": "For the desk records, the queue convention: declined payments, duplicate charges, and refunds are billing; transferring a trip to a different teacher's login is account, because ownership is an access question - payment problems that arise during such a transfer are still billing; freezes are bug; stale content is data. Note the convention in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "Morning shift at the help desk. The ticket queue is open; the standing rubric applies. Confirm in one line."
+        },
+        {
+          "actor": "environment",
+          "text": "Classify this support ticket. The desk notes are not at hand. Ticket: 'While moving our trip to the new teacher's login the card fee was charged twice; please fix the charge.' Reply with the label only.",
+          "probe": { "kind": "exact_match", "expected": "billing", "class": "rm_eligible" }
+        }
+      ]
+    }
+  ]
+}

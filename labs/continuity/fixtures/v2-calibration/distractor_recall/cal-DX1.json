@@ -1,0 +1,38 @@
+{
+  "id": "cal-DX1",
+  "family": "distractor_recall",
+  "labels": {
+    "note": "calibration scenario (cal- prefix); three probes so calibration probes_per_seed (3) exceeds the evaluation suite's distractor_recall count (2)"
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "You keep the canal lock registry of Brayford. Record the staff: the north lock keeper is named Osmund; the south lock keeper is named Tilda; the lock inspector is named Pavel. Confirm in one line."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "turns": [
+        {
+          "actor": "environment",
+          "text": "A barge captain asks, no registry at hand: what is the name of the north lock keeper? Reply with just the name.",
+          "probe": { "kind": "contains", "expected": "osmund" }
+        },
+        {
+          "actor": "environment",
+          "text": "Registry not at hand: what is the name of the south lock keeper? Reply with just the name.",
+          "probe": { "kind": "contains", "expected": "tilda" }
+        },
+        {
+          "actor": "environment",
+          "text": "No papers at hand: what is the name of the lock inspector? Reply with just the name.",
+          "probe": { "kind": "contains", "expected": "pavel" }
+        }
+      ]
+    }
+  ]
+}
