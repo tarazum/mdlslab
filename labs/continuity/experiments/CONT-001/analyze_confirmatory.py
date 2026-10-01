@@ -258,12 +258,21 @@ def contamination_checks(run_root: Path) -> list[str]:
     sm = json.loads((run_root / "selfmodel-v2-calibration.json").read_text(encoding="utf-8"))
     if sm.get("provenance", {}).get("derived_from") != frozen["selfmodel"]["calibration_aggregate_rel"]:
         problems.append("self-model provenance does not point at the calibration artifact")
-    cal_agg = json.loads((run_root / frozen["selfmodel"]["calibration_aggregate_rel"]).read_text(encoding="utf-8"))
-    cal_ids = set(cal_agg.get("pilot", {}).get("scenario_order", []))
-    _, eval_scenarios = load_suite(str(EVAL_DIR))
-    eval_ids = {s["id"] for s in eval_scenarios}
-    if cal_ids & eval_ids:
-        problems.append(f"calibration/evaluation id overlap: {sorted(cal_ids & eval_ids)}")
+    cal_rel = frozen["selfmodel"]["calibration_aggregate_rel"]
+    cal_path = None
+    for cand in (run_root / cal_rel, LAB_ROOT / cal_rel, LAB_ROOT.parents[1] / cal_rel):
+        if cand.exists():
+            cal_path = cand
+            break
+    if cal_path is None:
+        problems.append(f"calibration aggregate not found for recorded path {cal_rel!r}")
+    else:
+        cal_agg = json.loads(cal_path.read_text(encoding="utf-8"))
+        cal_ids = set(cal_agg.get("pilot", {}).get("scenario_order", []))
+        _, eval_scenarios = load_suite(str(EVAL_DIR))
+        eval_ids = {s["id"] for s in eval_scenarios}
+        if cal_ids & eval_ids:
+            problems.append(f"calibration/evaluation id overlap: {sorted(cal_ids & eval_ids)}")
     # run-time rev chain of custody: every run.start must record the same rev,
     # which must be the rev attested by the runner's freeze verification
     # (which itself passed the full freeze check at run start)

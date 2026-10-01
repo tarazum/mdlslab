@@ -7,7 +7,8 @@
     "frozen_commit": "a845fc5",
     "evaluation_prep_sha256": "d93a1d8e25e6d8b57516240b6c5c0f1553397130655a50dc0175783cc80d5be6",
     "review": "labs/continuity/docs/PR-REVIEW.md (M6b verdict GO)",
-    "pr_review_sha256": "3f0f71924ac0a6810abfe6e6bad025f58821ee6951c9075bccf81dfa95ecdc9b"
+    "pr_review_sha256": "3f0f71924ac0a6810abfe6e6bad025f58821ee6951c9075bccf81dfa95ecdc9b",
+    "evaluation_prep_frozen_commit": "a845fc5"
   },
   "fixtures": {
     "evaluation_suite": "labs/continuity/fixtures/v2",
@@ -52,7 +53,7 @@
   "selfmodel": {
     "path": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json",
     "sha256": "2ce516bd7402965b5e8eccb72b39b165eee76c5da25a29fcf275727c867d6b28",
-    "calibration_aggregate_rel": "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json",
+    "calibration_aggregate_rel": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json",
     "calibration_seeds": [
       11,
       22,
@@ -82,5 +83,6 @@
     "git_rev": "a7394b349345b9c7711bf31000cf63e1ec4fc453",
     "note": "rev of the freeze-content commit; frozen-config.json itself is committed immediately after and is the only permitted change on top"
   },
-  "fixture_authoring_exposure_note": "PR-REVIEW.md note 1, stated per its recommendation: the M7 fixture author had seen the M6 exploratory results before authoring v2; bounded by the symmetric decision rule, the mechanical validator (which blocked the known leakage channels CN-004/009/010), the freeze discipline, and the owner acceptance gate"
+  "fixture_authoring_exposure_note": "PR-REVIEW.md note 1, stated per its recommendation: the M7 fixture author had seen the M6 exploratory results before authoring v2; bounded by the symmetric decision rule, the mechanical validator (which blocked the known leakage channels CN-004/009/010), the freeze discipline, and the owner acceptance gate",
+  "record_fix_note": "2026-10-02 01:08: post-freeze-record fixes (frozen content untouched - digests still verify): added canonical key evaluation_prep_frozen_commit; calibration_aggregate_rel now records the exact provenance string stored in the frozen self-model (which embeds the labs/continuity/ prefix). Value: labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
 }

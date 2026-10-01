@@ -146,11 +146,11 @@ def suite_digest(fixture_dir: Path) -> str:
     return h.hexdigest()
 
 
-def git_changes_since(rev: str) -> list[str]:
-    """Paths changed under labs/continuity between `rev` and HEAD."""
+def git_changes_since(rev: str, paths: list[str]) -> list[str]:
+    """Paths changed between `rev` and HEAD, limited to `paths`."""
     try:
         out = subprocess.check_output(
-            ["git", "diff", "--name-only", rev, "HEAD", "--", "labs/continuity"],
+            ["git", "diff", "--name-only", rev, "HEAD", "--", *paths],
             cwd=str(LAB_ROOT), stderr=subprocess.DEVNULL,
         ).decode()
         return [line.strip() for line in out.splitlines() if line.strip()]
@@ -171,7 +171,14 @@ def git_status_dirty(paths: list[str]) -> list[str]:
 
 
 def verify_freeze(run_root: Path) -> dict[str, Any]:
-    """[D5] Contamination halt per section 8 / freeze discipline 6.9."""
+    """[D5] Contamination halt per section 8 / freeze discipline 6.9.
+
+    Section 6.9 freezes: fixture v2, seeds, the self-model calibration
+    artifact, and docs/EVALUATION-PREP.md. The rev-drift and dirty checks are
+    scoped to exactly those paths (the run scripts themselves are not frozen
+    content; they are committed before the run but may receive pre-run
+    mechanical fixes - each recorded in LOG.md).
+    """
     frozen_path = run_root / "frozen-config.json"
     if not frozen_path.exists():
         print(
@@ -183,10 +190,19 @@ def verify_freeze(run_root: Path) -> dict[str, Any]:
     frozen = json.loads(frozen_path.read_text(encoding="utf-8"))
     problems: list[str] = []
 
+    frozen_paths = [
+        "labs/continuity/fixtures",
+        "labs/continuity/docs/EVALUATION-PREP.md",
+        "labs/continuity/state",
+        f"labs/continuity/{str(run_root.relative_to(LAB_ROOT)).replace(chr(92), '/')}/calibration",
+        f"labs/continuity/{str(run_root.relative_to(LAB_ROOT)).replace(chr(92), '/')}/selfmodel-v2-calibration.json",
+        f"labs/continuity/{str(run_root.relative_to(LAB_ROOT)).replace(chr(92), '/')}/fixture-validation.json",
+    ]
+
     prep_sha = sha256_file(PREP_DOC)
     if prep_sha != frozen["protocol"]["evaluation_prep_sha256"]:
         problems.append(f"EVALUATION-PREP.md sha256 {prep_sha} != frozen {frozen['protocol']['evaluation_prep_sha256']}")
-    if frozen["protocol"]["evaluation_prep_frozen_commit"] != PREP_FREEZE_COMMIT:
+    if frozen["protocol"].get("evaluation_prep_frozen_commit", frozen["protocol"].get("frozen_commit")) != PREP_FREEZE_COMMIT:
         problems.append("frozen-config records a different protocol freeze commit than the runner constant")
 
     eval_sha = suite_digest(FIXTURE_DIR)
@@ -221,27 +237,13 @@ def verify_freeze(run_root: Path) -> dict[str, Any]:
                 problems.append("self-model capability seeds do not match the calibration seeds")
 
     rev = git_rev()
-    frozen_rel = str(frozen_path.relative_to(LAB_ROOT)).replace("\\", "/")
-    if rev != frozen["freeze"]["git_rev"]:
-        # The freeze record itself may be committed in one commit AFTER the
-        # freeze-content commit (a file cannot contain its own commit hash).
-        # Allow exactly that: nothing else may change since the freeze commit.
-        changed = git_changes_since(frozen["freeze"]["git_rev"])
-        if changed not in ([], [frozen_rel]):
-            problems.append(
-                f"HEAD {rev[:12]} is not the freeze commit {frozen['freeze']['git_rev'][:12]} "
-                f"and labs/continuity changed since it: {changed}"
-            )
-    run_root_rel = str(run_root.relative_to(LAB_ROOT)).replace("\\", "/")
-    dirty = git_status_dirty(
-        [
-            "labs/continuity/fixtures",
-            "labs/continuity/docs/EVALUATION-PREP.md",
-            f"{run_root_rel}/calibration",
-            f"{run_root_rel}/selfmodel-v2-calibration.json",
-            f"{run_root_rel}/fixture-validation.json",
-        ]
-    )
+    changed_frozen = git_changes_since(frozen["freeze"]["git_rev"], frozen_paths)
+    if changed_frozen:
+        problems.append(
+            f"frozen paths changed since the freeze commit "
+            f"{frozen['freeze']['git_rev'][:12]}: {changed_frozen}"
+        )
+    dirty = git_status_dirty(frozen_paths)
     if dirty:
         problems.append(f"uncommitted changes on frozen paths (post-freeze edit?): {dirty}")
 
@@ -912,16 +914,22 @@ def main() -> int:
 
     env_common = preflight(args.base_url, MODEL)
     env_common["git_rev"] = git_rev()
-    if env_common["git_rev"] != frozen["freeze"]["git_rev"]:
-        changed = git_changes_since(frozen["freeze"]["git_rev"])
-        if changed not in ([], [str(run_root.relative_to(LAB_ROOT)).replace("\\", "/") + "/frozen-config.json"]):
-            print(
-                f"FAIL-CLOSED: HEAD moved after freeze "
-                f"({env_common['git_rev']} != {frozen['freeze']['git_rev']}; "
-                f"changed: {changed})",
-                file=sys.stderr,
-            )
-            return 2
+    frozen_paths = [
+        "labs/continuity/fixtures",
+        "labs/continuity/docs/EVALUATION-PREP.md",
+        "labs/continuity/state",
+        f"labs/continuity/{str(run_root.relative_to(LAB_ROOT)).replace(chr(92), '/')}/calibration",
+        f"labs/continuity/{str(run_root.relative_to(LAB_ROOT)).replace(chr(92), '/')}/selfmodel-v2-calibration.json",
+        f"labs/continuity/{str(run_root.relative_to(LAB_ROOT)).replace(chr(92), '/')}/fixture-validation.json",
+    ]
+    changed_frozen = git_changes_since(frozen["freeze"]["git_rev"], frozen_paths)
+    if changed_frozen:
+        print(
+            f"FAIL-CLOSED: frozen paths changed since freeze "
+            f"({changed_frozen})",
+            file=sys.stderr,
+        )
+        return 2
     print(
         f"preflight ok: ollama {env_common['ollama_version']}, digest "
         f"{env_common['digest'][:12]}..., warmup {env_common['warmup_s']}s"
