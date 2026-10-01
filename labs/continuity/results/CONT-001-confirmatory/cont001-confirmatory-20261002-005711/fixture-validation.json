@@ -1,0 +1,293 @@
+{
+  "kind": "cont001-confirmatory-fixture-validation",
+  "label": "agent-pre-registered, pending owner acceptance",
+  "created_utc": "2026-10-01T21:57:12Z",
+  "spec": "docs/EVALUATION-PREP.md sections 6.1-6.7 (frozen at commit a845fc5) + PR-REVIEW.md note 3",
+  "suites": {
+    "evaluation": "fixtures/v2",
+    "calibration": "fixtures/v2-calibration",
+    "v1_reference": "fixtures/v1"
+  },
+  "digests": {
+    "evaluation_suite_sha256": "2d98f5173ffd2735a4f86fbc0e97c44a4d6de927f2f116a1ff223d8b710ea14e",
+    "calibration_suite_sha256": "3dbc9e23be729dbdd1a7cfb328bba0e4077ed5b027f9672d11cc7ce44b6c14fc",
+    "v1_suite_sha256": "8a93bfafa5699a076d9973e12eee82c3c521c2f081f0c02d4b8eaf90d35922a8"
+  },
+  "checks": [
+    {
+      "check": "E2-schema",
+      "pass": true,
+      "detail": "all 14 eval + 5 cal scenarios pass fixtures._validate_scenario"
+    },
+    {
+      "check": "E1-manifest",
+      "pass": true,
+      "detail": "families=['delayed_recall', 'distractor_recall', 'contradiction_update', 'repeated_task', 'correction_reuse'] (correction_reuse present, recall families present)"
+    },
+    {
+      "check": "E3-ids-disjoint-from-v1",
+      "pass": true,
+      "detail": "14 unique eval ids, overlap with v1: []"
+    },
+    {
+      "check": "E4-content-disjoint-from-v1",
+      "pass": true,
+      "detail": "shared turn texts with v1: 0 []"
+    },
+    {
+      "check": "E5-composition",
+      "pass": true,
+      "detail": "family counts {'delayed_recall': 3, 'distractor_recall': 2, 'contradiction_update': 2, 'repeated_task': 5, 'correction_reuse': 2}, total 14 (need rt>=5, cr>=2, recall>=2 each, total>=13)"
+    },
+    {
+      "check": "E6-rm-denominator",
+      "pass": true,
+      "detail": "7 RM-eligible scenarios (need >= 7), each with exactly one probe: True"
+    },
+    {
+      "check": "E7-initial-expected-on-s1t1",
+      "pass": true,
+      "detail": "initial_expected on exactly s1t1 of every RM-eligible scenario, s1t1 carries no probe, >= 2 sessions; rt-0004: bearing=['s1t1'] ok=True; rt-0005: bearing=['s1t1'] ok=True; rt-0006: bearing=['s1t1'] ok=True; rt-0007: bearing=['s1t1'] ok=True; rt-0008: bearing=['s1t1'] ok=True; cr-0001: bearing=['s1t1'] ok=True; cr-0002: bearing=['s1t1'] ok=True"
+    },
+    {
+      "check": "E8-no-option-leakage",
+      "pass": true,
+      "detail": "every probe turn: no '|', expected not verbatim in text, <= 1 option-vocabulary word; violations: none"
+    },
+    {
+      "check": "E9-rm-probes-off-first-turns",
+      "pass": true,
+      "detail": "every rm_eligible probe is preceded by >= 1 non-probe turn in the same session; violations: none"
+    },
+    {
+      "check": "E10-public-safe",
+      "pass": true,
+      "detail": "ASCII, no '@', no http everywhere; violations: []"
+    },
+    {
+      "check": "C1-ids-disjoint",
+      "pass": true,
+      "detail": "5 unique cal ids; overlap with v1/eval: []"
+    },
+    {
+      "check": "C2-families-matched",
+      "pass": true,
+      "detail": "5 calibration scenarios (need >= 3); families ['contradiction_update', 'correction_reuse', 'delayed_recall', 'distractor_recall', 'repeated_task'] match the evaluation families exactly"
+    },
+    {
+      "check": "C3-content-disjoint",
+      "pass": true,
+      "detail": "shared turn texts with v1/eval: 0 []"
+    },
+    {
+      "check": "C4-guard-sizing",
+      "pass": true,
+      "detail": "calibration probes_per_seed strictly exceeds evaluation probes per family for every family ({'contradiction_update': 'cal 3 > eval 2', 'correction_reuse': 'cal 3 > eval 2', 'delayed_recall': 'cal 4 > eval 3', 'distractor_recall': 'cal 3 > eval 2', 'repeated_task': 'cal 6 > eval 5'}) \u2014 keeps the reflection double-count guard rejecting every in-run capability update (section 6.8)"
+    },
+    {
+      "check": "A1-actuation-ex-ante",
+      "pass": true,
+      "detail": "7/7 RM scenarios show a simulated physical injection at the probe turn (expectation >= 1/seed)"
+    }
+  ],
+  "evaluation_suite": {
+    "family_counts": {
+      "delayed_recall": 3,
+      "distractor_recall": 2,
+      "contradiction_update": 2,
+      "repeated_task": 5,
+      "correction_reuse": 2
+    },
+    "rm_scenarios": [
+      "rt-0004",
+      "rt-0005",
+      "rt-0006",
+      "rt-0007",
+      "rt-0008",
+      "cr-0001",
+      "cr-0002"
+    ],
+    "probes_per_family_per_seed": {
+      "delayed_recall": 3,
+      "distractor_recall": 2,
+      "contradiction_update": 2,
+      "repeated_task": 5,
+      "correction_reuse": 2
+    }
+  },
+  "calibration_suite": {
+    "cal_probes_per_family_per_seed": {
+      "delayed_recall": 4,
+      "distractor_recall": 3,
+      "contradiction_update": 3,
+      "repeated_task": 6,
+      "correction_reuse": 3
+    },
+    "guard_sizing": {
+      "contradiction_update": [
+        3,
+        2
+      ],
+      "correction_reuse": [
+        3,
+        2
+      ],
+      "delayed_recall": [
+        4,
+        3
+      ],
+      "distractor_recall": [
+        3,
+        2
+      ],
+      "repeated_task": [
+        6,
+        5
+      ]
+    }
+  },
+  "arm_e_actuation_ex_ante": {
+    "expectation_predeclared": ">= 1 physical policy injection per seed across the suite (policy.action with retrieval.injected = true; section 6.7)",
+    "rationale": "RM-eligible probes sit on non-first session turns behind a non-probe turn; the s2t1 exchange appends episodes AFTER the session-start baseline injection, so the probe-turn retrieve surfaces new episode ids; the deterministic R2 rule fires on rubrics/corrections carrying corrective markers, R1 on absence-of-records markers",
+    "simulation_note": "placeholder assistant replies; a lower bound on the real store state (real runs also hold reflection summaries for arms D/E)",
+    "per_scenario": [
+      {
+        "scenario": "rt-0004",
+        "probe_turn": "s2t2",
+        "baseline_episode_ids": [
+          1,
+          3
+        ],
+        "probe_decision": "retrieve_then_answer",
+        "probe_rule": "R1-absence-of-records",
+        "probe_retrieved_ids": [
+          1,
+          3,
+          5
+        ],
+        "new_episode_ids_at_probe": [
+          5
+        ],
+        "physical_injection_expected": true
+      },
+      {
+        "scenario": "rt-0005",
+        "probe_turn": "s2t2",
+        "baseline_episode_ids": [
+          1,
+          3
+        ],
+        "probe_decision": "retrieve_then_answer",
+        "probe_rule": "R1-absence-of-records",
+        "probe_retrieved_ids": [
+          3,
+          1,
+          5
+        ],
+        "new_episode_ids_at_probe": [
+          5
+        ],
+        "physical_injection_expected": true
+      },
+      {
+        "scenario": "rt-0006",
+        "probe_turn": "s2t2",
+        "baseline_episode_ids": [
+          1,
+          3
+        ],
+        "probe_decision": "retrieve_then_answer",
+        "probe_rule": "R1-absence-of-records",
+        "probe_retrieved_ids": [
+          1,
+          3,
+          5
+        ],
+        "new_episode_ids_at_probe": [
+          5
+        ],
+        "physical_injection_expected": true
+      },
+      {
+        "scenario": "rt-0007",
+        "probe_turn": "s2t2",
+        "baseline_episode_ids": [
+          1,
+          3
+        ],
+        "probe_decision": "retrieve_then_answer",
+        "probe_rule": "R1-absence-of-records",
+        "probe_retrieved_ids": [
+          1,
+          5,
+          3
+        ],
+        "new_episode_ids_at_probe": [
+          5
+        ],
+        "physical_injection_expected": true
+      },
+      {
+        "scenario": "rt-0008",
+        "probe_turn": "s2t2",
+        "baseline_episode_ids": [
+          1,
+          3
+        ],
+        "probe_decision": "retrieve_then_answer",
+        "probe_rule": "R1-absence-of-records",
+        "probe_retrieved_ids": [
+          1,
+          3,
+          5
+        ],
+        "new_episode_ids_at_probe": [
+          5
+        ],
+        "physical_injection_expected": true
+      },
+      {
+        "scenario": "cr-0001",
+        "probe_turn": "s2t2",
+        "baseline_episode_ids": [
+          1,
+          3
+        ],
+        "probe_decision": "retrieve_then_answer",
+        "probe_rule": "R1-absence-of-records",
+        "probe_retrieved_ids": [
+          1,
+          3,
+          5
+        ],
+        "new_episode_ids_at_probe": [
+          5
+        ],
+        "physical_injection_expected": true
+      },
+      {
+        "scenario": "cr-0002",
+        "probe_turn": "s2t2",
+        "baseline_episode_ids": [
+          1,
+          3
+        ],
+        "probe_decision": "retrieve_then_answer",
+        "probe_rule": "R1-absence-of-records",
+        "probe_retrieved_ids": [
+          1,
+          3,
+          5
+        ],
+        "new_episode_ids_at_probe": [
+          5
+        ],
+        "physical_injection_expected": true
+      }
+    ],
+    "scenarios_with_expected_injection": 7,
+    "pass": true
+  },
+  "verdict": "PASS",
+  "failed_checks": []
+}

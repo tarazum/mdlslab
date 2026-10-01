@@ -860,7 +860,13 @@ def main() -> int:
     args = parser.parse_args()
     run_root = Path(args.run_root)
     if not run_root.is_absolute():
-        run_root = LAB_ROOT / run_root
+        # accept CWD-relative, lab-relative, and repo-root-relative forms
+        if run_root.exists():
+            run_root = run_root.resolve()
+        elif (LAB_ROOT / run_root).exists():
+            run_root = (LAB_ROOT / run_root).resolve()
+        else:
+            run_root = (LAB_ROOT.parents[1] / run_root).resolve()
     if not run_root.is_dir():
         print(f"FAIL-CLOSED: run root not found: {run_root}", file=sys.stderr)
         return 2

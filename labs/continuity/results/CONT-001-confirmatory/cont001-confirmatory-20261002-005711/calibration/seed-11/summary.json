@@ -1,0 +1,233 @@
+{
+  "run_id": "cont001-calibration-20261002-005733-seed11",
+  "seed": 11,
+  "arm": "B",
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "cal-DR1",
+      "family": "delayed_recall",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1317,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "11",
+          "observed_normalized": "11",
+          "passed": true,
+          "turn_ref": "s2t1"
+        },
+        {
+          "kind": "contains",
+          "expected": "tern",
+          "observed_normalized": "the keeper's boat is called the tern.",
+          "passed": true,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "contains",
+          "expected": "thursday",
+          "observed_normalized": "the supply launch arrives on thursdays.",
+          "passed": true,
+          "turn_ref": "s2t3"
+        },
+        {
+          "kind": "contains",
+          "expected": "2",
+          "observed_normalized": "the fog horn sounds twice an hour.",
+          "passed": false,
+          "turn_ref": "s2t4"
+        }
+      ],
+      "probes_passed": 3,
+      "probes_total": 4,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.1
+    },
+    {
+      "scenario": "cal-DX1",
+      "family": "distractor_recall",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 905,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "osmund",
+          "observed_normalized": "the name of the north lock keeper is osmund.",
+          "passed": true,
+          "turn_ref": "s2t1"
+        },
+        {
+          "kind": "contains",
+          "expected": "tilda",
+          "observed_normalized": "the name of the south lock keeper is tilda.",
+          "passed": true,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "contains",
+          "expected": "pavel",
+          "observed_normalized": "the name of the lock inspector is pavel.",
+          "passed": true,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 3,
+      "probes_total": 3,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.1
+    },
+    {
+      "scenario": "cal-CU1",
+      "family": "contradiction_update",
+      "arm": "B",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1408,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "20",
+          "observed_normalized": "platform 1 is 20 meters long.",
+          "passed": true,
+          "turn_ref": "s3t1"
+        },
+        {
+          "kind": "contains",
+          "expected": "24",
+          "observed_normalized": "the waiting room seats 24 people.",
+          "passed": true,
+          "turn_ref": "s3t2"
+        },
+        {
+          "kind": "contains",
+          "expected": "15",
+          "observed_normalized": "platform 2 is 15 meters long.",
+          "passed": true,
+          "turn_ref": "s3t3"
+        }
+      ],
+      "probes_passed": 3,
+      "probes_total": 3,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.7
+    },
+    {
+      "scenario": "cal-RT1",
+      "family": "repeated_task",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 16,
+      "turns": 8,
+      "tokens_total": 2249,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "facilities",
+          "observed_normalized": "classify this incident report. report: 'three ceiling lights are flickering in the reading room.' reply with the label only. facilities",
+          "passed": false,
+          "turn_ref": "s2t1"
+        },
+        {
+          "kind": "exact_match",
+          "expected": "security",
+          "observed_normalized": "classify this incident report. report: 'a visitor's badge opens the staff corridor door.' reply with the label only. security",
+          "passed": false,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "exact_match",
+          "expected": "computing",
+          "observed_normalized": "classify this incident report. report: 'the booking system drops half of the evening-class sign-ups.' reply with the label only. program",
+          "passed": false,
+          "turn_ref": "s2t3"
+        },
+        {
+          "kind": "exact_match",
+          "expected": "program",
+          "observed_normalized": "classify this incident report. report: 'thursday's yoga class has no instructor this week.' reply with the label only. facilities",
+          "passed": false,
+          "turn_ref": "s2t4"
+        },
+        {
+          "kind": "exact_match",
+          "expected": "facilities",
+          "observed_normalized": "classify this incident report. report: 'the atrium door handle came off in a visitor's hand.' reply with the label only. security",
+          "passed": false,
+          "turn_ref": "s2t5"
+        },
+        {
+          "kind": "exact_match",
+          "expected": "facilities",
+          "observed_normalized": "classify this incident report. report: 'the hall thermostat reads 14 degrees all morning.' reply with the label only. computing",
+          "passed": false,
+          "turn_ref": "s2t6"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 6,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 20.7
+    },
+    {
+      "scenario": "cal-CR1",
+      "family": "correction_reuse",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1163,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "same-day",
+          "observed_normalized": "same-day",
+          "passed": true,
+          "turn_ref": "s2t1"
+        },
+        {
+          "kind": "exact_match",
+          "expected": "freight",
+          "observed_normalized": "freight",
+          "passed": true,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "exact_match",
+          "expected": "next-day",
+          "observed_normalized": "next-day",
+          "passed": true,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 3,
+      "probes_total": 3,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.1
+    }
+  ],
+  "probes_passed": 12,
+  "probes_total": 19,
+  "turns": 27,
+  "tokens_total": 7042,
+  "budget_stops": 0,
+  "wall_s": 66.7,
+  "memory_episodes_total": 54,
+  "memory_export": "memory-export.json",
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true
+}
