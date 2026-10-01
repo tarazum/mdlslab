@@ -1,0 +1,1382 @@
+{
+  "pilot": {
+    "run_id": "pilot-armE-20261001-234851",
+    "kind": "pilot-armE",
+    "arm": "E",
+    "created_utc": "2026-10-01T20:53:24Z",
+    "git_rev": "2e789314ccdc21d4481258a0af7f1ec94d5faa54",
+    "model": "granite-code:8b",
+    "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+    "ollama_version": "0.34.2",
+    "python": "3.12.10",
+    "warmup_s": 2.4,
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "keep_alive": "30m",
+    "seeds_predeclared": [
+      11,
+      22,
+      33
+    ],
+    "seeds_run": [
+      11,
+      22,
+      33
+    ],
+    "seeds_skipped": [],
+    "scenario_order": [
+      "dr-0001",
+      "dr-0002",
+      "dr-0003",
+      "dx-0001",
+      "dx-0002",
+      "cu-0001",
+      "cu-0002",
+      "rt-0001",
+      "rt-0002",
+      "rt-0003"
+    ],
+    "fixture_families": [
+      "contradiction_update",
+      "delayed_recall",
+      "distractor_recall",
+      "repeated_task"
+    ],
+    "scenarios": 10,
+    "probes_per_seed_per_scenario": 1,
+    "memory": {
+      "backend": "sqlite (stdlib)",
+      "scope": "one store per seed; retrieval scoped to current scenario",
+      "retrieval": "keyword/substring scoring (word=1.0, extra substring=0.5)",
+      "top_k": 8,
+      "injection_rule": "at session start with index >= 2, one system message after the base prompt; query = the session's first environment turn; accepted reflection summaries surface through this same rule",
+      "export_format": "continuity-memory-export v1 (model-neutral JSON)"
+    },
+    "selfmodel": {
+      "store": "selfmodel-run.json (per-run copy per seed)",
+      "source": "state/selfmodel.json",
+      "agent_id": "continuity/granite-code:8b@36c3c3b9683b",
+      "revision_initial": 1,
+      "sha256_initial": "67054c3f8cc9924583959d03676dea2f71a44c4ebc81df460d56fb6644d5fbc1",
+      "injection_rule": "one system message immediately after the base system prompt in EVERY session; content = selfmodel.render_summary of the revision current at session start",
+      "estimate_provenance": "labs/continuity/results/CONT-000/pilot-armB-20261001-224636/aggregate.json"
+    },
+    "reflection": {
+      "engine": "deterministic MVP (no LLM call; bounded: one pass per non-stopped session)",
+      "proposal_types": [
+        "episode_summary",
+        "selfmodel_capability_update",
+        "selfmodel_failure_pattern"
+      ],
+      "validator": "schema + evidence re-derivation (episode ids / probe outcomes); no evidence -> reject",
+      "commits": "summaries as new episodes (role reflection.summary, immutable events never rewritten); self-model via fail-closed selfmodel.commit into a per-run copy (state/selfmodel.json untouched)",
+      "telemetry_totals": {
+        "proposals": 129,
+        "accepted": 75,
+        "rejected": 54
+      },
+      "telemetry_by_type": {
+        "episode_summary": {
+          "proposals": 69,
+          "accepted": 69,
+          "rejected": 0
+        },
+        "selfmodel_capability_update": {
+          "proposals": 54,
+          "accepted": 0,
+          "rejected": 54
+        },
+        "selfmodel_failure_pattern": {
+          "proposals": 6,
+          "accepted": 6,
+          "rejected": 0
+        }
+      },
+      "selfmodel_revisions_final_by_seed": {
+        "11": 3,
+        "22": 3,
+        "33": 3
+      }
+    },
+    "worldmodel": {
+      "prediction": "before each probe turn is answered: predicted pass/fail + confidence = the self-model's CURRENT per-family pass-rate estimate (0.5 default prior), capped at 0.25 when the store holds no episodes for the scenario",
+      "decision_threshold": 0.5,
+      "buckets": {
+        "high": ">= 0.75",
+        "medium": "[0.5, 0.75)",
+        "low": "< 0.5"
+      },
+      "non_behavioral": "predictions are trace events only; they never alter the prompt or the answer path (the M5 policy acts on environment/memory signals, not predictions)",
+      "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration",
+      "calibration_pooled": {
+        "predictions": 30,
+        "outcomes": 30,
+        "overall": {
+          "predicted_pass_rate": 0.7,
+          "actual_pass_rate": 0.8,
+          "accuracy": 0.9,
+          "mean_confidence": 0.7
+        },
+        "by_bucket": {
+          "high": {
+            "n": 15,
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0,
+            "mean_confidence": 1.0
+          },
+          "medium": {
+            "n": 6,
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0,
+            "mean_confidence": 0.5
+          },
+          "low": {
+            "n": 9,
+            "predicted_pass_rate": 0.0,
+            "actual_pass_rate": 0.333,
+            "mean_confidence": 0.333
+          }
+        },
+        "by_family": {
+          "contradiction_update": {
+            "n": 6,
+            "mean_confidence": 0.5,
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0
+          },
+          "delayed_recall": {
+            "n": 9,
+            "mean_confidence": 1.0,
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0
+          },
+          "distractor_recall": {
+            "n": 6,
+            "mean_confidence": 1.0,
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0
+          },
+          "repeated_task": {
+            "n": 9,
+            "mean_confidence": 0.333,
+            "predicted_pass_rate": 0.0,
+            "actual_pass_rate": 0.333
+          }
+        }
+      }
+    },
+    "policy": {
+      "action_set": [
+        "answer_direct",
+        "retrieve_then_answer"
+      ],
+      "rules": "R1 retrieve_then_answer when the environment turn carries a fixed absence-of-records marker ('not at hand', 'no logbook', 'no paperwork', 'no papers', 'no timetable', 'from your own records', 'from your records'); R2 retrieve_then_answer when the turn is a probe and the scenario's stored environment episodes contain a corrective marker (reflection.CORRECTIVE_MARKERS); otherwise answer_direct",
+      "actuation": "per-turn memory refresh/extension ONLY: same renderer, same keyword retrieval rule and top_k as the arm-B baseline injection, query = the CURRENT turn; dedup no-op recorded when the retrieved ids are already covered by this session's injections; no new tools, no prompt changes, no new memory semantics (CONT-005 trust hierarchy NOT implemented \u2014 owner-gated)",
+      "consumes_predictions": false,
+      "distribution_totals": {
+        "actions": {
+          "answer_direct": 54,
+          "retrieve_then_answer": 24
+        },
+        "rules": {
+          "default": 54,
+          "R1-absence-of-records": 21,
+          "R2-corrected-fact-probe": 3
+        },
+        "retrieve_injections": 0,
+        "retrieve_noop_reasons": {
+          "no-op: retrieved episodes already covered by this session's injections": 24
+        }
+      },
+      "distribution_by_seed": [
+        {
+          "seed": 11,
+          "actions": {
+            "answer_direct": 18,
+            "retrieve_then_answer": 8
+          },
+          "rules": {
+            "default": 18,
+            "R1-absence-of-records": 7,
+            "R2-corrected-fact-probe": 1
+          },
+          "retrieve_injections": 0,
+          "retrieve_noop_reasons": {
+            "no-op: retrieved episodes already covered by this session's injections": 8
+          },
+          "by_scenario": {
+            "dr-0001": {
+              "answer_direct": 1,
+              "retrieve_then_answer": 1
+            },
+            "dr-0002": {
+              "answer_direct": 1,
+              "retrieve_then_answer": 1
+            },
+            "dr-0003": {
+              "answer_direct": 2,
+              "retrieve_then_answer": 1
+            },
+            "dx-0001": {
+              "answer_direct": 1,
+              "retrieve_then_answer": 1
+            },
+            "dx-0002": {
+              "answer_direct": 1,
+              "retrieve_then_answer": 1
+            },
+            "cu-0001": {
+              "answer_direct": 2,
+              "retrieve_then_answer": 1
+            },
+            "cu-0002": {
+              "answer_direct": 2,
+              "retrieve_then_answer": 1
+            },
+            "rt-0001": {
+              "answer_direct": 3,
+              "retrieve_then_answer": 0
+            },
+            "rt-0002": {
+              "answer_direct": 3,
+              "retrieve_then_answer": 0
+            },
+            "rt-0003": {
+              "answer_direct": 2,
+              "retrieve_then_answer": 1
+            }
+          }
+        },
+        {
+          "seed": 22,
+          "actions": {
+            "answer_direct": 18,
+            "retrieve_then_answer": 8
+          },
+          "rules": {
+            "default": 18,
+            "R1-absence-of-records": 7,
+            "R2-corrected-fact-probe": 1
+          },
+          "retrieve_injections": 0,
+          "retrieve_noop_reasons": {
+            "no-op: retrieved episodes already covered by this session's injections": 8
+          },
+          "by_scenario": {
+            "dr-0001": {
+              "answer_direct": 1,
+              "retrieve_then_answer": 1
+            },
+            "dr-0002": {
+              "answer_direct": 1,
+              "retrieve_then_answer": 1
+            },
+            "dr-0003": {
+              "answer_direct": 2,
+              "retrieve_then_answer": 1
+            },
+            "dx-0001": {
+              "answer_direct": 1,
+              "retrieve_then_answer": 1
+            },
+            "dx-0002": {
+              "answer_direct": 1,
+              "retrieve_then_answer": 1
+            },
+            "cu-0001": {
+              "answer_direct": 2,
+              "retrieve_then_answer": 1
+            },
+            "cu-0002": {
+              "answer_direct": 2,
+              "retrieve_then_answer": 1
+            },
+            "rt-0001": {
+              "answer_direct": 3,
+              "retrieve_then_answer": 0
+            },
+            "rt-0002": {
+              "answer_direct": 3,
+              "retrieve_then_answer": 0
+            },
+            "rt-0003": {
+              "answer_direct": 2,
+              "retrieve_then_answer": 1
+            }
+          }
+        },
+        {
+          "seed": 33,
+          "actions": {
+            "answer_direct": 18,
+            "retrieve_then_answer": 8
+          },
+          "rules": {
+            "default": 18,
+            "R1-absence-of-records": 7,
+            "R2-corrected-fact-probe": 1
+          },
+          "retrieve_injections": 0,
+          "retrieve_noop_reasons": {
+            "no-op: retrieved episodes already covered by this session's injections": 8
+          },
+          "by_scenario": {
+            "dr-0001": {
+              "answer_direct": 1,
+              "retrieve_then_answer": 1
+            },
+            "dr-0002": {
+              "answer_direct": 1,
+              "retrieve_then_answer": 1
+            },
+            "dr-0003": {
+              "answer_direct": 2,
+              "retrieve_then_answer": 1
+            },
+            "dx-0001": {
+              "answer_direct": 1,
+              "retrieve_then_answer": 1
+            },
+            "dx-0002": {
+              "answer_direct": 1,
+              "retrieve_then_answer": 1
+            },
+            "cu-0001": {
+              "answer_direct": 2,
+              "retrieve_then_answer": 1
+            },
+            "cu-0002": {
+              "answer_direct": 2,
+              "retrieve_then_answer": 1
+            },
+            "rt-0001": {
+              "answer_direct": 3,
+              "retrieve_then_answer": 0
+            },
+            "rt-0002": {
+              "answer_direct": 3,
+              "retrieve_then_answer": 0
+            },
+            "rt-0003": {
+              "answer_direct": 2,
+              "retrieve_then_answer": 1
+            }
+          }
+        }
+      ]
+    },
+    "determinism_caveat": "greedy+seed does not guarantee identical outputs across batch sizes or backends (PB-071)",
+    "gpu_lock_note": "run held the shared gpu lock; any nvidia-smi 'busy' at start was attributed via ollama /api/ps (CN-005 monitoring rule)",
+    "gpu_at_start": {
+      "nvidia_smi_used_mib": 5876,
+      "ollama_ps": [
+        {
+          "name": "granite-code:8b",
+          "digest": "36c3c3b9683b",
+          "size_vram_mib": 5064.6
+        }
+      ]
+    },
+    "wall_clock_s": 187.7
+  },
+  "runs": [
+    {
+      "seed": 11,
+      "run_id": "pilot-armE-20261001-234851-seed11",
+      "dir": "seed-11",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 10,
+      "turns": 26,
+      "tokens_total": 17124,
+      "wall_s": 60.5,
+      "memory_episodes_total": 75,
+      "reflection": {
+        "passes": 23,
+        "summaries_appended": 23,
+        "selfmodel_revision_final": 3,
+        "selfmodel_sha256_final": "ae3a7a935af06a03345c82f622c8f5b347654aba9b5d6a3fafd84cff7c3c5d7c"
+      },
+      "worldmodel_calibration": {
+        "predictions": 10,
+        "outcomes": 10,
+        "overall": {
+          "predicted_pass_rate": 0.7,
+          "actual_pass_rate": 0.8,
+          "accuracy": 0.9,
+          "mean_confidence": 0.7
+        },
+        "by_bucket": {
+          "high": {
+            "n": 5,
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0,
+            "mean_confidence": 1.0
+          },
+          "medium": {
+            "n": 2,
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0,
+            "mean_confidence": 0.5
+          },
+          "low": {
+            "n": 3,
+            "predicted_pass_rate": 0.0,
+            "actual_pass_rate": 0.333,
+            "mean_confidence": 0.333
+          }
+        },
+        "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+      }
+    },
+    {
+      "seed": 22,
+      "run_id": "pilot-armE-20261001-234851-seed22",
+      "dir": "seed-22",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 10,
+      "turns": 26,
+      "tokens_total": 17124,
+      "wall_s": 60.2,
+      "memory_episodes_total": 75,
+      "reflection": {
+        "passes": 23,
+        "summaries_appended": 23,
+        "selfmodel_revision_final": 3,
+        "selfmodel_sha256_final": "974a2bbd88954f29f549b02e3d10ab9f33aaf8c2d5d9803bc070817e962f6b49"
+      },
+      "worldmodel_calibration": {
+        "predictions": 10,
+        "outcomes": 10,
+        "overall": {
+          "predicted_pass_rate": 0.7,
+          "actual_pass_rate": 0.8,
+          "accuracy": 0.9,
+          "mean_confidence": 0.7
+        },
+        "by_bucket": {
+          "high": {
+            "n": 5,
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0,
+            "mean_confidence": 1.0
+          },
+          "medium": {
+            "n": 2,
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0,
+            "mean_confidence": 0.5
+          },
+          "low": {
+            "n": 3,
+            "predicted_pass_rate": 0.0,
+            "actual_pass_rate": 0.333,
+            "mean_confidence": 0.333
+          }
+        },
+        "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+      }
+    },
+    {
+      "seed": 33,
+      "run_id": "pilot-armE-20261001-234851-seed33",
+      "dir": "seed-33",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 10,
+      "turns": 26,
+      "tokens_total": 17124,
+      "wall_s": 60.7,
+      "memory_episodes_total": 75,
+      "reflection": {
+        "passes": 23,
+        "summaries_appended": 23,
+        "selfmodel_revision_final": 3,
+        "selfmodel_sha256_final": "bf1f0b0d45a5303086e1f2aa617a7dd9d2ff3d80e1009063a59b2e7b581a5896"
+      },
+      "worldmodel_calibration": {
+        "predictions": 10,
+        "outcomes": 10,
+        "overall": {
+          "predicted_pass_rate": 0.7,
+          "actual_pass_rate": 0.8,
+          "accuracy": 0.9,
+          "mean_confidence": 0.7
+        },
+        "by_bucket": {
+          "high": {
+            "n": 5,
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0,
+            "mean_confidence": 1.0
+          },
+          "medium": {
+            "n": 2,
+            "predicted_pass_rate": 1.0,
+            "actual_pass_rate": 1.0,
+            "mean_confidence": 0.5
+          },
+          "low": {
+            "n": 3,
+            "predicted_pass_rate": 0.0,
+            "actual_pass_rate": 0.333,
+            "mean_confidence": 0.333
+          }
+        },
+        "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+      }
+    }
+  ],
+  "per_family": {
+    "delayed_recall": {
+      "pass_rate_by_seed": {
+        "11": 1.0,
+        "22": 1.0,
+        "33": 1.0
+      },
+      "passed_by_seed": {
+        "11": 3,
+        "22": 3,
+        "33": 3
+      },
+      "probes_per_seed": 3,
+      "spread": {
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0,
+        "mean": 1.0
+      }
+    },
+    "distractor_recall": {
+      "pass_rate_by_seed": {
+        "11": 1.0,
+        "22": 1.0,
+        "33": 1.0
+      },
+      "passed_by_seed": {
+        "11": 2,
+        "22": 2,
+        "33": 2
+      },
+      "probes_per_seed": 2,
+      "spread": {
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0,
+        "mean": 1.0
+      }
+    },
+    "contradiction_update": {
+      "pass_rate_by_seed": {
+        "11": 1.0,
+        "22": 1.0,
+        "33": 1.0
+      },
+      "passed_by_seed": {
+        "11": 2,
+        "22": 2,
+        "33": 2
+      },
+      "probes_per_seed": 2,
+      "spread": {
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0,
+        "mean": 1.0
+      }
+    },
+    "repeated_task": {
+      "pass_rate_by_seed": {
+        "11": 0.333,
+        "22": 0.333,
+        "33": 0.333
+      },
+      "passed_by_seed": {
+        "11": 1,
+        "22": 1,
+        "33": 1
+      },
+      "probes_per_seed": 3,
+      "spread": {
+        "min": 0.333,
+        "max": 0.333,
+        "range": 0.0,
+        "mean": 0.333
+      }
+    }
+  },
+  "per_scenario": {
+    "dr-0001": {
+      "family": "delayed_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "7"
+        }
+      },
+      "pass_count": 3,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "7"
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "7"
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "7"
+          }
+        ]
+      }
+    },
+    "dr-0002": {
+      "family": "delayed_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "doran"
+        }
+      },
+      "pass_count": 3,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the observatory assistant on mount kest is named doran."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the observatory assistant on mount kest is named doran."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the observatory assistant on mount kest is named doran."
+          }
+        ]
+      }
+    },
+    "dr-0003": {
+      "family": "delayed_recall",
+      "probe_results": {
+        "s3t1": {
+          "kind": "contains",
+          "expected": "1783"
+        }
+      },
+      "pass_count": 3,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze sundial in the east garden was cast in 1783."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze sundial in the east garden was cast in 1783."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze sundial in the east garden was cast in 1783."
+          }
+        ]
+      }
+    },
+    "dx-0001": {
+      "family": "distractor_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "20"
+        }
+      },
+      "pass_count": 3,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "20"
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "20"
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "20"
+          }
+        ]
+      }
+    },
+    "dx-0002": {
+      "family": "distractor_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "petrel"
+        }
+      },
+      "pass_count": 3,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the pilot boat of north harbor is called the petrel."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the pilot boat of north harbor is called the petrel."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the pilot boat of north harbor is called the petrel."
+          }
+        ]
+      }
+    },
+    "cu-0001": {
+      "family": "contradiction_update",
+      "probe_results": {
+        "s3t1": {
+          "kind": "contains",
+          "expected": "18"
+        }
+      },
+      "pass_count": 3,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the mail boat zephyr is licensed to carry 18 passengers."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the mail boat zephyr is licensed to carry 18 passengers."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the mail boat zephyr is licensed to carry 18 passengers."
+          }
+        ]
+      }
+    },
+    "cu-0002": {
+      "family": "contradiction_update",
+      "probe_results": {
+        "s3t1": {
+          "kind": "contains",
+          "expected": "green"
+        }
+      },
+      "pass_count": 3,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the beacon on thornwick hill flashes green."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the beacon on thornwick hill flashes green."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the beacon on thornwick hill flashes green."
+          }
+        ]
+      }
+    },
+    "rt-0001": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t1": {
+          "kind": "exact_match",
+          "expected": "bug"
+        }
+      },
+      "pass_count": 3,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "bug"
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "bug"
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "bug"
+          }
+        ]
+      }
+    },
+    "rt-0002": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t1": {
+          "kind": "exact_match",
+          "expected": "account"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ]
+      }
+    },
+    "rt-0003": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t1": {
+          "kind": "exact_match",
+          "expected": "perf"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ]
+      }
+    }
+  },
+  "memory_stats": [
+    {
+      "seed": 11,
+      "appended_events": 52,
+      "injected_episodes_by_scenario": {
+        "dr-0001": 2,
+        "dr-0002": 2,
+        "dr-0003": 6,
+        "dx-0001": 3,
+        "dx-0002": 2,
+        "cu-0001": 6,
+        "cu-0002": 7,
+        "rt-0001": 4,
+        "rt-0002": 4,
+        "rt-0003": 4
+      }
+    },
+    {
+      "seed": 22,
+      "appended_events": 52,
+      "injected_episodes_by_scenario": {
+        "dr-0001": 2,
+        "dr-0002": 2,
+        "dr-0003": 6,
+        "dx-0001": 3,
+        "dx-0002": 2,
+        "cu-0001": 6,
+        "cu-0002": 7,
+        "rt-0001": 4,
+        "rt-0002": 4,
+        "rt-0003": 4
+      }
+    },
+    {
+      "seed": 33,
+      "appended_events": 52,
+      "injected_episodes_by_scenario": {
+        "dr-0001": 2,
+        "dr-0002": 2,
+        "dr-0003": 6,
+        "dx-0001": 3,
+        "dx-0002": 2,
+        "cu-0001": 6,
+        "cu-0002": 7,
+        "rt-0001": 4,
+        "rt-0002": 4,
+        "rt-0003": 4
+      }
+    }
+  ],
+  "request_stats": {
+    "count": 78,
+    "latency_ms": {
+      "mean": 272.7,
+      "median": 237.9,
+      "p90": 495.1,
+      "p95": 556.2,
+      "min": 94.5,
+      "max": 615.1
+    },
+    "tokens": {
+      "prompt_sum": 50757,
+      "eval_sum": 615,
+      "total_sum": 51372,
+      "prompt_mean": 650.7,
+      "eval_mean": 7.9
+    }
+  },
+  "worldmodel_prediction_rows": [
+    {
+      "scenario": "dr-0001",
+      "family": "delayed_recall",
+      "turn_ref": "s2t1",
+      "predicted": "pass",
+      "confidence": 1.0,
+      "bucket": "high",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "dr-0002",
+      "family": "delayed_recall",
+      "turn_ref": "s2t1",
+      "predicted": "pass",
+      "confidence": 1.0,
+      "bucket": "high",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "dr-0003",
+      "family": "delayed_recall",
+      "turn_ref": "s3t1",
+      "predicted": "pass",
+      "confidence": 1.0,
+      "bucket": "high",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "dx-0001",
+      "family": "distractor_recall",
+      "turn_ref": "s2t1",
+      "predicted": "pass",
+      "confidence": 1.0,
+      "bucket": "high",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "dx-0002",
+      "family": "distractor_recall",
+      "turn_ref": "s2t1",
+      "predicted": "pass",
+      "confidence": 1.0,
+      "bucket": "high",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "cu-0001",
+      "family": "contradiction_update",
+      "turn_ref": "s3t1",
+      "predicted": "pass",
+      "confidence": 0.5,
+      "bucket": "medium",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "cu-0002",
+      "family": "contradiction_update",
+      "turn_ref": "s3t1",
+      "predicted": "pass",
+      "confidence": 0.5,
+      "bucket": "medium",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "rt-0001",
+      "family": "repeated_task",
+      "turn_ref": "s2t1",
+      "predicted": "fail",
+      "confidence": 0.333,
+      "bucket": "low",
+      "actual_passed": true,
+      "prediction_correct": false
+    },
+    {
+      "scenario": "rt-0002",
+      "family": "repeated_task",
+      "turn_ref": "s2t1",
+      "predicted": "fail",
+      "confidence": 0.333,
+      "bucket": "low",
+      "actual_passed": false,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "rt-0003",
+      "family": "repeated_task",
+      "turn_ref": "s2t1",
+      "predicted": "fail",
+      "confidence": 0.333,
+      "bucket": "low",
+      "actual_passed": false,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "dr-0001",
+      "family": "delayed_recall",
+      "turn_ref": "s2t1",
+      "predicted": "pass",
+      "confidence": 1.0,
+      "bucket": "high",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "dr-0002",
+      "family": "delayed_recall",
+      "turn_ref": "s2t1",
+      "predicted": "pass",
+      "confidence": 1.0,
+      "bucket": "high",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "dr-0003",
+      "family": "delayed_recall",
+      "turn_ref": "s3t1",
+      "predicted": "pass",
+      "confidence": 1.0,
+      "bucket": "high",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "dx-0001",
+      "family": "distractor_recall",
+      "turn_ref": "s2t1",
+      "predicted": "pass",
+      "confidence": 1.0,
+      "bucket": "high",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "dx-0002",
+      "family": "distractor_recall",
+      "turn_ref": "s2t1",
+      "predicted": "pass",
+      "confidence": 1.0,
+      "bucket": "high",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "cu-0001",
+      "family": "contradiction_update",
+      "turn_ref": "s3t1",
+      "predicted": "pass",
+      "confidence": 0.5,
+      "bucket": "medium",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "cu-0002",
+      "family": "contradiction_update",
+      "turn_ref": "s3t1",
+      "predicted": "pass",
+      "confidence": 0.5,
+      "bucket": "medium",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "rt-0001",
+      "family": "repeated_task",
+      "turn_ref": "s2t1",
+      "predicted": "fail",
+      "confidence": 0.333,
+      "bucket": "low",
+      "actual_passed": true,
+      "prediction_correct": false
+    },
+    {
+      "scenario": "rt-0002",
+      "family": "repeated_task",
+      "turn_ref": "s2t1",
+      "predicted": "fail",
+      "confidence": 0.333,
+      "bucket": "low",
+      "actual_passed": false,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "rt-0003",
+      "family": "repeated_task",
+      "turn_ref": "s2t1",
+      "predicted": "fail",
+      "confidence": 0.333,
+      "bucket": "low",
+      "actual_passed": false,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "dr-0001",
+      "family": "delayed_recall",
+      "turn_ref": "s2t1",
+      "predicted": "pass",
+      "confidence": 1.0,
+      "bucket": "high",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "dr-0002",
+      "family": "delayed_recall",
+      "turn_ref": "s2t1",
+      "predicted": "pass",
+      "confidence": 1.0,
+      "bucket": "high",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "dr-0003",
+      "family": "delayed_recall",
+      "turn_ref": "s3t1",
+      "predicted": "pass",
+      "confidence": 1.0,
+      "bucket": "high",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "dx-0001",
+      "family": "distractor_recall",
+      "turn_ref": "s2t1",
+      "predicted": "pass",
+      "confidence": 1.0,
+      "bucket": "high",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "dx-0002",
+      "family": "distractor_recall",
+      "turn_ref": "s2t1",
+      "predicted": "pass",
+      "confidence": 1.0,
+      "bucket": "high",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "cu-0001",
+      "family": "contradiction_update",
+      "turn_ref": "s3t1",
+      "predicted": "pass",
+      "confidence": 0.5,
+      "bucket": "medium",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "cu-0002",
+      "family": "contradiction_update",
+      "turn_ref": "s3t1",
+      "predicted": "pass",
+      "confidence": 0.5,
+      "bucket": "medium",
+      "actual_passed": true,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "rt-0001",
+      "family": "repeated_task",
+      "turn_ref": "s2t1",
+      "predicted": "fail",
+      "confidence": 0.333,
+      "bucket": "low",
+      "actual_passed": true,
+      "prediction_correct": false
+    },
+    {
+      "scenario": "rt-0002",
+      "family": "repeated_task",
+      "turn_ref": "s2t1",
+      "predicted": "fail",
+      "confidence": 0.333,
+      "bucket": "low",
+      "actual_passed": false,
+      "prediction_correct": true
+    },
+    {
+      "scenario": "rt-0003",
+      "family": "repeated_task",
+      "turn_ref": "s2t1",
+      "predicted": "fail",
+      "confidence": 0.333,
+      "bucket": "low",
+      "actual_passed": false,
+      "prediction_correct": true
+    }
+  ],
+  "reflection_trace_stats": [
+    {
+      "seed": 11,
+      "passes": 23,
+      "by_type": {
+        "episode_summary": {
+          "proposals": 23,
+          "accepted": 23,
+          "rejected": 0
+        },
+        "selfmodel_capability_update": {
+          "proposals": 18,
+          "accepted": 0,
+          "rejected": 18
+        },
+        "selfmodel_failure_pattern": {
+          "proposals": 2,
+          "accepted": 2,
+          "rejected": 0
+        }
+      }
+    },
+    {
+      "seed": 22,
+      "passes": 23,
+      "by_type": {
+        "episode_summary": {
+          "proposals": 23,
+          "accepted": 23,
+          "rejected": 0
+        },
+        "selfmodel_capability_update": {
+          "proposals": 18,
+          "accepted": 0,
+          "rejected": 18
+        },
+        "selfmodel_failure_pattern": {
+          "proposals": 2,
+          "accepted": 2,
+          "rejected": 0
+        }
+      }
+    },
+    {
+      "seed": 33,
+      "passes": 23,
+      "by_type": {
+        "episode_summary": {
+          "proposals": 23,
+          "accepted": 23,
+          "rejected": 0
+        },
+        "selfmodel_capability_update": {
+          "proposals": 18,
+          "accepted": 0,
+          "rejected": 18
+        },
+        "selfmodel_failure_pattern": {
+          "proposals": 2,
+          "accepted": 2,
+          "rejected": 0
+        }
+      }
+    }
+  ]
+}

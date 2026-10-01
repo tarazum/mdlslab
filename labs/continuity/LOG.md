@@ -588,6 +588,106 @@ event types; `memory.episodes_for` read helper.
   `shared/tooling/agent-resource-coordination/lock.py run gpu`. Fail-closed
   on Ollama/digest mismatch.
 
+## 2026-10-01 23:54 — M5 / P1a result: arm E (world model + bounded policy)
+
+Artifacts: `results/CONT-000/cont000-smoke-armE-dr-0001-20261001-234641/`
+(smoke) and `results/CONT-000/pilot-armE-20261001-234851/` (mini-pilot: 3
+seeds x trace.jsonl/summary.json/env.json/memory.sqlite3/memory-export.json
++ selfmodel-run.json + aggregate.json +
+`armA-vs-armB-vs-armC-vs-armD-vs-armE.{json,md}`); new
+`src/continuity/worldmodel.py`, `src/continuity/policy.py`, runner arm-E
+wiring + 3 new trace event types (`worldmodel.prediction`,
+`worldmodel.outcome`, `policy.action`), `memory.episodes_for_scenario` read
+helper, `run_smoke_arm_e.py`, `run_pilot_arm_e.py`.
+
+- **Smoke gate PASSED**: dr-0001 arm E (seed 42, granite-code:8b, digest
+  `36c3c3b9683b…a18dd`, temp 0.0, num_ctx 4096): probe s2t1 expected "7" ->
+  observed "7"; 1 prediction recorded BEFORE the answer (predicted pass,
+  confidence 1.0, bucket high, family_rate 1.0, 3 stored episodes) + 1
+  outcome attached after scoring (correct); 2 policy actions (s1t1
+  answer_direct; s2t1 retrieve_then_answer via R1 "no logbook" — dedup
+  no-op, recorded); reflection events intact (3 proposals, revision 1->1);
+  trace re-validates; exit 0 under the shared GPU lock.
+- **Mini-pilot (arm E, predeclared seeds {11,22,33}, one warm process,
+  warmup 2.4 s)**: all 3 seeds completed, byte-identical answers across
+  seeds (tokens 17,124 per seed — identical to arm D; no CN-003 drift), 78
+  requests, wall 60.2-60.7 s per seed, 0 budget stops, all traces
+  re-validate from disk. 75 memory episodes per seed (52 exchange episodes
+  + 23 accepted reflection summaries). Total GPU for the stage ~4.5 min
+  (smoke + pilot; budget <= 40 min); wall clock ~75 min (budget <= 110).
+  CN-005 attribution at lock time: nvidia-smi 5,876 MiB, `/api/ps` attributes
+  5,064.6 MiB to granite-code:8b (the run's own target); snapshot in
+  aggregate.json.
+- **A/B/C/D/E per family (mean pass rates; A 5 seeds, B/C/D/E 3 seeds)**:
+  delayed_recall 0.000 / 1.000 / 1.000 / 1.000 / 1.000; distractor_recall
+  0.000 / 1.000 / 1.000 / 1.000 / 1.000; contradiction_update 0.000 / 0.500
+  / 1.000 / 1.000 / 1.000; repeated_task 0.667 / 0.333 / 0.333 / 0.333 /
+  **0.333**. E - D = 0.000 on every family and every scenario. Overall
+  probes per seed: A 2/10, B 7/10, C 8/10, D 8/10, E 8/10. Artifact:
+  `armA-vs-armB-vs-armC-vs-armD-vs-armE.{json,md}`.
+- **repeated_task did NOT move — stated plainly.** It has been flat at
+  0.333 since arm B: rt-0001 passes 3/3, rt-0002 answers "bug" (expected
+  "account") 0/3, rt-0003 answers "bug" (expected "perf") 0/3. The M5
+  policy's R2 retrieve fired on rt-0003's probe but was a recorded no-op
+  (CN-010), so arm E tested the policy's plumbing, not a new mitigation
+  mechanism for CN-007 — the anchoring result stands unchanged through
+  arms B/C/D/E.
+- **What the world model did (30 predictions / 30 outcomes attached)**:
+  overall predicted-pass rate 0.700 vs actual 0.800; pass/fail call accuracy
+  0.900 (27/30; the 3 misses are rt-0001 — predicted fail at the 0.333
+  family rate, actually passes); mean confidence 0.700. Buckets: high n=15
+  (mean confidence 1.000, actual pass 1.000); medium n=6 (confidence 0.500,
+  actual 1.000 — the contradiction_update probes, UNDERCONFIDENT because
+  revision-1 rates are arm-B measurements, cu 0.500 there vs 1.000 achieved
+  under C/D/E — CN-009 M5 annotation: predictions are B-anchored); low n=9
+  (confidence 0.333, actual 0.333 — the repeated_task probes, calibrated in
+  aggregate). Calibration numbers are exploratory only (CN-009 circularity
+  + staleness).
+- **What the policy actually did (78 turn decisions pooled over 3 seeds)**:
+  answer_direct 54, retrieve_then_answer 24 (R1 absence-of-records 21 — one
+  per dr/dx/cu probe, identical per seed; R2 corrected-fact-probe 3 —
+  rt-0003 only). **All 24 retrieves were dedup no-ops** ("already covered
+  by this session's injections"), 0 physical injections: every probe in
+  this suite is the FIRST turn of its session, so the baseline session-start
+  injection (query = that same turn) had already retrieved the identical
+  episode set against the identical store state. Consequence: arm E's
+  prompts were byte-identical to arm D's — which the identical token counts
+  (17,124/seed) and E-D = 0.000 independently confirm. Recorded as **CN-010**
+  (empty actuation surface on this fixture topology; CONT-001 needs probes
+  on non-first turns or mid-session store growth to measure policy
+  actuation, not just policy decisions).
+- **Reflection under arm E (unchanged arm-D semantics)**: 129 proposals
+  across seeds -> 75 accepted (69 episode summaries + 6 failure patterns,
+  2 per seed: rt-0002, rt-0003) / 54 rejected (all capability updates,
+  "seed already counted" double-count guard); per-run selfmodel revision
+  1 -> 3 per seed; canonical `state/selfmodel.json` untouched (revision 1,
+  verified).
+- **Tokens (78 requests)**: prompt 50,757 + eval 615 = 51,372 total —
+  byte-identical to arm D (0 physical policy injections => 0 extra prompt
+  tokens). Warm latency mean 272.7 ms, p95 556.2 ms (CN-002 rule: budgets
+  sized by wall; `total_duration` relative only).
+- Arms A/B/C/D behavior-identity verified: the runner diff touches only
+  arm-set literals (extended to "E") plus arm-E-guarded branches; a
+  world-model argument is REJECTED for arms != "E" (identity guard); one
+  M1/M2/M3/M4 trace per arm re-validated from disk after the change; all
+  offline selftests pass (worldmodel, policy, memory, selfmodel,
+  reflection).
+- Findings this stage: CN-010 opened (empty policy actuation surface);
+  CN-007 and CN-009 annotated with the M5 results. No new drift anywhere
+  (E >= D everywhere, trivially, since prompts were identical).
+- Same-day lesson (Context -> What happened -> Lesson -> Change): the
+  pilot's per-scenario policy breakdown first showed impossible counts
+  (dx-0002 "answer_direct 7" for a 2-turn scenario) — `parse_policy_events`
+  used `dict(by_action)` (the RUNNING global totals) as the per-scenario
+  template. Lesson: when a by-group breakdown's counts cannot exceed the
+  group size, that invariant is a free assertion — the impossible number
+  was visible in the artifact before any deeper check. Change: template
+  starts from zeros; aggregate + comparison rebuilt from the on-disk traces
+  (traces are the primary evidence; no re-run needed).
+- M5 exit artifacts complete; ROADMAP M5 marked DONE. Next: M6
+  (exploratory CONT-001 pass over all arms + pre-registration v1) per
+  ROADMAP.
+
 
 
 

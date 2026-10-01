@@ -1,6 +1,6 @@
 # Continuity (Project C)
 
-**Status:** In progress (2026-10-01). P0 complete and P1a started: CONT-000 harness, arm-A smoke and 5-seed pilot (`docs/SIZING.md`), arm B (SQLite persistent memory) — delayed_recall 0.000 (arm A) → 1.000 (arm B), see `results/CONT-000/pilot-armB-20261001-224636/` — and arm C (validated self-model) — contradiction_update 0.500 (arm B) → 1.000 (arm C), see `results/CONT-000/pilot-armC-20261001-231050/`. Arms D–E and CONT-001 follow `docs/ROADMAP.md`.
+**Status:** In progress (2026-10-01). P0 complete and P1a complete through arm E: CONT-000 harness, arm-A smoke and 5-seed pilot (`docs/SIZING.md`), arm B (SQLite persistent memory) — delayed_recall 0.000 (arm A) → 1.000 (arm B), see `results/CONT-000/pilot-armB-20261001-224636/` — arm C (validated self-model) — contradiction_update 0.500 (arm B) → 1.000 (arm C), see `results/CONT-000/pilot-armC-20261001-231050/` — arm D (reflection/consolidation, D−C = 0.000, CN-007 not cured), and arm E (world model + bounded policy; E−D = 0.000, policy actuation inert per CN-010, calibration exploratory per CN-009), see `results/CONT-000/pilot-armE-20261001-234851/`. CONT-001 follows `docs/ROADMAP.md`.
 
 ## Purpose
 

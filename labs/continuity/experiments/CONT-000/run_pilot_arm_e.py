@@ -154,7 +154,9 @@ def parse_policy_events(trace_path: Path) -> dict[str, Any]:
             payload = record["payload"]
             by_action[payload["action"]] += 1
             by_rule[payload["rule"]] = by_rule.get(payload["rule"], 0) + 1
-            slot = by_scenario.setdefault(record.get("scenario") or "?", dict(by_action))
+            slot = by_scenario.setdefault(
+                record.get("scenario") or "?", {a: 0 for a in sorted(ACTION_SET)}
+            )
             slot[payload["action"]] += 1
             retrieval = payload.get("retrieval")
             if payload["action"] == "retrieve_then_answer":
