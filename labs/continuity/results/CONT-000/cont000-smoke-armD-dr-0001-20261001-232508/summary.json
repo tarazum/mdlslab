@@ -1,0 +1,72 @@
+{
+  "scenario": "dr-0001",
+  "family": "delayed_recall",
+  "arm": "D",
+  "sessions_planned": 2,
+  "memory_episodes": 0,
+  "turns": 2,
+  "tokens_total": 1020,
+  "probes": [
+    {
+      "kind": "contains",
+      "expected": "7",
+      "observed_normalized": "the verdin isle lighthouse is located in the bahamas and is approximately 1,000 miles from the nearest landmass. the distance between two flashes of the lighthouse is not specified in the given text.",
+      "passed": false,
+      "turn_ref": "s2t1"
+    }
+  ],
+  "probes_passed": 0,
+  "probes_total": 1,
+  "stopped": false,
+  "budget_violation": null,
+  "duration_s": 5.2,
+  "reflection": {
+    "passes": 2,
+    "proposals": 2,
+    "accepted": 1,
+    "rejected": 1,
+    "summaries_appended": 0,
+    "selfmodel_revision_final": 2
+  },
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "memory_episodes_total": 0,
+  "reflection_telemetry": {
+    "passes": 2,
+    "selfmodel_sha256_initial": "67054c3f8cc9924583959d03676dea2f71a44c4ebc81df460d56fb6644d5fbc1",
+    "selfmodel_revision_initial": 1,
+    "proposals_by_type": {
+      "episode_summary": 0,
+      "selfmodel_capability_update": 1,
+      "selfmodel_failure_pattern": 1
+    },
+    "accepted_by_type": {
+      "episode_summary": 0,
+      "selfmodel_capability_update": 0,
+      "selfmodel_failure_pattern": 1
+    },
+    "rejected_by_type": {
+      "episode_summary": 0,
+      "selfmodel_capability_update": 1,
+      "selfmodel_failure_pattern": 0
+    },
+    "rejection_reasons": [
+      {
+        "proposal_id": "P-0001",
+        "reason": "family incomplete: observed 1 of 3 probes for family 'delayed_recall'"
+      }
+    ],
+    "selfmodel_revision_final": 2,
+    "summaries_appended": 0
+  },
+  "selfmodel_revision_final": 2,
+  "selfmodel_sha256_final": "4726119a92ccd0faf010b968dd1c649d62ee87aca6bb772d96e09e2920dc0ed5",
+  "run_id": "cont000-smoke-armD-dr-0001-20261001-232508",
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true,
+  "all_probes_passed": false,
+  "reflection_proposal_events": 2,
+  "reflection_accepted_events": 1,
+  "reflection_rejected_events": 1,
+  "reflection_visible_in_trace": true
+}

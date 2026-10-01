@@ -376,6 +376,74 @@ canonical store `state/selfmodel.json` (revision 1, sha256 `67054c3f8cc9…`).
 - M3 exit artifacts complete; ROADMAP M3 marked DONE. Next: M4 (arm D,
   reflection/consolidation) per ROADMAP.
 
+## 2026-10-01 23:21 — start-note: M4 / P1a arm D (reflection/consolidation)
+
+- Contract: `docs/ROADMAP.md` M4 brief. Entry verified: M3 DONE; repo clean on
+  `origin/main` (HEAD `2fdb15c` after the IN_PROGRESS marker commit); arm-C
+  pilot aggregate exists (`results/CONT-000/pilot-armC-20261001-231050/`);
+  Ollama 0.34.2 up; GPU lock free.
+- Open findings re-read before starting: CN-002 OPEN (budgets by wall clock —
+  applied), CN-003 OPEN (seed drift — monitoring, seeds {11,22,33} re-run),
+  CN-004 OPEN (fixture untouched), CN-005 OPEN (attribution snapshot under the
+  lock), CN-007 OPEN (own-answer anchoring — THE M4 design input: arm C's
+  self-knowledge note did not cure rt-0003), CN-008 OPEN (no supersession —
+  second M4 design input), CN-009 OPEN (estimate/evaluation overlap — see the
+  CN-009 exposure decision below). This stage is the M4 mitigation attempt for
+  CN-007/CN-008 (mechanism + measurement); it does not pre-declare them closed.
+- **Deterministic-MVP decision (recorded)**: the one bounded post-session
+  reflection pass is DETERMINISTIC, not an LLM call. Reasons: (a) full
+  reproducibility and zero GPU overhead inside the 40-min budget; (b) an LLM
+  reflecting on its own wrong answers is itself exposed to the CN-007
+  anchoring mechanism it is meant to cure; (c) the M4 question is whether
+  bounded, evidence-gated consolidation moves behavior — a deterministic pass
+  isolates that question. Same pinned core/params still govern all inference
+  requests (PB-071); reflection adds none.
+- Plan: (1) `src/continuity/reflection.py` — `ReflectionEngine.reflect_session`
+  runs ONCE after each non-stopped session and produces PROPOSALS only:
+  (a) `episode_summary` — one compact summary episode of the session's
+  episodes (environment records verbatim + own answers + a fixed-rule conflict
+  review: an assistant answer followed by a later same-session environment
+  record containing a fixed corrective marker ("do not use", "instead of",
+  "is now", "correction", …) is juxtaposed with that corrective record and the
+  corrective record is marked authoritative — deterministic supersession
+  semantics aimed at CN-007/CN-008); (b) `selfmodel_capability_update` —
+  cumulative probe-count increment, accepted only when the family's per-seed
+  probe count is complete (keeps the selfmodel arithmetic invariant); (c)
+  `selfmodel_failure_pattern` — in-run failure entry citing the failed probe,
+  deduplicated. A deterministic validator re-derives every proposal's evidence
+  from the episode store / probe outcomes — no evidence or mismatched
+  evidence -> reject. Accepted summaries commit as NEW episodes
+  (role `reflection.summary`; immutable events never rewritten); accepted
+  self-model proposals commit through `selfmodel.commit()` (fail-closed,
+  revision +1) into a per-run COPY of `state/selfmodel.json` — the canonical
+  store stays revision 1. Accept/reject telemetry: new trace events
+  `reflection.start` / `reflection.proposal` / `reflection.commit` + run
+  summary + aggregate counts. (2) Runner arm D = arm C wiring + the pass after
+  each session; accepted outputs feed subsequent sessions (summaries via the
+  existing memory injection surface, self-model via the rendered block).
+  Arms A/B/C paths untouched — verified by re-validating one M1/M2/M3 trace
+  per arm from disk after the change. (3) Smoke dr-0001 arm D (probe passes,
+  reflection events visible, validator decisions recorded incl. at least one
+  rejection — expected: capability update rejected, family incomplete, trace
+  re-validates). (4) Mini-pilot 10 scenarios x seeds {11,22,33}, one warm
+  process, `results/CONT-000/pilot-armD-<run_id>/` (same layout as arm C) +
+  A/B/C/D per-family comparison. (5) repeated_task (CN-007 family, B 0.333 /
+  C 0.333) examined per scenario; any accepted-proposal drift (degradation vs
+  C or contradiction of evidence) -> CN-NNN immediately.
+- **CN-009 exposure decision (explicit, not silent)**: arm D's self-model
+  revisions are estimated from in-run probe outcomes and DO render into later
+  sessions of the same run — the estimate/evaluation overlap CN-009 documents
+  becomes dynamic and larger under arm D. Mitigations recorded: every
+  reflection-derived revision carries `provenance.method: "reflection…"` and
+  in-run trace refs (auditable exposure), failure-pattern text renders
+  observed answers but never expected answers, and the comparison artifact
+  states the caveat. CN-009 will be annotated with the M4 amplification.
+- Budget: <= 110 min wall clock, <= 40 min GPU (arm C was ~3.2 min GPU wall;
+  reflection is CPU-only; +smoke). GPU lock via
+  `shared/tooling/agent-resource-coordination/lock.py run gpu`. Fail-closed on
+  Ollama/digest mismatch (same preflight as M2/M3).
+
+
 
 
 

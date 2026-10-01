@@ -161,6 +161,18 @@ class MemoryStore:
             ).fetchone()
         return int(row["n"])
 
+    def episodes_for(self, scenario: str, session: int) -> list[dict[str, Any]]:
+        """All episodes of one (scenario, session) in id order (read-only).
+
+        Evidence surface for the M4 reflection pass: proposals cite these
+        episode ids and the validator re-reads them through this method.
+        """
+        rows = self._conn.execute(
+            "SELECT * FROM episodes WHERE scenario = ? AND session = ? ORDER BY id",
+            (scenario, int(session)),
+        ).fetchall()
+        return [dict(row) for row in rows]
+
     # -- portable export/import -------------------------------------------
 
     def export_dict(self) -> dict[str, Any]:

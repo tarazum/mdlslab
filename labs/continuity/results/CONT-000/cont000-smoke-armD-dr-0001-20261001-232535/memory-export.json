@@ -1,0 +1,98 @@
+{
+  "format": "continuity-memory-export",
+  "version": 1,
+  "exported_utc": "2026-10-01T20:25:42Z",
+  "episode_count": 6,
+  "episodes": [
+    {
+      "id": 1,
+      "created_utc": "2026-10-01T20:25:37Z",
+      "run_id": "cont000-smoke-armD-dr-0001-20261001-232535",
+      "scenario": "dr-0001",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You are the night-log keeper of Verdin Isle. Log these three observations: the lighthouse on Verdin Isle flashes every 7 minutes; the ferry to Harlow runs only on even-numbered days; the tea shop in the harbor closes at six in the evening. Reply with a one-line acknowledgment.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 2,
+      "created_utc": "2026-10-01T20:25:37Z",
+      "run_id": "cont000-smoke-armD-dr-0001-20261001-232535",
+      "scenario": "dr-0001",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "Acknowledged.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 3,
+      "created_utc": "2026-10-01T20:25:37Z",
+      "run_id": "cont000-smoke-armD-dr-0001-20261001-232535",
+      "scenario": "dr-0001",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 1) of dr-0001 session 1; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s1t1] You are the night-log keeper of Verdin Isle. Log these three observations: the lighthouse on Verdin Isle flashes every 7 minutes; the ferry to Harlow runs only on even-numbered days; the tea shop in the harbor closes at six in the evening. Reply with a one-line acknowledgment.\nYour recorded answers:\n- [s1t1] Acknowledged.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          1,
+          2
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0001",
+        "reflection_pass": 1
+      }
+    },
+    {
+      "id": 4,
+      "created_utc": "2026-10-01T20:25:40Z",
+      "run_id": "cont000-smoke-armD-dr-0001-20261001-232535",
+      "scenario": "dr-0001",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "New shift, no logbook at hand. From your own records: how many minutes pass between two flashes of the Verdin Isle lighthouse? Answer with just the number.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 5,
+      "created_utc": "2026-10-01T20:25:40Z",
+      "run_id": "cont000-smoke-armD-dr-0001-20261001-232535",
+      "scenario": "dr-0001",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "7\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 6,
+      "created_utc": "2026-10-01T20:25:40Z",
+      "run_id": "cont000-smoke-armD-dr-0001-20261001-232535",
+      "scenario": "dr-0001",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 2) of dr-0001 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] New shift, no logbook at hand. From your own records: how many minutes pass between two flashes of the Verdin Isle lighthouse? Answer with just the number.\nYour recorded answers:\n- [s2t1] 7\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          4,
+          5
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0002",
+        "reflection_pass": 2
+      }
+    }
+  ]
+}

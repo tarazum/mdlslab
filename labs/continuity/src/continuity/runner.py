@@ -1,4 +1,4 @@
-"""Deterministic scenario runner with budgets and the arm-A/arm-B/arm-C agents.
+"""Deterministic scenario runner with budgets and the arm-A/arm-B/arm-C/arm-D agents.
 
 Arm A semantics (unchanged since P0a): the agent sees only the current
 session's exchanges; the context is reset between sessions. This is exactly
@@ -7,7 +7,7 @@ the "no persistent memory" ablation baseline of CONT-001.
 Arm B (M2): arm A + a SQLite persistent memory store. The base system prompt
 is byte-identical; the only addition is one extra system message injected at
 session start (sessions with index >= 2) carrying the keyword-retrieved
-episodes of the same scenario, plus append of both sides of every exchange to
+episodes of the SAME scenario, plus append of both sides of every exchange to
 the store after the exchange completes. The injection rule is fixed and
 documented here so runs are reproducible.
 
@@ -17,7 +17,17 @@ in EVERY session (the self-model is session-independent). The block is
 `selfmodel.render_summary` output — measured capability estimates and
 recorded failure patterns, deterministic for a given self-model revision.
 Everything else (base prompt, memory rule, budgets) is identical to arm B.
-Arm A and arm B code paths are unchanged by the arm C addition.
+
+Arm D (M4): arm C + a bounded post-session reflection pass. After each
+non-stopped session, `reflection.reflect_session(...)` (deterministic MVP,
+see reflection.py) reviews the session's episodes and probe outcomes,
+produces PROPOSALS (episode summaries / self-model revisions), and a
+deterministic evidence-gated validator commits or rejects them. Accepted
+summaries are NEW episodes in the same store (they surface through the
+unchanged memory injection rule); accepted self-model revisions commit
+through the fail-closed store (revision +1) and later sessions render the
+updated revision. Immutable events are never rewritten. Arms A/B/C code
+paths are unchanged by the arm D addition.
 """
 
 from __future__ import annotations
@@ -29,6 +39,7 @@ from typing import Any
 from .events import EventJournal
 from .memory import MemoryStore
 from .provider import OllamaProvider
+from .reflection import ReflectionEngine
 from .selfmodel import render_summary, selfmodel_sha256
 
 ARM_A_SYSTEM_PROMPT = (
@@ -114,29 +125,34 @@ def run_scenario(
     arm: str = "A",
     memory: MemoryStore | None = None,
     selfmodel: dict | None = None,
+    reflection: ReflectionEngine | None = None,
 ) -> dict[str, Any]:
-    if arm not in ("A", "B", "C"):
+    if arm not in ("A", "B", "C", "D"):
         raise ValueError(f"unknown arm: {arm!r}")
-    if arm in ("B", "C") and memory is None:
+    if arm in ("B", "C", "D") and memory is None:
         raise ValueError(f"arm {arm} requires a memory store")
-    if arm == "C" and selfmodel is None:
-        raise ValueError("arm C requires a self-model")
+    if arm in ("C", "D") and selfmodel is None:
+        raise ValueError(f"arm {arm} requires a self-model")
+    if arm == "D" and reflection is None:
+        raise ValueError("arm D requires a reflection engine")
     sid = scenario["id"]
     # Arm-A trace payloads stay byte-identical to the M1 pilot (comparability);
-    # arm B adds its marker.
+    # arms B/C/D add their marker.
     start_payload = {"scenario": sid, "family": scenario["family"]}
     if arm != "A":
         start_payload["arm"] = arm
     journal.emit("scenario.start", start_payload, scenario=sid)
     probes: list[dict] = []
     stopped = False
+    reflection_reports: list[dict] = []
 
     for session in scenario["sessions"]:
+        session_probes: list[dict] = []
         journal.emit(
             "session.start", {"index": session["index"]}, scenario=sid, session=session["index"]
         )
         # All arms reset the session-local context; arm A has nothing else
-        # (that reset IS the ablation), arms B/C re-attach persistent memory.
+        # (that reset IS the ablation), arms B/C/D re-attach persistent memory.
         context: list[dict] = [{"role": "system", "content": ARM_A_SYSTEM_PROMPT}]
         if arm == "A":
             journal.emit(
@@ -152,10 +168,12 @@ def run_scenario(
                 scenario=sid,
                 session=session["index"],
             )
-            if arm == "C":
+            if arm in ("C", "D"):
                 # Fixed injection rule: the self-model summary goes into EVERY
                 # session (session-independent), as one system message right
                 # after the base prompt, rendered from the current revision.
+                # Arm D renders the revision current at session start (the
+                # reflection pass may have committed a newer one earlier).
                 selfmodel_block = render_summary(selfmodel)
                 context.append({"role": "system", "content": selfmodel_block})
                 journal.emit(
@@ -223,7 +241,7 @@ def run_scenario(
                 scenario=sid,
                 session=session["index"],
             )
-            if arm in ("B", "C"):
+            if arm in ("B", "C", "D"):
                 # Remember both sides of the exchange, immediately after it.
                 for role, content in (
                     ("environment", turn["text"]),
@@ -248,6 +266,7 @@ def run_scenario(
                 result = score_probe(probe, reply["content"])
                 result["turn_ref"] = turn_ref
                 probes.append(result)
+                session_probes.append(dict(result))
                 journal.emit(
                     "probe.result",
                     dict(result),
@@ -259,6 +278,21 @@ def run_scenario(
                 journal.emit("budget.stop", {"violation": violation}, scenario=sid)
                 stopped = True
                 break
+        if not stopped and arm == "D":
+            # M4: ONE bounded reflection pass after each non-stopped session.
+            # Accepted summaries feed later sessions through the unchanged
+            # memory injection rule; accepted self-model revisions render in
+            # every later session (the local `selfmodel` rebinds to the
+            # engine's current revision).
+            reflection_reports.append(
+                reflection.reflect_session(
+                    scenario_id=sid,
+                    family=scenario["family"],
+                    session_index=session["index"],
+                    session_probes=session_probes,
+                )
+            )
+            selfmodel = reflection.model
         if stopped:
             break
 
@@ -277,5 +311,17 @@ def run_scenario(
         "budget_violation": budget.violation,
         "duration_s": round(time.monotonic() - budget.started, 1),
     }
+    if arm == "D" and reflection is not None:
+        decisions = [d for r in reflection_reports for d in r["decisions"]]
+        summary["reflection"] = {
+            "passes": len(reflection_reports),
+            "proposals": len(decisions),
+            "accepted": sum(1 for d in decisions if d["accepted"]),
+            "rejected": sum(1 for d in decisions if not d["accepted"]),
+            "summaries_appended": sum(
+                1 for d in decisions if d["type"] == "episode_summary" and d["accepted"]
+            ),
+            "selfmodel_revision_final": reflection.model["revision"],
+        }
     journal.emit("scenario.end", dict(summary), scenario=sid)
     return summary
