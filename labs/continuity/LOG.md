@@ -688,6 +688,57 @@ helper, `run_smoke_arm_e.py`, `run_pilot_arm_e.py`.
   (exploratory CONT-001 pass over all arms + pre-registration v1) per
   ROADMAP.
 
+## 2026-10-01 23:57 — start-note: M6 / exploratory CONT-001 (all arms) + pre-registration v1
+
+- Contract: `docs/ROADMAP.md` M6 brief + executor task instructions. Entry
+  verified: M1–M5 all DONE; repo clean on `origin/main` (HEAD `56ca3dd`
+  after the IN_PROGRESS marker commit); Ollama 0.34.2 up with
+  `granite-code:8b` resident at digest `36c3c3b9683b411ee20ba5c6c6858df…`
+  (prefix pin OK); shared GPU lock free at 23:57; ~11.5 h to the arc
+  deadline.
+- Open findings re-read before starting: CN-002 OPEN (budgets by wall
+  clock — applied), CN-003 OPEN (temp-0 seed drift — 5 seeds re-run, watch
+  marginal flips), CN-004 OPEN (rt-0003 option leakage — fixture NOT
+  touched, belongs in the pre-registration's held-out plan), CN-005 OPEN
+  (GPU attribution snapshot under the lock), CN-007 OPEN (own-answer
+  anchoring, flat 0.333 since arm B — the repeated-mistake endpoint's
+  target phenomenon), CN-008 OPEN (no supersession semantics), CN-009 OPEN
+  (self-model estimated on the evaluation suite — the canonical store
+  revision 1 derives from the arm-B pilot on THIS suite; exploratory-only
+  here, held-out plan must fix), CN-010 OPEN (empty policy actuation
+  surface, session-first-turn probes — held-out plan must fix). None is
+  fixed silently in this stage; all map into EVALUATION-PREP.md.
+- Seed count per `docs/SIZING.md`: **5 seeds {11, 22, 33, 44, 55}**
+  (SIZING recommendation, matches the expected count). GPU estimate by the
+  CN-002 wall rule: ~60 s/seed/arm x 25 seed-runs ≈ 25–30 min GPU — far
+  inside the 3 h hard cap, no reduction anticipated.
+- Plan: (1) new script `experiments/CONT-001/run_exploratory_abcde.py` —
+  one warm process for the whole batch (single preflight warmup,
+  keep_alive 30m, continuous inference keeps the model resident; PB-070),
+  arms run in order A,B,C,D,E x seeds {11,22,33,44,55}; per seed: fresh
+  MemoryStore + per-run selfmodel copy + ReflectionEngine/WorldModel as
+  the arm requires; per-request sampling options temp 0.0 / seed / num_ctx
+  4096 (PB-071); fail-closed preflight on Ollama/digest/self-model
+  validation; fixtures untouched. (2) Artifacts under
+  `results/CONT-001-exploratory/<run_id>/arm-<X>/seed-<n>/…` + per-arm
+  aggregates + a normalized cross-arm table `cross-arm-table.{json,md}`
+  (per-family + overall pass rates with cross-seed spread, token counts,
+  wall/GPU time). (3) Consistency check against the M1–M5 pilot artifacts
+  (same fixtures/code path: arm A 5 seeds should reproduce M1; B/C/D/E
+  seeds {11,22,33} should match the pilots). (4) `docs/EVALUATION-PREP.md`
+  pre-registration v1 (primary endpoint = repeated-mistake rate on
+  previously encountered task families per the proposal's CONT-001
+  definition, operationalized on the repeated_task family probes with its
+  3-probe limits stated; contrast, minimum meaningful effect, thresholds,
+  aggregation, missing-run handling, bootstrap unit, held-out fixture v2
+  requirements targeting CN-004/007/008/009/010) — committed BEFORE any
+  held-out fixture v2 content exists. (5) LOG result entry + ROADMAP M6
+  DONE + commit/push + Mnemosyne note.
+- Budget: <= 150 min wall clock, <= 180 min GPU; shared GPU lock held
+  around the whole run (`lock.py run gpu`). Fixture edits: NONE (M1–M5
+  comparability is the point). No confirmatory execution, no held-out
+  fixture generation, no CONT-002/CONT-005 work (non-goals).
+
 
 
 
