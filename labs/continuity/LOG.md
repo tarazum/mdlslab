@@ -33,3 +33,14 @@ Artifacts: `results/CONT-000/cont000-smoke-dr-0001-20261001-220047/` (cold) and
 Next stage (P0b, separate session/owner gate): predeclare the seed set, run arm A over
 the full fixture suite, measure spread of candidate endpoints, size CONT-001.
 
+## 2026-10-01 22:30 — arc start-note: autonomous 12h window (owner authorized)
+
+- Owner set the global goal and authorized an unattended 10–12h run ("давай ставити велику
+  глобальну ціль… без мене"), with fresh sessions per milestone to avoid context distortion.
+- Mechanism: `docs/ROADMAP.md` (M1–M7 briefs, executor protocol, deadline 2026-10-02 10:30
+  FLEDT) + a recurring 2h automation that executes the next open milestone from repo state
+  (fail-closed on entry conditions; GPU lock around inference; 110-min checkpoint budget).
+- M1 (P0b pilot) launched immediately as a background agent; the automation covers M2+.
+- Confirmatory CONT-001, CONT-002 work, external actions stay owner-gated per ROADMAP.
+
+
