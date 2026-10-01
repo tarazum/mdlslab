@@ -173,6 +173,19 @@ class MemoryStore:
         ).fetchall()
         return [dict(row) for row in rows]
 
+    def episodes_for_scenario(self, scenario: str) -> list[dict[str, Any]]:
+        """All episodes of one scenario in id order (read-only).
+
+        Signal surface for the M5 policy: at decision time every stored
+        episode is strictly earlier than the current turn (appends happen
+        after an exchange completes), so this is exactly the scenario's
+        pre-turn record set.
+        """
+        rows = self._conn.execute(
+            "SELECT * FROM episodes WHERE scenario = ? ORDER BY id", (scenario,)
+        ).fetchall()
+        return [dict(row) for row in rows]
+
     # -- portable export/import -------------------------------------------
 
     def export_dict(self) -> dict[str, Any]:

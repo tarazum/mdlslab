@@ -1,0 +1,158 @@
+{
+  "scenario": "dr-0001",
+  "family": "delayed_recall",
+  "arm": "E",
+  "sessions_planned": 2,
+  "memory_episodes": 6,
+  "turns": 2,
+  "tokens_total": 1253,
+  "probes": [
+    {
+      "kind": "contains",
+      "expected": "7",
+      "observed_normalized": "7",
+      "passed": true,
+      "turn_ref": "s2t1"
+    }
+  ],
+  "probes_passed": 1,
+  "probes_total": 1,
+  "stopped": false,
+  "budget_violation": null,
+  "duration_s": 4.5,
+  "reflection": {
+    "passes": 2,
+    "proposals": 3,
+    "accepted": 2,
+    "rejected": 1,
+    "summaries_appended": 2,
+    "selfmodel_revision_final": 1
+  },
+  "worldmodel": {
+    "predictions_this_scenario": 1,
+    "outcomes_this_scenario": 1,
+    "calibration_cumulative": {
+      "predictions": 1,
+      "outcomes": 1,
+      "overall": {
+        "predicted_pass_rate": 1.0,
+        "actual_pass_rate": 1.0,
+        "accuracy": 1.0,
+        "mean_confidence": 1.0
+      },
+      "by_bucket": {
+        "high": {
+          "n": 1,
+          "predicted_pass_rate": 1.0,
+          "actual_pass_rate": 1.0,
+          "mean_confidence": 1.0
+        },
+        "medium": {
+          "n": 0,
+          "predicted_pass_rate": null,
+          "actual_pass_rate": null,
+          "mean_confidence": null
+        },
+        "low": {
+          "n": 0,
+          "predicted_pass_rate": null,
+          "actual_pass_rate": null,
+          "mean_confidence": null
+        }
+      },
+      "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+    }
+  },
+  "policy": {
+    "actions": {
+      "answer_direct": 1,
+      "retrieve_then_answer": 1
+    },
+    "injections": 0,
+    "action_set": [
+      "answer_direct",
+      "retrieve_then_answer"
+    ]
+  },
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "memory_episodes_total": 6,
+  "reflection_telemetry": {
+    "passes": 2,
+    "selfmodel_sha256_initial": "67054c3f8cc9924583959d03676dea2f71a44c4ebc81df460d56fb6644d5fbc1",
+    "selfmodel_revision_initial": 1,
+    "proposals_by_type": {
+      "episode_summary": 2,
+      "selfmodel_capability_update": 1,
+      "selfmodel_failure_pattern": 0
+    },
+    "accepted_by_type": {
+      "episode_summary": 2,
+      "selfmodel_capability_update": 0,
+      "selfmodel_failure_pattern": 0
+    },
+    "rejected_by_type": {
+      "episode_summary": 0,
+      "selfmodel_capability_update": 1,
+      "selfmodel_failure_pattern": 0
+    },
+    "rejection_reasons": [
+      {
+        "proposal_id": "P-0003",
+        "reason": "family incomplete: observed 1 of 3 probes for family 'delayed_recall'"
+      }
+    ],
+    "selfmodel_revision_final": 1,
+    "summaries_appended": 2
+  },
+  "selfmodel_revision_final": 1,
+  "selfmodel_sha256_final": "67054c3f8cc9924583959d03676dea2f71a44c4ebc81df460d56fb6644d5fbc1",
+  "worldmodel_calibration": {
+    "predictions": 1,
+    "outcomes": 1,
+    "overall": {
+      "predicted_pass_rate": 1.0,
+      "actual_pass_rate": 1.0,
+      "accuracy": 1.0,
+      "mean_confidence": 1.0
+    },
+    "by_bucket": {
+      "high": {
+        "n": 1,
+        "predicted_pass_rate": 1.0,
+        "actual_pass_rate": 1.0,
+        "mean_confidence": 1.0
+      },
+      "medium": {
+        "n": 0,
+        "predicted_pass_rate": null,
+        "actual_pass_rate": null,
+        "mean_confidence": null
+      },
+      "low": {
+        "n": 0,
+        "predicted_pass_rate": null,
+        "actual_pass_rate": null,
+        "mean_confidence": null
+      }
+    },
+    "cn009_caveat": "prediction confidence derives from self-model family rates estimated on the same fixture suite (CN-009) \u2014 exploratory calibration, not clean calibration"
+  },
+  "run_id": "cont000-smoke-armE-dr-0001-20261001-234641",
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true,
+  "all_probes_passed": true,
+  "worldmodel_prediction_events": 1,
+  "worldmodel_outcome_events": 1,
+  "policy_action_events": 2,
+  "policy_actions_by_action": {
+    "answer_direct": 1,
+    "retrieve_then_answer": 1
+  },
+  "policy_retrieve_injections": 0,
+  "policy_retrieve_noops": 1,
+  "reflection_proposal_events": 3,
+  "worldmodel_visible_in_trace": true,
+  "policy_visible_in_trace": true,
+  "reflection_visible_in_trace": true
+}

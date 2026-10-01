@@ -28,6 +28,22 @@ unchanged memory injection rule); accepted self-model revisions commit
 through the fail-closed store (revision +1) and later sessions render the
 updated revision. Immutable events are never rewritten. Arms A/B/C code
 paths are unchanged by the arm D addition.
+
+Arm E (M5): arm D + an ex-ante world model and a bounded deterministic
+policy. Before each PROBE turn is answered, `worldmodel.WorldModel` records
+a pass/fail prediction with a confidence derived from the self-model's
+current family-rate estimate and record presence (events
+`worldmodel.prediction` / `worldmodel.outcome`; bucketed calibration
+counters) — predictions NEVER alter the prompt or the answer path. Each
+turn, `policy.decide` chooses over the FIXED action set
+{answer_direct, retrieve_then_answer} from explicit signals (absence-of-
+records marker in the turn text; probe following a stored corrective
+record) — event `policy.action`. The ONLY actuation is a per-turn memory
+refresh/extension using the SAME renderer, retrieval rule and top-k as the
+arm-B baseline injection (query = the CURRENT turn), skipped and recorded
+as a no-op when the retrieved ids are already covered by this session's
+injections. Arms A/B/C/D code paths are unchanged by the arm E addition
+(a world model is rejected for any arm != "E").
 """
 
 from __future__ import annotations
@@ -38,9 +54,12 @@ from typing import Any
 
 from .events import EventJournal
 from .memory import MemoryStore
+from .policy import ACTION_SET
+from .policy import decide as policy_decide
 from .provider import OllamaProvider
 from .reflection import ReflectionEngine
 from .selfmodel import render_summary, selfmodel_sha256
+from .worldmodel import WorldModel, family_rate
 
 ARM_A_SYSTEM_PROMPT = (
     "You are a focused assistant in a controlled evaluation. "
@@ -126,18 +145,23 @@ def run_scenario(
     memory: MemoryStore | None = None,
     selfmodel: dict | None = None,
     reflection: ReflectionEngine | None = None,
+    worldmodel: WorldModel | None = None,
 ) -> dict[str, Any]:
-    if arm not in ("A", "B", "C", "D"):
+    if arm not in ("A", "B", "C", "D", "E"):
         raise ValueError(f"unknown arm: {arm!r}")
-    if arm in ("B", "C", "D") and memory is None:
+    if arm in ("B", "C", "D", "E") and memory is None:
         raise ValueError(f"arm {arm} requires a memory store")
-    if arm in ("C", "D") and selfmodel is None:
+    if arm in ("C", "D", "E") and selfmodel is None:
         raise ValueError(f"arm {arm} requires a self-model")
-    if arm == "D" and reflection is None:
-        raise ValueError("arm D requires a reflection engine")
+    if arm in ("D", "E") and reflection is None:
+        raise ValueError(f"arm {arm} requires a reflection engine")
+    if arm == "E" and worldmodel is None:
+        raise ValueError("arm E requires a world model")
+    if arm != "E" and worldmodel is not None:
+        raise ValueError("worldmodel is arm-E only (A/B/C/D behavior-identity guard)")
     sid = scenario["id"]
     # Arm-A trace payloads stay byte-identical to the M1 pilot (comparability);
-    # arms B/C/D add their marker.
+    # arms B/C/D/E add their marker.
     start_payload = {"scenario": sid, "family": scenario["family"]}
     if arm != "A":
         start_payload["arm"] = arm
@@ -145,14 +169,25 @@ def run_scenario(
     probes: list[dict] = []
     stopped = False
     reflection_reports: list[dict] = []
+    policy_action_counts = {a: 0 for a in sorted(ACTION_SET)} if arm == "E" else None
+    policy_injections = 0
+    wm_counts_before = (
+        (worldmodel.counters["predictions"], worldmodel.counters["outcomes"])
+        if worldmodel is not None
+        else (0, 0)
+    )
 
     for session in scenario["sessions"]:
         session_probes: list[dict] = []
         journal.emit(
             "session.start", {"index": session["index"]}, scenario=sid, session=session["index"]
         )
+        # Arm-E policy actuation bookkeeping: ids already injected into this
+        # session's context (baseline session-start injection + any policy
+        # injections earlier in the session) — the dedup surface.
+        session_injected_ids: set[int] = set()
         # All arms reset the session-local context; arm A has nothing else
-        # (that reset IS the ablation), arms B/C/D re-attach persistent memory.
+        # (that reset IS the ablation), arms B/C/D/E re-attach persistent memory.
         context: list[dict] = [{"role": "system", "content": ARM_A_SYSTEM_PROMPT}]
         if arm == "A":
             journal.emit(
@@ -168,7 +203,7 @@ def run_scenario(
                 scenario=sid,
                 session=session["index"],
             )
-            if arm in ("C", "D"):
+            if arm in ("C", "D", "E"):
                 # Fixed injection rule: the self-model summary goes into EVERY
                 # session (session-independent), as one system message right
                 # after the base prompt, rendered from the current revision.
@@ -202,6 +237,8 @@ def run_scenario(
                     context.append(
                         {"role": "system", "content": format_memory_block(episodes)}
                     )
+                    if arm == "E":
+                        session_injected_ids = {ep["id"] for ep in episodes}
                 journal.emit(
                     "memory.injected",
                     {
@@ -223,6 +260,65 @@ def run_scenario(
                 scenario=sid,
                 session=session["index"],
             )
+            if arm == "E":
+                # M5 policy: decide + actuate BEFORE answering. The only
+                # actuation is a per-turn memory refresh/extension with the
+                # SAME renderer / retrieval rule / top-k as the baseline
+                # injection (query = the CURRENT turn); no-op recorded when
+                # the retrieved ids are already covered this session.
+                decision = policy_decide(
+                    turn_text=turn["text"],
+                    is_probe=turn.get("probe") is not None,
+                    env_episodes=memory.episodes_for_scenario(sid),
+                )
+                retrieval: dict[str, Any] | None = None
+                if decision["action"] == "retrieve_then_answer":
+                    episodes = memory.retrieve(turn["text"], scenario=sid, limit=MEMORY_TOP_K)
+                    new_episodes = [e for e in episodes if e["id"] not in session_injected_ids]
+                    if new_episodes:
+                        context.append(
+                            {"role": "system", "content": format_memory_block(new_episodes)}
+                        )
+                        session_injected_ids |= {e["id"] for e in new_episodes}
+                        policy_injections += 1
+                        retrieval = {
+                            "injected": True,
+                            "query_turn_ref": turn_ref,
+                            "episode_ids": [e["id"] for e in new_episodes],
+                            "episode_refs": [f"{e['turn_ref']}|{e['role']}" for e in new_episodes],
+                            "dedup": "new-episode-ids-only",
+                        }
+                    else:
+                        retrieval = {
+                            "injected": False,
+                            "query_turn_ref": turn_ref,
+                            "episode_ids": [],
+                            "reason": (
+                                "no-op: no relevant episodes retrieved"
+                                if not episodes
+                                else "no-op: retrieved episodes already covered by this "
+                                "session's injections"
+                            ),
+                        }
+                policy_action_counts[decision["action"]] += 1
+                journal.emit(
+                    "policy.action",
+                    {"turn_ref": turn_ref, **decision, "retrieval": retrieval},
+                    scenario=sid,
+                    session=session["index"],
+                )
+                if turn.get("probe") is not None:
+                    # M5 world model: ex-ante prediction BEFORE the probe is
+                    # answered — observational only, never alters the prompt
+                    # or the answer path.
+                    worldmodel.predict_probe(
+                        scenario=sid,
+                        family=scenario["family"],
+                        turn_ref=turn_ref,
+                        family_rate_value=family_rate(selfmodel, scenario["family"]),
+                        episodes_for_scenario=memory.count(scenario=sid),
+                        session=session["index"],
+                    )
             context.append({"role": "user", "content": turn["text"]})
             reply = provider.chat(context)
             budget.turns += 1
@@ -241,7 +337,7 @@ def run_scenario(
                 scenario=sid,
                 session=session["index"],
             )
-            if arm in ("B", "C", "D"):
+            if arm in ("B", "C", "D", "E"):
                 # Remember both sides of the exchange, immediately after it.
                 for role, content in (
                     ("environment", turn["text"]),
@@ -273,12 +369,21 @@ def run_scenario(
                     scenario=sid,
                     session=session["index"],
                 )
+                if arm == "E":
+                    # M5 world model: attach the observed outcome to its
+                    # prediction and update the calibration counters.
+                    worldmodel.attach_outcome(
+                        scenario=sid,
+                        turn_ref=turn_ref,
+                        passed=result["passed"],
+                        session=session["index"],
+                    )
             violation = budget.check()
             if violation is not None:
                 journal.emit("budget.stop", {"violation": violation}, scenario=sid)
                 stopped = True
                 break
-        if not stopped and arm == "D":
+        if not stopped and arm in ("D", "E"):
             # M4: ONE bounded reflection pass after each non-stopped session.
             # Accepted summaries feed later sessions through the unchanged
             # memory injection rule; accepted self-model revisions render in
@@ -311,7 +416,7 @@ def run_scenario(
         "budget_violation": budget.violation,
         "duration_s": round(time.monotonic() - budget.started, 1),
     }
-    if arm == "D" and reflection is not None:
+    if arm in ("D", "E") and reflection is not None:
         decisions = [d for r in reflection_reports for d in r["decisions"]]
         summary["reflection"] = {
             "passes": len(reflection_reports),
@@ -322,6 +427,18 @@ def run_scenario(
                 1 for d in decisions if d["type"] == "episode_summary" and d["accepted"]
             ),
             "selfmodel_revision_final": reflection.model["revision"],
+        }
+    if arm == "E" and worldmodel is not None:
+        preds_before, outcomes_before = wm_counts_before
+        summary["worldmodel"] = {
+            "predictions_this_scenario": worldmodel.counters["predictions"] - preds_before,
+            "outcomes_this_scenario": worldmodel.counters["outcomes"] - outcomes_before,
+            "calibration_cumulative": worldmodel.calibration(),
+        }
+        summary["policy"] = {
+            "actions": policy_action_counts,
+            "injections": policy_injections,
+            "action_set": sorted(ACTION_SET),
         }
     journal.emit("scenario.end", dict(summary), scenario=sid)
     return summary

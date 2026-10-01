@@ -531,6 +531,63 @@ event types; `memory.episodes_for` read helper.
 - M4 exit artifacts complete; ROADMAP M4 marked DONE. Next: M5 (arm E,
   world model + bounded policy) per ROADMAP.
 
+## 2026-10-01 23:41 — start-note: M5 / P1a arm E (world model + bounded policy)
+
+- Contract: `docs/ROADMAP.md` M5 brief + executor task instructions. Entry
+  verified: M4 DONE; repo clean on `origin/main` (HEAD `6e98573` after the
+  IN_PROGRESS marker commit); arm-D pilot aggregate exists
+  (`results/CONT-000/pilot-armD-20261001-233203/`); Ollama preflight +
+  digest pin (`36c3c3b9683b…`) fail-closed inside the smoke/pilot scripts.
+- Open findings re-read before starting: CN-002 OPEN (budgets by wall clock —
+  applied), CN-003 OPEN (seed drift — monitoring, seeds {11,22,33}),
+  CN-004 OPEN (fixture untouched), CN-005 OPEN (attribution snapshot under
+  the lock), CN-007 OPEN (**the M5 design input**: arm D's evidence
+  juxtaposition did not cure own-answer anchoring; the FINDINGS update
+  names "policy-level handling" as a candidate — but only a BOUNDED
+  {answer_direct, retrieve_then_answer} action set is in M5 scope; no
+  retrieval weighting/filtering, which is the owner-gated CONT-005
+  trust-hierarchy proposal — NOT implemented here), CN-008 OPEN (no
+  supersession — R2 rule below re-surfaces corrective records, an MVP-level
+  acknowledgment, not new memory semantics), CN-009 OPEN (self-model
+  leakage: arm E's predictions derive confidence from the same revision-1
+  family rates estimated on this suite — calibration numbers are partly
+  circular and will be reported with that caveat, not as clean calibration).
+- Plan: (1) `src/continuity/worldmodel.py` — deterministic ex-ante
+  predictions BEFORE each probe turn is answered (predicted pass/fail +
+  confidence from exactly two signals: the self-model's current per-family
+  pass-rate estimate; whether the store holds episodes for the scenario),
+  outcome attached after scoring, bucketed calibration counters
+  (predicted-pass rate vs actual per bucket high/medium/low). Predictions
+  are trace events (`worldmodel.prediction` / `worldmodel.outcome`) and
+  NEVER alter prompts or the answer path. (2) `src/continuity/policy.py` —
+  pure deterministic decision over the FIXED set {answer_direct,
+  retrieve_then_answer}: R1 retrieve when the environment turn carries a
+  fixed absence-of-records marker ("not at hand", "no logbook", "no
+  paperwork", "no papers", "no timetable", "from your own records");
+  R2 retrieve when the turn is a probe and the scenario's stored
+  environment episodes contain a corrective marker (reusing
+  `reflection.CORRECTIVE_MARKERS`); otherwise answer_direct. Actuation is
+  ONLY a per-turn memory refresh/extension using the SAME renderer, SAME
+  retrieval rule and top-k as the arm-B baseline injection (query = the
+  current turn), with a dedup no-op when the retrieved ids are already
+  covered by this session's baseline injection; the no-op is recorded, not
+  hidden. The MVP policy does NOT consume world-model predictions
+  (recorded decision — keeps predictions non-behavioral). (3) Runner arm E
+  = arm D wiring + worldmodel + policy; 3 new event types; arms A/B/C/D
+  paths untouched, verified by re-validating one trace per arm from disk
+  after the change + the M4 lesson applied (every arm-set literal extended
+  deliberately). (4) Smoke dr-0001 arm E: probe passes, prediction + policy
+  events visible, trace re-validates. (5) Mini-pilot arm E, 10 scenarios x
+  seeds {11,22,33}, one warm process, `results/CONT-000/pilot-armE-<run_id>/`
+  (same layout as arm D) + calibration summary and policy action
+  distribution in the aggregate + A/B/C/D/E comparison artifact. (6) LOG
+  result entry states plainly whether repeated_task moved (flat 0.333 since
+  arm B) and what the policy actually did.
+- Budget: <= 110 min wall clock, <= 40 min GPU (arm D was ~8 min GPU wall
+  for the whole stage; arm E adds no inference calls). GPU lock via
+  `shared/tooling/agent-resource-coordination/lock.py run gpu`. Fail-closed
+  on Ollama/digest mismatch.
+
 
 
 
