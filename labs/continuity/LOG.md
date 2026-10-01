@@ -1047,3 +1047,52 @@ owner acceptance.**
   arc report, owner morning list) per ROADMAP. The owner accepts or rejects
   this agent-pre-registered result in the morning list.
 
+## 2026-10-02 02:21 — M8 result: arc closed — ARC-REPORT, CN triage, owner morning list, arc COMPLETE
+
+Artifacts: `docs/ARC-REPORT.md` (the arc's closing document); ROADMAP header
+gained "**Arc status:** COMPLETE (2026-10-02 02:21 FLEDT)"; lab README Status
+and the root README labs-table row updated to the final state; M8 DONE. Zero
+inference, zero GPU this stage. IN_PROGRESS marker commit `9d5a268`.
+
+- **Entry**: no earlier milestone open (M1–M7 + M2b/M6b all DONE); well before
+  the 11:30 FLEDT deadline.
+- **CN triage at arc end** (full lines in FINDINGS.md / ARC-REPORT §5):
+  CLOSED — CN-001, CN-004 (fixture v2, validator E8; arm A 5/5 -> 0/5 on the
+  rt-0006 analogue), CN-006, CN-009 (calibration-only self-model 1'), CN-010
+  (7 physical policy injections/seed). OPEN — CN-002 (latency-understatement
+  planning rule; budgeting only), **CN-003 ESCALATED** (the confirmatory run's
+  single outcome-level seed flip: arm B rt-0008 seed 101 failed vs passed on
+  seeds 202-505 — temp-0 does not fully determinize outcomes on this backend;
+  flip is outside the primary endpoint, verdict unchanged), CN-005 (shared GPU
+  attribution; owner decision, morning list item 5), CN-007 (anchoring uncured
+  by C/D/E mechanisms; strict form = verbatim parroting at D/E, D-C CI
+  [0.143, 0.857] secondary; CONT-005 `c8176c9` is the mitigation proposal —
+  owner-gated), CN-008 (no supersession; cu-0003 secondary B 5/5 vs C/D/E 0/5
+  self-model-interference observation).
+- **Deferred Mnemosyne consolidation retried once** (`mnemosyne_sleep`,
+  all_sessions=true): completed cleanly — status `no_op`, "No old working
+  memories to consolidate", 0 sessions scanned, 0 consolidated, 0 errors.
+  Nothing eligible; recorded in ARC-REPORT §8.
+- **ARC-REPORT.md** (per the M8 brief): planned-vs-ran with per-milestone
+  commit hashes; the numbers that matter — exploratory A-E table (overall
+  0.200/0.700/0.800/0.800/0.800, spread 0.000), confirmatory outcome stated
+  exactly as pre-registered ("no confirmatory difference established": E-A
+  +0.3333, 95% CI [0.0, 0.75], criterion (i) CI-excludes-0 failed, criterion
+  (ii) MME passed), delayed_recall E-A +1.000 CI [1.0, 1.0], D-C +0.5015 CI
+  [0.1429, 0.8571], M2b mechanics 5/5, arm-E actuation 7 injections/seed;
+  failures and negative results (M4 null, reflection-associated verbatim
+  parroting, instrumentation crash + clean recovery, CN-003 flip); explicit
+  PENDING OWNER ACCEPTANCE section mirroring the morning list with file
+  pointers; explicit NOT-claimed list (no M2b transfer claims, no M6
+  confirmatory claims, no consciousness adjacency, CONT-005 untouched).
+- **READMEs**: lab Status = autonomous arc COMPLETE (2026-10-02), pending
+  owner acceptance, with the headline numbers and pointers; root labs-table
+  Continuity row = "Autonomous arc complete: exploratory + confirmatory
+  CONT-001 done, pending owner acceptance".
+- Nothing autonomous remains: the chain is closed; everything open is owner
+  work in the ROADMAP morning list (accept/reject the confirmatory result,
+  CONT-002 program, CN-005 tooling decision, CONT-005 proposal, external/
+  publication/scope decisions).
+- M8 exit artifacts complete; ROADMAP M8 marked DONE; arc marked COMPLETE.
+  Final commit + push follows this entry.
+

@@ -1,6 +1,7 @@
 # Continuity — autonomous arc roadmap
 
 - **Arc goal:** from smoke to first ablation signal — complete P0b (pilot + sizing) and P1a (arms B–E as MVPs), and produce a first **exploratory** CONT-001 multi-arm result. The confirmatory CONT-001 run stays owner-gated.
+- **Arc status:** COMPLETE (2026-10-02 02:21 FLEDT). All milestones M1–M8 DONE; closing record in `docs/ARC-REPORT.md`; owner decisions pending in the morning list below.
 - **Armed:** 2026-10-01 22:30 FLEDT. **Arc deadline:** 2026-10-02 11:30 FLEDT (extended 22:35 per owner: all owner work consolidated at arc end). After the deadline, every milestone executor must no-op.
 - **No milestone waits on the owner.** Every owner decision is collected in the Owner morning list at the end of this file; the chain runs unattended.
 - **Execution model:** one milestone per fresh session. The brief below is the only required reading; the repository is the sole state carrier between sessions (LOG.md, results/, git). Do not rely on conversation history.
@@ -17,7 +18,7 @@
 | M6 | Exploratory CONT-001 pass (all arms) + pre-registration v1 committed | DONE |
 | M6b | Independent pre-registration review (GO/NO-GO) | DONE |
 | M7 | Confirmatory CONT-001 (conditional: M6b GO + >= 2h before deadline) | DONE |
-| M8 | Final: housekeeping, arc report, owner morning list | IN_PROGRESS |
+| M8 | Final: housekeeping, arc report, owner morning list | DONE |
 
 ## Executor protocol (every session)
 
