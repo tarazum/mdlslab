@@ -111,7 +111,7 @@
 
 1. Read `docs/ARC-REPORT.md`, `docs/SIZING.md`, `docs/PR-REVIEW.md`, and (if M7 ran) the confirmatory results.
 2. Accept or reject the agent-pre-registered confirmatory result: accept / re-run with amendments / discard.
-3. Decide the CONT-002 program: the full 2×2 needs a second compatible local core (~4–5 GB download — owner decision); the M2 storage format is already in place for it.
+3. Decide the CONT-002 program. **No download is required** — local core-B candidates already exist: `Qwen3.6-35B-A3B` GGUF in `C:\Models` (22 GB MoE with ~3B active parameters — fastest option under VRAM offload; import into Ollama via a one-line Modelfile), plus Ollama-local `gemma4:26b` / `qwen3.8:27b` / `devstral-small-2` / `starcoder2:instruct` (9–18 GB dense; slower offload, but 63 GB RAM makes them viable). The 2×2 analysis (R = ΔB/ΔA with the B+clean cell) is designed to tolerate intrinsic capability differences, so any instruct-capable core works. A ~4–5 GB compact download remains an optional speed optimization, not a requirement. The M2 storage format is already in place.
 4. External actions, publication decisions, any scope change to this roadmap.
 
 ## Never autonomous (unchanged)
