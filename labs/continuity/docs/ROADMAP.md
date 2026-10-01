@@ -124,6 +124,7 @@
 3. Decide the CONT-002 program. **No download is required** — local core-B candidates already exist: `Qwen3.6-35B-A3B` GGUF in `C:\Models` (22 GB MoE with ~3B active parameters — fastest option under VRAM offload; import into Ollama via a one-line Modelfile), plus Ollama-local `gemma4:26b` / `qwen3.8:27b` / `devstral-small-2` / `starcoder2:instruct` (9–18 GB dense; slower offload, but 63 GB RAM makes them viable). The 2×2 analysis (R = ΔB/ΔA with the B+clean cell) is designed to tolerate intrinsic capability differences, so any instruct-capable core works. A ~4–5 GB compact download remains an optional speed optimization, not a requirement. The M2 storage format is already in place.
 4. External actions, publication decisions, any scope change to this roadmap.
 5. Finding CN-005 (GPU idle threshold cannot attribute residency-only load in the shared coordination tooling) explicitly requests an owner decision on the shared tooling direction.
+6. Review the CONT-005 "Memory Trust Hierarchy" next-cycle proposal (owner-added, commit c8176c9): scope, priority, and whether it becomes the next arc after CONT-001.
 
 ## Never autonomous (unchanged)
 
