@@ -96,11 +96,8 @@ def _snippet(text: str, cap: int = 160) -> str:
 
 def _marker_sentence(content: str, marker: str) -> str:
     """The sentence of `content` containing `marker` (deterministic, capped)."""
-    lowered = content.lower()
     for sentence in content.split(". "):
-        if marker in sentence.lower() or (
-            sentence.lower() in lowered and marker in lowered
-        ):
+        if marker in sentence.lower():
             return _snippet(sentence, 200)
     return _snippet(content, 200)
 
@@ -645,6 +642,18 @@ def _selftest() -> int:
             assert summary_ep["role"] == SUMMARY_ROLE
             assert "do not use" in summary_ep["content"], summary_ep["content"]
             assert "authoritative" in summary_ep["content"]
+            # The conflict review must quote the SENTENCE carrying the marker,
+            # not the first sentence of the corrective record (M4 lesson:
+            # a whole-content `or marker in lowered` clause matched every sentence).
+            conflict_line = next(
+                ln for ln in summary_ep["content"].splitlines()
+                if ln.startswith("- your answer at")
+            )
+            assert "slowness" in conflict_line and "do not use" in conflict_line, conflict_line
+            assert not conflict_line.startswith(
+                "- your answer at s1t1 ('bug') is followed by the corrective record "
+                "at s1t2 ('For your records, the labeling rubric: crashes, freezes"
+            ), conflict_line
             assert json.loads(summary_ep["meta"])["kind"] == SUMMARY_ROLE
 
             # Session 2: probe outcome evidence paths.

@@ -1,0 +1,431 @@
+{
+  "run_id": "pilot-armD-20261001-233203-seed22",
+  "seed": 22,
+  "arm": "D",
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "selfmodel_revision_initial": 1,
+  "selfmodel_sha256_initial": "67054c3f8cc9924583959d03676dea2f71a44c4ebc81df460d56fb6644d5fbc1",
+  "selfmodel_revision_final": 3,
+  "selfmodel_sha256_final": "8da23f9e50841776fcdd722b58e8af0eb8ea84162516b4f82573231e6833fc46",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-0001",
+      "family": "delayed_recall",
+      "arm": "D",
+      "sessions_planned": 2,
+      "memory_episodes": 6,
+      "turns": 2,
+      "tokens_total": 1253,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "7",
+          "observed_normalized": "7",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 4.7,
+      "reflection": {
+        "passes": 2,
+        "proposals": 3,
+        "accepted": 2,
+        "rejected": 1,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 1
+      }
+    },
+    {
+      "scenario": "dr-0002",
+      "family": "delayed_recall",
+      "arm": "D",
+      "sessions_planned": 2,
+      "memory_episodes": 6,
+      "turns": 2,
+      "tokens_total": 1218,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "doran",
+          "observed_normalized": "the observatory assistant on mount kest is named doran.",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 4.7,
+      "reflection": {
+        "passes": 2,
+        "proposals": 4,
+        "accepted": 2,
+        "rejected": 2,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 1
+      }
+    },
+    {
+      "scenario": "dr-0003",
+      "family": "delayed_recall",
+      "arm": "D",
+      "sessions_planned": 3,
+      "memory_episodes": 9,
+      "turns": 3,
+      "tokens_total": 2097,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "1783",
+          "observed_normalized": "the bronze sundial in the east garden was cast in 1783.",
+          "passed": true,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.4,
+      "reflection": {
+        "passes": 3,
+        "proposals": 6,
+        "accepted": 3,
+        "rejected": 3,
+        "summaries_appended": 3,
+        "selfmodel_revision_final": 1
+      }
+    },
+    {
+      "scenario": "dx-0001",
+      "family": "distractor_recall",
+      "arm": "D",
+      "sessions_planned": 2,
+      "memory_episodes": 6,
+      "turns": 2,
+      "tokens_total": 1310,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "20",
+          "observed_normalized": "20",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 5.0,
+      "reflection": {
+        "passes": 2,
+        "proposals": 3,
+        "accepted": 2,
+        "rejected": 1,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 1
+      }
+    },
+    {
+      "scenario": "dx-0002",
+      "family": "distractor_recall",
+      "arm": "D",
+      "sessions_planned": 2,
+      "memory_episodes": 6,
+      "turns": 2,
+      "tokens_total": 1256,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "petrel",
+          "observed_normalized": "the pilot boat of north harbor is called the petrel.",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 4.9,
+      "reflection": {
+        "passes": 2,
+        "proposals": 4,
+        "accepted": 2,
+        "rejected": 2,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 1
+      }
+    },
+    {
+      "scenario": "cu-0001",
+      "family": "contradiction_update",
+      "arm": "D",
+      "sessions_planned": 3,
+      "memory_episodes": 9,
+      "turns": 3,
+      "tokens_total": 2038,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "18",
+          "observed_normalized": "the mail boat zephyr is licensed to carry 18 passengers.",
+          "passed": true,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.3,
+      "reflection": {
+        "passes": 3,
+        "proposals": 4,
+        "accepted": 3,
+        "rejected": 1,
+        "summaries_appended": 3,
+        "selfmodel_revision_final": 1
+      }
+    },
+    {
+      "scenario": "cu-0002",
+      "family": "contradiction_update",
+      "arm": "D",
+      "sessions_planned": 3,
+      "memory_episodes": 9,
+      "turns": 3,
+      "tokens_total": 2101,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "green",
+          "observed_normalized": "the beacon on thornwick hill flashes green.",
+          "passed": true,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.2,
+      "reflection": {
+        "passes": 3,
+        "proposals": 6,
+        "accepted": 3,
+        "rejected": 3,
+        "summaries_appended": 3,
+        "selfmodel_revision_final": 1
+      }
+    },
+    {
+      "scenario": "rt-0001",
+      "family": "repeated_task",
+      "arm": "D",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 3,
+      "tokens_total": 1818,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "bug",
+          "observed_normalized": "bug",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.8,
+      "reflection": {
+        "passes": 2,
+        "proposals": 3,
+        "accepted": 2,
+        "rejected": 1,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 1
+      }
+    },
+    {
+      "scenario": "rt-0002",
+      "family": "repeated_task",
+      "arm": "D",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 3,
+      "tokens_total": 1816,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "account",
+          "observed_normalized": "bug",
+          "passed": false,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.7,
+      "reflection": {
+        "passes": 2,
+        "proposals": 5,
+        "accepted": 3,
+        "rejected": 2,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 2
+      }
+    },
+    {
+      "scenario": "rt-0003",
+      "family": "repeated_task",
+      "arm": "D",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 3,
+      "tokens_total": 2217,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "perf",
+          "observed_normalized": "bug",
+          "passed": false,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.9,
+      "reflection": {
+        "passes": 2,
+        "proposals": 5,
+        "accepted": 3,
+        "rejected": 2,
+        "summaries_appended": 2,
+        "selfmodel_revision_final": 3
+      }
+    }
+  ],
+  "probes_passed": 8,
+  "probes_total": 10,
+  "turns": 26,
+  "tokens_total": 17124,
+  "budget_stops": 0,
+  "wall_s": 61.6,
+  "memory_episodes_total": 75,
+  "memory_export": "memory-export.json",
+  "selfmodel_run_copy": "selfmodel-run.json",
+  "reflection_telemetry": {
+    "passes": 23,
+    "selfmodel_sha256_initial": "67054c3f8cc9924583959d03676dea2f71a44c4ebc81df460d56fb6644d5fbc1",
+    "selfmodel_revision_initial": 1,
+    "proposals_by_type": {
+      "episode_summary": 23,
+      "selfmodel_capability_update": 18,
+      "selfmodel_failure_pattern": 2
+    },
+    "accepted_by_type": {
+      "episode_summary": 23,
+      "selfmodel_capability_update": 0,
+      "selfmodel_failure_pattern": 2
+    },
+    "rejected_by_type": {
+      "episode_summary": 0,
+      "selfmodel_capability_update": 18,
+      "selfmodel_failure_pattern": 0
+    },
+    "rejection_reasons": [
+      {
+        "proposal_id": "P-0003",
+        "reason": "seed 22 already counted for family 'delayed_recall'"
+      },
+      {
+        "proposal_id": "P-0005",
+        "reason": "seed 22 already counted for family 'delayed_recall'"
+      },
+      {
+        "proposal_id": "P-0007",
+        "reason": "seed 22 already counted for family 'delayed_recall'"
+      },
+      {
+        "proposal_id": "P-0009",
+        "reason": "seed 22 already counted for family 'delayed_recall'"
+      },
+      {
+        "proposal_id": "P-0011",
+        "reason": "seed 22 already counted for family 'delayed_recall'"
+      },
+      {
+        "proposal_id": "P-0013",
+        "reason": "seed 22 already counted for family 'delayed_recall'"
+      },
+      {
+        "proposal_id": "P-0016",
+        "reason": "seed 22 already counted for family 'distractor_recall'"
+      },
+      {
+        "proposal_id": "P-0018",
+        "reason": "seed 22 already counted for family 'distractor_recall'"
+      },
+      {
+        "proposal_id": "P-0020",
+        "reason": "seed 22 already counted for family 'distractor_recall'"
+      },
+      {
+        "proposal_id": "P-0024",
+        "reason": "seed 22 already counted for family 'contradiction_update'"
+      },
+      {
+        "proposal_id": "P-0026",
+        "reason": "seed 22 already counted for family 'contradiction_update'"
+      },
+      {
+        "proposal_id": "P-0028",
+        "reason": "seed 22 already counted for family 'contradiction_update'"
+      },
+      {
+        "proposal_id": "P-0030",
+        "reason": "seed 22 already counted for family 'contradiction_update'"
+      },
+      {
+        "proposal_id": "P-0033",
+        "reason": "seed 22 already counted for family 'repeated_task'"
+      },
+      {
+        "proposal_id": "P-0035",
+        "reason": "seed 22 already counted for family 'repeated_task'"
+      },
+      {
+        "proposal_id": "P-0037",
+        "reason": "seed 22 already counted for family 'repeated_task'"
+      },
+      {
+        "proposal_id": "P-0040",
+        "reason": "seed 22 already counted for family 'repeated_task'"
+      },
+      {
+        "proposal_id": "P-0042",
+        "reason": "seed 22 already counted for family 'repeated_task'"
+      }
+    ],
+    "selfmodel_revision_final": 3,
+    "summaries_appended": 23
+  },
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true
+}

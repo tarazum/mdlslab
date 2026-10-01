@@ -1,0 +1,1123 @@
+{
+  "format": "continuity-memory-export",
+  "version": 1,
+  "exported_utc": "2026-10-01T20:34:09Z",
+  "episode_count": 75,
+  "episodes": [
+    {
+      "id": 1,
+      "created_utc": "2026-10-01T20:33:08Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0001",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You are the night-log keeper of Verdin Isle. Log these three observations: the lighthouse on Verdin Isle flashes every 7 minutes; the ferry to Harlow runs only on even-numbered days; the tea shop in the harbor closes at six in the evening. Reply with a one-line acknowledgment.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 2,
+      "created_utc": "2026-10-01T20:33:08Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0001",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "Acknowledged.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 3,
+      "created_utc": "2026-10-01T20:33:08Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0001",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 1) of dr-0001 session 1; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s1t1] You are the night-log keeper of Verdin Isle. Log these three observations: the lighthouse on Verdin Isle flashes every 7 minutes; the ferry to Harlow runs only on even-numbered days; the tea shop in the harbor closes at six in the evening. Reply with a one-line acknowledgment.\nYour recorded answers:\n- [s1t1] Acknowledged.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          1,
+          2
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0001",
+        "reflection_pass": 1
+      }
+    },
+    {
+      "id": 4,
+      "created_utc": "2026-10-01T20:33:10Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0001",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "New shift, no logbook at hand. From your own records: how many minutes pass between two flashes of the Verdin Isle lighthouse? Answer with just the number.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 5,
+      "created_utc": "2026-10-01T20:33:10Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0001",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "7\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 6,
+      "created_utc": "2026-10-01T20:33:10Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0001",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 2) of dr-0001 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] New shift, no logbook at hand. From your own records: how many minutes pass between two flashes of the Verdin Isle lighthouse? Answer with just the number.\nYour recorded answers:\n- [s2t1] 7\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          4,
+          5
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0002",
+        "reflection_pass": 2
+      }
+    },
+    {
+      "id": 7,
+      "created_utc": "2026-10-01T20:33:12Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0002",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You keep the records of the observatory on Mount Kest. Note these three facts: the primary mirror is polished every 40 days; the logbook is bound in blue leather; the observatory assistant is named Doran. Reply with a one-line acknowledgment.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 8,
+      "created_utc": "2026-10-01T20:33:12Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0002",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "Acknowledged.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 9,
+      "created_utc": "2026-10-01T20:33:12Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0002",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 3) of dr-0002 session 1; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s1t1] You keep the records of the observatory on Mount Kest. Note these three facts: the primary mirror is polished every 40 days; the logbook is bound in blue leather; the observatory assistant is named Doran. Reply with a one-line acknowledgment.\nYour recorded answers:\n- [s1t1] Acknowledged.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          7,
+          8
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0004",
+        "reflection_pass": 3
+      }
+    },
+    {
+      "id": 10,
+      "created_utc": "2026-10-01T20:33:15Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0002",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "A visitor asks, and you have no paperwork in front of you: what is the name of the observatory assistant on Mount Kest? Answer with just the name.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 11,
+      "created_utc": "2026-10-01T20:33:15Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0002",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "The observatory assistant on Mount Kest is named Doran.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 12,
+      "created_utc": "2026-10-01T20:33:15Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0002",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 4) of dr-0002 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] A visitor asks, and you have no paperwork in front of you: what is the name of the observatory assistant on Mount Kest? Answer with just the name.\nYour recorded answers:\n- [s2t1] The observatory assistant on Mount Kest is named Doran.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          10,
+          11
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0006",
+        "reflection_pass": 4
+      }
+    },
+    {
+      "id": 13,
+      "created_utc": "2026-10-01T20:33:17Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0003",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You are the archivist of the Wellspring Museum. Note these records: the bronze sundial in the east garden was cast in 1783; the aviary was donated in 1926. Reply with a one-line acknowledgment.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 14,
+      "created_utc": "2026-10-01T20:33:17Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0003",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "Acknowledged.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 15,
+      "created_utc": "2026-10-01T20:33:17Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0003",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 5) of dr-0003 session 1; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s1t1] You are the archivist of the Wellspring Museum. Note these records: the bronze sundial in the east garden was cast in 1783; the aviary was donated in 1926. Reply with a one-line acknowledgment.\nYour recorded answers:\n- [s1t1] Acknowledged.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          13,
+          14
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0008",
+        "reflection_pass": 5
+      }
+    },
+    {
+      "id": 16,
+      "created_utc": "2026-10-01T20:33:20Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0003",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "One more record for the archive: the observatory wing was opened in 1888. Acknowledge in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 17,
+      "created_utc": "2026-10-01T20:33:20Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0003",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "Acknowledged.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 18,
+      "created_utc": "2026-10-01T20:33:20Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0003",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 6) of dr-0003 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] One more record for the archive: the observatory wing was opened in 1888. Acknowledge in one line.\nYour recorded answers:\n- [s2t1] Acknowledged.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          16,
+          17
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0010",
+        "reflection_pass": 6
+      }
+    },
+    {
+      "id": 19,
+      "created_utc": "2026-10-01T20:33:22Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0003",
+      "session": 3,
+      "turn_ref": "s3t1",
+      "role": "environment",
+      "content": "A researcher calls, and the catalog is not at hand: in what year was the bronze sundial in the east garden cast? Answer with just the year.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 20,
+      "created_utc": "2026-10-01T20:33:22Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0003",
+      "session": 3,
+      "turn_ref": "s3t1",
+      "role": "assistant",
+      "content": "The bronze sundial in the east garden was cast in 1783.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 21,
+      "created_utc": "2026-10-01T20:33:22Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dr-0003",
+      "session": 3,
+      "turn_ref": "s3-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 7) of dr-0003 session 3; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s3t1] A researcher calls, and the catalog is not at hand: in what year was the bronze sundial in the east garden cast? Answer with just the year.\nYour recorded answers:\n- [s3t1] The bronze sundial in the east garden was cast in 1783.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          19,
+          20
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0012",
+        "reflection_pass": 7
+      }
+    },
+    {
+      "id": 22,
+      "created_utc": "2026-10-01T20:33:25Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dx-0001",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You dispatch trains at Bramford Junction. Log these departures for the Elmshollow line: the express leaves at 20 minutes past the hour; the freight leaves at 10 minutes to the hour; the maintenance trolley runs only at noon. Reply with a one-line acknowledgment.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 23,
+      "created_utc": "2026-10-01T20:33:25Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dx-0001",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "Understood. I have logged the departures for the Elmshollow line at Bramford Junction.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 24,
+      "created_utc": "2026-10-01T20:33:25Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dx-0001",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 8) of dx-0001 session 1; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s1t1] You dispatch trains at Bramford Junction. Log these departures for the Elmshollow line: the express leaves at 20 minutes past the hour; the freight leaves at 10 minutes to the hour; the maintenance trolley runs only at noon. Reply with a one-line acknowledgment.\nYour recorded answers:\n- [s1t1] Understood. I have logged the departures for the Elmshollow line at Bramford Junction.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          22,
+          23
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0014",
+        "reflection_pass": 8
+      }
+    },
+    {
+      "id": 25,
+      "created_utc": "2026-10-01T20:33:27Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dx-0001",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "A passenger asks and you have no timetable in front of you: at how many minutes past the hour does the express to Elmshollow leave? Answer with just the number.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 26,
+      "created_utc": "2026-10-01T20:33:27Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dx-0001",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "20\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 27,
+      "created_utc": "2026-10-01T20:33:27Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dx-0001",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 9) of dx-0001 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] A passenger asks and you have no timetable in front of you: at how many minutes past the hour does the express to Elmshollow leave? Answer with just the number.\nYour recorded answers:\n- [s2t1] 20\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          25,
+          26
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0015",
+        "reflection_pass": 9
+      }
+    },
+    {
+      "id": 28,
+      "created_utc": "2026-10-01T20:33:29Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dx-0002",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You keep the vessel registry of the twin harbors. Record: the pilot boat of North Harbor is called the Petrel; the pilot boat of South Harbor is called the Curlew; the ferry of North Harbor is called the Oystercatcher. Reply with a one-line acknowledgment.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 29,
+      "created_utc": "2026-10-01T20:33:29Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dx-0002",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "A\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 30,
+      "created_utc": "2026-10-01T20:33:29Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dx-0002",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 10) of dx-0002 session 1; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s1t1] You keep the vessel registry of the twin harbors. Record: the pilot boat of North Harbor is called the Petrel; the pilot boat of South Harbor is called the Curlew; the ferry of North Harbor is called the Oystercatcher. Reply with a one-line acknowledgment.\nYour recorded answers:\n- [s1t1] A\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          28,
+          29
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0017",
+        "reflection_pass": 10
+      }
+    },
+    {
+      "id": 31,
+      "created_utc": "2026-10-01T20:33:32Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dx-0002",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "A captain radios in, registry book not at hand: what is the name of the pilot boat of North Harbor? Answer with just the name.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 32,
+      "created_utc": "2026-10-01T20:33:32Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dx-0002",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "The pilot boat of North Harbor is called the Petrel.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 33,
+      "created_utc": "2026-10-01T20:33:32Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "dx-0002",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 11) of dx-0002 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] A captain radios in, registry book not at hand: what is the name of the pilot boat of North Harbor? Answer with just the name.\nYour recorded answers:\n- [s2t1] The pilot boat of North Harbor is called the Petrel.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          31,
+          32
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0019",
+        "reflection_pass": 11
+      }
+    },
+    {
+      "id": 34,
+      "created_utc": "2026-10-01T20:33:34Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0001",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You are the registrar of Port Maren. For the records: the mail boat Zephyr is licensed to carry 12 passengers. Reply with a one-line acknowledgment.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 35,
+      "created_utc": "2026-10-01T20:33:34Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0001",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "A\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 36,
+      "created_utc": "2026-10-01T20:33:34Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0001",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 12) of cu-0001 session 1; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s1t1] You are the registrar of Port Maren. For the records: the mail boat Zephyr is licensed to carry 12 passengers. Reply with a one-line acknowledgment.\nYour recorded answers:\n- [s1t1] A\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          34,
+          35
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0021",
+        "reflection_pass": 12
+      }
+    },
+    {
+      "id": 37,
+      "created_utc": "2026-10-01T20:33:37Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0001",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "Correction for your records: after refitting, the mail boat Zephyr is now licensed to carry 18 passengers, not 12. Acknowledge the correction in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 38,
+      "created_utc": "2026-10-01T20:33:37Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0001",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "Acknowledge the correction in one line.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 39,
+      "created_utc": "2026-10-01T20:33:37Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0001",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 13) of cu-0001 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] Correction for your records: after refitting, the mail boat Zephyr is now licensed to carry 18 passengers, not 12. Acknowledge the correction in one line.\nYour recorded answers:\n- [s2t1] Acknowledge the correction in one line.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          37,
+          38
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0022",
+        "reflection_pass": 13
+      }
+    },
+    {
+      "id": 40,
+      "created_utc": "2026-10-01T20:33:39Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0001",
+      "session": 3,
+      "turn_ref": "s3t1",
+      "role": "environment",
+      "content": "An inspector asks, and no papers are at hand: how many passengers is the mail boat Zephyr licensed to carry? Answer with just the number.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 41,
+      "created_utc": "2026-10-01T20:33:39Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0001",
+      "session": 3,
+      "turn_ref": "s3t1",
+      "role": "assistant",
+      "content": "The mail boat Zephyr is licensed to carry 18 passengers.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 42,
+      "created_utc": "2026-10-01T20:33:39Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0001",
+      "session": 3,
+      "turn_ref": "s3-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 14) of cu-0001 session 3; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s3t1] An inspector asks, and no papers are at hand: how many passengers is the mail boat Zephyr licensed to carry? Answer with just the number.\nYour recorded answers:\n- [s3t1] The mail boat Zephyr is licensed to carry 18 passengers.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          40,
+          41
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0023",
+        "reflection_pass": 14
+      }
+    },
+    {
+      "id": 43,
+      "created_utc": "2026-10-01T20:33:42Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0002",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "You maintain the light registry for the coast watch. Record: the beacon on Thornwick Hill flashes white; the beacon on Marlow Cliff flashes red. Reply with a one-line acknowledgment.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 44,
+      "created_utc": "2026-10-01T20:33:42Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0002",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "Acknowledged.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 45,
+      "created_utc": "2026-10-01T20:33:42Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0002",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 15) of cu-0002 session 1; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s1t1] You maintain the light registry for the coast watch. Record: the beacon on Thornwick Hill flashes white; the beacon on Marlow Cliff flashes red. Reply with a one-line acknowledgment.\nYour recorded answers:\n- [s1t1] Acknowledged.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          43,
+          44
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0025",
+        "reflection_pass": 15
+      }
+    },
+    {
+      "id": 46,
+      "created_utc": "2026-10-01T20:33:44Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0002",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "Registry update: after repainting its lenses, the beacon on Thornwick Hill now flashes green, not white. The beacon on Marlow Cliff is unchanged. Acknowledge in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 47,
+      "created_utc": "2026-10-01T20:33:44Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0002",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "Acknowledged.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 48,
+      "created_utc": "2026-10-01T20:33:44Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0002",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 16) of cu-0002 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] Registry update: after repainting its lenses, the beacon on Thornwick Hill now flashes green, not white. The beacon on Marlow Cliff is unchanged. Acknowledge in one line.\nYour recorded answers:\n- [s2t1] Acknowledged.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          46,
+          47
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0027",
+        "reflection_pass": 16
+      }
+    },
+    {
+      "id": 49,
+      "created_utc": "2026-10-01T20:33:47Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0002",
+      "session": 3,
+      "turn_ref": "s3t1",
+      "role": "environment",
+      "content": "A sailor asks, registry not at hand: what color does the beacon on Thornwick Hill flash? Answer with just the color.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 50,
+      "created_utc": "2026-10-01T20:33:47Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0002",
+      "session": 3,
+      "turn_ref": "s3t1",
+      "role": "assistant",
+      "content": "The beacon on Thornwick Hill flashes green.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 51,
+      "created_utc": "2026-10-01T20:33:47Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "cu-0002",
+      "session": 3,
+      "turn_ref": "s3-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 17) of cu-0002 session 3; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s3t1] A sailor asks, registry not at hand: what color does the beacon on Thornwick Hill flash? Answer with just the color.\nYour recorded answers:\n- [s3t1] The beacon on Thornwick Hill flashes green.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          49,
+          50
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0029",
+        "reflection_pass": 17
+      }
+    },
+    {
+      "id": 52,
+      "created_utc": "2026-10-01T20:33:49Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0001",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "Classify this support ticket into exactly one label: billing | bug | account. Ticket: 'The app crashes every time I export a report to PDF.' Answer with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 53,
+      "created_utc": "2026-10-01T20:33:49Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0001",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "bug\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 54,
+      "created_utc": "2026-10-01T20:33:51Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0001",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "environment",
+      "content": "For your records, the labeling rubric: crashes, blank outputs, or wrong behavior of a feature are product defects (label: bug); charges, refunds, and invoices are billing; login and access problems are account. Acknowledge in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 55,
+      "created_utc": "2026-10-01T20:33:51Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0001",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "assistant",
+      "content": "Acknowledge.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 56,
+      "created_utc": "2026-10-01T20:33:51Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0001",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 18) of rt-0001 session 1; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s1t1] Classify this support ticket into exactly one label: billing | bug | account. Ticket: 'The app crashes every time I export a report to PDF.' Answer with the label only.\n- [s1t2] For your records, the labeling rubric: crashes, blank outputs, or wrong behavior of a feature are product defects (label: bug); charges, refunds, and invoices are billing; login and access problems are account. Acknowledge in one line.\nYour recorded answers:\n- [s1t1] bug\n- [s1t2] Acknowledge.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          52,
+          53,
+          54,
+          55
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0031",
+        "reflection_pass": 18
+      }
+    },
+    {
+      "id": 57,
+      "created_utc": "2026-10-01T20:33:54Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0001",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "Classify this support ticket into exactly one label: billing | bug | account. Ticket: 'Clicking the export button produces a blank PDF file.' Answer with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 58,
+      "created_utc": "2026-10-01T20:33:54Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0001",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "bug\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 59,
+      "created_utc": "2026-10-01T20:33:54Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0001",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 19) of rt-0001 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] Classify this support ticket into exactly one label: billing | bug | account. Ticket: 'Clicking the export button produces a blank PDF file.' Answer with the label only.\nYour recorded answers:\n- [s2t1] bug\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          57,
+          58
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0032",
+        "reflection_pass": 19
+      }
+    },
+    {
+      "id": 60,
+      "created_utc": "2026-10-01T20:33:56Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0002",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "Classify this support ticket into exactly one label: billing | bug | account. Ticket: 'My invoice shows the wrong VAT amount.' Answer with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 61,
+      "created_utc": "2026-10-01T20:33:56Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0002",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "bug\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 62,
+      "created_utc": "2026-10-01T20:33:58Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0002",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "environment",
+      "content": "For your records, our queue convention: tickets about exports, downloads, or file access are handled as account, because they trace back to permissions; payment, invoice, and charge problems are billing; crashes, freezes, and wrong outputs are bug. Acknowledge in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 63,
+      "created_utc": "2026-10-01T20:33:58Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0002",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "assistant",
+      "content": "Acknowledge.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 64,
+      "created_utc": "2026-10-01T20:33:58Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0002",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 20) of rt-0002 session 1; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s1t1] Classify this support ticket into exactly one label: billing | bug | account. Ticket: 'My invoice shows the wrong VAT amount.' Answer with the label only.\n- [s1t2] For your records, our queue convention: tickets about exports, downloads, or file access are handled as account, because they trace back to permissions; payment, invoice, and charge problems are billing; crashes, freezes, and wrong outputs are bug. Acknowledge in one line.\nYour recorded answers:\n- [s1t1] bug\n- [s1t2] Acknowledge.\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0034",
+        "reflection_pass": 20
+      }
+    },
+    {
+      "id": 65,
+      "created_utc": "2026-10-01T20:34:00Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0002",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "Classify this support ticket into exactly one label: billing | bug | account. Ticket: 'I cannot download my report as a PDF file, the download never starts.' Answer with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 66,
+      "created_utc": "2026-10-01T20:34:00Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0002",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "bug\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 67,
+      "created_utc": "2026-10-01T20:34:00Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0002",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 21) of rt-0002 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] Classify this support ticket into exactly one label: billing | bug | account. Ticket: 'I cannot download my report as a PDF file, the download never starts.' Answer with the label only.\nYour recorded answers:\n- [s2t1] bug\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          65,
+          66
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0036",
+        "reflection_pass": 21
+      }
+    },
+    {
+      "id": 68,
+      "created_utc": "2026-10-01T20:34:02Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0003",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "environment",
+      "content": "Classify this support ticket into exactly one label: billing | bug | account. Ticket: 'The app takes two minutes to open the settings page.' Answer with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 69,
+      "created_utc": "2026-10-01T20:34:02Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0003",
+      "session": 1,
+      "turn_ref": "s1t1",
+      "role": "assistant",
+      "content": "bug\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 70,
+      "created_utc": "2026-10-01T20:34:05Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0003",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "environment",
+      "content": "For your records, the labeling rubric: crashes, freezes, and wrong outputs are bug; charges, refunds, and invoices are billing; login and access problems are account. Additionally, slowness without a crash gets the label perf \u2014 do not use bug for slow-but-working behavior. Acknowledge in one line.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 71,
+      "created_utc": "2026-10-01T20:34:05Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0003",
+      "session": 1,
+      "turn_ref": "s1t2",
+      "role": "assistant",
+      "content": "Acknowledge.\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 72,
+      "created_utc": "2026-10-01T20:34:05Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0003",
+      "session": 1,
+      "turn_ref": "s1-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 22) of rt-0003 session 1; compacted from 4 records.\nEnvironment records (verbatim, in order):\n- [s1t1] Classify this support ticket into exactly one label: billing | bug | account. Ticket: 'The app takes two minutes to open the settings page.' Answer with the label only.\n- [s1t2] For your records, the labeling rubric: crashes, freezes, and wrong outputs are bug; charges, refunds, and invoices are billing; login and access problems are account. Additionally, slowness without a crash gets the label perf \u2014 do not use bug for slow-but-working behavior. Acknowledge in one line.\nYour recorded answers:\n- [s1t1] bug\n- [s1t2] Acknowledge.\nConflict review:\n- your answer at s1t1 ('bug') is followed by the corrective record at s1t2 ('Additionally, slowness without a crash gets the label perf \u2014 do not use bug for slow-but-working behavior'); when they disagree, the later corrective record is authoritative.",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [
+          "your answer at s1t1 ('bug') is followed by the corrective record at s1t2 ('Additionally, slowness without a crash gets the label perf \u2014 do not use bug for slow-but-working behavior'); when they disagree, the later corrective record is authoritative."
+        ],
+        "evidence_episode_ids": [
+          68,
+          69,
+          70,
+          71
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0039",
+        "reflection_pass": 22
+      }
+    },
+    {
+      "id": 73,
+      "created_utc": "2026-10-01T20:34:07Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0003",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "environment",
+      "content": "Classify this support ticket into exactly one label: billing | bug | account | perf. Ticket: 'PDF export works but takes over five minutes to finish.' Answer with the label only.",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 74,
+      "created_utc": "2026-10-01T20:34:07Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0003",
+      "session": 2,
+      "turn_ref": "s2t1",
+      "role": "assistant",
+      "content": "bug\n",
+      "importance": 0.5,
+      "meta": {}
+    },
+    {
+      "id": 75,
+      "created_utc": "2026-10-01T20:34:07Z",
+      "run_id": "pilot-armD-20261001-233203-seed22",
+      "scenario": "rt-0003",
+      "session": 2,
+      "turn_ref": "s2-summary",
+      "role": "reflection.summary",
+      "content": "SESSION SUMMARY (deterministic reflection, pass 23) of rt-0003 session 2; compacted from 2 records.\nEnvironment records (verbatim, in order):\n- [s2t1] Classify this support ticket into exactly one label: billing | bug | account | perf. Ticket: 'PDF export works but takes over five minutes to finish.' Answer with the label only.\nYour recorded answers:\n- [s2t1] bug\nConflict review:\n- none detected (no own answer is followed by a corrective environment record in this session).",
+      "importance": 0.5,
+      "meta": {
+        "conflict_review": [],
+        "evidence_episode_ids": [
+          73,
+          74
+        ],
+        "kind": "reflection.summary",
+        "proposal_id": "P-0041",
+        "reflection_pass": 23
+      }
+    }
+  ]
+}

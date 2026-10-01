@@ -1,0 +1,288 @@
+{
+  "agentId": "continuity/granite-code:8b@36c3c3b9683b",
+  "capabilities": [
+    {
+      "binomial_sd": 0.2041,
+      "family": "contradiction_update",
+      "passed": 3,
+      "probes_per_seed": 2,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the aggregate's seeds_run",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 1,
+            "22": 1,
+            "33": 1
+          },
+          "probes_per_seed": 2,
+          "run_id": "pilot-armB-20261001-224636",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-000/pilot-armB-20261001-224636/aggregate.json"
+      },
+      "rate": 0.5,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 6,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.812,
+        "low": 0.188
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "delayed_recall",
+      "passed": 9,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the aggregate's seeds_run",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 3,
+            "22": 3,
+            "33": 3
+          },
+          "probes_per_seed": 3,
+          "run_id": "pilot-armB-20261001-224636",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-000/pilot-armB-20261001-224636/aggregate.json"
+      },
+      "rate": 1.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 9,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 1.0,
+        "low": 0.701
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "distractor_recall",
+      "passed": 6,
+      "probes_per_seed": 2,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the aggregate's seeds_run",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 2,
+            "22": 2,
+            "33": 2
+          },
+          "probes_per_seed": 2,
+          "run_id": "pilot-armB-20261001-224636",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-000/pilot-armB-20261001-224636/aggregate.json"
+      },
+      "rate": 1.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 6,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 1.0,
+        "low": 0.61
+      }
+    },
+    {
+      "binomial_sd": 0.1571,
+      "family": "repeated_task",
+      "passed": 3,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the aggregate's seeds_run",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 1,
+            "22": 1,
+            "33": 1
+          },
+          "probes_per_seed": 3,
+          "run_id": "pilot-armB-20261001-224636",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-000/pilot-armB-20261001-224636/aggregate.json"
+      },
+      "rate": 0.333,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 9,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.646,
+        "low": 0.121
+      }
+    }
+  ],
+  "createdUtc": "2026-10-01T20:08:41Z",
+  "format": "continuity-selfmodel",
+  "history": [
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 3,
+          "total": 6
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "distractor_recall": {
+          "passed": 6,
+          "total": 6
+        },
+        "repeated_task": {
+          "passed": 3,
+          "total": 9
+        }
+      },
+      "revision": 1,
+      "updatedUtc": "2026-10-01T20:08:41Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 3,
+          "total": 6
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "distractor_recall": {
+          "passed": 6,
+          "total": 6
+        },
+        "repeated_task": {
+          "passed": 3,
+          "total": 9
+        }
+      },
+      "revision": 2,
+      "updatedUtc": "2026-10-01T20:30:22Z"
+    }
+  ],
+  "knownFailurePatterns": [
+    {
+      "evidence": {
+        "numbers": {
+          "family": "repeated_task",
+          "observed_normalized": [
+            "bug"
+          ],
+          "pass_count": 0,
+          "scenario": "rt-0003",
+          "seeds": 3
+        },
+        "refs": [
+          "labs/continuity/docs/FINDINGS.md#CN-007",
+          "labs/continuity/LOG.md (M2 result, 2026-10-01 22:50)"
+        ]
+      },
+      "id": "CN-007",
+      "pattern": "The agent's own early answers, once stored in persistent memory, anchor later answers even when a later session supplies the correcting rubric; an early misclassification can repeat across sessions instead of being revised.",
+      "title": "own-answer anchoring"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "family": "contradiction_update",
+          "observed_normalized": [
+            "12"
+          ],
+          "pass_count": 0,
+          "scenario": "cu-0001",
+          "seeds": 3
+        },
+        "refs": [
+          "labs/continuity/docs/FINDINGS.md#CN-008",
+          "labs/continuity/LOG.md (M2 result, 2026-10-01 22:50)"
+        ]
+      },
+      "id": "CN-008",
+      "pattern": "When a later session corrects an earlier fact, keyword memory recalls both versions and the superseded value may be repeated even though the correction was retrieved first; conflict resolution is the gap.",
+      "title": "no supersession of corrected facts"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "account",
+          "family": "repeated_task",
+          "observed_normalized": [
+            "bug"
+          ],
+          "pass_count": 0,
+          "scenario": "rt-0002",
+          "seed": 33,
+          "seeds": 1,
+          "turn_ref": "s2t1"
+        },
+        "refs": [
+          "pilot-armD-20261001-232723-seed33/summary.json (reflection pass 21, proposal P-0038)"
+        ]
+      },
+      "id": "REF-0038",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t1 in scenario rt-0002 (family repeated_task) was answered 'bug' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: repeated_task / rt-0002"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "perf",
+          "family": "repeated_task",
+          "observed_normalized": [
+            "bug"
+          ],
+          "pass_count": 0,
+          "scenario": "rt-0003",
+          "seed": 33,
+          "seeds": 1,
+          "turn_ref": "s2t1"
+        },
+        "refs": [
+          "pilot-armD-20261001-232723-seed33/summary.json (reflection pass 23, proposal P-0043)"
+        ]
+      },
+      "id": "REF-0043",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t1 in scenario rt-0003 (family repeated_task) was answered 'bug' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: repeated_task / rt-0003"
+    }
+  ],
+  "lastConsolidation": "2026-10-01T20:30:29Z",
+  "provenance": {
+    "agent_id_basis": {
+      "model": "granite-code:8b",
+      "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd"
+    },
+    "derived_from": "labs/continuity/results/CONT-000/pilot-armB-20261001-224636/aggregate.json",
+    "method": "capabilities recomputed from per-family probe counts; failure patterns seeded from CN-007/CN-008 evidence in the same aggregate",
+    "note": "measured on the same 10-scenario fixture suite on which arm C is evaluated (CN-009 estimate/evaluation overlap; exploratory mini-pilot caveat, CONT-001 design input)"
+  },
+  "revision": 3,
+  "schemaVersion": 1,
+  "updatedUtc": "2026-10-01T20:30:29Z"
+}

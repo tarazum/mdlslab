@@ -443,6 +443,94 @@ canonical store `state/selfmodel.json` (revision 1, sha256 `67054c3f8cc9…`).
   `shared/tooling/agent-resource-coordination/lock.py run gpu`. Fail-closed on
   Ollama/digest mismatch (same preflight as M2/M3).
 
+## 2026-10-01 23:38 — M4 / P1a result: arm D (reflection/consolidation)
+
+Artifacts: `results/CONT-000/cont000-smoke-armD-dr-0001-20261001-232508/`
+(first smoke — FAILED the gate, kept as evidence of the gate catching a wiring
+bug, see lesson 1), `…-232535/` and `…-233142/` (passing smokes; the latter
+after the marker-sentence fix), `results/CONT-000/pilot-armD-20261001-232723/`
+(first pilot, pre-fix, kept as evidence) and
+`results/CONT-000/pilot-armD-20261001-233203/` (pilot of record); new
+`src/continuity/reflection.py` (engine + validator + offline selftest),
+`run_smoke_arm_d.py`, `run_pilot_arm_d.py`; runner arm-D wiring + 3 new trace
+event types; `memory.episodes_for` read helper.
+
+- **Smoke gate PASSED** (run `…-233142`): dr-0001 arm D (seed 42,
+  granite-code:8b, digest `36c3c3b9683b…a18dd`, temp 0.0, num_ctx 4096):
+  probe s2t1 expected "7" -> observed "7"; 3 reflection proposals (2 episode
+  summaries ACCEPTED, 1 capability update REJECTED "family incomplete");
+  trace re-validates; exit 0 under the shared GPU lock.
+- **Mini-pilot (arm D, predeclared seeds {11,22,33}, one warm process,
+  warmup 2.5 s)**: all 3 seeds completed, byte-identical answers across
+  seeds (tokens 17,124 per seed — no CN-003 drift), 78 requests, wall
+  60.7-61.6 s per seed, 0 budget stops, all traces re-validate from disk
+  (re-verified independently after the run). Total GPU wall for the stage
+  (2 smokes-fail+pass, 2 pilots, 1 fixed smoke) ~8 min (budget <= 40 min);
+  wall clock ~55 min (budget <= 110 min). CN-005 attribution at lock time:
+  nvidia-smi 5,842 MiB, `/api/ps` attributes 5,064.6 MiB to granite-code:8b
+  (the run's own target); snapshot recorded in aggregate.json.
+- **Reflection mechanism (per seed, identical on all 3)**: 43 proposals ->
+  25 accepted / 18 rejected. Accepted: 23 episode summaries (one per
+  session; appended as NEW episodes role `reflection.summary`, never
+  rewriting events) + 2 self-model failure patterns (REF-0038 rt-0002,
+  REF-0043 rt-0003) committed through the fail-closed store; per-run
+  `selfmodel-run.json` revision 1 -> 3; canonical `state/selfmodel.json`
+  untouched (still revision 1, verified). Rejected: all 18 capability-update
+  proposals with reason "seed already counted" — the revision-1 estimates
+  already cover seeds {11,22,33} (M2 pilot), and the validator's
+  double-count guard fired; capability numbers therefore never drifted
+  in-run (a stricter CN-009 bound than designed, by honest mechanism).
+- **A/B/C/D per family (mean pass rates; A 5 seeds, B/C/D 3 seeds)**:
+  delayed_recall 0.000 / 1.000 / 1.000 / 1.000; distractor_recall 0.000 /
+  1.000 / 1.000 / 1.000; contradiction_update 0.000 / 0.500 / 1.000 /
+  1.000; repeated_task 0.667 / 0.333 / 0.333 / 0.333. D - C = 0.000 on
+  every family and every scenario. Overall probes per seed: A 2/10, B 7/10,
+  C 8/10, D 8/10. Artifact: `armA-vs-armB-vs-armC-vs-armD.{json,md}`.
+- **repeated_task (CN-007 family): reflection did NOT move it — recorded
+  plainly.** rt-0003 still answers "bug" on 3/3 seeds even though the
+  conflict-review summary (injected ranked FIRST into session 2) quotes the
+  corrective sentence verbatim ("slowness without a crash gets the label
+  perf — do not use bug for slow-but-working behavior"), juxtaposes the
+  agent's own s1t1 answer 'bug', and declares the corrective record
+  authoritative. rt-0002 unchanged ("bug", expected "account" — its rubric
+  carries no corrective marker, so no conflict review fired, by design);
+  rt-0001 unchanged (passes). Deterministic evidence-juxtaposition
+  consolidation did not break own-answer anchoring in granite-code:8b;
+  CN-007 stays OPEN with the M4 negative result appended. **No reflection
+  drift observed**: no accepted proposal degraded behavior or contradicted
+  evidence (D >= C everywhere), so no new CN-NNN for drift.
+- CN-009 annotated (not silently): in-run failure patterns DID render into
+  later sessions (rt-0002's pattern visible in rt-0003's prompt at revision
+  2) — the exposure is larger than arm C's static block; rendered pattern
+  text shows observed answers only ("bug"), never expected answers;
+  everything carries provenance.method starting with "reflection" and trace
+  refs. Capability updates never committed in-run (double-count guard).
+- Tokens (78 requests): prompt 50,757 + eval 615 = 51,372 total (per
+  request: 650.7 prompt / 7.9 eval; arm C was 538.4 / 8.9 — the injected
+  summaries add ~21% prompt tokens). Warm latency mean 301.3 ms, p95
+  618.2 ms (CN-002 rule: budgets sized by wall; `total_duration` relative
+  only).
+- Same-day lessons (Context -> What happened -> Lesson -> Change):
+  1. First arm D smoke failed with 0 memory episodes — the runner's
+     episode-append arm set still read `arm in ("B", "C")` after the arm D
+     branch was added, so arm D silently ran without memory. Lesson: when an
+     arm is defined as "previous arm + X", grep for every arm-set literal in
+     the runner before running; the smoke gate caught it exactly as
+     designed. Change: arm set now ("B", "C", "D"); bug + failed run kept as
+     evidence.
+  2. The first pilot's conflict review quoted the FIRST sentence of a
+     corrective record instead of the sentence containing the marker —
+     `_marker_sentence`'s `or (… and marker in lowered)` clause matched
+     every sentence once the marker appeared anywhere in the content.
+     Lesson: inspect the actually-injected prompt content, not just the
+     event stream, before accepting a mechanism result; a boolean clause
+     over the whole haystack defeats sentence selection. Change: match the
+     marker per sentence only; selftest now asserts the quoted sentence is
+     the corrective one; pre-fix pilot kept as evidence, post-fix pilot is
+     the run of record.
+- M4 exit artifacts complete; ROADMAP M4 marked DONE. Next: M5 (arm E,
+  world model + bounded policy) per ROADMAP.
+
 
 
 

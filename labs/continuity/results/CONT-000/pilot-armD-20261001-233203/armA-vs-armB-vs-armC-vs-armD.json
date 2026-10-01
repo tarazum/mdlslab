@@ -1,0 +1,175 @@
+{
+  "kind": "armA-vs-armB-vs-armC-vs-armD-per-family",
+  "created_utc": "2026-10-01T20:35:13Z",
+  "arm_a_source": "results/CONT-000/pilot-armA-20261001-222950/aggregate.json",
+  "arm_b_source": "results/CONT-000/pilot-armB-20261001-224636/aggregate.json",
+  "arm_c_source": "results/CONT-000/pilot-armC-20261001-231050/aggregate.json",
+  "arm_d_source": "aggregate.json (this directory)",
+  "shared_config": {
+    "model": "granite-code:8b",
+    "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "scenario_order": [
+      "dr-0001",
+      "dr-0002",
+      "dr-0003",
+      "dx-0001",
+      "dx-0002",
+      "cu-0001",
+      "cu-0002",
+      "rt-0001",
+      "rt-0002",
+      "rt-0003"
+    ],
+    "note": "seeds differ by design (arm A: 5 predeclared M1 seeds; arms B/C/D: first 3 of the same predeclared list, per the M2/M3/M4 briefs)"
+  },
+  "arms": {
+    "A": {
+      "seeds": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ]
+    },
+    "B": {
+      "seeds": [
+        11,
+        22,
+        33
+      ]
+    },
+    "C": {
+      "seeds": [
+        11,
+        22,
+        33
+      ]
+    },
+    "D": {
+      "seeds": [
+        11,
+        22,
+        33
+      ]
+    }
+  },
+  "per_family": {
+    "contradiction_update": {
+      "arm_A_mean": 0.0,
+      "arm_B_mean": 0.5,
+      "arm_C_mean": 1.0,
+      "arm_D_mean": 1.0,
+      "arm_D_minus_arm_C": 0.0,
+      "arm_D_pass_rate_by_seed": {
+        "11": 1.0,
+        "22": 1.0,
+        "33": 1.0
+      }
+    },
+    "delayed_recall": {
+      "arm_A_mean": 0.0,
+      "arm_B_mean": 1.0,
+      "arm_C_mean": 1.0,
+      "arm_D_mean": 1.0,
+      "arm_D_minus_arm_C": 0.0,
+      "arm_D_pass_rate_by_seed": {
+        "11": 1.0,
+        "22": 1.0,
+        "33": 1.0
+      }
+    },
+    "distractor_recall": {
+      "arm_A_mean": 0.0,
+      "arm_B_mean": 1.0,
+      "arm_C_mean": 1.0,
+      "arm_D_mean": 1.0,
+      "arm_D_minus_arm_C": 0.0,
+      "arm_D_pass_rate_by_seed": {
+        "11": 1.0,
+        "22": 1.0,
+        "33": 1.0
+      }
+    },
+    "repeated_task": {
+      "arm_A_mean": 0.667,
+      "arm_B_mean": 0.333,
+      "arm_C_mean": 0.333,
+      "arm_D_mean": 0.333,
+      "arm_D_minus_arm_C": 0.0,
+      "arm_D_pass_rate_by_seed": {
+        "11": 0.333,
+        "22": 0.333,
+        "33": 0.333
+      }
+    }
+  },
+  "per_scenario_pass_counts": {
+    "dr-0001": {
+      "arm_A": 0,
+      "arm_B": 3,
+      "arm_C": 3,
+      "arm_D": 3
+    },
+    "dr-0002": {
+      "arm_A": 0,
+      "arm_B": 3,
+      "arm_C": 3,
+      "arm_D": 3
+    },
+    "dr-0003": {
+      "arm_A": 0,
+      "arm_B": 3,
+      "arm_C": 3,
+      "arm_D": 3
+    },
+    "dx-0001": {
+      "arm_A": 0,
+      "arm_B": 3,
+      "arm_C": 3,
+      "arm_D": 3
+    },
+    "dx-0002": {
+      "arm_A": 0,
+      "arm_B": 3,
+      "arm_C": 3,
+      "arm_D": 3
+    },
+    "cu-0001": {
+      "arm_A": 0,
+      "arm_B": 0,
+      "arm_C": 3,
+      "arm_D": 3
+    },
+    "cu-0002": {
+      "arm_A": 0,
+      "arm_B": 3,
+      "arm_C": 3,
+      "arm_D": 3
+    },
+    "rt-0001": {
+      "arm_A": 5,
+      "arm_B": 3,
+      "arm_C": 3,
+      "arm_D": 3
+    },
+    "rt-0002": {
+      "arm_A": 0,
+      "arm_B": 0,
+      "arm_C": 0,
+      "arm_D": 0
+    },
+    "rt-0003": {
+      "arm_A": 5,
+      "arm_B": 0,
+      "arm_C": 0,
+      "arm_D": 0
+    }
+  },
+  "notes": [
+    "CN-007 watch (repeated_task, the own-answer-anchoring family): arm B 0.333 / arm C 0.333 \u2014 see per_scenario rows rt-0001/2/3 for whether arm D's reflection (conflict-review summaries) moved it.",
+    "CN-009 amplification: arm D's self-model evolves in-run from probe outcomes and renders into later sessions; every reflection-derived estimate carries provenance.method starting with 'reflection'."
+  ]
+}
