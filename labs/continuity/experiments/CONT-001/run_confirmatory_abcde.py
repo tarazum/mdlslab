@@ -721,7 +721,9 @@ def build_arm_aggregate(
             "scenario_order": [s["id"] for s in scenario_defs],
             "scenario_budget": dict(SCENARIO_BUDGET),
             "run_wall_clock_guard_s": RUN_WALL_CLOCK_S,
-            "arm_wall_s": round(sum(r["wall_s"] for r in run_summaries), 1),
+            "arm_wall_s": round(
+                sum(r["wall_s"] for r in run_summaries if r.get("wall_s") is not None), 1
+            ),
             "determinism_caveat": DETERMINISM_CAVEAT,
             "gpu_lock_note": (
                 "run held the shared gpu lock; wall clock (CN-002 rule) is the "
@@ -850,7 +852,9 @@ def build_cross_arm_table(
                 "prompt_mean_per_request": tokens["prompt_mean"],
                 "eval_mean_per_request": tokens["eval_mean"],
             },
-            "wall_s_by_seed": {str(r["seed"]): r["wall_s"] for r in agg["runs"]},
+            "wall_s_by_seed": {
+                str(r["seed"]): r["wall_s"] for r in agg["runs"] if r.get("wall_s") is not None
+            },
             "arm_wall_s": agg["run"]["arm_wall_s"],
             "latency_ms_mean_p95": [
                 agg["request_stats"]["latency_ms"]["mean"],
