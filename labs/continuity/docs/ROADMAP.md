@@ -10,6 +10,7 @@
 | --- | --- | --- |
 | M1 | P0b: fixture suite v2 + arm A variance/headroom pilot + sizing | DONE |
 | M2 | P1a: arm B — SQLite persistent memory | IN_PROGRESS |
+| M2b | CONT-002 mechanics smoke (conditional: >= 45 min before deadline) | TODO |
 | M3 | P1a: arm C — validated self-model | TODO |
 | M4 | P1a: arm D — reflection/consolidation | TODO |
 | M5 | P1a: arm E — world model + bounded policy | TODO |
@@ -44,6 +45,15 @@
 - **Non-goals:** semantic/vector retrieval; consolidation; self-model; changing arm A.
 - **Exit artifacts:** memory.py + runner wiring; smoke + pilot artifacts; comparison table JSON; LOG.md; status DONE.
 - **Budget:** <= 110 min, <= 30 min GPU.
+
+## M2b — CONT-002 mechanics smoke (conditional, owner-ordered 2026-10-01)
+
+- **Goal:** prove the state export/import mechanics between two different cores — plumbing only, zero behavioral claims. Placed right after M2 deliberately: it de-risks the CONT-002 state format BEFORE arms C–E add self-model/reflection/policy state on top of it.
+- **Entry:** M2 DONE; the local GGUF `C:\Models\qwen36_Q4_K_M\Qwen3.6-35B-A3B-UD-Q4_K_M.gguf` exists; at least 45 minutes remain before the arc deadline. If the time condition fails, mark SKIPPED (morning list picks it up).
+- **Scope:** import the local GGUF into Ollama via a Modelfile (`FROM <local path>` — a local import, not a download); record the created model's digest; run the learning session of one scenario (dr-0001, seed 11) on core A (`granite-code:8b`, arm B) and export its persistent state; import the state and run the held-out probe session on core B (Qwen3.6-A3B) twice — once with the imported state, once clean. Verify: export/import round-trip is schema-valid and error-free; the state renders into core B's context; all traces re-validate from disk. Artifacts under `results/CONT-000/cont002-mechanics-<run_id>/`; LOG.md verdict per check. If the probe passes under B+state, record it as an observation only — no transfer claims.
+- **Non-goals:** behavioral comparison; the retained-benefit ratio; any CONT-002 conclusion; multi-seed runs; judging model quality; fixing Ollama template issues beyond recording them as CN findings.
+- **Exit artifacts:** imported-model digest record; core-A state export; two core-B traces; LOG.md mechanics verdict.
+- **Budget:** <= 45 min, <= 30 min GPU (the 22 GB model load dominates).
 
 ## M3 — P1a: arm C — validated self-model
 
@@ -117,5 +127,5 @@
 
 ## Never autonomous (unchanged)
 
-- CONT-002 experiments beyond the M2 storage format.
-- External actions outside this repository; publication decisions; model downloads > 1 GB.
+- CONT-002 behavioral experiments — anything that measures transfer quality. The single exception is the M2b mechanics smoke (owner-ordered 2026-10-01): export/import plumbing proof only, explicitly no behavioral claims.
+- External actions outside this repository; publication decisions; model downloads > 1 GB (importing an already-local GGUF via a Modelfile is not a download).
