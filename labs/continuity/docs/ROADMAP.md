@@ -15,7 +15,7 @@
 | M4 | P1a: arm D — reflection/consolidation | DONE |
 | M5 | P1a: arm E — world model + bounded policy | DONE |
 | M6 | Exploratory CONT-001 pass (all arms) + pre-registration v1 committed | DONE |
-| M6b | Independent pre-registration review (GO/NO-GO) | IN_PROGRESS |
+| M6b | Independent pre-registration review (GO/NO-GO) | DONE |
 | M7 | Confirmatory CONT-001 (conditional: M6b GO + >= 2h before deadline) | TODO |
 | M8 | Final: housekeeping, arc report, owner morning list | TODO |
 

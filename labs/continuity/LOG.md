@@ -816,6 +816,47 @@ inference) and `experiments/CONT-001/analyze_repeated_mistakes.py`;
 - M6 exit artifacts complete; ROADMAP M6 marked DONE. Next: M6b
   (independent pre-registration review, GO/NO-GO) per ROADMAP.
 
+## 2026-10-02 00:52 — M6b result: independent pre-registration review — verdict GO
+
+Artifacts: `docs/PR-REVIEW.md` (the review; `docs/EVALUATION-PREP.md` NOT
+modified — frozen at `a845fc5`, verified untouched: `git diff a845fc5 HEAD`
+on the file is empty). Fresh-session review (M6 author session did not
+participate). Zero inference; wall ~20 min (budget <= 30 min).
+
+- **Checklist (all PASS)**: (a) primary endpoint mechanically operationalized
+  (s1t1 initial answer / initial_expected / per-arm eligible denominator /
+  strict same-answer recurrence) and implemented deterministically and
+  arm-blind in the committed harness (`runner.score_probe` re-read in code;
+  `analyze_repeated_mistakes.py` performs the identical computation);
+  additive v2 fixture fields feasible (validator ignores unknown keys —
+  re-verified). (b) E−A two-sided, MME |Δ| >= 0.15 derived from the v2
+  denominator granularity (1/7 = 0.143), NOT the exploratory delta; decision
+  rule symmetric — direction honesty explicit (exploratory favored arm A
+  0.500 vs 1.000; plan states memory WORSENED RM and labels arm A's edge a
+  CN-004 artifact; a harm-direction result is a legitimate claim);
+  underpowered guard pre-declared. (c) aggregation, paired scenario-cluster
+  bootstrap (unit justified by the measured 0.000 seed spread), redraw
+  degeneracy halt, and complete missing/failed-run policy (exclusions
+  reported, halt thresholds, single infra re-run, contamination halts,
+  GPU-cap stop rule). (d) held-out plan disjoint (seeds {101,202,303,404,505},
+  fresh scenario ids, disjoint self-model calibration) with fixture v2
+  requirements covering CN-004/007/008/009/010 and a pre-inference mechanical
+  validator — M7 executable without further design decisions. (e) exploratory
+  data-seen labeling thorough; known leakage channels closed and checked.
+- **Non-blocking notes recorded in PR-REVIEW.md**: (1) fixture-authoring
+  exposure (v2 author has seen exploratory results) is a residual risk the
+  plan does not name — accepted given the symmetric rule, mechanical checks
+  and the owner acceptance gate; (2) strict-RM comparator needs concise
+  label-form probe prompts under free-form scoring (loose sensitivity
+  pre-declared, so degradation is visible); (3) M7 validator should pin
+  "initial task turn = s1t1" explicitly.
+- **M7 conditions**: GO granted; ~10 h 45 min remained before the 11:30 FLEDT
+  arc deadline at review time — the >= 2 h margin holds. M7 may proceed per
+  its brief (frozen protocol, held-out fixture v2, "agent-pre-registered,
+  pending owner acceptance" labels).
+- ROADMAP M6b marked DONE. Next: M7 (confirmatory CONT-001) per ROADMAP.
+
+
 
 
 
