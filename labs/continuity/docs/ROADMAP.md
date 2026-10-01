@@ -21,7 +21,7 @@
 ## Executor protocol (every session)
 
 1. Read this file fully. If the arc is complete or past deadline → stop with a one-line reply.
-2. Pick the first milestone not DONE. Verify its entry conditions. Fail-closed: unmet conditions → LOG.md note + stop, no improvisation.
+2. Pick the first milestone with status **TODO**. Never pick IN_PROGRESS or BLOCKED for fresh execution: for IN_PROGRESS, check LOG.md and the shared GPU lock — if the milestone's latest start/progress note is under 2 hours old **or** the lock is held, another executor is active: stop without touching it. If the note is older than 2 hours and the lock is free, the executor died and you may resume from its checkpoint. Verify entry conditions of whatever you picked. Fail-closed: unmet conditions → LOG.md note + stop, no improvisation. Mark the milestone IN_PROGRESS in the status table as your first write, before doing any work.
 3. Follow `labs/continuity/PROCESS.md` (start-note, artifact-proof, CN-NNN findings, budgets, sampling params per request, same-day lessons).
 4. Take the shared GPU lock (`shared/tooling/agent-resource-coordination/`) around any local inference.
 5. Finish within 110 minutes or checkpoint cleanly (LOG.md, status IN_PROGRESS, commit, stop).
@@ -113,6 +113,7 @@
 2. Accept or reject the agent-pre-registered confirmatory result: accept / re-run with amendments / discard.
 3. Decide the CONT-002 program. **No download is required** — local core-B candidates already exist: `Qwen3.6-35B-A3B` GGUF in `C:\Models` (22 GB MoE with ~3B active parameters — fastest option under VRAM offload; import into Ollama via a one-line Modelfile), plus Ollama-local `gemma4:26b` / `qwen3.8:27b` / `devstral-small-2` / `starcoder2:instruct` (9–18 GB dense; slower offload, but 63 GB RAM makes them viable). The 2×2 analysis (R = ΔB/ΔA with the B+clean cell) is designed to tolerate intrinsic capability differences, so any instruct-capable core works. A ~4–5 GB compact download remains an optional speed optimization, not a requirement. The M2 storage format is already in place.
 4. External actions, publication decisions, any scope change to this roadmap.
+5. Finding CN-005 (GPU idle threshold cannot attribute residency-only load in the shared coordination tooling) explicitly requests an owner decision on the shared tooling direction.
 
 ## Never autonomous (unchanged)
 
