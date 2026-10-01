@@ -1,0 +1,248 @@
+{
+  "run_id": "cont001-exploratory-20261002-000048-armA-seed44",
+  "seed": 44,
+  "arm": "A",
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-0001",
+      "family": "delayed_recall",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 2,
+      "tokens_total": 209,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "7",
+          "observed_normalized": "the verdin isle lighthouse is not mentioned in any of my records. please provide more context or clarify your question.",
+          "passed": false,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 4.7
+    },
+    {
+      "scenario": "dr-0002",
+      "family": "delayed_recall",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 2,
+      "tokens_total": 182,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "doran",
+          "observed_normalized": "the name of the observatory assistant on mount kest is [name].",
+          "passed": false,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 4.6
+    },
+    {
+      "scenario": "dr-0003",
+      "family": "delayed_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 3,
+      "tokens_total": 272,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "1783",
+          "observed_normalized": "the bronze sundial in the east garden was cast in the year 1634.",
+          "passed": false,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.2
+    },
+    {
+      "scenario": "dx-0001",
+      "family": "distractor_recall",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 2,
+      "tokens_total": 214,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "20",
+          "observed_normalized": "the express to elmshollow leaves at 15 minutes past the hour.",
+          "passed": false,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 5.0
+    },
+    {
+      "scenario": "dx-0002",
+      "family": "distractor_recall",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 2,
+      "tokens_total": 212,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "petrel",
+          "observed_normalized": "the name of the pilot boat of north harbor is captain's log.",
+          "passed": false,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 4.9
+    },
+    {
+      "scenario": "cu-0001",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 3,
+      "tokens_total": 250,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "18",
+          "observed_normalized": "the mail boat zephyr is licensed to carry 200 passengers.",
+          "passed": false,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.1
+    },
+    {
+      "scenario": "cu-0002",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 3,
+      "tokens_total": 267,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "green",
+          "observed_normalized": "the color of the beacon on thornwick hill is red.",
+          "passed": false,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.2
+    },
+    {
+      "scenario": "rt-0001",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 3,
+      "tokens_total": 285,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "bug",
+          "observed_normalized": "bug",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.5
+    },
+    {
+      "scenario": "rt-0002",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 3,
+      "tokens_total": 286,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "account",
+          "observed_normalized": "bug",
+          "passed": false,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.5
+    },
+    {
+      "scenario": "rt-0003",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 3,
+      "tokens_total": 301,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "perf",
+          "observed_normalized": "perf",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.5
+    }
+  ],
+  "probes_passed": 2,
+  "probes_total": 10,
+  "turns": 26,
+  "tokens_total": 2478,
+  "budget_stops": 0,
+  "wall_s": 60.1,
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true
+}

@@ -1,0 +1,720 @@
+{
+  "run": {
+    "run_id": "cont001-exploratory-20261002-000048",
+    "kind": "cont001-exploratory",
+    "arm": "A",
+    "arm_description": "no persistent memory (session-local context only)",
+    "created_utc": "2026-10-01T21:05:59Z",
+    "git_rev": "fccb85a7763ea535fec98c3c8c13459bc108cccf",
+    "model": "granite-code:8b",
+    "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+    "ollama_version": "0.34.2",
+    "python": "3.12.10",
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "keep_alive": "30m",
+    "seeds_predeclared": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "seeds_run": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "seeds_skipped": [],
+    "scenario_order": [
+      "dr-0001",
+      "dr-0002",
+      "dr-0003",
+      "dx-0001",
+      "dx-0002",
+      "cu-0001",
+      "cu-0002",
+      "rt-0001",
+      "rt-0002",
+      "rt-0003"
+    ],
+    "scenario_budget": {
+      "max_turns": 40,
+      "max_total_tokens": 100000,
+      "wall_clock_s": 600.0
+    },
+    "run_wall_clock_guard_s": 6000.0,
+    "arm_wall_s": 300.4,
+    "determinism_caveat": "greedy+seed does not guarantee identical outputs across batch sizes or backends (PB-071)",
+    "gpu_lock_note": "run held the shared gpu lock; wall clock (CN-002 rule) is the budget metric; total_duration is relative-only"
+  },
+  "runs": [
+    {
+      "seed": 11,
+      "run_id": "cont001-exploratory-20261002-000048-armA-seed11",
+      "dir": "seed-11",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 2,
+      "probes_total": 10,
+      "turns": 26,
+      "tokens_total": 2478,
+      "wall_s": 60.4
+    },
+    {
+      "seed": 22,
+      "run_id": "cont001-exploratory-20261002-000048-armA-seed22",
+      "dir": "seed-22",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 2,
+      "probes_total": 10,
+      "turns": 26,
+      "tokens_total": 2478,
+      "wall_s": 60.0
+    },
+    {
+      "seed": 33,
+      "run_id": "cont001-exploratory-20261002-000048-armA-seed33",
+      "dir": "seed-33",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 2,
+      "probes_total": 10,
+      "turns": 26,
+      "tokens_total": 2478,
+      "wall_s": 59.9
+    },
+    {
+      "seed": 44,
+      "run_id": "cont001-exploratory-20261002-000048-armA-seed44",
+      "dir": "seed-44",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 2,
+      "probes_total": 10,
+      "turns": 26,
+      "tokens_total": 2478,
+      "wall_s": 60.1
+    },
+    {
+      "seed": 55,
+      "run_id": "cont001-exploratory-20261002-000048-armA-seed55",
+      "dir": "seed-55",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 2,
+      "probes_total": 10,
+      "turns": 26,
+      "tokens_total": 2473,
+      "wall_s": 60.0
+    }
+  ],
+  "overall": {
+    "pass_rate_by_seed": {
+      "11": 0.2,
+      "22": 0.2,
+      "33": 0.2,
+      "44": 0.2,
+      "55": 0.2
+    },
+    "probes_per_seed": 10,
+    "spread": {
+      "min": 0.2,
+      "max": 0.2,
+      "range": 0.0,
+      "mean": 0.2
+    }
+  },
+  "per_family": {
+    "delayed_recall": {
+      "pass_rate_by_seed": {
+        "11": 0.0,
+        "22": 0.0,
+        "33": 0.0,
+        "44": 0.0,
+        "55": 0.0
+      },
+      "passed_by_seed": {
+        "11": 0,
+        "22": 0,
+        "33": 0,
+        "44": 0,
+        "55": 0
+      },
+      "probes_per_seed": 3,
+      "spread": {
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0,
+        "mean": 0.0
+      }
+    },
+    "distractor_recall": {
+      "pass_rate_by_seed": {
+        "11": 0.0,
+        "22": 0.0,
+        "33": 0.0,
+        "44": 0.0,
+        "55": 0.0
+      },
+      "passed_by_seed": {
+        "11": 0,
+        "22": 0,
+        "33": 0,
+        "44": 0,
+        "55": 0
+      },
+      "probes_per_seed": 2,
+      "spread": {
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0,
+        "mean": 0.0
+      }
+    },
+    "contradiction_update": {
+      "pass_rate_by_seed": {
+        "11": 0.0,
+        "22": 0.0,
+        "33": 0.0,
+        "44": 0.0,
+        "55": 0.0
+      },
+      "passed_by_seed": {
+        "11": 0,
+        "22": 0,
+        "33": 0,
+        "44": 0,
+        "55": 0
+      },
+      "probes_per_seed": 2,
+      "spread": {
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0,
+        "mean": 0.0
+      }
+    },
+    "repeated_task": {
+      "pass_rate_by_seed": {
+        "11": 0.667,
+        "22": 0.667,
+        "33": 0.667,
+        "44": 0.667,
+        "55": 0.667
+      },
+      "passed_by_seed": {
+        "11": 2,
+        "22": 2,
+        "33": 2,
+        "44": 2,
+        "55": 2
+      },
+      "probes_per_seed": 3,
+      "spread": {
+        "min": 0.667,
+        "max": 0.667,
+        "range": 0.0,
+        "mean": 0.667
+      }
+    }
+  },
+  "per_scenario": {
+    "dr-0001": {
+      "family": "delayed_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "7"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the verdin isle lighthouse is not mentioned in any of my records. please provide more context or clarify your question."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the verdin isle lighthouse is not mentioned in any of my records. please provide more context or clarify your question."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the verdin isle lighthouse is not mentioned in any of my records. please provide more context or clarify your question."
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the verdin isle lighthouse is not mentioned in any of my records. please provide more context or clarify your question."
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the verdin isle lighthouse is not mentioned in any of my records. please provide more context or clarify your question."
+          }
+        ]
+      }
+    },
+    "dr-0002": {
+      "family": "delayed_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "doran"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the name of the observatory assistant on mount kest is [name]."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the name of the observatory assistant on mount kest is [name]."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the name of the observatory assistant on mount kest is [name]."
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the name of the observatory assistant on mount kest is [name]."
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the observatory assistant on mount kest is dr. jane smith."
+          }
+        ]
+      }
+    },
+    "dr-0003": {
+      "family": "delayed_recall",
+      "probe_results": {
+        "s3t1": {
+          "kind": "contains",
+          "expected": "1783"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the bronze sundial in the east garden was cast in the year 1634."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the bronze sundial in the east garden was cast in the year 1634."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the bronze sundial in the east garden was cast in the year 1634."
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the bronze sundial in the east garden was cast in the year 1634."
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the bronze sundial in the east garden was cast in the year ."
+          }
+        ]
+      }
+    },
+    "dx-0001": {
+      "family": "distractor_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "20"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the express to elmshollow leaves at 15 minutes past the hour."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the express to elmshollow leaves at 15 minutes past the hour."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the express to elmshollow leaves at 15 minutes past the hour."
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the express to elmshollow leaves at 15 minutes past the hour."
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the express to elmshollow leaves at 15 minutes past the hour."
+          }
+        ]
+      }
+    },
+    "dx-0002": {
+      "family": "distractor_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "petrel"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the name of the pilot boat of north harbor is captain's log."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the name of the pilot boat of north harbor is captain's log."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the name of the pilot boat of north harbor is captain's log."
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the name of the pilot boat of north harbor is captain's log."
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "the name of the pilot boat of north harbor is captain's log."
+          }
+        ]
+      }
+    },
+    "cu-0001": {
+      "family": "contradiction_update",
+      "probe_results": {
+        "s3t1": {
+          "kind": "contains",
+          "expected": "18"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the mail boat zephyr is licensed to carry 20 passengers."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the mail boat zephyr is licensed to carry 200 passengers."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the mail boat zephyr is licensed to carry 200 passengers."
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the mail boat zephyr is licensed to carry 200 passengers."
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the mail boat zephyr is licensed to carry 200 passengers."
+          }
+        ]
+      }
+    },
+    "cu-0002": {
+      "family": "contradiction_update",
+      "probe_results": {
+        "s3t1": {
+          "kind": "contains",
+          "expected": "green"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the color of the beacon on thornwick hill is red."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the color of the beacon on thornwick hill is red."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the color of the beacon on thornwick hill is red."
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the color of the beacon on thornwick hill is red."
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s3t1",
+            "passed": false,
+            "observed_normalized": "the color of the beacon on thornwick hill is red."
+          }
+        ]
+      }
+    },
+    "rt-0001": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t1": {
+          "kind": "exact_match",
+          "expected": "bug"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "bug"
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "bug"
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "bug"
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "bug"
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "bug"
+          }
+        ]
+      }
+    },
+    "rt-0002": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t1": {
+          "kind": "exact_match",
+          "expected": "account"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ]
+      }
+    },
+    "rt-0003": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t1": {
+          "kind": "exact_match",
+          "expected": "perf"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "perf"
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "perf"
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "perf"
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "perf"
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "perf"
+          }
+        ]
+      }
+    }
+  },
+  "request_stats": {
+    "count": 130,
+    "latency_ms": {
+      "mean": 268.6,
+      "median": 183.6,
+      "p90": 472.2,
+      "p95": 537.1,
+      "min": 68.1,
+      "max": 562.4
+    },
+    "tokens": {
+      "prompt_sum": 10865,
+      "eval_sum": 1520,
+      "total_sum": 12385,
+      "prompt_mean": 83.6,
+      "eval_mean": 11.7
+    }
+  }
+}

@@ -1,0 +1,816 @@
+{
+  "run": {
+    "run_id": "cont001-exploratory-20261002-000048",
+    "kind": "cont001-exploratory",
+    "arm": "C",
+    "arm_description": "B + validated self-model summary in every session prompt",
+    "created_utc": "2026-10-01T21:16:13Z",
+    "git_rev": "fccb85a7763ea535fec98c3c8c13459bc108cccf",
+    "model": "granite-code:8b",
+    "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+    "ollama_version": "0.34.2",
+    "python": "3.12.10",
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "keep_alive": "30m",
+    "seeds_predeclared": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "seeds_run": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "seeds_skipped": [],
+    "scenario_order": [
+      "dr-0001",
+      "dr-0002",
+      "dr-0003",
+      "dx-0001",
+      "dx-0002",
+      "cu-0001",
+      "cu-0002",
+      "rt-0001",
+      "rt-0002",
+      "rt-0003"
+    ],
+    "scenario_budget": {
+      "max_turns": 40,
+      "max_total_tokens": 100000,
+      "wall_clock_s": 600.0
+    },
+    "run_wall_clock_guard_s": 6000.0,
+    "arm_wall_s": 298.2,
+    "determinism_caveat": "greedy+seed does not guarantee identical outputs across batch sizes or backends (PB-071)",
+    "gpu_lock_note": "run held the shared gpu lock; wall clock (CN-002 rule) is the budget metric; total_duration is relative-only",
+    "selfmodel": {
+      "source": "state/selfmodel.json (revision 1; per-run copies per seed)",
+      "injection_rule": "one system message immediately after the base system prompt in EVERY session; content = selfmodel.render_summary of the revision current at session start",
+      "cn009_caveat": "revision-1 capability estimates derive from the arm-B mini-pilot on THIS SAME fixture suite (seeds 11/22/33) \u2014 exploratory-only leakage, documented as CN-009; the confirmatory run must use disjoint calibration scenarios per EVALUATION-PREP.md",
+      "agent_id": "continuity/granite-code:8b@36c3c3b9683b",
+      "revision_initial": 1,
+      "sha256_initial": "67054c3f8cc9924583959d03676dea2f71a44c4ebc81df460d56fb6644d5fbc1",
+      "estimate_provenance": "labs/continuity/results/CONT-000/pilot-armB-20261001-224636/aggregate.json"
+    }
+  },
+  "runs": [
+    {
+      "seed": 11,
+      "run_id": "cont001-exploratory-20261002-000048-armC-seed11",
+      "dir": "seed-11",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 10,
+      "turns": 26,
+      "tokens_total": 14228,
+      "wall_s": 59.4,
+      "memory_episodes_total": 52
+    },
+    {
+      "seed": 22,
+      "run_id": "cont001-exploratory-20261002-000048-armC-seed22",
+      "dir": "seed-22",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 10,
+      "turns": 26,
+      "tokens_total": 14228,
+      "wall_s": 60.0,
+      "memory_episodes_total": 52
+    },
+    {
+      "seed": 33,
+      "run_id": "cont001-exploratory-20261002-000048-armC-seed33",
+      "dir": "seed-33",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 10,
+      "turns": 26,
+      "tokens_total": 14228,
+      "wall_s": 59.3,
+      "memory_episodes_total": 52
+    },
+    {
+      "seed": 44,
+      "run_id": "cont001-exploratory-20261002-000048-armC-seed44",
+      "dir": "seed-44",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 10,
+      "turns": 26,
+      "tokens_total": 14228,
+      "wall_s": 59.7,
+      "memory_episodes_total": 52
+    },
+    {
+      "seed": 55,
+      "run_id": "cont001-exploratory-20261002-000048-armC-seed55",
+      "dir": "seed-55",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 10,
+      "turns": 26,
+      "tokens_total": 14228,
+      "wall_s": 59.8,
+      "memory_episodes_total": 52
+    }
+  ],
+  "overall": {
+    "pass_rate_by_seed": {
+      "11": 0.8,
+      "22": 0.8,
+      "33": 0.8,
+      "44": 0.8,
+      "55": 0.8
+    },
+    "probes_per_seed": 10,
+    "spread": {
+      "min": 0.8,
+      "max": 0.8,
+      "range": 0.0,
+      "mean": 0.8
+    }
+  },
+  "per_family": {
+    "delayed_recall": {
+      "pass_rate_by_seed": {
+        "11": 1.0,
+        "22": 1.0,
+        "33": 1.0,
+        "44": 1.0,
+        "55": 1.0
+      },
+      "passed_by_seed": {
+        "11": 3,
+        "22": 3,
+        "33": 3,
+        "44": 3,
+        "55": 3
+      },
+      "probes_per_seed": 3,
+      "spread": {
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0,
+        "mean": 1.0
+      }
+    },
+    "distractor_recall": {
+      "pass_rate_by_seed": {
+        "11": 1.0,
+        "22": 1.0,
+        "33": 1.0,
+        "44": 1.0,
+        "55": 1.0
+      },
+      "passed_by_seed": {
+        "11": 2,
+        "22": 2,
+        "33": 2,
+        "44": 2,
+        "55": 2
+      },
+      "probes_per_seed": 2,
+      "spread": {
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0,
+        "mean": 1.0
+      }
+    },
+    "contradiction_update": {
+      "pass_rate_by_seed": {
+        "11": 1.0,
+        "22": 1.0,
+        "33": 1.0,
+        "44": 1.0,
+        "55": 1.0
+      },
+      "passed_by_seed": {
+        "11": 2,
+        "22": 2,
+        "33": 2,
+        "44": 2,
+        "55": 2
+      },
+      "probes_per_seed": 2,
+      "spread": {
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0,
+        "mean": 1.0
+      }
+    },
+    "repeated_task": {
+      "pass_rate_by_seed": {
+        "11": 0.333,
+        "22": 0.333,
+        "33": 0.333,
+        "44": 0.333,
+        "55": 0.333
+      },
+      "passed_by_seed": {
+        "11": 1,
+        "22": 1,
+        "33": 1,
+        "44": 1,
+        "55": 1
+      },
+      "probes_per_seed": 3,
+      "spread": {
+        "min": 0.333,
+        "max": 0.333,
+        "range": 0.0,
+        "mean": 0.333
+      }
+    }
+  },
+  "per_scenario": {
+    "dr-0001": {
+      "family": "delayed_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "7"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "7"
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "7"
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "7"
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "7"
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "7"
+          }
+        ]
+      }
+    },
+    "dr-0002": {
+      "family": "delayed_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "doran"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "doran"
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "doran"
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "doran"
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "doran"
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "doran"
+          }
+        ]
+      }
+    },
+    "dr-0003": {
+      "family": "delayed_recall",
+      "probe_results": {
+        "s3t1": {
+          "kind": "contains",
+          "expected": "1783"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze sundial in the east garden was cast in 1783."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze sundial in the east garden was cast in 1783."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze sundial in the east garden was cast in 1783."
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze sundial in the east garden was cast in 1783."
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the bronze sundial in the east garden was cast in 1783."
+          }
+        ]
+      }
+    },
+    "dx-0001": {
+      "family": "distractor_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "20"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the express to elmshollow leaves at 20 minutes past the hour."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the express to elmshollow leaves at 20 minutes past the hour."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the express to elmshollow leaves at 20 minutes past the hour."
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the express to elmshollow leaves at 20 minutes past the hour."
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the express to elmshollow leaves at 20 minutes past the hour."
+          }
+        ]
+      }
+    },
+    "dx-0002": {
+      "family": "distractor_recall",
+      "probe_results": {
+        "s2t1": {
+          "kind": "contains",
+          "expected": "petrel"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the pilot boat of north harbor is called the petrel."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the pilot boat of north harbor is called the petrel."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the pilot boat of north harbor is called the petrel."
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the pilot boat of north harbor is called the petrel."
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "the pilot boat of north harbor is called the petrel."
+          }
+        ]
+      }
+    },
+    "cu-0001": {
+      "family": "contradiction_update",
+      "probe_results": {
+        "s3t1": {
+          "kind": "contains",
+          "expected": "18"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the mail boat zephyr is licensed to carry 18 passengers."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the mail boat zephyr is licensed to carry 18 passengers."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the mail boat zephyr is licensed to carry 18 passengers."
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the mail boat zephyr is licensed to carry 18 passengers."
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the mail boat zephyr is licensed to carry 18 passengers."
+          }
+        ]
+      }
+    },
+    "cu-0002": {
+      "family": "contradiction_update",
+      "probe_results": {
+        "s3t1": {
+          "kind": "contains",
+          "expected": "green"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the beacon on thornwick hill flashes green."
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the beacon on thornwick hill flashes green."
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the beacon on thornwick hill flashes green."
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the beacon on thornwick hill flashes green."
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s3t1",
+            "passed": true,
+            "observed_normalized": "the beacon on thornwick hill flashes green."
+          }
+        ]
+      }
+    },
+    "rt-0001": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t1": {
+          "kind": "exact_match",
+          "expected": "bug"
+        }
+      },
+      "pass_count": 5,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "bug"
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "bug"
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "bug"
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "bug"
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s2t1",
+            "passed": true,
+            "observed_normalized": "bug"
+          }
+        ]
+      }
+    },
+    "rt-0002": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t1": {
+          "kind": "exact_match",
+          "expected": "account"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ]
+      }
+    },
+    "rt-0003": {
+      "family": "repeated_task",
+      "probe_results": {
+        "s2t1": {
+          "kind": "exact_match",
+          "expected": "perf"
+        }
+      },
+      "pass_count": 0,
+      "observations_by_seed": {
+        "11": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "22": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "33": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "44": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ],
+        "55": [
+          {
+            "turn_ref": "s2t1",
+            "passed": false,
+            "observed_normalized": "bug"
+          }
+        ]
+      }
+    }
+  },
+  "request_stats": {
+    "count": 130,
+    "latency_ms": {
+      "mean": 244.6,
+      "median": 178.8,
+      "p90": 495.1,
+      "p95": 569.7,
+      "min": 84.3,
+      "max": 778.0
+    },
+    "tokens": {
+      "prompt_sum": 69985,
+      "eval_sum": 1155,
+      "total_sum": 71140,
+      "prompt_mean": 538.3,
+      "eval_mean": 8.9
+    }
+  },
+  "memory_stats": [
+    {
+      "seed": 11,
+      "appended_events": 52,
+      "injected_episodes_by_scenario": {
+        "dr-0001": 1,
+        "dr-0002": 1,
+        "dr-0003": 3,
+        "dx-0001": 2,
+        "dx-0002": 1,
+        "cu-0001": 4,
+        "cu-0002": 4,
+        "rt-0001": 3,
+        "rt-0002": 3,
+        "rt-0003": 3
+      }
+    },
+    {
+      "seed": 22,
+      "appended_events": 52,
+      "injected_episodes_by_scenario": {
+        "dr-0001": 1,
+        "dr-0002": 1,
+        "dr-0003": 3,
+        "dx-0001": 2,
+        "dx-0002": 1,
+        "cu-0001": 4,
+        "cu-0002": 4,
+        "rt-0001": 3,
+        "rt-0002": 3,
+        "rt-0003": 3
+      }
+    },
+    {
+      "seed": 33,
+      "appended_events": 52,
+      "injected_episodes_by_scenario": {
+        "dr-0001": 1,
+        "dr-0002": 1,
+        "dr-0003": 3,
+        "dx-0001": 2,
+        "dx-0002": 1,
+        "cu-0001": 4,
+        "cu-0002": 4,
+        "rt-0001": 3,
+        "rt-0002": 3,
+        "rt-0003": 3
+      }
+    },
+    {
+      "seed": 44,
+      "appended_events": 52,
+      "injected_episodes_by_scenario": {
+        "dr-0001": 1,
+        "dr-0002": 1,
+        "dr-0003": 3,
+        "dx-0001": 2,
+        "dx-0002": 1,
+        "cu-0001": 4,
+        "cu-0002": 4,
+        "rt-0001": 3,
+        "rt-0002": 3,
+        "rt-0003": 3
+      }
+    },
+    {
+      "seed": 55,
+      "appended_events": 52,
+      "injected_episodes_by_scenario": {
+        "dr-0001": 1,
+        "dr-0002": 1,
+        "dr-0003": 3,
+        "dx-0001": 2,
+        "dx-0002": 1,
+        "cu-0001": 4,
+        "cu-0002": 4,
+        "rt-0001": 3,
+        "rt-0002": 3,
+        "rt-0003": 3
+      }
+    }
+  ]
+}

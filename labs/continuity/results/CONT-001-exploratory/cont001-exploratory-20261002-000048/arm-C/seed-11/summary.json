@@ -1,0 +1,252 @@
+{
+  "run_id": "cont001-exploratory-20261002-000048-armC-seed11",
+  "seed": 11,
+  "arm": "C",
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-0001",
+      "family": "delayed_recall",
+      "arm": "C",
+      "sessions_planned": 2,
+      "memory_episodes": 4,
+      "turns": 2,
+      "tokens_total": 1082,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "7",
+          "observed_normalized": "7",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 4.4
+    },
+    {
+      "scenario": "dr-0002",
+      "family": "delayed_recall",
+      "arm": "C",
+      "sessions_planned": 2,
+      "memory_episodes": 4,
+      "turns": 2,
+      "tokens_total": 1051,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "doran",
+          "observed_normalized": "doran",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 4.4
+    },
+    {
+      "scenario": "dr-0003",
+      "family": "delayed_recall",
+      "arm": "C",
+      "sessions_planned": 3,
+      "memory_episodes": 6,
+      "turns": 3,
+      "tokens_total": 1652,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "1783",
+          "observed_normalized": "the bronze sundial in the east garden was cast in 1783.",
+          "passed": true,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.9
+    },
+    {
+      "scenario": "dx-0001",
+      "family": "distractor_recall",
+      "arm": "C",
+      "sessions_planned": 2,
+      "memory_episodes": 4,
+      "turns": 2,
+      "tokens_total": 1140,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "20",
+          "observed_normalized": "the express to elmshollow leaves at 20 minutes past the hour.",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 5.0
+    },
+    {
+      "scenario": "dx-0002",
+      "family": "distractor_recall",
+      "arm": "C",
+      "sessions_planned": 2,
+      "memory_episodes": 4,
+      "turns": 2,
+      "tokens_total": 1088,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "petrel",
+          "observed_normalized": "the pilot boat of north harbor is called the petrel.",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 4.6
+    },
+    {
+      "scenario": "cu-0001",
+      "family": "contradiction_update",
+      "arm": "C",
+      "sessions_planned": 3,
+      "memory_episodes": 6,
+      "turns": 3,
+      "tokens_total": 1685,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "18",
+          "observed_normalized": "the mail boat zephyr is licensed to carry 18 passengers.",
+          "passed": true,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.3
+    },
+    {
+      "scenario": "cu-0002",
+      "family": "contradiction_update",
+      "arm": "C",
+      "sessions_planned": 3,
+      "memory_episodes": 6,
+      "turns": 3,
+      "tokens_total": 1665,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "green",
+          "observed_normalized": "the beacon on thornwick hill flashes green.",
+          "passed": true,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 7.0
+    },
+    {
+      "scenario": "rt-0001",
+      "family": "repeated_task",
+      "arm": "C",
+      "sessions_planned": 2,
+      "memory_episodes": 6,
+      "turns": 3,
+      "tokens_total": 1612,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "bug",
+          "observed_normalized": "bug",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.6
+    },
+    {
+      "scenario": "rt-0002",
+      "family": "repeated_task",
+      "arm": "C",
+      "sessions_planned": 2,
+      "memory_episodes": 6,
+      "turns": 3,
+      "tokens_total": 1611,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "account",
+          "observed_normalized": "bug",
+          "passed": false,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.6
+    },
+    {
+      "scenario": "rt-0003",
+      "family": "repeated_task",
+      "arm": "C",
+      "sessions_planned": 2,
+      "memory_episodes": 6,
+      "turns": 3,
+      "tokens_total": 1642,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "perf",
+          "observed_normalized": "bug",
+          "passed": false,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.7
+    }
+  ],
+  "probes_passed": 8,
+  "probes_total": 10,
+  "turns": 26,
+  "tokens_total": 14228,
+  "budget_stops": 0,
+  "wall_s": 59.4,
+  "memory_episodes_total": 52,
+  "memory_export": "memory-export.json",
+  "selfmodel_revision_initial": 1,
+  "selfmodel_sha256_initial": "67054c3f8cc9924583959d03676dea2f71a44c4ebc81df460d56fb6644d5fbc1",
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true
+}

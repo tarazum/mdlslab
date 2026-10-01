@@ -1,0 +1,92 @@
+{
+  "kind": "cont001-exploratory-pilot-consistency",
+  "run_id": "cont001-exploratory-20261002-000048",
+  "created_utc": "2026-10-01T21:26:32Z",
+  "comparison": "per-scenario, per-seed probe outcome vectors (fixtures and arm code unchanged)",
+  "arms": {
+    "A": {
+      "pilot": "results/CONT-000/pilot-armA-20261001-222950/aggregate.json",
+      "pilot_seeds": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "overlapping_seeds": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "scenario_seed_outcomes_compared": 50,
+      "identical": 50,
+      "mismatches": []
+    },
+    "B": {
+      "pilot": "results/CONT-000/pilot-armB-20261001-224636/aggregate.json",
+      "pilot_seeds": [
+        11,
+        22,
+        33
+      ],
+      "overlapping_seeds": [
+        11,
+        22,
+        33
+      ],
+      "scenario_seed_outcomes_compared": 30,
+      "identical": 30,
+      "mismatches": []
+    },
+    "C": {
+      "pilot": "results/CONT-000/pilot-armC-20261001-231050/aggregate.json",
+      "pilot_seeds": [
+        11,
+        22,
+        33
+      ],
+      "overlapping_seeds": [
+        11,
+        22,
+        33
+      ],
+      "scenario_seed_outcomes_compared": 30,
+      "identical": 30,
+      "mismatches": []
+    },
+    "D": {
+      "pilot": "results/CONT-000/pilot-armD-20261001-233203/aggregate.json",
+      "pilot_seeds": [
+        11,
+        22,
+        33
+      ],
+      "overlapping_seeds": [
+        11,
+        22,
+        33
+      ],
+      "scenario_seed_outcomes_compared": 30,
+      "identical": 30,
+      "mismatches": []
+    },
+    "E": {
+      "pilot": "results/CONT-000/pilot-armE-20261001-234851/aggregate.json",
+      "pilot_seeds": [
+        11,
+        22,
+        33
+      ],
+      "overlapping_seeds": [
+        11,
+        22,
+        33
+      ],
+      "scenario_seed_outcomes_compared": 30,
+      "identical": 30,
+      "mismatches": []
+    }
+  }
+}

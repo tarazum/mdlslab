@@ -1,0 +1,666 @@
+{
+  "kind": "cont001-exploratory-cross-arm-table",
+  "exploratory": true,
+  "created_utc": "2026-10-01T21:26:32Z",
+  "run_id": "cont001-exploratory-20261002-000048",
+  "config": {
+    "model": "granite-code:8b",
+    "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+    "ollama_version": "0.34.2",
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "seeds_predeclared": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "seed_count_rationale": "docs/SIZING.md recommendation: 5 seeds",
+    "arms": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "scenario_order": [
+      "dr-0001",
+      "dr-0002",
+      "dr-0003",
+      "dx-0001",
+      "dx-0002",
+      "cu-0001",
+      "cu-0002",
+      "rt-0001",
+      "rt-0002",
+      "rt-0003"
+    ],
+    "families": [
+      "contradiction_update",
+      "delayed_recall",
+      "distractor_recall",
+      "repeated_task"
+    ],
+    "scenarios": 10,
+    "turns_per_seed": 26,
+    "probes_per_seed": 10,
+    "one_warm_process": true,
+    "sampling_options_in_every_request": true
+  },
+  "time_budget": {
+    "total_gpu_wall_s": 1543.5,
+    "script_wall_s": 1543.5,
+    "warmup_s": 2.4,
+    "budget_gpu_cap_min": 180,
+    "budget_wall_cap_min": 150,
+    "gpu_metric_note": "CN-002 rule: wall clock under the shared GPU lock is the GPU occupancy metric; Ollama total_duration is relative-only"
+  },
+  "gpu_at_start": {
+    "nvidia_smi_used_mib": 5876,
+    "ollama_ps": [
+      {
+        "name": "granite-code:8b",
+        "digest": "36c3c3b9683b",
+        "size_vram_mib": 5064.6
+      }
+    ]
+  },
+  "arms": {
+    "A": {
+      "seeds_predeclared": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "seeds_run": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "seeds_skipped": [],
+      "requests": 130,
+      "overall": {
+        "mean_pass_rate": 0.2,
+        "spread_range": 0.0,
+        "pass_rate_by_seed": {
+          "11": 0.2,
+          "22": 0.2,
+          "33": 0.2,
+          "44": 0.2,
+          "55": 0.2
+        },
+        "probes_passed_total": "10/50"
+      },
+      "families": {
+        "delayed_recall": {
+          "probes_per_seed": 3,
+          "mean_pass_rate": 0.0,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 0.0,
+            "22": 0.0,
+            "33": 0.0,
+            "44": 0.0,
+            "55": 0.0
+          }
+        },
+        "distractor_recall": {
+          "probes_per_seed": 2,
+          "mean_pass_rate": 0.0,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 0.0,
+            "22": 0.0,
+            "33": 0.0,
+            "44": 0.0,
+            "55": 0.0
+          }
+        },
+        "contradiction_update": {
+          "probes_per_seed": 2,
+          "mean_pass_rate": 0.0,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 0.0,
+            "22": 0.0,
+            "33": 0.0,
+            "44": 0.0,
+            "55": 0.0
+          }
+        },
+        "repeated_task": {
+          "probes_per_seed": 3,
+          "mean_pass_rate": 0.667,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 0.667,
+            "22": 0.667,
+            "33": 0.667,
+            "44": 0.667,
+            "55": 0.667
+          }
+        }
+      },
+      "per_scenario_pass_count": {
+        "dr-0001": 0,
+        "dr-0002": 0,
+        "dr-0003": 0,
+        "dx-0001": 0,
+        "dx-0002": 0,
+        "cu-0001": 0,
+        "cu-0002": 0,
+        "rt-0001": 5,
+        "rt-0002": 0,
+        "rt-0003": 5
+      },
+      "tokens": {
+        "prompt_sum": 10865,
+        "eval_sum": 1520,
+        "total_sum": 12385,
+        "per_seed_mean": 2477.0,
+        "prompt_mean_per_request": 83.6,
+        "eval_mean_per_request": 11.7
+      },
+      "wall_s_by_seed": {
+        "11": 60.4,
+        "22": 60.0,
+        "33": 59.9,
+        "44": 60.1,
+        "55": 60.0
+      },
+      "arm_wall_s": 300.4,
+      "latency_ms_mean_p95": [
+        268.6,
+        537.1
+      ]
+    },
+    "B": {
+      "seeds_predeclared": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "seeds_run": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "seeds_skipped": [],
+      "requests": 130,
+      "overall": {
+        "mean_pass_rate": 0.7,
+        "spread_range": 0.0,
+        "pass_rate_by_seed": {
+          "11": 0.7,
+          "22": 0.7,
+          "33": 0.7,
+          "44": 0.7,
+          "55": 0.7
+        },
+        "probes_passed_total": "35/50"
+      },
+      "families": {
+        "delayed_recall": {
+          "probes_per_seed": 3,
+          "mean_pass_rate": 1.0,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 1.0,
+            "22": 1.0,
+            "33": 1.0,
+            "44": 1.0,
+            "55": 1.0
+          }
+        },
+        "distractor_recall": {
+          "probes_per_seed": 2,
+          "mean_pass_rate": 1.0,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 1.0,
+            "22": 1.0,
+            "33": 1.0,
+            "44": 1.0,
+            "55": 1.0
+          }
+        },
+        "contradiction_update": {
+          "probes_per_seed": 2,
+          "mean_pass_rate": 0.5,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 0.5,
+            "22": 0.5,
+            "33": 0.5,
+            "44": 0.5,
+            "55": 0.5
+          }
+        },
+        "repeated_task": {
+          "probes_per_seed": 3,
+          "mean_pass_rate": 0.333,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 0.333,
+            "22": 0.333,
+            "33": 0.333,
+            "44": 0.333,
+            "55": 0.333
+          }
+        }
+      },
+      "per_scenario_pass_count": {
+        "dr-0001": 5,
+        "dr-0002": 5,
+        "dr-0003": 5,
+        "dx-0001": 5,
+        "dx-0002": 5,
+        "cu-0001": 0,
+        "cu-0002": 5,
+        "rt-0001": 5,
+        "rt-0002": 0,
+        "rt-0003": 0
+      },
+      "tokens": {
+        "prompt_sum": 18885,
+        "eval_sum": 1051,
+        "total_sum": 19936,
+        "per_seed_mean": 3987.2,
+        "prompt_mean_per_request": 145.3,
+        "eval_mean_per_request": 8.1
+      },
+      "wall_s_by_seed": {
+        "11": 60.9,
+        "22": 59.2,
+        "33": 58.7,
+        "44": 58.2,
+        "55": 58.0
+      },
+      "arm_wall_s": 295.0,
+      "latency_ms_mean_p95": [
+        215.9,
+        465.2
+      ]
+    },
+    "C": {
+      "seeds_predeclared": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "seeds_run": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "seeds_skipped": [],
+      "requests": 130,
+      "overall": {
+        "mean_pass_rate": 0.8,
+        "spread_range": 0.0,
+        "pass_rate_by_seed": {
+          "11": 0.8,
+          "22": 0.8,
+          "33": 0.8,
+          "44": 0.8,
+          "55": 0.8
+        },
+        "probes_passed_total": "40/50"
+      },
+      "families": {
+        "delayed_recall": {
+          "probes_per_seed": 3,
+          "mean_pass_rate": 1.0,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 1.0,
+            "22": 1.0,
+            "33": 1.0,
+            "44": 1.0,
+            "55": 1.0
+          }
+        },
+        "distractor_recall": {
+          "probes_per_seed": 2,
+          "mean_pass_rate": 1.0,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 1.0,
+            "22": 1.0,
+            "33": 1.0,
+            "44": 1.0,
+            "55": 1.0
+          }
+        },
+        "contradiction_update": {
+          "probes_per_seed": 2,
+          "mean_pass_rate": 1.0,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 1.0,
+            "22": 1.0,
+            "33": 1.0,
+            "44": 1.0,
+            "55": 1.0
+          }
+        },
+        "repeated_task": {
+          "probes_per_seed": 3,
+          "mean_pass_rate": 0.333,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 0.333,
+            "22": 0.333,
+            "33": 0.333,
+            "44": 0.333,
+            "55": 0.333
+          }
+        }
+      },
+      "per_scenario_pass_count": {
+        "dr-0001": 5,
+        "dr-0002": 5,
+        "dr-0003": 5,
+        "dx-0001": 5,
+        "dx-0002": 5,
+        "cu-0001": 5,
+        "cu-0002": 5,
+        "rt-0001": 5,
+        "rt-0002": 0,
+        "rt-0003": 0
+      },
+      "tokens": {
+        "prompt_sum": 69985,
+        "eval_sum": 1155,
+        "total_sum": 71140,
+        "per_seed_mean": 14228.0,
+        "prompt_mean_per_request": 538.3,
+        "eval_mean_per_request": 8.9
+      },
+      "wall_s_by_seed": {
+        "11": 59.4,
+        "22": 60.0,
+        "33": 59.3,
+        "44": 59.7,
+        "55": 59.8
+      },
+      "arm_wall_s": 298.2,
+      "latency_ms_mean_p95": [
+        244.6,
+        569.7
+      ]
+    },
+    "D": {
+      "seeds_predeclared": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "seeds_run": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "seeds_skipped": [],
+      "requests": 130,
+      "overall": {
+        "mean_pass_rate": 0.8,
+        "spread_range": 0.0,
+        "pass_rate_by_seed": {
+          "11": 0.8,
+          "22": 0.8,
+          "33": 0.8,
+          "44": 0.8,
+          "55": 0.8
+        },
+        "probes_passed_total": "40/50"
+      },
+      "families": {
+        "delayed_recall": {
+          "probes_per_seed": 3,
+          "mean_pass_rate": 1.0,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 1.0,
+            "22": 1.0,
+            "33": 1.0,
+            "44": 1.0,
+            "55": 1.0
+          }
+        },
+        "distractor_recall": {
+          "probes_per_seed": 2,
+          "mean_pass_rate": 1.0,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 1.0,
+            "22": 1.0,
+            "33": 1.0,
+            "44": 1.0,
+            "55": 1.0
+          }
+        },
+        "contradiction_update": {
+          "probes_per_seed": 2,
+          "mean_pass_rate": 1.0,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 1.0,
+            "22": 1.0,
+            "33": 1.0,
+            "44": 1.0,
+            "55": 1.0
+          }
+        },
+        "repeated_task": {
+          "probes_per_seed": 3,
+          "mean_pass_rate": 0.333,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 0.333,
+            "22": 0.333,
+            "33": 0.333,
+            "44": 0.333,
+            "55": 0.333
+          }
+        }
+      },
+      "per_scenario_pass_count": {
+        "dr-0001": 5,
+        "dr-0002": 5,
+        "dr-0003": 5,
+        "dx-0001": 5,
+        "dx-0002": 5,
+        "cu-0001": 5,
+        "cu-0002": 5,
+        "rt-0001": 5,
+        "rt-0002": 0,
+        "rt-0003": 0
+      },
+      "tokens": {
+        "prompt_sum": 84671,
+        "eval_sum": 1025,
+        "total_sum": 85696,
+        "per_seed_mean": 17139.2,
+        "prompt_mean_per_request": 651.3,
+        "eval_mean_per_request": 7.9
+      },
+      "wall_s_by_seed": {
+        "11": 59.1,
+        "22": 59.1,
+        "33": 60.2,
+        "44": 60.1,
+        "55": 59.8
+      },
+      "arm_wall_s": 298.3,
+      "latency_ms_mean_p95": [
+        234.9,
+        492.2
+      ]
+    },
+    "E": {
+      "seeds_predeclared": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "seeds_run": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "seeds_skipped": [],
+      "requests": 130,
+      "overall": {
+        "mean_pass_rate": 0.8,
+        "spread_range": 0.0,
+        "pass_rate_by_seed": {
+          "11": 0.8,
+          "22": 0.8,
+          "33": 0.8,
+          "44": 0.8,
+          "55": 0.8
+        },
+        "probes_passed_total": "40/50"
+      },
+      "families": {
+        "delayed_recall": {
+          "probes_per_seed": 3,
+          "mean_pass_rate": 1.0,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 1.0,
+            "22": 1.0,
+            "33": 1.0,
+            "44": 1.0,
+            "55": 1.0
+          }
+        },
+        "distractor_recall": {
+          "probes_per_seed": 2,
+          "mean_pass_rate": 1.0,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 1.0,
+            "22": 1.0,
+            "33": 1.0,
+            "44": 1.0,
+            "55": 1.0
+          }
+        },
+        "contradiction_update": {
+          "probes_per_seed": 2,
+          "mean_pass_rate": 1.0,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 1.0,
+            "22": 1.0,
+            "33": 1.0,
+            "44": 1.0,
+            "55": 1.0
+          }
+        },
+        "repeated_task": {
+          "probes_per_seed": 3,
+          "mean_pass_rate": 0.333,
+          "spread_range": 0.0,
+          "pass_rate_by_seed": {
+            "11": 0.333,
+            "22": 0.333,
+            "33": 0.333,
+            "44": 0.333,
+            "55": 0.333
+          }
+        }
+      },
+      "per_scenario_pass_count": {
+        "dr-0001": 5,
+        "dr-0002": 5,
+        "dr-0003": 5,
+        "dx-0001": 5,
+        "dx-0002": 5,
+        "cu-0001": 5,
+        "cu-0002": 5,
+        "rt-0001": 5,
+        "rt-0002": 0,
+        "rt-0003": 0
+      },
+      "tokens": {
+        "prompt_sum": 84671,
+        "eval_sum": 1025,
+        "total_sum": 85696,
+        "per_seed_mean": 17139.2,
+        "prompt_mean_per_request": 651.3,
+        "eval_mean_per_request": 7.9
+      },
+      "wall_s_by_seed": {
+        "11": 59.6,
+        "22": 59.9,
+        "33": 59.9,
+        "44": 60.0,
+        "55": 60.0
+      },
+      "arm_wall_s": 299.4,
+      "latency_ms_mean_p95": [
+        242.9,
+        569.7
+      ]
+    }
+  },
+  "notes": [
+    "EXPLORATORY only \u2014 input to docs/EVALUATION-PREP.md, not a confirmatory result.",
+    "CN-004: rt-0003 option leakage inflates arm A (and any arm answering 'perf' without memory of its own 'bug').",
+    "CN-007: repeated_task flat at 0.333 for arms B-E in the M2-M5 pilots (own-answer anchoring).",
+    "CN-009: arm C-E self-model revision 1 was estimated on this same fixture suite (arm-B mini-pilot) \u2014 leakage documented, exploratory only.",
+    "CN-010: arm-E policy actuation surface empty on this suite (all probes are session-first turns).",
+    "CN-003: temperature 0.0 does not fully determinize outputs across seeds; spread columns carry the observed seed variation."
+  ],
+  "pilot_consistency_summary": {
+    "A": {
+      "identical": 50,
+      "compared": 50,
+      "mismatches": 0
+    },
+    "B": {
+      "identical": 30,
+      "compared": 30,
+      "mismatches": 0
+    },
+    "C": {
+      "identical": 30,
+      "compared": 30,
+      "mismatches": 0
+    },
+    "D": {
+      "identical": 30,
+      "compared": 30,
+      "mismatches": 0
+    },
+    "E": {
+      "identical": 30,
+      "compared": 30,
+      "mismatches": 0
+    }
+  }
+}

@@ -1,0 +1,364 @@
+{
+  "agentId": "continuity/granite-code:8b@36c3c3b9683b",
+  "capabilities": [
+    {
+      "binomial_sd": 0.1712,
+      "family": "contradiction_update",
+      "passed": 5,
+      "probes_per_seed": 2,
+      "provenance": {
+        "method": "reflection (M4, deterministic): cumulative in-run probe counts after family completion; CN-009 exposure \u2014 renders into later sessions of the same run",
+        "numbers": {
+          "observed_passed": 2,
+          "observed_total": 2,
+          "observed_turn_refs": [
+            "s3t1",
+            "s3t1"
+          ],
+          "previous": {
+            "passed": 3,
+            "total": 6
+          },
+          "seed": 44
+        },
+        "source_artifact": "cont001-exploratory-20261002-000048-armD-seed44/summary.json"
+      },
+      "rate": 0.625,
+      "seeds": [
+        11,
+        22,
+        33,
+        44
+      ],
+      "total": 8,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.863,
+        "low": 0.306
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "delayed_recall",
+      "passed": 12,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "reflection (M4, deterministic): cumulative in-run probe counts after family completion; CN-009 exposure \u2014 renders into later sessions of the same run",
+        "numbers": {
+          "observed_passed": 3,
+          "observed_total": 3,
+          "observed_turn_refs": [
+            "s2t1",
+            "s2t1",
+            "s3t1"
+          ],
+          "previous": {
+            "passed": 9,
+            "total": 9
+          },
+          "seed": 44
+        },
+        "source_artifact": "cont001-exploratory-20261002-000048-armD-seed44/summary.json"
+      },
+      "rate": 1.0,
+      "seeds": [
+        11,
+        22,
+        33,
+        44
+      ],
+      "total": 12,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 1.0,
+        "low": 0.758
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "distractor_recall",
+      "passed": 8,
+      "probes_per_seed": 2,
+      "provenance": {
+        "method": "reflection (M4, deterministic): cumulative in-run probe counts after family completion; CN-009 exposure \u2014 renders into later sessions of the same run",
+        "numbers": {
+          "observed_passed": 2,
+          "observed_total": 2,
+          "observed_turn_refs": [
+            "s2t1",
+            "s2t1"
+          ],
+          "previous": {
+            "passed": 6,
+            "total": 6
+          },
+          "seed": 44
+        },
+        "source_artifact": "cont001-exploratory-20261002-000048-armD-seed44/summary.json"
+      },
+      "rate": 1.0,
+      "seeds": [
+        11,
+        22,
+        33,
+        44
+      ],
+      "total": 8,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 1.0,
+        "low": 0.676
+      }
+    },
+    {
+      "binomial_sd": 0.1361,
+      "family": "repeated_task",
+      "passed": 4,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "reflection (M4, deterministic): cumulative in-run probe counts after family completion; CN-009 exposure \u2014 renders into later sessions of the same run",
+        "numbers": {
+          "observed_passed": 1,
+          "observed_total": 3,
+          "observed_turn_refs": [
+            "s2t1",
+            "s2t1",
+            "s2t1"
+          ],
+          "previous": {
+            "passed": 3,
+            "total": 9
+          },
+          "seed": 44
+        },
+        "source_artifact": "cont001-exploratory-20261002-000048-armD-seed44/summary.json"
+      },
+      "rate": 0.333,
+      "seeds": [
+        11,
+        22,
+        33,
+        44
+      ],
+      "total": 12,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.609,
+        "low": 0.138
+      }
+    }
+  ],
+  "createdUtc": "2026-10-01T20:08:41Z",
+  "format": "continuity-selfmodel",
+  "history": [
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 3,
+          "total": 6
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "distractor_recall": {
+          "passed": 6,
+          "total": 6
+        },
+        "repeated_task": {
+          "passed": 3,
+          "total": 9
+        }
+      },
+      "revision": 1,
+      "updatedUtc": "2026-10-01T20:08:41Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 3,
+          "total": 6
+        },
+        "delayed_recall": {
+          "passed": 12,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 6,
+          "total": 6
+        },
+        "repeated_task": {
+          "passed": 3,
+          "total": 9
+        }
+      },
+      "revision": 2,
+      "updatedUtc": "2026-10-01T21:19:34Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 3,
+          "total": 6
+        },
+        "delayed_recall": {
+          "passed": 12,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 8,
+          "total": 8
+        },
+        "repeated_task": {
+          "passed": 3,
+          "total": 9
+        }
+      },
+      "revision": 3,
+      "updatedUtc": "2026-10-01T21:19:44Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 5,
+          "total": 8
+        },
+        "delayed_recall": {
+          "passed": 12,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 8,
+          "total": 8
+        },
+        "repeated_task": {
+          "passed": 3,
+          "total": 9
+        }
+      },
+      "revision": 4,
+      "updatedUtc": "2026-10-01T21:19:58Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 5,
+          "total": 8
+        },
+        "delayed_recall": {
+          "passed": 12,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 8,
+          "total": 8
+        },
+        "repeated_task": {
+          "passed": 3,
+          "total": 9
+        }
+      },
+      "revision": 5,
+      "updatedUtc": "2026-10-01T21:20:11Z"
+    }
+  ],
+  "knownFailurePatterns": [
+    {
+      "evidence": {
+        "numbers": {
+          "family": "repeated_task",
+          "observed_normalized": [
+            "bug"
+          ],
+          "pass_count": 0,
+          "scenario": "rt-0003",
+          "seeds": 3
+        },
+        "refs": [
+          "labs/continuity/docs/FINDINGS.md#CN-007",
+          "labs/continuity/LOG.md (M2 result, 2026-10-01 22:50)"
+        ]
+      },
+      "id": "CN-007",
+      "pattern": "The agent's own early answers, once stored in persistent memory, anchor later answers even when a later session supplies the correcting rubric; an early misclassification can repeat across sessions instead of being revised.",
+      "title": "own-answer anchoring"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "family": "contradiction_update",
+          "observed_normalized": [
+            "12"
+          ],
+          "pass_count": 0,
+          "scenario": "cu-0001",
+          "seeds": 3
+        },
+        "refs": [
+          "labs/continuity/docs/FINDINGS.md#CN-008",
+          "labs/continuity/LOG.md (M2 result, 2026-10-01 22:50)"
+        ]
+      },
+      "id": "CN-008",
+      "pattern": "When a later session corrects an earlier fact, keyword memory recalls both versions and the superseded value may be repeated even though the correction was retrieved first; conflict resolution is the gap.",
+      "title": "no supersession of corrected facts"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "account",
+          "family": "repeated_task",
+          "observed_normalized": [
+            "bug"
+          ],
+          "pass_count": 0,
+          "scenario": "rt-0002",
+          "seed": 44,
+          "seeds": 1,
+          "turn_ref": "s2t1"
+        },
+        "refs": [
+          "cont001-exploratory-20261002-000048-armD-seed44/summary.json (reflection pass 21, proposal P-0038)"
+        ]
+      },
+      "id": "REF-0038",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t1 in scenario rt-0002 (family repeated_task) was answered 'bug' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: repeated_task / rt-0002"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "perf",
+          "family": "repeated_task",
+          "observed_normalized": [
+            "bug"
+          ],
+          "pass_count": 0,
+          "scenario": "rt-0003",
+          "seed": 44,
+          "seeds": 1,
+          "turn_ref": "s2t1"
+        },
+        "refs": [
+          "cont001-exploratory-20261002-000048-armD-seed44/summary.json (reflection pass 23, proposal P-0043)"
+        ]
+      },
+      "id": "REF-0043",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t1 in scenario rt-0003 (family repeated_task) was answered 'bug' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: repeated_task / rt-0003"
+    }
+  ],
+  "lastConsolidation": "2026-10-01T21:20:18Z",
+  "provenance": {
+    "agent_id_basis": {
+      "model": "granite-code:8b",
+      "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd"
+    },
+    "derived_from": "labs/continuity/results/CONT-000/pilot-armB-20261001-224636/aggregate.json",
+    "method": "capabilities recomputed from per-family probe counts; failure patterns seeded from CN-007/CN-008 evidence in the same aggregate",
+    "note": "measured on the same 10-scenario fixture suite on which arm C is evaluated (CN-009 estimate/evaluation overlap; exploratory mini-pilot caveat, CONT-001 design input)"
+  },
+  "revision": 6,
+  "schemaVersion": 1,
+  "updatedUtc": "2026-10-01T21:20:18Z"
+}
