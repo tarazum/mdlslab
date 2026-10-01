@@ -22,6 +22,8 @@ EVENT_TYPES = frozenset(
         "scenario.start",
         "session.start",
         "session.context_reset",
+        "memory.append",
+        "memory.injected",
         "env.turn",
         "agent.response",
         "probe.result",

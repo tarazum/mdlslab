@@ -1,0 +1,250 @@
+{
+  "run_id": "pilot-armB-20261001-224636-seed11",
+  "seed": 11,
+  "arm": "B",
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-0001",
+      "family": "delayed_recall",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 4,
+      "turns": 2,
+      "tokens_total": 310,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "7",
+          "observed_normalized": "the lighthouse on verdin isle flashes every 7 minutes.",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 4.5
+    },
+    {
+      "scenario": "dr-0002",
+      "family": "delayed_recall",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 4,
+      "turns": 2,
+      "tokens_total": 265,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "doran",
+          "observed_normalized": "doran",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 4.3
+    },
+    {
+      "scenario": "dr-0003",
+      "family": "delayed_recall",
+      "arm": "B",
+      "sessions_planned": 3,
+      "memory_episodes": 6,
+      "turns": 3,
+      "tokens_total": 473,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "1783",
+          "observed_normalized": "the bronze sundial in the east garden was cast in 1783.",
+          "passed": true,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.9
+    },
+    {
+      "scenario": "dx-0001",
+      "family": "distractor_recall",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 4,
+      "turns": 2,
+      "tokens_total": 335,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "20",
+          "observed_normalized": "20",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 4.6
+    },
+    {
+      "scenario": "dx-0002",
+      "family": "distractor_recall",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 4,
+      "turns": 2,
+      "tokens_total": 346,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "petrel",
+          "observed_normalized": "the pilot boat of north harbor is called the petrel.",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 4.8
+    },
+    {
+      "scenario": "cu-0001",
+      "family": "contradiction_update",
+      "arm": "B",
+      "sessions_planned": 3,
+      "memory_episodes": 6,
+      "turns": 3,
+      "tokens_total": 443,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "18",
+          "observed_normalized": "12",
+          "passed": false,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.6
+    },
+    {
+      "scenario": "cu-0002",
+      "family": "contradiction_update",
+      "arm": "B",
+      "sessions_planned": 3,
+      "memory_episodes": 6,
+      "turns": 3,
+      "tokens_total": 486,
+      "probes": [
+        {
+          "kind": "contains",
+          "expected": "green",
+          "observed_normalized": "the beacon on thornwick hill flashes green.",
+          "passed": true,
+          "turn_ref": "s3t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.8
+    },
+    {
+      "scenario": "rt-0001",
+      "family": "repeated_task",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 6,
+      "turns": 3,
+      "tokens_total": 433,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "bug",
+          "observed_normalized": "bug",
+          "passed": true,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.5
+    },
+    {
+      "scenario": "rt-0002",
+      "family": "repeated_task",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 6,
+      "turns": 3,
+      "tokens_total": 433,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "account",
+          "observed_normalized": "bug",
+          "passed": false,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.5
+    },
+    {
+      "scenario": "rt-0003",
+      "family": "repeated_task",
+      "arm": "B",
+      "sessions_planned": 2,
+      "memory_episodes": 6,
+      "turns": 3,
+      "tokens_total": 463,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "perf",
+          "observed_normalized": "bug",
+          "passed": false,
+          "turn_ref": "s2t1"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 6.5
+    }
+  ],
+  "probes_passed": 7,
+  "probes_total": 10,
+  "turns": 26,
+  "tokens_total": 3987,
+  "budget_stops": 0,
+  "wall_s": 58.0,
+  "memory_episodes_total": 52,
+  "memory_export": "memory-export.json",
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true
+}

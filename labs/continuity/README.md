@@ -1,6 +1,6 @@
 # Continuity (Project C)
 
-**Status:** In progress (2026-10-01). P0 complete: CONT-000 harness, arm-A smoke, and the P0b variance/headroom pilot (10 scenarios x 5 seeds, see `docs/SIZING.md` and `results/CONT-000/`). Arms B–E and CONT-001 follow `docs/ROADMAP.md`.
+**Status:** In progress (2026-10-01). P0 complete and P1a started: CONT-000 harness, arm-A smoke and 5-seed pilot (`docs/SIZING.md`), and arm B (SQLite persistent memory) — delayed_recall 0.000 (arm A) → 1.000 (arm B), see `results/CONT-000/pilot-armB-20261001-224636/`. Arms C–E and CONT-001 follow `docs/ROADMAP.md`.
 
 ## Purpose
 

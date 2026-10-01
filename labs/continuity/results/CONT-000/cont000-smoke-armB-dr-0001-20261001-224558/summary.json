@@ -1,0 +1,30 @@
+{
+  "scenario": "dr-0001",
+  "family": "delayed_recall",
+  "arm": "B",
+  "sessions_planned": 2,
+  "memory_episodes": 4,
+  "turns": 2,
+  "tokens_total": 310,
+  "probes": [
+    {
+      "kind": "contains",
+      "expected": "7",
+      "observed_normalized": "the lighthouse on verdin isle flashes every 7 minutes.",
+      "passed": true,
+      "turn_ref": "s2t1"
+    }
+  ],
+  "probes_passed": 1,
+  "probes_total": 1,
+  "stopped": false,
+  "budget_violation": null,
+  "duration_s": 4.6,
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "memory_episodes_total": 4,
+  "run_id": "cont000-smoke-armB-dr-0001-20261001-224558",
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true,
+  "all_probes_passed": true
+}

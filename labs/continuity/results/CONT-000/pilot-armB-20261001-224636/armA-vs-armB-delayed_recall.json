@@ -1,0 +1,81 @@
+{
+  "kind": "armA-vs-armB-delayed_recall",
+  "created_utc": "2026-10-01T19:49:38Z",
+  "family": "delayed_recall",
+  "arm_a_source": "results/CONT-000/pilot-armA-20261001-222950/aggregate.json",
+  "arm_b_source": "aggregate.json (this directory)",
+  "shared_config": {
+    "model": "granite-code:8b",
+    "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "scenario_order": [
+      "dr-0001",
+      "dr-0002",
+      "dr-0003",
+      "dx-0001",
+      "dx-0002",
+      "cu-0001",
+      "cu-0002",
+      "rt-0001",
+      "rt-0002",
+      "rt-0003"
+    ],
+    "note": "seeds differ by design (arm A: 5 predeclared M1 seeds; arm B: first 3 of the same predeclared list, per the M2 brief)"
+  },
+  "arm_a": {
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "pass_rate_by_seed": {
+      "11": 0.0,
+      "22": 0.0,
+      "33": 0.0,
+      "44": 0.0,
+      "55": 0.0
+    },
+    "passed_by_seed": {
+      "11": 0,
+      "22": 0,
+      "33": 0,
+      "44": 0,
+      "55": 0
+    },
+    "probes_per_seed": 3,
+    "mean_pass_rate": 0.0,
+    "per_scenario_pass_count": {
+      "dr-0001": 0,
+      "dr-0002": 0,
+      "dr-0003": 0
+    }
+  },
+  "arm_b": {
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "pass_rate_by_seed": {
+      "11": 1.0,
+      "22": 1.0,
+      "33": 1.0
+    },
+    "passed_by_seed": {
+      "11": 3,
+      "22": 3,
+      "33": 3
+    },
+    "probes_per_seed": 3,
+    "mean_pass_rate": 1.0,
+    "per_scenario_pass_count": {
+      "dr-0001": 3,
+      "dr-0002": 3,
+      "dr-0003": 3
+    }
+  },
+  "delta_mean_pass_rate": 1.0
+}

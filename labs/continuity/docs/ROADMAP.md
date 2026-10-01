@@ -9,7 +9,7 @@
 | Milestone | Stage | Status |
 | --- | --- | --- |
 | M1 | P0b: fixture suite v2 + arm A variance/headroom pilot + sizing | DONE |
-| M2 | P1a: arm B — SQLite persistent memory | IN_PROGRESS |
+| M2 | P1a: arm B — SQLite persistent memory | DONE |
 | M2b | CONT-002 mechanics smoke (conditional: >= 45 min before deadline) | TODO |
 | M3 | P1a: arm C — validated self-model | TODO |
 | M4 | P1a: arm D — reflection/consolidation | TODO |
