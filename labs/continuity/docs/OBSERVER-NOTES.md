@@ -26,3 +26,29 @@ Author-owned research observations. This file does not control the active autono
 4. **Reflection needs an action contract, not only a summary contract.** A future ablation can compare evidence-only reflection against reflection that emits validated supersession/trust proposals. That would connect M4 directly to CONT-005 without allowing reflection to rewrite immutable history.
 
 Next observer pass should focus on M6 exploratory cross-arm artifacts and `EVALUATION-PREP.md`, especially whether the held-out plan cleanly separates the repeated-mistake endpoint from CN-004 leakage and CN-009 exposure.
+
+
+## 2026-10-02 04:28 Europe/Kyiv — final pass
+
+Arc status: COMPLETE. Checked `docs/ARC-REPORT.md`, frozen `docs/EVALUATION-PREP.md`, `docs/PR-REVIEW.md`, and confirmatory artifacts under `results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/`.
+
+### Observations
+
+- Primary frozen verdict remains **no confirmatory difference established**: strict RM A=0.000, E=0.3333, delta +0.3333, 95% CI [0.0, 0.75].
+- Delayed recall is a strong secondary signal: A=0.0, E=1.0, delta +1.0, CI [1.0, 1.0].
+- Reflection is the most important next-cycle clue: strict RM C=0.000, D=0.500; D-C +0.5015, CI [0.1429, 0.8571] (secondary only). The artifacts associate this with verbatim reuse of earlier agent replies in reflection context.
+- Arm E physically actuated on fixture v2 (7 injections and 13 retrieves per seed), so the earlier inert-policy confound is closed. E-D RM still spans zero.
+- Token cost per arm: A 26,329; B 46,540; C 152,320; D 272,795; E 278,805.
+- CONT-002 remains mechanics-only; no transfer-quality conclusion is warranted.
+
+### Next-cycle ideas
+
+1. Prioritize CONT-005 Memory Trust Hierarchy.
+2. Add a reflection-causality ablation: no reflection; summary-only; mask prior reply text; mask corrective evidence; validated trust/supersession proposals.
+3. Represent observations, derived claims, and agent replies as distinct memory objects with provenance rather than equal factual authority.
+4. Mark capability estimates stale when the architecture revision changes and recalibrate them.
+5. Run behavioral CONT-002 after memory semantics are cleaner, then replicate the key trust/reflection experiment on another instruct-capable core.
+
+### Recommendation
+
+Accept M7 as a valid execution of the frozen protocol with its stated null confirmatory verdict. Use the recall benefit and reflection-related repeated-error signal as secondary evidence to design the next cycle; do not promote them into the primary claim.
