@@ -2,20 +2,68 @@
  "id": "cr-1001",
  "family": "correction_reuse",
  "sub_type": "valid_correction_environment",
- "seed_error": {"value": "bug", "mechanism": "scripted_agent_answer"},
- "labels": {"note": "seed own-answer 'bug'; verified environment correction moves the rule to data; reuse probe expects data"},
+ "seed_error": {
+  "value": "bug",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "seed own-answer 'bug'; verified environment correction moves the rule to data; reuse probe expects data"
+ },
  "sessions": [
-  {"index": 1, "turns": [
-    {"actor": "environment", "text": "Classify this support ticket into exactly one label: billing | bug | account | data | sync | permissions. Ticket: 'The route map tile takes over a minute to appear but renders correctly in the end.' Reply with the label only.", "initial_expected": "bug"},
-    {"actor": "environment", "text": "The morning batch log shows your earlier classification of ticket T-88 (slow map tile) as 'bug'. Keep that log line in view and confirm in one line."},
-    {"actor": "environment", "text": "For the desk records, the standing desk guide: freezes, crashes and unresponsive controls are bug; charges, refunds and invoices are billing; sign-in and access problems are account; stale or missing content inside reports and exports is data, because it traces to the update pipeline - do not use bug for views that work but show old or slow figures. Note the guide in one line."}
-  ]},
-  {"index": 2, "turns": [
-    {"actor": "environment", "source_type": "environment", "text": "Desk bulletin, verified service notice: the mapping provider confirmed a caching defect on their side; from here on, views that load slowly but finish follow the same rule as stale exports. Amend your records in one line."}
-  ]},
-  {"index": 3, "turns": [
-    {"actor": "environment", "text": "New shift at the desk. The queue is open and the standing desk guide applies. Confirm in one line."},
-    {"actor": "environment", "text": "Classify this ticket. The desk notes are not at hand. Ticket: 'The expense export still shows yesterday's totals even after I press refresh.' Options: data | permissions | billing | account | sync | bug - reply with the label only.", "probe": {"kind": "exact_match", "expected": "data", "labels": ["data", "permissions", "billing", "account", "sync", "bug"], "class": "rm_eligible"}}
-  ]}
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Classify this support ticket into exactly one label: billing | bug | account | data | sync | permissions. Ticket: 'The route map tile takes over a minute to appear but renders correctly in the end.' Reply with the label only.",
+     "initial_expected": "bug"
+    },
+    {
+     "actor": "environment",
+     "text": "The morning batch log shows your earlier classification of ticket T-88 (slow map tile) as 'bug'. Keep that log line in view and confirm in one line.",
+     "source_type": "agent_answer"
+    },
+    {
+     "actor": "environment",
+     "text": "For the desk records, the standing desk guide: freezes, crashes and unresponsive controls are bug; charges, refunds and invoices are billing; sign-in and access problems are account; stale or missing content inside reports and exports is data, because it traces to the update pipeline - do not use bug for views that work but show old or slow figures. Note the guide in one line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Desk bulletin, verified service notice: the mapping provider confirmed a caching defect on their side; from here on, views that load slowly but finish follow the same rule as stale exports. Amend your records in one line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "New shift at the desk. The queue is open and the standing desk guide applies. Confirm in one line."
+    },
+    {
+     "actor": "environment",
+     "text": "Classify this ticket. The desk notes are not at hand. Ticket: 'The expense export still shows yesterday's totals even after I press refresh.' Options: data | permissions | billing | account | sync | bug - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "expected": "data",
+      "labels": [
+       "data",
+       "permissions",
+       "billing",
+       "account",
+       "sync",
+       "bug"
+      ],
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
  ]
 }

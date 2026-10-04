@@ -11,7 +11,7 @@ from __future__ import annotations
 import json
 import os
 
-PROBE_KINDS = frozenset({"exact_match", "contains"})
+PROBE_KINDS = frozenset({"exact_match", "contains", "guess_calibration"})
 TURN_ACTORS = frozenset({"environment"})
 
 
@@ -75,5 +75,21 @@ def _validate_scenario(scenario: dict) -> None:
                     raise ValueError(
                         f"{scenario['id']} s{i}t{j}: probe.kind must be one of {sorted(PROBE_KINDS)}"
                     )
-                if not isinstance(probe.get("expected"), str) or not probe["expected"].strip():
+                if probe.get("kind") == "guess_calibration":
+                    # Suite v3: never-stated fact; expected is null by design and
+                    # the reply is aggregated for the empirical guess rate.
+                    if probe.get("expected") is not None:
+                        raise ValueError(
+                            f"{scenario['id']} s{i}t{j}: guess_calibration expects null"
+                        )
+                elif not isinstance(probe.get("expected"), str) or not probe["expected"].strip():
                     raise ValueError(f"{scenario['id']} s{i}t{j}: probe.expected must be non-empty")
+                labels = probe.get("labels")
+                if labels is not None and (
+                    not isinstance(labels, list)
+                    or not labels
+                    or any(not isinstance(x, str) or not x.strip() for x in labels)
+                ):
+                    raise ValueError(
+                        f"{scenario['id']} s{i}t{j}: probe.labels must be a non-empty list of strings"
+                    )

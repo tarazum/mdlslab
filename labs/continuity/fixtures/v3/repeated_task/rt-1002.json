@@ -2,19 +2,62 @@
  "id": "rt-1002",
  "family": "repeated_task",
  "sub_type": "scripted_own_answer",
- "seed_error": {"value": "maintenance", "mechanism": "scripted_agent_answer"},
- "labels": {"note": "night log pins unit 3 as maintenance; guide: no open change window and clean counters means normal"},
+ "seed_error": {
+  "value": "maintenance",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "night log pins unit 3 as maintenance; guide: no open change window and clean counters means normal"
+ },
  "sessions": [
-  {"index": 1, "turns": [
-    {"actor": "environment", "text": "Report the status of unit 3 into exactly one label: normal | degraded | offline | maintenance | standby. Telemetry: 'unit 3 shows all counters at baseline, no faults recorded.' Reply with the label only.", "initial_expected": "normal"},
-    {"actor": "environment", "text": "The night log shows your earlier entry for unit 3 as 'maintenance'. The standing board guide, verified: maintenance applies only inside an open change window; with no window scheduled and clean counters the unit is normal. Amend the entry in one line."}
-  ]},
-  {"index": 2, "turns": [
-    {"actor": "environment", "text": "Shift handover. The board guide applies. Confirm in one line."}
-  ]},
-  {"index": 3, "turns": [
-    {"actor": "environment", "text": "Rounds begin. The board log is not at hand. Confirm in one line."},
-    {"actor": "environment", "text": "Report the status of unit 5. Telemetry: 'unit 5 response times at baseline, no change window scheduled this week.' Options: degraded | normal | offline | maintenance | standby - reply with the label only.", "probe": {"kind": "exact_match", "expected": "normal", "labels": ["degraded", "normal", "offline", "maintenance", "standby"], "class": "rm_eligible"}}
-  ]}
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Report the status of unit 3 into exactly one label: normal | degraded | offline | maintenance | standby. Telemetry: 'unit 3 shows all counters at baseline, no faults recorded.' Reply with the label only.",
+     "initial_expected": "normal"
+    },
+    {
+     "actor": "environment",
+     "text": "The night log shows your earlier entry for unit 3 as 'maintenance'. The standing board guide, verified: maintenance applies only inside an open change window; with no window scheduled and clean counters the unit is normal. Amend the entry in one line.",
+     "source_type": "agent_answer"
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Shift handover. The board guide applies. Confirm in one line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Rounds begin. The board log is not at hand. Confirm in one line."
+    },
+    {
+     "actor": "environment",
+     "text": "Report the status of unit 5. Telemetry: 'unit 5 response times at baseline, no change window scheduled this week.' Options: degraded | normal | offline | maintenance | standby - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "expected": "normal",
+      "labels": [
+       "degraded",
+       "normal",
+       "offline",
+       "maintenance",
+       "standby"
+      ],
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
  ]
 }

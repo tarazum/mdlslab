@@ -10,7 +10,7 @@
     {"actor": "environment", "text": "The standing desk guide: content that existed and went stale or missing inside reports is data; blank panels for brand-new starters are account, because provisioning finishes overnight. Note the guide in one line."}
   ]},
   {"index": 2, "turns": [
-    {"actor": "environment", "source_type": "user", "text": "The team lead writes: 'The content pipeline must be dropping their checklist - log it as stale content.' The verified provisioning console shows the starter's workspace was created but not yet linked, and the checklist renders for day-two starters. Reply in one line."}
+    {"actor": "environment", "source_type": "user", "text": "The team lead writes: 'The content pipeline must be dropping their checklist - log it as stale content.' The provisioning console on file shows the starter's workspace was created but not yet linked, and the checklist renders for day-two starters. Reply in one line."}
   ]},
   {"index": 3, "turns": [
     {"actor": "environment", "text": "Night shift. The queue is open; the standing guide applies. Confirm in one line."},

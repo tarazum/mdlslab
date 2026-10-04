@@ -2,19 +2,62 @@
  "id": "rt-1001",
  "family": "repeated_task",
  "sub_type": "scripted_own_answer",
- "seed_error": {"value": "offline", "mechanism": "scripted_agent_answer"},
- "labels": {"note": "night log pins unit 7 as offline; guide: answering units with reduced throughput are degraded"},
+ "seed_error": {
+  "value": "offline",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "night log pins unit 7 as offline; guide: answering units with reduced throughput are degraded"
+ },
  "sessions": [
-  {"index": 1, "turns": [
-    {"actor": "environment", "text": "Report the status of unit 7 into exactly one label: normal | degraded | offline | maintenance | standby. Telemetry: 'unit 7 answers pings but its throughput has halved since the driver swap.' Reply with the label only.", "initial_expected": "offline"},
-    {"actor": "environment", "text": "The night log shows your earlier entry for unit 7 as 'offline'. The standing board guide, verified: a unit that still answers and serves traffic is never offline; reduced throughput is degraded; offline means no responses at all; maintenance applies only inside an open change window. Amend the entry in one line."}
-  ]},
-  {"index": 2, "turns": [
-    {"actor": "environment", "text": "Shift handover. The board guide applies. Confirm in one line."}
-  ]},
-  {"index": 3, "turns": [
-    {"actor": "environment", "text": "Rounds begin. The board log is not at hand. Confirm in one line."},
-    {"actor": "environment", "text": "Report the status of unit 12. Telemetry: 'unit 12 still answers every check though its queue depth doubled after the firmware push.' Options: normal | offline | maintenance | standby | degraded - reply with the label only.", "probe": {"kind": "exact_match", "expected": "degraded", "labels": ["normal", "offline", "maintenance", "standby", "degraded"], "class": "rm_eligible"}}
-  ]}
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Report the status of unit 7 into exactly one label: normal | degraded | offline | maintenance | standby. Telemetry: 'unit 7 answers pings but its throughput has halved since the driver swap.' Reply with the label only.",
+     "initial_expected": "offline"
+    },
+    {
+     "actor": "environment",
+     "text": "The night log shows your earlier entry for unit 7 as 'offline'. The standing board guide, verified: a unit that still answers and serves traffic is never offline; reduced throughput is degraded; offline means no responses at all; maintenance applies only inside an open change window. Amend the entry in one line.",
+     "source_type": "agent_answer"
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Shift handover. The board guide applies. Confirm in one line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Rounds begin. The board log is not at hand. Confirm in one line."
+    },
+    {
+     "actor": "environment",
+     "text": "Report the status of unit 12. Telemetry: 'unit 12 still answers every check though its queue depth doubled after the firmware push.' Options: normal | offline | maintenance | standby | degraded - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "expected": "degraded",
+      "labels": [
+       "normal",
+       "offline",
+       "maintenance",
+       "standby",
+       "degraded"
+      ],
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
  ]
 }

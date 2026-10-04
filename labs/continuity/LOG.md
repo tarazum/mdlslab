@@ -1177,3 +1177,37 @@ E9-E14 = V4-V9) + `experiments/suite-v3/fixture-validation-v3.json`.
   seed_error, source_type, guess_calibration) and implement arms T0-T3 (flat
   baseline / +annotations / +supersession resolution / +trust policy), then the
   headroom pilot (GPU, small) and the CONT-005 review cycle.
+
+## 2026-10-04 — T-arms implemented + assembly gate PASS (zero GPU, zero inference)
+
+Artifacts: `src/continuity/claims.py` (trust-policy/v1: source ranks
+environment/tool 2, user 1, agent_answer 0; "verified" bump to 3, "unreviewed"
+demote to 1; retraction chains; T1/T2/T3 renderers), runner T0-T3 arm wiring
+(T0 flat = byte-identical arm-B renderer; T1 annotations; T2 resolution flags +
+trust demotion ordering; T3 + policy-version header and per-episode trust rank),
+fixtures.py v3 kinds (guess_calibration null-expected, probe.labels), guess-probe
+aggregation in score_probe, `experiments/suite-v3/assembly_gate.py` +
+`assembly-gate.json`.
+
+- **ASSEMBLY GATE: PASS 7/7.** G3 resolution counts exactly as designed across
+  the 14 primary scenarios: erroneous_user flagged x2, source_conflict exactly
+  one side flagged x2, retraction superseded x2, scripted own-answer flagged x6,
+  valid corrections clean x2 (only the agent_answer seed flag, which is by
+  policy). Flagged episodes demoted after unflagged; policy header T3-only;
+  assembly deterministic (byte-identical second pass); guess_calibration clean.
+- Fixtures amended after validation (revalidated PASS 13/13): the eight
+  seed-record turns typed `source_type: agent_answer` (the CN-007 semantics:
+  the agent's own earlier answer is a first-class lowest-trust source); the
+  verified-token contract tightened in cr-1003/cr-1004 ("verified" now appears
+  in a turn iff the turn itself is verified evidence — the desk's own evidence
+  notes no longer use the token inside unverified user turns). The assembly
+  gate caught the contract break ex ante (G3), which is the gate doing its job.
+- Regression: frozen v2 fixture validator still PASS; fixtures/v1, v2,
+  v2-calibration load unchanged through the extended fixtures.py.
+- Design property recorded: the trust treatment surface covers CR (typed
+  corrections) and RT (agent_answer seeds); CU/DR/DX secondaries are
+  near-controls for the T-arms (their corrections are untyped plain
+  statements) - documented, not hidden.
+- Next: headroom pilot (GPU, small: arm A vs T0 vs T2 on the primary set to
+  confirm floor removal and guessing baseline ~1/k), then the CONT-005
+  pre-registration v2 per docs/PREREG-REQUIREMENTS-V2.md and the review cycle.

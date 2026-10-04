@@ -53,6 +53,7 @@ import time
 from typing import Any
 
 from .events import EventJournal
+from .claims import format_trust_block
 from .memory import MemoryStore
 from .policy import ACTION_SET
 from .policy import decide as policy_decide
@@ -92,6 +93,20 @@ def normalize(text: str) -> str:
 
 def score_probe(probe: dict, answer: str) -> dict:
     observed = normalize(answer)
+    if probe["kind"] == "guess_calibration":
+        # Suite v3: never-stated fact. Not scored; the reply is aggregated to
+        # measure the empirical guess rate and position bias (design E14).
+        labels = probe.get("labels", [])
+        hit = next((label for label in labels if normalize(label) == observed), None)
+        return {
+            "kind": probe["kind"],
+            "expected": None,
+            "observed_normalized": observed,
+            "observed_label": hit,
+            "observed_position": labels.index(hit) if hit is not None else None,
+            "labels": labels,
+            "passed": None,
+        }
     expected = normalize(probe["expected"])
     if probe["kind"] == "exact_match":
         passed = observed == expected
@@ -147,9 +162,9 @@ def run_scenario(
     reflection: ReflectionEngine | None = None,
     worldmodel: WorldModel | None = None,
 ) -> dict[str, Any]:
-    if arm not in ("A", "B", "C", "D", "E"):
+    if arm not in ("A", "B", "C", "D", "E", "T0", "T1", "T2", "T3"):
         raise ValueError(f"unknown arm: {arm!r}")
-    if arm in ("B", "C", "D", "E") and memory is None:
+    if arm in ("B", "C", "D", "E", "T0", "T1", "T2", "T3") and memory is None:
         raise ValueError(f"arm {arm} requires a memory store")
     if arm in ("C", "D", "E") and selfmodel is None:
         raise ValueError(f"arm {arm} requires a self-model")
@@ -159,6 +174,8 @@ def run_scenario(
         raise ValueError("arm E requires a world model")
     if arm != "E" and worldmodel is not None:
         raise ValueError("worldmodel is arm-E only (A/B/C/D behavior-identity guard)")
+    if arm in ("T1", "T2", "T3") and selfmodel is not None:
+        raise ValueError("selfmodel is not part of the T-arms (CONT-005 memory-side ablation)")
     sid = scenario["id"]
     # Arm-A trace payloads stay byte-identical to the M1 pilot (comparability);
     # arms B/C/D/E add their marker.
@@ -234,9 +251,21 @@ def run_scenario(
                 query_text = session["turns"][0]["text"]
                 episodes = memory.retrieve(query_text, scenario=sid, limit=MEMORY_TOP_K)
                 if episodes:
-                    context.append(
-                        {"role": "system", "content": format_memory_block(episodes)}
-                    )
+                    if arm == "T0":
+                        # Flat baseline: byte-identical renderer to arm B.
+                        block = format_memory_block(episodes)
+                    elif arm in ("T1", "T2", "T3"):
+                        # CONT-005 trust arms: annotations / resolution / policy
+                        # header rendered from the scenario's own source turns.
+                        turn_by_ref = {
+                            f"s{sess['index']}t{k}": t
+                            for sess in scenario["sessions"]
+                            for k, t in enumerate(sess["turns"], start=1)
+                        }
+                        block = format_trust_block(episodes, turn_by_ref, arm)
+                    else:
+                        block = format_memory_block(episodes)
+                    context.append({"role": "system", "content": block})
                     if arm == "E":
                         session_injected_ids = {ep["id"] for ep in episodes}
                 journal.emit(
@@ -248,6 +277,9 @@ def run_scenario(
                         "episode_refs": [f"{ep['turn_ref']}|{ep['role']}" for ep in episodes],
                         "top_k": MEMORY_TOP_K,
                         "injected": bool(episodes),
+                        "renderer": (
+                            "trust" if arm in ("T1", "T2", "T3") else "flat"
+                        ),
                     },
                     scenario=sid,
                     session=session["index"],

@@ -2,19 +2,63 @@
  "id": "rt-1006",
  "family": "repeated_task",
  "sub_type": "scripted_own_answer",
- "seed_error": {"value": "permissions", "mechanism": "scripted_agent_answer"},
- "labels": {"note": "earlier queue note pins east-wing tickets as permissions; guide: region-wide sign-in failures are account"},
+ "seed_error": {
+  "value": "permissions",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "earlier queue note pins east-wing tickets as permissions; guide: region-wide sign-in failures are account"
+ },
  "sessions": [
-  {"index": 1, "turns": [
-    {"actor": "environment", "text": "Classify this support ticket into exactly one label: billing | bug | account | data | sync | permissions. Ticket: 'The whole east wing cannot sign in since noon, though the portal page opens.' Reply with the label only.", "initial_expected": "permissions"},
-    {"actor": "environment", "text": "Your earlier queue note for the east-wing tickets reads 'permissions'. The standing desk guide, verified: region-wide sign-in failures are account; permissions covers specific lists or folders for specific people. Amend the note in one line."}
-  ]},
-  {"index": 2, "turns": [
-    {"actor": "environment", "text": "Shift handover at the desk. The standing guide applies. Confirm in one line."}
-  ]},
-  {"index": 3, "turns": [
-    {"actor": "environment", "text": "New queue opens. The desk notes are not at hand. Confirm in one line."},
-    {"actor": "environment", "text": "Classify this ticket. Ticket: 'The annex crew cannot log in anywhere, while the public pages load fine.' Options: bug | permissions | account | data | sync | billing - reply with the label only.", "probe": {"kind": "exact_match", "expected": "account", "labels": ["bug", "permissions", "account", "data", "sync", "billing"], "class": "rm_eligible"}}
-  ]}
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Classify this support ticket into exactly one label: billing | bug | account | data | sync | permissions. Ticket: 'The whole east wing cannot sign in since noon, though the portal page opens.' Reply with the label only.",
+     "initial_expected": "permissions"
+    },
+    {
+     "actor": "environment",
+     "text": "Your earlier queue note for the east-wing tickets reads 'permissions'. The standing desk guide, verified: region-wide sign-in failures are account; permissions covers specific lists or folders for specific people. Amend the note in one line.",
+     "source_type": "agent_answer"
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Shift handover at the desk. The standing guide applies. Confirm in one line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "New queue opens. The desk notes are not at hand. Confirm in one line."
+    },
+    {
+     "actor": "environment",
+     "text": "Classify this ticket. Ticket: 'The annex crew cannot log in anywhere, while the public pages load fine.' Options: bug | permissions | account | data | sync | billing - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "expected": "account",
+      "labels": [
+       "bug",
+       "permissions",
+       "account",
+       "data",
+       "sync",
+       "billing"
+      ],
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
  ]
 }

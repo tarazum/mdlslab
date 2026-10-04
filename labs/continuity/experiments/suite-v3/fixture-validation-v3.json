@@ -1,9 +1,9 @@
 {
   "kind": "suite-v3-fixture-validation",
-  "created_utc": "2026-10-04T20:29:53Z",
+  "created_utc": "2026-10-04T20:58:26Z",
   "spec": "docs/SUITE-V3-DESIGN.md sections 3-9 (design check ids E9-E14 implemented as V4-V9 here)",
   "suite": "fixtures/v3",
-  "suite_sha256": "246332e455a7b7114a709143b1d3ae27b3dad35e8b60dff9d52ef583ec8fc111",
+  "suite_sha256": "588fbb5616fc2f12c5330e72e11ce9758c7954b6dc9be30d3fd4ce233eb05f7c",
   "scenario_count": 27,
   "checks": [
     {
