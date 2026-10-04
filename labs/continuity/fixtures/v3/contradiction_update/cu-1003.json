@@ -1,0 +1,17 @@
+{
+ "id": "cu-1003",
+ "family": "contradiction_update",
+ "labels": {"note": "archive floor corrected 2 to 5; probe expects 5, superseded 2 stays in options"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You keep the registry notes. For the records: the city archive sits on floor 2. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Correction for the records: the archive moved during renovation; it is on floor 5 now, not 2. Note the correction in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "A researcher asks; the registry notes are not at hand. Confirm in one line."},
+    {"actor": "environment", "text": "Which floor is the city archive on? Options: 4 | 1 | 6 | 5 | 2 | 3 - reply with the number only.", "probe": {"kind": "exact_match", "expected": "5", "labels": ["4", "1", "6", "5", "2", "3"]}}
+  ]}
+ ]
+}

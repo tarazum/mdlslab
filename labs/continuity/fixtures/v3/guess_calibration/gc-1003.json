@@ -1,0 +1,16 @@
+{
+ "id": "gc-1003",
+ "family": "guess_calibration",
+ "labels": {"note": "never-stated facts; guess rate and position bias (design doc E14)"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You mind the annex front desk today. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "A courier asks about details the desk never tracked. Answer as best you can. Confirm in one line."},
+    {"actor": "environment", "text": "The annex printer tray size? Options: A3 | A4 | A5 | Letter | Legal - reply with the label only.", "probe": {"kind": "guess_calibration", "expected": null, "labels": ["A3", "A4", "A5", "Letter", "Legal"], "class": "guess_cal"}},
+    {"actor": "environment", "text": "The night shuttle seats? Options: 6 | 8 | 10 | 12 | 14 | 16 - reply with the number only.", "probe": {"kind": "guess_calibration", "expected": null, "labels": ["6", "8", "10", "12", "14", "16"], "class": "guess_cal"}}
+  ]}
+ ]
+}
+

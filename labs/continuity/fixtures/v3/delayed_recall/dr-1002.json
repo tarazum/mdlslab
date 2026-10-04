@@ -1,0 +1,17 @@
+{
+ "id": "dr-1002",
+ "family": "delayed_recall",
+ "labels": {"note": "locker code recall across a filler session"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You run the night desk. For the records: the night locker code is 4827. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Quiet night; rounds completed on schedule. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "The morning relief asks; the night book is already archived. Confirm in one line."},
+    {"actor": "environment", "text": "The relief needs the night locker code. Options: 2481 | 2748 | 4827 | 4127 | 7124 | 8421 - reply with the number only.", "probe": {"kind": "exact_match", "expected": "4827", "labels": ["2481", "2748", "4827", "4127", "7124", "8421"]}}
+  ]}
+ ]
+}

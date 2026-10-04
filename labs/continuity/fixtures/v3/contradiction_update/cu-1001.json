@@ -1,0 +1,17 @@
+{
+ "id": "cu-1001",
+ "family": "contradiction_update",
+ "labels": {"note": "ferry interval corrected 20 to 35; probe expects 35, superseded 20 stays in options"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You keep the harbor notes. For the records: the ferry runs every 20 minutes on weekdays. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Correction for the records: the winter timetable started today; the ferry now runs every 35 minutes, not 20. Note the correction in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "A visitor asks; your notes are not at hand. Confirm in one line."},
+    {"actor": "environment", "text": "How often does the ferry run? Options: 15 | 20 | 25 | 30 | 35 | 40 - reply with the number only.", "probe": {"kind": "exact_match", "expected": "35", "labels": ["15", "20", "25", "30", "35", "40"]}}
+  ]}
+ ]
+}

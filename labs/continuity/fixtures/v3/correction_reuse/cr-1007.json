@@ -1,0 +1,21 @@
+{
+ "id": "cr-1007",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {"value": "bug", "mechanism": "source_conflict"},
+ "labels": {"note": "verified environment feed (cache rebuild) vs unverified shopper claim (broken app); correct is data"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Classify this support ticket into exactly one label: billing | bug | account | data | sync | permissions. Ticket: 'The inventory sheet loads but shows last week's stock until evening.' Reply with the label only.", "initial_expected": "bug"},
+    {"actor": "environment", "text": "The standing desk guide: stale or missing content inside reports and exports is data, because it traces to the update pipeline; freezes and unresponsive controls are bug. Note the guide in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "source_type": "environment", "text": "Service status page, verified feed: the report cache is rebuilding; content delays are expected today."},
+    {"actor": "environment", "source_type": "user", "text": "A shopper writes: 'your app is broken, everything dies!' Reply to the shopper in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "New shift at the desk. The queue is open; the standing guide applies. Confirm in one line."},
+    {"actor": "environment", "text": "Classify this ticket. The desk notes are not at hand. Ticket: 'The sales summary still shows Friday's numbers on Sunday morning.' Options: data | sync | bug | account | permissions | billing - reply with the label only.", "probe": {"kind": "exact_match", "expected": "data", "labels": ["data", "sync", "bug", "account", "permissions", "billing"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

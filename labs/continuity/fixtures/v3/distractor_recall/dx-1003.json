@@ -1,0 +1,18 @@
+{
+ "id": "dx-1003",
+ "family": "distractor_recall",
+ "labels": {"note": "two toolboxes checked out; the BLUE toolbox holder probed while Mira (red) acts as the lure"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You run the workshop desk. For the records: the red toolbox is checked out to Mira; the blue toolbox is checked out to Jole. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Bench cleanup done; nothing else changes. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "A foreman asks; the checkout sheet is not at hand. Confirm in one line."},
+    {"actor": "environment", "text": "Who holds the blue toolbox? Options: Mira | Anouk | Bran | Karis | Piet | Jole - reply with the name only.", "probe": {"kind": "exact_match", "expected": "Jole", "labels": ["Mira", "Anouk", "Bran", "Karis", "Piet", "Jole"]}}
+  ]}
+ ]
+}
+

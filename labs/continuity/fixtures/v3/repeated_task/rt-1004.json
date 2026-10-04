@@ -1,0 +1,20 @@
+{
+ "id": "rt-1004",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {"value": "bug", "mechanism": "scripted_agent_answer"},
+ "labels": {"note": "earlier queue note pins timesheet tickets as bug; guide: views that work but show old figures are data"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Classify this support ticket into exactly one label: billing | bug | account | data | sync | permissions. Ticket: 'The timesheet export shows yesterday's rows even after refresh.' Reply with the label only.", "initial_expected": "bug"},
+    {"actor": "environment", "text": "Your earlier queue note for the timesheet tickets reads 'bug'. The standing desk guide, verified: views that work but show old figures are data, because they trace to the update pipeline - not bug, which is for freezes and unresponsive controls. Amend the note in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Shift handover at the desk. The standing guide applies. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "New queue opens. The desk notes are not at hand. Confirm in one line."},
+    {"actor": "environment", "text": "Classify this ticket. Ticket: 'The invoice history panel still shows March entries in April.' Options: billing | sync | account | bug | permissions | data - reply with the label only.", "probe": {"kind": "exact_match", "expected": "data", "labels": ["billing", "sync", "account", "bug", "permissions", "data"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "id": "dx-1002",
+ "family": "distractor_recall",
+ "labels": {"note": "two meeting rooms on different floors; room Ivy probed while floor 3 (Iris) acts as the lure"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You manage the annex office. For the records: meeting room Iris is on floor 3; meeting room Ivy is on floor 7. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Afternoon mail run done; nothing else changes. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "A visitor asks; the office plan is not at hand. Confirm in one line."},
+    {"actor": "environment", "text": "The visitor needs meeting room Ivy. Which floor is it on? Options: 2 | 3 | 5 | 7 | 6 | 9 - reply with the number only.", "probe": {"kind": "exact_match", "expected": "7", "labels": ["2", "3", "5", "7", "6", "9"]}}
+  ]}
+ ]
+}

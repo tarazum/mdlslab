@@ -1,0 +1,23 @@
+{
+ "id": "cr-1005",
+ "family": "correction_reuse",
+ "sub_type": "retraction",
+ "seed_error": {"value": "sync", "mechanism": "retracted_correction"},
+ "labels": {"note": "correction moves bug to sync, then is retracted; original bug restored; lingering sync is the repeated mistake"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Classify this support ticket into exactly one label: billing | bug | account | data | sync | permissions. Ticket: 'The scanner app stops responding whenever the barcode camera opens.' Reply with the label only.", "initial_expected": "bug"},
+    {"actor": "environment", "text": "The standing desk guide: freezes and unresponsive controls are bug; events or files that appear late or out of step are sync. Note the guide in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "source_type": "environment", "text": "Desk bulletin: the vendor's patch notes list the scanner freeze under connection reliability; classify such freezes accordingly until further notice. Amend in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "source_type": "environment", "text": "Correction to the earlier bulletin: it was misrouted from another desk and does not apply here; the standing guide holds as before. Amend in one line."}
+  ]},
+  {"index": 4, "turns": [
+    {"actor": "environment", "text": "New shift at the desk. The queue is open; the standing guide applies. Confirm in one line."},
+    {"actor": "environment", "text": "Classify this ticket. The desk notes are not at hand. Ticket: 'The label printer dialog locks up every time the preview opens.' Options: sync | data | account | bug | permissions | billing - reply with the label only.", "probe": {"kind": "exact_match", "expected": "bug", "labels": ["sync", "data", "account", "bug", "permissions", "billing"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

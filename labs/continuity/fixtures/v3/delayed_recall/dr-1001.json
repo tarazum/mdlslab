@@ -1,0 +1,17 @@
+{
+ "id": "dr-1001",
+ "family": "delayed_recall",
+ "labels": {"note": "two key codes stated; archive code probed with both in options"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You are the depot keeper. For the records: the archive cabinet key code is F06; the lab cabinet key code is B04. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Midweek restock done; nothing else changes. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "A courier arrives; the record book is not at hand. Confirm in one line."},
+    {"actor": "environment", "text": "The courier needs the archive cabinet key code. Options: F06 | B04 | C22 | D09 | E31 | A17 - reply with the code only.", "probe": {"kind": "exact_match", "expected": "F06", "labels": ["F06", "B04", "C22", "D09", "E31", "A17"]}}
+  ]}
+ ]
+}

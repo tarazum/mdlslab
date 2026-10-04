@@ -1151,3 +1151,29 @@ resamples per configuration).
 - Next: fixture v3 authoring + validator E9-E14 (zero GPU), T0-T3 arm
   implementation, headroom pilot (GPU, small), then the CONT-005 proposal review
   cycle and a fresh arc plan.
+
+## 2026-10-04 — Fixtures v3 authored + validator PASS (zero GPU, zero inference)
+
+Artifacts: `fixtures/v3/` (27 scenarios: correction_reuse x8 with typed sub-types,
+repeated_task x6 scripted_own_answer, contradiction_update x4, delayed_recall x3,
+distractor_recall x3, guess_calibration x3 / 6 never-stated probes; manifest v3) and
+`experiments/suite-v3/validate_fixtures_v3.py` (V1-V13, V-namespace; design-doc
+E9-E14 = V4-V9) + `experiments/suite-v3/fixture-validation-v3.json`.
+
+- **VERDICT: PASS, 13/13 checks.** Highlights: 24 scored label-form probes, correct
+  positions perfectly uniform across 6 slots (max share 0.17 vs the 0.50 rule);
+  zero session-scoped label leakage; ids and turn texts fully disjoint from
+  fixtures/v1, v2, v2-calibration; every primary scenario carries a structural
+  seed_error whose trap value is a probe label, differs from expected, and is
+  stated pre-probe.
+- Trap map (primary): cr valid-env(bug), valid-tool(account), erroneous-user
+  (billing, data), retraction(sync, sync), conflict(bug, data); rt scripted
+  (offline, maintenance, standby, bug, billing, permissions).
+- Authoring slips caught by tooling, not by eye: 1 heredoc truncation (cr-1004) and
+  4 missing `]` closers (cu-1004, dx-1003, gc-1002, gc-1003) — JSON parse found all
+  five before the validator ran; validator's own error path initially swallowed the
+  JSONDecodeError detail (prints it now via the written JSON).
+- Next in the chain: extend the runner/loader for the v3 schema (probe.labels,
+  seed_error, source_type, guess_calibration) and implement arms T0-T3 (flat
+  baseline / +annotations / +supersession resolution / +trust policy), then the
+  headroom pilot (GPU, small) and the CONT-005 review cycle.

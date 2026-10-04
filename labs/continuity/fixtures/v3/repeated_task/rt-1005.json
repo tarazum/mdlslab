@@ -1,0 +1,20 @@
+{
+ "id": "rt-1005",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {"value": "billing", "mechanism": "scripted_agent_answer"},
+ "labels": {"note": "earlier queue note pins calendar tickets as billing; guide: late out-of-step appearances are sync"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Classify this support ticket into exactly one label: billing | bug | account | data | sync | permissions. Ticket: 'The shared calendar sometimes shows my colleagues' events an hour late.' Reply with the label only.", "initial_expected": "bug"},
+    {"actor": "environment", "text": "Your earlier queue note for the calendar tickets reads 'billing'. The standing desk guide, verified: events, boards or files that appear late or out of step are sync, because the device copy trails the server; charges and invoices are billing. Amend the note in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Shift handover at the desk. The standing guide applies. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "New queue opens. The desk notes are not at hand. Confirm in one line."},
+    {"actor": "environment", "text": "Classify this ticket. Ticket: 'The team roster board picks up shifts about ten minutes late.' Options: sync | billing | bug | data | account | permissions - reply with the label only.", "probe": {"kind": "exact_match", "expected": "sync", "labels": ["sync", "billing", "bug", "data", "account", "permissions"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

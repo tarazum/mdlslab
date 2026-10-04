@@ -1,0 +1,18 @@
+{
+ "id": "cu-1004",
+ "family": "contradiction_update",
+ "labels": {"note": "club fee corrected 40 to 55; probe expects 55, superseded 40 stays in options"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You keep the club ledger. For the records: the season membership fee is 40 credits. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Correction for the records: the committee raised the fee; a season now costs 55 credits, not 40. Note the correction in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "A new member asks; the ledger is not at hand. Confirm in one line."},
+    {"actor": "environment", "text": "What does a season membership cost? Options: 35 | 40 | 45 | 50 | 60 | 55 - reply with the number only.", "probe": {"kind": "exact_match", "expected": "55", "labels": ["35", "40", "45", "50", "60", "55"]}}
+  ]}
+ ]
+}
+

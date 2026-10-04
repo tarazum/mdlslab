@@ -1,0 +1,23 @@
+{
+ "id": "cr-1006",
+ "family": "correction_reuse",
+ "sub_type": "retraction",
+ "seed_error": {"value": "sync", "mechanism": "retracted_correction"},
+ "labels": {"note": "correction moves data to sync, then is withdrawn; data restored"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Classify this support ticket into exactly one label: billing | bug | account | data | sync | permissions. Ticket: 'The shared cost sheet still shows last week's totals after refresh.' Reply with the label only.", "initial_expected": "bug"},
+    {"actor": "environment", "text": "The standing desk guide: stale or missing content inside reports and exports is data, because it traces to the update pipeline; events or files that appear late or out of step are sync. Note the guide in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "source_type": "environment", "text": "Desk bulletin: the refresh service is queuing sheet updates; classify lingering totals accordingly for now. Amend in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "source_type": "environment", "text": "The bulletin is withdrawn: the refresh service was never queuing; the standing guide holds as before. Amend in one line."}
+  ]},
+  {"index": 4, "turns": [
+    {"actor": "environment", "text": "Late shift. The queue is open; the standing guide applies. Confirm in one line."},
+    {"actor": "environment", "text": "Classify this ticket. The desk notes are not at hand. Ticket: 'The delivery report keeps showing Friday's counts on Sunday.' Options: bug | account | sync | permissions | billing | data - reply with the label only.", "probe": {"kind": "exact_match", "expected": "data", "labels": ["bug", "account", "sync", "permissions", "billing", "data"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

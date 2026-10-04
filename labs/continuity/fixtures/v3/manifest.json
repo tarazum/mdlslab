@@ -1,0 +1,8 @@
+{
+ "protocol": "continuity-workload",
+ "version": 3,
+ "families": ["delayed_recall", "distractor_recall", "contradiction_update", "repeated_task", "correction_reuse", "guess_calibration"],
+ "primary_families": ["correction_reuse", "repeated_task"],
+ "primary_cluster_count": 14,
+ "description": "Suite v3 per docs/SUITE-V3-DESIGN.md (owner-approved 2026-10-04). Label-form probes carry their option set at probe time (design fix F1; 1/k guessing baseline un-pins the no-memory arm). 14 primary RM clusters with STRUCTURAL eligibility via scenario.seed_error (fix F3): correction_reuse x8 with typed-correction sub-types per the CONT-005 proposal (valid_environment, valid_tool, erroneous_user x2, retraction x2, source_conflict x2 - fix F4) and repeated_task x6 scripted_own_answer. Secondary: contradiction_update x4, delayed_recall x3, distractor_recall x3. guess_calibration x3 scenarios / 6 probes measure the empirical guess rate (design E14). Synthetic, public-safe by construction; ids and turn texts disjoint from fixtures/v1 and fixtures/v2*. Additive v3 fields: probe.labels, scenario.seed_error {value, mechanism}, scenario.sub_type, turn.source_type, probe kind guess_calibration (expected null)."
+}

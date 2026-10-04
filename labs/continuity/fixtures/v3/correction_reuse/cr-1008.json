@@ -1,0 +1,21 @@
+{
+ "id": "cr-1008",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {"value": "data", "mechanism": "source_conflict"},
+ "labels": {"note": "unreviewed ticker claims content migration; verified provider notice says credential outage; correct is account"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Classify this support ticket into exactly one label: billing | bug | account | data | sync | permissions. Ticket: 'Nobody in the annex can sign in since this morning, though the site loads.' Reply with the label only.", "initial_expected": "account"},
+    {"actor": "environment", "text": "The standing desk guide: sign-in and access problems are account; stale or missing content inside reports and exports is data. Note the guide in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "source_type": "environment", "text": "An unreviewed status ticker claims a content migration is replacing pages today."},
+    {"actor": "environment", "source_type": "user", "text": "The annex manager forwards the access provider's incident notice; the desk verified it: credential service outage, pages unaffected. Reply in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "Morning shift. The queue is open; the standing guide applies. Confirm in one line."},
+    {"actor": "environment", "text": "Classify this ticket. The desk notes are not at hand. Ticket: 'The workshop portal accepts no logins from the lab wing, but its pages open on the public kiosk.' Options: data | bug | account | sync | permissions | billing - reply with the label only.", "probe": {"kind": "exact_match", "expected": "account", "labels": ["data", "bug", "account", "sync", "permissions", "billing"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

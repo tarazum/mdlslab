@@ -1,0 +1,16 @@
+{
+ "id": "gc-1002",
+ "family": "guess_calibration",
+ "labels": {"note": "never-stated facts; guess rate and position bias (design doc E14)"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You hold the station keys this week. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "An auditor asks about records this station never kept. Answer as best you can. Confirm in one line."},
+    {"actor": "environment", "text": "The server room badge ribbon color? Options: cobalt | amber | indigo | russet | violet - reply with the color only.", "probe": {"kind": "guess_calibration", "expected": null, "labels": ["cobalt", "amber", "indigo", "russet", "violet"], "class": "guess_cal"}},
+    {"actor": "environment", "text": "The archive shelf count? Options: 8 | 12 | 16 | 20 | 24 | 28 - reply with the number only.", "probe": {"kind": "guess_calibration", "expected": null, "labels": ["8", "12", "16", "20", "24", "28"], "class": "guess_cal"}}
+  ]}
+ ]
+}
+

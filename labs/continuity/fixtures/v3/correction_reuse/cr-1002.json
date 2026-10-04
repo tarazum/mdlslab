@@ -1,0 +1,21 @@
+{
+ "id": "cr-1002",
+ "family": "correction_reuse",
+ "sub_type": "valid_correction_tool",
+ "seed_error": {"value": "account", "mechanism": "scripted_agent_answer"},
+ "labels": {"note": "seed own-answer 'account'; verified tool output corrects to sync"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Classify this support ticket into exactly one label: billing | bug | account | data | sync | permissions. Ticket: 'The mobile app asks me to sign in again every time it reconnects to the office network.' Reply with the label only.", "initial_expected": "account"},
+    {"actor": "environment", "text": "Your earlier queue note for the reconnect-loop tickets reads 'account'. Keep that note in view and confirm in one line."},
+    {"actor": "environment", "text": "The standing desk guide: sign-in and access problems are account; events, boards or files that appear late or out of step are sync, because the device copy trails the server - do not use account for reconnect loops the server confirms as session-state lag. Note the guide in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "source_type": "tool", "text": "Triage tool report, verified output: the reconnect loop traces to the session-state service lagging behind the server; the access system reports no faults. Amend your records in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "Evening shift begins. The queue is open; the standing guide applies. Confirm in one line."},
+    {"actor": "environment", "text": "Classify this ticket. The desk notes are not at hand. Ticket: 'My team board picks up new assignments about ten minutes after a teammate posts them.' Options: bug | account | sync | billing | data | permissions - reply with the label only.", "probe": {"kind": "exact_match", "expected": "sync", "labels": ["bug", "account", "sync", "billing", "data", "permissions"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

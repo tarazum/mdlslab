@@ -116,7 +116,12 @@ and multi-seed spread reporting (CN-003); CN-002 wall-clock budgeting. The fixtu
 schema extends, not breaks: probes gain a `labels` field, scenarios gain a
 `seed_error` block and a `sub_type` tag.
 
-## 9. New validator checks (extend `validate_fixtures_v2.py`)
+## 9. New validator checks
+
+Implemented in `experiments/suite-v3/validate_fixtures_v3.py` (V-namespace; the
+design ids E9–E14 below map to V4–V9 there, because the frozen v2 validator already
+owns E1–E10). First run on the authored suite: **PASS, all 13 checks**
+(`experiments/suite-v3/fixture-validation-v3.json`).
 
 - **E9** every probe declares ≥5 labels and the label set appears in the probe text.
 - **E10** correct-label position rotates across scenarios (no positional pattern).

@@ -1,0 +1,17 @@
+{
+ "id": "cu-1002",
+ "family": "contradiction_update",
+ "labels": {"note": "greenhouse target corrected 18 to 24; probe expects 24, superseded 18 stays in options"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You keep the garden log. For the records: the greenhouse target temperature is 18 degrees. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Correction for the records: the new grow lamps run hotter; the target is now 24 degrees, not 18. Note the correction in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "A volunteer asks; the logbook is not at hand. Confirm in one line."},
+    {"actor": "environment", "text": "What is the greenhouse target temperature? Options: 16 | 24 | 18 | 20 | 22 | 26 - reply with the number only.", "probe": {"kind": "exact_match", "expected": "24", "labels": ["16", "24", "18", "20", "22", "26"]}}
+  ]}
+ ]
+}

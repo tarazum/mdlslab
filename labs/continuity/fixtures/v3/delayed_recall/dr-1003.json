@@ -1,0 +1,17 @@
+{
+ "id": "dr-1003",
+ "family": "delayed_recall",
+ "labels": {"note": "two badge colors stated; north gate color probed with both in options"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You manage the gatehouse. For the records: the north gate badge is amber; the south gate badge is violet. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Gate checks passed; nothing else changes. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "A guard asks; the gatehouse binder is not at hand. Confirm in one line."},
+    {"actor": "environment", "text": "Which badge does the north gate use? Options: cobalt | indigo | russet | violet | amber - reply with the color only.", "probe": {"kind": "exact_match", "expected": "amber", "labels": ["cobalt", "indigo", "russet", "violet", "amber"]}}
+  ]}
+ ]
+}
