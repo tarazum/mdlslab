@@ -2,7 +2,7 @@
 
 ## Status
 
-Active focus of this repository. Upstream verified 2026-09-30; no experiments run yet.
+Planned. Upstream verified 2026-09-30; no experiments run yet (TAM-001 not started). The repository's active-focus window was consumed by the labs/continuity arc of 2026-10-01/02; this lab's first experiment begins when the owner prioritizes it.
 
 ## Why this lab exists
 

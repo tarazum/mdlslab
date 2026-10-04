@@ -10,3 +10,12 @@ Working agreement for any agent session in this lab. Aligned with the repository
 6. **Budgets and stop conditions.** Every runner embeds max turns / tokens / wall-clock; violations stop the run and are recorded as events. GPU-heavy runs take the shared agent-resource lock when the machine is contended.
 7. **Commit + push after each completed stage.** Public-safe content only: no private paths, credentials, or non-synthetic data in committed artifacts.
 8. **Session summary.** End each working session with: results/numbers → what was done → next stage + owner actions → an explicit note on what was recorded to memory.
+
+## Playbook promotions (back-links)
+
+Universal lessons from this lab, promoted to the machine-level playbook (`C:\projects\playbook`) per item 5:
+
+- **PB-074** — unattended queue claiming: pick only TODO, mark IN_PROGRESS as first write, freshness + lock check before resuming (from the arc's executor protocol).
+- **PB-075** — long-run crash recovery: journal every expensive side effect, rebuild post-processing offline from traces, verify frozen digests (from M7's instrumentation crash recovery).
+- **PB-076** — chain boosting: drive the next executor from completion notifications when milestones outnumber scheduler slots (from the arc's coordination pattern).
+- **PB-071 confirmation** — temp-0 + fixed seed does not fully determinize outcomes (CN-003, one flip in 350); appended to the existing playbook entry.
