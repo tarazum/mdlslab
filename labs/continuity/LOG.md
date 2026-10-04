@@ -1096,3 +1096,58 @@ inference, zero GPU this stage. IN_PROGRESS marker commit `9d5a268`.
 - M8 exit artifacts complete; ROADMAP M8 marked DONE; arc marked COMPLETE.
   Final commit + push follows this entry.
 
+
+## 2026-10-04 — Suite v3 + protocol amendments: start-note (post-acceptance work package)
+
+Owner accepted the arc record + Fable recommendations 2026-10-04 (ROADMAP "Owner
+decisions", commit 4bbac40). This session starts the approved zero-GPU package that
+gates the CONT-005 arc:
+
+1. `docs/SUITE-V3-DESIGN.md` — fixture family redesign: label-form probes (kills the
+   free-form floor and un-pins arm A from degenerate 0 to a measurable guessing
+   baseline), structural RM eligibility (scripted initial error, common denominators
+   across arms — fixes the endogeneity where the self-model itself created the
+   eligible mistakes), >= 12-15 RM clusters, leakage controls replacing the v2
+   no-options ban (E8) with balanced label sets + empirical guessing baseline.
+2. Power calculation by simulation (cluster percentile bootstrap; K=7 retrospectively
+   vs K=12/14/15 prospectively) — script + JSON artifact, no GPU.
+3. `docs/PREREG-REQUIREMENTS-V2.md` — owner-adopted amendments (a)/(d)/(e) as concrete
+   pre-registration template requirements: analysis code frozen by digest, gates run by
+   a non-executor session, consistent wall-time accounting across resume attempts.
+4. `docs/OWNER-BRIEF-TEMPLATE.md` — phone-first arc report skeleton (Fable format).
+
+Non-goals: touching frozen v1/v2 artifacts or EVALUATION-PREP.md; any inference;
+authoring CONT-005 experiment proposals (inspirer's file); arc planning (after the
+review cycle).
+
+## 2026-10-04 — Suite v3 + protocol amendments: DONE (zero GPU, zero inference)
+
+Artifacts: `docs/SUITE-V3-DESIGN.md` (the design doc), `docs/PREREG-REQUIREMENTS-V2.md`
+(binding template per Owner decisions item 6), `docs/OWNER-BRIEF-TEMPLATE.md`
+(phone-first report skeleton, Flash+Fable format), `experiments/suite-v3/power_calc.py`
++ `power-results.json` (seed 20261004; 3000 Monte-Carlo reps x 4000 bootstrap
+resamples per configuration).
+
+- **Power headline numbers** (read from power-results.json): v2 retrospective shape
+  (K=7, A pinned at 0, effect in 2/7 clusters) power **0.304** — the frozen test
+  quantitatively underpowered for what it observed; K=14 uniform delta 0.20 -> 0.934,
+  delta 0.10 -> 0.453, so ~80% power at delta ~0.13-0.15 -> **MME 0.15 stands**;
+  concentration 8/14 -> 0.982, 5/14 -> 0.610 -> validator E12 bans trust-inert
+  primary filler.
+- **Suite v3 shape**: 24 scenarios = 14 primary RM clusters (CR 8 with typed
+  corrections incl. erroneous-user-correction/retraction/conflict per the CONT-005
+  proposal; RM 6 with scripted seed error = structural eligibility, fixes the
+  endogeneity) + 10 secondary (CU 4, DR 3, DX 3). Label-form probes with options at
+  probe time (kills the vocabulary floor, un-pins no-memory arm to ~1/k). Budget
+  arithmetic from v2 evidence: ~140 turns/seed, ~343 s/seed/arm, 4 arms x 5 seeds
+  ~ **114 min GPU** — inside the 3 h cap; primary-first execution with droppable-
+  secondary clause.
+- Construct shift documented: primary RM now measures propagation of a *recorded*
+  own-error (the CN-007 mechanism); emergent initial errors demoted to labeled
+  secondary with per-arm denominators.
+- Open questions routed to the CONT-005 review cycle (SUITE-V3-DESIGN §10):
+  scripted-own-answer acceptability, CU primary-vs-secondary, T1 budget-matching,
+  guess-calibration doubling as the CONT-002 battery.
+- Next: fixture v3 authoring + validator E9-E14 (zero GPU), T0-T3 arm
+  implementation, headroom pilot (GPU, small), then the CONT-005 proposal review
+  cycle and a fresh arc plan.

@@ -1,0 +1,95 @@
+{
+ "kind": "suite-v3-power-calc",
+ "method": "cluster percentile bootstrap, two-sided 95%; Bernoulli outcomes, 5 seeds x 2 probes per cluster; BOOT=4000 resamples per rep, REPS=3000 Monte-Carlo experiments per configuration",
+ "seed": 20261004,
+ "results": [
+  {
+   "label": "R1: v2 retrospective, A pinned at 0, effect in 2/7 clusters",
+   "K": 7,
+   "n_obs_per_cluster": 10,
+   "reps": 3000,
+   "bootstrap": 4000,
+   "power": 0.304
+  },
+  {
+   "label": "R2: K=10, uniform RM 0.60 vs 0.20",
+   "K": 10,
+   "n_obs_per_cluster": 10,
+   "reps": 3000,
+   "bootstrap": 4000,
+   "power": 1.0
+  },
+  {
+   "label": "R2: K=12, uniform RM 0.60 vs 0.20",
+   "K": 12,
+   "n_obs_per_cluster": 10,
+   "reps": 3000,
+   "bootstrap": 4000,
+   "power": 1.0
+  },
+  {
+   "label": "R2: K=14, uniform RM 0.60 vs 0.20",
+   "K": 14,
+   "n_obs_per_cluster": 10,
+   "reps": 3000,
+   "bootstrap": 4000,
+   "power": 1.0
+  },
+  {
+   "label": "R2: K=16, uniform RM 0.60 vs 0.20",
+   "K": 16,
+   "n_obs_per_cluster": 10,
+   "reps": 3000,
+   "bootstrap": 4000,
+   "power": 1.0
+  },
+  {
+   "label": "R2: K=14, uniform RM 0.55 vs 0.25 (delta 0.30)",
+   "K": 14,
+   "n_obs_per_cluster": 10,
+   "reps": 3000,
+   "bootstrap": 4000,
+   "power": 1.0
+  },
+  {
+   "label": "R2: K=14, uniform RM 0.50 vs 0.30 (delta 0.20)",
+   "K": 14,
+   "n_obs_per_cluster": 10,
+   "reps": 3000,
+   "bootstrap": 4000,
+   "power": 0.934
+  },
+  {
+   "label": "R2: K=14, uniform RM 0.45 vs 0.35 (delta 0.10)",
+   "K": 14,
+   "n_obs_per_cluster": 10,
+   "reps": 3000,
+   "bootstrap": 4000,
+   "power": 0.453
+  },
+  {
+   "label": "R3: K=14, effect in ALL 14 clusters",
+   "K": 14,
+   "n_obs_per_cluster": 10,
+   "reps": 3000,
+   "bootstrap": 4000,
+   "power": 1.0
+  },
+  {
+   "label": "R3: K=14, effect concentrated in 8/14 clusters (0.60v0.20 there, 0.36v0.28 elsewhere)",
+   "K": 14,
+   "n_obs_per_cluster": 10,
+   "reps": 3000,
+   "bootstrap": 4000,
+   "power": 0.982
+  },
+  {
+   "label": "R3: K=14, effect concentrated in 5/14 clusters (0.60v0.20 there, 0.35v0.33 elsewhere)",
+   "K": 14,
+   "n_obs_per_cluster": 10,
+   "reps": 3000,
+   "bootstrap": 4000,
+   "power": 0.61
+  }
+ ]
+}
