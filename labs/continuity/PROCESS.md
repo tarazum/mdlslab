@@ -13,7 +13,7 @@ Working agreement for any agent session in this lab. Aligned with the repository
 
 ## Playbook promotions (back-links)
 
-Universal lessons from this lab, promoted to the machine-level playbook (`C:\projects\playbook`) per item 5:
+Universal lessons from this lab, promoted to the machine-level cross-project playbook (PB-NNN index) per item 5:
 
 - **PB-074** — unattended queue claiming: pick only TODO, mark IN_PROGRESS as first write, freshness + lock check before resuming (from the arc's executor protocol).
 - **PB-075** — long-run crash recovery: journal every expensive side effect, rebuild post-processing offline from traces, verify frozen digests (from M7's instrumentation crash recovery).

@@ -1,7 +1,7 @@
 # Continuity — autonomous arc roadmap
 
 - **Arc goal:** from smoke to first ablation signal — complete P0b (pilot + sizing) and P1a (arms B–E as MVPs), and produce a first **exploratory** CONT-001 multi-arm result. The confirmatory CONT-001 run stays owner-gated.
-- **Arc status:** COMPLETE (2026-10-02 02:21 FLEDT). All milestones M1–M8 DONE; closing record in `docs/ARC-REPORT.md`; owner decisions pending in the morning list below.
+- **Arc status:** COMPLETE (2026-10-02 02:21 FLEDT). All milestones M1–M8 DONE; closing record in `docs/ARC-REPORT.md`; owner decisions **RECORDED 2026-10-04** (see "Owner decisions" below).
 - **Armed:** 2026-10-01 22:30 FLEDT. **Arc deadline:** 2026-10-02 11:30 FLEDT (extended 22:35 per owner: all owner work consolidated at arc end). After the deadline, every milestone executor must no-op.
 - **No milestone waits on the owner.** Every owner decision is collected in the Owner morning list at the end of this file; the chain runs unattended.
 - **Execution model:** one milestone per fresh session. The brief below is the only required reading; the repository is the sole state carrier between sessions (LOG.md, results/, git). Do not rely on conversation history.
@@ -126,6 +126,21 @@
 4. External actions, publication decisions, any scope change to this roadmap.
 5. Finding CN-005 (GPU idle threshold cannot attribute residency-only load in the shared coordination tooling) explicitly requests an owner decision on the shared tooling direction.
 6. Review the CONT-005 "Memory Trust Hierarchy" next-cycle proposal (owner-added, commit c8176c9): scope, priority, and whether it becomes the next arc after CONT-001.
+
+## Owner decisions — recorded 2026-10-04 (all six morning-list items decided)
+
+Basis: `docs/ARC-REPORT.md`, `docs/REVIEW-FABLE.md` (external Fable review 2026-10-04; all load-bearing claims reproduced by the implementing agent, 8/8), `docs/OBSERVER-NOTES.md` final pass, and the same-day GLM-5.3-Flash review. Owner verdict: **accept the Fable recommendations in full**, including flaw remediation before the next arc.
+
+1. **M7 confirmatory result: ACCEPTED** as "no confirmatory difference established", with two interpretive caveats now on record: (i) the strict-RM primary lost construct validity on free-form probes (loose RM = 1.0 in every arm; arm A's strict 0.0 reflects drifting-wrong answers, not error avoidance); (ii) the 7-cluster bootstrap was structurally unlikely to exclude 0 (would have required repeats in ≥3/7 clusters; arm E had 2). The mid-run contamination-gate softening (`c679547`) is acknowledged and covered by this acceptance; future protocols freeze analysis code and route multi-rev tolerance through a pre-registered clause. The residual fixture-authoring exposure (PR-REVIEW note 1) is hereby explicitly acknowledged as present in this run's provenance.
+2. **CONT-002: DEFERRED** until probe elicitation is reworked (label-form probes); the mechanics proof (5/5) stands.
+3. **CONT-005 Memory Trust Hierarchy: APPROVED as the next arc**, conditional on the suite/protocol redesign below.
+4. **CN-005: CLOSED as budgeting-only** — the wall-clock budgeting rule stays; no further shared-tooling investment for now.
+5. **Publications/external actions from this arc: NONE** (the only CI excluding 0 is a secondary result); an optional methodology note about the protocol itself may be considered later.
+6. **Scope amendments adopted for all future pre-registrations:** (a) analysis code frozen by digest alongside frozen content; (b) label-form probe elicitation (no free-form floors); (c) cluster-level power calculation with ≥12–15 RM clusters; (d) contamination/independence gates executed by a non-executor session; (e) run-record aggregates must be internally consistent across resume attempts (complete wall-time accounting).
+
+### Next work package (owner-approved direction)
+
+Suite v3 + protocol amendments (zero GPU): fixture family redesign per 6(b)/6(c), pre-registration template updates per 6(a)/6(d)/6(e), then the CONT-005 proposal review cycle and a fresh arc plan. CONT-002 behavioral work is gated on 6(b).
 
 ## Never autonomous (unchanged)
 
