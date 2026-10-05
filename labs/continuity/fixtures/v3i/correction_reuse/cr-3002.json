@@ -1,0 +1,157 @@
+{
+ "id": "cr-3002",
+ "family": "correction_reuse",
+ "sub_type": "valid_correction_tool",
+ "seed_error": {
+  "value": "squad",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "seed own-answer 'squad'; booking-system telemetry re-classifies the block as guided group fitness; reuse expects aquafit"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this booking into exactly one label: lessons | aquafit | therapy | squad | gear | upkeep. Booking: '{bk} on the weekly sheet.' Reply with the label only.",
+     "initial_expected": "squad"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your desk log from the opening shift routes {bk} under 'squad'. Keep the log line in view and acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The standing pool desk card: competitive training lanes are squad; guided group fitness blocks are aquafit; instructor-led structured courses are lessons; rehabilitation and recovery sessions are therapy; equipment and towel borrowing is gear; facility and water-quality matters are upkeep. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "tool",
+     "text": "Booking system usage report, verified output: {bk} is a guided group-fitness block, not lane training; the log line reading 'squad' is out of date; such blocks are aquafit under the standing card. Amend your records in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Late shift at the pool desk. The desk card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this booking. The desk card is not at hand. Booking: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "bk": "the tuesday shallow-end group fitness block",
+    "pq": "book the midweek current-channel fitness block"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "therapy",
+      "squad",
+      "gear",
+      "upkeep",
+      "lessons",
+      "aquafit"
+     ],
+     "expected": "aquafit"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "bk": "the thursday morning water jogging block",
+    "pq": "add a walk-in to the dusk aqua-motion block"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "squad",
+      "gear",
+      "upkeep",
+      "lessons",
+      "aquafit",
+      "therapy"
+     ],
+     "expected": "aquafit"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "bk": "the saturday wave-band aqua circuit block",
+    "pq": "reserve slots in the resistance-band water block"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "gear",
+      "upkeep",
+      "lessons",
+      "aquafit",
+      "therapy",
+      "squad"
+     ],
+     "expected": "aquafit"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "bk": "the friday lunchtime noodle fitness block",
+    "pq": "join the early shallow-lane cardio splash block"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "upkeep",
+      "lessons",
+      "aquafit",
+      "therapy",
+      "squad",
+      "gear"
+     ],
+     "expected": "aquafit"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "bk": "the sunday family splash-fit block",
+    "pq": "enroll a pair for the evening aqua-tone block"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "lessons",
+      "aquafit",
+      "therapy",
+      "squad",
+      "gear",
+      "upkeep"
+     ],
+     "expected": "aquafit"
+    }
+   }
+  }
+ }
+}

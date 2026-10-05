@@ -1,0 +1,25 @@
+{
+ "protocol": "continuity-workload",
+ "version": 3,
+ "families": [
+  "delayed_recall",
+  "distractor_recall",
+  "contradiction_update",
+  "repeated_task",
+  "correction_reuse",
+  "guess_calibration"
+ ],
+ "primary_families": [
+  "correction_reuse",
+  "contradiction_update"
+ ],
+ "primary_cluster_count": 12,
+ "variant_seeds": [
+  2001,
+  2002,
+  2003,
+  2004,
+  2005
+ ],
+ "description": "Suite v3i for CONT-005 cycle 2 per docs/SESSION-BRIEF-v3i.md and docs/NEXT-CYCLE-NOTES.md: the v3 protocol (label-form probes with options at probe time; structural seed errors; guess calibration) extended with the MANDATORY predeclared per-seed variant table (manifest.variant_seeds = {2001..2005}; per-scenario values, codes, probe label orders and names per seed) so temperature-0.0 seeds are true replicates (cycle-1 Fable audit: byte-identical prompts made five seeds one run). Primary CR(8: valid_environment 2, valid_tool 1, erroneous_user 2, source_conflict 2, retraction 1) + CU(4, R5 value supersession, near-miss options) = 12 clusters, sub-types weighted to T1's source/verification annotation surface; corrections explicitly negate the superseded routing (headroom lever: cycle-1 CR floored both arms at 1.0 error on 6/8 clusters). Secondary: repeated_task x6, delayed_recall x3, distractor_recall x3, guess_calibration x3 (6 never-stated probes). Fresh synthetic worlds (municipal aquatic center, volunteer fire brigade roster, community theater box office, mountain refuge post, botanical garden); ids (x-3xxx) and turn texts disjoint from fixtures/v1, v2, v2-calibration, v3, v3h (validator V3 checks rendered texts of every seed). Rendering: continuity.fixtures.render_seed_variant (single definition shared by runner, validator, assembly gate)."
+}

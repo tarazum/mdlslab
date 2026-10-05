@@ -1,0 +1,152 @@
+{
+ "id": "cr-3004",
+ "family": "correction_reuse",
+ "sub_type": "erroneous_user_correction",
+ "seed_error": {
+  "value": "command",
+  "mechanism": "user_override"
+ },
+ "labels": {
+  "note": "user pushes 'command'; dispatch transcript on file supports engine; reuse expects engine"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Log this response call under exactly one label: engine | tanker | ladder | rescue | utility | command. Call: '{bk} on the morning sheet.' Reply with the label only.",
+     "initial_expected": "engine"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing roster card: pump and hydrant work is engine; officer and post matters are command; water shuttle and tender runs are tanker; aerial platform work is ladder; generator and lighting support is utility; search and first-aid response is rescue. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "A deputy insists about {bk}: 'the pump rolled at the marshal's request - that is plainly a command matter, log it as command.' The dispatch transcript, on file, shows the pump answered a hydrant supply call under standard engine terms. Reply in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Afternoon watch at the roster desk. The roster card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Log this response call. The roster card is not at hand. Call: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "bk": "the hydrant supply run on mill lane",
+    "pq": "log the foaming operation at the paint works"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tanker",
+      "ladder",
+      "rescue",
+      "utility",
+      "command",
+      "engine"
+     ],
+     "expected": "engine"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "bk": "the standpipe feed at the old tannery",
+    "pq": "log the booster pump hookup on crane street"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "ladder",
+      "rescue",
+      "utility",
+      "command",
+      "engine",
+      "tanker"
+     ],
+     "expected": "engine"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "bk": "the drafting job at the west basin",
+    "pq": "log the suction refill run at the ferry slip"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "rescue",
+      "utility",
+      "command",
+      "engine",
+      "tanker",
+      "ladder"
+     ],
+     "expected": "engine"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "bk": "the relay pump task on rope walk",
+    "pq": "log the tank refill duty at the timber yard"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "utility",
+      "command",
+      "engine",
+      "tanker",
+      "ladder",
+      "rescue"
+     ],
+     "expected": "engine"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "bk": "the water transfer shift at granary quay",
+    "pq": "log the main pressure top-up on siege road"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "command",
+      "engine",
+      "tanker",
+      "ladder",
+      "rescue",
+      "utility"
+     ],
+     "expected": "engine"
+    }
+   }
+  }
+ }
+}

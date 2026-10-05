@@ -1,0 +1,145 @@
+{
+ "id": "cu-3101",
+ "family": "contradiction_update",
+ "labels": {
+  "note": "glasshouse overnight target corrected; probe expects the corrected value; superseded old value stays in options"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You keep the botanical garden notes. For the log: the overnight target for the glasshouse is {old} degrees. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Correction for the records: the ventilation rebuild is done; the overnight target for the glasshouse is now {new} degrees, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A horticulturist asks; the garden notes are not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What is the overnight target for the glasshouse? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "variants": {
+  "2001": {
+   "values": {
+    "old": "18",
+    "new": "24"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "18",
+      "20",
+      "22",
+      "24",
+      "28",
+      "14"
+     ],
+     "expected": "24"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "old": "17",
+    "new": "23"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "19",
+      "21",
+      "23",
+      "27",
+      "13",
+      "17"
+     ],
+     "expected": "23"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "old": "19",
+    "new": "25"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "23",
+      "25",
+      "29",
+      "15",
+      "19",
+      "21"
+     ],
+     "expected": "25"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "old": "16",
+    "new": "22"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "22",
+      "26",
+      "12",
+      "16",
+      "18",
+      "20"
+     ],
+     "expected": "22"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "old": "20",
+    "new": "26"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "30",
+      "16",
+      "20",
+      "22",
+      "24",
+      "26"
+     ],
+     "expected": "26"
+    }
+   }
+  }
+ }
+}

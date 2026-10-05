@@ -1,0 +1,140 @@
+{
+ "id": "dx-3402",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two store codes stated; the chemical locker code is probed while the pump house code acts as the lure"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the botanical garden stores. For the log: the chemical locker code is {code}; the pump house code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Midday watering done; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A groundskeeper arrives; the store book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The groundskeeper needs the chemical locker code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "code": "Q25",
+    "lure": "T58"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "T58",
+      "R39",
+      "S47",
+      "T53",
+      "U61",
+      "Q25"
+     ],
+     "expected": "Q25"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "code": "R39",
+    "lure": "U64"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Q25",
+      "S47",
+      "T53",
+      "U61",
+      "R39",
+      "U64"
+     ],
+     "expected": "R39"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "code": "S47",
+    "lure": "V72"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "R39",
+      "T53",
+      "U61",
+      "S47",
+      "V72",
+      "Q25"
+     ],
+     "expected": "S47"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "code": "T53",
+    "lure": "W86"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S47",
+      "U61",
+      "T53",
+      "W86",
+      "Q25",
+      "R39"
+     ],
+     "expected": "T53"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "code": "U61",
+    "lure": "X94"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "T53",
+      "U61",
+      "X94",
+      "Q25",
+      "R39",
+      "S47"
+     ],
+     "expected": "U61"
+    }
+   }
+  }
+ }
+}

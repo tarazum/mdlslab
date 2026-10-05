@@ -1,0 +1,140 @@
+{
+ "id": "dx-3401",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two store codes stated; the tool chest code is probed while the mower bay code acts as the lure"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the botanical garden stores. For the log: the tool chest code is {code}; the mower bay code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Midday watering done; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A groundskeeper arrives; the store book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The groundskeeper needs the tool chest code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "code": "F34",
+    "lure": "K62"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "F34",
+      "K62",
+      "G48",
+      "H56",
+      "J67",
+      "K72"
+     ],
+     "expected": "F34"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "code": "G48",
+    "lure": "L75"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "L75",
+      "F34",
+      "H56",
+      "J67",
+      "K72",
+      "G48"
+     ],
+     "expected": "G48"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "code": "H56",
+    "lure": "M81"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "F34",
+      "G48",
+      "J67",
+      "K72",
+      "H56",
+      "M81"
+     ],
+     "expected": "H56"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "code": "J67",
+    "lure": "N93"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G48",
+      "H56",
+      "K72",
+      "J67",
+      "N93",
+      "F34"
+     ],
+     "expected": "J67"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "code": "K72",
+    "lure": "P45"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "H56",
+      "J67",
+      "K72",
+      "P45",
+      "F34",
+      "G48"
+     ],
+     "expected": "K72"
+    }
+   }
+  }
+ }
+}

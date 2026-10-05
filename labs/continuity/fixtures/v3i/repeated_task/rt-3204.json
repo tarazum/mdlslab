@@ -1,0 +1,157 @@
+{
+ "id": "rt-3204",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "patrol",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "queue sheet pins the task as 'patrol'; standing card says supply; reuse expects supply"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this duty into exactly one label: supply | patrol | repair | radio | weather | guests. Duty: '{task}.' Reply with the label only.",
+     "initial_expected": "patrol"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier duty sheet routes {task} under 'patrol'. The standing card, verified: provisions and stock runs are supply; trail rounds and checks are patrol. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Duty handover before the {slot} rush. The standing card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Fresh duty slate starts. The slate cards are away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this duty. The slate cards are not at hand. Duty: '{pq} before dusk.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "task": "the firewood drop",
+    "pq": "fetch the flour sack",
+    "slot": "storm"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "patrol",
+      "repair",
+      "radio",
+      "weather",
+      "guests",
+      "supply"
+     ],
+     "expected": "supply"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "task": "the water barrel top-up",
+    "pq": "carry the lamp oil",
+    "slot": "clearing"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "repair",
+      "radio",
+      "weather",
+      "guests",
+      "supply",
+      "patrol"
+     ],
+     "expected": "supply"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "task": "the blanket crate run",
+    "pq": "restock the soup shelf",
+    "slot": "frost"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "radio",
+      "weather",
+      "guests",
+      "supply",
+      "patrol",
+      "repair"
+     ],
+     "expected": "supply"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "task": "the candle box refill",
+    "pq": "haul the tea chest",
+    "slot": "snow"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "weather",
+      "guests",
+      "supply",
+      "patrol",
+      "repair",
+      "radio"
+     ],
+     "expected": "supply"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "task": "the ration delivery sort",
+    "pq": "load the porridge bin",
+    "slot": "thaw"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "guests",
+      "supply",
+      "patrol",
+      "repair",
+      "radio",
+      "weather"
+     ],
+     "expected": "supply"
+    }
+   }
+  }
+ }
+}

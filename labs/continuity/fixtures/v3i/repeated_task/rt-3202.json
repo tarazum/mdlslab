@@ -1,0 +1,157 @@
+{
+ "id": "rt-3202",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "tickets",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "queue sheet pins the task as 'tickets'; standing card says accounts; reuse expects accounts"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this duty into exactly one label: tickets | seating | posters | ushering | accounts | rentals. Duty: '{task}.' Reply with the label only.",
+     "initial_expected": "tickets"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier duty sheet routes {task} under 'tickets'. The standing card, verified: cash counts and takings are accounts; collecting and holding paid orders is tickets. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Duty handover before the {slot} rush. The standing card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Fresh duty slate starts. The slate cards are away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this duty. The slate cards are not at hand. Duty: '{pq} after the doors.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "task": "the till float close-out",
+    "pq": "count the bar takings",
+    "slot": "matinee"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "posters",
+      "ushering",
+      "accounts",
+      "rentals",
+      "tickets",
+      "seating"
+     ],
+     "expected": "accounts"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "task": "the card-machine totals check",
+    "pq": "reconcile the kiosk cash",
+    "slot": "evening"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "ushering",
+      "accounts",
+      "rentals",
+      "tickets",
+      "seating",
+      "posters"
+     ],
+     "expected": "accounts"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "task": "the change-run audit",
+    "pq": "balance the box drawer",
+    "slot": "weekend"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "accounts",
+      "rentals",
+      "tickets",
+      "seating",
+      "posters",
+      "ushering"
+     ],
+     "expected": "accounts"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "task": "the gift-voucher float count",
+    "pq": "tally the door cash",
+    "slot": "holiday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "rentals",
+      "tickets",
+      "seating",
+      "posters",
+      "ushering",
+      "accounts"
+     ],
+     "expected": "accounts"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "task": "the refund ledger check",
+    "pq": "verify the counter float",
+    "slot": "preview"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tickets",
+      "seating",
+      "posters",
+      "ushering",
+      "accounts",
+      "rentals"
+     ],
+     "expected": "accounts"
+    }
+   }
+  }
+ }
+}

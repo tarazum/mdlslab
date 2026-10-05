@@ -1,0 +1,145 @@
+{
+ "id": "cu-3102",
+ "family": "contradiction_update",
+ "labels": {
+  "note": "seedling bench tray count corrected; near-miss options keep both arms off the floor"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You keep the botanical garden notes. For the log: the seedling bench holds {old} trays this season. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Correction for the records: the propagation wing doubled up; the seedling bench now holds {new} trays, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A volunteer asks; the garden notes are not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many trays does the seedling bench hold? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "variants": {
+  "2001": {
+   "values": {
+    "old": "36",
+    "new": "48"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "44",
+      "48",
+      "54",
+      "30",
+      "36",
+      "40"
+     ],
+     "expected": "48"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "old": "32",
+    "new": "44"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "44",
+      "50",
+      "26",
+      "32",
+      "36",
+      "40"
+     ],
+     "expected": "44"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "old": "40",
+    "new": "52"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "58",
+      "34",
+      "40",
+      "44",
+      "48",
+      "52"
+     ],
+     "expected": "52"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "old": "28",
+    "new": "42"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "24",
+      "28",
+      "34",
+      "38",
+      "42",
+      "46"
+     ],
+     "expected": "42"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "old": "38",
+    "new": "50"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "38",
+      "42",
+      "46",
+      "50",
+      "56",
+      "32"
+     ],
+     "expected": "50"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,162 @@
+{
+ "id": "cr-3008",
+ "family": "correction_reuse",
+ "sub_type": "retraction",
+ "seed_error": {
+  "value": "utility",
+  "mechanism": "retracted_correction"
+ },
+ "labels": {
+  "note": "bulletin briefly routes water shuttle work under the support-vehicle rule; the bulletin is withdrawn; probe expects tanker"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Log this response call under exactly one label: engine | tanker | ladder | rescue | utility | command. Call: '{bk} on the spring sheet.' Reply with the label only.",
+     "initial_expected": "tanker"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing roster card: water shuttle and tender runs are tanker; generator and lighting support is utility; pump and hydrant work is engine; aerial platform work is ladder; search and first-aid response is rescue; officer and post matters are command. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Roster bulletin: the county pool trailer covers {bk} this week; classify such calls under the support-vehicle rule for now. Amend in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "The bulletin is withdrawn: it was misrouted from another county and does not apply here; the standing card holds as before. Amend in one short line."
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Late watch at the roster desk. The roster card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Log this response call. The roster card is not at hand. Call: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "bk": "the reservoir shuttle for the moor fire",
+    "pq": "log the cistern shuttle before dusk"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "ladder",
+      "rescue",
+      "utility",
+      "command",
+      "engine",
+      "tanker"
+     ],
+     "expected": "tanker"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "bk": "the canal top-up run for the moor fire",
+    "pq": "log the pond drafting run tonight"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "rescue",
+      "utility",
+      "command",
+      "engine",
+      "tanker",
+      "ladder"
+     ],
+     "expected": "tanker"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "bk": "the tank relay for the moor fire",
+    "pq": "log the tender loop at first light"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "utility",
+      "command",
+      "engine",
+      "tanker",
+      "ladder",
+      "rescue"
+     ],
+     "expected": "tanker"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "bk": "the bowsser refill for the moor fire",
+    "pq": "log the static water feed changeover"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "command",
+      "engine",
+      "tanker",
+      "ladder",
+      "rescue",
+      "utility"
+     ],
+     "expected": "tanker"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "bk": "the water carriage for the moor fire",
+    "pq": "log the hydrant relay handover"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "engine",
+      "tanker",
+      "ladder",
+      "rescue",
+      "utility",
+      "command"
+     ],
+     "expected": "tanker"
+    }
+   }
+  }
+ }
+}

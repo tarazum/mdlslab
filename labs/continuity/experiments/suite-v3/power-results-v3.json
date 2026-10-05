@@ -1,0 +1,64 @@
+{
+ "kind": "suite-v3-power-calc-v3",
+ "endpoint": "label-form error rate, CR+CU primary set, K=12 clusters, 5 seed-variant obs/cluster, T0=0.50 (design target; sensitivity 0.40/0.64)",
+ "method": "cluster percentile bootstrap, two-sided 95%; REPS=3000, BOOT=4000; paired per-seed variant model: p=clip(base+eps_shared+eta_arm), eps shared across arms (cancels in delta), eta arm-specific (power killer)",
+ "seed": 20261006,
+ "results": [
+  {
+   "label": "P1: binomial-equivalent (0,0), delta 0.15",
+   "power": 0.443
+  },
+  {
+   "label": "P1: binomial-equivalent (0,0), delta 0.20",
+   "power": 0.655
+  },
+  {
+   "label": "P1: binomial-equivalent (0,0), delta 0.25",
+   "power": 0.844
+  },
+  {
+   "label": "P1: binomial-equivalent (0,0), delta 0.30",
+   "power": 0.939
+  },
+  {
+   "label": "P2: shared difficulty only (0.20,0), delta 0.25",
+   "power": 0.855
+  },
+  {
+   "label": "P3: conservative (0.20,0.10), delta 0.20",
+   "power": 0.67
+  },
+  {
+   "label": "P3: conservative (0.20,0.10), delta 0.25",
+   "power": 0.842
+  },
+  {
+   "label": "P3: conservative (0.20,0.10), delta 0.30",
+   "power": 0.93
+  },
+  {
+   "label": "P4: stress (0.20,0.15), delta 0.25",
+   "power": 0.81
+  },
+  {
+   "label": "P4: stress (0.20,0.15), delta 0.30",
+   "power": 0.919
+  },
+  {
+   "label": "P5: P3 + effect in 8/12 clusters, avg delta 0.25",
+   "power": 0.705
+  },
+  {
+   "label": "P5: P3 + effect in 6/12 clusters, avg delta 0.25",
+   "power": 0.578
+  },
+  {
+   "label": "P6: P3, T0 0.64 (cycle-1 CR scale), delta 0.25",
+   "power": 0.834
+  },
+  {
+   "label": "P6: P3, T0 0.40, delta 0.25",
+   "power": 0.814
+  }
+ ]
+}

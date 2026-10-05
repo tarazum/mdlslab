@@ -1,0 +1,157 @@
+{
+ "id": "rt-3205",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "weather",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "queue sheet pins the task as 'weather'; standing card says radio; reuse expects radio"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this duty into exactly one label: supply | patrol | repair | radio | weather | guests. Duty: '{task}.' Reply with the label only.",
+     "initial_expected": "weather"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier duty sheet routes {task} under 'weather'. The standing card, verified: scheduled call signs and radio checks are radio; slope and summit reports are weather. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Duty handover before the {slot} rush. The standing card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Fresh duty slate starts. The slate cards are away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this duty. The slate cards are not at hand. Duty: '{pq} at the fixed hour.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "task": "the morning frequency test",
+    "pq": "log the valley base call",
+    "slot": "storm"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "radio",
+      "weather",
+      "guests",
+      "supply",
+      "patrol",
+      "repair"
+     ],
+     "expected": "radio"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "task": "the battery handset swap",
+    "pq": "confirm the ridge relay",
+    "slot": "clearing"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "weather",
+      "guests",
+      "supply",
+      "patrol",
+      "repair",
+      "radio"
+     ],
+     "expected": "radio"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "task": "the aerial guy inspection",
+    "pq": "acknowledge the trail set",
+    "slot": "frost"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "guests",
+      "supply",
+      "patrol",
+      "repair",
+      "radio",
+      "weather"
+     ],
+     "expected": "radio"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "task": "the spare set charge round",
+    "pq": "read the evening sign-in",
+    "slot": "snow"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "supply",
+      "patrol",
+      "repair",
+      "radio",
+      "weather",
+      "guests"
+     ],
+     "expected": "radio"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "task": "the channel roster update",
+    "pq": "relay the hut count",
+    "slot": "thaw"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "patrol",
+      "repair",
+      "radio",
+      "weather",
+      "guests",
+      "supply"
+     ],
+     "expected": "radio"
+    }
+   }
+  }
+ }
+}

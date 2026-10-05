@@ -1534,3 +1534,69 @@ next session (suite v3i with per-seed variant tables + EVALUATION-PREP-v3
 draft + power artifact; zero GPU; entry conditions verified at 73f1d96; chain
 continues Fable PR-REVIEW-v3 -> freeze -> gate -> pilot). Closure state clean:
 working tree clean, origin/main synced, no GPU locks, no active automations.
+
+## 2026-10-06 — CYCLE 2 START: suite v3i authoring + prereg v3 draft (zero GPU)
+
+Plan per docs/SESSION-BRIEF-v3i.md (entry conditions verified: main clean at
+2a419a0). One milestone, zero GPU: (1) fixtures/v3i with a predeclared
+per-seed variant table (values/codes/label-orders/names per seed — the Fable
+audit lesson: temp-0 seeds on byte-identical prompts are one run, not five);
+(2) validator extended with variant checks (V-namespace continues), runner-side
+render in fixtures.py; (3) power_calc_v3 with the NEW between-seed spread
+model (shared variant difficulty cancels in the paired T0-T1 delta; arm-variant
+interaction is the power killer — scanned explicitly); (4) EVALUATION-PREP-v3
+draft: primary contrast T1 vs T0, T2/T3 secondaries after the two claims.py
+fixes. Primary set keeps CR(8, sub-types rebalanced toward T1's source/verification
+surface)+CU(4)=12 clusters, headroom aimed mid-scale in both arms (explicit
+negation in corrections — the v3h CR floor driver). Next command: write
+fixtures.py render_seed_variant, then build_v3i.py emitting the suite.
+
+## 2026-10-06 — CYCLE 2 MILESTONE COMPLETE: suite v3i + prereg v3 draft (zero GPU)
+
+- **fixtures/v3i** (27 scenarios, 128 turns/seed, fresh worlds: aquatic
+  center, fire brigade roster, theater box office, refuge post, botanical
+  garden; ids x-3xxx): predeclared per-seed variant table per scenario
+  (values/codes/names + probe label orders; manifest.variant_seeds
+  {2001..2005}), emitted deterministically by the committed builder
+  (experiments/suite-v3/build_v3i.py). Primary CR(8, sub-types rebalanced to
+  T1's source/verification surface: valid_env 2, valid_tool 1, erroneous_user
+  2, source_conflict 2, retraction 1) + CU(4, R5, near-miss options) = 12;
+  headroom lever: every correction explicitly negates the superseded routing
+  (cycle-1 CR floored both arms on 6/8).
+- **Render single-definition:** continuity.fixtures.render_seed_variant +
+  load_suite_for_seed; loader relaxed for variant scenarios (expected
+  materializes at render). Runner unchanged (renders upstream in run scripts);
+  validator and assembly gate IMPORT the same function (no divergence).
+- **Validator extended** (validate_fixtures_v3.py): --suite v3i; per-suite CR
+  sub-type tables; per-scenario checks run on the RENDERED multiset (all 135
+  instances); new V14-variant-table (+V14b token closure), V15-seed-variation
+  (probe texts distinct per seed; identical-across-seeds turn share <= 0.50),
+  V16-label-order-varies (pairwise-distinct orders; expected position >= 3
+  distinct slots). Authoring slips caught by tooling, not by eye: 1 label leak
+  (pq 'tanker'), 1 leak ('patrol set'), validator V3 dup-id false-positive
+  fixed (count over base scenarios). v3i PASS 16/16; v3 + v3h regressions PASS.
+- **Assembly gate extended** (--suite v3i [--seed]): v3i PASS 7/7 on ALL five
+  seeds (resolutions exactly as designed: user 2, conflict 2, superseded
+  4 CU-R5 + 1 retraction, clean 3); G2 annotation counter fixed for prose
+  render ("source: " not "|source: "); v3 + v3h regressions PASS. Artifacts:
+  fixture-validation-v3i.json, assembly-gate-v3i.json.
+- **Power calc v3** (power_calc_v3.py / power-results-v3.json, seed 20261006):
+  NEW between-seed spread model — shared variant difficulty eps_s cancels in
+  the paired T0-T1 delta (P2 0.855 ~ binomial 0.844 at delta 0.25);
+  arm-variant interaction is the power killer. MME 0.25: power 0.842
+  (conservative 0.20/0.10), 0.810 (stress 0.20/0.15); delta 0.20 rejected
+  (0.670); concentration 8/12 -> 0.705 (caveat; pilot per-cluster report
+  covers it); T0 sensitivity 0.40-0.64 -> 0.814-0.834.
+- **docs/EVALUATION-PREP-v3.md DRAFT** (all 9 PREREG-REQUIREMENTS-V2 items):
+  primary contrast T0 - T1 two-sided with pre-declared harm-direction wording;
+  two-stage design — pilot on v3i at FREEZE-A (GO/NO-GO: headroom (0.15,0.85)
+  both arms; per-seed spread sd <= 0.25 else stress row + owner sign-off;
+  residual bracket-echo check with pre-authorized NOTE: fix), confirmatory on
+  held-out v3j authored at FREEZE-B (fresh content, same protocol, seeds
+  {3001..3005}, analysis script first); variant-integrity guard (per-seed
+  rendered digests frozen); T1 budget-matching declared as limitation.
+- Frozen cycle-1 artifacts and frozen-config-v2.json untouched; validator/
+  assembly-gate/fixtures digests recorded there are the cycle-1 record —
+  superseded for cycle 2 per the post-acceptance development pattern (73f1d96).
+- NEXT: Fable PR-REVIEW-v3 on this draft (standing-reviewer directive) ->
+  fold -> FREEZE-A -> Fable gate -> pilot (~150 min GPU).

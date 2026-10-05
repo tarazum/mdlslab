@@ -1,0 +1,145 @@
+{
+ "id": "dr-3302",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "store code with a NON-label companion fact (cycle-1 fix kept): echoing both facts yields at most one code"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the botanical garden stores. For the log: the glasshouse cabinet code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Midday watering done; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A gardener arrives; the store book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The gardener needs the glasshouse cabinet code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "code": "Q52",
+    "comp_thing": "misting line",
+    "comp_verb": "runs at eight"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "R64",
+      "S76",
+      "T88",
+      "V93",
+      "W21",
+      "Q52"
+     ],
+     "expected": "Q52"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "code": "R47",
+    "comp_thing": "vent motor",
+    "comp_verb": "hums from dawn"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "T68",
+      "U74",
+      "V86",
+      "W92",
+      "R47",
+      "S55"
+     ],
+     "expected": "R47"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "code": "S39",
+    "comp_thing": "shade blind",
+    "comp_verb": "drops at noon"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V65",
+      "W78",
+      "X83",
+      "S39",
+      "T46",
+      "U51"
+     ],
+     "expected": "S39"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "code": "T54",
+    "comp_thing": "bench heater",
+    "comp_verb": "warms till dusk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X91",
+      "Y26",
+      "T54",
+      "U62",
+      "V79",
+      "W85"
+     ],
+     "expected": "T54"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "code": "U48",
+    "comp_thing": "drain pump",
+    "comp_verb": "cycles each hour"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Z35",
+      "U48",
+      "V56",
+      "W63",
+      "X77",
+      "Y84"
+     ],
+     "expected": "U48"
+    }
+   }
+  }
+ }
+}

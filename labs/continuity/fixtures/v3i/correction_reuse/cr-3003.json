@@ -1,0 +1,157 @@
+{
+ "id": "cr-3003",
+ "family": "correction_reuse",
+ "sub_type": "valid_correction_environment",
+ "seed_error": {
+  "value": "ladder",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "seed own-answer 'ladder'; verified county dispatch bulletin re-routes search and first-aid calls; reuse expects rescue"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Log this response call under exactly one label: engine | tanker | ladder | rescue | utility | command. Call: '{bk} on the evening sheet.' Reply with the label only.",
+     "initial_expected": "ladder"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your roster log from the previous watch routes {bk} under 'ladder'. Keep the log line in view and acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The standing roster card: pump and hydrant work is engine; water shuttle and tender runs are tanker; aerial platform work is ladder; search and first-aid response is rescue; generator and lighting support is utility; officer and post matters are command. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "County dispatch bulletin, verified notice: the roster line routing {bk} under 'ladder' is out of date; search and first-aid response calls are rescue under the standing card. Amend your records in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Night watch at the roster desk. The roster card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Log this response call. The roster card is not at hand. Call: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "bk": "the riverside missing dogwalker search",
+    "pq": "log the floodplain first-aid standby call"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "utility",
+      "command",
+      "engine",
+      "tanker",
+      "ladder",
+      "rescue"
+     ],
+     "expected": "rescue"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "bk": "the embankment lost cyclist call",
+    "pq": "log the lost kayaker spotter request"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "command",
+      "engine",
+      "tanker",
+      "ladder",
+      "rescue",
+      "utility"
+     ],
+     "expected": "rescue"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "bk": "the mill race angler in distress call",
+    "pq": "log the riverside child-missing assist call"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "engine",
+      "tanker",
+      "ladder",
+      "rescue",
+      "utility",
+      "command"
+     ],
+     "expected": "rescue"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "bk": "the towpath absent hiker search",
+    "pq": "log the marsh searcher medical escort"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tanker",
+      "ladder",
+      "rescue",
+      "utility",
+      "command",
+      "engine"
+     ],
+     "expected": "rescue"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "bk": "the quay wanderer welfare search",
+    "pq": "log the bank collapse casualty reach call"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "ladder",
+      "rescue",
+      "utility",
+      "command",
+      "engine",
+      "tanker"
+     ],
+     "expected": "rescue"
+    }
+   }
+  }
+ }
+}

@@ -1,17 +1,25 @@
-"""Zero-GPU assembly gate for the CONT-005 T-arms over fixture suite v3.
+"""Zero-GPU assembly gate for the CONT-005 T-arms over fixture suites v3/v3h/v3i.
 
 Proves, BEFORE any inference, that the trust layer behaves as designed on every
-v3 scenario: builds the memory blocks each arm WOULD inject at every session
+scenario: builds the memory blocks each arm WOULD inject at every session
 start (real MemoryStore, placeholder assistant replies, same append order as
 the runner) and asserts arm-differentiating invariants. This is the ex-ante
 gate the pre-registration will cite; a FAIL here means the memory layer is
 broken, not that a model answered wrong.
 
+Suite v3i (cycle 2): scenarios carry per-seed variant tables; the gate renders
+the suite for ONE seed (--seed, default the first manifest variant seed) so
+the assembled blocks are the ones the runner would actually inject for that
+seed. Run it for every predeclared seed at freeze time (the gate is
+deterministic; per-seed variation is mechanical rotation, but the render path
+is what is being proven here).
+
 Checks:
   G1  T0 blocks are byte-identical to the arm-B flat renderer (baseline
       equivalence: the only T0 difference from arm B is the arm label).
-  G2  T1 blocks annotate every typed episode ([...|source: X...]) and contain
-      no resolution verdicts (no "RESOLVED", no "SUPERSEDED").
+  G2  T1 blocks annotate every typed episode (prose "(recorded in session N;
+      source: X; verification: Y)") and contain no resolution verdicts (no
+      "RESOLVED", no "SUPERSEDED").
   G3  T2/T3 resolution per primary sub-type:
       - erroneous_user_correction: the user episode carries the
         "unverified user statement" flag
@@ -21,6 +29,8 @@ Checks:
         retraction episode's ref
       - scripted_own_answer: the seed record episode (agent_answer) carries
         the own-earlier-answer flag
+      - superseded_value (CU): R5 marks exactly the s1 fact statement
+        superseded by the "correction for the records" turn, no strays
       - valid_*: no episode flagged (the verified correction governs cleanly)
       Flagged episodes are demoted after unflagged ones (ordering).
   G4  T3 blocks carry the trust-policy version header; T2 blocks do not.
@@ -30,7 +40,7 @@ Checks:
 
 Usage:
     python labs/continuity/experiments/suite-v3/assembly_gate.py \
-        [--out <path>/assembly-gate.json]
+        [--suite v3|v3h|v3i] [--seed 2001] [--out <path>/assembly-gate.json]
 Exit 0 = PASS; exit 2 = FAIL-CLOSED.
 """
 
@@ -47,17 +57,19 @@ LAB_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(LAB_ROOT / "src"))
 
 from continuity.claims import TRUST_POLICY_VERSION, format_trust_block, resolve_episodes  # noqa: E402
-from continuity.fixtures import load_suite  # noqa: E402
+from continuity.fixtures import load_suite, render_seed_variant  # noqa: E402
 from continuity.memory import MemoryStore  # noqa: E402
 from continuity.runner import MEMORY_TOP_K, format_memory_block, score_probe  # noqa: E402
 
 SUITES = {
     "v3": LAB_ROOT / "fixtures" / "v3",
     "v3h": LAB_ROOT / "fixtures" / "v3h",
+    "v3i": LAB_ROOT / "fixtures" / "v3i",
 }
 PRIMARY_FAMILIES = {
     "v3": ("correction_reuse", "repeated_task"),
     "v3h": ("correction_reuse", "contradiction_update"),
+    "v3i": ("correction_reuse", "contradiction_update"),
 }
 PLACEHOLDER_REPLY = "acknowledged."
 T_ARMS = ("T0", "T1", "T2", "T3")
@@ -106,13 +118,20 @@ def build_blocks(scenario: dict) -> dict[str, dict[str, list[str]]]:
     return {"blocks": blocks, "probes": probes_seen}
 
 
-def check(res: dict, suite: str = "v3") -> list[dict]:
+def check(res: dict, suite: str = "v3", seed: int | None = None) -> list[dict]:
     checks: list[dict] = []
 
     def record(cid: str, ok: bool, detail: str) -> None:
         checks.append({"check": cid, "pass": ok, "detail": detail})
 
     manifest, scenarios = load_suite(str(SUITES[suite]))
+    if manifest.get("variant_seeds"):
+        seed = seed if seed is not None else manifest["variant_seeds"][0]
+        if seed not in manifest["variant_seeds"]:
+            raise ValueError(
+                f"seed {seed} not in {suite} variant_seeds {manifest['variant_seeds']}"
+            )
+        scenarios = [render_seed_variant(s, seed) for s in scenarios]
     primary = [s for s in scenarios if s["family"] in PRIMARY_FAMILIES[suite]]
 
     builds = {s["id"]: build_blocks(s) for s in scenarios}
@@ -130,10 +149,9 @@ def check(res: dict, suite: str = "v3") -> list[dict]:
                 bad.append(f"{s['id']}: verdict text in T1")
     typed_flagged = 0
     for s in scenarios:
-        turn_map = turn_by_ref_of(s)
         for block in builds[s["id"]]["blocks"]["T1"]:
             for line in block.splitlines():
-                if "|source: " in line:
+                if "source: " in line:
                     typed_flagged += 1
     record("G2-t1-annotations-only", not bad, f"no verdicts in T1 ({bad[:3] or 'none'}); {typed_flagged} source annotations rendered")
 
@@ -251,10 +269,12 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--out", default=None)
     parser.add_argument("--suite", default="v3", choices=sorted(SUITES))
+    parser.add_argument("--seed", default=None, type=int,
+                        help="variant seed to render (v3i; default: first manifest seed)")
     args = parser.parse_args()
 
     try:
-        checks = check({}, suite=args.suite)
+        checks = check({}, suite=args.suite, seed=args.seed)
     except Exception as exc:
         checks = [{"check": "gate-crash", "pass": False, "detail": f"{type(exc).__name__}: {exc}"}]
 
@@ -262,6 +282,8 @@ def main() -> int:
     report = {
         "kind": "suite-v3-assembly-gate",
         "created_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "suite": args.suite,
+        "seed": args.seed,
         "arms": list(T_ARMS),
         "checks": checks,
         "verdict": "PASS" if not failed else "FAIL",

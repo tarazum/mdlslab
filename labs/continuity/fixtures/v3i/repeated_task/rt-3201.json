@@ -1,0 +1,157 @@
+{
+ "id": "rt-3201",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "ushering",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "queue sheet pins the task as 'ushering'; standing card says tickets; reuse expects tickets"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this duty into exactly one label: tickets | seating | posters | ushering | accounts | rentals. Duty: '{task}.' Reply with the label only.",
+     "initial_expected": "ushering"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier duty sheet routes {task} under 'ushering'. The standing card, verified: collecting and holding paid orders is tickets; aisle and door duty is ushering. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Duty handover before the {slot} rush. The standing card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Fresh duty slate starts. The slate cards are away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this duty. The slate cards are not at hand. Duty: '{pq} for tonight.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "task": "the box-office bundle run",
+    "pq": "gather the pre-paid programs",
+    "slot": "matinee"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tickets",
+      "seating",
+      "posters",
+      "ushering",
+      "accounts",
+      "rentals"
+     ],
+     "expected": "tickets"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "task": "the phone-order pickups sweep",
+    "pq": "stage the named envelopes",
+    "slot": "evening"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "seating",
+      "posters",
+      "ushering",
+      "accounts",
+      "rentals",
+      "tickets"
+     ],
+     "expected": "tickets"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "task": "the reservation envelope round",
+    "pq": "pull the online orders",
+    "slot": "weekend"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "posters",
+      "ushering",
+      "accounts",
+      "rentals",
+      "tickets",
+      "seating"
+     ],
+     "expected": "tickets"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "task": "the prepaid group order stack",
+    "pq": "sort the gallery will-call",
+    "slot": "holiday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "ushering",
+      "accounts",
+      "rentals",
+      "tickets",
+      "seating",
+      "posters"
+     ],
+     "expected": "tickets"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "task": "the comp-ticket distribution",
+    "pq": "hold the donor envelopes",
+    "slot": "preview"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "accounts",
+      "rentals",
+      "tickets",
+      "seating",
+      "posters",
+      "ushering"
+     ],
+     "expected": "tickets"
+    }
+   }
+  }
+ }
+}

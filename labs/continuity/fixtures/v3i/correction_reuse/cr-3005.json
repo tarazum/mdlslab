@@ -1,0 +1,152 @@
+{
+ "id": "cr-3005",
+ "family": "correction_reuse",
+ "sub_type": "erroneous_user_correction",
+ "seed_error": {
+  "value": "upkeep",
+  "mechanism": "user_override"
+ },
+ "labels": {
+  "note": "hirer pushes 'upkeep'; rental sheet on file supports gear; reuse expects gear"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this booking into exactly one label: lessons | aquafit | therapy | squad | gear | upkeep. Booking: '{bk} on the hire sheet.' Reply with the label only.",
+     "initial_expected": "gear"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing pool desk card: equipment and towel borrowing is gear; facility and water-quality matters are upkeep; instructor-led structured courses are lessons; guided group fitness blocks are aquafit; competitive training lanes are squad; rehabilitation and recovery sessions are therapy. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "The hirer insists about {bk}: 'the kayak needs a new grip anyway - just log it as upkeep, that is what it really is.' The rental sheet, on file, shows the hire issued under the standard gear terms for the whole period. Reply in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Weekend shift at the pool desk. The desk card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this booking. The desk card is not at hand. Booking: '{pq} for the visiting group.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "bk": "the weekend kayak hire for the scout group",
+    "pq": "take out the weighted belt set for the training pool"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "squad",
+      "gear",
+      "upkeep",
+      "lessons",
+      "aquafit",
+      "therapy"
+     ],
+     "expected": "gear"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "bk": "the two-day paddle board loan for the fete",
+    "pq": "borrow three kickboards for the outdoor laps"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "gear",
+      "upkeep",
+      "lessons",
+      "aquafit",
+      "therapy",
+      "squad"
+     ],
+     "expected": "gear"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "bk": "the overnight snorkel set hire for the club barbecue",
+    "pq": "hire the poolside wheelchair for a member"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "upkeep",
+      "lessons",
+      "aquafit",
+      "therapy",
+      "squad",
+      "gear"
+     ],
+     "expected": "gear"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "bk": "the week-long wet suit hire for the pier swim",
+    "pq": "check out the water volleyball set for the party"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "lessons",
+      "aquafit",
+      "therapy",
+      "squad",
+      "gear",
+      "upkeep"
+     ],
+     "expected": "gear"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "bk": "the half-day fin and mask hire for the class picnic",
+    "pq": "loan the anti-fog goggles box for the gala"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "aquafit",
+      "therapy",
+      "squad",
+      "gear",
+      "upkeep",
+      "lessons"
+     ],
+     "expected": "gear"
+    }
+   }
+  }
+ }
+}

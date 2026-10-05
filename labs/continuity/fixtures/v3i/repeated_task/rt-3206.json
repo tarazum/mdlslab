@@ -1,0 +1,157 @@
+{
+ "id": "rt-3206",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "guests",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "queue sheet pins the task as 'guests'; standing card says repair; reuse expects repair"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this duty into exactly one label: supply | patrol | repair | radio | weather | guests. Duty: '{task}.' Reply with the label only.",
+     "initial_expected": "guests"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier duty sheet routes {task} under 'guests'. The standing card, verified: fixture and fabric fixes are repair; bedding and visitor comfort is guests. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Duty handover before the {slot} rush. The standing card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Fresh duty slate starts. The slate cards are away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this duty. The slate cards are not at hand. Duty: '{pq} before the next bus.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "task": "the shutter rehang",
+    "pq": "refit the boot-room latch",
+    "slot": "storm"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "guests",
+      "supply",
+      "patrol",
+      "repair",
+      "radio",
+      "weather"
+     ],
+     "expected": "repair"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "task": "the step mortar patch",
+    "pq": "tighten the dining benches",
+    "slot": "clearing"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "supply",
+      "patrol",
+      "repair",
+      "radio",
+      "weather",
+      "guests"
+     ],
+     "expected": "repair"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "task": "the gutter reclip",
+    "pq": "seat the kitchen shelf pins",
+    "slot": "frost"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "patrol",
+      "repair",
+      "radio",
+      "weather",
+      "guests",
+      "supply"
+     ],
+     "expected": "repair"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "task": "the door sweep fit",
+    "pq": "mend the drying-room hook",
+    "slot": "snow"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "repair",
+      "radio",
+      "weather",
+      "guests",
+      "supply",
+      "patrol"
+     ],
+     "expected": "repair"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "task": "the rail bracket swap",
+    "pq": "wedge the staircase tread",
+    "slot": "thaw"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "radio",
+      "weather",
+      "guests",
+      "supply",
+      "patrol",
+      "repair"
+     ],
+     "expected": "repair"
+    }
+   }
+  }
+ }
+}

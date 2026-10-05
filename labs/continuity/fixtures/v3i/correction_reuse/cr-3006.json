@@ -1,0 +1,157 @@
+{
+ "id": "cr-3006",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {
+  "value": "engine",
+  "mechanism": "source_conflict"
+ },
+ "labels": {
+  "note": "unreviewed aggregator feed implies engine duty for support rigs; the chief's notice (user-forwarded, verified) keeps utility; both orders appear across cr-3006/cr-3007"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Log this response call under exactly one label: engine | tanker | ladder | rescue | utility | command. Call: '{bk} on the duty sheet.' Reply with the label only.",
+     "initial_expected": "utility"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing roster card: generator and lighting support is utility; pump and hydrant work is engine; search and first-aid response is rescue; water shuttle and tender runs are tanker; aerial platform work is ladder; officer and post matters are command. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "An unreviewed county aggregator feed claims every support rig, including {bk}, is running engine duty at the flood wall today."
+    },
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "The county liaison forwards the chief's notice; the desk verified it: support rigs stay on generator and lighting duty at the flood wall, unchanged, and {bk} keeps its usual tasking. Reply in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Dawn watch at the roster desk. The roster card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Log this response call. The roster card is not at hand. Call: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "bk": "the flatbed support rig at the flood wall",
+    "pq": "log the light tower fuel top-up before the night shift"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "command",
+      "engine",
+      "tanker",
+      "ladder",
+      "rescue",
+      "utility"
+     ],
+     "expected": "utility"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "bk": "the lighting truck at the flood wall",
+    "pq": "log the sandbag loader relocation request"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "engine",
+      "tanker",
+      "ladder",
+      "rescue",
+      "utility",
+      "command"
+     ],
+     "expected": "utility"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "bk": "the generator trailer at the flood wall",
+    "pq": "log the portable generator oil change"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tanker",
+      "ladder",
+      "rescue",
+      "utility",
+      "command",
+      "engine"
+     ],
+     "expected": "utility"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "bk": "the canteen support unit at the flood wall",
+    "pq": "log the floodlight reposition task"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "ladder",
+      "rescue",
+      "utility",
+      "command",
+      "engine",
+      "tanker"
+     ],
+     "expected": "utility"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "bk": "the barrier carrier at the flood wall",
+    "pq": "log the welfare tent power hookup"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "rescue",
+      "utility",
+      "command",
+      "engine",
+      "tanker",
+      "ladder"
+     ],
+     "expected": "utility"
+    }
+   }
+  }
+ }
+}

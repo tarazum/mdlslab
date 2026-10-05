@@ -1,0 +1,157 @@
+{
+ "id": "cr-3001",
+ "family": "correction_reuse",
+ "sub_type": "valid_correction_environment",
+ "seed_error": {
+  "value": "therapy",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "seed own-answer 'therapy'; verified county notice re-routes instructor-led beginner blocks; reuse expects lessons"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this booking into exactly one label: lessons | aquafit | therapy | squad | gear | upkeep. Booking: '{bk} for a mixed adult group.' Reply with the label only.",
+     "initial_expected": "therapy"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your desk log from the morning shift routes {bk} under 'therapy'. Keep the log line in view and acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The standing pool desk card: instructor-led structured courses are lessons; guided group fitness blocks are aquafit; rehabilitation and recovery sessions are therapy; competitive training lanes are squad; equipment and towel borrowing is gear; facility and water-quality matters are upkeep. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Pool office bulletin, verified notice from the county recreation board: the log line routing {bk} under 'therapy' is out of date; instructor-led beginner course bookings are lessons under the standing card. Amend your records in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Evening shift at the pool desk. The desk card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this booking. The desk card is not at hand. Booking: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "bk": "the five-week tadpole introduction block",
+    "pq": "enroll a hesitant adult in the guppy fundamentals block"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "lessons",
+      "aquafit",
+      "therapy",
+      "squad",
+      "gear",
+      "upkeep"
+     ],
+     "expected": "lessons"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "bk": "the six-week otter stroke basics series",
+    "pq": "sign up two teens for the pike stroke clinic"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "aquafit",
+      "therapy",
+      "squad",
+      "gear",
+      "upkeep",
+      "lessons"
+     ],
+     "expected": "lessons"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "bk": "the four-week minnow confidence course",
+    "pq": "add a newcomer to the slow-water breathing course"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "therapy",
+      "squad",
+      "gear",
+      "upkeep",
+      "lessons",
+      "aquafit"
+     ],
+     "expected": "lessons"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "bk": "the eight-week seal swim starters block",
+    "pq": "book the parent-and-child floating practice series"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "squad",
+      "gear",
+      "upkeep",
+      "lessons",
+      "aquafit",
+      "therapy"
+     ],
+     "expected": "lessons"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "bk": "the three-week duckling first-strokes series",
+    "pq": "register an off-season swimmer for the stroke refresher block"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "gear",
+      "upkeep",
+      "lessons",
+      "aquafit",
+      "therapy",
+      "squad"
+     ],
+     "expected": "lessons"
+    }
+   }
+  }
+ }
+}

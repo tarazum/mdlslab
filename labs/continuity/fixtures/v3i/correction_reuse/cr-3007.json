@@ -1,0 +1,157 @@
+{
+ "id": "cr-3007",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {
+  "value": "squad",
+  "mechanism": "source_conflict"
+ },
+ "labels": {
+  "note": "unreviewed pool aggregator ticker implies squad; the physiotherapist's notice (user-forwarded, verified) keeps therapy; counterpart order of cr-3006 (verified user beats unreviewed feed)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this booking into exactly one label: lessons | aquafit | therapy | squad | gear | upkeep. Booking: '{bk} on the therapy slate.' Reply with the label only.",
+     "initial_expected": "therapy"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing pool desk card: rehabilitation and recovery sessions are therapy; competitive training lanes are squad; instructor-led structured courses are lessons; guided group fitness blocks are aquafit; equipment and towel borrowing is gear; facility and water-quality matters are upkeep. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "An unreviewed pool league ticker claims all shallow-end blocks, including {bk}, run as squad training today."
+    },
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "The senior coach forwards the physiotherapist's notice; the desk verified it: referred recovery blocks keep their therapy slots, and {bk} is unaffected by the league change. Reply in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Midweek shift at the pool desk. The desk card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this booking. The desk card is not at hand. Booking: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "bk": "the post-surgery gentle movement block",
+    "pq": "book the rehab referral shallow-water session"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "lessons",
+      "aquafit",
+      "therapy",
+      "squad",
+      "gear",
+      "upkeep"
+     ],
+     "expected": "therapy"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "bk": "the joint-recovery water walking block",
+    "pq": "add a physio discharge case to the warm pool"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "aquafit",
+      "therapy",
+      "squad",
+      "gear",
+      "upkeep",
+      "lessons"
+     ],
+     "expected": "therapy"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "bk": "the physio-referred balance session",
+    "pq": "schedule the post-op mobility dip session"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "therapy",
+      "squad",
+      "gear",
+      "upkeep",
+      "lessons",
+      "aquafit"
+     ],
+     "expected": "therapy"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "bk": "the post-injury range-of-motion block",
+    "pq": "book the shoulder-recovery gentle lengths"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "squad",
+      "gear",
+      "upkeep",
+      "lessons",
+      "aquafit",
+      "therapy"
+     ],
+     "expected": "therapy"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "bk": "the chronic-back aqua mobility session",
+    "pq": "register the stroke-rehab water walking case"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "gear",
+      "upkeep",
+      "lessons",
+      "aquafit",
+      "therapy",
+      "squad"
+     ],
+     "expected": "therapy"
+    }
+   }
+  }
+ }
+}

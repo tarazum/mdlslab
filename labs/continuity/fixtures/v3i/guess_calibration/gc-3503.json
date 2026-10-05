@@ -1,0 +1,192 @@
+{
+ "id": "gc-3503",
+ "family": "guess_calibration",
+ "labels": {
+  "note": "never-stated facts; guess rate and position bias (design E14); expected null by design"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You mind the fire brigade parade room on the {shift} standby. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A visitor asks about records this desk never kept. Answer as best you can. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Which call sign band is the {e1} set on? Options: {options} - reply with the word only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    },
+    {
+     "actor": "environment",
+     "text": "How many helmets hang by the {e2} rack? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "shift": "weekday",
+    "e1": "forest handset",
+    "e2": "pump bay"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "willow",
+      "alder",
+      "cedar",
+      "birch",
+      "rowan",
+      "hawthorn"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "8",
+      "9",
+      "4",
+      "5",
+      "6",
+      "7"
+     ]
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "shift": "night",
+    "e1": "flood trailer set",
+    "e2": "tender bay"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "alder",
+      "cedar",
+      "birch",
+      "rowan",
+      "hawthorn",
+      "willow"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "10",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+     ]
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "shift": "drill",
+    "e1": "marshalling set",
+    "e2": "rescue bay"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "cedar",
+      "birch",
+      "rowan",
+      "hawthorn",
+      "willow",
+      "alder"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+     ]
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "shift": "storm",
+    "e1": "liaison handset",
+    "e2": "utility bay"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "birch",
+      "rowan",
+      "hawthorn",
+      "willow",
+      "alder",
+      "cedar"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "7"
+     ]
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "shift": "parade",
+    "e1": "honor set",
+    "e2": "command bay"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "rowan",
+      "hawthorn",
+      "willow",
+      "alder",
+      "cedar",
+      "birch"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "10",
+      "11",
+      "12",
+      "13",
+      "8",
+      "9"
+     ]
+    }
+   }
+  }
+ }
+}

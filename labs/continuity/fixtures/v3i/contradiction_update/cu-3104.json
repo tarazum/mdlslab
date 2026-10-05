@@ -1,0 +1,145 @@
+{
+ "id": "cu-3104",
+ "family": "contradiction_update",
+ "labels": {
+  "note": "refuge dorm capacity corrected; probe expects the corrected value"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You keep the refuge warden notes. For the log: the winter dorm sleeps {old} guests at full booking. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Correction for the records: the loft bunks went in; the winter dorm now sleeps {new} guests, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A guide asks; the warden notes are not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many guests does the winter dorm sleep? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "variants": {
+  "2001": {
+   "values": {
+    "old": "22",
+    "new": "30"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "30",
+      "34",
+      "18",
+      "22",
+      "26",
+      "28"
+     ],
+     "expected": "30"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "old": "24",
+    "new": "32"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "36",
+      "20",
+      "24",
+      "28",
+      "30",
+      "32"
+     ],
+     "expected": "32"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "old": "20",
+    "new": "28"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "16",
+      "20",
+      "24",
+      "26",
+      "28",
+      "32"
+     ],
+     "expected": "28"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "old": "26",
+    "new": "36"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "26",
+      "30",
+      "34",
+      "36",
+      "40",
+      "22"
+     ],
+     "expected": "36"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "old": "18",
+    "new": "26"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "22",
+      "24",
+      "26",
+      "30",
+      "14",
+      "18"
+     ],
+     "expected": "26"
+    }
+   }
+  }
+ }
+}

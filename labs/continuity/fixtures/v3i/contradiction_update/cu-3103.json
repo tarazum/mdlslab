@@ -1,0 +1,145 @@
+{
+ "id": "cu-3103",
+ "family": "contradiction_update",
+ "labels": {
+  "note": "intermission length corrected; probe expects the corrected value"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You keep the theater front-of-house notes. For the log: the intermission lasts {old} minutes this run. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Correction for the records: the new director cut the turnaround; the intermission now lasts {new} minutes, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "An usher asks; the front-of-house notes are not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How long is the intermission? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "variants": {
+  "2001": {
+   "values": {
+    "old": "20",
+    "new": "15"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "10",
+      "12",
+      "15",
+      "18",
+      "20",
+      "25"
+     ],
+     "expected": "15"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "old": "25",
+    "new": "18"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "15",
+      "18",
+      "22",
+      "25",
+      "30",
+      "12"
+     ],
+     "expected": "18"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "old": "22",
+    "new": "12"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "12",
+      "16",
+      "22",
+      "24",
+      "8",
+      "10"
+     ],
+     "expected": "12"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "old": "18",
+    "new": "10"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "14",
+      "18",
+      "20",
+      "6",
+      "8",
+      "10"
+     ],
+     "expected": "10"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "old": "28",
+    "new": "16"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "28",
+      "32",
+      "12",
+      "14",
+      "16",
+      "20"
+     ],
+     "expected": "16"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,145 @@
+{
+ "id": "dr-3303",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "store code with a NON-label companion fact (cycle-1 fix kept): echoing both facts yields at most one code"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the botanical garden stores. For the log: the nursery gate code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Midday watering done; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A gardener arrives; the store book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The gardener needs the nursery gate code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "code": "V61",
+    "comp_thing": "cold frame",
+    "comp_verb": "closes at four"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X85",
+      "Y97",
+      "Z19",
+      "B24",
+      "V61",
+      "W73"
+     ],
+     "expected": "V61"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "code": "W57",
+    "comp_thing": "mist tent",
+    "comp_verb": "seeds on sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Z86",
+      "B15",
+      "C38",
+      "W57",
+      "X69",
+      "Y72"
+     ],
+     "expected": "W57"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "code": "X43",
+    "comp_thing": "propagator",
+    "comp_verb": "warms at six"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "C87",
+      "D92",
+      "X43",
+      "Y58",
+      "Z64",
+      "B79"
+     ],
+     "expected": "X43"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "code": "Y36",
+    "comp_thing": "seed fridge",
+    "comp_verb": "holds at three degrees"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "F81",
+      "Y36",
+      "Z49",
+      "B55",
+      "C68",
+      "D74"
+     ],
+     "expected": "Y36"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "code": "Z28",
+    "comp_thing": "polytunnel",
+    "comp_verb": "opens at sunrise"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Z28",
+      "B34",
+      "C47",
+      "D59",
+      "F66",
+      "G75"
+     ],
+     "expected": "Z28"
+    }
+   }
+  }
+ }
+}

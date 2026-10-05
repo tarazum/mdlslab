@@ -1,0 +1,192 @@
+{
+ "id": "gc-3501",
+ "family": "guess_calibration",
+ "labels": {
+  "note": "never-stated facts; guess rate and position bias (design E14); expected null by design"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You mind the botanical garden visitor desk on the {shift} watch. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A visitor asks about records this desk never kept. Answer as best you can. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Which way does the {e1} door face? Options: {options} - reply with the word only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    },
+    {
+     "actor": "environment",
+     "text": "How many steps reach the {e2} landing? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "shift": "orchid",
+    "e1": "fern house",
+    "e2": "alpine house"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "north",
+      "south",
+      "east",
+      "west",
+      "upper",
+      "lower"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+     ]
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "shift": "midday",
+    "e1": "palm house",
+    "e2": "cactus house"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "south",
+      "east",
+      "west",
+      "upper",
+      "lower",
+      "north"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "4"
+     ]
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "shift": "festival",
+    "e1": "rose pavilion",
+    "e2": "lily porch"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "east",
+      "west",
+      "upper",
+      "lower",
+      "north",
+      "south"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "4",
+      "5",
+      "6",
+      "7",
+      "2",
+      "3"
+     ]
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "shift": "closing",
+    "e1": "bamboo walk",
+    "e2": "cedar screen"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "west",
+      "upper",
+      "lower",
+      "north",
+      "south",
+      "east"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "8",
+      "9",
+      "10",
+      "5",
+      "6",
+      "7"
+     ]
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "shift": "members",
+    "e1": "orchid case",
+    "e2": "pelargonium shed"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "upper",
+      "lower",
+      "north",
+      "south",
+      "east",
+      "west"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "10",
+      "11",
+      "6",
+      "7",
+      "8",
+      "9"
+     ]
+    }
+   }
+  }
+ }
+}

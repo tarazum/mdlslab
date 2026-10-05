@@ -1,0 +1,145 @@
+{
+ "id": "dr-3301",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "store code with a NON-label companion fact (cycle-1 fix kept): echoing both facts yields at most one code"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the botanical garden stores. For the log: the potting shed door code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Midday watering done; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A gardener arrives; the store book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The gardener needs the potting shed door code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "code": "H17",
+    "comp_thing": "bothy kettle",
+    "comp_verb": "whistles at seven"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "H17",
+      "J29",
+      "L36",
+      "N48",
+      "P52",
+      "Q64"
+     ],
+     "expected": "H17"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "code": "J23",
+    "comp_thing": "bothy stove",
+    "comp_verb": "lights at five"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "K31",
+      "M44",
+      "N58",
+      "R67",
+      "T75",
+      "J23"
+     ],
+     "expected": "J23"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "code": "L41",
+    "comp_thing": "yard lantern",
+    "comp_verb": "dims at nine"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "P62",
+      "Q77",
+      "S85",
+      "T96",
+      "L41",
+      "N53"
+     ],
+     "expected": "L41"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "code": "N35",
+    "comp_thing": "yard tap",
+    "comp_verb": "freezes from november"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S69",
+      "T78",
+      "V82",
+      "N35",
+      "P47",
+      "R56"
+     ],
+     "expected": "N35"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "code": "P29",
+    "comp_thing": "gate lamp",
+    "comp_verb": "burns till eleven"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "T63",
+      "V71",
+      "P29",
+      "Q38",
+      "R45",
+      "S57"
+     ],
+     "expected": "P29"
+    }
+   }
+  }
+ }
+}

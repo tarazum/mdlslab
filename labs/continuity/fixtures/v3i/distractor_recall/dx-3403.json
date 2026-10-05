@@ -1,0 +1,140 @@
+{
+ "id": "dx-3403",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two store codes stated; the seed vault code is probed while the herbarium case code acts as the lure"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the botanical garden stores. For the log: the seed vault code is {code}; the herbarium case code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Midday watering done; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A groundskeeper arrives; the store book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The groundskeeper needs the seed vault code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "2001": {
+   "values": {
+    "code": "V18",
+    "lure": "Y43"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W27",
+      "X35",
+      "Y49",
+      "Z56",
+      "V18",
+      "Y43"
+     ],
+     "expected": "V18"
+    }
+   }
+  },
+  "2002": {
+   "values": {
+    "code": "W27",
+    "lure": "Z51"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X35",
+      "Y49",
+      "Z56",
+      "W27",
+      "Z51",
+      "V18"
+     ],
+     "expected": "W27"
+    }
+   }
+  },
+  "2003": {
+   "values": {
+    "code": "X35",
+    "lure": "B67"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Y49",
+      "Z56",
+      "X35",
+      "B67",
+      "V18",
+      "W27"
+     ],
+     "expected": "X35"
+    }
+   }
+  },
+  "2004": {
+   "values": {
+    "code": "Y49",
+    "lure": "C78"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Z56",
+      "Y49",
+      "C78",
+      "V18",
+      "W27",
+      "X35"
+     ],
+     "expected": "Y49"
+    }
+   }
+  },
+  "2005": {
+   "values": {
+    "code": "Z56",
+    "lure": "D84"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Z56",
+      "D84",
+      "V18",
+      "W27",
+      "X35",
+      "Y49"
+     ],
+     "expected": "Z56"
+    }
+   }
+  }
+ }
+}
