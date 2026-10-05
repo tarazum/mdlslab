@@ -1,6 +1,6 @@
 {
   "kind": "suite-v3-fixture-validation",
-  "created_utc": "2026-10-05T08:29:27Z",
+  "created_utc": "2026-10-05T08:53:36Z",
   "spec": "docs/SUITE-V3-DESIGN.md sections 3-9 (design check ids E9-E14 implemented as V4-V9 here)",
   "suite": "fixtures/v3",
   "suite_sha256": "a0c7097f47d3fe4ca52cf937ff509bc1d5099dfa86f7b1bf45dbf5a9cc23c71e",
@@ -9,7 +9,7 @@
     {
       "check": "V1-manifest",
       "pass": true,
-      "detail": "protocol/version/families ok=True; families=['contradiction_update', 'correction_reuse', 'delayed_recall', 'distractor_recall', 'guess_calibration', 'repeated_task']"
+      "detail": "suite=v3; protocol/version ok; families=['contradiction_update', 'correction_reuse', 'delayed_recall', 'distractor_recall', 'guess_calibration', 'repeated_task']; primary=['correction_reuse', 'repeated_task'] x14 (expected ['correction_reuse', 'repeated_task'] x14)"
     },
     {
       "check": "V2-schema",
@@ -39,7 +39,7 @@
     {
       "check": "V7-composition",
       "pass": true,
-      "detail": "family counts {'contradiction_update': 4, 'correction_reuse': 8, 'delayed_recall': 3, 'distractor_recall': 3, 'guess_calibration': 3, 'repeated_task': 6}; cr sub-types {'valid_correction_environment': 1, 'valid_correction_tool': 1, 'erroneous_user_correction': 2, 'retraction': 2, 'source_conflict': 2} (need {'valid_correction_environment': 1, 'valid_correction_tool': 1, 'erroneous_user_correction': 2, 'retraction': 2, 'source_conflict': 2}); rt sub-type {'scripted_own_answer'}; gc probes 6"
+      "detail": "suite=v3; family counts {'contradiction_update': 4, 'correction_reuse': 8, 'delayed_recall': 3, 'distractor_recall': 3, 'guess_calibration': 3, 'repeated_task': 6}; primary expectation {'correction_reuse': 8, 'repeated_task': 6}; cr sub-types {'valid_correction_environment': 1, 'valid_correction_tool': 1, 'erroneous_user_correction': 2, 'retraction': 2, 'source_conflict': 2} (need {'valid_correction_environment': 1, 'valid_correction_tool': 1, 'erroneous_user_correction': 2, 'retraction': 2, 'source_conflict': 2}); rt sub-type {'scripted_own_answer'}; gc probes 6"
     },
     {
       "check": "V8-structural-eligibility",

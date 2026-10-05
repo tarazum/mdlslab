@@ -1355,3 +1355,31 @@ THREE DESIGN INPUTS for the CONT-005 pre-registration (PREREG-REQUIREMENTS-V2):
   (template 1); non-executor gates; wall-time reconciliation; droppable
   secondary; execution ~150 min GPU primary-first. Next: independent
   PR-REVIEW-v2 (fresh session), then freeze (author v3h + digests).
+
+## 2026-10-05 — PR-REVIEW-v2 launched (independent pre-registration review)
+
+Reviewer: Fable (claude --model fable -p, fresh context, read-only) — the same
+independent-model pattern as the arc review (REVIEW-FABLE.md) and the M6b
+author/reviewer separation. Checklist: measurability, falsifiability incl. an
+MME-defensibility challenge (0.25 vs pilot 0.36), aggregation/missing-run
+handling, held-out isolation of v3h, reverse-engineering risk, template coverage
+(all 9 PREREG-REQUIREMENTS-V2 items), and the single-author mitigations. Verdict
+GO -> freeze (author v3h + digest manifest); NO-GO -> fold required changes
+first. Output will be curated (claims verified against the repo) and saved as
+docs/PR-REVIEW-v2.md.
+
+## 2026-10-05 — PR-REVIEW-v2: NO-GO verdict folded same day (zero GPU)
+
+Independent review (Fable, fresh context, read-only; full text + disposition in
+docs/PR-REVIEW-v2.md): verdict NO-GO with 5 required changes, all document/
+validator. All folded the same session: (1) validator suite-parameterized
+(--suite v3h; disjointness now includes the v3 pilot suite; v3 regression PASS),
+(2) the pilot-informed primary deviation (RM->secondary, CU->primary) declared
+openly in the prereg, (3) SUITE-V3-DESIGN.md added to the freeze manifest (the
+scoring rule is frozen by reference), (4) guess-band rule operationalized
+(|guess-1/k| per arm, caveat if primary delta < 2x max band) + mandatory
+wrong-label vs invalid-format error decomposition, (5) review-notes-reappear
+clause. Non-blocking notes 1-4 folded; note 5 (v3h turn arithmetic) is a
+freeze-time checklist item. Next: Fable verify-pass on the diff, then freeze
+(author suite v3h + analysis script + digest manifest), then the confirmatory
+run.

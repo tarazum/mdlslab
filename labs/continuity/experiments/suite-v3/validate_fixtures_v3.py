@@ -32,9 +32,15 @@ from pathlib import Path
 
 LAB_ROOT = Path(__file__).resolve().parents[2]  # labs/continuity
 V3_DIR = LAB_ROOT / "fixtures" / "v3"
-OTHER_SUITES = [LAB_ROOT / "fixtures" / "v1", LAB_ROOT / "fixtures" / "v2", LAB_ROOT / "fixtures" / "v2-calibration"]
 
-PRIMARY_FAMILIES = {"correction_reuse", "repeated_task"}
+# Primary-set expectations per suite (PR-REVIEW-v2 required change 1: the
+# validator is suite-parameterized; v3 keeps CR+RT=14, the held-out v3h uses the
+# pilot-informed CR+CU=12 declared in EVALUATION-PREP-v2 §2).
+EXPECTED_PRIMARY = {
+    "v3": {"correction_reuse": 8, "repeated_task": 6},
+    "v3h": {"correction_reuse": 8, "contradiction_update": 4},
+}
+SECONDARY_COUNTS = {"delayed_recall": 3, "distractor_recall": 3, "guess_calibration": 3}
 CR_SUBTYPES = {
     "valid_correction_environment": 1,
     "valid_correction_tool": 1,
@@ -92,25 +98,48 @@ def suite_digest(fixture_dir: Path) -> str:
     return h.hexdigest()
 
 
-def validate(fixtures_root: Path) -> dict:
+def validate(fixtures_root: Path, suite: str = "v3") -> dict:
     checks: list[dict] = []
 
     def record(cid: str, ok: bool, detail: str) -> None:
         checks.append({"check": cid, "pass": ok, "detail": detail})
 
-    v3_dir = fixtures_root / "v3"
+    expected_primary = EXPECTED_PRIMARY.get(suite)
+    if expected_primary is None:
+        raise ValueError(f"no primary-set expectation for suite {suite!r}; extend EXPECTED_PRIMARY")
+    primary_families = set(expected_primary)
+    primary_total = sum(expected_primary.values())
+    # Disjointness set (PR-REVIEW-v2 required change 1a): every OTHER suite,
+    # including the v3 pilot suite when validating v3h (or any future suite).
+    other_suites = [
+        p for name, p in {
+            "v1": fixtures_root / "v1",
+            "v2": fixtures_root / "v2",
+            "v2-calibration": fixtures_root / "v2-calibration",
+            "v3": fixtures_root / "v3",
+            "v3h": fixtures_root / "v3h",
+        }.items()
+        if name != suite and p.exists()
+    ]
+
+    v3_dir = fixtures_root / suite
     manifest, scenarios = load_scenarios(v3_dir)
 
     # V1 manifest
     fams = set(manifest.get("families", []))
+    declared_primary = set(manifest.get("primary_families", primary_families))
+    expected_families = primary_families | {"repeated_task", "contradiction_update"} | set(SECONDARY_COUNTS)
     ok = (
         manifest.get("protocol") == "continuity-workload"
         and manifest.get("version") == 3
-        and PRIMARY_FAMILIES <= fams
-        and {"delayed_recall", "distractor_recall", "contradiction_update", "guess_calibration"} <= fams
-        and manifest.get("primary_cluster_count") == 14
+        and expected_families <= fams
+        and fams == expected_families
+        and declared_primary == primary_families
+        and manifest.get("primary_cluster_count") == primary_total
     )
-    record("V1-manifest", ok, f"protocol/version/families ok={ok}; families={sorted(fams)}")
+    record("V1-manifest", ok,
+           f"suite={suite}; protocol/version ok; families={sorted(fams)}; primary={sorted(declared_primary)} "
+           f"x{primary_total} (expected {sorted(primary_families)} x{primary_total})")
 
     # V2 schema
     problems: list[str] = []
@@ -147,13 +176,11 @@ def validate(fixtures_root: Path) -> dict:
                         problems.append(f"{s.get('id')}: expected {expected!r} not in labels")
     record("V2-schema", not problems, f"{len(scenarios)} scenarios; violations: {problems[:5] or 'none'}")
 
-    # V3 disjointness from v1/v2/v2-calibration
+    # V3 disjointness from every other suite (incl. the v3 pilot for v3h)
     other_ids: set[str] = set()
     other_texts: set[str] = set()
-    for suite in OTHER_SUITES:
-        if not suite.exists():
-            continue
-        for s in load_scenarios(suite)[1]:
+    for other in other_suites:
+        for s in load_scenarios(other)[1]:
             other_ids.add(s["id"])
             other_texts |= {normalize(t["text"]) for _, _, t in turn_refs(s)}
     dup_ids = [i for i in ids if ids.count(i) > 1]
@@ -228,25 +255,25 @@ def validate(fixtures_root: Path) -> dict:
             rt_subs.add(s.get("sub_type", "?"))
         gc_probes += sum(1 for _, _, t in probes_of(s) if t["probe"].get("kind") == "guess_calibration")
     ok = (
-        fam_counts.get("correction_reuse") == 8
-        and fam_counts.get("repeated_task") == 6
-        and fam_counts.get("contradiction_update") == 4
-        and fam_counts.get("delayed_recall") == 3
-        and fam_counts.get("distractor_recall") == 3
-        and fam_counts.get("guess_calibration") == 3
+        all(fam_counts.get(f) == n for f, n in expected_primary.items())
+        and fam_counts.get("repeated_task") == (
+            expected_primary.get("repeated_task", 6)
+        )
+        and all(fam_counts.get(f) == n for f, n in SECONDARY_COUNTS.items())
         and cr_subs == CR_SUBTYPES
-        and rt_subs == {"scripted_own_answer"}
+        and ("repeated_task" not in primary_families or rt_subs == {"scripted_own_answer"})
         and gc_probes >= 6
     )
     record(
         "V7-composition",
         ok,
-        f"family counts {fam_counts}; cr sub-types {cr_subs} (need {CR_SUBTYPES}); rt sub-type {rt_subs}; gc probes {gc_probes}",
+        f"suite={suite}; family counts {fam_counts}; primary expectation {expected_primary}; "
+        f"cr sub-types {cr_subs} (need {CR_SUBTYPES}); rt sub-type {rt_subs}; gc probes {gc_probes}",
     )
 
-    # V8 (design E13): structural eligibility
+    # V8 (design E13): structural eligibility (primary set per suite)
     bad = []
-    primary = [s for s in scenarios if s["family"] in PRIMARY_FAMILIES]
+    primary = [s for s in scenarios if s["family"] in primary_families]
     for s in primary:
         seed = s.get("seed_error")
         probe_turns = probes_of(s)
@@ -335,10 +362,12 @@ def validate(fixtures_root: Path) -> dict:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--out", default=None)
+    parser.add_argument("--suite", default="v3", choices=sorted(EXPECTED_PRIMARY),
+                        help="fixture suite to validate (default v3; v3h = held-out CR+CU primary)")
     args = parser.parse_args()
 
     try:
-        report = validate(LAB_ROOT / "fixtures")
+        report = validate(LAB_ROOT / "fixtures", suite=args.suite)
     except Exception as exc:  # fail-closed on any structural error
         report = {"verdict": "FAIL", "error": f"{type(exc).__name__}: {exc}", "checks": []}
 
