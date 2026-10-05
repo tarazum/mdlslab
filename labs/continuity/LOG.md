@@ -1525,3 +1525,12 @@ content/positions across seeds (temp-0 seeds do not replicate).
   content variation - temp-0 seeds were degenerate; primary with headroom in
   both arms; T1-vs-T0 as the candidate primary contrast; watch residual flag
   bracket echo).
+
+## 2026-10-06 — Session handoff: cycle-2 milestone brief committed
+
+Session boundary per the house pattern (fresh session per milestone; repo as
+the state carrier). docs/SESSION-BRIEF-v3i.md = the complete brief for the
+next session (suite v3i with per-seed variant tables + EVALUATION-PREP-v3
+draft + power artifact; zero GPU; entry conditions verified at 73f1d96; chain
+continues Fable PR-REVIEW-v3 -> freeze -> gate -> pilot). Closure state clean:
+working tree clean, origin/main synced, no GPU locks, no active automations.
