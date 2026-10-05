@@ -4,7 +4,7 @@
  "labels": {"note": "two badge colors stated; north gate color probed with both in options"},
  "sessions": [
   {"index": 1, "turns": [
-    {"actor": "environment", "text": "You manage the gatehouse. For the records: the north gate badge is amber; the south gate badge is violet. Confirm in one line."}
+    {"actor": "environment", "text": "You manage the gatehouse. For the records: the north gate badge is amber; the gatehouse kettle is steel. Confirm in one line."}
   ]},
   {"index": 2, "turns": [
     {"actor": "environment", "text": "Gate checks passed; nothing else changes. Confirm in one line."}

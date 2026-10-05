@@ -1337,3 +1337,21 @@ THREE DESIGN INPUTS for the CONT-005 pre-registration (PREREG-REQUIREMENTS-V2):
    DR probes ("reply with the code only" enforcement) before freezing.
 3. Guess calibration reported per arm; investigate T2's position concentration
    (0.667) before trusting label-position invariance.
+
+## 2026-10-05 — Pilot design inputs applied; EVALUATION-PREP-v2 DRAFT (zero GPU)
+
+- DR fix (design input #2): the three delayed_recall scenarios now pair each
+  code/color with a NON-label companion fact (harbor closes at six / relief at
+  eight / kettle is steel), so an echo-both reply contains at most one option
+  label. Validator re-run: PASS 13/13 (suite v3 digest changed accordingly).
+- Power calc v2 for the new primary (experiments/suite-v3/power_calc_v2.py +
+  power-results-v2.json, seed 20261005): error-rate endpoint, K=12 (CR+CU),
+  5 obs/cluster, T0=0.64. delta 0.36 -> 0.983; delta 0.25 -> 0.812;
+  delta 0.20 -> 0.641 (rejected); concentration 8/12 -> 0.893. **MME = 0.25.**
+- docs/EVALUATION-PREP-v2.md (DRAFT, not frozen): primary = label-form error
+  rate on 12 CR+CU clusters; contrast T0 - T2; MME 0.25; two-sided 95% cluster
+  bootstrap; completeness guard (no substitution); held-out suite v3h plan
+  (fresh content, v3 protocol + DR fix); freeze manifest includes analysis code
+  (template 1); non-executor gates; wall-time reconciliation; droppable
+  secondary; execution ~150 min GPU primary-first. Next: independent
+  PR-REVIEW-v2 (fresh session), then freeze (author v3h + digests).

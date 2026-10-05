@@ -4,7 +4,7 @@
  "labels": {"note": "locker code recall across a filler session"},
  "sessions": [
   {"index": 1, "turns": [
-    {"actor": "environment", "text": "You run the night desk. For the records: the night locker code is 4827. Confirm in one line."}
+    {"actor": "environment", "text": "You run the night desk. For the records: the night locker code is 4827; the morning relief arrives at eight. Confirm in one line."}
   ]},
   {"index": 2, "turns": [
     {"actor": "environment", "text": "Quiet night; rounds completed on schedule. Confirm in one line."}

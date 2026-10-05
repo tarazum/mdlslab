@@ -4,7 +4,7 @@
  "labels": {"note": "two key codes stated; archive code probed with both in options"},
  "sessions": [
   {"index": 1, "turns": [
-    {"actor": "environment", "text": "You are the depot keeper. For the records: the archive cabinet key code is F06; the lab cabinet key code is B04. Confirm in one line."}
+    {"actor": "environment", "text": "You are the depot keeper. For the records: the archive cabinet key code is F06; the harbor office closes at six. Confirm in one line."}
   ]},
   {"index": 2, "turns": [
     {"actor": "environment", "text": "Midweek restock done; nothing else changes. Confirm in one line."}
