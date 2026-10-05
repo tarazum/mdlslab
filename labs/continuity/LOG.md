@@ -1600,3 +1600,42 @@ fixtures.py render_seed_variant, then build_v3i.py emitting the suite.
   superseded for cycle 2 per the post-acceptance development pattern (73f1d96).
 - NEXT: Fable PR-REVIEW-v3 on this draft (standing-reviewer directive) ->
   fold -> FREEZE-A -> Fable gate -> pilot (~150 min GPU).
+
+## 2026-10-06 — PR-REVIEW-v3 LAUNCHED (independent pre-registration review, cycle 2)
+
+Next chain step per SESSION-BRIEF-v3i: Fable reviews the EVALUATION-PREP-v3
+draft (standing-reviewer directive) BEFORE FREEZE-A. Same pattern as
+PR-REVIEW-v2: claude --model fable -p, fresh context, read-only, repo root,
+numbered-task prompt, raw output to temp then curated into
+docs/PR-REVIEW-v3.md with claim verification. Checklist adds cycle-2 angles:
+paired-delta power argument (eps_s cancellation), two-freeze design
+(FREEZE-A pilot v3i -> FREEZE-B v3j pilot-informed calibration), per-seed
+variant mechanics (V14-V16, render single-definition, seed doubling as
+sampler+variant key), CU T0-ceiling risk (cycle-1 CU err 0.0), MME 0.25
+defensibility for the cheap T1 intervention. Verdict GO -> FREEZE-A; NO-GO ->
+fold required changes same session + Fable verify-pass on the diff.
+
+## 2026-10-06 — PR-REVIEW-v3 COMPLETE: NO-GO folded same day -> verify-pass GO (zero GPU)
+
+- Fable verdict on the EVALUATION-PREP-v3 draft: **NO-GO with 5 required
+  changes** (all document/validator/artifact). Full text + disposition +
+  verify-pass: docs/PR-REVIEW-v3.md. All load-bearing review claims re-verified
+  by the implementing agent before folding (4/4 exact: bimodal T0 pooled 0.50
+  passing the pooled gate; T1/T3 0.45 tie; single-seed gate artifact +
+  hardcoded "14 primary"; ~15% clip-floor probability).
+- The substantive catch: the pilot headroom gate was pooled-mean and would
+  have passed the EXACT cycle-1 pathology (T0 pooled 0.50 = 6/8 CR floored +
+  4/4 CU ceilinged). Folded as per-family headroom (CR and CU family means
+  each strictly inside (0.15, 0.85) in both primary arms) + a live-cluster
+  concentration rule (<8/12 live -> P5 power row governs + owner sign-off).
+- All 5 required changes folded + 8 non-blocking notes folded (incl.
+  arm-neutrality gate check for v3j corrections, variant-seed=sampler-seed
+  confound sentence, sd CI reporting, power-model clipping/shared-eps caveats
+  recorded in power_calc_v3.py, per-seed gate artifacts seed2001..2005
+  committed, dynamic G3 count). Fable verify-pass on the diff: **GO for
+  FREEZE-A**, one execution condition: analyze_pilot_v3.py must be written and
+  digested AT FREEZE-A (it does not exist yet - that is the freeze work item).
+- NEXT (fresh session per house pattern): FREEZE-A - write analyze_pilot_v3.py
+  + the pilot run script FIRST, digest manifest (this doc, v3i suite +
+  per-seed rendered digests, validator, gate, claims/runner/provider/fixtures,
+  seeds {2001..2005}), Fable non-executor gate, then the pilot (~150 min GPU).

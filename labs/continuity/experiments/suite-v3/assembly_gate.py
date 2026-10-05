@@ -215,7 +215,7 @@ def check(res: dict, suite: str = "v3", seed: int | None = None) -> list[dict]:
     record(
         "G3-resolution-by-subtype",
         not problems,
-        f"14 primary scenarios resolved as designed {resolution_counts}; violations: {problems[:5] or 'none'}",
+        f"{len(primary)} primary scenarios resolved as designed {resolution_counts}; violations: {problems[:5] or 'none'}",
     )
 
     # G3b demotion ordering: flagged lines after unflagged in T2 blocks

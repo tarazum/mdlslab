@@ -57,6 +57,20 @@ def simulate(t0_rate: float, delta: float, sig_shared: float, sig_int: float,
     effect_clusters: None = uniform delta; else the delta lands in the first
     `effect_clusters` clusters only (concentration scenarios), with the
     average delta preserved over the K clusters.
+
+    Model caveats (PR-REVIEW-v3 notes N5/N6, recorded here per the review):
+    - CLIPPING: p is clipped to [0.02, 0.98]; before clipping the shared eps
+      cancels EXACTLY in p0 - p1, but the floor re-introduces variance when
+      the treatment arm's base sits low (at base 0.25, sig 0.224 combined,
+      ~15% of draws hit the floor). At the declared (0.20, 0.10) parameters
+      the net effect is within Monte-Carlo noise (P2 - P1 = 0.011 ~ 1.7 SE);
+      if the pilot-measured spread exceeds 0.25, the FREEZE-B power re-check
+      must confirm the floor is not eating the delta.
+    - SHARED EPS SCOPE: eps is drawn once per seed and shared by ALL K
+      clusters (real variant difficulty is per-scenario-seed). Pre-clipping
+      this is irrelevant (still cancels); post-clipping it leaves a small
+      positive correlation between clusters within a seed, which the cluster
+      bootstrap slightly underestimates. Cosmetic at the declared parameters.
     """
     if effect_clusters is None:
         base0 = np.full(K, t0_rate)

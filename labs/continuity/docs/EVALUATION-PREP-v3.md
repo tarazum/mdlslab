@@ -15,9 +15,9 @@ directive 2026-10-05).
 CONT-005 "Memory Trust Hierarchy", cycle 2: **does provenance metadata alone
 (per-episode source/verification annotations) reduce repeated label errors?**
 Primary candidate per the cycle-1 label-level re-analysis (T1 = the only
-0/90 trap-repeat arm; top overall score 0.45). Cycle-1 fixes carried in:
-prose-parenthetical annotations (no bracket/pipe markup) and R5 numeric
-supersession (`claims.py` at 73f1d96+; gates re-run PASS).
+0/90 trap-repeat arm; tied-top overall score 0.45 with T3). Cycle-1 fixes
+carried in: prose-parenthetical annotations (no bracket/pipe markup) and R5
+numeric supersession (`claims.py` at 73f1d96+; gates re-run PASS).
 
 | Arm | Memory behavior | Role |
 | --- | --- | --- |
@@ -35,27 +35,42 @@ is the GPU metric (CN-002); shared GPU lock held per run.
 ## 2. Two-stage design: pilot (suite v3i, frozen at FREEZE-A) -> confirmatory (held-out v3j, frozen at FREEZE-B)
 
 **Stage 1 — headroom/spread pilot on `fixtures/v3i`** (authored, validator
-V1-V16 PASS, assembly gate G1-G6 PASS on all five seeds at this draft):
-27 scenarios, 128 turns/seed, primary CR(8)+CU(4)=12 clusters. The v3i
-protocol extension — a predeclared per-seed variant table (values, codes,
-probe label orders, names; seeds {2001..2005} in the manifest) rendered by
-`continuity.fixtures.render_seed_variant` — makes temperature-0.0 seeds true
-replicates (cycle-1 Fable audit: byte-identical prompts made five seeds one
-run). CR sub-types are rebalanced toward T1's source/verification surface
-(valid_environment 2, valid_tool 1, erroneous_user 2, source_conflict 2,
-retraction 1); corrections explicitly negate the superseded routing (the
-cycle-1 CR floor: both arms at 1.0 error on 6/8 clusters); CU keeps the R5
-supersession pattern with near-miss option sets.
+V1-V16 PASS, assembly gate G1-G6 PASS with committed per-seed verdict files
+for all five seeds at this draft), 27 scenarios, 128 turns/seed, primary
+CR(8)+CU(4)=12 clusters. The v3i protocol extension — a predeclared per-seed
+variant table (values, codes, probe label orders, names; seeds {2001..2005}
+in the manifest) rendered by `continuity.fixtures.render_seed_variant` — makes
+temperature-0.0 seeds true replicates (cycle-1 Fable audit: byte-identical
+prompts made five seeds one run). CR sub-types are rebalanced toward T1's
+source/verification surface (valid_environment 2, valid_tool 1,
+erroneous_user 2, source_conflict 2, retraction 1); corrections explicitly
+negate the superseded routing (the cycle-1 CR floor: both arms at 1.0 error
+on 6/8 clusters); CU keeps the R5 supersession pattern with near-miss option
+sets. Design note: the variant key and the sampler seed are the same integer
+by design — at temp 0.0 the sampler seed is inert and both arms share the
+rendered content, so content-vs-sampler effects cannot be separated in this
+design and do not affect the paired contrast (PR-REVIEW-v3 N2).
 
-Predeclared pilot GO/NO-GO for the confirmatory stage (all three required,
-reported from the frozen analysis path only):
-1. **Headroom:** both primary arms' mean primary error strictly inside
-   (0.15, 0.85). A floored arm at pilot -> the v3j primary is rebalanced at
-   FREEZE-B (declared openly, as the v2 cycle did) — never silently.
-2. **Spread:** per-arm sd of the 5 per-seed primary means is reported. If any
-   primary arm exceeds 0.25, the stress row (P4) of the power artifact governs
+Predeclared pilot GO/NO-GO for the confirmatory stage (all four required,
+computed by the FROZEN pilot analysis script `analyze_pilot_v3.py` — in the
+FREEZE-A manifest per template §1, not ad-hoc):
+1. **Headroom, PER FAMILY (not pooled — a pooled mean passed the exact
+   cycle-1 pathology: T0 pooled 0.50 = 6/8 CR at 1.0 + 4/4 CU at 0.0):** the
+   CR family-mean (8 clusters) AND the CU family-mean (4 clusters) primary
+   error strictly inside (0.15, 0.85) in BOTH primary arms. A floored or
+   ceilinged FAMILY at pilot -> that family is rebalanced in v3j at FREEZE-B
+   (declared openly, as the v2 cycle did) — never silently.
+2. **Spread:** per-arm sd of the 5 per-seed primary means is reported with
+   its n=5 (df=4) confidence interval, not a point estimate. If any primary
+   arm's sd exceeds 0.25, the stress row (P4) of the power artifact governs
    and the owner signs off before FREEZE-B.
-3. **Residual echo:** no `[RESOLVED` substring in any T2/T3 answer and the
+3. **Concentration:** the per-cluster report counts LIVE clusters (both
+   primary arms' cluster error strictly inside (0.10, 0.90)). If fewer than
+   8 of 12 are live, the P5 row of the power artifact (0.705 at 8/12, 0.578
+   at 6/12) governs and the owner signs off before FREEZE-B — the P1/P3
+   power claim assumes the effect is not concentrated below ~8 effective
+   clusters.
+4. **Residual echo:** no `[RESOLVED` substring in any T2/T3 answer and the
    per-arm invalid-format rate is reported; if the bracket flags echo
    (NEXT-CYCLE-NOTES residual risk), flags move to plain "NOTE:" prose at
    FREEZE-B (pre-authorized fix class, recorded in the run record).
@@ -63,12 +78,15 @@ reported from the frozen analysis path only):
 **Stage 2 — confirmatory on held-out `fixtures/v3j`**: fresh content authored
 at FREEZE-B under the v3i protocol (same family composition, same variant-table
 mechanics, NEW predeclared seeds {3001..3005}; ids x-4xxx; texts disjoint from
-v1/v2/v2-cal/v3/v3h/v3i — validator V3 covers rendered texts of every seed).
-Difficulty calibration MAY use pilot per-sub-type rates (fixture-authoring
-exposure acknowledged per template §8; mitigation = fresh content + independent
-gate review). FREEZE-B order (cycle-1 checklist): 1) analysis script FIRST,
-2) author v3j, 3) validator `--suite v3j` + assembly gate per seed, 4) digest
-manifest, 5) Fable non-executor gate, 6) confirmatory run.
+v1/v2/v2-cal/v3/v3h/v3i — validator V3 covers rendered texts of every seed;
+V15 identical-across-seeds turn share targeted at <= 0.45 — v3i sits at the
+0.50 limit and a one-word edit must not flip the gate). Difficulty
+calibration MAY use pilot per-sub-type rates (fixture-authoring exposure
+acknowledged per template §8; mitigation = fresh content + independent gate
+review incl. the arm-neutrality check of §12). FREEZE-B order (cycle-1
+checklist): 1) analysis script FIRST, 2) author v3j, 3) validator
+`--suite v3j` + assembly gate per seed, 4) digest manifest, 5) Fable
+non-executor gate, 6) confirmatory run.
 
 ## 3. Primary endpoint
 
@@ -108,7 +126,8 @@ Template §6 satisfied: power at MME = 0.842 (conservative), 0.810 (stress);
 delta 0.20 rejected (0.670). Sensitivity: T0 0.64 -> 0.834; T0 0.40 -> 0.814.
 Concentration caveat (P5): effect in 8/12 clusters -> 0.705, 6/12 -> 0.578 —
 the power claim assumes the effect is not concentrated below ~8 effective
-clusters; the pilot's per-cluster report checks this before FREEZE-B.
+clusters; pilot GO/NO-GO clause 3 (live-cluster count) attaches the
+pre-declared action to this caveat (P5 row governs + owner sign-off).
 Substantive grounds: annotations are the cheapest trust intervention, but
 adoption still changes the memory renderer for every future session; a
 quarter fewer label errors on correction-bearing work is the smallest
@@ -159,8 +178,9 @@ No promotion of secondaries; direction stated plainly whichever way it points.
   non-compliance is not wrong memory).
 - **Label-level scripted-trap repeat rate** per arm (reply == the trap
   label; the cycle-1 T1 0/90 vs T0 15/90 finding this cycle tests properly).
-- Between-seed spread report (per-arm sd of the 5 per-seed primary means) at
-  BOTH stages — the measurement the power model assumed.
+- Between-seed spread report (per-arm sd of the 5 per-seed primary means,
+  with its n=5/df=4 confidence interval) at BOTH stages — the measurement
+  the power model assumed.
 - DR/DX/RT family pass rates; per-arm guess rate and position distribution
   (the variant rotation should spread position; v3h's T0 max share 0.5 is the
   named risk being addressed); token cost per arm; CU superseded-value choice
@@ -182,8 +202,10 @@ at FREEZE-B.
 - **FREEZE-A (before any v3i inference):** this document, `fixtures/v3i`
   (suite digest + per-seed rendered digests), `SUITE-V3-DESIGN.md`,
   `validate_fixtures_v3.py`, `assembly_gate.py`, `claims.py`, `runner.py`,
-  `provider.py`, `fixtures.py`, pilot run script, predeclared pilot seeds
-  {2001..2005}.
+  `provider.py`, `fixtures.py`, the pilot run script AND the pilot GO/NO-GO
+  analysis script `analyze_pilot_v3.py` (template §1: every analysis script
+  the pilot numbers pass through is frozen with them), predeclared pilot
+  seeds {2001..2005}.
 - **FREEZE-B (before any v3j inference):** analysis script written FIRST,
   `fixtures/v3j` (+ per-seed rendered digests), predeclared confirmatory
   seeds {3001..3005}, refreshed digests of every frozen path above.
@@ -211,16 +233,29 @@ committed before any results summary is trusted. Concrete gate instructions:
 re-run `validate_fixtures_v3.py --suite v3j` (V1-V16, incl. variant checks
 V14-V16 and rendered-text disjointness from ALL prior suites), assembly gate
 per predeclared seed, verify freeze digests independently, confirm sub-type
-balance and BOTH source-conflict orders, confirm E10/V16 position rotation.
-Wall-time aggregates reconcile across attempts (per-seed sums across all
-attempts; arm sums = run total; `summary_rebuilt_offline` flags mandatory).
+balance and BOTH source-conflict orders, confirm E10/V16 position rotation,
+and the **arm-neutrality check of v3j correction wordings** (the one channel
+structural checks cannot catch): corrections must be phrased symmetrically
+with respect to all arms' renderers — no wording that only an annotated
+(T1+) memory block would surface (PR-REVIEW-v3 N1). Wall-time aggregates
+reconcile across attempts (per-seed sums across all attempts; arm sums = run
+total; `summary_rebuilt_offline` flags mandatory).
 Guess-band rule (v2 operationalization, unchanged): in-run guess band per arm
 = |guess_rate − 1/k| from that arm's guess-calibration probes (k = 6); if the
 primary delta < 2 x max-arm band the verdict carries the caveat "primary
 effect does not clear the guessing band" — reported, never used to move the
-MME. Empirical guess rate reported next to every family-level number. Every
-PR-REVIEW-v3 note reappears (addressed or acknowledged) in the final run
-record (template §8).
+MME. **Design-time reading of template §9 (recorded per PR-REVIEW-v3 RC4):**
+the template's baseline requirement "MME >= 0.15" is satisfied at design time
+(0.25); its alternative arm "MME >= 2 x the measured deviation" is
+operationalized per the v2 precedent (PR-REVIEW-v2 required change 4 ->
+EVALUATION-PREP-v2 §12, accepted 2026-10-05) as a mandatory in-run caveat
+rather than an MME veto — cycle 1's max-arm band was 0.333 (2x = 0.667,
+inflated by degenerate seeds: 30 guess probes were effectively 6); the v3i
+variant rotation is expected to compress it. Both facts travel into the final
+run record; the owner may re-bind the template text at any time. Empirical
+guess rate reported next to every family-level number. Every PR-REVIEW-v3
+note reappears (addressed or acknowledged) in the final run record
+(template §8).
 
 ## 13. Execution plan
 

@@ -1,8 +1,8 @@
 {
   "kind": "suite-v3-assembly-gate",
-  "created_utc": "2026-10-05T23:09:12Z",
+  "created_utc": "2026-10-05T23:35:48Z",
   "suite": "v3i",
-  "seed": 2001,
+  "seed": 2003,
   "arms": [
     "T0",
     "T1",
@@ -23,7 +23,7 @@
     {
       "check": "G3-resolution-by-subtype",
       "pass": true,
-      "detail": "14 primary scenarios resolved as designed {'user_flag': 2, 'conflict_flag': 2, 'superseded': 5, 'own_answer_flag': 0, 'clean': 3}; violations: none"
+      "detail": "12 primary scenarios resolved as designed {'user_flag': 2, 'conflict_flag': 2, 'superseded': 5, 'own_answer_flag': 0, 'clean': 3}; violations: none"
     },
     {
       "check": "G3b-flag-demoted-ordering",
