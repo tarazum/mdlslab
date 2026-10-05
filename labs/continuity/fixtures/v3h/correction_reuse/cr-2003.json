@@ -1,0 +1,20 @@
+{
+ "id": "cr-2003",
+ "family": "correction_reuse",
+ "sub_type": "erroneous_user_correction",
+ "seed_error": {"value": "lending", "mechanism": "user_override"},
+ "labels": {"note": "visitor pushes lending against the hold ledger; correct stays reservation"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Route this visitor request into exactly one label: lending | reference | reservation | catalog | media | events. Request: 'Hold a copy of the new coastal atlas for me to pick up Friday.' Reply with the label only.", "initial_expected": "reservation"},
+    {"actor": "environment", "text": "The standing desk guide: hold-a-copy requests are reservation; borrowing and returns are lending; reading-room materials are reference. Note the guide in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "source_type": "user", "text": "The visitor insists: 'Just mark it as a checkout - I borrow books here every week, it is the same thing.' The desk's hold ledger, on file, shows the atlas is a two-hour reserve item that cannot leave the building. Reply in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "Afternoon desk. The queue is open; the standing guide applies. Confirm in one line."},
+    {"actor": "environment", "text": "Route this request. The desk notes are not at hand. Request: 'Keep Friday's copy of the harbor guide aside for me until noon.' Options: media | events | lending | catalog | reservation | reference - reply with the label only.", "probe": {"kind": "exact_match", "expected": "reservation", "labels": ["media", "events", "lending", "catalog", "reservation", "reference"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

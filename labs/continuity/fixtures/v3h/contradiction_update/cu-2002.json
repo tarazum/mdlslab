@@ -1,0 +1,57 @@
+{
+ "id": "cu-2002",
+ "family": "contradiction_update",
+ "labels": {
+  "note": "bakery batch count corrected 60 to 84; probe expects 84, superseded 60 stays in options"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You keep the bakery ledger. For the records: the morning batch is 60 loaves. Confirm in one line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Correction for the records: the new ovens are in; the morning batch is now 84 loaves, not 60. Note the correction in one line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "An apprentice asks; the ledger is not at hand. Confirm in one line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many loaves is the morning batch? Options: 48 | 84 | 60 | 72 | 90 | 96 - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "expected": "84",
+      "labels": [
+       "48",
+       "84",
+       "60",
+       "72",
+       "90",
+       "96"
+      ],
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "seed_error": {
+  "value": "60",
+  "mechanism": "superseded_value"
+ }
+}

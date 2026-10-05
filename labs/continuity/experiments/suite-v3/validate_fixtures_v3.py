@@ -50,9 +50,10 @@ CR_SUBTYPES = {
 }
 SEED_MECHANISMS = {
     "scripted_agent_answer", "user_override", "retracted_correction", "source_conflict",
+    "superseded_value",  # v3h: CU primary — the superseded old value is the trap
 }
 
-INITIAL_VOCAB_RE = re.compile(r"exactly one [a-z]+:\s*([a-z\- ]+(?:\s*\|\s*[a-z\- ]+)+)")
+INITIAL_VOCAB_RE = re.compile(r"exactly one [a-z]+:\s*([a-z\-_ ]+(?:\s*\|\s*[a-z\-_ ]+)+)")
 
 
 def normalize(text: str) -> str:
@@ -333,9 +334,13 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
                 bad.append(f"{s['id']}: unsafe turn")
     record("V12-public-safe", not bad, "ASCII, no '@', no http everywhere")
 
-    # V13 initial_expected on s1t1 of primary scenarios
+    # V13 initial_expected on s1t1 of primary CLASSIFICATION scenarios (CR/RT);
+    # value-correction primaries (CU in v3h) state facts, they have no option-
+    # vocabulary initial task - their structural trap is seed_error(superseded_value).
     bad = []
     for s in primary:
+        if s["family"] not in ("correction_reuse", "repeated_task"):
+            continue
         s1t1 = s["sessions"][0]["turns"][0]
         m = INITIAL_VOCAB_RE.search(s1t1.get("text", "").lower())
         vocab = [w.strip() for w in m.group(1).split("|")] if m else []
@@ -343,7 +348,7 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
             bad.append(f"{s['id']}: probe on s1t1")
         elif s1t1.get("initial_expected") not in vocab:
             bad.append(f"{s['id']}: initial_expected {s1t1.get('initial_expected')!r} not in s1t1 vocabulary")
-    record("V13-initial-expected", not bad, f"initial_expected on s1t1 of every primary scenario, drawn from its option vocabulary; violations: {bad or 'none'}")
+    record("V13-initial-expected", not bad, f"initial_expected on s1t1 of every primary classification scenario (CR/RT), drawn from its option vocabulary; violations: {bad or 'none'}")
 
     failed = [c for c in checks if not c["pass"]]
     return {

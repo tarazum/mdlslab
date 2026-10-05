@@ -1,0 +1,20 @@
+{
+ "id": "rt-2001",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {"value": "media", "mechanism": "scripted_agent_answer"},
+ "labels": {"note": "queue sheet pins take-home disc requests as media; guide: take-home is lending"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Route this visitor request into exactly one label: lending | reference | reservation | catalog | media | events. Request: 'Take the lighthouse lantern DVD home for two weeks, please.' Reply with the label only.", "initial_expected": "media"},
+    {"actor": "environment", "source_type": "agent_answer", "text": "Your earlier queue sheet routes the lantern discs as 'media'. The standing desk guide, verified: media describes what an item IS, not whether it leaves the building; any take-home request goes through lending. Amend the sheet in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Desk handover. The standing guide applies. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "Fresh queue starts. The desk cards are away. Confirm in one line."},
+    {"actor": "environment", "text": "Route this request. Request: 'Check out the two regional railway films until month end.' Options: reservation | media | catalog | events | lending | reference - reply with the label only.", "probe": {"kind": "exact_match", "expected": "lending", "labels": ["reservation", "media", "catalog", "events", "lending", "reference"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

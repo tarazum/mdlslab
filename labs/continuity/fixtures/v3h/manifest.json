@@ -1,0 +1,8 @@
+{
+ "protocol": "continuity-workload",
+ "version": 3,
+ "families": ["delayed_recall", "distractor_recall", "contradiction_update", "repeated_task", "correction_reuse", "guess_calibration"],
+ "primary_families": ["correction_reuse", "contradiction_update"],
+ "primary_cluster_count": 12,
+ "description": "Held-out confirmatory suite v3h for CONT-005 per docs/EVALUATION-PREP-v2.md (frozen). Same protocol as fixtures/v3 (label-form probes with options at probe time; structural seed errors; guess calibration) with the pilot design inputs applied: delayed_recall pairs each code/color with a NON-label companion fact (input #2), and the primary set is the pilot-informed CR(8)+CU(4)=12 clusters (input #1, declared deviation from SUITE-V3-DESIGN 4.1). Fresh synthetic worlds (library circulation desk, tram depot board) and fresh value domains; ids (x-2xxx) and turn texts disjoint from fixtures/v1, v2, v2-calibration AND the v3 pilot suite (validator V3 checks all). Both source-conflict orders appear (cr-2007 verified-environment wins; cr-2008 verified-user beats an unreviewed feed). Seeds frozen in the freeze manifest: {1001..1005}."
+}

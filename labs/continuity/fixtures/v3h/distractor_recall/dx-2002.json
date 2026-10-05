@@ -1,0 +1,17 @@
+{
+ "id": "dx-2002",
+ "family": "distractor_recall",
+ "labels": {"note": "two rooms on different floors; the VAULT floor is probed while floor 4 (reading room) acts as the lure"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You manage the records wing. For the records: the reading room is on floor 4; the vault is on floor 8. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Morning mail run done; nothing else changes. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "An auditor asks; the wing plan is not at hand. Confirm in one line."},
+    {"actor": "environment", "text": "The auditor needs the vault. Which floor is it on? Options: 3 | 4 | 5 | 8 | 6 | 7 - reply with the number only.", "probe": {"kind": "exact_match", "expected": "8", "labels": ["3", "4", "5", "8", "6", "7"]}}
+  ]}
+ ]
+}

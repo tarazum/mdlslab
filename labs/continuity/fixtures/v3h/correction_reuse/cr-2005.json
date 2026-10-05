@@ -1,0 +1,23 @@
+{
+ "id": "cr-2005",
+ "family": "correction_reuse",
+ "sub_type": "retraction",
+ "seed_error": {"value": "media", "mechanism": "retracted_correction"},
+ "labels": {"note": "bulletin moves take-home disc requests to media, then is retracted; lending restored"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Route this visitor request into exactly one label: lending | reference | reservation | catalog | media | events. Request: 'I want to take the three-disc coastline set home for a week.' Reply with the label only.", "initial_expected": "media"},
+    {"actor": "environment", "text": "The standing desk guide: films and recordings are media; taking any item out of the building goes through lending; reading-room materials are reference. Note the guide in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "source_type": "environment", "text": "Desk bulletin: the coastline set is being digitized; route such requests to the viewing-room rule for now. Amend in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "source_type": "environment", "text": "Amendment to the earlier desk bulletin: it was misrouted from another wing and does not apply here; the standing guide holds as before. Amend in one line."}
+  ]},
+  {"index": 4, "turns": [
+    {"actor": "environment", "text": "Late desk shift. The queue is open; the standing guide applies. Confirm in one line."},
+    {"actor": "environment", "text": "Route this request. The desk notes are not at hand. Request: 'Can I borrow the two-map ridge portfolio over the weekend?' Options: reservation | reference | events | lending | media | catalog - reply with the label only.", "probe": {"kind": "exact_match", "expected": "lending", "labels": ["reservation", "reference", "events", "lending", "media", "catalog"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

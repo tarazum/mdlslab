@@ -1,0 +1,20 @@
+{
+ "id": "rt-2006",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {"value": "crowded", "mechanism": "scripted_agent_answer"},
+ "labels": {"note": "board entry pins depot-held line as crowded; guide: held at the depot is suspended"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Post the state of line 21 into exactly one label: on_time | delayed | detoured | crowded | suspended | canceled. Feed: 'line 21 is held at the depot during the depot power test.' Reply with the label only.", "initial_expected": "suspended"},
+    {"actor": "environment", "source_type": "agent_answer", "text": "Your earlier board entry for line 21 reads 'crowded'. The standing board guide, verified: crowded means a full vehicle in service; a vehicle held at the depot is suspended. Amend the entry in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Shift handover at the depot. The board guide applies. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "Patrol round one. The board log is filed away. Confirm in one line."},
+    {"actor": "environment", "text": "Post the state of line 22. Feed: 'line 22 waits inside the depot until the crew change ends.' Options: on_time | canceled | suspended | delayed | crowded | detoured - reply with the label only.", "probe": {"kind": "exact_match", "expected": "suspended", "labels": ["on_time", "canceled", "suspended", "delayed", "crowded", "detoured"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

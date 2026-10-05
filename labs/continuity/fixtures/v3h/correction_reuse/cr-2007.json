@@ -1,0 +1,21 @@
+{
+ "id": "cr-2007",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {"value": "events", "mechanism": "source_conflict"},
+ "labels": {"note": "verified county feed (deeds moved to supervised reading room) vs a visitor's guess; correct is reference"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Route this visitor request into exactly one label: lending | reference | reservation | catalog | media | events. Request: 'Which reading room holds the locked case of harbor deeds?' Reply with the label only.", "initial_expected": "reference"},
+    {"actor": "environment", "text": "The standing desk guide: reading-room materials and archive lookups are reference; program sign-ups are events; questions about the collection index are catalog. Note the guide in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "source_type": "environment", "text": "County records desk, verified feed: the harbor deeds were moved into the supervised reading room on the top floor."},
+    {"actor": "environment", "source_type": "user", "text": "A visitor waves it off: 'that is surely part of the summer program downstairs!' Reply in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "Evening desk. The queue is open; the standing guide applies. Confirm in one line."},
+    {"actor": "environment", "text": "Route this request. The desk notes are not at hand. Request: 'I need to see the original guild charters under supervision.' Options: reference | lending | catalog | media | events | reservation - reply with the label only.", "probe": {"kind": "exact_match", "expected": "reference", "labels": ["reference", "lending", "catalog", "media", "events", "reservation"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

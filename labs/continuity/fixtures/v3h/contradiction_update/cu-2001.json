@@ -1,0 +1,57 @@
+{
+ "id": "cu-2001",
+ "family": "contradiction_update",
+ "labels": {
+  "note": "planetarium show length corrected 45 to 70; probe expects 70, superseded 45 stays in options"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You keep the planetarium notes. For the records: the evening show runs 45 minutes. Confirm in one line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Correction for the records: the new projector program is longer; the evening show now runs 70 minutes, not 45. Note the correction in one line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A caller asks; your notes are not at hand. Confirm in one line."
+    },
+    {
+     "actor": "environment",
+     "text": "How long is the evening show? Options: 30 | 45 | 55 | 60 | 70 | 85 - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "expected": "70",
+      "labels": [
+       "30",
+       "45",
+       "55",
+       "60",
+       "70",
+       "85"
+      ],
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "seed_error": {
+  "value": "45",
+  "mechanism": "superseded_value"
+ }
+}

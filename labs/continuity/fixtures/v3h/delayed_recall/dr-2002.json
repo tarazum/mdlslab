@@ -1,0 +1,17 @@
+{
+ "id": "dr-2002",
+ "family": "delayed_recall",
+ "labels": {"note": "vault door code with a NON-label companion fact"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You run the seed store. For the records: the seed vault door code is 6291; the morning bell rings at seven. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Stock rotation done; nothing else changes. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "The relief keeper asks; the store book is already filed. Confirm in one line."},
+    {"actor": "environment", "text": "The relief needs the seed vault door code. Options: 1357 | 2468 | 6291 | 8135 | 4702 | 9514 - reply with the number only.", "probe": {"kind": "exact_match", "expected": "6291", "labels": ["1357", "2468", "6291", "8135", "4702", "9514"]}}
+  ]}
+ ]
+}

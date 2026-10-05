@@ -1,0 +1,20 @@
+{
+ "id": "rt-2004",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {"value": "canceled", "mechanism": "scripted_agent_answer"},
+ "labels": {"note": "board entry pins rerouted line as canceled; guide: still running on another path is detoured"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Post the state of line 11 into exactly one label: on_time | delayed | detoured | crowded | suspended | canceled. Feed: 'line 11 follows the ring road today; old town stops are served by the shuttle.' Reply with the label only.", "initial_expected": "detoured"},
+    {"actor": "environment", "source_type": "agent_answer", "text": "Your earlier board entry for line 11 reads 'canceled'. The standing board guide, verified: off the roster is canceled; a line moved to a different street path is detoured and still runs. Amend the entry in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Shift handover at the depot. The board guide applies. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "Patrol round one. The board log is filed away. Confirm in one line."},
+    {"actor": "environment", "text": "Post the state of line 12. Feed: 'line 12 runs via the quarry bypass while the market street is closed.' Options: delayed | suspended | on_time | crowded | canceled | detoured - reply with the label only.", "probe": {"kind": "exact_match", "expected": "detoured", "labels": ["delayed", "suspended", "on_time", "crowded", "canceled", "detoured"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "id": "gc-2003",
+ "family": "guess_calibration",
+ "labels": {"note": "never-stated facts; guess rate and position bias (design E14)"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You cover the survey desk today. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "A ranger asks about details the desk never tracked. Answer as best you can. Confirm in one line."},
+    {"actor": "environment", "text": "The ridge shelter bunks? Options: 4 | 6 | 8 | 10 | 12 | 14 - reply with the number only.", "probe": {"kind": "guess_calibration", "expected": null, "labels": ["4", "6", "8", "10", "12", "14"], "class": "guess_cal"}},
+    {"actor": "environment", "text": "The west wing badge shape? Options: circle | square | triangle | hexagon | oval - reply with the label only.", "probe": {"kind": "guess_calibration", "expected": null, "labels": ["circle", "square", "triangle", "hexagon", "oval"], "class": "guess_cal"}}
+  ]}
+ ]
+}

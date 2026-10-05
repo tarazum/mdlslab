@@ -1,0 +1,49 @@
+{
+  "kind": "cont005-frozen-config-v2",
+  "created_utc": "2026-10-05T09:10:01Z",
+  "label": "agent-pre-registered, pending owner acceptance",
+  "spec": "docs/EVALUATION-PREP-v2.md (frozen) + docs/PREREG-REQUIREMENTS-V2.md",
+  "frozen_at_git_rev_before_any_v3h_inference": "255a612bb3900fa3003c4b5d0d28b2e6620b7aab",
+  "seeds_predeclared": [
+    1001,
+    1002,
+    1003,
+    1004,
+    1005
+  ],
+  "arms_order_primary_first": [
+    "T0",
+    "T2",
+    "A",
+    "T1",
+    "T3"
+  ],
+  "primary": {
+    "endpoint": "label-form error rate, 12 clusters (correction_reuse x8 + contradiction_update x4)",
+    "contrast": "T0 - T2",
+    "mme": 0.25,
+    "bootstrap": {
+      "resamples": 10000,
+      "rng_seed": 20261005,
+      "method": "cluster percentile, two-sided 95%"
+    }
+  },
+  "digests": {
+    "docs/EVALUATION-PREP-v2.md": "46be3f48aef8d6ba81f4a761c7c9fbf941dbc56453f3ce6ff85553a29a082827",
+    "docs/SUITE-V3-DESIGN.md": "442d438526b7985704d97bf2fda9a6a14ee5b6119f2a3e10c771c98aa83535d0",
+    "docs/PREREG-REQUIREMENTS-V2.md": "b843888eab0934583270a5b0b7b12cab697fba779c0314a1a5ee4af5605ef2cc",
+    "docs/PR-REVIEW-v2.md": "fc4b6984df4335189043b95e6319506a6340f2f3f0ed986340af3ee076029203",
+    "experiments/suite-v3/analyze_confirmatory_v2.py": "9ac16cd58f24886e008085fa9101ae1f891e6163b0a7d07ec51ab19714e89ad5",
+    "experiments/suite-v3/run_confirmatory_v2.py": "7958aaf61a6f34b5872ad3bcaad5ca6c328ee18721577c73716765920e400499",
+    "experiments/suite-v3/validate_fixtures_v3.py": "182c336afffbacc1b43247d29ed53c6e00f9b152e4b6b6b7e289ecc14dbfc2d3",
+    "experiments/suite-v3/assembly_gate.py": "bf2f5bf88d26f98b2f3298bd4cc7e439624d360d6b138ffbfa8ba84dfb7f837a",
+    "src/continuity/claims.py": "b4a6dd8a784a22d6ec1dc562afefe9d02275508f9ccb24d61847557296ed5da5",
+    "src/continuity/runner.py": "1dcd5625c5b2ff319858e44bf6dcd90af6e34c90956dd2f50b761b18b0abb079",
+    "src/continuity/provider.py": "856b934868c6113ae919e5fb93673a0819614e1dde2a301ae571153c726a715e",
+    "src/continuity/fixtures.py": "a027f9304de89c06e62d28518672625394071722c06639b9a89f8782807e03b5",
+    "src/continuity/memory.py": "1ef4291641fd6be73d888e65452c778687e156393cd54df597bcbc72202a394b",
+    "fixtures/v3h_suite": "a608e74e69bb0327afd0659be15ba0aacd23c3a1c2d9441fdc6313960e5d44c3",
+    "fixture_validation_v3h": "d6d3c77d7eb5b057027474352359cc84554d8fe812fc762d112841a640e7b71d",
+    "assembly_gate_v3h": "393af9b373c49c1a3607dc5af81c643e42f41db878590304cb7a6748d309943b"
+  }
+}

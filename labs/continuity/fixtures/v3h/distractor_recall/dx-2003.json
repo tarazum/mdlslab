@@ -1,0 +1,17 @@
+{
+ "id": "dx-2003",
+ "family": "distractor_recall",
+ "labels": {"note": "two field kits signed out; the SHORT-RANGE kit holder is probed while Petra (long-range) acts as the lure"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You run the survey desk. For the records: the long-range kit is signed out to Petra; the short-range kit is signed out to Milan. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Noon check-in done; nothing else changes. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "A coordinator asks; the sign-out sheet is not at hand. Confirm in one line."},
+    {"actor": "environment", "text": "Who holds the short-range kit? Options: Petra | Otto | Nina | Ivo | Sorin | Milan - reply with the name only.", "probe": {"kind": "exact_match", "expected": "Milan", "labels": ["Petra", "Otto", "Nina", "Ivo", "Sorin", "Milan"]}}
+  ]}
+ ]
+}

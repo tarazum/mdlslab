@@ -1,0 +1,20 @@
+{
+ "id": "rt-2003",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {"value": "events", "mechanism": "scripted_agent_answer"},
+ "labels": {"note": "queue sheet pins seat holds as events; guide: holding for a person is reservation"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Route this visitor request into exactly one label: lending | reference | reservation | catalog | media | events. Request: 'Save me a seat at the map workshop next Thursday.' Reply with the label only.", "initial_expected": "events"},
+    {"actor": "environment", "source_type": "agent_answer", "text": "Your earlier queue sheet routes the workshop seats as 'events'. The standing desk guide, verified: events is the program calendar itself; holding a seat or a copy for a person is reservation. Amend the sheet in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Desk handover. The standing guide applies. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "Fresh queue starts. The desk cards are away. Confirm in one line."},
+    {"actor": "environment", "text": "Route this request. Request: 'Keep one atlas copy at the desk for my study group on Tuesday.' Options: lending | media | reference | reservation | events | catalog - reply with the label only.", "probe": {"kind": "exact_match", "expected": "reservation", "labels": ["lending", "media", "reference", "reservation", "events", "catalog"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

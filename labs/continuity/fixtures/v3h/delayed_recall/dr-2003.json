@@ -1,0 +1,17 @@
+{
+ "id": "dr-2003",
+ "family": "delayed_recall",
+ "labels": {"note": "sampler ink color with a NON-label companion fact"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You mind the print bench. For the records: the north sampler runs teal ink; the south sampler was serviced last week. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Midday print checks done; nothing else differs. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "A press operator asks; the bench card is not at hand. Confirm in one line."},
+    {"actor": "environment", "text": "Which ink does the north sampler run? Options: copper | olive | slate | ivory | teal | rust - reply with the color only.", "probe": {"kind": "exact_match", "expected": "teal", "labels": ["copper", "olive", "slate", "ivory", "teal", "rust"]}}
+  ]}
+ ]
+}

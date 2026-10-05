@@ -1,0 +1,17 @@
+{
+ "id": "dx-2001",
+ "family": "distractor_recall",
+ "labels": {"note": "two cabinet codes stated; the TEST BENCH code is probed while R33 (calibration bay) acts as the lure"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You cover the instrument hall. For the records: the test bench cabinet key code is K07; the calibration bay access code is R33. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Midday calibration done; nothing else changes. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "An engineer arrives; the hall book is not at hand. Confirm in one line."},
+    {"actor": "environment", "text": "The engineer needs the test bench cabinet key code. Options: M21 | K07 | R33 | T45 | V59 | X63 - reply with the code only.", "probe": {"kind": "exact_match", "expected": "K07", "labels": ["M21", "K07", "R33", "T45", "V59", "X63"]}}
+  ]}
+ ]
+}

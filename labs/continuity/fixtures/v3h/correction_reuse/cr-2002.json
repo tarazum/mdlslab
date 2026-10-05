@@ -1,0 +1,21 @@
+{
+ "id": "cr-2002",
+ "family": "correction_reuse",
+ "sub_type": "valid_correction_tool",
+ "seed_error": {"value": "detoured", "mechanism": "scripted_agent_answer"},
+ "labels": {"note": "seed own-answer 'detoured'; verified fleet telemetry says the ring-road notice was a mapping glitch; reuse expects delayed"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Post the state of line 4 into exactly one label: on_time | delayed | detoured | crowded | suspended | canceled. Board feed: 'line 4 runs but took the ring-road loop this hour; stops inside the old town are skipped.' Reply with the label only.", "initial_expected": "detoured"},
+    {"actor": "environment", "source_type": "agent_answer", "text": "Your earlier board entry for line 4 reads 'detoured'. Keep the entry in view and confirm in one line."},
+    {"actor": "environment", "text": "The standing board guide: a line that runs its normal stops but behind schedule is delayed; a line moved to a different street path is detoured; full vehicles are crowded; held at the depot is suspended; off the roster is canceled; otherwise on_time. Note the guide in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "source_type": "tool", "text": "Fleet telemetry, verified output: line 4 kept its normal stops; the ring-road notice was a mapping glitch, and the schedule slack is nine minutes. Amend your records in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "Morning board check. The standing guide applies. Confirm in one line."},
+    {"actor": "environment", "text": "Post the state of line 9. The board log is not at hand. Feed: 'line 9 runs its full route, about eight minutes behind the printed times.' Options: detoured | canceled | delayed | on_time | crowded | suspended - reply with the label only.", "probe": {"kind": "exact_match", "expected": "delayed", "labels": ["detoured", "canceled", "delayed", "on_time", "crowded", "suspended"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

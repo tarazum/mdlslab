@@ -16,12 +16,12 @@
     {
       "check": "G2-t1-annotations-only",
       "pass": true,
-      "detail": "no verdicts in T1 (none); 28 source annotations rendered"
+      "detail": "no verdicts in T1 (none); 30 source annotations rendered"
     },
     {
       "check": "G3-resolution-by-subtype",
       "pass": true,
-      "detail": "14 primary scenarios resolved as designed {'user_flag': 2, 'conflict_flag': 2, 'superseded': 2, 'own_answer_flag': 6, 'clean': 2}; violations: none"
+      "detail": "14 primary scenarios resolved as designed {'user_flag': 2, 'conflict_flag': 2, 'superseded': 2, 'own_answer_flag': 0, 'clean': 6}; violations: none"
     },
     {
       "check": "G3b-flag-demoted-ordering",
@@ -36,7 +36,7 @@
     {
       "check": "G5-determinism",
       "pass": true,
-      "detail": "second assembly pass byte-identical on rt-1001 across all arms: True"
+      "detail": "second assembly pass byte-identical on cu-2001 across all arms: True"
     },
     {
       "check": "G6-guess-calibration-clean",

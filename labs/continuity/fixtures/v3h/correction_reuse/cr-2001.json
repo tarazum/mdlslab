@@ -1,0 +1,21 @@
+{
+ "id": "cr-2001",
+ "family": "correction_reuse",
+ "sub_type": "valid_correction_environment",
+ "seed_error": {"value": "reference", "mechanism": "scripted_agent_answer"},
+ "labels": {"note": "seed own-answer 'reference'; verified county notice re-indexed pre-1950 surveys; reuse expects catalog"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Route this visitor request into exactly one label: lending | reference | reservation | catalog | media | events. Request: 'Where can I find the 1904 land surveys listed in the old card drawers?' Reply with the label only.", "initial_expected": "reference"},
+    {"actor": "environment", "source_type": "agent_answer", "text": "Your shift log from yesterday routes the survey requests as 'reference'. Keep the log line in view and confirm in one line."},
+    {"actor": "environment", "text": "For the desk records, the standing desk guide: borrowing and returns are lending; reading-room materials and archive lookups are reference; hold-a-copy requests are reservation; questions about what the collection index contains and where records live are catalog; films and recordings are media; program sign-ups are events. Note the guide in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "source_type": "environment", "text": "Desk bulletin, verified notice from the county office: all pre-1950 surveys were re-indexed into the searchable collection index; such requests follow the index rule from here on. Amend your records in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "Evening desk. The queue is open and the standing desk guide applies. Confirm in one line."},
+    {"actor": "environment", "text": "Route this request. The desk notes are not at hand. Request: 'I need the placement record for the 1948 bridge drawings that used to sit in drawer nine.' Options: catalog | lending | reference | reservation | media | events - reply with the label only.", "probe": {"kind": "exact_match", "expected": "catalog", "labels": ["catalog", "lending", "reference", "reservation", "media", "events"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

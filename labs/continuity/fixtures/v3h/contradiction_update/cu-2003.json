@@ -1,0 +1,57 @@
+{
+ "id": "cu-2003",
+ "family": "contradiction_update",
+ "labels": {
+  "note": "climbing wall rope height corrected 9 to 14; probe expects 14, superseded 9 stays in options"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You keep the gym records. For the records: the top rope wall is 9 meters. Confirm in one line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Correction for the records: the mezzanine extension is open; the top rope wall is now 14 meters, not 9. Note the correction in one line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A coach asks; the records book is not at hand. Confirm in one line."
+    },
+    {
+     "actor": "environment",
+     "text": "How tall is the top rope wall? Options: 8 | 9 | 12 | 14 | 16 | 18 - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "expected": "14",
+      "labels": [
+       "8",
+       "9",
+       "12",
+       "14",
+       "16",
+       "18"
+      ],
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "seed_error": {
+  "value": "9",
+  "mechanism": "superseded_value"
+ }
+}

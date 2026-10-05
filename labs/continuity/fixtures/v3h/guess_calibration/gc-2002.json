@@ -1,0 +1,15 @@
+{
+ "id": "gc-2002",
+ "family": "guess_calibration",
+ "labels": {"note": "never-stated facts; guess rate and position bias (design E14)"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You hold the depot keys this month. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "A driver asks about numbers this depot never posted. Answer as best you can. Confirm in one line."},
+    {"actor": "environment", "text": "The depot canteen table count? Options: 6 | 8 | 10 | 12 | 14 | 16 - reply with the number only.", "probe": {"kind": "guess_calibration", "expected": null, "labels": ["6", "8", "10", "12", "14", "16"], "class": "guess_cal"}},
+    {"actor": "environment", "text": "The records room lamp color? Options: copper | olive | slate | ivory | teal | rust - reply with the color only.", "probe": {"kind": "guess_calibration", "expected": null, "labels": ["copper", "olive", "slate", "ivory", "teal", "rust"], "class": "guess_cal"}}
+  ]}
+ ]
+}

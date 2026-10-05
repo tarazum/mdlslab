@@ -1,0 +1,21 @@
+{
+ "id": "cr-2008",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {"value": "detoured", "mechanism": "source_conflict"},
+ "labels": {"note": "unreviewed ticker claims quay rerouting; verified control-room notice says signal works; correct is delayed (BOTH conflict orders appear across cr-2007/cr-2008)"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Post the state of line 3 into exactly one label: on_time | delayed | detoured | crowded | suspended | canceled. Feed: 'line 3 runs the full route but the printed times slipped this week.' Reply with the label only.", "initial_expected": "delayed"},
+    {"actor": "environment", "text": "The standing board guide: a line running its normal stops behind schedule is delayed; a line moved to a different street path is detoured. Note the guide in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "source_type": "environment", "text": "An unreviewed ticker claims all center lines are moved to the river quay path today."},
+    {"actor": "environment", "source_type": "user", "text": "The depot foreman forwards the control room's notice; the desk verified it: signal works at the center loop, timings shifted ten minutes, streets unchanged. Reply in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "Afternoon board check. The standing guide applies. Confirm in one line."},
+    {"actor": "environment", "text": "Post the state of line 7. The board log is not at hand. Feed: 'line 7 covers its usual streets, about seven minutes past the printed times.' Options: crowded | on_time | delayed | suspended | detoured | canceled - reply with the label only.", "probe": {"kind": "exact_match", "expected": "delayed", "labels": ["crowded", "on_time", "delayed", "suspended", "detoured", "canceled"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

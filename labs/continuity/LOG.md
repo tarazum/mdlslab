@@ -1393,3 +1393,37 @@ content, v3 protocol + DR fix, validator --suite v3h PASS), 3) freeze manifest
 digests (v3h, EVALUATION-PREP-v2, SUITE-V3-DESIGN.md, seeds {1001..1005},
 analysis script, validator/claims/runner/provider), 4) non-executor gate
 session, 5) confirmatory run (~150 min GPU, primary-first T0/T2 then A/T1/T3).
+
+## 2026-10-05 — Freeze execution started (owner directive: Fable = standing reviewer)
+
+Owner directive recorded: keep consulting Fable at key checkpoints; the
+non-executor gate session before the confirmatory run will be a Fable review
+(read-only, fresh context). Freeze order per the checklist: 1) analysis script
+FIRST (digest partner), 2) suite v3h authoring, 3) freeze manifest, 4) Fable
+gate, 5) confirmatory run.
+
+## 2026-10-05 — FREEZE COMPLETE (before any v3h inference)
+
+- Suite v3h authored (27 scenarios: CR x8 with typed sub-types incl. BOTH
+  source-conflict orders, RT x6 scripted, CU x4 with superseded_value traps,
+  DR x3 with non-label companions, DX x3, GC x3) in fresh worlds (library
+  circulation desk, tram depot board). Validator --suite v3h: PASS 13/13
+  (positions max share 0.21; zero shared texts with v1/v2/v2-cal/v3 after
+  rewording four boilerplate lines). v3 regression PASS.
+- Assembly gate --suite v3h: PASS 7/7 (resolution counts exactly as designed:
+  user 2, conflict 2, superseded 2, valid-clean 2, CU-clean 4).
+- Analysis script analyze_confirmatory_v2.py (frozen constants: seeds
+  {1001..1005}, MME 0.25, bootstrap 10k RNG 20261005, verbatim verdict
+  wordings, error decomposition, guess-band); dry smoke on the pilot root
+  returns "incomplete" cleanly. Run script run_confirmatory_v2.py (arms
+  T0,T2,A,T1,T3 primary-first, suite v3h, transient-retry hardened).
+- frozen-config-v2.json: sha256 digests for all prereg-designated paths
+  (incl. SUITE-V3-DESIGN.md per PR-REVIEW-v2 RC3) + v3h suite digest +
+  validation/gate artifacts; recorded BEFORE any v3h inference.
+- Authoring slips caught by tooling, not by eye: 1 Python-expression-in-JSON
+  (rt-2004), 2 CU scenarios missing their superseded value in the options
+  (cu-2003/cu-2004 — the validator's trap-in-labels check), 4 verbatim
+  boilerplate texts shared with v3, vocab regex missing underscores
+  (on_time). All fixed; final verdicts PASS.
+- NEXT: non-executor gate session (Fable per owner directive) -> confirmatory
+  run (~150 min GPU) -> analyze with the frozen script -> owner brief.

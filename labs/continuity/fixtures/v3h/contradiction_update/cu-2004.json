@@ -1,0 +1,57 @@
+{
+ "id": "cu-2004",
+ "family": "contradiction_update",
+ "labels": {
+  "note": "clinic afternoon slots corrected 6 to 10; probe expects 10, superseded 6 stays in options"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You keep the clinic desk notes. For the records: the afternoon block has 6 slots. Confirm in one line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Correction for the records: the second nurse joined; the afternoon block now has 10 slots, not 6. Note the correction in one line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A receptionist asks; the desk notes are not at hand. Confirm in one line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many slots does the afternoon block have? Options: 4 | 5 | 6 | 7 | 9 | 10 - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "expected": "10",
+      "labels": [
+       "4",
+       "5",
+       "6",
+       "7",
+       "9",
+       "10"
+      ],
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "seed_error": {
+  "value": "6",
+  "mechanism": "superseded_value"
+ }
+}

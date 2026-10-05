@@ -51,7 +51,14 @@ from continuity.fixtures import load_suite  # noqa: E402
 from continuity.memory import MemoryStore  # noqa: E402
 from continuity.runner import MEMORY_TOP_K, format_memory_block, score_probe  # noqa: E402
 
-V3_DIR = LAB_ROOT / "fixtures" / "v3"
+SUITES = {
+    "v3": LAB_ROOT / "fixtures" / "v3",
+    "v3h": LAB_ROOT / "fixtures" / "v3h",
+}
+PRIMARY_FAMILIES = {
+    "v3": ("correction_reuse", "repeated_task"),
+    "v3h": ("correction_reuse", "contradiction_update"),
+}
 PLACEHOLDER_REPLY = "acknowledged."
 T_ARMS = ("T0", "T1", "T2", "T3")
 
@@ -99,14 +106,14 @@ def build_blocks(scenario: dict) -> dict[str, dict[str, list[str]]]:
     return {"blocks": blocks, "probes": probes_seen}
 
 
-def check(res: dict) -> list[dict]:
+def check(res: dict, suite: str = "v3") -> list[dict]:
     checks: list[dict] = []
 
     def record(cid: str, ok: bool, detail: str) -> None:
         checks.append({"check": cid, "pass": ok, "detail": detail})
 
-    manifest, scenarios = load_suite(str(V3_DIR))
-    primary = [s for s in scenarios if s["family"] in ("correction_reuse", "repeated_task")]
+    manifest, scenarios = load_suite(str(SUITES[suite]))
+    primary = [s for s in scenarios if s["family"] in PRIMARY_FAMILIES[suite]]
 
     builds = {s["id"]: build_blocks(s) for s in scenarios}
 
@@ -177,6 +184,13 @@ def check(res: dict) -> list[dict]:
                 problems.append(f"{s['id']}: agent_answer episode not flagged")
             else:
                 resolution_counts["own_answer_flag"] += 1
+        elif s.get("seed_error", {}).get("mechanism") == "superseded_value":
+            # v3h CU primary: untyped value statements - no flags expected; the
+            # superseded old value stays in the probe options by validator V8.
+            if any(flags.values()):
+                problems.append(f"{s['id']}: unexpected flags on untyped CU sources")
+            else:
+                resolution_counts["clean"] += 1
     record(
         "G3-resolution-by-subtype",
         not problems,
@@ -233,10 +247,11 @@ def check(res: dict) -> list[dict]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--out", default=None)
+    parser.add_argument("--suite", default="v3", choices=sorted(SUITES))
     args = parser.parse_args()
 
     try:
-        checks = check({})
+        checks = check({}, suite=args.suite)
     except Exception as exc:
         checks = [{"check": "gate-crash", "pass": False, "detail": f"{type(exc).__name__}: {exc}"}]
 

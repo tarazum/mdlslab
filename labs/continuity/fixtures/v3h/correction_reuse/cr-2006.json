@@ -1,0 +1,23 @@
+{
+ "id": "cr-2006",
+ "family": "correction_reuse",
+ "sub_type": "retraction",
+ "seed_error": {"value": "canceled", "mechanism": "retracted_correction"},
+ "labels": {"note": "bulletin moves depot-held line to canceled, then is withdrawn; suspended restored"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Post the state of line 8 into exactly one label: on_time | delayed | detoured | crowded | suspended | canceled. Feed: 'line 8 is held at the depot until the rail grinding crew clears.' Reply with the label only.", "initial_expected": "suspended"},
+    {"actor": "environment", "text": "The standing board guide: a line held at the depot is suspended; a line off the roster is canceled; behind schedule on normal stops is delayed. Note the guide in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "source_type": "environment", "text": "Desk bulletin: the roster desk removed line 8 from today's sheet; classify it accordingly until further notice. Amend in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "source_type": "environment", "text": "The bulletin is withdrawn: the roster sheet was printed before the crew schedule; the standing guide holds as before. Amend in one line."}
+  ]},
+  {"index": 4, "turns": [
+    {"actor": "environment", "text": "Morning board check. The standing guide applies. Confirm in one line."},
+    {"actor": "environment", "text": "Post the state of line 5. The board log is not at hand. Feed: 'line 5 waits at the depot until the special event street closure ends.' Options: delayed | detoured | on_time | crowded | suspended | canceled - reply with the label only.", "probe": {"kind": "exact_match", "expected": "suspended", "labels": ["delayed", "detoured", "on_time", "crowded", "suspended", "canceled"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

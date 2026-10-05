@@ -1,0 +1,17 @@
+{
+ "id": "dr-2001",
+ "family": "delayed_recall",
+ "labels": {"note": "bay access code with a NON-label companion fact (pilot design input #2): echoing both facts yields at most one label"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You cover the instrument hall. For the records: the calibration bay access code is R33; the corridor lights dim at ten. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Midday calibration done; nothing else changes. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "A technician arrives; the hall book is not at hand. Confirm in one line."},
+    {"actor": "environment", "text": "The technician needs the calibration bay access code. Options: R33 | M21 | T45 | V59 | X63 | K07 - reply with the code only.", "probe": {"kind": "exact_match", "expected": "R33", "labels": ["R33", "M21", "T45", "V59", "X63", "K07"]}}
+  ]}
+ ]
+}

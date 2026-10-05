@@ -1,0 +1,15 @@
+{
+ "id": "gc-2001",
+ "family": "guess_calibration",
+ "labels": {"note": "never-stated facts; guess rate and position bias (design E14); expected null by design"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "You mind the north instrument desk tonight. Confirm in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "A technician asks about settings this desk never recorded. Answer as best you can. Confirm in one line."},
+    {"actor": "environment", "text": "Which channel does the relay tower monitor? Options: alpha | beta | gamma | delta | epsilon | zeta - reply with the label only.", "probe": {"kind": "guess_calibration", "expected": null, "labels": ["alpha", "beta", "gamma", "delta", "epsilon", "zeta"], "class": "guess_cal"}},
+    {"actor": "environment", "text": "The annex parking rows? Options: 1 | 2 | 3 | 4 | 5 | 6 - reply with the number only.", "probe": {"kind": "guess_calibration", "expected": null, "labels": ["1", "2", "3", "4", "5", "6"], "class": "guess_cal"}}
+  ]}
+ ]
+}

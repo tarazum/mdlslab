@@ -1,0 +1,20 @@
+{
+ "id": "cr-2004",
+ "family": "correction_reuse",
+ "sub_type": "erroneous_user_correction",
+ "seed_error": {"value": "suspended", "mechanism": "user_override"},
+ "labels": {"note": "commuter pushes suspended against the dispatch sheet; correct stays crowded"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Post the state of line 6 into exactly one label: on_time | delayed | detoured | crowded | suspended | canceled. Feed: 'line 6 departed full; the platform display shows standing room only this run.' Reply with the label only.", "initial_expected": "crowded"},
+    {"actor": "environment", "text": "The standing board guide: full vehicles in service are crowded; a line held at the depot is suspended; a line moved to a different street path is detoured. Note the guide in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "source_type": "user", "text": "A commuter writes: 'Your board says the line left, but it obviously never left the depot - call it what it is.' The depot dispatch sheet, on file, shows line 6 departed on schedule with a full load. Reply in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "Evening board check. The standing guide applies. Confirm in one line."},
+    {"actor": "environment", "text": "Post the state of line 2. The board log is not at hand. Feed: 'line 2 left the depot on schedule; every seat taken and the aisle full.' Options: detoured | crowded | canceled | on_time | suspended | delayed - reply with the label only.", "probe": {"kind": "exact_match", "expected": "crowded", "labels": ["detoured", "crowded", "canceled", "on_time", "suspended", "delayed"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

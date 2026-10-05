@@ -1,0 +1,20 @@
+{
+ "id": "rt-2002",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {"value": "reference", "mechanism": "scripted_agent_answer"},
+ "labels": {"note": "queue sheet pins index-content questions as reference; guide: they are catalog"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Route this visitor request into exactly one label: lending | reference | reservation | catalog | media | events. Request: 'Which drawer lists the old toll registers?' Reply with the label only.", "initial_expected": "reference"},
+    {"actor": "environment", "source_type": "agent_answer", "text": "Your earlier queue sheet routes the drawer questions as 'reference'. The standing desk guide, verified: questions about what the index contains and where records live are catalog; reading-room visits are reference. Amend the sheet in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Desk handover. The standing guide applies. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "Fresh queue starts. The desk cards are away. Confirm in one line."},
+    {"actor": "environment", "text": "Route this request. Request: 'Point me to the listing for the 1930 ferry toll books.' Options: media | catalog | lending | reference | events | reservation - reply with the label only.", "probe": {"kind": "exact_match", "expected": "catalog", "labels": ["media", "catalog", "lending", "reference", "events", "reservation"], "class": "rm_eligible"}}
+  ]}
+ ]
+}

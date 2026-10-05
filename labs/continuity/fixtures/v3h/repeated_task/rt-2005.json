@@ -1,0 +1,20 @@
+{
+ "id": "rt-2005",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {"value": "on_time", "mechanism": "scripted_agent_answer"},
+ "labels": {"note": "board entry pins late-running line as on_time; guide: behind printed slack is delayed"},
+ "sessions": [
+  {"index": 1, "turns": [
+    {"actor": "environment", "text": "Post the state of line 14 into exactly one label: on_time | delayed | detoured | crowded | suspended | canceled. Feed: 'line 14 finished its loop but the last two trips ran six to nine minutes late.' Reply with the label only.", "initial_expected": "on_time"},
+    {"actor": "environment", "source_type": "agent_answer", "text": "Your earlier board entry for line 14 reads 'on_time'. The standing board guide, verified: on_time means within the printed slack; a line running its stops behind schedule is delayed. Amend the entry in one line."}
+  ]},
+  {"index": 2, "turns": [
+    {"actor": "environment", "text": "Shift handover at the depot. The board guide applies. Confirm in one line."}
+  ]},
+  {"index": 3, "turns": [
+    {"actor": "environment", "text": "Patrol round one. The board log is filed away. Confirm in one line."},
+    {"actor": "environment", "text": "Post the state of line 15. Feed: 'line 15 serves every stop, five to eight minutes past the printed times.' Options: delayed | on_time | detoured | crowded | suspended | canceled - reply with the label only.", "probe": {"kind": "exact_match", "expected": "delayed", "labels": ["delayed", "on_time", "detoured", "crowded", "suspended", "canceled"], "class": "rm_eligible"}}
+  ]}
+ ]
+}
