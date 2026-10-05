@@ -99,6 +99,11 @@ def resolve_episodes(episodes: list[dict], turn_by_ref: dict[str, dict]) -> list
          and not itself a retraction): that correction is marked superseded
          by the retraction's ref. Only the latest correction before the
          retraction is covered (targeted retraction, as authored).
+      R5 (post-acceptance 2026-10-06, next cycle) an environment turn carrying
+         the value-correction marker "correction for the records" supersedes
+         the closest PRIOR plain environment statement of the same scenario
+         (the s1 fact statement in the CU pattern). Closes the cu-2004 gap
+         where supersession had no typed sources to act on.
     """
     metas = {ep["turn_ref"]: classify_turn(turn_by_ref.get(ep["turn_ref"], {})) for ep in episodes}
     out: list[dict] = []
@@ -124,6 +129,30 @@ def resolve_episodes(episodes: list[dict], turn_by_ref: dict[str, dict]) -> list
             and any(h in ep["content"].lower() for h in CORRECTION_HINTS)
         ):
             last_correction_ref = ep["turn_ref"]
+        elif (
+            ep["role"] == "environment"
+            and "correction for the records" in ep["content"].lower()
+        ):
+            # R5: value-correction marker supersedes the closest prior plain
+            # statement (no correction hint, no retraction, not this turn).
+            for prior in reversed(out):
+                if prior["role"] != "environment" or prior["turn_ref"] == ep["turn_ref"]:
+                    continue
+                prior_lower = prior["content"].lower()
+                if (
+                    metas.get(prior["turn_ref"]) is not None
+                    and (metas[prior["turn_ref"]].retraction
+                         or any(h in prior_lower for h in CORRECTION_HINTS)
+                         or "correction for the records" in prior_lower)
+                ):
+                    continue
+                if not prior["superseded_by"]:
+                    prior["superseded_by"] = ep["turn_ref"]
+                    prior["resolution_flag"] = (
+                        f"[RESOLVED: superseded by the value correction at {ep['turn_ref']}; "
+                        "the corrected value applies]"
+                    )
+                break
         if not item["resolution_flag"]:
             if meta.source_type == "user" and not meta.verified:
                 item["resolution_flag"] = (
@@ -195,9 +224,7 @@ def format_trust_block(
         lines = [T1_HEADER]
         for ep in episodes:
             meta = classify_turn(turn_by_ref.get(ep["turn_ref"], {}))
-            tag = _meta_tag(meta)
-            ref = f"{ep['turn_ref']}|{ep['role']}" + (f"|{tag}" if tag else "")
-            lines.append(f"[{ref}] {ep['content']}")
+            lines.append(f"{_prose_prefix(ep, meta)} {ep['content']}")
         return "\n".join(lines)
 
     resolved = resolve_episodes(episodes, turn_by_ref)
@@ -207,14 +234,25 @@ def format_trust_block(
     lines = [header]
     for ep in unflagged + flagged:
         meta = classify_turn(turn_by_ref.get(ep["turn_ref"], {}))
-        parts = [f"{ep['turn_ref']}|{ep['role']}"]
-        tag = _meta_tag(meta)
-        if tag:
-            parts.append(tag)
-        if arm == "T3":
-            parts.append(f"trust: {meta.trust_name}")
-        line = f"[{'|'.join(parts)}] {ep['content']}"
+        line = f"{_prose_prefix(ep, meta, with_trust=arm == 'T3')} {ep['content']}"
         if ep["resolution_flag"]:
             line += " " + ep["resolution_flag"]
         lines.append(line)
     return "\n".join(lines)
+
+
+def _prose_prefix(ep: dict, meta: TurnMeta, with_trust: bool = False) -> str:
+    """(recorded in session N; source: X; verification: Y[; trust: Z]) — prose
+    annotations only. The v3h run showed the square-bracket/pipe markup
+    echoing into model answers (invalid-format errors), so no brackets/pipes."""
+    session_no = ep["turn_ref"].lstrip("s").split("t")[0] if ep["turn_ref"].startswith("s") else "?"
+    bits = [f"recorded in session {session_no}"]
+    if meta.source_type:
+        bits.append(f"source: {meta.source_type}")
+    if meta.verified:
+        bits.append("verification: verified")
+    elif meta.unreviewed:
+        bits.append("verification: unreviewed")
+    if with_trust:
+        bits.append(f"trust: {meta.trust_name}")
+    return "(" + "; ".join(bits) + ")"

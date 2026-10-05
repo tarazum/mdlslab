@@ -1500,3 +1500,28 @@ with zero label-level trap repeats. Exploratory; recorded in the audit
 appendix. Next-cycle design inputs: fix T2/T3 render-markup leakage into
 answers (invalid_format source), supersession on numeric conflicts, and vary
 content/positions across seeds (temp-0 seeds do not replicate).
+
+## 2026-10-06 — Owner decisions on the CONT-005 confirmatory result (all defaults accepted)
+
+1. CONFIRMATORY RESULT ACCEPTED ("no confirmatory difference established";
+   the CI upper bound excludes the pre-registered >=0.25 effect).
+2. ANALYSIS HOTFIX ACCEPTED (secondary-block crash, pre-read, digests recorded).
+3. NEXT-CYCLE DIRECTION ACCEPTED: (a) fix the T2/T3 render-markup leakage into
+   answers, (b) supersession on numeric corrections, (c) require per-seed
+   content variation in the next suite design (temp-0 seeds do not replicate);
+   then test the T1-annotations finding properly. The frozen v3h artifacts and
+   frozen-config-v2.json remain the untouched record of THIS run; claims.py
+   evolves from here for the NEXT cycle (post-acceptance development).
+
+## 2026-10-06 — Next-cycle fixes implemented (zero GPU, per owner defaults)
+
+- claims.py: (1) prose-parenthetical injection annotations (no bracket/pipe
+  markup - closes the render-leakage/invalid-format channel seen in v3h);
+  (2) R5 numeric supersession ("correction for the records" marker supersedes
+  the prior plain statement - closes the cu-2004 gap). Assembly gate CU
+  expectations updated (R5 supersession); unit-verified on cu-2001; gates
+  re-run: v3h PASS (superseded 2+4), v3 regression PASS, validator PASS.
+- docs/NEXT-CYCLE-NOTES.md: next suite requirements (MANDATORY per-seed
+  content variation - temp-0 seeds were degenerate; primary with headroom in
+  both arms; T1-vs-T0 as the candidate primary contrast; watch residual flag
+  bracket echo).

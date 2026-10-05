@@ -185,12 +185,15 @@ def check(res: dict, suite: str = "v3") -> list[dict]:
             else:
                 resolution_counts["own_answer_flag"] += 1
         elif s.get("seed_error", {}).get("mechanism") == "superseded_value":
-            # v3h CU primary: untyped value statements - no flags expected; the
-            # superseded old value stays in the probe options by validator V8.
-            if any(flags.values()):
-                problems.append(f"{s['id']}: unexpected flags on untyped CU sources")
+            # v3h CU primary (post-acceptance R5): the s1 fact statement is
+            # superseded by the "correction for the records" turn; no OTHER
+            # flags expected; the superseded old value stays in options (V8).
+            sup = [r for r, f in flags.items() if f and "superseded by the value correction" in f]
+            stray = [r for r, f in flags.items() if f and "superseded by the value correction" not in f]
+            if len(sup) != 1 or stray:
+                problems.append(f"{s['id']}: R5 supersession {len(sup)} (need 1), stray {stray}")
             else:
-                resolution_counts["clean"] += 1
+                resolution_counts["superseded"] += 1
     record(
         "G3-resolution-by-subtype",
         not problems,
