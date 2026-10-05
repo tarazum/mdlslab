@@ -1,0 +1,746 @@
+{
+  "run_id": "cont005-confirmatory-20261005-123917-T0-seed1001",
+  "arm": "T0",
+  "seed": 1001,
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-2001",
+      "family": "delayed_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 658,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "R33",
+          "observed_normalized": "r33",
+          "observed_label": "R33",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.5
+    },
+    {
+      "scenario": "dr-2002",
+      "family": "delayed_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 966,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "6291",
+          "observed_normalized": "the relief needs the seed vault door code. options: 1357 | 2468 | 6291 | 8135 | 4702 | 9514 - reply with the number only. the relief needs the seed vault door code. options: 1357 | 2468 | 6291 | 8135 | 4702 | 9514 - reply with the number only. the relief needs the seed vault door code. options: 1357 | 2468 | 6291 | 8135 | 4702 | 9514 - reply with the number only. the relief needs the seed vault door code. options: 1357 | 2468 | 6291 | 8135 | 4702 | 9514 - reply with the number only.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.7
+    },
+    {
+      "scenario": "dr-2003",
+      "family": "delayed_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 640,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "teal",
+          "observed_normalized": "the north sampler runs teal ink.",
+          "observed_label": "teal",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.5
+    },
+    {
+      "scenario": "dx-2001",
+      "family": "distractor_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 680,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "K07",
+          "observed_normalized": "the engineer needs the test bench cabinet key code. the code is k07.",
+          "observed_label": "K07",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.1
+    },
+    {
+      "scenario": "dx-2002",
+      "family": "distractor_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 693,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "8",
+          "observed_normalized": "the auditor is requesting information about the location of the vault, which is on floor 8. the other floors are 3, 4, 5, 6, and 7.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.9
+    },
+    {
+      "scenario": "dx-2003",
+      "family": "distractor_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 753,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "Milan",
+          "observed_normalized": "the short-range kit is held by milan.",
+          "observed_label": "Milan",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.8
+    },
+    {
+      "scenario": "cu-2001",
+      "family": "contradiction_update",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 674,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "70",
+          "observed_normalized": "the evening show runs 70 minutes.",
+          "observed_label": "70",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.7
+    },
+    {
+      "scenario": "cu-2002",
+      "family": "contradiction_update",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 676,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "84",
+          "observed_normalized": "the morning batch is 84 loaves.",
+          "observed_label": "84",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.8
+    },
+    {
+      "scenario": "cu-2003",
+      "family": "contradiction_update",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 732,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "14",
+          "observed_normalized": "14",
+          "observed_label": "14",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.6
+    },
+    {
+      "scenario": "cu-2004",
+      "family": "contradiction_update",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 804,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "10",
+          "observed_normalized": "i confirm that the afternoon block has 10 slots.",
+          "observed_label": "10",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.0
+    },
+    {
+      "scenario": "rt-2001",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 952,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "lending",
+          "observed_normalized": "media",
+          "observed_label": "media",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.2
+    },
+    {
+      "scenario": "rt-2002",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1012,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "catalog",
+          "observed_normalized": "[s1t1|environment] route this visitor request into exactly one label: lending | reference | reservation | catalog | media | events. request: 'point me to the listing for the 1930 ferry toll books.' reply with the label only. the request is for a reference, so the appropriate label is \"reference\".",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.9
+    },
+    {
+      "scenario": "rt-2003",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1107,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "reservation",
+          "observed_normalized": "[s1t1|environment] route this visitor request into exactly one label: lending | reference | reservation | catalog | media | events. request: 'save me a seat at the map workshop next thursday.' reply with the label only. the request is for a reference copy of an atlas, which would fall under the \"reference\" category. the standing guide applies, so the visitor should be seated in a standing position. the queue sheet should route the workshop seats as \"events\", with the standing desk guide verified as the program calendar itself. holding a seat or a copy for a person is reservation. the visitor's request is to save a seat at the map workshop next thursday, which would fall under the \"events\" category.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.5
+    },
+    {
+      "scenario": "rt-2004",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1344,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "detoured",
+          "observed_normalized": "post the state of line 12. feed: 'line 12 runs via the quarry bypass while the market street is closed.' options: delayed | suspended | on_time | crowded | canceled | detoured - reply with the label only. delayed",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.7
+    },
+    {
+      "scenario": "rt-2005",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1307,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "delayed",
+          "observed_normalized": "the state of line 15 is on_time.",
+          "observed_label": "on_time",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.0
+    },
+    {
+      "scenario": "rt-2006",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1339,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "suspended",
+          "observed_normalized": "the state of line 22 is \"on_time\" as verified in the board guide.",
+          "observed_label": "on_time",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.4
+    },
+    {
+      "scenario": "cr-2001",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1765,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "catalog",
+          "observed_normalized": "the request is for a reference.",
+          "observed_label": "reference",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.8
+    },
+    {
+      "scenario": "cr-2002",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2225,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "delayed",
+          "observed_normalized": "line 9 runs its full route, about eight minutes behind the printed times. options: detoured | canceled | delayed | on_time | crowded | suspended - reply with the label only. the standing board guide for line 9 is: a line that runs its normal stops but behind schedule is delayed; a line moved to a different street path is detoured; full vehicles are crowded; held at the depot is suspended; off the roster is canceled; otherwise on_time. the updated board feed for line 9 is: line 9 runs but took the ring-road loop this hour; stops inside the old town are skipped. your confirmation for the earlier entry that the line was detoured is: your earlier board entry for line 9 reads 'detoured'.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 20.7
+    },
+    {
+      "scenario": "cr-2003",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1417,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "reservation",
+          "observed_normalized": "the request is for a reservation.",
+          "observed_label": "reservation",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.0
+    },
+    {
+      "scenario": "cr-2004",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1293,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "crowded",
+          "observed_normalized": "the state of line 2 is on_time.",
+          "observed_label": "on_time",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.0
+    },
+    {
+      "scenario": "cr-2005",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 4,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1987,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "lending",
+          "observed_normalized": "the request is for a reference.",
+          "observed_label": "reference",
+          "passed": false,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 15.6
+    },
+    {
+      "scenario": "cr-2006",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 4,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2241,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "suspended",
+          "observed_normalized": "the state of line 5 is: on_time",
+          "observed_label": "on_time",
+          "passed": false,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 17.5
+    },
+    {
+      "scenario": "cr-2007",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1307,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "reference",
+          "observed_normalized": "the request was directed to the reference desk.",
+          "observed_label": "reference",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.6
+    },
+    {
+      "scenario": "cr-2008",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1668,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "delayed",
+          "observed_normalized": "the state of line 7 is on_time.",
+          "observed_label": "on_time",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.9
+    },
+    {
+      "scenario": "gc-2001",
+      "family": "guess_calibration",
+      "arm": "T0",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 1053,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the relay tower monitors the gamma channel.",
+          "observed_label": "gamma",
+          "observed_position": 2,
+          "labels": [
+            "alpha",
+            "beta",
+            "gamma",
+            "delta",
+            "epsilon",
+            "zeta"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the annex parking rows are 1, 2, 3, 4, 5, and 6.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.9
+    },
+    {
+      "scenario": "gc-2002",
+      "family": "guess_calibration",
+      "arm": "T0",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 685,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the depot canteen table count is 10.",
+          "observed_label": "10",
+          "observed_position": 2,
+          "labels": [
+            "6",
+            "8",
+            "10",
+            "12",
+            "14",
+            "16"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the records room lamp color is slate.",
+          "observed_label": "slate",
+          "observed_position": 2,
+          "labels": [
+            "copper",
+            "olive",
+            "slate",
+            "ivory",
+            "teal",
+            "rust"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.6
+    },
+    {
+      "scenario": "gc-2003",
+      "family": "guess_calibration",
+      "arm": "T0",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 698,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "i confirm that there are 14 bunks in the ridge shelter.",
+          "observed_label": "14",
+          "observed_position": 5,
+          "labels": [
+            "4",
+            "6",
+            "8",
+            "10",
+            "12",
+            "14"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "i confirm that the west wing badge is a hexagon.",
+          "observed_label": "hexagon",
+          "observed_position": 3,
+          "labels": [
+            "circle",
+            "square",
+            "triangle",
+            "hexagon",
+            "oval"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.9
+    }
+  ],
+  "probes_passed": 10,
+  "probes_total": 24,
+  "guess_probes": 6,
+  "turns": 128,
+  "tokens_total": 30676,
+  "budget_stops": 0,
+  "wall_s": 333.8,
+  "memory_episodes": 256,
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true,
+  "dir": "T0/seed-1001"
+}

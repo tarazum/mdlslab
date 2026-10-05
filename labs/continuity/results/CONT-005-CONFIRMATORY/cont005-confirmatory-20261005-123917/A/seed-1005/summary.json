@@ -1,0 +1,745 @@
+{
+  "run_id": "cont005-confirmatory-20261005-123917-A-seed1005",
+  "arm": "A",
+  "seed": 1005,
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-2001",
+      "family": "delayed_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 334,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "R33",
+          "observed_normalized": "the code is k07.",
+          "observed_label": "K07",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.2
+    },
+    {
+      "scenario": "dr-2002",
+      "family": "delayed_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 417,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "6291",
+          "observed_normalized": "the relief needs the seed vault door code. options: 1357 | 2468 | 6291 | 8135 | 4702 | 9514 - reply with the number only.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.5
+    },
+    {
+      "scenario": "dr-2003",
+      "family": "delayed_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 312,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "teal",
+          "observed_normalized": "\"slate.\"",
+          "observed_label": "slate",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.2
+    },
+    {
+      "scenario": "dx-2001",
+      "family": "distractor_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 336,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "K07",
+          "observed_normalized": "k07",
+          "observed_label": "K07",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.3
+    },
+    {
+      "scenario": "dx-2002",
+      "family": "distractor_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 355,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "8",
+          "observed_normalized": "the auditor is requesting information about the location of the vault, which is on floor 8.",
+          "observed_label": "8",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.7
+    },
+    {
+      "scenario": "dx-2003",
+      "family": "distractor_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 344,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "Milan",
+          "observed_normalized": "milan holds the short-range kit.",
+          "observed_label": "Milan",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.4
+    },
+    {
+      "scenario": "cu-2001",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 358,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "70",
+          "observed_normalized": "the evening show is 60 minutes long.",
+          "observed_label": "60",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.6
+    },
+    {
+      "scenario": "cu-2002",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 362,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "84",
+          "observed_normalized": "the morning batch is 96 loaves.",
+          "observed_label": "96",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.7
+    },
+    {
+      "scenario": "cu-2003",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 339,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "14",
+          "observed_normalized": "16",
+          "observed_label": "16",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.3
+    },
+    {
+      "scenario": "cu-2004",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 363,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "10",
+          "observed_normalized": "\"6\"",
+          "observed_label": "6",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.6
+    },
+    {
+      "scenario": "rt-2001",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 484,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "lending",
+          "observed_normalized": "reference",
+          "observed_label": "reference",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.4
+    },
+    {
+      "scenario": "rt-2002",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 460,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "catalog",
+          "observed_normalized": "reference",
+          "observed_label": "reference",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.2
+    },
+    {
+      "scenario": "rt-2003",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 463,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "reservation",
+          "observed_normalized": "reference",
+          "observed_label": "reference",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.1
+    },
+    {
+      "scenario": "rt-2004",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 525,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "detoured",
+          "observed_normalized": "on_time",
+          "observed_label": "on_time",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.1
+    },
+    {
+      "scenario": "rt-2005",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 522,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "delayed",
+          "observed_normalized": "on_time",
+          "observed_label": "on_time",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.1
+    },
+    {
+      "scenario": "rt-2006",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 533,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "suspended",
+          "observed_normalized": "line 22 waits inside the depot until the crew change ends.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.4
+    },
+    {
+      "scenario": "cr-2001",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 780,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "catalog",
+          "observed_normalized": "reference.",
+          "observed_label": "reference",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.0
+    },
+    {
+      "scenario": "cr-2002",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 804,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "delayed",
+          "observed_normalized": "understood. i will post the state of line 9. the board log is not at hand. the current status is: detoured.",
+          "observed_label": "detoured",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.4
+    },
+    {
+      "scenario": "cr-2003",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 614,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "reservation",
+          "observed_normalized": "reference.",
+          "observed_label": "reference",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.8
+    },
+    {
+      "scenario": "cr-2004",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 604,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "crowded",
+          "observed_normalized": "understood. i will post the state of line 2 based on the information provided. the state of line 2 is \"crowded\".",
+          "observed_label": "crowded",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.0
+    },
+    {
+      "scenario": "cr-2005",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 4,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 604,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "lending",
+          "observed_normalized": "reference.",
+          "observed_label": "reference",
+          "passed": false,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.1
+    },
+    {
+      "scenario": "cr-2006",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 4,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 669,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "suspended",
+          "observed_normalized": "line 5 is delayed.",
+          "observed_label": "delayed",
+          "passed": false,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.6
+    },
+    {
+      "scenario": "cr-2007",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 622,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "reference",
+          "observed_normalized": "reference.",
+          "observed_label": "reference",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.8
+    },
+    {
+      "scenario": "cr-2008",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 698,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "delayed",
+          "observed_normalized": "understood. i will post the state of line 7 based on the information provided. the line is on time.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.6
+    },
+    {
+      "scenario": "gc-2001",
+      "family": "guess_calibration",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 594,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the relay tower monitors the gamma channel.",
+          "observed_label": "gamma",
+          "observed_position": 2,
+          "labels": [
+            "alpha",
+            "beta",
+            "gamma",
+            "delta",
+            "epsilon",
+            "zeta"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the annex parking rows are 1, 2, 3, 4, 5, and 6.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.3
+    },
+    {
+      "scenario": "gc-2002",
+      "family": "guess_calibration",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 547,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the depot canteen table count is 16.",
+          "observed_label": "16",
+          "observed_position": 5,
+          "labels": [
+            "6",
+            "8",
+            "10",
+            "12",
+            "14",
+            "16"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the records room lamp color is slate.",
+          "observed_label": "slate",
+          "observed_position": 2,
+          "labels": [
+            "copper",
+            "olive",
+            "slate",
+            "ivory",
+            "teal",
+            "rust"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.1
+    },
+    {
+      "scenario": "gc-2003",
+      "family": "guess_calibration",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 572,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the ridge shelter has 14 bunks.",
+          "observed_label": "14",
+          "observed_position": 5,
+          "labels": [
+            "4",
+            "6",
+            "8",
+            "10",
+            "12",
+            "14"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the west wing badge is a hexagon.",
+          "observed_label": "hexagon",
+          "observed_position": 3,
+          "labels": [
+            "circle",
+            "square",
+            "triangle",
+            "hexagon",
+            "oval"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.2
+    }
+  ],
+  "probes_passed": 5,
+  "probes_total": 24,
+  "guess_probes": 6,
+  "turns": 128,
+  "tokens_total": 13615,
+  "budget_stops": 0,
+  "wall_s": 304.6,
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true,
+  "dir": "A/seed-1005"
+}

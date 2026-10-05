@@ -1,0 +1,235 @@
+{
+  "kind": "cont005-confirmatory-results",
+  "created_utc": "2026-10-05T12:05:59Z",
+  "spec": "docs/EVALUATION-PREP-v2.md (frozen) + docs/PR-REVIEW-v2.md",
+  "run_root": "results\\CONT-005-CONFIRMATORY\\cont005-confirmatory-20261005-123917",
+  "execution_revs": {
+    "A": [
+      "59115d82f355ea5ebb0fceac4ef0e81895771622"
+    ],
+    "T0": [
+      "59115d82f355ea5ebb0fceac4ef0e81895771622"
+    ],
+    "T1": [
+      "59115d82f355ea5ebb0fceac4ef0e81895771622"
+    ],
+    "T2": [
+      "59115d82f355ea5ebb0fceac4ef0e81895771622"
+    ],
+    "T3": [
+      "59115d82f355ea5ebb0fceac4ef0e81895771622"
+    ]
+  },
+  "completeness": {
+    "primary_missing": [],
+    "secondary_missing": [],
+    "verdict_blocking": false
+  },
+  "primary": {
+    "endpoint": "label-form error rate, 12 CR+CU clusters, structural eligibility",
+    "contrast": "T0 - T2",
+    "per_cluster": {
+      "cr-2001": {
+        "T0": 1.0,
+        "T2": 1.0
+      },
+      "cr-2002": {
+        "T0": 1.0,
+        "T2": 1.0
+      },
+      "cr-2003": {
+        "T0": 0.0,
+        "T2": 0.0
+      },
+      "cr-2004": {
+        "T0": 1.0,
+        "T2": 1.0
+      },
+      "cr-2005": {
+        "T0": 1.0,
+        "T2": 1.0
+      },
+      "cr-2006": {
+        "T0": 1.0,
+        "T2": 1.0
+      },
+      "cr-2007": {
+        "T0": 0.0,
+        "T2": 0.2
+      },
+      "cr-2008": {
+        "T0": 1.0,
+        "T2": 1.0
+      },
+      "cu-2001": {
+        "T0": 0.0,
+        "T2": 0.0
+      },
+      "cu-2002": {
+        "T0": 0.0,
+        "T2": 0.0
+      },
+      "cu-2003": {
+        "T0": 0.0,
+        "T2": 0.0
+      },
+      "cu-2004": {
+        "T0": 0.0,
+        "T2": 1.0
+      }
+    },
+    "delta_mean": -0.1,
+    "ci95": [
+      -0.2833,
+      0.0
+    ],
+    "mme": 0.25,
+    "bootstrap": {
+      "resamples": 10000,
+      "rng_seed": 20261005,
+      "method": "cluster percentile"
+    },
+    "verdict": "no confirmatory difference established",
+    "direction_note": "positive delta = trust resolution (T2) reduces errors relative to flat memory (T0)"
+  },
+  "error_decomposition_primary": {
+    "T0": {
+      "correct": 30,
+      "wrong_label": 17,
+      "invalid_format": 13
+    },
+    "T2": {
+      "correct": 24,
+      "wrong_label": 25,
+      "invalid_format": 11
+    }
+  },
+  "guess_band": {
+    "operationalization": "guess_rate(arm) = max position share of that arm's guess replies; band = |guess_rate - 1/6|",
+    "per_arm": {
+      "A": {
+        "guess_probes": 30,
+        "max_position_share": 0.333,
+        "band": 0.167
+      },
+      "T0": {
+        "guess_probes": 30,
+        "max_position_share": 0.5,
+        "band": 0.333
+      },
+      "T1": {
+        "guess_probes": 30,
+        "max_position_share": 0.333,
+        "band": 0.167
+      },
+      "T2": {
+        "guess_probes": 30,
+        "max_position_share": 0.333,
+        "band": 0.167
+      },
+      "T3": {
+        "guess_probes": 30,
+        "max_position_share": 0.5,
+        "band": 0.333
+      }
+    },
+    "max_band": 0.333,
+    "caveat_fires": true,
+    "caveat": "primary effect does not clear the guessing band"
+  },
+  "secondary": {
+    "family_pass_by_arm": {
+      "delayed_recall": {
+        "A": 0.0,
+        "T0": 0.667,
+        "T1": 0.667,
+        "T2": 0.6,
+        "T3": 0.667
+      },
+      "distractor_recall": {
+        "A": 1.0,
+        "T0": 0.667,
+        "T1": 1.0,
+        "T2": 0.533,
+        "T3": 0.667
+      },
+      "contradiction_update": {
+        "A": 0.0,
+        "T0": 1.0,
+        "T1": 0.75,
+        "T2": 0.75,
+        "T3": 0.75
+      },
+      "repeated_task": {
+        "A": 0.0,
+        "T0": 0.0,
+        "T1": 0.167,
+        "T2": 0.033,
+        "T3": 0.3
+      },
+      "correction_reuse": {
+        "A": 0.25,
+        "T0": 0.25,
+        "T1": 0.225,
+        "T2": 0.225,
+        "T3": 0.25
+      }
+    },
+    "strict_scripted_trap_repeat": {
+      "A": {
+        "eligible": 60,
+        "strict_repeats": 0
+      },
+      "T0": {
+        "eligible": 60,
+        "strict_repeats": 0
+      },
+      "T1": {
+        "eligible": 60,
+        "strict_repeats": 0
+      },
+      "T2": {
+        "eligible": 60,
+        "strict_repeats": 5
+      },
+      "T3": {
+        "eligible": 60,
+        "strict_repeats": 5
+      }
+    },
+    "t1_t3_exploratory_overall": {
+      "A": 0.208,
+      "T0": 0.417,
+      "T1": 0.45,
+      "T2": 0.35,
+      "T3": 0.45
+    },
+    "tokens_wall": {
+      "A": {
+        "wall_s_sum": 1526.3,
+        "tokens_sum": 68115,
+        "arm_seeds_present": 5
+      },
+      "T0": {
+        "wall_s_sum": 1695.7,
+        "tokens_sum": 156157,
+        "arm_seeds_present": 5
+      },
+      "T1": {
+        "wall_s_sum": 1789.5,
+        "tokens_sum": 172900,
+        "arm_seeds_present": 5
+      },
+      "T2": {
+        "wall_s_sum": 1935.5,
+        "tokens_sum": 197434,
+        "arm_seeds_present": 5
+      },
+      "T3": {
+        "wall_s_sum": 1753.9,
+        "tokens_sum": 193344,
+        "arm_seeds_present": 5
+      }
+    }
+  }
+}

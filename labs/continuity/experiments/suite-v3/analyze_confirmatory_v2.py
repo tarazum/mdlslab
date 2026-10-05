@@ -308,7 +308,8 @@ def main() -> int:
             "t1_t3_exploratory_overall": {
                 a: round(
                     statistics.fmean(
-                        [v for f, arms in fam_table.items() for aa, v in arms.items() if aa == a]
+                        [x for f, arms in fam_table.items()
+                         for aa, xs in arms.items() if aa == a for x in xs]
                     ), 3,
                 )
                 for a in ALL_ARMS

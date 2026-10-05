@@ -45,5 +45,15 @@
     "fixtures/v3h_suite": "a608e74e69bb0327afd0659be15ba0aacd23c3a1c2d9441fdc6313960e5d44c3",
     "fixture_validation_v3h": "d6d3c77d7eb5b057027474352359cc84554d8fe812fc762d112841a640e7b71d",
     "assembly_gate_v3h": "393af9b373c49c1a3607dc5af81c643e42f41db878590304cb7a6748d309943b"
-  }
+  },
+  "post_freeze_hotfixes": [
+    {
+      "file": "experiments/suite-v3/analyze_confirmatory_v2.py",
+      "when": "after run completion, before results were read (crash prevented any output)",
+      "what": "TypeError in the SECONDARY t1_t3_exploratory_overall block (lists passed to statistics.fmean instead of flattened); primary/bootstrap/verdict logic untouched by the fix",
+      "digest_before": "9ac16cd58f24886e008085fa9101ae1f891e6163b0a7d07ec51ab19714e89ad5",
+      "digest_after": "db78d9acb64823d847636bf718116969dee006ea7188c1498c49e790ff415a15",
+      "precedent": "M7 c679547 infra-clause pattern; flagged for owner acceptance"
+    }
+  ]
 }

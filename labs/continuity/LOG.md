@@ -1446,3 +1446,37 @@ GPU under the exclusive lock) launched via run_confirmatory_v2.py. Cosmetic
 post-run note from the gate: run_confirmatory_v2.py docstring still carries
 pilot-era wording - to be cleaned AFTER the run, outside the frozen digests
 never.
+
+## 2026-10-05 — CONT-005 CONFIRMATORY RUN COMPLETE + frozen analysis verdict
+
+Run: results/CONT-005-CONFIRMATORY/cont005-confirmatory-20261005-123917 — all 25
+arm-seeds completed (T0/T2/A/T1/T3 x seeds 1001-1005), zero retries needed,
+~150 min GPU under the exclusive lock, wall per arm-seed ~305-360 s.
+
+Analysis-script hotfix BEFORE any results were read (crash prevented output):
+TypeError in the SECONDARY t1_t3_exploratory_overall block (fmean over lists);
+primary logic untouched; recorded in frozen-config-v2.json post_freeze_hotfixes
+(M7 c679547 pattern; flagged for owner acceptance).
+
+**FROZEN VERDICT: "no confirmatory difference established"**
+- Primary delta (T0 - T2) = **-0.1000**, 95% CI [-0.2833, 0.0000] (cluster
+  percentile bootstrap, 10k, RNG 20261005). The CI includes 0; criterion (i)
+  failed; direction is NEGATIVE (T2 errors HIGHER than T0 on the held-out
+  primary) - the opposite of the pilot's +0.36. Guess-band caveat fired
+  (max band 0.333).
+- The pilot's T2 advantage did not replicate on held-out fixtures. Per Fable's
+  pre-registration note, regression toward the mean from the CU ceiling was the
+  named risk; the landing zone proved even less favorable.
+- Where the numbers did hold: A at 0.208 overall (guessing level, exactly the
+  pilot value); memory arms recover delayed_recall 0.6-0.67 (the non-label
+  companion fix worked; was 0.0 in the pilot); CU memory benefit real
+  (A 0.00 vs T0 pass 1.0 on 3/4 CU clusters).
+- NEW exploratory signals for the next cycle: (1) **T2 and T3 each repeat the
+  scripted/superseded TRAP 5/60 times while A/T0/T1 have ZERO** - trust-layer
+  annotations may increase trap salience (anchoring-by-flagging hypothesis);
+  (2) T1 (annotations only) 0.45 and T3 0.45 beat T2 0.35 overall -
+  metadata helps, resolution/policy hurts on this suite; (3) T2 failed cu-2004
+  in all 5 seeds (T0 perfect) - the single cluster carrying most of the delta.
+- Owner decisions next: accept/reject this confirmatory result; next-cycle
+  direction (trap-salience study vs CONT-005 closure); the analysis-script
+  hotfix acceptance.
