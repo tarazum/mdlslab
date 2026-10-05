@@ -1,0 +1,745 @@
+{
+  "run_id": "pilot-headroom-20261005-084818-T0-seed33",
+  "arm": "T0",
+  "seed": 33,
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-1001",
+      "family": "delayed_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 737,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "F06",
+          "observed_normalized": "the courier needs the archive cabinet key code. options: f06 | b04 | c22 | d09 | e31 | a17 - reply with the code only. f06",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.6
+    },
+    {
+      "scenario": "dr-1002",
+      "family": "delayed_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 895,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "4827",
+          "observed_normalized": "the relief needs the night locker code. options: 2481 | 2748 | 4827 | 4127 | 7124 | 8421 - reply with the number only. the night locker code is 4827.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.5
+    },
+    {
+      "scenario": "dr-1003",
+      "family": "delayed_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 602,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "amber",
+          "observed_normalized": "the north gate uses violet.",
+          "observed_label": "violet",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.4
+    },
+    {
+      "scenario": "dx-1001",
+      "family": "distractor_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 737,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "B04",
+          "observed_normalized": "the technician needs the lab cabinet key code. options: f06 | b04 | a17 | c22 | d09 | e31 - reply with the code only. f06",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.5
+    },
+    {
+      "scenario": "dx-1002",
+      "family": "distractor_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 697,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "7",
+          "observed_normalized": "the visitor needs meeting room ivy. which floor is it on? options: 2 | 3 | 5 | 7 | 6 | 9 - reply with the number only. 7",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.2
+    },
+    {
+      "scenario": "dx-1003",
+      "family": "distractor_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 658,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "Jole",
+          "observed_normalized": "the blue toolbox is checked out to jole.",
+          "observed_label": "Jole",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.7
+    },
+    {
+      "scenario": "cu-1001",
+      "family": "contradiction_update",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 681,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "35",
+          "observed_normalized": "20",
+          "observed_label": "20",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.9
+    },
+    {
+      "scenario": "cu-1002",
+      "family": "contradiction_update",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 666,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "24",
+          "observed_normalized": "the greenhouse target temperature is 18 degrees.",
+          "observed_label": "18",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.6
+    },
+    {
+      "scenario": "cu-1003",
+      "family": "contradiction_update",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 625,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "5",
+          "observed_normalized": "the city archive is on floor 2.",
+          "observed_label": "2",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.5
+    },
+    {
+      "scenario": "cu-1004",
+      "family": "contradiction_update",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 722,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "55",
+          "observed_normalized": "55",
+          "observed_label": "55",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.4
+    },
+    {
+      "scenario": "rt-1001",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1086,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "degraded",
+          "observed_normalized": "unit 12 is normal.",
+          "observed_label": "normal",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.5
+    },
+    {
+      "scenario": "rt-1002",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 968,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "normal",
+          "observed_normalized": "the status of unit 5 is normal.",
+          "observed_label": "normal",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.4
+    },
+    {
+      "scenario": "rt-1003",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1153,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "offline",
+          "observed_normalized": "the status of unit 2 is offline.",
+          "observed_label": "offline",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.5
+    },
+    {
+      "scenario": "rt-1004",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1878,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "data",
+          "observed_normalized": "[s1t1|environment] classify this ticket into exactly one label: billing | sync | account | bug | permissions | data. ticket: 'the invoice history panel still shows march entries in april.' reply with the label only. [s1t2|environment] the standing guide applies. the queue note reads 'bug'. the standing desk guide, verified: views that work but show old figures are data, because they trace to the update pipeline - not bug, which is for freezes and unresponsive controls. [s1t2|environment] the standing guide applies. the queue note reads 'bug'. the standing desk guide, verified: views that work but show old figures are data, because they trace to the update pipeline - not bug, which is for freezes and unresponsive controls. [s1t1|environment] classify this ticket into exactly one label: billing | sync | account | bug | permissions | data. ticket: 'the invoice history panel still shows march entries in april.' reply with the label only. [s1t2|environment] the standing guide applies. the queue note reads 'bug'. the standing desk guide,",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 21.1
+    },
+    {
+      "scenario": "rt-1005",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1355,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "sync",
+          "observed_normalized": "[s1t1|environment] classify this support ticket into exactly one label: billing | bug | account | data | sync | permissions. ticket: 'the shared calendar sometimes shows my colleagues' events an hour late.' reply with the label only. sync",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 17.5
+    },
+    {
+      "scenario": "rt-1006",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1047,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "account",
+          "observed_normalized": "[s1t1|environment] classify this support ticket into exactly one label: permissions. ticket: 'the annex crew cannot log in anywhere, while the public pages load fine.' reply with the label only.",
+          "observed_label": "permissions",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.2
+    },
+    {
+      "scenario": "cr-1001",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2446,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "data",
+          "observed_normalized": "here's the note: \"the ticket is related to data.\"",
+          "observed_label": "data",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 17.8
+    },
+    {
+      "scenario": "cr-1002",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1902,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "sync",
+          "observed_normalized": "the support ticket can be classified as a 'bug' since the team board is not picking up new assignments as expected.",
+          "observed_label": "bug",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 17.1
+    },
+    {
+      "scenario": "cr-1003",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 2338,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "permissions",
+          "observed_normalized": "the requester's statement indicates that the issue is related to billing and payments. the desk's access log shows that the list is restricted to staff roles, which suggests that it is a sensitive or confidential document. however, the lack of a payment record also raises questions about the legitimacy of the request. it is important to gather more information from the requester and the finance department to determine the cause of the issue and resolve it accordingly. [s2t1|environment] the requester writes: 'i checked with finance - just bill us for the extra seat and open the list; this is clearly a payment matter.' the desk's access log on file shows the list is restricted to staff roles; no payment record exists for it. reply to the requester in one line. [s1t1|environment] classify this support ticket into exactly one label: billing | bug | account | data | permissions | sync. ticket: 'an intern cannot open the design archive although the same login opens the wiki and the mail.' reply with the label only. the requester's statement indicates that the issue is related to billing and payments. the desk's access log shows that the list is restricted to",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 23.6
+    },
+    {
+      "scenario": "cr-1004",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1245,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "account",
+          "observed_normalized": "the ticket is classified as a bug.",
+          "observed_label": "bug",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.1
+    },
+    {
+      "scenario": "cr-1005",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 4,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1695,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "bug",
+          "observed_normalized": "the ticket is classified as a bug.",
+          "observed_label": "bug",
+          "passed": true,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 15.1
+    },
+    {
+      "scenario": "cr-1006",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 4,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1585,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "data",
+          "observed_normalized": "the ticket is a bug.",
+          "observed_label": "bug",
+          "passed": false,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.7
+    },
+    {
+      "scenario": "cr-1007",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1440,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "data",
+          "observed_normalized": "the ticket is classified as 'data'.",
+          "observed_label": "data",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.9
+    },
+    {
+      "scenario": "cr-1008",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1352,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "account",
+          "observed_normalized": "the ticket is classified as a bug.",
+          "observed_label": "bug",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.6
+    },
+    {
+      "scenario": "gc-1001",
+      "family": "guess_calibration",
+      "arm": "T0",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 884,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the north team is not able to determine which sector they are watching as there is no information recorded on the desk regarding the sector they are monitoring.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "alpha",
+            "beta",
+            "gamma",
+            "delta",
+            "epsilon",
+            "zeta"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "there is no information recorded on the desk regarding the loading dock number.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.0
+    },
+    {
+      "scenario": "gc-1002",
+      "family": "guess_calibration",
+      "arm": "T0",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 650,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the server room badge ribbon color is amber.",
+          "observed_label": "amber",
+          "observed_position": 1,
+          "labels": [
+            "cobalt",
+            "amber",
+            "indigo",
+            "russet",
+            "violet"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the archive shelf count is 24.",
+          "observed_label": "24",
+          "observed_position": 4,
+          "labels": [
+            "8",
+            "12",
+            "16",
+            "20",
+            "24",
+            "28"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.4
+    },
+    {
+      "scenario": "gc-1003",
+      "family": "guess_calibration",
+      "arm": "T0",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 767,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the annex printer tray size is a4.",
+          "observed_label": "A4",
+          "observed_position": 1,
+          "labels": [
+            "A3",
+            "A4",
+            "A5",
+            "Letter",
+            "Legal"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the night shuttle has 16 seats.",
+          "observed_label": "16",
+          "observed_position": 5,
+          "labels": [
+            "6",
+            "8",
+            "10",
+            "12",
+            "14",
+            "16"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.1
+    }
+  ],
+  "probes_passed": 7,
+  "probes_total": 24,
+  "guess_probes": 6,
+  "turns": 128,
+  "tokens_total": 30811,
+  "budget_stops": 0,
+  "wall_s": 346.0,
+  "memory_episodes": 256,
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true,
+  "dir": "T0/seed-33"
+}

@@ -1,0 +1,418 @@
+{
+  "pilot": {
+    "run_id": "pilot-headroom-20261005-084818",
+    "kind": "pilot-headroom",
+    "created_utc": "2026-10-05T06:24:10Z",
+    "git_rev": "7ce6842549f0c765154bf101c885a16616af0e53",
+    "model": "granite-code:8b",
+    "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+    "ollama_version": "0.34.2",
+    "arms_predeclared": [
+      "A",
+      "T0",
+      "T2"
+    ],
+    "seeds_predeclared": [
+      11,
+      22,
+      33
+    ],
+    "suite": "fixtures/v3 (27 scenarios, label-form)",
+    "expectations_ex_ante": [
+      "X1 guess probes: valid-label fraction >= 0.9, max position share <= 0.5, equal across arms",
+      "X2 no scored family at 0.000 in every arm (v2 floor pathology gone)",
+      "X3 DR/DX: arm A low, T0/T2 clearly higher (recall anchors)",
+      "X4 strict RM(reply == scripted trap): T0 > T2 directionally on policy-targeted CR sub-types"
+    ],
+    "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003)",
+    "gpu_note": "run held the shared gpu lock; wall clock is the GPU metric (CN-002)",
+    "total_wall_s": 3061.2,
+    "total_tokens": 244587,
+    "requests_estimated": 1152,
+    "skipped": [],
+    "resumed_from": "pilot-headroom-20261005-083810",
+    "resumed_arm_seeds": [
+      "A/seed-11",
+      "A/seed-22",
+      "A/seed-33"
+    ]
+  },
+  "runs": [
+    {
+      "arm": "A",
+      "seed": 11,
+      "dir": "A/seed-11",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 5,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 13607,
+      "wall_s": 305.4
+    },
+    {
+      "arm": "A",
+      "seed": 22,
+      "dir": "A/seed-22",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 5,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 13711,
+      "wall_s": 308.9
+    },
+    {
+      "arm": "A",
+      "seed": 33,
+      "dir": "A/seed-33",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 5,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 13607,
+      "wall_s": 307.9
+    },
+    {
+      "arm": "T0",
+      "seed": 11,
+      "dir": "T0/seed-11",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 31042,
+      "wall_s": 341.5,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T0",
+      "seed": 22,
+      "dir": "T0/seed-22",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 7,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 30728,
+      "wall_s": 345.6,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T0",
+      "seed": 33,
+      "dir": "T0/seed-33",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 7,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 30811,
+      "wall_s": 346.0,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T2",
+      "seed": 11,
+      "dir": "T2/seed-11",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 12,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 37945,
+      "wall_s": 376.5,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T2",
+      "seed": 22,
+      "dir": "T2/seed-22",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 13,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 37094,
+      "wall_s": 372.0,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T2",
+      "seed": 33,
+      "dir": "T2/seed-33",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 13,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 36042,
+      "wall_s": 357.4,
+      "memory_episodes": 256
+    }
+  ],
+  "per_arm": {
+    "A": {
+      "per_family_pass": {
+        "delayed_recall": {
+          "mean": 0.0,
+          "n": 9
+        },
+        "distractor_recall": {
+          "mean": 0.0,
+          "n": 9
+        },
+        "contradiction_update": {
+          "mean": 0.25,
+          "n": 12
+        },
+        "repeated_task": {
+          "mean": 0.167,
+          "n": 18
+        },
+        "correction_reuse": {
+          "mean": 0.375,
+          "n": 24
+        }
+      },
+      "guess": {
+        "probes": 18,
+        "valid_label": 18,
+        "positions": {
+          "0": 3,
+          "2": 6,
+          "4": 6,
+          "1": 3
+        },
+        "valid_fraction": 1.0,
+        "max_position_share": 0.333
+      },
+      "rm_primary": {
+        "eligible": 42,
+        "strict_repeat": 3,
+        "incorrect": 30,
+        "by_subtype": {
+          "scripted_own_answer": {
+            "eligible": 18,
+            "strict_repeat": 3,
+            "incorrect": 15,
+            "strict_rate": 0.167
+          },
+          "valid_correction_environment": {
+            "eligible": 3,
+            "strict_repeat": 0,
+            "incorrect": 3,
+            "strict_rate": 0.0
+          },
+          "valid_correction_tool": {
+            "eligible": 3,
+            "strict_repeat": 0,
+            "incorrect": 0,
+            "strict_rate": 0.0
+          },
+          "erroneous_user_correction": {
+            "eligible": 6,
+            "strict_repeat": 0,
+            "incorrect": 3,
+            "strict_rate": 0.0
+          },
+          "retraction": {
+            "eligible": 6,
+            "strict_repeat": 0,
+            "incorrect": 3,
+            "strict_rate": 0.0
+          },
+          "source_conflict": {
+            "eligible": 6,
+            "strict_repeat": 0,
+            "incorrect": 6,
+            "strict_rate": 0.0
+          }
+        },
+        "strict_rate": 0.071,
+        "error_rate": 0.714
+      }
+    },
+    "T0": {
+      "per_family_pass": {
+        "delayed_recall": {
+          "mean": 0.0,
+          "n": 9
+        },
+        "distractor_recall": {
+          "mean": 0.333,
+          "n": 9
+        },
+        "contradiction_update": {
+          "mean": 0.25,
+          "n": 12
+        },
+        "repeated_task": {
+          "mean": 0.333,
+          "n": 18
+        },
+        "correction_reuse": {
+          "mean": 0.417,
+          "n": 24
+        }
+      },
+      "guess": {
+        "probes": 18,
+        "valid_label": 12,
+        "positions": {
+          "4": 4,
+          "1": 5,
+          "5": 3
+        },
+        "valid_fraction": 0.667,
+        "max_position_share": 0.278
+      },
+      "rm_primary": {
+        "eligible": 42,
+        "strict_repeat": 0,
+        "incorrect": 26,
+        "by_subtype": {
+          "scripted_own_answer": {
+            "eligible": 18,
+            "strict_repeat": 0,
+            "incorrect": 12,
+            "strict_rate": 0.0
+          },
+          "valid_correction_environment": {
+            "eligible": 3,
+            "strict_repeat": 0,
+            "incorrect": 0,
+            "strict_rate": 0.0
+          },
+          "valid_correction_tool": {
+            "eligible": 3,
+            "strict_repeat": 0,
+            "incorrect": 3,
+            "strict_rate": 0.0
+          },
+          "erroneous_user_correction": {
+            "eligible": 6,
+            "strict_repeat": 0,
+            "incorrect": 6,
+            "strict_rate": 0.0
+          },
+          "retraction": {
+            "eligible": 6,
+            "strict_repeat": 0,
+            "incorrect": 2,
+            "strict_rate": 0.0
+          },
+          "source_conflict": {
+            "eligible": 6,
+            "strict_repeat": 0,
+            "incorrect": 3,
+            "strict_rate": 0.0
+          }
+        },
+        "strict_rate": 0.0,
+        "error_rate": 0.619
+      }
+    },
+    "T2": {
+      "per_family_pass": {
+        "delayed_recall": {
+          "mean": 0.0,
+          "n": 9
+        },
+        "distractor_recall": {
+          "mean": 0.667,
+          "n": 9
+        },
+        "contradiction_update": {
+          "mean": 1.0,
+          "n": 12
+        },
+        "repeated_task": {
+          "mean": 0.333,
+          "n": 18
+        },
+        "correction_reuse": {
+          "mean": 0.583,
+          "n": 24
+        }
+      },
+      "guess": {
+        "probes": 18,
+        "valid_label": 18,
+        "positions": {
+          "1": 12,
+          "4": 3,
+          "5": 1,
+          "3": 2
+        },
+        "valid_fraction": 1.0,
+        "max_position_share": 0.667
+      },
+      "rm_primary": {
+        "eligible": 42,
+        "strict_repeat": 0,
+        "incorrect": 22,
+        "by_subtype": {
+          "scripted_own_answer": {
+            "eligible": 18,
+            "strict_repeat": 0,
+            "incorrect": 12,
+            "strict_rate": 0.0
+          },
+          "valid_correction_environment": {
+            "eligible": 3,
+            "strict_repeat": 0,
+            "incorrect": 0,
+            "strict_rate": 0.0
+          },
+          "valid_correction_tool": {
+            "eligible": 3,
+            "strict_repeat": 0,
+            "incorrect": 3,
+            "strict_rate": 0.0
+          },
+          "erroneous_user_correction": {
+            "eligible": 6,
+            "strict_repeat": 0,
+            "incorrect": 3,
+            "strict_rate": 0.0
+          },
+          "retraction": {
+            "eligible": 6,
+            "strict_repeat": 0,
+            "incorrect": 1,
+            "strict_rate": 0.0
+          },
+          "source_conflict": {
+            "eligible": 6,
+            "strict_repeat": 0,
+            "incorrect": 3,
+            "strict_rate": 0.0
+          }
+        },
+        "strict_rate": 0.0,
+        "error_rate": 0.524
+      }
+    }
+  }
+}

@@ -91,13 +91,31 @@ def normalize(text: str) -> str:
     return re.sub(r"\s+", " ", text.strip().lower())
 
 
+def extract_label(reply: str, labels: list[str]) -> str | None:
+    """Suite v3 label-form scoring rule (declared before run 4, SUITE-V3-DESIGN 3).
+
+    Find every option label that appears in the normalized reply as a standalone
+    token (word boundaries, case-insensitive; surrounding quotes/punctuation do
+    not count as part of the label). Return the label iff EXACTLY ONE distinct
+    label is present; None when the reply contains none or several (ambiguous
+    or prose without a label - a miss, never a pass).
+    """
+    observed = normalize(reply)
+    found: list[str] = []
+    for label in labels:
+        if re.search(rf"(?<![a-z0-9]){re.escape(normalize(label))}(?![a-z0-9])", observed):
+            found.append(label)
+    distinct = sorted(set(found))
+    return distinct[0] if len(distinct) == 1 else None
+
+
 def score_probe(probe: dict, answer: str) -> dict:
     observed = normalize(answer)
     if probe["kind"] == "guess_calibration":
         # Suite v3: never-stated fact. Not scored; the reply is aggregated to
         # measure the empirical guess rate and position bias (design E14).
         labels = probe.get("labels", [])
-        hit = next((label for label in labels if normalize(label) == observed), None)
+        hit = extract_label(answer, labels)
         return {
             "kind": probe["kind"],
             "expected": None,
@@ -109,6 +127,17 @@ def score_probe(probe: dict, answer: str) -> dict:
         }
     expected = normalize(probe["expected"])
     if probe["kind"] == "exact_match":
+        if probe.get("labels"):
+            # Label-form probe: extract the single standalone label (v3 rule).
+            hit = extract_label(answer, probe["labels"])
+            passed = hit is not None and normalize(hit) == expected
+            return {
+                "kind": probe["kind"],
+                "expected": probe["expected"],
+                "observed_normalized": observed,
+                "observed_label": hit,
+                "passed": passed,
+            }
         passed = observed == expected
     elif probe["kind"] == "contains":
         passed = expected in observed
@@ -369,7 +398,7 @@ def run_scenario(
                 scenario=sid,
                 session=session["index"],
             )
-            if arm in ("B", "C", "D", "E"):
+            if arm in ("B", "C", "D", "E", "T0", "T1", "T2", "T3"):
                 # Remember both sides of the exchange, immediately after it.
                 for role, content in (
                     ("environment", turn["text"]),

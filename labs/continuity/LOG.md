@@ -1211,3 +1211,129 @@ aggregation in score_probe, `experiments/suite-v3/assembly_gate.py` +
 - Next: headroom pilot (GPU, small: arm A vs T0 vs T2 on the primary set to
   confirm floor removal and guessing baseline ~1/k), then the CONT-005
   pre-registration v2 per docs/PREREG-REQUIREMENTS-V2.md and the review cycle.
+
+## 2026-10-05 — CONT-005 headroom pilot: start-note (first GPU touch of suite v3)
+
+Arms A / T0 / T2 x predeclared seeds {11, 22, 33} over the full fixtures/v3
+(27 scenarios, ~130 turns/seed, ~1170 requests total). Model pinned
+granite-code:8b digest 36c3c3b9683b (CN-001), temperature 0.0, options in every
+request (PB-071), one warm process per arm-seed (PB-070), shared GPU lock held
+for the whole run; wall clock is the GPU metric (CN-002). Script:
+experiments/suite-v3/pilot_headroom.py; artifacts under
+results/CONT-005-PILOT/pilot-headroom-<ts>/.
+
+EX-ANTE expectations (declared before any v3 inference; exploratory headroom,
+not confirmation):
+- X1 guess_calibration: valid-label fraction >= 0.9, max position share <= 0.5,
+  equal across arms (the facts were never stated - no arm can have an edge).
+- X2 the v2 floor pathology is gone: no scored family at 0.000 in every arm.
+- X3 delayed_recall / distractor_recall: arm A low, T0/T2 clearly higher.
+- X4 directional only: strict repeated-mistake (reply == scripted trap) higher
+  for T0 than T2 on the policy-targeted CR sub-types.
+Guard: no new arm-seed starts after 50 min wall.
+
+Run-2 failure + fix (same-day, PB-075 pattern): run 2 crashed AFTER arm T0
+seed-11's inference completed - the pilot's own telemetry called
+MemoryStore.count_episodes(), which does not exist (the API is count()). No
+data lost for arm A (3/3 seeds completed with summaries); T0/seed-11's trace
+is complete in the aborted root but its summary was never written, so that
+arm-seed re-runs. Fix: count(); plus --resume support (completed arm-seeds
+copied into the new root with zero repeated inference, resume recorded in the
+aggregate). Run 3 resumes A x3 from pilot-headroom-20261005-071700 and runs
+T0 x3 + T2 x3.
+
+## 2026-10-05 — Run 3 post-mortem: two root causes found same day; run 4 clean
+
+Run 3 (T0/T2 executed, A resumed) completed all inference but exposed two real
+defects, both proven from the traces:
+
+1. **RC1 - T-arms never wrote memory.** All 53 memory.injected events in T0/seed-11
+   have episode_count=0; token totals byte-equal to arm A (13607/13711 pattern).
+   Root cause: runner.py gated episode appends on `arm in ("B","C","D","E")` - the
+   T-arms were never added, so they degenerated to no-memory runs. Fixed (gate now
+   includes T0-T3).
+2. **RC2 - label-form replies are prose, not bare labels.** Probe observations like
+   "the cost of a season membership is 55." (CORRECT answer, exact_match FAIL) and
+   '"20"' (quoted superseded value). Declared the v3 scoring rule in
+   SUITE-V3-DESIGN.md section 3 BEFORE run 4: extract standalone option labels
+   (word-boundary); pass iff exactly one distinct label and it is the expected one.
+   Implemented in runner.score_probe/extract_label (unit sanity 6/6); applies to
+   guess_calibration aggregation too. v1/v2 probes (no labels field) take the
+   unchanged legacy path.
+3. Aggregate crash (max() over empty positions) guarded - same post-inference
+   wrapper-crash family as PB-075, third instance this pilot.
+
+Same-day lesson (candidate playbook promotion): the assembly gate validated the
+trust RENDERER with its own store-fill simulation, so it could not catch RC1 -
+the runner's append gating was never exercised. Ex-ante gates must drive the
+PRODUCTION runner path (a dry-run mode or trace-replay), not a parallel
+reimplementation of it. To be promoted as PB-077 after the pilot completes.
+
+Run 3 artifacts kept as evidence (pilot-headroom-20261005-073940; aborted run 2
+root pilot-headroom-20261005-071700; aborted run 1
+aborted-partial-20261005-071210-wallguard-fix). Run 4 = full clean 9 arm-seeds,
+no resume (arm A re-runs too: its run-3 scores used the legacy scorer).
+
+Run-4 post-mortem: arm A x3 COMPLETED under the declared v3 label-scoring rule -
+**5/24 scored probes per seed (~0.21, chance level for k~6; the v2-style 0-floor
+is gone at the very bottom too)**. T0/seed-11 died mid-run on a single hung
+Ollama request (provider timeout 300 s at rt-1004 s3t2; server healthy
+immediately after - transient). Hardening: bounded fresh-arm-seed retry (2
+attempts, partials preserved as seed-N-attemptK-failed, never silent); run 5
+resumes A x3 from run 4 and runs T0 x3 + T2 x3.
+
+Run-5 post-mortem (same day): T0/seed-11 timed out AGAIN at the same turn - not
+transient: the provider never set num_predict, so a memory-injected repetition
+loop could generate past the 300 s request timeout (CN-011 in FINDINGS.md,
+closed same day: num_predict=256 now travels in every request, provider default).
+Second bug: the retry handler renamed a directory whose journal handle was still
+open (no finally-close) -> Windows PermissionError. Fixes: attempt-scoped seed
+dirs (seed-N / seed-N-a2, no renames), try/finally closing journal+store,
+provider num_predict, resume accepts a2 dirs. Run 6 resumes A x3 from run 5 and
+runs T0 x3 + T2 x3 under the hardened loop.
+
+## 2026-10-05 — CONT-005 headroom pilot RUN 6 COMPLETE (exit 0, all 9 arm-seeds)
+
+Run of record: results/CONT-005-PILOT/pilot-headroom-20261005-084818 (A x3 resumed
+from run-5 root, zero repeated inference; T0 x3 + T2 x3 fresh under num_predict=256).
+Aggregate: aggregate.json in the run root. Model granite-code:8b @ 36c3c3b9683b,
+temp 0.0, options in every request incl. num_predict=256 (CN-011). Wall: A ~307 s,
+T0 ~345 s, T2 ~365 s per seed; tokens/seed: A 13.6k, T0 30.8k, T2 37.3k.
+
+Per-family mean pass rate (3 seeds each):
+
+| family (probes/seed) | A | T0 | T2 |
+| --- | --- | --- | --- |
+| contradiction_update (4) | 0.250 | 0.250 | **1.000** |
+| correction_reuse (8) | 0.375 | 0.417 | **0.583** |
+| delayed_recall (3) | 0.000 | 0.000 | 0.000 |
+| distractor_recall (3) | 0.000 | 0.333 | **0.667** |
+| repeated_task (6) | 0.167 | 0.333 | 0.333 |
+| overall scored (24) | 5/24 | 7-8/24 | **12-13/24** |
+
+RM primary (42 eligible/arm): strict trap-repeat A 3/42 (0.071), T0 0/42, T2 0/42;
+error rate A 0.714 > T0 0.619 > T2 0.524 (monotone). Guess probes (18/arm):
+valid-label A 1.0 / T0 0.667 / T2 1.0; max position share 0.333 / 0.278 / 0.667.
+
+EX-ANTE VERDICTS:
+- X1 MET (mostly): guessing measurable; A/T2 valid 1.0; T2 position share 0.667
+  (n=18, noisy) and T0 valid 0.667 - guess aggregation goes into the prereg as a
+  mandatory per-arm report, not a gate.
+- X2 MET: the v2 floor pathology is gone - A sits at ~chance (0.208 overall),
+  arms separate cleanly upward.
+- X3 PARTIAL: dx confirmed (0 -> 0.667 with memory); **dr = 0.000 in ALL arms** -
+  inspection needed (suspect: replies echo BOTH key codes -> two distinct labels
+  -> extraction rule counts a miss). Design input, not a memory failure.
+- X4 NOT MET AS STATED, replaced by a better signal: strict scripted-trap repeats
+  are ~zero in T0/T2 (granite rarely lands verbatim on the trap), so the strict-RM
+  primary has NO headroom on v3; the trust effect manifests as the monotone ERROR
+  RATE reduction (0.714 / 0.619 / 0.524) and family-level separation (CU 1.0 vs
+  0.25 is the strongest single result of the pilot).
+
+THREE DESIGN INPUTS for the CONT-005 pre-registration (PREREG-REQUIREMENTS-V2):
+1. Primary endpoint candidate: label-form error rate on policy-targeted families
+   (CR+CU), not verbatim-trap strict RM (no headroom).
+2. Fix the delayed_recall extraction artifact (multi-label replies) or reword the
+   DR probes ("reply with the code only" enforcement) before freezing.
+3. Guess calibration reported per arm; investigate T2's position concentration
+   (0.667) before trusting label-position invariance.

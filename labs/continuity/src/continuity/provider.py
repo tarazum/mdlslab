@@ -23,13 +23,21 @@ class OllamaProvider:
         temperature: float = 0.0,
         seed: int = 42,
         num_ctx: int = 4096,
+        num_predict: int = 256,
         keep_alive: str = "30m",
         timeout_s: int = 300,
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.model = model
-        # Sampling contract — merged into every request payload.
-        self.options = {"temperature": temperature, "seed": seed, "num_ctx": num_ctx}
+        # Sampling contract — merged into every request payload. num_predict caps
+        # generation length (CN-011: unbounded generation with injected memory can
+        # loop past any request timeout; PB-071's "fixed max_tokens" made real).
+        self.options = {
+            "temperature": temperature,
+            "seed": seed,
+            "num_ctx": num_ctx,
+            "num_predict": num_predict,
+        }
         self.keep_alive = keep_alive
         self.timeout_s = timeout_s
 

@@ -1,0 +1,719 @@
+{
+  "run_id": "pilot-headroom-20261005-071700-A-seed22",
+  "arm": "A",
+  "seed": 22,
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-1001",
+      "family": "delayed_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 394,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "F06",
+          "observed_normalized": "the courier needs the archive cabinet key code. the possible options are f06, b04, c22, d09, e31, and a17. the correct code is f06.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.3
+    },
+    {
+      "scenario": "dr-1002",
+      "family": "delayed_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 336,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "4827",
+          "observed_normalized": "2481",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.2
+    },
+    {
+      "scenario": "dr-1003",
+      "family": "delayed_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 322,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "amber",
+          "observed_normalized": "the north gate uses a violet badge.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.3
+    },
+    {
+      "scenario": "dx-1001",
+      "family": "distractor_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 355,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "B04",
+          "observed_normalized": "the technician needs the lab cabinet key code. the correct code is f06.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.6
+    },
+    {
+      "scenario": "dx-1002",
+      "family": "distractor_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 316,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "7",
+          "observed_normalized": "\"3\"",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.1
+    },
+    {
+      "scenario": "dx-1003",
+      "family": "distractor_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 328,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "Jole",
+          "observed_normalized": "the blue toolbox is held by karis.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.5
+    },
+    {
+      "scenario": "cu-1001",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 341,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "35",
+          "observed_normalized": "\"20\"",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.2
+    },
+    {
+      "scenario": "cu-1002",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 367,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "24",
+          "observed_normalized": "the greenhouse target temperature is 22 degrees celsius.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.7
+    },
+    {
+      "scenario": "cu-1003",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 326,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "5",
+          "observed_normalized": "the city archive is on floor 4.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.2
+    },
+    {
+      "scenario": "cu-1004",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 333,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "55",
+          "observed_normalized": "the cost of a season membership is 55.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.3
+    },
+    {
+      "scenario": "rt-1001",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 577,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "degraded",
+          "observed_normalized": "unit 12 is currently in the 'degraded' state due to its queue depth doubling after a firmware push.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.0
+    },
+    {
+      "scenario": "rt-1002",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 524,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "normal",
+          "observed_normalized": "understood. i will report the status of unit 5 as degraded.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.7
+    },
+    {
+      "scenario": "rt-1003",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 545,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "offline",
+          "observed_normalized": "understood. i will report the status of unit 2 as degraded.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.9
+    },
+    {
+      "scenario": "rt-1004",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 506,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "data",
+          "observed_normalized": "bug",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.7
+    },
+    {
+      "scenario": "rt-1005",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 507,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "sync",
+          "observed_normalized": "the ticket is a bug.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.5
+    },
+    {
+      "scenario": "rt-1006",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 478,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "account",
+          "observed_normalized": "bug",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.0
+    },
+    {
+      "scenario": "cr-1001",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 983,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "data",
+          "observed_normalized": "the ticket appears to be related to the billing department. the specific issue may be related to data or permissions, but without the desk notes it is difficult to say for certain.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 16.8
+    },
+    {
+      "scenario": "cr-1002",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 884,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "sync",
+          "observed_normalized": "sync",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 15.5
+    },
+    {
+      "scenario": "cr-1003",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 542,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "permissions",
+          "observed_normalized": "permissions.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.4
+    },
+    {
+      "scenario": "cr-1004",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 538,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "account",
+          "observed_normalized": "data.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.7
+    },
+    {
+      "scenario": "cr-1005",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 4,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 644,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "bug",
+          "observed_normalized": "the ticket is a bug.",
+          "passed": false,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.7
+    },
+    {
+      "scenario": "cr-1006",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 4,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 596,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "data",
+          "observed_normalized": "the ticket is a billing issue.",
+          "passed": false,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.3
+    },
+    {
+      "scenario": "cr-1007",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 708,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "data",
+          "observed_normalized": "the ticket is a 'bug'.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.9
+    },
+    {
+      "scenario": "cr-1008",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 749,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "account",
+          "observed_normalized": "permissions.",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 15.5
+    },
+    {
+      "scenario": "gc-1001",
+      "family": "guess_calibration",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 540,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "alpha.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "alpha",
+            "beta",
+            "gamma",
+            "delta",
+            "epsilon",
+            "zeta"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "3.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.0
+    },
+    {
+      "scenario": "gc-1002",
+      "family": "guess_calibration",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 517,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the server room badge ribbon color is violet.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "cobalt",
+            "amber",
+            "indigo",
+            "russet",
+            "violet"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the archive shelf count is 24.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "8",
+            "12",
+            "16",
+            "20",
+            "24",
+            "28"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.8
+    },
+    {
+      "scenario": "gc-1003",
+      "family": "guess_calibration",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 455,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the annex printer tray size is a4.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "A3",
+            "A4",
+            "A5",
+            "Letter",
+            "Legal"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the night shuttle has 10 seats.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "6",
+            "8",
+            "10",
+            "12",
+            "14",
+            "16"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.6
+    }
+  ],
+  "probes_passed": 1,
+  "probes_total": 24,
+  "guess_probes": 6,
+  "turns": 128,
+  "tokens_total": 13711,
+  "budget_stops": 0,
+  "wall_s": 308.4,
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true
+}

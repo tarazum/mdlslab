@@ -26,3 +26,24 @@ CN-009 | 2026-10-01 | M3 | The arm-C self-model revision 1 is estimated from the
 
 CN-010 | 2026-10-01 | M5 | The arm-E bounded policy has an empty actuation surface on the current fixture topology: every probe is the FIRST turn of its session, so the baseline session-start injection (query = that same first turn) has already retrieved exactly what a retrieve_then_answer action retrieves with its per-turn query; all 24/24 policy retrieves across the 3-seed pilot were dedup no-ops ("already covered"), 0 physical injections, and arm E ran token-identical to arm D (17,124 tokens/seed). The decision/recording mechanism is verified (events, rules, distribution), but no behavior-changing actuation exists to measure on this suite. | OPEN — CONT-001 design input: to measure what the policy DOES (not just what it decides), the suite needs probes on non-first turns of a session (different baseline query than the probe query) or mid-session store growth; alternatively a follow-up turn after a probe. Fixture decision is owner-gated with the other CONT-001 design choices (M6 pre-registration must state the arm-E policy's expected actuation count explicitly). M6 disposition (2026-10-02): reproduced at 5 seeds (arm E token-identical to arm D: 85,696 tokens/arm, identical prompt+eval sums); pre-registered fix in docs/EVALUATION-PREP.md §6.6–6.7 — every RM-eligible probe preceded by >= 1 non-probe turn, expected actuation >= 1 physical injection per seed stated ex ante, and a zero-actuation outcome pre-declared as "actuation-inert" with a null-increment E−D report (no post-hoc reinterpretation). CLOSED 2026-10-02 (M7): fixture v2 places every RM-eligible probe on s2t2 behind a non-probe s2t1 (validator check E9) with a mechanically simulated ex-ante expectation (validator check A1, 7/7 scenarios); the observed actuation was 7 physical policy injections per seed (one per RM scenario, matching the simulation exactly; 13 retrieve actions/seed), expectation >= 1/seed met on every seed, and arm E is no longer token-identical to arm D (278,805 vs 272,795 tokens/arm, +1,202/seed from the physically injected memory blocks). The actuation-inert pre-declaration was not needed.
 
+
+## CN-011 — Unbounded generation hung requests past the 300 s timeout (OPEN -> CLOSED same day)
+
+**Context:** CONT-005 headroom pilot runs 4-5 (2026-10-05), suite v3, arms T0/T2.
+
+**What happened:** two consecutive 300 s request timeouts at the same probe turn
+(rt-1004 s3t2, T0/seed-11) - not a transient server failure. Root cause: the
+provider never set `num_predict`, so generation length was bounded only by EOS
+or the 4096-token context; with memory blocks injected, granite-code:8b
+occasionally enters a repetition loop whose generation exceeds any request
+timeout. v1/v2 suites never triggered it (short answers throughout) - PB-071's
+"fixed max_tokens" clause existed on paper but was not implemented in the
+provider.
+
+**Lesson:** a sampling contract that omits a generation cap is incomplete the
+moment prompts grow (memory injections, longer rubrics).
+
+**Change:** `num_predict: 256` added to the provider's per-request options
+(default; every request, telemetry records it). Pilot hardening alongside:
+attempt-scoped seed dirs (no renames), finally-closed journal/store handles
+(run-5 PermissionError), bounded fresh-arm-seed retry on transient errors.

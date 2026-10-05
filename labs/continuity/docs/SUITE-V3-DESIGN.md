@@ -35,6 +35,13 @@ sufficient to establish headroom/variance") is satisfied by this design + the v3
   with `k` options, a no-knowledge arm sits near `1/k` instead of a degenerate 0, so
   the primary contrast is no longer structurally one-sided (F2) and arm A / T0
   provides its own in-run guessing control.
+- **Label-form scoring rule (declared 2026-10-05, before pilot run 4):** the reply
+  is scored by extracting option labels that appear as standalone tokens
+  (word-boundary, case-insensitive; quotes do not shield). PASS iff exactly ONE
+  distinct label is present and it is the expected one; zero or several labels is a
+  miss. Rationale: pilot run 3 showed granite answers label-form probes in prose
+  ("the cost of a season membership is 55."), which strict exact_match would fail
+  despite a correct answer.
 - Anti-leakage rules (successors of the v2 E8 no-options ban; CN-004 lesson):
   the correct label must not be inferable from surface form — E9–E13 in §9.
 
