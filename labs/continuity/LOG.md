@@ -1434,3 +1434,15 @@ inherited the pilot's 75-min wall guard; the frozen execution plan
 3-h cap. Raised to 170 min; the run script's digest in frozen-config-v2.json
 refreshed. No v3h inference has occurred at the moment of this correction; the
 Fable gate session below validates the FINAL frozen state.
+
+## 2026-10-05 — GATE-V2 PASS (Fable, non-executor) -> CONFIRMATORY RUN LAUNCHED
+
+Fable gate: GO (6/6 checks passed; digests re-hashed independently; the guard
+correction ruled a legitimate pre-inference fix; full verdict in docs/GATE-V2.md).
+Its sandbox condition (executor re-runs the zero-inference confirmations
+pre-launch) executed: validator exit 0, assembly gate exit 0, GPU free. The
+confirmatory run (arms T0,T2,A,T1,T3 x seeds 1001-1005 over suite v3h, ~150 min
+GPU under the exclusive lock) launched via run_confirmatory_v2.py. Cosmetic
+post-run note from the gate: run_confirmatory_v2.py docstring still carries
+pilot-era wording - to be cleaned AFTER the run, outside the frozen digests
+never.
