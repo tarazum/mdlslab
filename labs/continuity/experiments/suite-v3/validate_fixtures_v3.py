@@ -350,7 +350,7 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
         "kind": "suite-v3-fixture-validation",
         "created_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "spec": "docs/SUITE-V3-DESIGN.md sections 3-9 (design check ids E9-E14 implemented as V4-V9 here)",
-        "suite": "fixtures/v3",
+        "suite": f"fixtures/{suite}",
         "suite_sha256": suite_digest(v3_dir),
         "scenario_count": len(scenarios),
         "checks": checks,

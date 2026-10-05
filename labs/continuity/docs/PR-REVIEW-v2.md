@@ -90,3 +90,20 @@
 | 5 | §8 template clause: review notes reappear in the run record | DONE — §12 |
 
 Non-blocking notes: 1 (substantive MME grounds + sub-MME frozen wording) — DONE §5/§6; 2 (gate checks E10 rotation + position report) — DONE §8/§12; 3 (seeds "candidate" ambiguity) — DONE §2 (seeds frozen {1001..1005}); 4 (secondary incompleteness wording) — DONE §7; 5 (v3h turn arithmetic after authoring) — carried as a freeze-time checklist item (executed when v3h is authored).
+
+---
+
+## Verify-pass (Fable, same day, read-only)
+
+| Required change | Status |
+| --- | --- |
+| 1 validator parameterization + pilot disjointness | SATISFIED |
+| 2 deviation declared | SATISFIED |
+| 3 design doc in freeze manifest | SATISFIED |
+| 4 guess-band + error decomposition | SATISFIED |
+| 5 notes-reappear clause | SATISFIED |
+
+Non-blocking 1-4: folded. **VERDICT: GO** (freeze path open: author v3h ->
+analysis script FIRST into the digest manifest -> confirmatory run). Cosmetic
+note (fixed same day): the validator report hardcoded `"suite": "fixtures/v3"`
+— now derived from the --suite argument.

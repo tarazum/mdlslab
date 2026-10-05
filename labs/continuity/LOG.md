@@ -1383,3 +1383,13 @@ clause. Non-blocking notes 1-4 folded; note 5 (v3h turn arithmetic) is a
 freeze-time checklist item. Next: Fable verify-pass on the diff, then freeze
 (author suite v3h + analysis script + digest manifest), then the confirmatory
 run.
+
+Fable verify-pass on the folded changes: **GO** (all 5 SATISFIED, non-blocking
+folded; full table appended to docs/PR-REVIEW-v2.md). Its cosmetic note (validator
+report hardcoded the suite name) fixed immediately; v3 regression PASS. Review
+cycle complete: prereg is GO for freeze. Freeze checklist (next session):
+1) write the analysis script FIRST (digest partner), 2) author suite v3h (fresh
+content, v3 protocol + DR fix, validator --suite v3h PASS), 3) freeze manifest
+digests (v3h, EVALUATION-PREP-v2, SUITE-V3-DESIGN.md, seeds {1001..1005},
+analysis script, validator/claims/runner/provider), 4) non-executor gate
+session, 5) confirmatory run (~150 min GPU, primary-first T0/T2 then A/T1/T3).
