@@ -53,6 +53,31 @@ non-executor) GO before launch; frozen analysis after completion.
   may hurt) — a next-cycle design input, not a claim
 - No external-validity claims beyond granite-code:8b @ temp 0.0 on synthetic v3h
 
+## CORRECTION ADDENDUM (2026-10-05, after the Fable audit — supersedes parts of NUMBERS above)
+
+The Fable post-result audit (`docs/REVIEW-FABLE-RESULTS.md`, owner-requested
+second look) verified the primary verdict independently (exact recount from
+traces) and CORRECTED one claim of this brief:
+
+- ~~"T2/T3 trap-repeats 5/60 vs 0 elsewhere — the cleanest new signal"~~ —
+  **retracted as stated**: all five repeats are one cluster (cu-2004), and the
+  "zero elsewhere" was a strict-normalization artifact (arm A repeated the
+  same trap in quotes; T0 repeated trap words inside sentences). The
+  label-level re-analysis (same traces, zero GPU): A 25/90 > T0 15/90 >
+  T2 = T3 10/90 > **T1 0/90** — annotations-only is the only zero-repeat arm.
+- The verdict is STRONGER than it sounds: the CI upper bound (0.000) excludes
+  the pre-registered effect >= MME 0.25. Not "we failed to confirm" but "the
+  data rule out the claimed effect at this scale."
+- Added caveats: temp-0 seeds are degenerate (identical prompts -> identical
+  answers; effective n ~ 12 binary observations); one cluster (cu-2004)
+  carries 83% of the delta; T2/T3 answers sometimes echo render markup
+  (invalid-format errors), and supersession has no typed sources to act on in
+  numeric CU conflicts.
+
+Updated decision-3 default: accept + accept the hotfix; next cycle = fix the
+T2/T3 render leakage and numeric-conflict supersession, vary content across
+seeds, and test the T1-annotations finding properly.
+
 ## DIG DEEPER
 
 `results/CONT-005-CONFIRMATORY/cont005-confirmatory-20261005-123917/results-summary.json` ·
