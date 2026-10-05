@@ -64,7 +64,7 @@ TEMPERATURE = 0.0
 NUM_CTX = 4096
 NUM_PREDICT = 256  # CN-011: cap generation; unbounded loops hung requests >300 s
 KEEP_ALIVE = "30m"
-PILOT_WALL_CLOCK_S = 75 * 60.0  # corrected pre-run: measured ~8 min/arm-seed x 9 = ~72 min
+PILOT_WALL_CLOCK_S = 170 * 60.0  # freeze correction (pre-inference): 25 arm-seeds x ~5.5-6.5 min ~= 150-165 min per EVALUATION-PREP-v2 section 13 (3h cap, primary-first)
 SCENARIO_BUDGET = {"max_turns": 40, "max_total_tokens": 100_000, "wall_clock_s": 600.0}
 DETERMINISM_CAVEAT = "greedy+seed does not guarantee identical outputs (PB-071, CN-003)"
 

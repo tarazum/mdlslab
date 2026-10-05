@@ -1427,3 +1427,10 @@ gate, 5) confirmatory run.
   (on_time). All fixed; final verdicts PASS.
 - NEXT: non-executor gate session (Fable per owner directive) -> confirmatory
   run (~150 min GPU) -> analyze with the frozen script -> owner brief.
+
+FREEZE CORRECTION (pre-inference, before first use): run_confirmatory_v2.py
+inherited the pilot's 75-min wall guard; the frozen execution plan
+(EVALUATION-PREP-v2 section 13) requires ~150 min for 25 arm-seeds inside the
+3-h cap. Raised to 170 min; the run script's digest in frozen-config-v2.json
+refreshed. No v3h inference has occurred at the moment of this correction; the
+Fable gate session below validates the FINAL frozen state.

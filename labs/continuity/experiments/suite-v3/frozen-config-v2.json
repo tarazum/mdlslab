@@ -34,7 +34,7 @@
     "docs/PREREG-REQUIREMENTS-V2.md": "b843888eab0934583270a5b0b7b12cab697fba779c0314a1a5ee4af5605ef2cc",
     "docs/PR-REVIEW-v2.md": "fc4b6984df4335189043b95e6319506a6340f2f3f0ed986340af3ee076029203",
     "experiments/suite-v3/analyze_confirmatory_v2.py": "9ac16cd58f24886e008085fa9101ae1f891e6163b0a7d07ec51ab19714e89ad5",
-    "experiments/suite-v3/run_confirmatory_v2.py": "7958aaf61a6f34b5872ad3bcaad5ca6c328ee18721577c73716765920e400499",
+    "experiments/suite-v3/run_confirmatory_v2.py": "d87881f1e1b4c6c094d905d844c12e75c55216c5d7f847973b509f8a125c6a92",
     "experiments/suite-v3/validate_fixtures_v3.py": "182c336afffbacc1b43247d29ed53c6e00f9b152e4b6b6b7e289ecc14dbfc2d3",
     "experiments/suite-v3/assembly_gate.py": "bf2f5bf88d26f98b2f3298bd4cc7e439624d360d6b138ffbfa8ba84dfb7f837a",
     "src/continuity/claims.py": "b4a6dd8a784a22d6ec1dc562afefe9d02275508f9ccb24d61847557296ed5da5",
