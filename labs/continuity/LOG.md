@@ -1480,3 +1480,23 @@ primary logic untouched; recorded in frozen-config-v2.json post_freeze_hotfixes
 - Owner decisions next: accept/reject this confirmatory result; next-cycle
   direction (trap-salience study vs CONT-005 closure); the analysis-script
   hotfix acceptance.
+
+## 2026-10-05 — Fable post-result audit + free label-level re-analysis
+
+Owner requested a second look before acceptance. Fable audit
+(docs/REVIEW-FABLE-RESULTS.md): verdict **SOLID WITH CAVEATS** - primary
+independently recounted from traces (exact match); the frozen wording is the
+only correct reading, and the result is STRONGER than it sounds (CI upper
+bound 0.000 excludes the pre-registered effect >= 0.25). Corrections to the
+owner brief: the "T2/T3-only trap-repeats" claim was a strict-normalization
+artifact (all 5 = cu-2004; A repeated the same trap in quotes; T0 in
+sentences); seeds at temp 0.0 are degenerate (effective n ~ 12 binary
+observations); one cluster carries 83% of the delta. Hotfix re-verified clean
+(2 lines, secondary block, digests match).
+
+Free label-level re-analysis run immediately after (zero GPU): A 25/90 >
+T0 15/90 > T2 = T3 10/90 > **T1 0/90** - annotations-only is the only arm
+with zero label-level trap repeats. Exploratory; recorded in the audit
+appendix. Next-cycle design inputs: fix T2/T3 render-markup leakage into
+answers (invalid_format source), supersession on numeric conflicts, and vary
+content/positions across seeds (temp-0 seeds do not replicate).
