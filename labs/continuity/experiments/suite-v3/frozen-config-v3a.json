@@ -1,0 +1,56 @@
+{
+  "kind": "cont005-c2-frozen-config-v3a",
+  "created_utc": "2026-10-06T06:25:30Z",
+  "label": "agent-pre-registered, pending owner acceptance",
+  "spec": "docs/EVALUATION-PREP-v3.md (frozen draft after PR-REVIEW-v3) + docs/PREREG-REQUIREMENTS-V2.md",
+  "frozen_at_git_rev_before_any_v3i_inference": "2d926212c2c029363be681caf0515b013f5c8386",
+  "stage": "FREEZE-A (pilot on fixtures/v3i); FREEZE-B (v3j + confirmatory analysis script) is a separate later freeze",
+  "seeds_predeclared": [
+    2001,
+    2002,
+    2003,
+    2004,
+    2005
+  ],
+  "arms_order_primary_first": [
+    "T0",
+    "T1",
+    "A",
+    "T2",
+    "T3"
+  ],
+  "pilot_go_no_go": {
+    "spec": "EVALUATION-PREP-v3 section 2 clauses 1-4 (PR-REVIEW-v3 RC1-RC3 folded)",
+    "clause1_headroom_per_family": "(0.15, 0.85) for CR and CU family means in T0 AND T1",
+    "clause2_spread": "per-arm sd of 5 per-seed primary means + df=4 chi2 CI; > 0.25 -> P4 stress row + owner sign-off",
+    "clause3_live_clusters": "both arms in (0.10, 0.90) per cluster; >= 8/12 or P5 row + owner sign-off",
+    "clause4_echo": "zero '[RESOLVED' in T2/T3 replies or NOTE: prose fix at FREEZE-B (pre-authorized)"
+  },
+  "digests": {
+    "docs/EVALUATION-PREP-v3.md": "8276286b087262ec61ea03e90b90eadad42aaa36f3c8dfe4556c4031b0f21c27",
+    "docs/SUITE-V3-DESIGN.md": "442d438526b7985704d97bf2fda9a6a14ee5b6119f2a3e10c771c98aa83535d0",
+    "docs/PREREG-REQUIREMENTS-V2.md": "b843888eab0934583270a5b0b7b12cab697fba779c0314a1a5ee4af5605ef2cc",
+    "docs/PR-REVIEW-v3.md": "6c48b21880db48ffd5210fac1e8543b1ab12c104547d217f2de797d2e14ffc89",
+    "experiments/suite-v3/analyze_pilot_v3.py": "a044e220002fe84c21733f7fae8f08b0a2d0e7a7bc359fa9ae830046f58c60b1",
+    "experiments/suite-v3/run_pilot_v3.py": "05594724804880b6a9557cb2ffda60de1ab05b9f2e2462770d3abca12ebc4f34",
+    "experiments/suite-v3/validate_fixtures_v3.py": "ec1928a022b33592cf4d438a77a0a7dcb8cbb072deba40e74265a8329fb2cb5a",
+    "experiments/suite-v3/assembly_gate.py": "46c989ac154082cca4f787a5cd012b9d669f9c007a5fe5d2713400f35a390e5c",
+    "src/continuity/claims.py": "539bdced9d56867ffaefffeb1cf5760ac4372ec607f79a81f3e8f37628ea61b3",
+    "src/continuity/runner.py": "1dcd5625c5b2ff319858e44bf6dcd90af6e34c90956dd2f50b761b18b0abb079",
+    "src/continuity/provider.py": "856b934868c6113ae919e5fb93673a0819614e1dde2a301ae571153c726a715e",
+    "src/continuity/fixtures.py": "4270a0916ab227c89b46c5cbe03525fa364831bf0353f91ee6c4fcef2b3f9f7d",
+    "src/continuity/memory.py": "1ef4291641fd6be73d888e65452c778687e156393cd54df597bcbc72202a394b",
+    "fixtures/v3i_suite": "f5c0f5a9bab7fabbfad9d9163a3d91583f4c8180ee09a08c4fcd851638bdb310",
+    "fixtures/v3i_rendered_seed2001": "4527d3a2a51a95e9fda244c067f63e38aeae3dd239e12e42ee6e903b6723b0c3",
+    "fixtures/v3i_rendered_seed2002": "56cf3b1743ae88941513f4d622f44e69eb06f30348535bd53db405195b026c81",
+    "fixtures/v3i_rendered_seed2003": "148618c35212a67202afa3a2d0f85ee0df1ae583c7f300671d02069f6c235f64",
+    "fixtures/v3i_rendered_seed2004": "6ff9468295f20f8fcac7e9e019c8aa56683f0786a36cfae7030e5fc401bc539e",
+    "fixtures/v3i_rendered_seed2005": "2d7f3eee242afc7707a809f8aca7d64534c73b37f2ea4c9fce0b62900287b653",
+    "fixture_validation_v3i": "b27e554a91ee8583f387c1963b63205558890ead2b43ff38eed7aff082b997e7",
+    "assembly_gate_v3i_seed2001": "09644b04f13bedcbd86a5b5e415f9d58ce252cd08d0c56fd02866c5de18a96a2",
+    "assembly_gate_v3i_seed2002": "bc29aca2f9dde10735808e5369db01ee484ac1b7110ed4a0f94e78d3149d02fe",
+    "assembly_gate_v3i_seed2003": "9dd93a0d32cb427aa15ae98329a4bbfa6a09586af09d23357a569b8d91d383ad",
+    "assembly_gate_v3i_seed2004": "5d8203dce996ad395b2f8a517f244baec3a60e22520ac93150b049edaeca6a66",
+    "assembly_gate_v3i_seed2005": "2793132ebe00c0c7ce45ad2e5d7ca00470af05dc3b7694750cf7f5c10dd618ee"
+  }
+}
