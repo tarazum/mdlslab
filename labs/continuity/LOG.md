@@ -1754,3 +1754,36 @@ validator v3j registration, gate v3j registration + CU-mechanism branches +
 G3b un-vacuated); manifest self-verified against the run script's own
 digest-verification code path. NEXT: Fable non-executor gate → confirmatory
 run (~2.5 h GPU).
+
+## 2026-10-06 — GATE-V3B: GO (Opus substitution, declared) -> confirmatory launch
+
+- **Fable limit-blocked at gate time** ("You've reached your Fable 5 limit",
+  verified twice). The non-executor gate ran on **Opus** (claude --model opus
+  -p, fresh context, read-only) with the substitution declared up front in
+  the prompt and in docs/GATE-V3B.md; the owner may re-bind the gate to Fable
+  (standing directive 05.10 names Fable for gates).
+- Verdict **GO** (docs/GATE-V3B.md): completeness §10 PASS (2 pilot scripts
+  absent from the v3b manifest — byte-identical to FREEZE-A, no protocol
+  harm); 19/19 file digests re-hashed independently; analysis script
+  implements §3-§9/§12 verbatim (χ² df=4 multipliers checked; sub-MME wording
+  confirmed); run script predeclared + the new freeze-digest preflight gate
+  verified to run BEFORE any inference; exactly the 3 declared changes vs
+  FREEZE-A, all additive/tightening (claims.py = purely the 5 flag strings;
+  G3b confirmed to have been VACUOUS pre-fix); no v3j inference anywhere.
+- Executor curation of the gate's claims: PASS (pilot digests, gate
+  artifacts, verdict wordings via import, digest triple-check) — appendix in
+  docs/GATE-V3B.md.
+- Gate conditions A-E accepted: (A) run WITHOUT --skip-digest-verify + fresh
+  validator/gate passes into tmp before the run; (B) the flag is banned;
+  (C) execution revs recorded (manifest records the pre-freeze rev 10fb461,
+  frozen content lives at 10f2a8d — FREEZE-A convention); (D) run record
+  carries decomposition beside the delta (T0-only bracket asymmetry noted —
+  post-fix T0 is the only arm with bracket markup in its memory block;
+  pilot baseline invalid-format T0 16/60 vs T1 14/60), bracket_hits_total,
+  the SIGNED guess-caveat comparison, and the P5 row (0.705) governing the
+  power claim; (E) two informative notes (pilot scripts outside the v3b
+  manifest; comment-only χ² rounding) recorded in GATE-V3B.md.
+- Confirmatory launched per condition A: fresh validator PASS 16/16 + gate
+  PASS 7/7 x 5 seeds into tmp (byte-comparable details, committed artifacts
+  untouched), then run_confirmatory_v3.py WITHOUT --skip-digest-verify
+  ("freeze digests verified ... byte-match" printed before preflight ok).
