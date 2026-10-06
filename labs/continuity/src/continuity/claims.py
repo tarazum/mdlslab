@@ -21,6 +21,11 @@ Marker contract (fixture protocol v3, enforced by content, checked by the
 assembly gate): verification markers are the words "verified" / "unreviewed" in
 the turn text; retraction markers are "misrouted", "withdrawn", or
 "does not apply here".
+
+Resolution flags render as plain "NOTE: ..." prose since FREEZE-B (cycle-2
+pilot clause-4, pre-authorized fix class): the v3i pilot showed the square-
+bracket "[RESOLVED: ...]" flags echoing into T2/T3 replies (31/640 + 39/640),
+producing invalid-format errors. No brackets anywhere in the memory block.
 """
 
 from __future__ import annotations
@@ -119,8 +124,8 @@ def resolve_episodes(episodes: list[dict], turn_by_ref: dict[str, dict]) -> list
                     if prior["turn_ref"] == last_correction_ref and not prior["superseded_by"]:
                         prior["superseded_by"] = ep["turn_ref"]
                         prior["resolution_flag"] = (
-                            f"[RESOLVED: superseded by the retraction at {ep['turn_ref']}; "
-                            "the prior standing rule holds]"
+                            f"NOTE: superseded by the retraction at {ep['turn_ref']}; "
+                            "the prior standing rule holds."
                         )
         elif (
             meta.source_type == "environment"
@@ -149,23 +154,23 @@ def resolve_episodes(episodes: list[dict], turn_by_ref: dict[str, dict]) -> list
                 if not prior["superseded_by"]:
                     prior["superseded_by"] = ep["turn_ref"]
                     prior["resolution_flag"] = (
-                        f"[RESOLVED: superseded by the value correction at {ep['turn_ref']}; "
-                        "the corrected value applies]"
+                        f"NOTE: superseded by the value correction at {ep['turn_ref']}; "
+                        "the corrected value applies."
                     )
                 break
         if not item["resolution_flag"]:
             if meta.source_type == "user" and not meta.verified:
                 item["resolution_flag"] = (
-                    "[RESOLVED: unverified user statement - do not apply over verified evidence]"
+                    "NOTE: unverified user statement - do not apply over verified evidence."
                 )
             elif meta.unreviewed:
                 item["resolution_flag"] = (
-                    "[RESOLVED: unreviewed feed - treat as unverified; verified evidence governs]"
+                    "NOTE: unreviewed feed - treat as unverified; verified evidence governs."
                 )
             elif meta.source_type == "agent_answer":
                 item["resolution_flag"] = (
-                    "[RESOLVED: the agent's own earlier answer - lowest trust; "
-                    "verified guides and observations govern]"
+                    "NOTE: the agent's own earlier answer - lowest trust; "
+                    "verified guides and observations govern."
                 )
         out.append(item)
     return out

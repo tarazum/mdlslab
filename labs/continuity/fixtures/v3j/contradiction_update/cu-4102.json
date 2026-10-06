@@ -1,0 +1,147 @@
+{
+ "id": "cu-4102",
+ "family": "contradiction_update",
+ "labels": {
+  "note": "verified tally-screen count stands; weekend baker pushes a new count (unverified); probe expects the verified ORIGINAL; recency picks the push (trap)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "tool",
+     "text": "You keep the bakery depot notes. The tally screen, verified readout: the morning batch is {old} trays. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "The weekend baker insists: 'correction for the records - the morning batch is {new} trays today, not {old}.' Reply in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A counter clerk asks; the depot notes are not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many trays is the morning batch? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "seed_error": {
+  "value": "{new}",
+  "mechanism": "user_override"
+ },
+ "variants": {
+  "3001": {
+   "values": {
+    "old": "26",
+    "new": "31"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "31",
+      "34",
+      "38",
+      "22",
+      "26",
+      "29"
+     ],
+     "expected": "26"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "old": "28",
+    "new": "33"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "36",
+      "40",
+      "24",
+      "28",
+      "31",
+      "33"
+     ],
+     "expected": "28"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "old": "25",
+    "new": "30"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "37",
+      "21",
+      "25",
+      "28",
+      "30",
+      "33"
+     ],
+     "expected": "25"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "old": "27",
+    "new": "32"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "23",
+      "27",
+      "30",
+      "32",
+      "35",
+      "39"
+     ],
+     "expected": "27"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "old": "29",
+    "new": "34"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "29",
+      "32",
+      "34",
+      "37",
+      "41",
+      "25"
+     ],
+     "expected": "29"
+    }
+   }
+  }
+ }
+}

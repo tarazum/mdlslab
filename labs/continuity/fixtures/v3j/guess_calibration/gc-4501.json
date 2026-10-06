@@ -1,0 +1,197 @@
+{
+ "id": "gc-4501",
+ "family": "guess_calibration",
+ "labels": {
+  "note": "never-stated facts; guess rate and position bias (design E14); expected null by design"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You mind the bakery counter on the {shift} watch. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{visitor} asks about records this counter never kept. Answer as best you can. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What glaze color is the {e1} batch? Options: {options} - reply with the word only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    },
+    {
+     "actor": "environment",
+     "text": "How many trays sit on the {e2} rack? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "shift": "early",
+    "visitor": "a courier",
+    "e1": "almond ring",
+    "e2": "proving"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "amber",
+      "ruby",
+      "honey",
+      "cocoa",
+      "cream",
+      "mint"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+     ]
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "shift": "market",
+    "visitor": "a driver",
+    "e1": "plait loaf",
+    "e2": "cooling"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "ruby",
+      "honey",
+      "cocoa",
+      "cream",
+      "mint",
+      "amber"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "4"
+     ]
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "shift": "school",
+    "visitor": "a fitter",
+    "e1": "seed cob",
+    "e2": "slicing"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "honey",
+      "cocoa",
+      "cream",
+      "mint",
+      "amber",
+      "ruby"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "4",
+      "5",
+      "6",
+      "7",
+      "2",
+      "3"
+     ]
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "shift": "weekend",
+    "visitor": "a cleaner",
+    "e1": "fruit slab",
+    "e2": "packing"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "cocoa",
+      "cream",
+      "mint",
+      "amber",
+      "ruby",
+      "honey"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "8",
+      "9",
+      "10",
+      "5",
+      "6",
+      "7"
+     ]
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "shift": "closing",
+    "visitor": "a guard",
+    "e1": "rye tin",
+    "e2": "display"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "cream",
+      "mint",
+      "amber",
+      "ruby",
+      "honey",
+      "cocoa"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "10",
+      "11",
+      "6",
+      "7",
+      "8",
+      "9"
+     ]
+    }
+   }
+  }
+ }
+}

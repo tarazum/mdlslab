@@ -1,0 +1,155 @@
+{
+ "id": "dr-4303",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "store code with a NON-label companion fact (cycle-1 fix kept): echoing both facts yields at most one code"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the regional airport ground stores. For the log: the runway cabinet code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} done; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the store book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The crew member needs the runway cabinet code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "code": "Q83",
+    "comp_thing": "badge press",
+    "comp_verb": "thumps at eight",
+    "chore": "the dawn sweep",
+    "role": "duty engineer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S66",
+      "T74",
+      "U88",
+      "V32",
+      "Q83",
+      "R59"
+     ],
+     "expected": "Q83"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "code": "R59",
+    "comp_thing": "tool bench",
+    "comp_verb": "slides when wet",
+    "chore": "the taxiway check",
+    "role": "grounds keeper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U88",
+      "V32",
+      "W47",
+      "R59",
+      "S66",
+      "T74"
+     ],
+     "expected": "R59"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "code": "S66",
+    "comp_thing": "parts washer",
+    "comp_verb": "spins till noon",
+    "chore": "the beacon test",
+    "role": "night fitter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W47",
+      "X69",
+      "S66",
+      "T74",
+      "U88",
+      "V32"
+     ],
+     "expected": "S66"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "code": "T74",
+    "comp_thing": "battery rack",
+    "comp_verb": "buzzes on charge",
+    "chore": "the fence walk",
+    "role": "line mechanic"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Y54",
+      "T74",
+      "U88",
+      "V32",
+      "W47",
+      "X69"
+     ],
+     "expected": "T74"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "code": "U88",
+    "comp_thing": "rain gauge",
+    "comp_verb": "tips at showers",
+    "chore": "the drain clear",
+    "role": "base technician"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U88",
+      "V32",
+      "W47",
+      "X69",
+      "Y54",
+      "Z21"
+     ],
+     "expected": "U88"
+    }
+   }
+  }
+ }
+}

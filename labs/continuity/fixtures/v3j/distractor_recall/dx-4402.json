@@ -1,0 +1,150 @@
+{
+ "id": "dx-4402",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two store codes stated; the lighting cart code is probed while the generator shed code acts as the lure"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the regional airport ground stores. For the log: the lighting cart code is {code}; the generator shed code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} done; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the store book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The crew member needs the lighting cart code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "code": "J24",
+    "lure": "B39",
+    "chore": "the dawn sweep",
+    "role": "duty engineer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "B39",
+      "K38",
+      "L46",
+      "M59",
+      "N63",
+      "J24"
+     ],
+     "expected": "J24"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "code": "K38",
+    "lure": "C45",
+    "chore": "the taxiway check",
+    "role": "grounds keeper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "J24",
+      "L46",
+      "M59",
+      "N63",
+      "K38",
+      "C45"
+     ],
+     "expected": "K38"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "code": "L46",
+    "lure": "D57",
+    "chore": "the beacon test",
+    "role": "night fitter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "K38",
+      "M59",
+      "N63",
+      "L46",
+      "D57",
+      "J24"
+     ],
+     "expected": "L46"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "code": "M59",
+    "lure": "E63",
+    "chore": "the fence walk",
+    "role": "line mechanic"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "L46",
+      "N63",
+      "M59",
+      "E63",
+      "J24",
+      "K38"
+     ],
+     "expected": "M59"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "code": "N63",
+    "lure": "F78",
+    "chore": "the drain clear",
+    "role": "base technician"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "M59",
+      "N63",
+      "F78",
+      "J24",
+      "K38",
+      "L46"
+     ],
+     "expected": "N63"
+    }
+   }
+  }
+ }
+}

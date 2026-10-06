@@ -1,0 +1,162 @@
+{
+ "id": "cu-4103",
+ "family": "contradiction_update",
+ "labels": {
+  "note": "verified building-monitor readout corrects the setpoint; a contractor later pushes a different value; probe expects the verified correction; recency picks the push (trap)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You keep the museum climate notes. For the log: the print-room setpoint is {old} degrees. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "tool",
+     "text": "Building monitor, verified readout - correction for the records: the print-room setpoint is now {new}, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "A contractor insists: 'the dial reads {alt} - go with {alt}.' Reply in one short line."
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A registrar asks; the climate notes are not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What is the print-room setpoint? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "seed_error": {
+  "value": "{alt}",
+  "mechanism": "user_override"
+ },
+ "variants": {
+  "3001": {
+   "values": {
+    "old": "20",
+    "new": "24",
+    "alt": "22"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "18",
+      "20",
+      "22",
+      "24",
+      "26",
+      "28"
+     ],
+     "expected": "24"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "old": "21",
+    "new": "25",
+    "alt": "23"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "21",
+      "23",
+      "25",
+      "27",
+      "29",
+      "19"
+     ],
+     "expected": "25"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "old": "19",
+    "new": "23",
+    "alt": "21"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "21",
+      "23",
+      "25",
+      "27",
+      "17",
+      "19"
+     ],
+     "expected": "23"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "old": "22",
+    "new": "26",
+    "alt": "24"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "26",
+      "28",
+      "30",
+      "20",
+      "22",
+      "24"
+     ],
+     "expected": "26"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "old": "18",
+    "new": "22",
+    "alt": "20"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "24",
+      "26",
+      "16",
+      "18",
+      "20",
+      "22"
+     ],
+     "expected": "22"
+    }
+   }
+  }
+ }
+}

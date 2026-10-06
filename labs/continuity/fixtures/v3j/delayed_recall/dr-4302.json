@@ -1,0 +1,155 @@
+{
+ "id": "dr-4302",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "store code with a NON-label companion fact (cycle-1 fix kept): echoing both facts yields at most one code"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the regional airport ground stores. For the log: the deicing store code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} done; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the store book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The crew member needs the deicing store code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "code": "K52",
+    "comp_thing": "crew fridge",
+    "comp_verb": "hums all night",
+    "chore": "the dawn sweep",
+    "role": "duty engineer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "L48",
+      "M61",
+      "N37",
+      "P45",
+      "Q79",
+      "K52"
+     ],
+     "expected": "K52"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "code": "L48",
+    "comp_thing": "apron heater",
+    "comp_verb": "ticks when cold",
+    "chore": "the taxiway check",
+    "role": "grounds keeper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N37",
+      "P45",
+      "Q79",
+      "R83",
+      "L48",
+      "M61"
+     ],
+     "expected": "L48"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "code": "M61",
+    "comp_thing": "hose reel",
+    "comp_verb": "squeals at frost",
+    "chore": "the beacon test",
+    "role": "night fitter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Q79",
+      "R83",
+      "S96",
+      "M61",
+      "N37",
+      "P45"
+     ],
+     "expected": "M61"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "code": "N37",
+    "comp_thing": "spill bin",
+    "comp_verb": "fills by friday",
+    "chore": "the fence walk",
+    "role": "line mechanic"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S96",
+      "T28",
+      "N37",
+      "P45",
+      "Q79",
+      "R83"
+     ],
+     "expected": "N37"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "code": "P45",
+    "comp_thing": "ladder rack",
+    "comp_verb": "rattles on tow",
+    "chore": "the drain clear",
+    "role": "base technician"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U51",
+      "P45",
+      "Q79",
+      "R83",
+      "S96",
+      "T28"
+     ],
+     "expected": "P45"
+    }
+   }
+  }
+ }
+}

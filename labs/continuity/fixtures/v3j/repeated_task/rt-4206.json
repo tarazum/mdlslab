@@ -1,0 +1,157 @@
+{
+ "id": "rt-4206",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "berths",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "duty sheet pins the task as 'berths'; standing card says safety; reuse expects safety"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this duty into exactly one label: berths | moorings | fuel | repairs | charters | safety. Duty: '{task}.' Reply with the label only.",
+     "initial_expected": "berths"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier duty sheet routes {task} under 'berths'. The standing card, verified: life equipment and water rules is safety; slip allocation and quay assignments are berths. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Duty handover before the {slot} rush. The standing card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Fresh duty round begins. The slate cards are away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this duty. The slate cards are not at hand. Duty: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "task": "the visitor slip draw",
+    "pq": "restock the life-vest crate",
+    "slot": "regatta"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "charters",
+      "safety",
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs"
+     ],
+     "expected": "safety"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "task": "the guest quay ballot",
+    "pq": "check the flare expiry dates",
+    "slot": "tide"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "safety",
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters"
+     ],
+     "expected": "safety"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "task": "the rally trot allocation",
+    "pq": "service the horseshoe rings",
+    "slot": "gale"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters",
+      "safety"
+     ],
+     "expected": "safety"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "task": "the festival pontoon roster",
+    "pq": "audit the throw-line lockers",
+    "slot": "haul"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters",
+      "safety",
+      "berths"
+     ],
+     "expected": "safety"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "task": "the waiting-list quay draw",
+    "pq": "rehang the ladder boards",
+    "slot": "patrol"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fuel",
+      "repairs",
+      "charters",
+      "safety",
+      "berths",
+      "moorings"
+     ],
+     "expected": "safety"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,105 @@
+{
+  "kind": "suite-v3-fixture-validation",
+  "created_utc": "2026-10-06T19:46:32Z",
+  "spec": "docs/SUITE-V3-DESIGN.md sections 3-9 (design check ids E9-E14 implemented as V4-V9 here); v3i adds V14-V16 (variant table)",
+  "suite": "fixtures/v3j",
+  "suite_sha256": "516d6588c1c377e891ef87293d937d22e2fdd71dbd318aeaf88367365e7d0889",
+  "variant_seeds": [
+    3001,
+    3002,
+    3003,
+    3004,
+    3005
+  ],
+  "scenario_count": 27,
+  "scenario_instance_count": 135,
+  "checks": [
+    {
+      "check": "V1-manifest",
+      "pass": true,
+      "detail": "suite=v3j; protocol/version ok; families=['contradiction_update', 'correction_reuse', 'delayed_recall', 'distractor_recall', 'guess_calibration', 'repeated_task']; primary=['contradiction_update', 'correction_reuse'] x12 (expected ['contradiction_update', 'correction_reuse'] x12); variant_seeds=[3001, 3002, 3003, 3004, 3005]"
+    },
+    {
+      "check": "V14-variant-table",
+      "pass": true,
+      "detail": "27 scenarios x 5 seeds render; fail-closed errors: none"
+    },
+    {
+      "check": "V2-schema",
+      "pass": true,
+      "detail": "135 scenario-instances; violations: none"
+    },
+    {
+      "check": "V3-disjoint-from-v1-v2",
+      "pass": true,
+      "detail": "dup ids []; id overlap []; shared turn texts 0 []"
+    },
+    {
+      "check": "V4-label-form",
+      "pass": true,
+      "detail": "every probe: >=5 labels, options verbatim in text, reply instruction; violations: none"
+    },
+    {
+      "check": "V5-position-rotation",
+      "pass": true,
+      "detail": "120 scored probes; distinct positions [0, 1, 2, 3, 4, 5]; max share 0.20 (need >=3 distinct, <=0.50)"
+    },
+    {
+      "check": "V6-no-session-leak",
+      "pass": true,
+      "detail": "no label word in any probe-session text (options segment stripped); violations: none"
+    },
+    {
+      "check": "V7-composition",
+      "pass": true,
+      "detail": "suite=v3j; family counts {'contradiction_update': 4, 'correction_reuse': 8, 'delayed_recall': 3, 'distractor_recall': 3, 'guess_calibration': 3, 'repeated_task': 6}; primary expectation {'correction_reuse': 8, 'contradiction_update': 4}; cr sub-types {'valid_correction_environment': 2, 'valid_correction_tool': 1, 'erroneous_user_correction': 2, 'source_conflict': 2, 'retraction': 1} (need {'valid_correction_environment': 2, 'valid_correction_tool': 1, 'erroneous_user_correction': 2, 'source_conflict': 2, 'retraction': 1}); rt sub-type {'scripted_own_answer'}; gc probes 6"
+    },
+    {
+      "check": "V8-structural-eligibility",
+      "pass": true,
+      "detail": "every primary scenario-instance: seed_error valid, trap in labels, trap != expected, trap stated pre-probe; violations: none"
+    },
+    {
+      "check": "V9-guess-calibration",
+      "pass": true,
+      "detail": "3 gc scenarios, 6 never-stated probes (all seeds), all expected null"
+    },
+    {
+      "check": "V10-probes-off-first-turns",
+      "pass": true,
+      "detail": "every probe preceded by a non-probe turn in its session; violations: none"
+    },
+    {
+      "check": "V11-primary-shape",
+      "pass": true,
+      "detail": "primary: >=2 sessions, exactly 1 probe, in the LAST session, class rm_eligible; violations: none"
+    },
+    {
+      "check": "V12-public-safe",
+      "pass": true,
+      "detail": "ASCII, no '@', no http everywhere (all seed instances)"
+    },
+    {
+      "check": "V13-initial-expected",
+      "pass": true,
+      "detail": "initial_expected on s1t1 of every primary classification scenario (CR/RT), drawn from its option vocabulary; violations: none"
+    },
+    {
+      "check": "V14b-token-closure",
+      "pass": true,
+      "detail": "values declared == tokens used in every variant; violations: none"
+    },
+    {
+      "check": "V15-seed-variation",
+      "pass": true,
+      "detail": "probe texts distinct per seed; identical-across-seeds turn share max 0.4 (need <= 0.50); violations: none"
+    },
+    {
+      "check": "V16-label-order-varies",
+      "pass": true,
+      "detail": "per-seed label orders pairwise distinct; expected position >= 3 distinct slots per scenario; violations: none"
+    }
+  ],
+  "verdict": "PASS",
+  "failed_checks": []
+}

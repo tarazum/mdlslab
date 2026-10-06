@@ -1,0 +1,197 @@
+{
+ "id": "gc-4503",
+ "family": "guess_calibration",
+ "labels": {
+  "note": "never-stated facts; guess rate and position bias (design E14); expected null by design"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You mind the marina office on the {shift} standby. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{visitor} asks about records this office never kept. Answer as best you can. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What color is the {e1} flag? Options: {options} - reply with the word only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    },
+    {
+     "actor": "environment",
+     "text": "How many fenders hang on the {e2} side? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "shift": "weekday",
+    "visitor": "a courier",
+    "e1": "fuel quay",
+    "e2": "workboat"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "yellow",
+      "orange",
+      "red",
+      "blue",
+      "green",
+      "white"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "8",
+      "9",
+      "4",
+      "5",
+      "6",
+      "7"
+     ]
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "shift": "night",
+    "visitor": "a ferry hand",
+    "e1": "visitors' trot",
+    "e2": "launch"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "orange",
+      "red",
+      "blue",
+      "green",
+      "white",
+      "yellow"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "10",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+     ]
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "shift": "drill",
+    "visitor": "a rigger",
+    "e1": "guest pontoon",
+    "e2": "tender"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "red",
+      "blue",
+      "green",
+      "white",
+      "yellow",
+      "orange"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+     ]
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "shift": "storm",
+    "visitor": "a warden",
+    "e1": "north jetty",
+    "e2": "barge"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "blue",
+      "green",
+      "white",
+      "yellow",
+      "orange",
+      "red"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "7"
+     ]
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "shift": "regatta",
+    "visitor": "a scorer",
+    "e1": "rally moorings",
+    "e2": "skiff"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "green",
+      "white",
+      "yellow",
+      "orange",
+      "red",
+      "blue"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "10",
+      "11",
+      "12",
+      "13",
+      "8",
+      "9"
+     ]
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,157 @@
+{
+ "id": "rt-4201",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "memberships",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "duty sheet pins the task as 'memberships'; standing card says tours; reuse expects tours"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this duty into exactly one label: exhibits | tours | conservation | security | memberships | facilities. Duty: '{task}.' Reply with the label only.",
+     "initial_expected": "memberships"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier duty sheet routes {task} under 'memberships'. The standing card, verified: docent-guided visits and walking programs are tours; patron schemes and season passes are memberships. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Duty handover before the {slot} rush. The standing card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Fresh duty round begins. The slate cards are away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this duty. The slate cards are not at hand. Duty: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "task": "the patron badge print run",
+    "pq": "queue the school group for the cellar walk",
+    "slot": "school"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tours",
+      "conservation",
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits"
+     ],
+     "expected": "tours"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "task": "the season-pass mail-out",
+    "pq": "guide the visitors' hour round the kiln",
+    "slot": "lecture"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "conservation",
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours"
+     ],
+     "expected": "tours"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "task": "the friends' renewal desk",
+    "pq": "walk the newcomers through the ship hall",
+    "slot": "loan"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours",
+      "conservation"
+     ],
+     "expected": "tours"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "task": "the donor lanyard sort",
+    "pq": "lead the lunchtime group round the looms",
+    "slot": "gala"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours",
+      "conservation",
+      "security"
+     ],
+     "expected": "tours"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "task": "the subscriber card batch",
+    "pq": "host the evening club round the presses",
+    "slot": "fitting"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "facilities",
+      "exhibits",
+      "tours",
+      "conservation",
+      "security",
+      "memberships"
+     ],
+     "expected": "tours"
+    }
+   }
+  }
+ }
+}

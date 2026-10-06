@@ -1,4 +1,4 @@
-"""Zero-GPU assembly gate for the CONT-005 T-arms over fixture suites v3/v3h/v3i.
+"""Zero-GPU assembly gate for the CONT-005 T-arms over fixture suites v3/v3h/v3i/v3j.
 
 Proves, BEFORE any inference, that the trust layer behaves as designed on every
 scenario: builds the memory blocks each arm WOULD inject at every session
@@ -56,7 +56,12 @@ from pathlib import Path
 LAB_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(LAB_ROOT / "src"))
 
-from continuity.claims import TRUST_POLICY_VERSION, format_trust_block, resolve_episodes  # noqa: E402
+from continuity.claims import (  # noqa: E402
+    TRUST_POLICY_VERSION,
+    classify_turn,
+    format_trust_block,
+    resolve_episodes,
+)
 from continuity.fixtures import load_suite, render_seed_variant  # noqa: E402
 from continuity.memory import MemoryStore  # noqa: E402
 from continuity.runner import MEMORY_TOP_K, format_memory_block, score_probe  # noqa: E402
@@ -65,11 +70,13 @@ SUITES = {
     "v3": LAB_ROOT / "fixtures" / "v3",
     "v3h": LAB_ROOT / "fixtures" / "v3h",
     "v3i": LAB_ROOT / "fixtures" / "v3i",
+    "v3j": LAB_ROOT / "fixtures" / "v3j",
 }
 PRIMARY_FAMILIES = {
     "v3": ("correction_reuse", "repeated_task"),
     "v3h": ("correction_reuse", "contradiction_update"),
     "v3i": ("correction_reuse", "contradiction_update"),
+    "v3j": ("correction_reuse", "contradiction_update"),
 }
 PLACEHOLDER_REPLY = "acknowledged."
 T_ARMS = ("T0", "T1", "T2", "T3")
@@ -145,7 +152,8 @@ def check(res: dict, suite: str = "v3", seed: int | None = None) -> list[dict]:
     bad = []
     for s in scenarios:
         for block in builds[s["id"]]["blocks"]["T1"]:
-            if "RESOLVED" in block or "SUPERSEDED" in block or "superseded by" in block:
+            if ("RESOLVED" in block or "SUPERSEDED" in block or "superseded by" in block
+                    or "NOTE:" in block):
                 bad.append(f"{s['id']}: verdict text in T1")
     typed_flagged = 0
     for s in scenarios:
@@ -203,7 +211,7 @@ def check(res: dict, suite: str = "v3", seed: int | None = None) -> list[dict]:
             else:
                 resolution_counts["own_answer_flag"] += 1
         elif s.get("seed_error", {}).get("mechanism") == "superseded_value":
-            # v3h CU primary (post-acceptance R5): the s1 fact statement is
+            # v3h/v3i CU primary (post-acceptance R5): the s1 fact statement is
             # superseded by the "correction for the records" turn; no OTHER
             # flags expected; the superseded old value stays in options (V8).
             sup = [r for r, f in flags.items() if f and "superseded by the value correction" in f]
@@ -212,22 +220,59 @@ def check(res: dict, suite: str = "v3", seed: int | None = None) -> list[dict]:
                 problems.append(f"{s['id']}: R5 supersession {len(sup)} (need 1), stray {stray}")
             else:
                 resolution_counts["superseded"] += 1
+        elif s["family"] == "contradiction_update" and s.get("seed_error", {}).get("mechanism") == "retracted_correction":
+            # v3j CU retraction pattern: R5 marked the s1 statement superseded
+            # by the later "correction for the records" turn; the retraction of
+            # that correction must itself stay UNFLAGGED (R4 only retracts
+            # hint-carrying corrections - the declared R5 blind spot, by
+            # design: T2/T3 keep the misleading supersession mark).
+            sup = [r for r, f in flags.items() if f and "superseded by the value correction" in f]
+            stray = [r for r, f in flags.items() if f and "superseded by the value correction" not in f]
+            retr = [r for r, t in turn_map.items() if classify_turn(t).retraction]
+            retr_flagged = [r for r in retr if flags.get(r)]
+            if len(sup) != 1 or stray or retr_flagged:
+                problems.append(
+                    f"{s['id']}: R5 {len(sup)} (need 1), stray {stray}, retraction flagged {retr_flagged}"
+                )
+            else:
+                resolution_counts["superseded"] += 1
+        elif s["family"] == "contradiction_update" and s.get("seed_error", {}).get("mechanism") == "user_override":
+            # v3j CU user-push pattern: an unverified user value push carrying
+            # the "correction for the records" marker. R5 ignores source trust
+            # (blind spot #2) and still marks the s1 statement superseded; the
+            # user episode itself must carry the unverified-user flag.
+            sup = [r for r, f in flags.items() if f and "superseded by the value correction" in f]
+            user_refs = [r for r, t in turn_map.items() if t.get("source_type") == "user"]
+            users_flagged = [r for r in user_refs if "unverified user statement" in flags.get(r, "")]
+            stray = [
+                r for r, f in flags.items()
+                if f and "superseded by the value correction" not in f and r not in user_refs
+            ]
+            if len(sup) != 1 or len(users_flagged) != len(user_refs) or stray:
+                problems.append(
+                    f"{s['id']}: R5 {len(sup)} (need 1), user flagged {len(users_flagged)}/{len(user_refs)}, stray {stray}"
+                )
+            else:
+                resolution_counts["user_flag"] += 1
     record(
         "G3-resolution-by-subtype",
         not problems,
         f"{len(primary)} primary scenarios resolved as designed {resolution_counts}; violations: {problems[:5] or 'none'}",
     )
 
-    # G3b demotion ordering: flagged lines after unflagged in T2 blocks
+    # G3b demotion ordering: flagged lines after unflagged in T2 blocks.
+    # FREEZE-B fix: flags are plain "NOTE: ..." prose (no brackets), so flagged
+    # lines are detected by the marker, not by a "[s...]" prefix (which stopped
+    # matching after the prose-parenthetical renderer and left this vacuous).
     bad = []
     for s in primary:
         for block in builds[s["id"]]["blocks"]["T2"]:
-            lines = [ln for ln in block.splitlines() if ln.startswith("[s")]
-            flagged_idx = [i for i, ln in enumerate(lines) if "RESOLVED" in ln]
-            unflagged_idx = [i for i, ln in enumerate(lines) if "RESOLVED" not in ln]
+            lines = block.splitlines()[1:]  # skip the header
+            flagged_idx = [i for i, ln in enumerate(lines) if "NOTE:" in ln]
+            unflagged_idx = [i for i, ln in enumerate(lines) if "NOTE:" not in ln]
             if flagged_idx and unflagged_idx and max(unflagged_idx) > min(flagged_idx):
                 bad.append(s["id"])
-    record("G3b-flag-demoted-ordering", not bad, f"flagged episodes ordered after unflagged in every T2 block; violations: {sorted(set(bad)) or 'none'}")
+    record("G3b-flag-demoted-ordering", not bad, f"flagged (NOTE:) episodes ordered after unflagged in every T2 block; violations: {sorted(set(bad)) or 'none'}")
 
     # G4 policy header only on T3
     bad = []
@@ -254,7 +299,7 @@ def check(res: dict, suite: str = "v3", seed: int | None = None) -> list[dict]:
     for s in gc:
         for arm in T_ARMS:
             for block in builds[s["id"]]["blocks"][arm]:
-                if "RESOLVED" in block or "SUPERSEDED" in block:
+                if "RESOLVED" in block or "SUPERSEDED" in block or "NOTE:" in block:
                     bad.append(f"{s['id']} {arm}: verdict in gc block")
         for probe in builds[s["id"]]["probes"]:
             r = score_probe(probe, "alpha")

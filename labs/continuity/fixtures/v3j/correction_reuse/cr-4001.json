@@ -1,0 +1,162 @@
+{
+ "id": "cr-4001",
+ "family": "correction_reuse",
+ "sub_type": "valid_correction_environment",
+ "seed_error": {
+  "value": "memberships",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "seed own-answer 'memberships'; verified county bulletin re-routes docent-guided patron walks; reuse expects tours"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this booking into exactly one label: exhibits | tours | conservation | security | memberships | facilities. Booking: '{bk} for the patron circle.' Reply with the label only.",
+     "initial_expected": "memberships"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your desk log from the morning shift routes {bk} under 'memberships'. Keep the log line in view and acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The standing museum desk card: docent-guided visits and walking programs are tours; patron schemes and season passes are memberships; artifact care and restoration handling is conservation; display and case installations are exhibits; access control and surveillance matters are security; building and room upkeep is facilities. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Museum office bulletin, verified notice from the county heritage board: the log line routing {bk} under 'memberships' is out of date; docent-guided visits are tours under the standing card. Amend your records in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Evening shift at the museum desk on {day}. The desk card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this booking. The desk card is not at hand. Booking: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "bk": "the patrons' autumn gallery walk",
+    "pq": "register the fellowship group for the twilight cellar visit",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "exhibits",
+      "tours",
+      "conservation",
+      "security",
+      "memberships",
+      "facilities"
+     ],
+     "expected": "tours"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "bk": "the season-pass holders' bronze-age tour",
+    "pq": "enroll the subscriber party in the dawn aviary walk",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tours",
+      "conservation",
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits"
+     ],
+     "expected": "tours"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "bk": "the patron circle's silver vault walk",
+    "pq": "add the guild members to the storeroom viewing round",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "conservation",
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours"
+     ],
+     "expected": "tours"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "bk": "the donors' monthly archive stroll",
+    "pq": "book the association's map-room stroll",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours",
+      "conservation"
+     ],
+     "expected": "tours"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "bk": "the friends-of-the-museum chapel visit",
+    "pq": "sign up the heritage league for the fresco walk",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours",
+      "conservation",
+      "security"
+     ],
+     "expected": "tours"
+    }
+   }
+  }
+ }
+}

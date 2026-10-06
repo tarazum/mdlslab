@@ -1,0 +1,157 @@
+{
+ "id": "rt-4203",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "security",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "duty sheet pins the task as 'security'; standing card says facilities; reuse expects facilities"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this duty into exactly one label: exhibits | tours | conservation | security | memberships | facilities. Duty: '{task}.' Reply with the label only.",
+     "initial_expected": "security"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier duty sheet routes {task} under 'security'. The standing card, verified: access control and surveillance matters are security; building and room upkeep is facilities. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Duty handover before the {slot} rush. The standing card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Fresh duty round begins. The slate cards are away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this duty. The slate cards are not at hand. Duty: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "task": "the storeroom lock test",
+    "pq": "report the gallery roof drip",
+    "slot": "school"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "facilities",
+      "exhibits",
+      "tours",
+      "conservation",
+      "security",
+      "memberships"
+     ],
+     "expected": "facilities"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "task": "the keycard batch audit",
+    "pq": "swap the burnt corridor lamp",
+    "slot": "lecture"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "exhibits",
+      "tours",
+      "conservation",
+      "security",
+      "memberships",
+      "facilities"
+     ],
+     "expected": "facilities"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "task": "the camera lens wipe",
+    "pq": "refit the cloakroom door sweep",
+    "slot": "loan"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tours",
+      "conservation",
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits"
+     ],
+     "expected": "facilities"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "task": "the night alarm walk",
+    "pq": "unblock the yard drain",
+    "slot": "gala"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "conservation",
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours"
+     ],
+     "expected": "facilities"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "task": "the door-code change",
+    "pq": "patch the plaster in the stairwell",
+    "slot": "fitting"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours",
+      "conservation"
+     ],
+     "expected": "facilities"
+    }
+   }
+  }
+ }
+}

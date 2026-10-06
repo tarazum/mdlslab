@@ -1,0 +1,167 @@
+{
+ "id": "cr-4008",
+ "family": "correction_reuse",
+ "sub_type": "retraction",
+ "seed_error": {
+  "value": "repairs",
+  "mechanism": "retracted_correction"
+ },
+ "labels": {
+  "note": "bulletin briefly routes dockside fuel work under repairs; bulletin withdrawn (misrouted); withdrawal restates the standing rule WITH its label (v3i cr-3008 lesson); probe expects fuel"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Log this call under exactly one label: berths | moorings | fuel | repairs | charters | safety. Call: '{bk} on the spring sheet.' Reply with the label only.",
+     "initial_expected": "fuel"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing harbor office card: slip allocation and quay assignments are berths; anchor lines and buoy positioning is moorings; dockside refueling and tank transfers is fuel; hull and engine fixing work is repairs; hired boat trips and skippered outings are charters; life equipment and water rules are safety. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Roster bulletin: the county workshop barge covers {bk} this week; classify such calls under repairs on the duty board for now. Amend in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "The bulletin is withdrawn: it was misrouted from another harbor and does not apply here; dockside refueling stays fuel under the standing card. Amend in one short line."
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Late watch at the harbor office on {day}. The office card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Log this call. The office card is not at hand. Call: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "bk": "the berth-side bowser top-up for the trip boats",
+    "pq": "log the marina office tank refill before the rush",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "fuel",
+      "repairs",
+      "charters",
+      "safety",
+      "berths",
+      "moorings"
+     ],
+     "expected": "fuel"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "bk": "the quay tank transfer for the fishing fleet",
+    "pq": "record the pump-room uplift at first light",
+    "day": "thursday"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "repairs",
+      "charters",
+      "safety",
+      "berths",
+      "moorings",
+      "fuel"
+     ],
+     "expected": "fuel"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "bk": "the duty-pump uplift for the patrol launch",
+    "pq": "book the bowser round for the pontoons",
+    "day": "saturday"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "charters",
+      "safety",
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs"
+     ],
+     "expected": "fuel"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "bk": "the jerry-can run for the tide watch",
+    "pq": "note the two-stroke draw for the patrol rib",
+    "day": "sunday"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "safety",
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters"
+     ],
+     "expected": "fuel"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "bk": "the fuel barge draw for the dredger",
+    "pq": "enter the duty-tank transfer for the workboats",
+    "day": "monday"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters",
+      "safety"
+     ],
+     "expected": "fuel"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "protocol": "continuity-workload",
+ "version": 3,
+ "families": [
+  "delayed_recall",
+  "distractor_recall",
+  "contradiction_update",
+  "repeated_task",
+  "correction_reuse",
+  "guess_calibration"
+ ],
+ "primary_families": [
+  "correction_reuse",
+  "contradiction_update"
+ ],
+ "primary_cluster_count": 12,
+ "variant_seeds": [
+  3001,
+  3002,
+  3003,
+  3004,
+  3005
+ ],
+ "description": "Suite v3j for CONT-005 cycle 2 (FREEZE-B, held-out confirmatory): the v3i protocol (v3 label-form probes + predeclared per-seed variant table, manifest.variant_seeds = {3001..3005}) with fresh worlds (municipal museum front desk, marina harbor office, bakery depot, regional airport ground stores) and ids x-4xxx, disjoint from v1/v2/v2-calibration/v3/v3h/v3i (validator V3 covers every rendered seed). Pilot-informed difficulty calibration, declared openly per EVALUATION-PREP-v3 section 2 stage 2: CU rebalanced HARDER (v3i clause-1 FAIL at 0.050 error - near-miss options did not beat the recency heuristic) via recency-defeat designs in 3/4 clusters (retracted_correction cu-4101: correction withdrawn, original governs; user_override cu-4102/cu-4103: unverified user push vs verified original/verified correction) + the v3i superseded_value anchor cu-4104; CR sub-type composition IDENTICAL to v3i (valid_environment 2, valid_tool 1, erroneous_user 2, source_conflict 2, retraction 1 - no post-pilot sub-type cherry-picking), difficulty re-aimed mid-scale via wording levers only (indirect counter-evidence, probe-case surface pull toward the trap, withdrawal restating the standing rule with its label, BOTH source-conflict orders across cr-4006/cr-4007). Resolution flags render as plain NOTE: prose (claims.py FREEZE-B fix, pre-authorized pilot clause-4). Secondary: repeated_task x6, delayed_recall x3, distractor_recall x3, guess_calibration x3 (6 never-stated probes). Rendering: continuity.fixtures.render_seed_variant (single definition shared by runner, validator, assembly gate)."
+}

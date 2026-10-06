@@ -1,0 +1,162 @@
+{
+ "id": "cr-4002",
+ "family": "correction_reuse",
+ "sub_type": "valid_correction_tool",
+ "seed_error": {
+  "value": "conservation",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "seed own-answer 'conservation'; case-sensor telemetry re-classifies climate-adjacent installs as display work; reuse expects exhibits"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this booking into exactly one label: exhibits | tours | conservation | security | memberships | facilities. Booking: '{bk} on the install sheet.' Reply with the label only.",
+     "initial_expected": "conservation"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your desk log from the opening shift routes {bk} under 'conservation'. Keep the log line in view and acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The standing museum desk card: docent-guided visits and walking programs are tours; patron schemes and season passes are memberships; artifact care and restoration handling is conservation; display and case installations are exhibits; access control and surveillance matters are security; building and room upkeep is facilities. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "tool",
+     "text": "Case-sensor report, verified output: {bk} is a display-and-case installation, not climate care; the log line reading 'conservation' is out of date; such installs are exhibits under the standing card. Amend your records in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Late shift at the museum desk on {day}. The desk card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this booking. The desk card is not at hand. Booking: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "bk": "the humidity case swap for the parchment vitrine",
+    "pq": "log the riser mount for the fossil showcase",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "conservation",
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours"
+     ],
+     "expected": "exhibits"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "bk": "the UV film change for the map case",
+    "pq": "book the bracket set for the armor display",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours",
+      "conservation"
+     ],
+     "expected": "exhibits"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "bk": "the silica tray refresh inside the coin cabinet",
+    "pq": "add the glass shelf for the medal case",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours",
+      "conservation",
+      "security"
+     ],
+     "expected": "exhibits"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "bk": "the light-baffle refit for the textile case",
+    "pq": "schedule the base plate for the sculpture plinth",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "facilities",
+      "exhibits",
+      "tours",
+      "conservation",
+      "security",
+      "memberships"
+     ],
+     "expected": "exhibits"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "bk": "the gasket renewal for the butterfly drawer",
+    "pq": "clear the travel frame for the loan crate",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "exhibits",
+      "tours",
+      "conservation",
+      "security",
+      "memberships",
+      "facilities"
+     ],
+     "expected": "exhibits"
+    }
+   }
+  }
+ }
+}

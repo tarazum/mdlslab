@@ -1,0 +1,145 @@
+{
+ "id": "cu-4104",
+ "family": "contradiction_update",
+ "labels": {
+  "note": "fuel-berth depth allowance corrected after the dredge; probe expects the corrected value; superseded old value stays in options (v3i anchor cluster)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You keep the marina notes. For the log: the fuel berth depth allowance is {old} meters. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Correction for the records: the dredge finished; the fuel berth depth allowance is now {new} meters, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A skiff owner asks; the marina notes are not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What is the fuel berth depth allowance? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "variants": {
+  "3001": {
+   "values": {
+    "old": "5",
+    "new": "6"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "10",
+      "12",
+      "4",
+      "5",
+      "6",
+      "8"
+     ],
+     "expected": "6"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "old": "4",
+    "new": "7"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "11",
+      "3",
+      "4",
+      "5",
+      "7",
+      "9"
+     ],
+     "expected": "7"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "old": "6",
+    "new": "8"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "4",
+      "6",
+      "7",
+      "8",
+      "10",
+      "12"
+     ],
+     "expected": "8"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "old": "5",
+    "new": "9"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "5",
+      "6",
+      "9",
+      "11",
+      "13",
+      "4"
+     ],
+     "expected": "9"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "old": "7",
+    "new": "10"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "8",
+      "10",
+      "12",
+      "14",
+      "5",
+      "7"
+     ],
+     "expected": "10"
+    }
+   }
+  }
+ }
+}

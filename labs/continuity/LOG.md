@@ -1722,3 +1722,35 @@ gate, confirmatory run.
   findings + engineering lessons + artifact pointers) for the owner's
   evaluation of his other memory project (OCL). Pushed so a GitHub link can
   be shared.
+
+## 2026-10-06 — FREEZE-B EXECUTION (before any v3j inference)
+
+Order per EVALUATION-PREP-v3 §10: 1) analysis script FIRST —
+analyze_confirmatory_v3.py written and functionally smoked on synthetic run
+roots built from the real rendered v3j (all four frozen verdict paths hit
+their exact wording: established / reverse-established / sub-MME boundary
+checked / no-difference / incomplete; decomposition, label-level trap repeat,
+echo scan ([RESOLVED must-be-zero + NOTE: echo rate), guess-band caveat,
+between-seed sd with df=4 CI, T0-T2/T0-T3 secondary bootstraps, CU
+superseded-value share all verified on synthetic data — the v2 analysis-hotfix
+lesson applied pre-freeze); 2) run_confirmatory_v3.py written (arms
+T0,T1,A,T2,T3 primary-first; seeds {3001..3005}; per-seed rendering; the
+GATE-V3A condition-b recipe institutionalized: preflight re-verifies the
+suite + 5 rendered digests fail-closed against the freeze manifest before
+any inference); 3) NOTE: prose fix in claims.py (pilot clause-4,
+pre-authorized class — gate-matched substrings kept); 4) suite v3j authored
+via build_v3j.py (27 scenarios, fresh worlds museum/marina/bakery/airport,
+ids x-4xxx, 130 turns/seed): CU recency-defeat redesign (cu-4101
+retracted_correction, cu-4102/4103 user_override vs verified evidence,
+cu-4104 v3i anchor), CR sub-types IDENTICAL to v3i with wording levers only
+(indirect counter-evidence, trap-surface probe cases, withdrawal restating
+the rule with its label, both conflict orders across cr-4006/4007); 5)
+validator --suite v3j PASS 16/16 + regressions v3/v3h/v3i PASS; assembly
+gate v3j PASS 7/7 x all five seeds (fresh artifacts committed), v3i
+regression PASS; 6) frozen-config-v3b.json digest manifest (25 digests,
+incl. per-seed rendered); cross-check vs FREEZE-A: untouched paths
+byte-identical, exactly the 3 declared changes (claims.py NOTE: fix,
+validator v3j registration, gate v3j registration + CU-mechanism branches +
+G3b un-vacuated); manifest self-verified against the run script's own
+digest-verification code path. NEXT: Fable non-executor gate → confirmatory
+run (~2.5 h GPU).

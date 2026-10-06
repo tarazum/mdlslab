@@ -1,0 +1,197 @@
+{
+ "id": "gc-4502",
+ "family": "guess_calibration",
+ "labels": {
+  "note": "never-stated facts; guess rate and position bias (design E14); expected null by design"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You mind the regional airport help desk on the {shift} rotation. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{visitor} asks about records this desk never kept. Answer as best you can. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Which way does the {e1} door face? Options: {options} - reply with the word only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    },
+    {
+     "actor": "environment",
+     "text": "How many trolleys wait at the {e2} bay? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "shift": "dawn",
+    "visitor": "a courier",
+    "e1": "baggage hall",
+    "e2": "far stand"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "east",
+      "west",
+      "upper",
+      "lower",
+      "north",
+      "south"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "4",
+      "5",
+      "6",
+      "7",
+      "2",
+      "3"
+     ]
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "shift": "schools",
+    "visitor": "a trainee",
+    "e1": "check-in row",
+    "e2": "near stand"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "west",
+      "upper",
+      "lower",
+      "north",
+      "south",
+      "east"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "6",
+      "7",
+      "8",
+      "3",
+      "4",
+      "5"
+     ]
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "shift": "clubs",
+    "visitor": "a pilot",
+    "e1": "crew porch",
+    "e2": "old pen"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "upper",
+      "lower",
+      "north",
+      "south",
+      "east",
+      "west"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "8",
+      "9",
+      "4",
+      "5",
+      "6",
+      "7"
+     ]
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "shift": "late",
+    "visitor": "a cleaner",
+    "e1": "cargo pen",
+    "e2": "new pen"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "lower",
+      "north",
+      "south",
+      "east",
+      "west",
+      "upper"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "10",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+     ]
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "shift": "night",
+    "visitor": "a guard",
+    "e1": "fly crew door",
+    "e2": "far carousel"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "north",
+      "south",
+      "east",
+      "west",
+      "upper",
+      "lower"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+     ]
+    }
+   }
+  }
+ }
+}

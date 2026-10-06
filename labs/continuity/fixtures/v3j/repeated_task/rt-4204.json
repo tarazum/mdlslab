@@ -1,0 +1,157 @@
+{
+ "id": "rt-4204",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "charters",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "duty sheet pins the task as 'charters'; standing card says moorings; reuse expects moorings"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this duty into exactly one label: berths | moorings | fuel | repairs | charters | safety. Duty: '{task}.' Reply with the label only.",
+     "initial_expected": "charters"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier duty sheet routes {task} under 'charters'. The standing card, verified: anchor lines and buoy positioning is moorings; hired boat trips and skippered outings are charters. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Duty handover before the {slot} rush. The standing card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Fresh duty round begins. The slate cards are away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this duty. The slate cards are not at hand. Duty: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "task": "the club's birthday launch outing",
+    "pq": "re-lead the ground line at the mid trot",
+    "slot": "regatta"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters",
+      "safety"
+     ],
+     "expected": "moorings"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "task": "the sunset skipper run",
+    "pq": "swap the guest buoy at the north anchorage",
+    "slot": "tide"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters",
+      "safety",
+      "berths"
+     ],
+     "expected": "moorings"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "task": "the stag-party boat hire",
+    "pq": "check the pickup lines on the visitors' buoy",
+    "slot": "gale"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fuel",
+      "repairs",
+      "charters",
+      "safety",
+      "berths",
+      "moorings"
+     ],
+     "expected": "moorings"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "task": "the corporate yacht morning",
+    "pq": "sink the new mooring block off the quay",
+    "slot": "haul"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "repairs",
+      "charters",
+      "safety",
+      "berths",
+      "moorings",
+      "fuel"
+     ],
+     "expected": "moorings"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "task": "the angling club's hired launch",
+    "pq": "buoy-mark the shallow patch for the rally",
+    "slot": "patrol"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "charters",
+      "safety",
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs"
+     ],
+     "expected": "moorings"
+    }
+   }
+  }
+ }
+}

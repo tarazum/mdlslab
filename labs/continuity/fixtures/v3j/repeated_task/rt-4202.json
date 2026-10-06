@@ -1,0 +1,157 @@
+{
+ "id": "rt-4202",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "exhibits",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "duty sheet pins the task as 'exhibits'; standing card says conservation; reuse expects conservation"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this duty into exactly one label: exhibits | tours | conservation | security | memberships | facilities. Duty: '{task}.' Reply with the label only.",
+     "initial_expected": "exhibits"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier duty sheet routes {task} under 'exhibits'. The standing card, verified: display and case installations are exhibits; artifact care and restoration handling is conservation. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Duty handover before the {slot} rush. The standing card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Fresh duty round begins. The slate cards are away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this duty. The slate cards are not at hand. Duty: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "task": "the coin cabinet dust-down",
+    "pq": "log the dust-cover change for the statues",
+    "slot": "school"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours",
+      "conservation"
+     ],
+     "expected": "conservation"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "task": "the textile case light check",
+    "pq": "record the humidity tray swap in the map room",
+    "slot": "lecture"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours",
+      "conservation",
+      "security"
+     ],
+     "expected": "conservation"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "task": "the bronze shelf wipe",
+    "pq": "brush the salt off the ship timbers",
+    "slot": "loan"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "facilities",
+      "exhibits",
+      "tours",
+      "conservation",
+      "security",
+      "memberships"
+     ],
+     "expected": "conservation"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "task": "the fresco room monitor swap",
+    "pq": "check the adhesive on the mural edge",
+    "slot": "gala"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "exhibits",
+      "tours",
+      "conservation",
+      "security",
+      "memberships",
+      "facilities"
+     ],
+     "expected": "conservation"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "task": "the vitrine seal inspection",
+    "pq": "clean the glass over the butterfly trays",
+    "slot": "fitting"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tours",
+      "conservation",
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits"
+     ],
+     "expected": "conservation"
+    }
+   }
+  }
+ }
+}

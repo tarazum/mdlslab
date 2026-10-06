@@ -1,0 +1,162 @@
+{
+ "id": "cr-4003",
+ "family": "correction_reuse",
+ "sub_type": "valid_correction_environment",
+ "seed_error": {
+  "value": "safety",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "seed own-answer 'safety'; verified port bulletin re-routes life-gear-adjacent buoy tasks; reuse expects moorings"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Log this call under exactly one label: berths | moorings | fuel | repairs | charters | safety. Call: '{bk} on the evening sheet.' Reply with the label only.",
+     "initial_expected": "safety"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your duty log from the previous watch routes {bk} under 'safety'. Keep the log line in view and acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The standing harbor office card: slip allocation and quay assignments are berths; anchor lines and buoy positioning is moorings; dockside refueling and tank transfers is fuel; hull and engine fixing work is repairs; hired boat trips and skippered outings are charters; life equipment and water rules are safety. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Harbor office bulletin, verified notice from the port authority: the log line routing {bk} under 'safety' is out of date; buoy-line and anchorage gear tasks are moorings under the standing card. Amend your records in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Night watch at the harbor office on {day}. The office card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Log this call. The office card is not at hand. Call: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "bk": "the lifebuoy rehang at the east jetty",
+    "pq": "log the marker buoy swap at the north trot",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "charters",
+      "safety",
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs"
+     ],
+     "expected": "moorings"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "bk": "the horseshoe ring check at the fuel quay",
+    "pq": "check the pick-up buoy at the guest anchorage",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "safety",
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters"
+     ],
+     "expected": "moorings"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "bk": "the grab-line coil audit on the launch",
+    "pq": "re-lead the ground line at the mid pontoon",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters",
+      "safety"
+     ],
+     "expected": "moorings"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "bk": "the flare box restrap in the tender",
+    "pq": "swap the mooring pennant on the visitors' trot",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters",
+      "safety",
+      "berths"
+     ],
+     "expected": "moorings"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "bk": "the throw-line repack for the patrol skiff",
+    "pq": "inspect the trot weights at the south buoys",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fuel",
+      "repairs",
+      "charters",
+      "safety",
+      "berths",
+      "moorings"
+     ],
+     "expected": "moorings"
+    }
+   }
+  }
+ }
+}

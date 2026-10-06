@@ -1,0 +1,157 @@
+{
+ "id": "cu-4101",
+ "family": "contradiction_update",
+ "labels": {
+  "note": "proof-cabinet setting corrected, then the correction withdrawn (misrouted); probe expects the ORIGINAL value; recency picks the retracted value (trap); R5 keeps marking s1 superseded in T2/T3 (declared blind spot)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You keep the bakery depot notes. For the log: the proof cabinet holds {old} degrees overnight. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the thermostat was replaced; the proof cabinet now holds {new} degrees, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "The maintenance desk says the correction is withdrawn: it was misrouted from the riverside branch and does not apply here; the standing setting from the first log holds as before. Amend in one short line."
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A night baker asks; the depot notes are not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What does the proof cabinet hold overnight? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "seed_error": {
+  "value": "{new}",
+  "mechanism": "retracted_correction"
+ },
+ "variants": {
+  "3001": {
+   "values": {
+    "old": "74",
+    "new": "81"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "74",
+      "78",
+      "81",
+      "85",
+      "89",
+      "70"
+     ],
+     "expected": "74"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "old": "76",
+    "new": "82"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "79",
+      "82",
+      "86",
+      "90",
+      "72",
+      "76"
+     ],
+     "expected": "76"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "old": "78",
+    "new": "84"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "84",
+      "88",
+      "92",
+      "74",
+      "78",
+      "81"
+     ],
+     "expected": "78"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "old": "72",
+    "new": "79"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "83",
+      "87",
+      "68",
+      "72",
+      "75",
+      "79"
+     ],
+     "expected": "72"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "old": "77",
+    "new": "85"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "93",
+      "73",
+      "77",
+      "81",
+      "85",
+      "89"
+     ],
+     "expected": "77"
+    }
+   }
+  }
+ }
+}

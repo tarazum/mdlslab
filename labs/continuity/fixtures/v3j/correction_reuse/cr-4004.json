@@ -1,0 +1,157 @@
+{
+ "id": "cr-4004",
+ "family": "correction_reuse",
+ "sub_type": "erroneous_user_correction",
+ "seed_error": {
+  "value": "repairs",
+  "mechanism": "user_override"
+ },
+ "labels": {
+  "note": "skipper pushes 'repairs'; fuel ledger on file supports fuel; reuse expects fuel"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Log this call under exactly one label: berths | moorings | fuel | repairs | charters | safety. Call: '{bk} on the morning sheet.' Reply with the label only.",
+     "initial_expected": "fuel"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing harbor office card: slip allocation and quay assignments are berths; anchor lines and buoy positioning is moorings; dockside refueling and tank transfers is fuel; hull and engine fixing work is repairs; hired boat trips and skippered outings are charters; life equipment and water rules are safety. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "The skipper insists about {bk}: 'the engine was coughing all the way in - that is repair work, log it under repairs.' The fuel ledger, on file, shows the run drew from the duty tank under standard fuel terms. Reply in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Afternoon watch at the harbor office on {day}. The office card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Log this call. The office card is not at hand. Call: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "bk": "the patrol launch refuel at the duty pump",
+    "pq": "log the two-stroke top-up after the engine service",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters",
+      "safety",
+      "berths"
+     ],
+     "expected": "fuel"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "bk": "the rescue boat tank top-up at the quay",
+    "pq": "record the duty-tank draw for the crane launch",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fuel",
+      "repairs",
+      "charters",
+      "safety",
+      "berths",
+      "moorings"
+     ],
+     "expected": "fuel"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "bk": "the tender jerry-can run for the moorings round",
+    "pq": "book the jerry-can refill for the crew rib",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "repairs",
+      "charters",
+      "safety",
+      "berths",
+      "moorings",
+      "fuel"
+     ],
+     "expected": "fuel"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "bk": "the workboat bowser draw at the fuel barge",
+    "pq": "note the bowser uplift after the gearbox swap",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "charters",
+      "safety",
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs"
+     ],
+     "expected": "fuel"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "bk": "the club boat uplift before the regatta",
+    "pq": "enter the petrol run for the mail boat",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "safety",
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters"
+     ],
+     "expected": "fuel"
+    }
+   }
+  }
+ }
+}

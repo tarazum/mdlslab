@@ -1,0 +1,51 @@
+{
+  "kind": "suite-v3-assembly-gate",
+  "created_utc": "2026-10-06T19:46:42Z",
+  "suite": "v3j",
+  "seed": 3002,
+  "arms": [
+    "T0",
+    "T1",
+    "T2",
+    "T3"
+  ],
+  "checks": [
+    {
+      "check": "G1-t0-flat-renderer",
+      "pass": true,
+      "detail": "every T0 block uses the arm-B flat renderer; violations: none"
+    },
+    {
+      "check": "G2-t1-annotations-only",
+      "pass": true,
+      "detail": "no verdicts in T1 (none); 81 source annotations rendered"
+    },
+    {
+      "check": "G3-resolution-by-subtype",
+      "pass": true,
+      "detail": "12 primary scenarios resolved as designed {'user_flag': 4, 'conflict_flag': 2, 'superseded': 3, 'own_answer_flag': 0, 'clean': 3}; violations: none"
+    },
+    {
+      "check": "G3b-flag-demoted-ordering",
+      "pass": true,
+      "detail": "flagged (NOTE:) episodes ordered after unflagged in every T2 block; violations: none"
+    },
+    {
+      "check": "G4-policy-header-t3-only",
+      "pass": true,
+      "detail": "trust-policy version header present on T3 only; violations: none"
+    },
+    {
+      "check": "G5-determinism",
+      "pass": true,
+      "detail": "second assembly pass byte-identical on cu-4101 across all arms: True"
+    },
+    {
+      "check": "G6-guess-calibration-clean",
+      "pass": true,
+      "detail": "3 gc scenarios, no verdicts, probes aggregate with positions; violations: none"
+    }
+  ],
+  "verdict": "PASS",
+  "failed_checks": []
+}

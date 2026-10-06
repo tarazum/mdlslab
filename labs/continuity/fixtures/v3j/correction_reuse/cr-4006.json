@@ -1,0 +1,162 @@
+{
+ "id": "cr-4006",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {
+  "value": "charters",
+  "mechanism": "source_conflict"
+ },
+ "labels": {
+  "note": "unreviewed harbor feed refiles visitor boats under charters; the harbormaster's notice (user-forwarded, verified) keeps berths (indirect); v3i conflict order: feed first"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Log this call under exactly one label: berths | moorings | fuel | repairs | charters | safety. Call: '{bk} on the duty sheet.' Reply with the label only.",
+     "initial_expected": "berths"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing harbor office card: slip allocation and quay assignments are berths; anchor lines and buoy positioning is moorings; dockside refueling and tank transfers is fuel; hull and engine fixing work is repairs; hired boat trips and skippered outings are charters; life equipment and water rules are safety. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "An unreviewed harbor aggregator feed claims every regatta visitor boat, including {bk}, was refiled under charters on the duty board today."
+    },
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "The regatta secretary forwards the harbormaster's notice; the desk verified it: visitor boat allocations stay on the quay assignment roster, unchanged, and {bk} keeps its usual tasking. Reply in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Dawn watch at the harbor office on {day}. The office card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Log this call. The office card is not at hand. Call: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "bk": "the pontoon allocation for the regatta visitors",
+    "pq": "log the visiting yacht pair at the guest quay",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "safety",
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters"
+     ],
+     "expected": "berths"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "bk": "the guest quay draw for the rally fleet",
+    "pq": "record the rally sloops on the north trot",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters",
+      "safety"
+     ],
+     "expected": "berths"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "bk": "the visitors' trot layout for the festival boats",
+    "pq": "place the festival gaffs on the east pontoon",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters",
+      "safety",
+      "berths"
+     ],
+     "expected": "berths"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "bk": "the rally fleet plan for the classic flotilla",
+    "pq": "assign the cruising club boats to the south quay",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fuel",
+      "repairs",
+      "charters",
+      "safety",
+      "berths",
+      "moorings"
+     ],
+     "expected": "berths"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "bk": "the guest moorings roster for the sail-past",
+    "pq": "note the classic dinghies at the visitors' ladder",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "repairs",
+      "charters",
+      "safety",
+      "berths",
+      "moorings",
+      "fuel"
+     ],
+     "expected": "berths"
+    }
+   }
+  }
+ }
+}

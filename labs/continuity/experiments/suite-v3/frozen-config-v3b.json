@@ -1,0 +1,75 @@
+{
+ "kind": "cont005-c2-frozen-config-v3b",
+ "created_utc": "2026-10-06T19:49:48Z",
+ "label": "agent-pre-registered, pending owner acceptance",
+ "spec": "docs/EVALUATION-PREP-v3.md (FREEZE-B per section 10) + docs/PREREG-REQUIREMENTS-V2.md",
+ "frozen_at_git_rev_before_any_v3j_inference": "10fb461488bfc56d7c85438a02ab7870316565c8",
+ "stage": "FREEZE-B (confirmatory on fixtures/v3j); the pilot stage artifacts live under results/CONT-005-C2-PILOT/ (manifest: experiments/suite-v3/frozen-config-v3a.json)",
+ "seeds_predeclared": [
+  3001,
+  3002,
+  3003,
+  3004,
+  3005
+ ],
+ "arms_order_primary_first": [
+  "T0",
+  "T1",
+  "A",
+  "T2",
+  "T3"
+ ],
+ "primary": {
+  "endpoint": "label-form error rate, 12 CR+CU clusters (structural eligibility)",
+  "contrast": "T0 - T1 (positive = annotations reduce errors), two-sided",
+  "mme": 0.25,
+  "bootstrap": {
+   "resamples": 10000,
+   "rng_seed": 20261006,
+   "method": "cluster percentile"
+  },
+  "decision_rule": "EVALUATION-PREP-v3 section 6 frozen four-case wording"
+ },
+ "pilot_context_routed_here": {
+  "pilot_run": "results/CONT-005-C2-PILOT/pilot-c2-20261006-093202 (commit c94cbac)",
+  "pilot_verdict": "REBALANCE CU + OWNER SIGN-OFF (0/12 live clusters, P5 row governs) + ECHO FIX - all three actions applied at THIS freeze",
+  "owner_signoff": "received 2026-10-06 ('ya ok'); P5 row (0.705 at 8/12) governs the confirmatory power claim",
+  "cu_rebalance": "3/4 clusters defeat pure recency (retracted_correction cu-4101, user_override cu-4102/cu-4103) + v3i-pattern anchor cu-4104; family target mean error strictly inside (0.15, 0.85)",
+  "cr_rebalance": "sub-type composition IDENTICAL to v3i (no post-pilot cherry-picking); wording levers only (indirect counter-evidence, probe-case trap-surface pull, withdrawal restating the standing rule with its label, both source-conflict orders)",
+  "echo_fix": "claims.py resolution flags are plain 'NOTE: ...' prose (pre-authorized pilot clause-4 class); analysis scans for residual '[RESOLVED' (must be 0) and reports 'NOTE:' echo"
+ },
+ "declared_pre_inference_changes_vs_freeze_a": [
+  "claims.py: [RESOLVED: ...] flags -> 'NOTE: ...' prose (pilot clause-4, pre-authorized fix class; substrings 'superseded by the retraction'/'superseded by the value correction'/'unverified user statement'/'own earlier answer' kept for the gate)",
+  "validate_fixtures_v3.py: v3j registered (EXPECTED_PRIMARY/CR_SUBTYPES identical to v3i; v3j added to the disjointness set; V1 variant-seeds requirement extended to v3j) - additive, no check relaxed",
+  "assembly_gate.py: v3j registered; G3 gains CU mechanism branches (retracted_correction/user_override - the declared R5 blind spots); G3b now detects flags by the 'NOTE:' marker (was vacuous after the prose renderer); G2/G6 additionally reject 'NOTE:' - additive/tightening, no check relaxed",
+  "new frozen scripts: analyze_confirmatory_v3.py (written FIRST per section 10, functionally smoked on synthetic data pre-freeze: all four verdict paths + decomposition/trap-repeat/echo/guess-band/secondary-contrast blocks) and run_confirmatory_v3.py (seeds {3001..3005}, suite v3j, freeze-digest re-verification institutionalized in preflight)"
+ ],
+ "rendered_digest_recipe": "sha256 over the concatenation of json.dumps(scenario, sort_keys=True, ensure_ascii=True) for the seed's rendered scenarios sorted by id; rendering = continuity.fixtures.render_seed_variant (identical to frozen-config-v3a / GATE-V3A)",
+ "digests": {
+  "docs/EVALUATION-PREP-v3.md": "8276286b087262ec61ea03e90b90eadad42aaa36f3c8dfe4556c4031b0f21c27",
+  "docs/SUITE-V3-DESIGN.md": "442d438526b7985704d97bf2fda9a6a14ee5b6119f2a3e10c771c98aa83535d0",
+  "docs/PREREG-REQUIREMENTS-V2.md": "b843888eab0934583270a5b0b7b12cab697fba779c0314a1a5ee4af5605ef2cc",
+  "docs/PR-REVIEW-v3.md": "6c48b21880db48ffd5210fac1e8543b1ab12c104547d217f2de797d2e14ffc89",
+  "experiments/suite-v3/analyze_confirmatory_v3.py": "dc288763e9d8a54e57212f14c2522344265eb02a79c57b1ae39f074d24939314",
+  "experiments/suite-v3/run_confirmatory_v3.py": "ea8a292a786064bfd88371383c934a5e0723f38fd805689f12ab4e95c994868f",
+  "experiments/suite-v3/validate_fixtures_v3.py": "cadb45527689a0dfb59570489dcfebee67d8339680a02d8d49cfcd415f63102d",
+  "experiments/suite-v3/assembly_gate.py": "01061a3cbf51cef257e9d3811aa514075cfab80a2546258993ff859da01ae6ab",
+  "src/continuity/claims.py": "9c2758bcb453a4965af3ffea02df4da91d9f5e5255438cf22c9d17d203bfaba8",
+  "src/continuity/runner.py": "1dcd5625c5b2ff319858e44bf6dcd90af6e34c90956dd2f50b761b18b0abb079",
+  "src/continuity/provider.py": "856b934868c6113ae919e5fb93673a0819614e1dde2a301ae571153c726a715e",
+  "src/continuity/fixtures.py": "4270a0916ab227c89b46c5cbe03525fa364831bf0353f91ee6c4fcef2b3f9f7d",
+  "src/continuity/memory.py": "1ef4291641fd6be73d888e65452c778687e156393cd54df597bcbc72202a394b",
+  "experiments/suite-v3/fixture-validation-v3j.json": "37f4a35a60374e3255ef61413089740868ff68b4badb5fc72e7d54340516d1ab",
+  "experiments/suite-v3/assembly-gate-v3j-seed3001.json": "3b05ff35384a334de12ba8a02390ca2e84105d4db2766bd2d2c5c5ef1463d547",
+  "experiments/suite-v3/assembly-gate-v3j-seed3002.json": "26fe652dbe242253d58f130f90bd7be669c34fedb7f7cb824c2d4441717278d6",
+  "experiments/suite-v3/assembly-gate-v3j-seed3003.json": "1595d3cefa0e3ebb54d17239ab483274f0134a37ed27052d827cce50dd9f9294",
+  "experiments/suite-v3/assembly-gate-v3j-seed3004.json": "40ed5f9ce1254607f044c664eab455a5042044e8d74fe9e247d486807d357529",
+  "experiments/suite-v3/assembly-gate-v3j-seed3005.json": "c31cad56698e01b306fad5244be061fd3005a160a9c20070af29976f330aa522",
+  "fixtures/v3j_suite": "516d6588c1c377e891ef87293d937d22e2fdd71dbd318aeaf88367365e7d0889",
+  "fixtures/v3j_rendered_seed3001": "d6639191d80e18623c606850fbc18b12402ec2d8fff29ff810df01b4248493fb",
+  "fixtures/v3j_rendered_seed3002": "dcf060047856fe44986a23acb9d3a346780b8331dd451143910ef8f095b919a9",
+  "fixtures/v3j_rendered_seed3003": "2c77c770b3742cfac3846a495edfb72016f5cb089fcc4cf87b6911ebb46b1138",
+  "fixtures/v3j_rendered_seed3004": "109cf7d00bdd80c45d1b3d4f373ef8a137d10dd59aa4994ea5ada6a6add51ba0",
+  "fixtures/v3j_rendered_seed3005": "ea989a3ba223edb242d3daae68a5dfb241a1f78a09047961b176e348a4e85661"
+ }
+}

@@ -1,0 +1,162 @@
+{
+ "id": "cr-4007",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {
+  "value": "conservation",
+  "mechanism": "source_conflict"
+ },
+ "labels": {
+  "note": "curator's notice (user-forwarded, verified) keeps loan screenings with door checks (indirect); a LATER unreviewed feed claims conservation - reversed conflict order of cr-4006 (verified early vs unreviewed late)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this booking into exactly one label: exhibits | tours | conservation | security | memberships | facilities. Booking: '{bk} on the screening list.' Reply with the label only.",
+     "initial_expected": "security"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing museum desk card: docent-guided visits and walking programs are tours; patron schemes and season passes are memberships; artifact care and restoration handling is conservation; display and case installations are exhibits; access control and surveillance matters are security; building and room upkeep is facilities. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "The county liaison forwards the curator's notice; the desk verified it: the loan screenings stay with door checks and bag surveillance, unchanged, and {bk} keeps its slot. Reply in one short line."
+    },
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "An unreviewed museum forum feed claims all loan-screening slots, including {bk}, were reassigned to conservation on the duty board today."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Midweek shift at the museum desk on {day}. The desk card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this booking. The desk card is not at hand. Booking: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "bk": "the loan screening for the amber case",
+    "pq": "roster the night checks for the crown display",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "exhibits",
+      "tours",
+      "conservation",
+      "security",
+      "memberships",
+      "facilities"
+     ],
+     "expected": "security"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "bk": "the collection view for the insurance assessor",
+    "pq": "walk the bag sweep before the auction viewing",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tours",
+      "conservation",
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits"
+     ],
+     "expected": "security"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "bk": "the silver gallery opening check",
+    "pq": "cover the door watch at the gala preview",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "conservation",
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours"
+     ],
+     "expected": "security"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "bk": "the private view sweep for the donors' evening",
+    "pq": "run the cordon check for the film crew visit",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "security",
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours",
+      "conservation"
+     ],
+     "expected": "security"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "bk": "the strongroom access check for the audit visit",
+    "pq": "log the camera round after the loan unload",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "memberships",
+      "facilities",
+      "exhibits",
+      "tours",
+      "conservation",
+      "security"
+     ],
+     "expected": "security"
+    }
+   }
+  }
+ }
+}

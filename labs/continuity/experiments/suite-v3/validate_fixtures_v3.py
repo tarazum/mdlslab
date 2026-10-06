@@ -52,6 +52,7 @@ EXPECTED_PRIMARY = {
     "v3": {"correction_reuse": 8, "repeated_task": 6},
     "v3h": {"correction_reuse": 8, "contradiction_update": 4},
     "v3i": {"correction_reuse": 8, "contradiction_update": 4},
+    "v3j": {"correction_reuse": 8, "contradiction_update": 4},
 }
 CR_SUBTYPES = {
     "v3": {
@@ -69,6 +70,17 @@ CR_SUBTYPES = {
         "source_conflict": 2,
     },
     "v3i": {
+        "valid_correction_environment": 2,
+        "valid_correction_tool": 1,
+        "erroneous_user_correction": 2,
+        "source_conflict": 2,
+        "retraction": 1,
+    },
+    # v3j (FREEZE-B): sub-type composition deliberately IDENTICAL to v3i
+    # (no post-pilot sub-type cherry-picking); difficulty is re-aimed mid-scale
+    # via wording levers only (pilot-informed calibration, EVALUATION-PREP-v3
+    # section 2 stage 2).
+    "v3j": {
         "valid_correction_environment": 2,
         "valid_correction_tool": 1,
         "erroneous_user_correction": 2,
@@ -167,6 +179,7 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
             "v3": fixtures_root / "v3",
             "v3h": fixtures_root / "v3h",
             "v3i": fixtures_root / "v3i",
+            "v3j": fixtures_root / "v3j",
         }.items()
         if name != suite and p.exists()
     ]
@@ -192,7 +205,7 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
         and fams == expected_families
         and declared_primary == primary_families
         and manifest.get("primary_cluster_count") == primary_total
-        and (seeds_ok if suite == "v3i" else True)
+        and (seeds_ok if suite in ("v3i", "v3j") else True)
     )
     record("V1-manifest", ok,
            f"suite={suite}; protocol/version ok; families={sorted(fams)}; primary={sorted(declared_primary)} "

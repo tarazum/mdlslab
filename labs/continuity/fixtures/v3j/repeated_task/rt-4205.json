@@ -1,0 +1,157 @@
+{
+ "id": "rt-4205",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "repairs",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "duty sheet pins the task as 'repairs'; standing card says fuel; reuse expects fuel"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Sort this duty into exactly one label: berths | moorings | fuel | repairs | charters | safety. Duty: '{task}.' Reply with the label only.",
+     "initial_expected": "repairs"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier duty sheet routes {task} under 'repairs'. The standing card, verified: dockside refueling and tank transfers is fuel; hull and engine fixing work is repairs. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Duty handover before the {slot} rush. The standing card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Fresh duty round begins. The slate cards are away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Sort this duty. The slate cards are not at hand. Duty: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "rm_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "task": "the engine winterization",
+    "pq": "log the jerry-can transfer for the tide watch",
+    "slot": "regatta"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fuel",
+      "repairs",
+      "charters",
+      "safety",
+      "berths",
+      "moorings"
+     ],
+     "expected": "fuel"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "task": "the gearbox strip-down",
+    "pq": "record the bowser uplift at the duty barge",
+    "slot": "tide"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "repairs",
+      "charters",
+      "safety",
+      "berths",
+      "moorings",
+      "fuel"
+     ],
+     "expected": "fuel"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "task": "the propeller re-pitch",
+    "pq": "book the duty-tank draw for the launch",
+    "slot": "gale"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "charters",
+      "safety",
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs"
+     ],
+     "expected": "fuel"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "task": "the hull scrape and repaint",
+    "pq": "note the petrol run for the mail boat",
+    "slot": "haul"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "safety",
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters"
+     ],
+     "expected": "fuel"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "task": "the stern gland repack",
+    "pq": "enter the two-stroke top-up for the rib",
+    "slot": "patrol"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "berths",
+      "moorings",
+      "fuel",
+      "repairs",
+      "charters",
+      "safety"
+     ],
+     "expected": "fuel"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,155 @@
+{
+ "id": "dr-4301",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "store code with a NON-label companion fact (cycle-1 fix kept): echoing both facts yields at most one code"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the regional airport ground stores. For the log: the radio locker code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} done; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the store book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The crew member needs the radio locker code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "3001": {
+   "values": {
+    "code": "D14",
+    "comp_thing": "crew kettle",
+    "comp_verb": "whistles at six",
+    "chore": "the dawn sweep",
+    "role": "duty engineer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "D14",
+      "E27",
+      "F33",
+      "G41",
+      "H29",
+      "J52"
+     ],
+     "expected": "D14"
+    }
+   }
+  },
+  "3002": {
+   "values": {
+    "code": "E27",
+    "comp_thing": "floor drain",
+    "comp_verb": "gurgles at noon",
+    "chore": "the taxiway check",
+    "role": "grounds keeper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "F33",
+      "G41",
+      "H29",
+      "J52",
+      "K64",
+      "E27"
+     ],
+     "expected": "E27"
+    }
+   }
+  },
+  "3003": {
+   "values": {
+    "code": "F33",
+    "comp_thing": "yard lamp",
+    "comp_verb": "flickers at dusk",
+    "chore": "the beacon test",
+    "role": "night fitter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "H29",
+      "J52",
+      "K64",
+      "L78",
+      "F33",
+      "G41"
+     ],
+     "expected": "F33"
+    }
+   }
+  },
+  "3004": {
+   "values": {
+    "code": "G41",
+    "comp_thing": "gate horn",
+    "comp_verb": "sounds at dawn",
+    "chore": "the fence walk",
+    "role": "line mechanic"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "K64",
+      "L78",
+      "M85",
+      "G41",
+      "H29",
+      "J52"
+     ],
+     "expected": "G41"
+    }
+   }
+  },
+  "3005": {
+   "values": {
+    "code": "H29",
+    "comp_thing": "wind sock",
+    "comp_verb": "frays in storms",
+    "chore": "the drain clear",
+    "role": "base technician"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "M85",
+      "N97",
+      "H29",
+      "J52",
+      "K64",
+      "L78"
+     ],
+     "expected": "H29"
+    }
+   }
+  }
+ }
+}
