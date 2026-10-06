@@ -1639,3 +1639,18 @@ fold required changes same session + Fable verify-pass on the diff.
   + the pilot run script FIRST, digest manifest (this doc, v3i suite +
   per-seed rendered digests, validator, gate, claims/runner/provider/fixtures,
   seeds {2001..2005}), Fable non-executor gate, then the pilot (~150 min GPU).
+
+## 2026-10-06 — FREEZE-A EXECUTION (before any v3i inference)
+
+Order per EVALUATION-PREP-v3 §10 (amended by PR-REVIEW-v3 RC2): 1) analysis
+script FIRST — analyze_pilot_v3.py written and functionally smoked on
+synthetic data (clause 1 per-family headroom, clause 2 sd with df=4 CI
+[0.6x/2.9x multipliers verified], clause 3 live clusters, clause 4 echo scan;
+incomplete-root dry smoke returns cleanly — the v2 analysis-hotfix lesson
+applied pre-freeze); 2) run_pilot_v3.py written (arms T0,T1,A,T2,T3
+primary-first, per-seed variant rendering via load_suite_for_seed, wall guard
+170 min, transient retry, resume); 3) zero-inference confirmations re-run:
+validator v3i PASS 16/16 (+ v3/v3h regressions PASS), assembly gate PASS 7/7
+x all five seeds (fresh artifacts); 4) frozen-config-v3a.json digest manifest
+(next commit, records the frozen-content rev); 5) Fable non-executor gate;
+6) pilot launch.
