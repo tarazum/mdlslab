@@ -1712,3 +1712,13 @@ NEXT: owner sign-off (clause-3 routing) -> FREEZE-B: author v3j with CU
 harder AND CR un-bimodalized (mid-difficulty clusters where arms can differ),
 NOTE: prose flags, fresh seeds {3001..3005}, analysis script FIRST, Fable
 gate, confirmatory run.
+
+## 2026-10-06 — Owner sign-off received (FREEZE-B authorized) + results digest
+
+- Owner: "я ок" — clause-3 routing satisfied; FREEZE-B (v3j: CU harder, CR
+  un-bimodalized, NOTE: prose flags, seeds {3001..3005}, analysis script
+  FIRST, Fable gate, confirmatory) is authorized to proceed.
+- docs/RESULTS-DIGEST-2026-10.md: cross-project results digest (proven
+  findings + engineering lessons + artifact pointers) for the owner's
+  evaluation of his other memory project (OCL). Pushed so a GitHub link can
+  be shared.
