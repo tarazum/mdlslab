@@ -1,0 +1,747 @@
+{
+  "run_id": "confirm-c2-20261006-230445-T1-seed3003",
+  "arm": "T1",
+  "seed": 3003,
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-4301",
+      "family": "delayed_recall",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 710,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "F33",
+          "observed_normalized": "f33.",
+          "observed_label": "F33",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dr-4302",
+      "family": "delayed_recall",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 705,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "M61",
+          "observed_normalized": "m61",
+          "observed_label": "M61",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.7
+    },
+    {
+      "scenario": "dr-4303",
+      "family": "delayed_recall",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 706,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "S66",
+          "observed_normalized": "s66",
+          "observed_label": "S66",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dx-4401",
+      "family": "distractor_recall",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 700,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "E49",
+          "observed_normalized": "e49",
+          "observed_label": "E49",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dx-4402",
+      "family": "distractor_recall",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 697,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "L46",
+          "observed_normalized": "l46",
+          "observed_label": "L46",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.9
+    },
+    {
+      "scenario": "dx-4403",
+      "family": "distractor_recall",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 706,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "R34",
+          "observed_normalized": "r34",
+          "observed_label": "R34",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.9
+    },
+    {
+      "scenario": "cu-4101",
+      "family": "contradiction_update",
+      "arm": "T1",
+      "sessions_planned": 4,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1407,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "78",
+          "observed_normalized": "the proof cabinet holds 78 degrees overnight.",
+          "observed_label": "78",
+          "passed": true,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.7
+    },
+    {
+      "scenario": "cu-4102",
+      "family": "contradiction_update",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 782,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "25",
+          "observed_normalized": "25",
+          "observed_label": "25",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.0
+    },
+    {
+      "scenario": "cu-4103",
+      "family": "contradiction_update",
+      "arm": "T1",
+      "sessions_planned": 4,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1156,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "23",
+          "observed_normalized": "23",
+          "observed_label": "23",
+          "passed": true,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.6
+    },
+    {
+      "scenario": "cu-4104",
+      "family": "contradiction_update",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 705,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "8",
+          "observed_normalized": "8",
+          "observed_label": "8",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "rt-4201",
+      "family": "repeated_task",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1071,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tours",
+          "observed_normalized": "security",
+          "observed_label": "security",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.0
+    },
+    {
+      "scenario": "rt-4202",
+      "family": "repeated_task",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1083,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "conservation",
+          "observed_normalized": "conservation.",
+          "observed_label": "conservation",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.2
+    },
+    {
+      "scenario": "rt-4203",
+      "family": "repeated_task",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1038,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "facilities",
+          "observed_normalized": "security",
+          "observed_label": "security",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.1
+    },
+    {
+      "scenario": "rt-4204",
+      "family": "repeated_task",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1119,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "moorings",
+          "observed_normalized": "berths",
+          "observed_label": "berths",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.1
+    },
+    {
+      "scenario": "rt-4205",
+      "family": "repeated_task",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1065,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "fuel",
+          "observed_normalized": "berths",
+          "observed_label": "berths",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.2
+    },
+    {
+      "scenario": "rt-4206",
+      "family": "repeated_task",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 2305,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "safety",
+          "observed_normalized": "(recorded in session 2) here's the updated duty sheet: label: berths - slip allocation and quay assignments - life equipment and water rules (safety) (recorded in session 1; source: agent_answer; verification: verified) here's the updated duty sheet: label: berths - slip allocation and quay assignments - life equipment and water rules (safety) (recorded in session 1; source: agent_answer; verification: verified) here's the updated duty sheet: label: berths - slip allocation and quay assignments - life equipment and water rules (safety) (recorded in session 1; source: agent_answer; verification: verified) here's the updated duty sheet: label: berths - slip allocation and quay assignments - life equipment and water rules (safety) (recorded in session 1; source: agent_answer; verification: verified) here's the updated duty sheet: label: berths - slip allocation and quay assignments - life equipment and water rules (",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 23.4
+    },
+    {
+      "scenario": "cr-4001",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2510,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tours",
+          "observed_normalized": "conservation.",
+          "observed_label": "conservation",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 18.7
+    },
+    {
+      "scenario": "cr-4002",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1896,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "exhibits",
+          "observed_normalized": "security",
+          "observed_label": "security",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.9
+    },
+    {
+      "scenario": "cr-4003",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2572,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "moorings",
+          "observed_normalized": "(recorded in session 1) log this call under exactly one label: berths | moorings | fuel | repairs | charters | safety. call: 're-lead the ground line at the mid pontoon.' reply with the label only. (recorded in session 1) acknowledged.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 19.8
+    },
+    {
+      "scenario": "cr-4004",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1375,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "fuel",
+          "observed_normalized": "repairs.",
+          "observed_label": "repairs",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.5
+    },
+    {
+      "scenario": "cr-4005",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1338,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tours",
+          "observed_normalized": "facilities",
+          "observed_label": "facilities",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.6
+    },
+    {
+      "scenario": "cr-4006",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1973,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "berths",
+          "observed_normalized": "berths",
+          "observed_label": "berths",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.4
+    },
+    {
+      "scenario": "cr-4007",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1739,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "security",
+          "observed_normalized": "security",
+          "observed_label": "security",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.2
+    },
+    {
+      "scenario": "cr-4008",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 4,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2602,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "fuel",
+          "observed_normalized": "berths",
+          "observed_label": "berths",
+          "passed": false,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 18.3
+    },
+    {
+      "scenario": "gc-4501",
+      "family": "guess_calibration",
+      "arm": "T1",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 663,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the glaze color of the seed cob batch is honey.",
+          "observed_label": "honey",
+          "observed_position": 0,
+          "labels": [
+            "honey",
+            "cocoa",
+            "cream",
+            "mint",
+            "amber",
+            "ruby"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "there are 5 trays sitting on the slicing rack.",
+          "observed_label": "5",
+          "observed_position": 1,
+          "labels": [
+            "4",
+            "5",
+            "6",
+            "7",
+            "2",
+            "3"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.2
+    },
+    {
+      "scenario": "gc-4502",
+      "family": "guess_calibration",
+      "arm": "T1",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 857,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "(recorded in session 1) understood. i will assist the airport help desk on the club's rotation as directed.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "upper",
+            "lower",
+            "north",
+            "south",
+            "east",
+            "west"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "(recorded in session 1) understood. i will assist the airport help desk on the club's rotation as directed.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "8",
+            "9",
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.6
+    },
+    {
+      "scenario": "gc-4503",
+      "family": "guess_calibration",
+      "arm": "T1",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 655,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the guest pontoon flag is most likely blue.",
+          "observed_label": "blue",
+          "observed_position": 1,
+          "labels": [
+            "red",
+            "blue",
+            "green",
+            "white",
+            "yellow",
+            "orange"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "there are 8 fenders hanging on the tender side.",
+          "observed_label": "8",
+          "observed_position": 2,
+          "labels": [
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.3
+    }
+  ],
+  "probes_passed": 13,
+  "probes_total": 24,
+  "guess_probes": 6,
+  "turns": 130,
+  "tokens_total": 34135,
+  "budget_stops": 0,
+  "wall_s": 325.6,
+  "memory_episodes": 260,
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true,
+  "dir": "T1/seed-3003"
+}

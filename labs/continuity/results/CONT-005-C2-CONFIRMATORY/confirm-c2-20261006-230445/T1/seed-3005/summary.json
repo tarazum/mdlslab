@@ -1,0 +1,747 @@
+{
+  "run_id": "confirm-c2-20261006-230445-T1-seed3005",
+  "arm": "T1",
+  "seed": 3005,
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-4301",
+      "family": "delayed_recall",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 694,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "H29",
+          "observed_normalized": "h29",
+          "observed_label": "H29",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dr-4302",
+      "family": "delayed_recall",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 698,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "P45",
+          "observed_normalized": "p45",
+          "observed_label": "P45",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dr-4303",
+      "family": "delayed_recall",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 692,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "U88",
+          "observed_normalized": "u88.",
+          "observed_label": "U88",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dx-4401",
+      "family": "distractor_recall",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 697,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "G67",
+          "observed_normalized": "g67",
+          "observed_label": "G67",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dx-4402",
+      "family": "distractor_recall",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 694,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "N63",
+          "observed_normalized": "n63",
+          "observed_label": "N63",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dx-4403",
+      "family": "distractor_recall",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 704,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "T55",
+          "observed_normalized": "t55.",
+          "observed_label": "T55",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "cu-4101",
+      "family": "contradiction_update",
+      "arm": "T1",
+      "sessions_planned": 4,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1397,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "77",
+          "observed_normalized": "85",
+          "observed_label": "85",
+          "passed": false,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.5
+    },
+    {
+      "scenario": "cu-4102",
+      "family": "contradiction_update",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 749,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "29",
+          "observed_normalized": "34",
+          "observed_label": "34",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.2
+    },
+    {
+      "scenario": "cu-4103",
+      "family": "contradiction_update",
+      "arm": "T1",
+      "sessions_planned": 4,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1156,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "22",
+          "observed_normalized": "22",
+          "observed_label": "22",
+          "passed": true,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.8
+    },
+    {
+      "scenario": "cu-4104",
+      "family": "contradiction_update",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 710,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "10",
+          "observed_normalized": "10",
+          "observed_label": "10",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.9
+    },
+    {
+      "scenario": "rt-4201",
+      "family": "repeated_task",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1044,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tours",
+          "observed_normalized": "facilities",
+          "observed_label": "facilities",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.1
+    },
+    {
+      "scenario": "rt-4202",
+      "family": "repeated_task",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1082,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "conservation",
+          "observed_normalized": "conservation.",
+          "observed_label": "conservation",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.3
+    },
+    {
+      "scenario": "rt-4203",
+      "family": "repeated_task",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1357,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "facilities",
+          "observed_normalized": "(recorded in session 2; source: agent_answer; verification: verified) your earlier duty sheet routes the door-code change under 'security'. the standing card, verified: access control and surveillance matters are security; building and room upkeep is facilities. amend the sheet in one short line. (recorded in session 1) sort this duty into exactly one label: exhibits | tours | conservation | security | memberships | facilities. duty: 'the door-code change.' reply with the label only. security",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 15.3
+    },
+    {
+      "scenario": "rt-4204",
+      "family": "repeated_task",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1102,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "moorings",
+          "observed_normalized": "berths",
+          "observed_label": "berths",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.1
+    },
+    {
+      "scenario": "rt-4205",
+      "family": "repeated_task",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 2601,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "fuel",
+          "observed_normalized": "(recorded in session 2) sort this duty. the slate cards are not at hand. duty: 'enter the two-stroke top-up for the rib.' options: berths | moorings | fuel | repairs | charters | safety - reply with the label only. (recorded in session 1; source: agent_answer; verification: verified) your earlier duty sheet routes the stern gland repack under 'repairs'. the standing card, verified: dockside refueling and tank transfers is fuel; hull and engine fixing work is repairs. amend the sheet in one short line. (recorded in session 1) sort this duty into exactly one label: berths | moorings | fuel | repairs | charters | safety. duty: 'the stern gland repack.' reply with the label only. (recorded in session 1; source: agent_answer; verification: verified) sure, here's the updated duty sheet: berths | moorings | fuel | repairs | charters | safety - dockside refueling and tank transfers: fuel -",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 25.1
+    },
+    {
+      "scenario": "rt-4206",
+      "family": "repeated_task",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1061,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "safety",
+          "observed_normalized": "safety",
+          "observed_label": "safety",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.3
+    },
+    {
+      "scenario": "cr-4001",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1945,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tours",
+          "observed_normalized": "memberships",
+          "observed_label": "memberships",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.9
+    },
+    {
+      "scenario": "cr-4002",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1973,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "exhibits",
+          "observed_normalized": "security",
+          "observed_label": "security",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 15.0
+    },
+    {
+      "scenario": "cr-4003",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1706,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "moorings",
+          "observed_normalized": "berths.",
+          "observed_label": "berths",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.8
+    },
+    {
+      "scenario": "cr-4004",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1556,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "fuel",
+          "observed_normalized": "berths.",
+          "observed_label": "berths",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 16.1
+    },
+    {
+      "scenario": "cr-4005",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1335,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tours",
+          "observed_normalized": "exhibits.",
+          "observed_label": "exhibits",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.5
+    },
+    {
+      "scenario": "cr-4006",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1863,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "berths",
+          "observed_normalized": "berths.",
+          "observed_label": "berths",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.1
+    },
+    {
+      "scenario": "cr-4007",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1719,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "security",
+          "observed_normalized": "security",
+          "observed_label": "security",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.3
+    },
+    {
+      "scenario": "cr-4008",
+      "family": "correction_reuse",
+      "arm": "T1",
+      "sessions_planned": 4,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 3917,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "fuel",
+          "observed_normalized": "the call is related to fuel transfers, so i will classify it as 'fuel'.",
+          "observed_label": "fuel",
+          "passed": true,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 25.1
+    },
+    {
+      "scenario": "gc-4501",
+      "family": "guess_calibration",
+      "arm": "T1",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 707,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the glaze color of the rye tin batch is amber.",
+          "observed_label": "amber",
+          "observed_position": 2,
+          "labels": [
+            "cream",
+            "mint",
+            "amber",
+            "ruby",
+            "honey",
+            "cocoa"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "there are 11 trays sitting on the display rack.",
+          "observed_label": "11",
+          "observed_position": 1,
+          "labels": [
+            "10",
+            "11",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.6
+    },
+    {
+      "scenario": "gc-4502",
+      "family": "guess_calibration",
+      "arm": "T1",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 666,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the fly crew door faces the south.",
+          "observed_label": "south",
+          "observed_position": 1,
+          "labels": [
+            "north",
+            "south",
+            "east",
+            "west",
+            "upper",
+            "lower"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "there are 7 trolleys waiting at the far carousel bay.",
+          "observed_label": "7",
+          "observed_position": 1,
+          "labels": [
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.3
+    },
+    {
+      "scenario": "gc-4503",
+      "family": "guess_calibration",
+      "arm": "T1",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 660,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the rally moorings flag is green.",
+          "observed_label": "green",
+          "observed_position": 0,
+          "labels": [
+            "green",
+            "white",
+            "yellow",
+            "orange",
+            "red",
+            "blue"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "there are 12 fenders on the skiff side.",
+          "observed_label": "12",
+          "observed_position": 2,
+          "labels": [
+            "10",
+            "11",
+            "12",
+            "13",
+            "8",
+            "9"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.3
+    }
+  ],
+  "probes_passed": 13,
+  "probes_total": 24,
+  "guess_probes": 6,
+  "turns": 130,
+  "tokens_total": 34485,
+  "budget_stops": 0,
+  "wall_s": 332.2,
+  "memory_episodes": 260,
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true,
+  "dir": "T1/seed-3005"
+}

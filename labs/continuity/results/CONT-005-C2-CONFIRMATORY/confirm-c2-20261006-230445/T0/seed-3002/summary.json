@@ -1,0 +1,747 @@
+{
+  "run_id": "confirm-c2-20261006-230445-T0-seed3002",
+  "arm": "T0",
+  "seed": 3002,
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-4301",
+      "family": "delayed_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 675,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "E27",
+          "observed_normalized": "e27",
+          "observed_label": "E27",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.9
+    },
+    {
+      "scenario": "dr-4302",
+      "family": "delayed_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 671,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "L48",
+          "observed_normalized": "l48",
+          "observed_label": "L48",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dr-4303",
+      "family": "delayed_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 672,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "R59",
+          "observed_normalized": "r59",
+          "observed_label": "R59",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dx-4401",
+      "family": "distractor_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 678,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "D35",
+          "observed_normalized": "d35",
+          "observed_label": "D35",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.7
+    },
+    {
+      "scenario": "dx-4402",
+      "family": "distractor_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 675,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "K38",
+          "observed_normalized": "k38",
+          "observed_label": "K38",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dx-4403",
+      "family": "distractor_recall",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 684,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "Q29",
+          "observed_normalized": "q29",
+          "observed_label": "Q29",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "cu-4101",
+      "family": "contradiction_update",
+      "arm": "T0",
+      "sessions_planned": 4,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1023,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "76",
+          "observed_normalized": "the proof cabinet holds 82 degrees overnight.",
+          "observed_label": "82",
+          "passed": false,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.6
+    },
+    {
+      "scenario": "cu-4102",
+      "family": "contradiction_update",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 687,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "28",
+          "observed_normalized": "33",
+          "observed_label": "33",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.7
+    },
+    {
+      "scenario": "cu-4103",
+      "family": "contradiction_update",
+      "arm": "T0",
+      "sessions_planned": 4,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1000,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "25",
+          "observed_normalized": "25",
+          "observed_label": "25",
+          "passed": true,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.2
+    },
+    {
+      "scenario": "cu-4104",
+      "family": "contradiction_update",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 648,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "7",
+          "observed_normalized": "7",
+          "observed_label": "7",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.7
+    },
+    {
+      "scenario": "rt-4201",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1031,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tours",
+          "observed_normalized": "conservation.",
+          "observed_label": "conservation",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.1
+    },
+    {
+      "scenario": "rt-4202",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1015,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "conservation",
+          "observed_normalized": "acknowledged.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.2
+    },
+    {
+      "scenario": "rt-4203",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 975,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "facilities",
+          "observed_normalized": "acknowledged.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.0
+    },
+    {
+      "scenario": "rt-4204",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1027,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "moorings",
+          "observed_normalized": "berths",
+          "observed_label": "berths",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.0
+    },
+    {
+      "scenario": "rt-4205",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1022,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "fuel",
+          "observed_normalized": "berths",
+          "observed_label": "berths",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.3
+    },
+    {
+      "scenario": "rt-4206",
+      "family": "repeated_task",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 994,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "safety",
+          "observed_normalized": "safety",
+          "observed_label": "safety",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.2
+    },
+    {
+      "scenario": "cr-4001",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2407,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tours",
+          "observed_normalized": "security",
+          "observed_label": "security",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 17.5
+    },
+    {
+      "scenario": "cr-4002",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1760,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "exhibits",
+          "observed_normalized": "the booking is related to the exhibits category.",
+          "observed_label": "exhibits",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.1
+    },
+    {
+      "scenario": "cr-4003",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1621,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "moorings",
+          "observed_normalized": "berths",
+          "observed_label": "berths",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.4
+    },
+    {
+      "scenario": "cr-4004",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1320,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "fuel",
+          "observed_normalized": "fuel",
+          "observed_label": "fuel",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.2
+    },
+    {
+      "scenario": "cr-4005",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1421,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tours",
+          "observed_normalized": "the booking is for a tours.",
+          "observed_label": "tours",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.0
+    },
+    {
+      "scenario": "cr-4006",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1756,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "berths",
+          "observed_normalized": "the call was logged under the 'charters' category.",
+          "observed_label": "charters",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.9
+    },
+    {
+      "scenario": "cr-4007",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1722,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "security",
+          "observed_normalized": "security",
+          "observed_label": "security",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.3
+    },
+    {
+      "scenario": "cr-4008",
+      "family": "correction_reuse",
+      "arm": "T0",
+      "sessions_planned": 4,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2133,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "fuel",
+          "observed_normalized": "berths",
+          "observed_label": "berths",
+          "passed": false,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 16.6
+    },
+    {
+      "scenario": "gc-4501",
+      "family": "guess_calibration",
+      "arm": "T0",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 1448,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "[s1t1|environment] what glaze color is the plait loaf batch? [s1t1|assistant] the glaze color of the plait loaf batch is not specified in the given options. it is possible that the glaze color is different from the options listed, or it is possible that the glaze color is not specified at all. it is important to note that the glaze color of the plait loaf batch may affect the taste and appearance of the bread, and it is always a good idea to check the label or ask the baker for more information about the glaze color before purchasing.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "ruby",
+            "honey",
+            "cocoa",
+            "cream",
+            "mint",
+            "amber"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "[s1t1|environment] how many trays sit on the cooling rack? [s1t1|assistant] the number of trays sitting on the cooling rack is not specified in the given options. it is possible that there are more or fewer trays than the options listed, or it is possible that the number of trays is not specified at all. it is important to note that the number of trays on the cooling rack may affect the cooling and storage of the bread, and it is always a good idea to check the label or ask the baker for more information about the number of trays before purchasing.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "4"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 16.8
+    },
+    {
+      "scenario": "gc-4502",
+      "family": "guess_calibration",
+      "arm": "T0",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 647,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the check-in row door faces the south.",
+          "observed_label": "south",
+          "observed_position": 4,
+          "labels": [
+            "west",
+            "upper",
+            "lower",
+            "north",
+            "south",
+            "east"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "there are 7 trolleys waiting at the near stand bay.",
+          "observed_label": "7",
+          "observed_position": 1,
+          "labels": [
+            "6",
+            "7",
+            "8",
+            "3",
+            "4",
+            "5"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.2
+    },
+    {
+      "scenario": "gc-4503",
+      "family": "guess_calibration",
+      "arm": "T0",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 624,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the visitors' trot flag is blue.",
+          "observed_label": "blue",
+          "observed_position": 2,
+          "labels": [
+            "orange",
+            "red",
+            "blue",
+            "green",
+            "white",
+            "yellow"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "there are 6 fenders hanging on the launch side.",
+          "observed_label": "6",
+          "observed_position": 2,
+          "labels": [
+            "10",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.2
+    }
+  ],
+  "probes_passed": 13,
+  "probes_total": 24,
+  "guess_probes": 6,
+  "turns": 130,
+  "tokens_total": 30336,
+  "budget_stops": 0,
+  "wall_s": 308.1,
+  "memory_episodes": 260,
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true,
+  "dir": "T0/seed-3002"
+}

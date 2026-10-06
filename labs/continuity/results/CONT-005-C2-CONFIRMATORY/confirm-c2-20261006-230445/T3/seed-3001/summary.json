@@ -1,0 +1,747 @@
+{
+  "run_id": "confirm-c2-20261006-230445-T3-seed3001",
+  "arm": "T3",
+  "seed": 3001,
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-4301",
+      "family": "delayed_recall",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 862,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "D14",
+          "observed_normalized": "d14.",
+          "observed_label": "D14",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dr-4302",
+      "family": "delayed_recall",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 853,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "K52",
+          "observed_normalized": "k52",
+          "observed_label": "K52",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dr-4303",
+      "family": "delayed_recall",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 854,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "Q83",
+          "observed_normalized": "q83",
+          "observed_label": "Q83",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dx-4401",
+      "family": "distractor_recall",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 856,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "C21",
+          "observed_normalized": "c21",
+          "observed_label": "C21",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dx-4402",
+      "family": "distractor_recall",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 855,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "J24",
+          "observed_normalized": "j24",
+          "observed_label": "J24",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dx-4403",
+      "family": "distractor_recall",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 863,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "P17",
+          "observed_normalized": "p17.",
+          "observed_label": "P17",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "cu-4101",
+      "family": "contradiction_update",
+      "arm": "T3",
+      "sessions_planned": 4,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1456,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "74",
+          "observed_normalized": "74.",
+          "observed_label": "74",
+          "passed": true,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.8
+    },
+    {
+      "scenario": "cu-4102",
+      "family": "contradiction_update",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 1037,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "26",
+          "observed_normalized": "26",
+          "observed_label": "26",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.0
+    },
+    {
+      "scenario": "cu-4103",
+      "family": "contradiction_update",
+      "arm": "T3",
+      "sessions_planned": 4,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1507,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "24",
+          "observed_normalized": "(recorded in session 3; source: user; trust: unverified-statement) 24",
+          "observed_label": "24",
+          "passed": true,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.0
+    },
+    {
+      "scenario": "cu-4104",
+      "family": "contradiction_update",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 1008,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "6",
+          "observed_normalized": "5",
+          "observed_label": "5",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.6
+    },
+    {
+      "scenario": "rt-4201",
+      "family": "repeated_task",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 2048,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tours",
+          "observed_normalized": "(recorded in session 1; trust: plain-statement) sort this duty. the slate cards are not at hand. duty: 'queue the school group for the cellar walk.' options: tours | conservation | security | memberships | facilities | exhibits - reply with the label only. the duty to queue the school group for the cellar walk is related to security and facilities. the cellar walk is a security measure for the school group, and it is a facility that is used by the school group. therefore, the duty handover for this task should be under the 'security' and 'facilities' categories. (recorded in session 2; trust: plain-statement) duty handover before the school rush. the standing card applies. acknowledge in one short line. the patron badge print run is a membership-related task that is handled by the standing card, which is verified through docent-guided visits and walking programs. therefore, the duty handover for this task should be under the 'memberships' category. (recorded in session 1; source: agent_answer; verification: verified;",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 19.7
+    },
+    {
+      "scenario": "rt-4202",
+      "family": "repeated_task",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1308,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "conservation",
+          "observed_normalized": "(recorded in session 2; trust: plain-statement) security",
+          "observed_label": "security",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.7
+    },
+    {
+      "scenario": "rt-4203",
+      "family": "repeated_task",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1714,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "facilities",
+          "observed_normalized": "(recorded in session 2; trust: plain-statement) sort this duty. the slate cards are not at hand. duty: 'report the gallery roof drip.' options: facilities | exhibits | tours | conservation | security | memberships - reply with the label only. the duty is facilities.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 15.4
+    },
+    {
+      "scenario": "rt-4204",
+      "family": "repeated_task",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1977,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "moorings",
+          "observed_normalized": "(recorded in session 2; trust: plain-statement) sort this duty. the slate cards are not at hand. duty: 're-lead the ground line at the mid trot.' options: berths | moorings | fuel | repairs | charters | safety - reply with the label only. (recorded in session 2; trust: plain-statement) (recorded in session 1; source: agent_answer; verification: verified; trust: verified-observation) your earlier duty sheet routes the club's birthday launch outing under 'charters'. the standing card, verified: anchor lines and buoy positioning is moorings; hired boat trips and skippered outings are charters. amend the sheet in one short line. note: the agent's own earlier answer - lowest trust; verified guides and observations govern. the agent's own earlier answer - lowest trust; verified guides and observations govern. (recorded in session 1; trust: plain-statement) sort this duty into exactly one label: berths | moorings | fuel | repairs | charters | safety. duty: 'the club's",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 19.0
+    },
+    {
+      "scenario": "rt-4205",
+      "family": "repeated_task",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1601,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "fuel",
+          "observed_normalized": "(recorded in session 2; trust: plain-statement) sort this duty. the slate cards are not at hand. duty: 'log the jerry-can transfer for the tide watch.' options: fuel | repairs | charters | safety | berths | moorings - reply with the label only. the slate cards are not at hand. duty: 'log the jerry-can transfer for the tide watch.' options: fuel | repairs | charters | safety | berths | moorings - reply with the label only. the slate cards are not at hand. duty: 'log the jerry-can transfer for the tide watch.' options: fuel | repairs | charters | safety | berths | moorings - reply with the label only. the slate cards are not at hand. duty: 'log the jerry-can transfer for the tide watch.' options: fuel | repairs | charters | safety | berths | moorings - reply with the label only. the slate cards are not at hand. duty: 'log the jerry-can transfer for the tide watch",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 17.9
+    },
+    {
+      "scenario": "rt-4206",
+      "family": "repeated_task",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1455,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "safety",
+          "observed_normalized": "(recorded in session 2; trust: plain-statement) sort this duty. the slate cards are not at hand. duty: 'restock the life-vest crate.' options: charters | safety | berths | moorings | fuel | repairs - reply with the label only. (recorded in session 2; trust: plain-statement) the slate cards are not at hand. duty: 'restock the life-vest crate.' options: charters | safety | berths | moorings | fuel | repairs - reply with the label only.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 15.3
+    },
+    {
+      "scenario": "cr-4001",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2624,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tours",
+          "observed_normalized": "conservation.",
+          "observed_label": "conservation",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 17.2
+    },
+    {
+      "scenario": "cr-4002",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2410,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "exhibits",
+          "observed_normalized": "the booking is related to the museum's facilities, so the correct label is \"facilities\".",
+          "observed_label": "facilities",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 15.1
+    },
+    {
+      "scenario": "cr-4003",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2200,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "moorings",
+          "observed_normalized": "(recorded in session 1; source: agent_answer; trust: own-earlier-answer) your duty log from the previous watch routes the lifebuoy rehang at the east jetty under 'safety'. keep the log line in view and acknowledge in one short line. note: the agent's own earlier answer - lowest trust; verified guides and observations govern.",
+          "observed_label": "safety",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 16.5
+    },
+    {
+      "scenario": "cr-4004",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1606,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "fuel",
+          "observed_normalized": "log the two-stroke top-up after the engine service. the office card is not at hand. call: 'log the two-stroke top-up after the engine service.' options: moorings | fuel | repairs | charters | safety | berths - reply with the label only.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.6
+    },
+    {
+      "scenario": "cr-4005",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1531,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tours",
+          "observed_normalized": "the booking is for a membership in the heritage society, which is a type of membership. therefore, the correct label is \"memberships\".",
+          "observed_label": "memberships",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.8
+    },
+    {
+      "scenario": "cr-4006",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2090,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "berths",
+          "observed_normalized": "berths.",
+          "observed_label": "berths",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.6
+    },
+    {
+      "scenario": "cr-4007",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2018,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "security",
+          "observed_normalized": "security",
+          "observed_label": "security",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.5
+    },
+    {
+      "scenario": "cr-4008",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 4,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 3570,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "fuel",
+          "observed_normalized": "(recorded in session 1; trust: plain-statement) log this call. the office card is not at hand. call: 'log the marina office tank refill before the rush.' options: fuel | repairs | charters | safety | berths | moorings - reply with the label only. (recorded in session 1; trust: plain-statement) log this call. the office card is not at hand. call: 'log the marina office tank refill before the rush.' options: fuel | repairs | charters | safety | berths | moorings - reply with the label only.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 24.3
+    },
+    {
+      "scenario": "gc-4501",
+      "family": "guess_calibration",
+      "arm": "T3",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 1049,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "(recorded in session 1; trust: plain-statement) the glaze color of the almond ring batch is honey.",
+          "observed_label": "honey",
+          "observed_position": 2,
+          "labels": [
+            "amber",
+            "ruby",
+            "honey",
+            "cocoa",
+            "cream",
+            "mint"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "(recorded in session 1; trust: plain-statement) there are 4 trays sitting on the proving rack.",
+          "observed_label": "4",
+          "observed_position": 1,
+          "labels": [
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.1
+    },
+    {
+      "scenario": "gc-4502",
+      "family": "guess_calibration",
+      "arm": "T3",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 803,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the baggage hall door faces the east.",
+          "observed_label": "east",
+          "observed_position": 0,
+          "labels": [
+            "east",
+            "west",
+            "upper",
+            "lower",
+            "north",
+            "south"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "there are 7 trolleys waiting at the far stand bay.",
+          "observed_label": "7",
+          "observed_position": 3,
+          "labels": [
+            "4",
+            "5",
+            "6",
+            "7",
+            "2",
+            "3"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.3
+    },
+    {
+      "scenario": "gc-4503",
+      "family": "guess_calibration",
+      "arm": "T3",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 1125,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "(recorded in session 1; trust: plain-statement) the fuel quay flag is most likely the color white.",
+          "observed_label": "white",
+          "observed_position": 5,
+          "labels": [
+            "yellow",
+            "orange",
+            "red",
+            "blue",
+            "green",
+            "white"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "(recorded in session 1; trust: plain-statement) there are typically 8 fenders hanging on the workboat side. however, it is possible that there are 9 fenders, depending on the specific vessel and its configuration.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "8",
+            "9",
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.9
+    }
+  ],
+  "probes_passed": 11,
+  "probes_total": 24,
+  "guess_probes": 6,
+  "turns": 130,
+  "tokens_total": 41280,
+  "budget_stops": 0,
+  "wall_s": 355.0,
+  "memory_episodes": 260,
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true,
+  "dir": "T3/seed-3001"
+}

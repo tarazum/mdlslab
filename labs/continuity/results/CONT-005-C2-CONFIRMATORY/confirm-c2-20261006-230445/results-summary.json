@@ -1,0 +1,496 @@
+{
+  "kind": "cont005-c2-confirmatory-results",
+  "created_utc": "2026-10-06T22:24:24Z",
+  "spec": "docs/EVALUATION-PREP-v3.md (FREEZE-B) sections 3-8, 12",
+  "run_root": "C:\\projects\\mdlslab\\labs\\continuity\\results\\CONT-005-C2-CONFIRMATORY\\confirm-c2-20261006-230445",
+  "execution_revs": {
+    "A": [
+      "bb515ff49e7abedf50ea0fa2ff36d94137dffa5b"
+    ],
+    "T0": [
+      "bb515ff49e7abedf50ea0fa2ff36d94137dffa5b"
+    ],
+    "T1": [
+      "bb515ff49e7abedf50ea0fa2ff36d94137dffa5b"
+    ],
+    "T2": [
+      "bb515ff49e7abedf50ea0fa2ff36d94137dffa5b"
+    ],
+    "T3": [
+      "bb515ff49e7abedf50ea0fa2ff36d94137dffa5b"
+    ]
+  },
+  "completeness": {
+    "primary_missing": [],
+    "secondary_missing": [],
+    "verdict_blocking": false
+  },
+  "primary": {
+    "endpoint": "label-form error rate, 12 CR+CU clusters, structural eligibility",
+    "contrast": "T0 - T1",
+    "per_cluster": {
+      "cr-4001": {
+        "T0": 1.0,
+        "T1": 1.0
+      },
+      "cr-4002": {
+        "T0": 0.6,
+        "T1": 1.0
+      },
+      "cr-4003": {
+        "T0": 1.0,
+        "T1": 0.8
+      },
+      "cr-4004": {
+        "T0": 0.6,
+        "T1": 0.6
+      },
+      "cr-4005": {
+        "T0": 0.4,
+        "T1": 1.0
+      },
+      "cr-4006": {
+        "T0": 0.4,
+        "T1": 0.2
+      },
+      "cr-4007": {
+        "T0": 0.0,
+        "T1": 0.0
+      },
+      "cr-4008": {
+        "T0": 0.8,
+        "T1": 0.6
+      },
+      "cu-4101": {
+        "T0": 0.8,
+        "T1": 0.6
+      },
+      "cu-4102": {
+        "T0": 0.6,
+        "T1": 0.6
+      },
+      "cu-4103": {
+        "T0": 0.0,
+        "T1": 0.0
+      },
+      "cu-4104": {
+        "T0": 0.0,
+        "T1": 0.0
+      }
+    },
+    "delta_mean": -0.0167,
+    "ci95": [
+      -0.1667,
+      0.1
+    ],
+    "mme": 0.25,
+    "bootstrap": {
+      "resamples": 10000,
+      "rng_seed": 20261006,
+      "method": "cluster percentile"
+    },
+    "verdict": "no confirmatory difference established",
+    "direction_note": "positive delta = T1 annotations reduce errors relative to flat T0"
+  },
+  "echo_checks": {
+    "spec": "pilot clause-4 fix applied at FREEZE-B: flags are plain NOTE: prose",
+    "rows": [
+      {
+        "arm": "T2",
+        "replies": 650,
+        "bracket_hits": 0,
+        "note_hits": 19
+      },
+      {
+        "arm": "T3",
+        "replies": 650,
+        "bracket_hits": 0,
+        "note_hits": 52
+      }
+    ],
+    "bracket_hits_total": 0
+  },
+  "error_decomposition_primary": {
+    "A": {
+      "correct": 11,
+      "wrong_label": 31,
+      "invalid_format": 18
+    },
+    "T0": {
+      "correct": 29,
+      "wrong_label": 20,
+      "invalid_format": 11
+    },
+    "T1": {
+      "correct": 28,
+      "wrong_label": 28,
+      "invalid_format": 4
+    },
+    "T2": {
+      "correct": 25,
+      "wrong_label": 28,
+      "invalid_format": 7
+    },
+    "T3": {
+      "correct": 28,
+      "wrong_label": 20,
+      "invalid_format": 12
+    }
+  },
+  "trap_repeat_label_level": {
+    "A": {
+      "eligible": 60,
+      "trap_repeats": 4
+    },
+    "T0": {
+      "eligible": 60,
+      "trap_repeats": 7
+    },
+    "T1": {
+      "eligible": 60,
+      "trap_repeats": 8
+    },
+    "T2": {
+      "eligible": 60,
+      "trap_repeats": 5
+    },
+    "T3": {
+      "eligible": 60,
+      "trap_repeats": 7
+    }
+  },
+  "cu_superseded_value_choice": {
+    "A": {
+      "valid": 18,
+      "chose_superseded": 3,
+      "share": 0.167
+    },
+    "T0": {
+      "valid": 20,
+      "chose_superseded": 6,
+      "share": 0.3
+    },
+    "T1": {
+      "valid": 20,
+      "chose_superseded": 6,
+      "share": 0.3
+    },
+    "T2": {
+      "valid": 19,
+      "chose_superseded": 4,
+      "share": 0.211
+    },
+    "T3": {
+      "valid": 20,
+      "chose_superseded": 5,
+      "share": 0.25
+    }
+  },
+  "between_seed_spread": [
+    {
+      "arm": "A",
+      "per_seed_primary_means": [
+        0.9167,
+        0.9167,
+        0.8333,
+        0.6667,
+        0.75
+      ],
+      "sd": 0.1087,
+      "sd_ci95": [
+        0.0651,
+        0.3122
+      ]
+    },
+    {
+      "arm": "T0",
+      "per_seed_primary_means": [
+        0.5,
+        0.5,
+        0.4167,
+        0.5833,
+        0.5833
+      ],
+      "sd": 0.0697,
+      "sd_ci95": [
+        0.0418,
+        0.2003
+      ]
+    },
+    {
+      "arm": "T1",
+      "per_seed_primary_means": [
+        0.4167,
+        0.5833,
+        0.5,
+        0.5833,
+        0.5833
+      ],
+      "sd": 0.0745,
+      "sd_ci95": [
+        0.0447,
+        0.2142
+      ]
+    },
+    {
+      "arm": "T2",
+      "per_seed_primary_means": [
+        0.5833,
+        0.5833,
+        0.6667,
+        0.5,
+        0.5833
+      ],
+      "sd": 0.0589,
+      "sd_ci95": [
+        0.0353,
+        0.1693
+      ]
+    },
+    {
+      "arm": "T3",
+      "per_seed_primary_means": [
+        0.5833,
+        0.5,
+        0.5833,
+        0.5,
+        0.5
+      ],
+      "sd": 0.0456,
+      "sd_ci95": [
+        0.0273,
+        0.1312
+      ]
+    }
+  ],
+  "guess_band": {
+    "operationalization": "guess_rate(arm) = max position share of guess replies; band = |guess_rate - 1/6|",
+    "per_arm": {
+      "A": {
+        "guess_probes": 30,
+        "valid_label_fraction": 0.933,
+        "max_position_share": 0.267,
+        "band": 0.1
+      },
+      "T0": {
+        "guess_probes": 30,
+        "valid_label_fraction": 0.8,
+        "max_position_share": 0.3,
+        "band": 0.133
+      },
+      "T1": {
+        "guess_probes": 30,
+        "valid_label_fraction": 0.867,
+        "max_position_share": 0.267,
+        "band": 0.1
+      },
+      "T2": {
+        "guess_probes": 30,
+        "valid_label_fraction": 1.0,
+        "max_position_share": 0.367,
+        "band": 0.2
+      },
+      "T3": {
+        "guess_probes": 30,
+        "valid_label_fraction": 0.9,
+        "max_position_share": 0.267,
+        "band": 0.1
+      }
+    },
+    "max_band": 0.2,
+    "caveat_fires": true,
+    "caveat": "primary effect does not clear the guessing band"
+  },
+  "secondary_contrasts": {
+    "T0-T2": {
+      "per_cluster": {
+        "cr-4001": {
+          "T0": 1.0,
+          "T2": 1.0
+        },
+        "cr-4002": {
+          "T0": 0.6,
+          "T2": 0.4
+        },
+        "cr-4003": {
+          "T0": 1.0,
+          "T2": 0.8
+        },
+        "cr-4004": {
+          "T0": 0.6,
+          "T2": 0.6
+        },
+        "cr-4005": {
+          "T0": 0.4,
+          "T2": 0.4
+        },
+        "cr-4006": {
+          "T0": 0.4,
+          "T2": 0.6
+        },
+        "cr-4007": {
+          "T0": 0.0,
+          "T2": 0.4
+        },
+        "cr-4008": {
+          "T0": 0.8,
+          "T2": 0.8
+        },
+        "cu-4101": {
+          "T0": 0.8,
+          "T2": 0.0
+        },
+        "cu-4102": {
+          "T0": 0.6,
+          "T2": 0.8
+        },
+        "cu-4103": {
+          "T0": 0.0,
+          "T2": 0.6
+        },
+        "cu-4104": {
+          "T0": 0.0,
+          "T2": 0.6
+        }
+      },
+      "delta_mean": -0.0667,
+      "ci95": [
+        -0.2667,
+        0.15
+      ],
+      "bootstrap": {
+        "resamples": 10000,
+        "rng_seed": 20261007,
+        "method": "cluster percentile"
+      },
+      "note": "secondary/exploratory: cycle-1 contrast re-measured post-fix; not promotable"
+    },
+    "T0-T3": {
+      "per_cluster": {
+        "cr-4001": {
+          "T0": 1.0,
+          "T3": 1.0
+        },
+        "cr-4002": {
+          "T0": 0.6,
+          "T3": 0.6
+        },
+        "cr-4003": {
+          "T0": 1.0,
+          "T3": 1.0
+        },
+        "cr-4004": {
+          "T0": 0.6,
+          "T3": 0.8
+        },
+        "cr-4005": {
+          "T0": 0.4,
+          "T3": 0.4
+        },
+        "cr-4006": {
+          "T0": 0.4,
+          "T3": 0.4
+        },
+        "cr-4007": {
+          "T0": 0.0,
+          "T3": 0.2
+        },
+        "cr-4008": {
+          "T0": 0.8,
+          "T3": 1.0
+        },
+        "cu-4101": {
+          "T0": 0.8,
+          "T3": 0.0
+        },
+        "cu-4102": {
+          "T0": 0.6,
+          "T3": 0.4
+        },
+        "cu-4103": {
+          "T0": 0.0,
+          "T3": 0.2
+        },
+        "cu-4104": {
+          "T0": 0.0,
+          "T3": 0.4
+        }
+      },
+      "delta_mean": -0.0167,
+      "ci95": [
+        -0.1667,
+        0.1667
+      ],
+      "bootstrap": {
+        "resamples": 10000,
+        "rng_seed": 20261008,
+        "method": "cluster percentile"
+      },
+      "note": "secondary/exploratory: cycle-1 contrast re-measured post-fix; not promotable"
+    }
+  },
+  "family_pass_by_arm": {
+    "contradiction_update": {
+      "A": 0.35,
+      "T0": 0.65,
+      "T1": 0.7,
+      "T2": 0.5,
+      "T3": 0.75
+    },
+    "correction_reuse": {
+      "A": 0.1,
+      "T0": 0.4,
+      "T1": 0.35,
+      "T2": 0.375,
+      "T3": 0.325
+    },
+    "delayed_recall": {
+      "A": 0.133,
+      "T0": 1.0,
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 1.0
+    },
+    "distractor_recall": {
+      "A": 0.133,
+      "T0": 1.0,
+      "T1": 1.0,
+      "T2": 1.0,
+      "T3": 1.0
+    },
+    "repeated_task": {
+      "A": 0.233,
+      "T0": 0.2,
+      "T1": 0.3,
+      "T2": 0.233,
+      "T3": 0.0
+    }
+  },
+  "tokens_wall": {
+    "A": {
+      "wall_s_sum": 1492.0,
+      "tokens_sum": 68615,
+      "arm_seeds_present": 5
+    },
+    "T0": {
+      "wall_s_sum": 1571.6,
+      "tokens_sum": 156505,
+      "arm_seeds_present": 5
+    },
+    "T1": {
+      "wall_s_sum": 1589.2,
+      "tokens_sum": 165341,
+      "arm_seeds_present": 5
+    },
+    "T2": {
+      "wall_s_sum": 1660.4,
+      "tokens_sum": 179581,
+      "arm_seeds_present": 5
+    },
+    "T3": {
+      "wall_s_sum": 1794.9,
+      "tokens_sum": 214435,
+      "arm_seeds_present": 5
+    }
+  }
+}

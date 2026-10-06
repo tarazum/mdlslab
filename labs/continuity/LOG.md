@@ -1787,3 +1787,42 @@ run (~2.5 h GPU).
   PASS 7/7 x 5 seeds into tmp (byte-comparable details, committed artifacts
   untouched), then run_confirmatory_v3.py WITHOUT --skip-digest-verify
   ("freeze digests verified ... byte-match" printed before preflight ok).
+
+## 2026-10-07 — CONFIRMATORY COMPLETE 25/25: frozen verdict "no confirmatory difference established"
+
+Run of record: results/CONT-005-C2-CONFIRMATORY/confirm-c2-20261006-230445 —
+all 25 arm-seeds completed (23:04-01:20, ~2h16m wall/GPU, 3250 requests, zero
+retries, single execution rev bb515ff, digest preflight line present before
+preflight ok). Analysis from the FROZEN analyze_confirmatory_v3.py only.
+
+**Primary (T0 - T1): delta -0.0167, 95% CI [-0.1667, 0.1000] -> "no
+confirmatory difference established."** The CI is tight (+-0.13) and excludes
+the pre-registered MME 0.25 in BOTH directions — an informative null:
+provenance annotations neither reduce nor increase label-form errors on the
+rebalanced mid-difficulty surface. Guess-band caveat fired (max arm band
+0.20; signed comparison per GATE-V3B condition D). Secondary contrasts also
+null: T0-T2 -0.0667 CI [-0.2667, 0.1500]; T0-T3 -0.0167 CI [-0.1667, 0.1667]
+— the heavier trust machineries show no post-fix effect either.
+
+Design targets hit: CU family error 0.05 (pilot) -> T0 0.35 / T1 0.30
+(rebalance worked; both families mid-scale); per-seed spread tight (T0 sd
+0.070, T1 sd 0.075); per-cluster surface mostly live (cr-4001 floored 1.0/1.0
+— anchoring persists on the own-answer cluster; cr-4007 + cu-4103/4104 zeroed
+— cu-4103 means BOTH arms solved the verified-correction-vs-user-push
+recency-defeat).
+
+Echo fix verified in the wild: bracket echo 0 replies (pilot 31+39); residual
+NOTE: prose echo 19/650 (T2) and 52/650 (T3); invalid-format T1 4/60, T2
+7/60, T3 12/60 vs T0 11/60 — no format blow-up from the NOTE flags (the
+gate's T0-only bracket-asymmetry concern did not materialize into a delta).
+
+Cycle-1 label-level finding NOT replicated: trap repeats T1 8/60 vs T0 7/60
+(cycle 1: T1 0/90 vs T0 15/90) — T1's earlier cleanliness was a surface
+artifact, not an annotation effect. A-arm sanity: error 0.82 without memory
+vs ~0.53-0.60 with — the memory effect itself replicates strongly. Token
+cost: T1 +5.6% vs T0 (cycle 1: +21%); T3 +37%.
+
+Owner brief: docs/OWNER-BRIEF-CONT005-C2-CONFIRMATORY.md (decisions: accept
+result + close direction; accept Opus gate substitution; annotate the results
+digest; next thread CONT-002). CONT-005 closes either way per the
+pre-registered plan.
