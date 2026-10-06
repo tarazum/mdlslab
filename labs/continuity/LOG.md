@@ -1654,3 +1654,22 @@ validator v3i PASS 16/16 (+ v3/v3h regressions PASS), assembly gate PASS 7/7
 x all five seeds (fresh artifacts); 4) frozen-config-v3a.json digest manifest
 (next commit, records the frozen-content rev); 5) Fable non-executor gate;
 6) pilot launch.
+
+## 2026-10-06 — GATE-V3A PASS (Fable, non-executor) -> PILOT LAUNCHED
+
+- Fable gate: **GO** (6/6 checks; 19/25 digests re-hashed independently; the 6
+  computed digests verified by chain via fixture-validation-v3i.json's
+  suite_sha256; full verdict in docs/GATE-V3A.md).
+- Sandbox condition executed by the executor pre-launch (all byte-match):
+  fixtures/v3i_suite f5c0f5a9bab7...; rendered seeds 2001-2005
+  4527d3a2a51a..., 56cf3b1743ae..., 148618c35212..., 6ff9468295f2...,
+  2d7f3eee242a... **Rendered-digest recipe (GATE-V3A condition b, fixed as
+  the run-record reference): sha256 over the concatenation of
+  json.dumps(scenario, sort_keys=True, ensure_ascii=True) for the seed's
+  rendered scenarios sorted by id, rendering = continuity.fixtures.
+  render_seed_variant (the same code path run_pilot_v3.py uses).**
+- Gate conditions (a) done, (b) recorded above, (c) binding: post-run numbers
+  come ONLY from the frozen analyze_pilot_v3.py.
+- Pilot launched via run_pilot_v3.py (arms T0,T1,A,T2,T3 x seeds
+  {2001..2005}, per-seed variants, ~140-160 min GPU expected under the shared
+  lock; wall clock the GPU metric per CN-002).
