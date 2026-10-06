@@ -1,0 +1,746 @@
+{
+  "run_id": "pilot-c2-20261006-093202-A-seed2003",
+  "arm": "A",
+  "seed": 2003,
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-3301",
+      "family": "delayed_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 320,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "L41",
+          "observed_normalized": "p62.",
+          "observed_label": "P62",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.7
+    },
+    {
+      "scenario": "dr-3302",
+      "family": "delayed_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 319,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "S39",
+          "observed_normalized": "x83.",
+          "observed_label": "X83",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dr-3303",
+      "family": "delayed_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 323,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "X43",
+          "observed_normalized": "the nursery gate code is c87.",
+          "observed_label": "C87",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dx-3401",
+      "family": "distractor_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 317,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "H56",
+          "observed_normalized": "j67.",
+          "observed_label": "J67",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "dx-3402",
+      "family": "distractor_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 315,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "S47",
+          "observed_normalized": "r39.",
+          "observed_label": "R39",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.7
+    },
+    {
+      "scenario": "dx-3403",
+      "family": "distractor_recall",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 315,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "X35",
+          "observed_normalized": "acknowledged.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.7
+    },
+    {
+      "scenario": "cu-3101",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 365,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "25",
+          "observed_normalized": "25.",
+          "observed_label": "25",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.1
+    },
+    {
+      "scenario": "cu-3102",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 341,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "52",
+          "observed_normalized": "48",
+          "observed_label": "48",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.0
+    },
+    {
+      "scenario": "cu-3103",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 351,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "12",
+          "observed_normalized": "22",
+          "observed_label": "22",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.2
+    },
+    {
+      "scenario": "cu-3104",
+      "family": "contradiction_update",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 357,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "28",
+          "observed_normalized": "28",
+          "observed_label": "28",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.3
+    },
+    {
+      "scenario": "rt-3201",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 647,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tickets",
+          "observed_normalized": "the duty is 'pull the online orders for tonight.' the options provided are posters, ushering, accounts, rentals, tickets, and seating. the correct label for this duty is 'pull the online orders for tonight.'",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.3
+    },
+    {
+      "scenario": "rt-3202",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 608,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "accounts",
+          "observed_normalized": "the duty is 'seating'.",
+          "observed_label": "seating",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.5
+    },
+    {
+      "scenario": "rt-3203",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 640,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "posters",
+          "observed_normalized": "the duty is 'mount the review excerpts before the doors.' the options provided are tickets, seating, posters, ushering, accounts, and rentals. the correct label for this duty is 'ushering.'",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.0
+    },
+    {
+      "scenario": "rt-3204",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 586,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "supply",
+          "observed_normalized": "the correct duty is \"supply\". the other options are for different tasks that could be done in the same situation as the one described in the prompt, but they are not the same task as the one described.",
+          "observed_label": "supply",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.5
+    },
+    {
+      "scenario": "rt-3205",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 571,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "radio",
+          "observed_normalized": "the duty is \"acknowledge the trail set at the fixed hour.\"",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.2
+    },
+    {
+      "scenario": "rt-3206",
+      "family": "repeated_task",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 656,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "repair",
+          "observed_normalized": "the correct label for this duty is \"supply\". the other options listed are not the correct duties for this situation. \"patrol\" and \"repair\" are not related to the task of seat the kitchen shelf pins before the next bus. \"radio\" and \"weather\" are not relevant to the job either. \"guests\" is also not a valid duty in this scenario. the only duty that makes sense is \"supply\", which is the task of seat the kitchen shelf pins before the next bus.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.8
+    },
+    {
+      "scenario": "cr-3001",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 779,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "lessons",
+          "observed_normalized": "booked: lessons.",
+          "observed_label": "lessons",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.6
+    },
+    {
+      "scenario": "cr-3002",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 829,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "aquafit",
+          "observed_normalized": "booked: resistance-band water block.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.6
+    },
+    {
+      "scenario": "cr-3003",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 744,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "rescue",
+          "observed_normalized": "log the riverside child-missing assist call.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.5
+    },
+    {
+      "scenario": "cr-3004",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 645,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "engine",
+          "observed_normalized": "utility.",
+          "observed_label": "utility",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 12.6
+    },
+    {
+      "scenario": "cr-3005",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 5,
+      "tokens_total": 610,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "gear",
+          "observed_normalized": "gear",
+          "observed_label": "gear",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.2
+    },
+    {
+      "scenario": "cr-3006",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 847,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "utility",
+          "observed_normalized": "utility.",
+          "observed_label": "utility",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 15.9
+    },
+    {
+      "scenario": "cr-3007",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 3,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 765,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "therapy",
+          "observed_normalized": "squad.",
+          "observed_label": "squad",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.5
+    },
+    {
+      "scenario": "cr-3008",
+      "family": "correction_reuse",
+      "arm": "A",
+      "sessions_planned": 4,
+      "memory_episodes": 0,
+      "turns": 6,
+      "tokens_total": 625,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tanker",
+          "observed_normalized": "utility.",
+          "observed_label": "utility",
+          "passed": false,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 13.9
+    },
+    {
+      "scenario": "gc-3501",
+      "family": "guess_calibration",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 421,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the rose pavilion door faces east.",
+          "observed_label": "east",
+          "observed_position": 0,
+          "labels": [
+            "east",
+            "west",
+            "upper",
+            "lower",
+            "north",
+            "south"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "there are 6 steps to reach the lily porch landing.",
+          "observed_label": "6",
+          "observed_position": 2,
+          "labels": [
+            "4",
+            "5",
+            "6",
+            "7",
+            "2",
+            "3"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.1
+    },
+    {
+      "scenario": "gc-3502",
+      "family": "guess_calibration",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 405,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "teal.",
+          "observed_label": "teal",
+          "observed_position": 2,
+          "labels": [
+            "indigo",
+            "olive",
+            "teal",
+            "amber",
+            "violet",
+            "crimson"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "9.",
+          "observed_label": "9",
+          "observed_position": 1,
+          "labels": [
+            "8",
+            "9",
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "gc-3503",
+      "family": "guess_calibration",
+      "arm": "A",
+      "sessions_planned": 2,
+      "memory_episodes": 0,
+      "turns": 4,
+      "tokens_total": 444,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the call sign band is willow.",
+          "observed_label": "willow",
+          "observed_position": 4,
+          "labels": [
+            "cedar",
+            "birch",
+            "rowan",
+            "hawthorn",
+            "willow",
+            "alder"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "there are 11 helmets hanging by the rescue bay rack.",
+          "observed_label": "11",
+          "observed_position": 5,
+          "labels": [
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.1
+    }
+  ],
+  "probes_passed": 6,
+  "probes_total": 24,
+  "guess_probes": 6,
+  "turns": 128,
+  "tokens_total": 14145,
+  "budget_stops": 0,
+  "wall_s": 303.1,
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true,
+  "dir": "A/seed-2003"
+}

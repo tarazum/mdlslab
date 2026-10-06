@@ -1,0 +1,747 @@
+{
+  "run_id": "pilot-c2-20261006-093202-T3-seed2002",
+  "arm": "T3",
+  "seed": 2002,
+  "model": "granite-code:8b",
+  "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+  "scenario_summaries": [
+    {
+      "scenario": "dr-3301",
+      "family": "delayed_recall",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 864,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "J23",
+          "observed_normalized": "j23",
+          "observed_label": "J23",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.9
+    },
+    {
+      "scenario": "dr-3302",
+      "family": "delayed_recall",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 864,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "R47",
+          "observed_normalized": "r47",
+          "observed_label": "R47",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.9
+    },
+    {
+      "scenario": "dr-3303",
+      "family": "delayed_recall",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 855,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "W57",
+          "observed_normalized": "w57",
+          "observed_label": "W57",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.9
+    },
+    {
+      "scenario": "dx-3401",
+      "family": "distractor_recall",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 862,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "G48",
+          "observed_normalized": "g48",
+          "observed_label": "G48",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.9
+    },
+    {
+      "scenario": "dx-3402",
+      "family": "distractor_recall",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 854,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "R39",
+          "observed_normalized": "r39",
+          "observed_label": "R39",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.9
+    },
+    {
+      "scenario": "dx-3403",
+      "family": "distractor_recall",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 857,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "W27",
+          "observed_normalized": "w27",
+          "observed_label": "W27",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 8.8
+    },
+    {
+      "scenario": "cu-3101",
+      "family": "contradiction_update",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 1092,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "23",
+          "observed_normalized": "23",
+          "observed_label": "23",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.6
+    },
+    {
+      "scenario": "cu-3102",
+      "family": "contradiction_update",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 920,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "44",
+          "observed_normalized": "32",
+          "observed_label": "32",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.4
+    },
+    {
+      "scenario": "cu-3103",
+      "family": "contradiction_update",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 1040,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "18",
+          "observed_normalized": "25",
+          "observed_label": "25",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 10.0
+    },
+    {
+      "scenario": "cu-3104",
+      "family": "contradiction_update",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 950,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "32",
+          "observed_normalized": "24",
+          "observed_label": "24",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.7
+    },
+    {
+      "scenario": "rt-3201",
+      "family": "repeated_task",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1971,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tickets",
+          "observed_normalized": "(recorded in session 1; trust: plain-statement) the duty \"stage the named envelopes for tonight\" falls under the label of \"accounts\".",
+          "observed_label": "accounts",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.7
+    },
+    {
+      "scenario": "rt-3202",
+      "family": "repeated_task",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1409,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "accounts",
+          "observed_normalized": "(recorded in session 1; trust: plain-statement) sort this duty. the slate cards are not at hand. duty: 'reconcile the kiosk cash after the doors.' options: ushering | accounts | rentals | tickets | seating | posters - reply with the label only. the agent's own earlier answer - lowest trust; verified guides and observations govern.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.5
+    },
+    {
+      "scenario": "rt-3203",
+      "family": "repeated_task",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 2062,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "posters",
+          "observed_normalized": "(recorded in session 1; trust: plain-statement) sort this duty. the slate cards are not at hand. duty: 'pin the cast sheets before the doors.' options: rentals | tickets | seating | posters | ushering | accounts - reply with the label only. (recorded in session 1; source: agent_answer; verification: verified; trust: verified-observation) the sandwich-board swap is a posters duty. [resolved: the agent's own earlier answer - lowest trust; verified guides and observations govern] (recorded in session 1; source: agent_answer; verification: verified; trust: verified-observation) the sandwich-board swap is a tickets duty. (recorded in session 1; source: agent_answer; verification: verified; trust: verified-observation) your earlier duty sheet routes the sandwich-board swap under 'rentals'. the standing card, verified: lobby displays and printed matter are posters; hiring out the venue spaces is rentals. amend the sheet in one short line. [resolved: the agent's own earlier",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 18.2
+    },
+    {
+      "scenario": "rt-3204",
+      "family": "repeated_task",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1688,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "supply",
+          "observed_normalized": "(recorded in session 1; trust: plain-statement) sort this duty. the slate cards are not at hand. duty: 'carry the lamp oil before dusk.' options: repair | radio | weather | guests | supply | patrol - reply with the label only. supply.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 15.1
+    },
+    {
+      "scenario": "rt-3205",
+      "family": "repeated_task",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1436,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "radio",
+          "observed_normalized": "(recorded in session 1; trust: plain-statement) sort this duty. the slate cards are not at hand. duty: 'confirm the ridge relay at the fixed hour.' options: weather | guests | supply | patrol | repair | radio - reply with the label only. supply.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.0
+    },
+    {
+      "scenario": "rt-3206",
+      "family": "repeated_task",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1366,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "repair",
+          "observed_normalized": "(recorded in session 1; trust: plain-statement) sort this duty. the slate cards are not at hand. duty: 'tighten the dining benches before the next bus.' options: supply | patrol | repair | radio | weather | guests - reply with the label only. supply.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.0
+    },
+    {
+      "scenario": "cr-3001",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2172,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "lessons",
+          "observed_normalized": "the booking is for a pike stroke clinic, which is not related to the other activities listed on the desk card. therefore, the only appropriate label for this booking is \"gear\".",
+          "observed_label": "gear",
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.2
+    },
+    {
+      "scenario": "cr-3002",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 3076,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "aquafit",
+          "observed_normalized": "the booking is for a walk-in to the dusk aqua-motion block. the options are squad, gear, upkeep, lessons, aquafit, and therapy. since the desk card is not at hand, the booking is for a walk-in to the dusk aqua-motion block. therefore, the label is aquafit.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 19.5
+    },
+    {
+      "scenario": "cr-3003",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2177,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "rescue",
+          "observed_normalized": "acknowledged.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.9
+    },
+    {
+      "scenario": "cr-3004",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1768,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "engine",
+          "observed_normalized": "log the booster pump hookup on crane street. the roster card is not at hand. call: 'log the booster pump hookup on crane street.' options: ladder | rescue | utility | command | engine | tanker - reply with the label only. (recorded in session 1; source: user; trust: unverified-statement) the booster pump hookup on crane street is a utility matter. log it as utility.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.5
+    },
+    {
+      "scenario": "cr-3005",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 10,
+      "turns": 5,
+      "tokens_total": 1531,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "gear",
+          "observed_normalized": "gear",
+          "observed_label": "gear",
+          "passed": true,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 1,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 11.2
+    },
+    {
+      "scenario": "cr-3006",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1944,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "utility",
+          "observed_normalized": "log the sandbag loader relocation request.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.3
+    },
+    {
+      "scenario": "cr-3007",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 3,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 1941,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "therapy",
+          "observed_normalized": "the booking is for a physio discharge case, which is not related to the pool desk card. the booking is not sorted into any of the options provided.",
+          "observed_label": null,
+          "passed": false,
+          "turn_ref": "s3t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 14.3
+    },
+    {
+      "scenario": "cr-3008",
+      "family": "correction_reuse",
+      "arm": "T3",
+      "sessions_planned": 4,
+      "memory_episodes": 12,
+      "turns": 6,
+      "tokens_total": 2099,
+      "probes": [
+        {
+          "kind": "exact_match",
+          "expected": "tanker",
+          "observed_normalized": "engine",
+          "observed_label": "engine",
+          "passed": false,
+          "turn_ref": "s4t2"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 1,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 15.6
+    },
+    {
+      "scenario": "gc-3501",
+      "family": "guess_calibration",
+      "arm": "T3",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 797,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the palm house door faces east.",
+          "observed_label": "east",
+          "observed_position": 1,
+          "labels": [
+            "south",
+            "east",
+            "west",
+            "upper",
+            "lower",
+            "north"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "there are 6 steps to reach the cactus house landing.",
+          "observed_label": "6",
+          "observed_position": 1,
+          "labels": [
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "4"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.2
+    },
+    {
+      "scenario": "gc-3502",
+      "family": "guess_calibration",
+      "arm": "T3",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 803,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "the deep well depth marker is indigo.",
+          "observed_label": "indigo",
+          "observed_position": 1,
+          "labels": [
+            "crimson",
+            "indigo",
+            "olive",
+            "teal",
+            "amber",
+            "violet"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "there are 7 lanes under the south boom roof.",
+          "observed_label": "7",
+          "observed_position": 1,
+          "labels": [
+            "6",
+            "7",
+            "8",
+            "3",
+            "4",
+            "5"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.3
+    },
+    {
+      "scenario": "gc-3503",
+      "family": "guess_calibration",
+      "arm": "T3",
+      "sessions_planned": 2,
+      "memory_episodes": 8,
+      "turns": 4,
+      "tokens_total": 852,
+      "probes": [
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "acknowledged.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "alder",
+            "cedar",
+            "birch",
+            "rowan",
+            "hawthorn",
+            "willow"
+          ],
+          "passed": null,
+          "turn_ref": "s2t2"
+        },
+        {
+          "kind": "guess_calibration",
+          "expected": null,
+          "observed_normalized": "acknowledged.",
+          "observed_label": null,
+          "observed_position": null,
+          "labels": [
+            "10",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "passed": null,
+          "turn_ref": "s2t3"
+        }
+      ],
+      "probes_passed": 0,
+      "probes_total": 2,
+      "stopped": false,
+      "budget_violation": null,
+      "duration_s": 9.1
+    }
+  ],
+  "probes_passed": 8,
+  "probes_total": 24,
+  "guess_probes": 6,
+  "turns": 128,
+  "tokens_total": 38250,
+  "budget_stops": 0,
+  "wall_s": 328.5,
+  "memory_episodes": 256,
+  "trace_schema_valid": true,
+  "trace_validation_errors": [],
+  "completed": true,
+  "dir": "T3/seed-2002"
+}

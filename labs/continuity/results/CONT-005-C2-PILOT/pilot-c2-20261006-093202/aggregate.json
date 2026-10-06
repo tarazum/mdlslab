@@ -1,0 +1,603 @@
+{
+  "pilot": {
+    "run_id": "pilot-c2-20261006-093202",
+    "kind": "cont005-c2-pilot",
+    "created_utc": "2026-10-06T08:45:44Z",
+    "git_rev": "b91a014550d0a7043833b3da8a802553a8af6257",
+    "model": "granite-code:8b",
+    "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+    "ollama_version": "0.34.2",
+    "arms_predeclared": [
+      "T0",
+      "T1",
+      "A",
+      "T2",
+      "T3"
+    ],
+    "seeds_predeclared": [
+      2001,
+      2002,
+      2003,
+      2004,
+      2005
+    ],
+    "suite": "fixtures/v3i (27 scenarios, per-seed rendered variants)",
+    "expectations_ex_ante": [
+      "X1 per-family headroom: CR and CU family mean error inside (0.15, 0.85) in T0 and T1 (else rebalance that family in v3j at FREEZE-B)",
+      "X2 between-seed spread: reported per arm with df=4 CI; sd > 0.25 -> P4 stress row + owner sign-off",
+      "X3 live clusters (both primary arms inside (0.10, 0.90)) >= 8/12; else P5 row + owner sign-off",
+      "X4 residual echo: zero '[RESOLVED' substrings in T2/T3 replies; else NOTE: prose fix at FREEZE-B (pre-authorized)",
+      "X5 guess probes: valid-label fraction ~1.0, max position share <= 0.5 (variant rotation compresses position concentration)"
+    ],
+    "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless",
+    "gpu_note": "run held the shared gpu lock; wall clock is the GPU metric (CN-002)",
+    "total_wall_s": 7970.4,
+    "total_tokens": 757123,
+    "requests_estimated": 3200,
+    "skipped": []
+  },
+  "runs": [
+    {
+      "arm": "T0",
+      "seed": 2001,
+      "dir": "T0/seed-2001",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 14,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 34282,
+      "wall_s": 340.2,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T0",
+      "seed": 2002,
+      "dir": "T0/seed-2002",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 13,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 30800,
+      "wall_s": 316.4,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T0",
+      "seed": 2003,
+      "dir": "T0/seed-2003",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 16,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 28962,
+      "wall_s": 296.5,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T0",
+      "seed": 2004,
+      "dir": "T0/seed-2004",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 14,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 31454,
+      "wall_s": 314.9,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T0",
+      "seed": 2005,
+      "dir": "T0/seed-2005",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 15,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 30374,
+      "wall_s": 316.5,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T1",
+      "seed": 2001,
+      "dir": "T1/seed-2001",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 16,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 34165,
+      "wall_s": 319.8,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T1",
+      "seed": 2002,
+      "dir": "T1/seed-2002",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 13,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 32571,
+      "wall_s": 316.2,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T1",
+      "seed": 2003,
+      "dir": "T1/seed-2003",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 15,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 31866,
+      "wall_s": 315.0,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T1",
+      "seed": 2004,
+      "dir": "T1/seed-2004",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 15,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 32830,
+      "wall_s": 324.2,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T1",
+      "seed": 2005,
+      "dir": "T1/seed-2005",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 15,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 30804,
+      "wall_s": 306.0,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "A",
+      "seed": 2001,
+      "dir": "A/seed-2001",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 14624,
+      "wall_s": 311.6
+    },
+    {
+      "arm": "A",
+      "seed": 2002,
+      "dir": "A/seed-2002",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 6,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 14324,
+      "wall_s": 303.1
+    },
+    {
+      "arm": "A",
+      "seed": 2003,
+      "dir": "A/seed-2003",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 6,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 14145,
+      "wall_s": 303.1
+    },
+    {
+      "arm": "A",
+      "seed": 2004,
+      "dir": "A/seed-2004",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 5,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 14107,
+      "wall_s": 301.2
+    },
+    {
+      "arm": "A",
+      "seed": 2005,
+      "dir": "A/seed-2005",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 14153,
+      "wall_s": 301.9
+    },
+    {
+      "arm": "T2",
+      "seed": 2001,
+      "dir": "T2/seed-2001",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 12,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 36408,
+      "wall_s": 339.6,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T2",
+      "seed": 2002,
+      "dir": "T2/seed-2002",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 11,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 34648,
+      "wall_s": 323.8,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T2",
+      "seed": 2003,
+      "dir": "T2/seed-2003",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 12,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 32925,
+      "wall_s": 306.9,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T2",
+      "seed": 2004,
+      "dir": "T2/seed-2004",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 14,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 34298,
+      "wall_s": 316.2,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T2",
+      "seed": 2005,
+      "dir": "T2/seed-2005",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 13,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 34260,
+      "wall_s": 329.1,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T3",
+      "seed": 2001,
+      "dir": "T3/seed-2001",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 12,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 41604,
+      "wall_s": 345.3,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T3",
+      "seed": 2002,
+      "dir": "T3/seed-2002",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 8,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 38250,
+      "wall_s": 328.5,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T3",
+      "seed": 2003,
+      "dir": "T3/seed-2003",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 12,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 37719,
+      "wall_s": 324.0,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T3",
+      "seed": 2004,
+      "dir": "T3/seed-2004",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 12,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 40156,
+      "wall_s": 338.9,
+      "memory_episodes": 256
+    },
+    {
+      "arm": "T3",
+      "seed": 2005,
+      "dir": "T3/seed-2005",
+      "completed": true,
+      "trace_schema_valid": true,
+      "budget_stops": 0,
+      "probes_passed": 12,
+      "probes_total": 24,
+      "guess_probes": 6,
+      "turns": 128,
+      "tokens_total": 37394,
+      "wall_s": 331.5,
+      "memory_episodes": 256
+    }
+  ],
+  "per_arm": {
+    "T0": {
+      "per_family_pass": {
+        "delayed_recall": {
+          "mean": 1.0,
+          "n": 15
+        },
+        "distractor_recall": {
+          "mean": 1.0,
+          "n": 15
+        },
+        "contradiction_update": {
+          "mean": 0.95,
+          "n": 20
+        },
+        "repeated_task": {
+          "mean": 0.333,
+          "n": 30
+        },
+        "correction_reuse": {
+          "mean": 0.325,
+          "n": 40
+        }
+      },
+      "guess": {
+        "probes": 30,
+        "valid_label": 30,
+        "positions": {
+          "2": 4,
+          "3": 7,
+          "5": 3,
+          "1": 12,
+          "0": 1,
+          "4": 3
+        },
+        "valid_fraction": 1.0,
+        "max_position_share": 0.4
+      }
+    },
+    "T1": {
+      "per_family_pass": {
+        "delayed_recall": {
+          "mean": 1.0,
+          "n": 15
+        },
+        "distractor_recall": {
+          "mean": 1.0,
+          "n": 15
+        },
+        "contradiction_update": {
+          "mean": 0.95,
+          "n": 20
+        },
+        "repeated_task": {
+          "mean": 0.433,
+          "n": 30
+        },
+        "correction_reuse": {
+          "mean": 0.3,
+          "n": 40
+        }
+      },
+      "guess": {
+        "probes": 30,
+        "valid_label": 28,
+        "positions": {
+          "2": 6,
+          "3": 5,
+          "5": 4,
+          "1": 11,
+          "0": 1,
+          "4": 1
+        },
+        "valid_fraction": 0.933,
+        "max_position_share": 0.367
+      }
+    },
+    "A": {
+      "per_family_pass": {
+        "delayed_recall": {
+          "mean": 0.133,
+          "n": 15
+        },
+        "distractor_recall": {
+          "mean": 0.067,
+          "n": 15
+        },
+        "contradiction_update": {
+          "mean": 0.4,
+          "n": 20
+        },
+        "repeated_task": {
+          "mean": 0.267,
+          "n": 30
+        },
+        "correction_reuse": {
+          "mean": 0.35,
+          "n": 40
+        }
+      },
+      "guess": {
+        "probes": 30,
+        "valid_label": 30,
+        "positions": {
+          "2": 7,
+          "3": 5,
+          "5": 4,
+          "0": 3,
+          "1": 8,
+          "4": 3
+        },
+        "valid_fraction": 1.0,
+        "max_position_share": 0.267
+      }
+    },
+    "T2": {
+      "per_family_pass": {
+        "delayed_recall": {
+          "mean": 1.0,
+          "n": 15
+        },
+        "distractor_recall": {
+          "mean": 1.0,
+          "n": 15
+        },
+        "contradiction_update": {
+          "mean": 0.5,
+          "n": 20
+        },
+        "repeated_task": {
+          "mean": 0.4,
+          "n": 30
+        },
+        "correction_reuse": {
+          "mean": 0.25,
+          "n": 40
+        }
+      },
+      "guess": {
+        "probes": 30,
+        "valid_label": 24,
+        "positions": {
+          "5": 3,
+          "1": 8,
+          "0": 3,
+          "3": 3,
+          "2": 6,
+          "4": 1
+        },
+        "valid_fraction": 0.8,
+        "max_position_share": 0.267
+      }
+    },
+    "T3": {
+      "per_family_pass": {
+        "delayed_recall": {
+          "mean": 1.0,
+          "n": 15
+        },
+        "distractor_recall": {
+          "mean": 1.0,
+          "n": 15
+        },
+        "contradiction_update": {
+          "mean": 0.65,
+          "n": 20
+        },
+        "repeated_task": {
+          "mean": 0.067,
+          "n": 30
+        },
+        "correction_reuse": {
+          "mean": 0.275,
+          "n": 40
+        }
+      },
+      "guess": {
+        "probes": 30,
+        "valid_label": 22,
+        "positions": {
+          "2": 4,
+          "3": 4,
+          "5": 4,
+          "1": 8,
+          "0": 1,
+          "4": 1
+        },
+        "valid_fraction": 0.733,
+        "max_position_share": 0.267
+      }
+    }
+  }
+}

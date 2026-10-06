@@ -1673,3 +1673,42 @@ x all five seeds (fresh artifacts); 4) frozen-config-v3a.json digest manifest
 - Pilot launched via run_pilot_v3.py (arms T0,T1,A,T2,T3 x seeds
   {2001..2005}, per-seed variants, ~140-160 min GPU expected under the shared
   lock; wall clock the GPU metric per CN-002).
+
+## 2026-10-06 — CYCLE-2 PILOT COMPLETE: 25/25 arm-seeds, frozen GO/NO-GO verdict
+
+Run of record: results/CONT-005-C2-PILOT/pilot-c2-20261006-093202 — all 25
+arm-seeds (T0,T1,A,T2,T3 x seeds 2001-2005) completed, zero retries, ~128 min
+GPU (09:32-11:45), 3200 requests, wall/arm-seed ~296-345 s. Analysis from the
+FROZEN analyze_pilot_v3.py only (GATE-V3A condition c); pilot-go-nogo.json
+committed with the run.
+
+**Per-seed variants WORK**: per-seed primary means genuinely differ (T0
+0.333-0.583, sd 0.095 CI [0.057, 0.273]) — the cycle-1 degeneracy (identical
+answers everywhere) is gone; clause 2 PASS.
+
+**GO/NO-GO verdict: REBALANCE (CU) | OWNER SIGN-OFF (concentration) | ECHO
+FIX — all three routed actions at FREEZE-B, none silent:**
+- Clause 1 (per-family headroom): CR PASS both arms (T0 0.675, T1 0.700
+  error — mid-scale as designed); CU FAIL both arms (0.050 error — the
+  ceiling risk Fable named as the biggest design risk materialized: near-miss
+  options did not make CU hard) -> CU rebalanced in v3j.
+- Clause 3 (live clusters): 0/12. The surface is bimodal at cluster level:
+  cr-3001/3003/3004/3008 both arms floored at 1.0; cr-3005/3006/3007 both at
+  0.0 (the explicit-negation lever made the erroneous-user/conflict clusters
+  easy for everyone); cr-3002 T0 0.0 vs T1 1.0 (discriminates, both pinned);
+  CU all 0.0. The T1-vs-T0 delta on this surface (raw -0.017) is
+  uninformative — the pre-registered guardrail correctly refuses to treat it
+  as evidence. P5 row (0.705 at 8/12) governs + owner sign-off required.
+- Clause 4 (echo): [RESOLVED brackets present in 31/640 T2 and 39/640 T3
+  replies (NEXT-CYCLE-NOTES residual risk confirmed) -> flags move to plain
+  NOTE: prose at FREEZE-B (pre-authorized fix class).
+
+Exploratory secondaries (no verdicts): T2 CU pass 0.50 vs T0 0.95 — the R5
+supersession flags HURT T2 on CU this pilot; T2/T3 guess valid-label 0.80/
+0.733 vs 1.0 elsewhere (trust arms produce messier answers); DR/DX 1.0 for
+all memory arms (anchors saturated); RT T1 0.433 vs T0 0.333.
+
+NEXT: owner sign-off (clause-3 routing) -> FREEZE-B: author v3j with CU
+harder AND CR un-bimodalized (mid-difficulty clusters where arms can differ),
+NOTE: prose flags, fresh seeds {3001..3005}, analysis script FIRST, Fable
+gate, confirmatory run.

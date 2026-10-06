@@ -1,0 +1,387 @@
+{
+  "kind": "cont005-c2-pilot-go-nogo",
+  "created_utc": "2026-10-06T08:46:16Z",
+  "spec": "docs/EVALUATION-PREP-v3.md \u00a72 clauses 1-4 (PR-REVIEW-v3 RC1-RC3 folded)",
+  "run_root": "labs\\continuity\\results\\CONT-005-C2-PILOT\\pilot-c2-20261006-093202",
+  "seeds": [
+    2001,
+    2002,
+    2003,
+    2004,
+    2005
+  ],
+  "completeness": {
+    "primary_arm_seeds_expected": 10,
+    "primary_missing": [],
+    "secondary_missing": []
+  },
+  "per_cluster_primary": {
+    "cr-3001": {
+      "T0": 1.0,
+      "T1": 1.0
+    },
+    "cr-3002": {
+      "T0": 0.0,
+      "T1": 1.0
+    },
+    "cr-3003": {
+      "T0": 1.0,
+      "T1": 1.0
+    },
+    "cr-3004": {
+      "T0": 1.0,
+      "T1": 1.0
+    },
+    "cr-3005": {
+      "T0": 0.0,
+      "T1": 0.0
+    },
+    "cr-3006": {
+      "T0": 0.0,
+      "T1": 0.0
+    },
+    "cr-3007": {
+      "T0": 0.0,
+      "T1": 0.0
+    },
+    "cr-3008": {
+      "T0": 1.0,
+      "T1": 1.0
+    },
+    "cu-3101": {
+      "T0": 0.0,
+      "T1": 0.0
+    },
+    "cu-3102": {
+      "T0": 0.0,
+      "T1": 0.0
+    },
+    "cu-3103": {
+      "T0": 0.0,
+      "T1": 0.0
+    },
+    "cu-3104": {
+      "T0": 0.0,
+      "T1": 0.0
+    }
+  },
+  "error_decomposition_primary": {
+    "A": {
+      "correct": 22,
+      "wrong_label": 22,
+      "invalid_format": 16
+    },
+    "T0": {
+      "correct": 32,
+      "wrong_label": 12,
+      "invalid_format": 16
+    },
+    "T1": {
+      "correct": 31,
+      "wrong_label": 15,
+      "invalid_format": 14
+    },
+    "T2": {
+      "correct": 20,
+      "wrong_label": 22,
+      "invalid_format": 18
+    },
+    "T3": {
+      "correct": 24,
+      "wrong_label": 17,
+      "invalid_format": 19
+    }
+  },
+  "family_pass_by_arm": {
+    "A": {
+      "contradiction_update": 0.4,
+      "correction_reuse": 0.35,
+      "delayed_recall": 0.1333,
+      "distractor_recall": 0.0667,
+      "repeated_task": 0.2667
+    },
+    "T0": {
+      "contradiction_update": 0.95,
+      "correction_reuse": 0.325,
+      "delayed_recall": 1.0,
+      "distractor_recall": 1.0,
+      "repeated_task": 0.3333
+    },
+    "T1": {
+      "contradiction_update": 0.95,
+      "correction_reuse": 0.3,
+      "delayed_recall": 1.0,
+      "distractor_recall": 1.0,
+      "repeated_task": 0.4333
+    },
+    "T2": {
+      "contradiction_update": 0.5,
+      "correction_reuse": 0.25,
+      "delayed_recall": 1.0,
+      "distractor_recall": 1.0,
+      "repeated_task": 0.4
+    },
+    "T3": {
+      "contradiction_update": 0.65,
+      "correction_reuse": 0.275,
+      "delayed_recall": 1.0,
+      "distractor_recall": 1.0,
+      "repeated_task": 0.0667
+    }
+  },
+  "guess_by_arm": {
+    "A": {
+      "probes": 30,
+      "valid_fraction": 1.0,
+      "max_position_share": 0.267
+    },
+    "T0": {
+      "probes": 30,
+      "valid_fraction": 1.0,
+      "max_position_share": 0.4
+    },
+    "T1": {
+      "probes": 30,
+      "valid_fraction": 0.933,
+      "max_position_share": 0.367
+    },
+    "T2": {
+      "probes": 30,
+      "valid_fraction": 0.8,
+      "max_position_share": 0.267
+    },
+    "T3": {
+      "probes": 30,
+      "valid_fraction": 0.733,
+      "max_position_share": 0.267
+    }
+  },
+  "go_no_go": {
+    "clause1_headroom_per_family": {
+      "pass": false,
+      "rows": [
+        {
+          "arm": "T0",
+          "family": "correction_reuse",
+          "clusters": 8,
+          "mean_error": 0.675,
+          "inside_(0.15,0.85)": true
+        },
+        {
+          "arm": "T0",
+          "family": "contradiction_update",
+          "clusters": 4,
+          "mean_error": 0.05,
+          "inside_(0.15,0.85)": false
+        },
+        {
+          "arm": "T1",
+          "family": "correction_reuse",
+          "clusters": 8,
+          "mean_error": 0.7,
+          "inside_(0.15,0.85)": true
+        },
+        {
+          "arm": "T1",
+          "family": "contradiction_update",
+          "clusters": 4,
+          "mean_error": 0.05,
+          "inside_(0.15,0.85)": false
+        }
+      ],
+      "failures": [
+        "T0/contradiction_update=0.050",
+        "T1/contradiction_update=0.050"
+      ]
+    },
+    "clause2_spread": {
+      "pass": true,
+      "rows": [
+        {
+          "arm": "A",
+          "per_seed_primary_means": [
+            0.6667,
+            0.5833,
+            0.5833,
+            0.75,
+            0.5833
+          ],
+          "sd": 0.0745,
+          "sd_ci95": [
+            0.0447,
+            0.2142
+          ],
+          "ci_note": "chi-square df=4 (n=5); threshold judged on the point sd, CI reported (PR-REVIEW-v3 N3)"
+        },
+        {
+          "arm": "T0",
+          "per_seed_primary_means": [
+            0.5,
+            0.5,
+            0.4167,
+            0.5833,
+            0.3333
+          ],
+          "sd": 0.095,
+          "sd_ci95": [
+            0.0569,
+            0.273
+          ],
+          "ci_note": "chi-square df=4 (n=5); threshold judged on the point sd, CI reported (PR-REVIEW-v3 N3)",
+          "exceeds_0.25": false
+        },
+        {
+          "arm": "T1",
+          "per_seed_primary_means": [
+            0.5,
+            0.5833,
+            0.5,
+            0.4167,
+            0.4167
+          ],
+          "sd": 0.0697,
+          "sd_ci95": [
+            0.0418,
+            0.2003
+          ],
+          "ci_note": "chi-square df=4 (n=5); threshold judged on the point sd, CI reported (PR-REVIEW-v3 N3)",
+          "exceeds_0.25": false
+        },
+        {
+          "arm": "T2",
+          "per_seed_primary_means": [
+            0.6667,
+            0.8333,
+            0.6667,
+            0.6667,
+            0.5
+          ],
+          "sd": 0.1179,
+          "sd_ci95": [
+            0.0706,
+            0.3387
+          ],
+          "ci_note": "chi-square df=4 (n=5); threshold judged on the point sd, CI reported (PR-REVIEW-v3 N3)"
+        },
+        {
+          "arm": "T3",
+          "per_seed_primary_means": [
+            0.5,
+            0.8333,
+            0.5833,
+            0.5833,
+            0.5
+          ],
+          "sd": 0.1369,
+          "sd_ci95": [
+            0.082,
+            0.3935
+          ],
+          "ci_note": "chi-square df=4 (n=5); threshold judged on the point sd, CI reported (PR-REVIEW-v3 N3)"
+        }
+      ],
+      "exceeds": [],
+      "routing": "any exceed -> stress row P4 governs + owner sign-off before FREEZE-B"
+    },
+    "clause3_live_clusters": {
+      "pass": false,
+      "live_count": 0,
+      "need": 8,
+      "rows": [
+        {
+          "cluster": "cr-3001",
+          "T0": 1.0,
+          "T1": 1.0,
+          "live": false
+        },
+        {
+          "cluster": "cr-3002",
+          "T0": 0.0,
+          "T1": 1.0,
+          "live": false
+        },
+        {
+          "cluster": "cr-3003",
+          "T0": 1.0,
+          "T1": 1.0,
+          "live": false
+        },
+        {
+          "cluster": "cr-3004",
+          "T0": 1.0,
+          "T1": 1.0,
+          "live": false
+        },
+        {
+          "cluster": "cr-3005",
+          "T0": 0.0,
+          "T1": 0.0,
+          "live": false
+        },
+        {
+          "cluster": "cr-3006",
+          "T0": 0.0,
+          "T1": 0.0,
+          "live": false
+        },
+        {
+          "cluster": "cr-3007",
+          "T0": 0.0,
+          "T1": 0.0,
+          "live": false
+        },
+        {
+          "cluster": "cr-3008",
+          "T0": 1.0,
+          "T1": 1.0,
+          "live": false
+        },
+        {
+          "cluster": "cu-3101",
+          "T0": 0.0,
+          "T1": 0.0,
+          "live": false
+        },
+        {
+          "cluster": "cu-3102",
+          "T0": 0.0,
+          "T1": 0.0,
+          "live": false
+        },
+        {
+          "cluster": "cu-3103",
+          "T0": 0.0,
+          "T1": 0.0,
+          "live": false
+        },
+        {
+          "cluster": "cu-3104",
+          "T0": 0.0,
+          "T1": 0.0,
+          "live": false
+        }
+      ],
+      "routing": "< 8 live -> P5 row governs (0.705 at 8/12) + owner sign-off before FREEZE-B"
+    },
+    "clause4_residual_echo": {
+      "pass": false,
+      "rows": [
+        {
+          "arm": "T2",
+          "present": true,
+          "replies": 640,
+          "bracket_hits": 31
+        },
+        {
+          "arm": "T3",
+          "present": true,
+          "replies": 640,
+          "bracket_hits": 39
+        }
+      ],
+      "routing": "echo found -> flags move to plain NOTE: prose at FREEZE-B (pre-authorized)"
+    }
+  },
+  "verdict": "REBALANCE at FREEZE-B (openly declared): T0/contradiction_update=0.050, T1/contradiction_update=0.050 | OWNER SIGN-OFF (live clusters 0/12 < 8 -> P5 row governs) | ECHO FIX at FREEZE-B (NOTE: prose, pre-authorized)",
+  "verdict_note": "GO/NO-GO for the confirmatory stage only; the pilot makes NO confirmatory claims (no bootstrap verdict is computed here \u2014 that is the FREEZE-B analysis script)"
+}
