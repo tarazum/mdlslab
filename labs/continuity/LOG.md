@@ -2150,3 +2150,27 @@ Zero repeated inference attempts survived; failed attempts kept as evidence
 - NEXT: resume the pilot run root cont002-pilot-20261007-230147 under the
   GPU lock with the condition-C chain — only the failed B/GC-B cells re-run;
   the completed A-side (dA 0.8667) is reused as-is.
+
+## 2026-10-08 — CONT-002 PILOT COMPLETE (resumed): frozen analyzer GO; preliminary R 0.962
+
+- Resume (2d38028 think-pin): only the failed B/GC-B cells re-ran; the
+  A-side and exports reused verbatim (zero repeated inference; failed
+  attempt dirs from run 1 kept as evidence).
+- B cells now clean: B-restored 15/15 + 15/15 (100%), B-clean 4/15 (0.267)
+  + 1/15 (0.067), GC-B 0/6 + 0/6 (unscored guess probes; band 0.0 over 12
+  word probes). Wall: 93 s / 81 s per B cell-seed — far under every
+  estimate (think-pin also killed the ramble mode).
+- **Frozen analyzer verdict: GO** (pilot-gate.json): criterion 1 PASS
+  (invalid share 0.0 both B cells); criterion 2 PASS (extrapolated 3245 s
+  « 19800 s cap); criterion 3 PASS (dA 0.8667; no MME re-derivation, MME
+  stays 0.25); criterion 4: spread max sd 0.19 < 0.25, no stress flag; no
+  owner actions beyond review.
+- Pilot-gate checkpoint outputs: no re-derivation, no sign-offs. Pilot
+  seeds {5001,5002} are part of the final dataset per the prereg (single
+  freeze). Preliminary (2 seeds, NOT the verdict): dA 0.867, dB 0.833,
+  R = 0.962 — the imported state carries essentially the whole memory
+  benefit to core B on the pilot surface.
+- NEXT (owner pre-authorized "стартуй наступний майлстоун"): CONFIRMATORY —
+  seeds {5003..5007}, same frozen scripts, GPU lock + condition-C chain,
+  est ~40-60 min; then ONLY analyze_confirmatory_cont002.py over all 7
+  seeds -> verdict + run-record header (revs, wall reconciliation).

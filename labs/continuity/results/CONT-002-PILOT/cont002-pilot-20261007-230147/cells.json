@@ -32,12 +32,22 @@
    "export_sha256": null
   },
   "B-restored/seed-5001": {
-   "completed": false,
-   "attempts": 3
+   "wall_s": 93.5,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 15,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
   },
   "B-clean/seed-5001": {
-   "completed": false,
-   "attempts": 3
+   "wall_s": 81.3,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 4,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
   },
   "GC-A/seed-5001": {
    "wall_s": 51.8,
@@ -49,8 +59,13 @@
    "export_sha256": null
   },
   "GC-B/seed-5001": {
-   "completed": false,
-   "attempts": 3
+   "wall_s": 35.4,
+   "attempts": 1,
+   "probes_total": 6,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
   },
   "learn-A/seed-5002": {
    "wall_s": 73.1,
@@ -80,12 +95,22 @@
    "export_sha256": null
   },
   "B-restored/seed-5002": {
-   "completed": false,
-   "attempts": 3
+   "wall_s": 92.8,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 15,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
   },
   "B-clean/seed-5002": {
-   "completed": false,
-   "attempts": 3
+   "wall_s": 80.7,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 1,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
   },
   "GC-A/seed-5002": {
    "wall_s": 44.6,
@@ -97,9 +122,14 @@
    "export_sha256": null
   },
   "GC-B/seed-5002": {
-   "completed": false,
-   "attempts": 3
+   "wall_s": 36.1,
+   "attempts": 1,
+   "probes_total": 6,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
   }
  },
- "total_wall_s": 707.7
+ "total_wall_s": 420.0
 }

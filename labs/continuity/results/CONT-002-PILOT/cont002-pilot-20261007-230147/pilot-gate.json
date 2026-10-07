@@ -6,22 +6,22 @@
   "observed": {
    "A-restored": 30,
    "A-clean": 30,
-   "B-restored": 0,
-   "B-clean": 0
+   "B-restored": 30,
+   "B-clean": 30
   }
  },
  "criterion1_b_compliance": {
-  "invalid_share_B_restored": 1.0,
-  "invalid_share_B_clean": 1.0,
+  "invalid_share_B_restored": 0.0,
+  "invalid_share_B_clean": 0.0,
   "threshold": 0.3,
   "definition": "observed_label is None (zero or >1 distinct standalone label)",
-  "pass": false
+  "pass": true
  },
  "criterion2_walltime": {
-  "pilot_wall_s": 507.4,
-  "extrapolated_7seed_s": 1775.9,
+  "pilot_wall_s": 927.2,
+  "extrapolated_7seed_s": 3245.2,
   "gpu_cap_s": 19800,
-  "gc_b_trim_saving_s": 0.0,
+  "gc_b_trim_saving_s": 107.2,
   "trim_applies": false,
   "worst_case_note": "if the extrapolation exceeds the cap even after the trim, NO-GO (N-3: the backstop is NO-GO, the trim covers only a moderate overrun)",
   "pass": true
@@ -53,6 +53,20 @@
      "seed-5002": 0.0
     },
     "sd": 0.1886
+   },
+   "B-restored": {
+    "per_seed": {
+     "seed-5001": 1.0,
+     "seed-5002": 1.0
+    },
+    "sd": 0.0
+   },
+   "B-clean": {
+    "per_seed": {
+     "seed-5001": 0.26666666666666666,
+     "seed-5002": 0.06666666666666667
+    },
+    "sd": 0.1414
    }
   },
   "stress_flag_sd_gt_0_25": false,
@@ -65,11 +79,11 @@
    "n_word_probes": 8
   },
   "GC-B": {
-   "band": 1.0,
-   "n_word_probes": 0
+   "band": 0.0,
+   "n_word_probes": 12
   }
  },
- "verdict": "NO-GO",
+ "verdict": "GO",
  "owner_actions": [
   "review this pilot-gate.json"
  ],
