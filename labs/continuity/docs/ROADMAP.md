@@ -161,16 +161,13 @@ Owner verdict: **"все так" (all defaults accepted), with two follow-ups**
 3. **RESULTS-DIGEST-2026-10.md annotated** with the cycle-2 outcome (the
    cycle-1 "T1 0/90 promising signal" reclassified as a surface artifact:
    8/60 vs T0 7/60 on the rebalanced surface).
-4. **Next direction: UNDER DISCUSSION** — CONT-002 (state transfer; the
-   2026-10-04 deferral condition "label-form probes" is now satisfied by the
-   v3 suite work; mechanics proven at M2b; Qwen3.6-35B-A3B already imported)
-   vs CONT-006 Reflection v2 (owner idea via the co-owner model, commit
-   6f2d974, `docs/REFLECTION-V2-PROPOSAL.md`). Implementing-agent
-   recommendation on record in LOG.md 2026-10-07: CONT-002 first (unblocked,
-   different axis after two nulls on the metadata axis, reuses the harness),
-   CONT-006 proposal review cycle in parallel (zero GPU); CONT-006's
-   critical test 4 (cross-model lesson transfer) reuses the CONT-002
-   machinery. Owner to confirm.
+4. **Next direction: DECIDED 2026-10-07 ("ок")** — (1) CONT-006 proposal
+   review cycle NOW (zero GPU; implementing-agent review file + independent
+   reviewer from the queue); (2) CONT-002 is the next arc (session brief
+   `docs/SESSION-BRIEF-CONT002.md`; design + pre-registration first, the
+   behavioral run stays owner-gated per "Never autonomous"); (3) CONT-006
+   build after CONT-002 — its critical test 4 (cross-model lesson transfer)
+   reuses the CONT-002 cross-core machinery.
 
 ## Never autonomous (unchanged)
 

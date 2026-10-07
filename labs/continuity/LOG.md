@@ -1856,3 +1856,45 @@ pre-registered plan.
 - Milestone answer: the proposal does not slot into any M1-M8 entry (arc
   COMPLETE); it opens a NEW milestone line — "CONT-006 proposal review"
   (zero GPU) — and then CONT-006 becomes the next-next arc.
+
+## 2026-10-07 — Owner "ок": direction DECIDED + CONT-006 review cycle COMPLETE (GO-with-changes)
+
+- Owner confirmed the sequence: (1) CONT-006 proposal review NOW; (2) CONT-002
+  next arc; (3) CONT-006 build after. ROADMAP decision 4 updated; SESSION
+  brief for the CONT-002 design milestone authored
+  (`docs/SESSION-BRIEF-CONT002.md`, zero GPU, behavioral run owner-gated).
+- **Reviewer queue exercised end-to-end for the first time:** Fable
+  weekly-limited ("resets 8pm Europe/Kyiv"), Opus weekly-limited too →
+  **local GLM 5.3 Flash** ran the independent proposal review (fresh-context
+  agent, read-only, proposal-first, explicitly barred from reading the
+  implementing-agent review). Both substitution steps declared in the review
+  doc header.
+- Implementing-agent review: `docs/review-reflection-v2-implementing-agent.md`
+  (RC-1 freeze the lessons-store artifact chain; RC-2 deterministic
+  lesson-acceptance rule ex ante; RC-3 blind+protocol-timed R3 authoring;
+  RC-4 import the five 2026-10-04 amendments + v3 protocol machinery;
+  RN-1..RN-5 incl. experience set from the ~50 existing committed arm-seed
+  traces — zero GPU — and granite-first reflector).
+- Independent review: `docs/REVIEW-CONT006-PROPOSAL.md` — verdict
+  **GO-with-changes**: RC-1 R3 must inherit R2's retrieval/injection
+  machinery (the proposal's "Same as R0" wording confounds source with
+  delivery channel); RC-2 two-phase design (lessons NOT injected during
+  experience accumulation — removes the trajectory confound and keeps the
+  GPU budget at one shared experience pass); RC-3 ex-ante contamination
+  protocol (frozen failure taxonomy, blind gold-lesson authors,
+  digest-frozen Lessons Store before the first transfer request,
+  non-executor contamination gate); RC-4 prose + anti-salience lesson
+  authoring (LL-CONT-017 as written is an anchoring-by-flagging risk;
+  D−C=+0.5015 parroting is the proven harm channel); RC-5 fill the
+  pre-registration fields. Executor curation: 7/7 load-bearing claims
+  reproduced (appendix in the review doc).
+- Convergence between the two independent reviews: freeze/digest discipline
+  for the LLM chain, blind R3 authoring, anti-salience prose lessons, the
+  five amendments, empty prereg fields, scope guard OK. Divergent finds
+  recorded in both docs (R3 confound + experience-loop = Flash; existing
+  traces as experience + deterministic acceptance rule = implementing
+  agent).
+- NEXT: co-owner folds RC-1..RC-5 (+ the implementing-agent set) into
+  `docs/REFLECTION-V2-PROPOSAL.md`; fresh session opens
+  `docs/SESSION-BRIEF-CONT002.md` (CONT-002 design + pre-registration, zero
+  GPU).
