@@ -2026,3 +2026,38 @@ Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT002.md delivered.
   manifest frozen-config-cont002.json (suite + 7 rendered digests + every
   script + environment pin per N-5); (4) commit + non-executor Fable gate
   (incl. RC-4a regression artifact + RC-4b script dry-runs).
+
+## 2026-10-07 — CONT-002 FREEZE complete (analysis scripts first, 27 digests, preflight-only PASS)
+
+- Analysis scripts authored FIRST (cycle-2 freeze order, template section 1):
+  `analyze_pilot_cont002.py` (all four prereg section-2 GO/NO-GO criteria with
+  the RC-5 invalid-format definition; the pilot-gate checkpoint outputs: dA
+  ladder 0.30/0.45/0.60, the frozen upward-only MME re-derivation formula,
+  spread flags; --self-test PASS x2 cases: GO and NO-GO+re-derivation) and
+  `analyze_confirmatory_cont002.py` (sections 3-6 verdict machinery: ratio-
+  of-means cluster bootstrap 10k / RNG seed 20261007, estimability gate,
+  N-4 degenerate-draw handling, five-branch verdict wording, RC-2-gated
+  per-family R, N-1/N-2 carried notes; --self-test PASS x3 branches:
+  RETENTION-ESTABLISHED at known R~0.5, NULL, NON-ESTIMABLE + ratios
+  withheld).
+- `run_cont002.py`: four-cell runner (learn-A -> A-restored -> A-clean ->
+  B-restored -> B-clean -> GC-A -> GC-B per seed; session slicing + import
+  preload via the EXISTING runner interfaces — zero frozen-path edits;
+  state-integrity guard on the export; clean cells assert count==0;
+  --stage pilot|confirmatory; resume per PB-075; wall guard 300 min vs the
+  330 min declared cap; per-cell accounting into cells.json;
+  --preflight-only smoke). Preflight-only PASS live: Ollama 0.34.2 (pin ok),
+  granite digest 36c3c3b9683b, qwen36-35b-a3b digest 8a0fd5da454e, warmups
+  9.3 s / 29.9 s, freeze digests byte-verified BEFORE any inference. CN-001
+  re-hit during smoke (digest readable only for LOADED models) — fixed by
+  the cycle-2 warm-then-pin order.
+- `frozen-config-cont002.json`: 27 digests (suite + 7 rendered seeds + 3
+  scripts + power artifact + validator + builder + prereg/design/review/
+  template/design-spec + runner/provider/memory/fixtures/events/claims) +
+  model pins + environment pin (N-5) + execution constants.
+- NEXT: non-executor gate (Fable, standing queue) — GATE-CONT002 checks:
+  independent digest re-hash, RC-4a regression artifact for
+  v3/v3h/v3i/v3j, RC-4b analyzer self-tests + preflight-only + clean-cell
+  isolation wiring, core-neutrality. After GO: pilot (seeds 5001,5002,
+  ~45-85 min GPU) -> frozen pilot analysis -> pilot-gate checkpoint ->
+  confirmatory {5003..5007}.

@@ -1,0 +1,82 @@
+{
+ "kind": "cont002-freeze-manifest",
+ "created_utc": "2026-10-07T19:44:16Z",
+ "prereg": "docs/EVALUATION-PREP-CONT002.md (owner-accepted 2026-10-07)",
+ "seeds": {
+  "pilot": [
+   5001,
+   5002
+  ],
+  "confirmatory": [
+   5003,
+   5004,
+   5005,
+   5006,
+   5007
+  ]
+ },
+ "models": {
+  "core_a": {
+   "name": "granite-code:8b",
+   "digest_prefix": "36c3c3b9683b"
+  },
+  "core_b": {
+   "name": "qwen36-35b-a3b:mdlslab",
+   "digest_prefix": "8a0fd5da454e"
+  }
+ },
+ "environment_pin": {
+  "ollama_version_prefix": "0.34"
+ },
+ "execution": {
+  "cell_order_per_seed": [
+   "learn-A",
+   "A-restored",
+   "A-clean",
+   "B-restored",
+   "B-clean",
+   "GC-A",
+   "GC-B"
+  ],
+  "temperature": 0.0,
+  "num_ctx": 4096,
+  "num_predict": 256,
+  "keep_alive": "30m",
+  "wall_guard_s": 18000,
+  "declared_gpu_cap_s": 19800,
+  "budget_per_cell": {
+   "max_turns": 120,
+   "max_total_tokens": 400000,
+   "wall_clock_s": 5400.0
+  }
+ },
+ "digests": {
+  "fixtures/v3k_rendered_seed5001": "c85946ddeccae79506850bfff5d4b8481f3c6ea6cba65416dc5e0ffd58ffbf7d",
+  "fixtures/v3k_rendered_seed5002": "71fa06a8e50b479fdaaec3a6704759743977aa41073994816063eb875e3cd720",
+  "fixtures/v3k_rendered_seed5003": "fc4a7ab4883257f79e4b87aff138db30390ec7397ddb9b7403a986a118fa1c2e",
+  "fixtures/v3k_rendered_seed5004": "9c044529c8bf27e4e51a210ceefd4082a372bfd6bea4e8686969e97a50794d55",
+  "fixtures/v3k_rendered_seed5005": "f4faf6e9db898fafd748305c04024d1280c6eb2c7ccfb4a9b65af74ad34e056f",
+  "fixtures/v3k_rendered_seed5006": "54b2bbdf39658100ebb59f218c965f0cca69bf77eabd9053fe6f7cb33f49c51f",
+  "fixtures/v3k_rendered_seed5007": "7b01698be6ef425ab573cb1c0557a2ab80b791affe386d9230477d5e5aeb5d66",
+  "fixtures/v3k_suite": "06b897f6e727a0cc1ab2201cc03d0f007c80b48194260f97648f36260624e5fe",
+  "docs/EVALUATION-PREP-CONT002.md": "9c7e80cb7deeec03ca5090dad3434b306b9d17581ae50009b359ceb3d421d042",
+  "docs/CONT-002-DESIGN.md": "76efbca1b8224ff9dd624b45f2f01b2dfcbdef4ff9cba312cb8f6d70a13d50f3",
+  "docs/PR-REVIEW-CONT002.md": "fa86d21b7e511cb8552cc44c8a63c428a88f64add129501ad58a8e330631a219",
+  "docs/PREREG-REQUIREMENTS-V2.md": "b843888eab0934583270a5b0b7b12cab697fba779c0314a1a5ee4af5605ef2cc",
+  "docs/SUITE-V3-DESIGN.md": "442d438526b7985704d97bf2fda9a6a14ee5b6119f2a3e10c771c98aa83535d0",
+  "experiments/suite-v3/validate_fixtures_v3.py": "bc42c6856540a9889f2c5c74a0af431faf45e4837be236bc423a46c63ed0b14d",
+  "experiments/suite-v3/build_v3k.py": "770a3f73e6325163935676ca75a43896634ccade9ff825330f99f37dae38cab9",
+  "experiments/suite-v3/run_cont002.py": "6eb7913aa33cf80561fb3e594b7c3430fab73b38512512df3846a03b710cc7ab",
+  "experiments/suite-v3/analyze_pilot_cont002.py": "80b14d7d4b221fb94b56225a83530a0531942d1d67b2a2f7c3cc3725f0bb878d",
+  "experiments/suite-v3/analyze_confirmatory_cont002.py": "19b3d1eda77247c7245aed163fbcbc925bbd5d71e0b4b10becf0c3dc6c0fb3f0",
+  "experiments/suite-v3/power_calc_cont002.py": "54e96ac325a781236829d45d8933401ddc59f95503324fff39c21058017cc1b5",
+  "experiments/suite-v3/power-results-cont002.json": "196635f41e74e9b0d06a0885f79e005cdd550f425b26e14e5a9c27b360abcd57",
+  "experiments/suite-v3/fixture-validation-v3k.json": "3379a523852a4268b704649a0886707b4fa7a7709765c71382cae729603aab07",
+  "src/continuity/runner.py": "1dcd5625c5b2ff319858e44bf6dcd90af6e34c90956dd2f50b761b18b0abb079",
+  "src/continuity/provider.py": "856b934868c6113ae919e5fb93673a0819614e1dde2a301ae571153c726a715e",
+  "src/continuity/memory.py": "1ef4291641fd6be73d888e65452c778687e156393cd54df597bcbc72202a394b",
+  "src/continuity/fixtures.py": "4270a0916ab227c89b46c5cbe03525fa364831bf0353f91ee6c4fcef2b3f9f7d",
+  "src/continuity/events.py": "ddcdf35e30eb090f812aca6ba35bde5eaea3850a1ffd385450274d0c4076842a",
+  "src/continuity/claims.py": "028e5e1f2de2e997dc1b21c2be7d16d5fe2efc54646ee915d10ce45f91d0303a"
+ }
+}
