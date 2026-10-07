@@ -1,0 +1,17 @@
+{
+ "kind": "cont002-cell-summary",
+ "run_id": "cont002-pilot-20261007-230147",
+ "cell": "learn-A",
+ "seed": 5002,
+ "model": "granite-code:8b",
+ "probes": [],
+ "probes_passed": 0,
+ "probes_total": 0,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 60,
+ "episodes_exported": 60,
+ "duration_s": 73.1,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

@@ -1,0 +1,80 @@
+{
+ "kind": "cont002-pilot-gate",
+ "run_root": "labs\\continuity\\results\\CONT-002-PILOT\\cont002-pilot-20261007-230147",
+ "completeness": {
+  "primary_probes_per_cell": 30,
+  "observed": {
+   "A-restored": 30,
+   "A-clean": 30,
+   "B-restored": 0,
+   "B-clean": 0
+  }
+ },
+ "criterion1_b_compliance": {
+  "invalid_share_B_restored": 1.0,
+  "invalid_share_B_clean": 1.0,
+  "threshold": 0.3,
+  "definition": "observed_label is None (zero or >1 distinct standalone label)",
+  "pass": false
+ },
+ "criterion2_walltime": {
+  "pilot_wall_s": 507.4,
+  "extrapolated_7seed_s": 1775.9,
+  "gpu_cap_s": 19800,
+  "gc_b_trim_saving_s": 0.0,
+  "trim_applies": false,
+  "worst_case_note": "if the extrapolation exceeds the cap even after the trim, NO-GO (N-3: the backstop is NO-GO, the trim covers only a moderate overrun)",
+  "pass": true
+ },
+ "criterion3_dA_ladder": {
+  "dA_pilot": 0.8667,
+  "ladder": {
+   "estimability_gate_floor": 0.3,
+   "pilot_go_floor": 0.45,
+   "rederivation_trigger": 0.6
+  },
+  "nonestim_risk_declared": false,
+  "mme_rederivation": null,
+  "R_MME_effective": 0.25,
+  "pass": true
+ },
+ "criterion4_spread": {
+  "per_cell": {
+   "A-restored": {
+    "per_seed": {
+     "seed-5001": 1.0,
+     "seed-5002": 1.0
+    },
+    "sd": 0.0
+   },
+   "A-clean": {
+    "per_seed": {
+     "seed-5001": 0.26666666666666666,
+     "seed-5002": 0.0
+    },
+    "sd": 0.1886
+   }
+  },
+  "stress_flag_sd_gt_0_25": false,
+  "owner_signoff_required_if_stress": false,
+  "note": "n=2 gates nothing; reported for the pilot-gate checkpoint"
+ },
+ "guess_bands": {
+  "GC-A": {
+   "band": 0.0417,
+   "n_word_probes": 8
+  },
+  "GC-B": {
+   "band": 1.0,
+   "n_word_probes": 0
+  }
+ },
+ "verdict": "NO-GO",
+ "owner_actions": [
+  "review this pilot-gate.json"
+ ],
+ "carried_notes": {
+  "N_1": "power-model caveats (ceiling compression; shared-eps-across-cores) travel with every power number",
+  "N_2": "pilot GO condition induces a small upward selection bias on dA"
+ }
+}

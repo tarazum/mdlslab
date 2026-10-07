@@ -1,0 +1,105 @@
+{
+ "kind": "cont002-cells",
+ "run_id": "cont002-pilot-20261007-230147",
+ "stage": "pilot",
+ "derived": true,
+ "cells": {
+  "learn-A/seed-5001": {
+   "wall_s": 72.5,
+   "attempts": 1,
+   "probes_total": 0,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": 60,
+   "export_sha256": "51738144e411f0e53266642439fa80d1fe881dd9a1defbda08fb6f528f5c273b"
+  },
+  "A-restored/seed-5001": {
+   "wall_s": 66.4,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 15,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "A-clean/seed-5001": {
+   "wall_s": 66.0,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 4,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "B-restored/seed-5001": {
+   "completed": false,
+   "attempts": 3
+  },
+  "B-clean/seed-5001": {
+   "completed": false,
+   "attempts": 3
+  },
+  "GC-A/seed-5001": {
+   "wall_s": 51.8,
+   "attempts": 1,
+   "probes_total": 6,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "GC-B/seed-5001": {
+   "completed": false,
+   "attempts": 3
+  },
+  "learn-A/seed-5002": {
+   "wall_s": 73.1,
+   "attempts": 1,
+   "probes_total": 0,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": 60,
+   "export_sha256": "df3b9922db605543b710773c284dac841466f78899660e70288c76fb728b073b"
+  },
+  "A-restored/seed-5002": {
+   "wall_s": 66.5,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 15,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "A-clean/seed-5002": {
+   "wall_s": 66.5,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "B-restored/seed-5002": {
+   "completed": false,
+   "attempts": 3
+  },
+  "B-clean/seed-5002": {
+   "completed": false,
+   "attempts": 3
+  },
+  "GC-A/seed-5002": {
+   "wall_s": 44.6,
+   "attempts": 1,
+   "probes_total": 6,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "GC-B/seed-5002": {
+   "completed": false,
+   "attempts": 3
+  }
+ },
+ "total_wall_s": 707.7
+}

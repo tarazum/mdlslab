@@ -1,0 +1,132 @@
+{
+ "kind": "cont002-cell-summary",
+ "run_id": "cont002-pilot-20261007-230147",
+ "cell": "GC-A",
+ "seed": 5001,
+ "model": "granite-code:8b",
+ "probes": [
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the word \"beeswax\" is the correct answer. beeswax is a natural wax produced by bees, and it is often used to coat pear trays. this is because beeswax is a good insulator, which helps to keep the pears fresh and prevent them from drying out. additionally, beeswax is a good conductor of heat, which helps to keep the pears warm during the winter months. carnauba wax is a synthetic wax that is often used in the food and beverage industry, but it is not typically used to coat pear trays. shellac is a hard, waxy substance that is often used to coat wooden trays, but it is not as effective as beeswax at retaining heat. paraffin is a synthetic wax that is often used in the food and beverage industry, but it is not as effective as beeswax at retaining heat. cacao is a type of cocoa that is often used in the food and beverage industry, but it is not typically used to coat pear trays.",
+   "observed_label": null,
+   "observed_position": null,
+   "labels": [
+    "carnauba",
+    "beeswax",
+    "shellac",
+    "paraffin",
+    "cacao",
+    "linseed"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-5501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the number \"4\" is the correct answer. in a typical pallet stack, there are four crates on each pallet. this is because each crate is about the same size, and it takes up about the same amount of space on the pallet. by having four crates on each pallet, it allows for better organization and easier movement of the crates within the stack. additionally, it helps to prevent the crates from shifting or tipping over, which can be a safety hazard. three crates on each pallet would not be efficient, as it would leave too much empty space on the pallet. this could lead to crates being damaged or broken during the stacking and unstacking process. five crates on each pallet would be too crowded, which could make it difficult to move the crates around and could increase the risk of injury. six crates on each pallet would be too many for a standard-sized pallet, which could lead to the pallet being too heavy to move. seven crates on each pallet would be too many for a standard-sized pallet, which could lead to the pallet being too heavy",
+   "observed_label": "4",
+   "observed_position": 1,
+   "labels": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-5501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "slate",
+   "observed_label": "slate",
+   "observed_position": 2,
+   "labels": [
+    "teal",
+    "mustard",
+    "slate",
+    "coral",
+    "crimson",
+    "violet"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-5502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "6",
+   "observed_label": "6",
+   "observed_position": 0,
+   "labels": [
+    "6",
+    "7",
+    "8",
+    "9",
+    "4",
+    "5"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-5502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the main shutter hatch points downhill.",
+   "observed_label": "downhill",
+   "observed_position": 1,
+   "labels": [
+    "uphill",
+    "downhill",
+    "north",
+    "south",
+    "east",
+    "west"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-5503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "there are 14 steps to climb to the ring catwalk platform.",
+   "observed_label": "14",
+   "observed_position": 1,
+   "labels": [
+    "13",
+    "14",
+    "9",
+    "10",
+    "11",
+    "12"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-5503",
+   "family": "guess_calibration"
+  }
+ ],
+ "probes_passed": 0,
+ "probes_total": 6,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 24,
+ "episodes_exported": null,
+ "duration_s": 51.8,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

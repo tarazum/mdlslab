@@ -1,0 +1,132 @@
+{
+ "kind": "cont002-cell-summary",
+ "run_id": "cont002-pilot-20261007-230147",
+ "cell": "GC-A",
+ "seed": 5002,
+ "model": "granite-code:8b",
+ "probes": [
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the word \"paraffin\" is the correct answer. the other options listed are not the correct answer. shellac is a hard, waxy substance that is often used to coat wooden objects, but it is not the same as paraffin. paraffin is a type of vegetable wax that is derived from the fatty acids found in plants, and it is commonly used as a coating for wooden objects. cacao, linseed, lanolin, and beeswax are not the same as paraffin. it's important to note that the word \"paraffin\" is often used interchangeably with the word \"wax,\" but they are not the same thing. paraffin is a specific type of vegetable wax that is derived from the fatty acids found in plants, while wax can refer to a variety of different substances, including shellac, beeswax, and other natural and synthetic materials. in the context of the question, the fact that the plum trays are coated in paraffin suggests that the trays are made of wood, and that the paraffin is used to protect",
+   "observed_label": null,
+   "observed_position": null,
+   "labels": [
+    "shellac",
+    "paraffin",
+    "cacao",
+    "linseed",
+    "lanolin",
+    "beeswax"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-5501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the number \"6\" is the correct answer. the other options listed are not the correct answer. there is no way to determine how many crates are waiting on the trestle stack based on the information provided. the question only mentions the number of crates that are on the trestle stack, not the number of crates that are waiting on the trestle stack. it's important to note that the number of crates on the trestle stack is not the same as the number of crates that are waiting on the trestle stack. the crates on the trestle stack are currently being loaded onto the trucks, while the crates that are waiting on the trestle stack have not yet been loaded onto the trucks. in the context of the question, the fact that there are 6 crates on the trestle stack suggests that there are 6 crates that are currently being loaded onto the trucks, and that there are a total of 9 crates that are waiting on the trestle stack.",
+   "observed_label": null,
+   "observed_position": null,
+   "labels": [
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "4"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-5501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the color of the racking arm hose collar is mustard.",
+   "observed_label": "mustard",
+   "observed_position": 5,
+   "labels": [
+    "slate",
+    "coral",
+    "ochre",
+    "violet",
+    "teal",
+    "mustard"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-5502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "there are 10casks resting in the inner row.",
+   "observed_label": null,
+   "observed_position": null,
+   "labels": [
+    "8",
+    "9",
+    "10",
+    "5",
+    "6",
+    "7"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-5502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the side shutter hatch points east.",
+   "observed_label": "east",
+   "observed_position": 2,
+   "labels": [
+    "seaward",
+    "south",
+    "east",
+    "west",
+    "uphill",
+    "downhill"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-5503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "there are 12 steps to the inner catwalk platform.",
+   "observed_label": "12",
+   "observed_position": 3,
+   "labels": [
+    "15",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-5503",
+   "family": "guess_calibration"
+  }
+ ],
+ "probes_passed": 0,
+ "probes_total": 6,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 24,
+ "episodes_exported": null,
+ "duration_s": 44.6,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

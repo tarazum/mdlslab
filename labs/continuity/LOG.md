@@ -2089,3 +2089,45 @@ Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT002.md delivered.
   preflight) immediately before, then `run_cont002.py --stage pilot`
   (seeds {5001,5002}, cell order learn-A -> A-restored -> A-clean ->
   B-restored -> B-clean -> GC-A -> GC-B per seed, est 45-85 min GPU).
+
+## 2026-10-07 — CONT-002 PILOT run 1: NO-GO (frozen analyzer) — core B empty replies (thinking budget); A-side CONFIRMS the design
+
+Run of record: results/CONT-002-PILOT/cont002-pilot-20261007-230147 (wall 707.7 s
+under the shared GPU lock; condition-C chain executed immediately before).
+Zero repeated inference attempts survived; failed attempts kept as evidence
+(seed dirs + a2 dirs).
+
+- **A-side (granite) — complete, exactly as designed:** A-restored 15/15 and
+  15/15 probes (pass rate 1.0 both seeds); A-clean 4/15 (0.267) and 0/15;
+  GC-A 0/6 + 0/6 (expected null). **dA pilot = 0.8667** (frozen analyzer;
+  design target 0.85, GO floor 0.45, re-derivation trigger 0.60 — NO
+  re-derivation needed, MME stays 0.25). Criterion 3 PASS.
+- **B-side — all cells (B-restored, B-clean, GC-B, both seeds) failed
+  deterministically 2 attempts each**: every request returns an EMPTY reply;
+  the runner's append_episode correctly refuses empty content (fail-closed,
+  no false data). Trace evidence (B-clean/seed-5001/trace.jsonl):
+  agent.response content "" with eval_tokens 256 — Qwen3.6-35B-A3B is a
+  hybrid reasoning model: it spends the WHOLE num_predict 256 budget on
+  thinking tokens and emits zero visible output at temp 0 on these prompts
+  (done_reason "length" in a direct diagnostic).
+- **Diagnosis (out-of-runner diagnostic requests, disclosed):** /api/chat
+  with "think": false -> clean visible reply (33 eval tokens, "Acknowledged;
+  please proceed with the line fitting."); default -> content "" done_reason
+  "length". "think": false is harmless on granite (non-thinking model,
+  verified "Ready."). M2b produced visible replies because the v1-era
+  prompts differed; the v3k prompts trigger deeper reasoning.
+- **Frozen analyzer verdict: NO-GO** (pilot-gate.json): criterion 1 fail
+  (B cells zero probes, invalid share 1.0 fail-closed); criterion 2 PASS
+  (extrapolated 1776 s « 19800 s cap); criterion 3 PASS (dA 0.8667).
+- **Per prereg section 2 clause 1 this fix class is pre-declared as an
+  OWNER-GATE decision** ("the prompt-template class of fixes is a declared
+  owner-gate decision class, never an in-place edit after inference"): the
+  proposed fix is a provider-level "think": false pin in EVERY request
+  (PB-071-style contract addition; think-pin joins temperature/seed/
+  num_ctx/num_predict), verified harmless for both cores. With it: provider
+  digest refresh + fresh non-executor verification + a --resume-root
+  argument (GATE-CONT002 condition D; §11 "path/argument prefixes" class)
+  so the completed A-cells are NOT re-run (zero repeated inference; their
+  data is valid — they ran under the frozen provider contract as-was).
+- STOPPED for the owner decision. No results read beyond the frozen
+  analyzer output.
