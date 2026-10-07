@@ -1,0 +1,39 @@
+{
+ "kind": "cont002-regressions-post-v3k",
+ "created_utc": "2026-10-07T19:56:32Z",
+ "provenance": "GATE-CONT002 condition B (RC-4a): consolidated regression verdicts of the v3k-extended validator. The gate session (Fable) executed all five suites with VERDICT: PASS exit 0 (protocol section 2) but was write-blocked from committing this artifact; the executor re-ran the exact commands at the condition-A commit (validator unchanged between \u2014 its digest is identical in frozen-config-cont002.json before and after the condition-A run-script fix). Frozen per-suite fixture-validation-*.json records untouched.",
+ "command": "python labs/continuity/experiments/suite-v3/validate_fixtures_v3.py --suite <s>",
+ "suites": {
+  "v3": {
+   "verdict": "PASS",
+   "failed_checks": [],
+   "checks": 14,
+   "suite_sha256": "a0c7097f47d3fe4ca52cf937ff509bc1d5099dfa86f7b1bf45dbf5a9cc23c71e"
+  },
+  "v3h": {
+   "verdict": "PASS",
+   "failed_checks": [],
+   "checks": 14,
+   "suite_sha256": "a608e74e69bb0327afd0659be15ba0aacd23c3a1c2d9441fdc6313960e5d44c3"
+  },
+  "v3i": {
+   "verdict": "PASS",
+   "failed_checks": [],
+   "checks": 17,
+   "suite_sha256": "f5c0f5a9bab7fabbfad9d9163a3d91583f4c8180ee09a08c4fcd851638bdb310"
+  },
+  "v3j": {
+   "verdict": "PASS",
+   "failed_checks": [],
+   "checks": 17,
+   "suite_sha256": "516d6588c1c377e891ef87293d937d22e2fdd71dbd318aeaf88367365e7d0889"
+  },
+  "v3k": {
+   "verdict": "PASS",
+   "failed_checks": [],
+   "checks": 17,
+   "suite_sha256": "06b897f6e727a0cc1ab2201cc03d0f007c80b48194260f97648f36260624e5fe"
+  }
+ },
+ "overall": "PASS"
+}

@@ -2061,3 +2061,31 @@ Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT002.md delivered.
   isolation wiring, core-neutrality. After GO: pilot (seeds 5001,5002,
   ~45-85 min GPU) -> frozen pilot analysis -> pilot-gate checkpoint ->
   confirmatory {5003..5007}.
+
+## 2026-10-07 — GATE-CONT002: GO-with-conditions (Fable, full execution) -> condition A executed -> GO
+
+- Gate session executed EVERYTHING live (python allowed per RC-4a/b): 27/27
+  digests independently re-hashed; validator v3/v3h/v3i/v3j/v3k all PASS
+  exit 0; both analyzer self-tests PASS (2+3 branches); live --preflight-only
+  PASS (both model digests pinned, warmups 8.5 s / 27.6 s); core-neutrality
+  clean; zero CONT-002 inference at gate time. Record: docs/GATE-CONT002.md.
+- **BLOCKING find D-1 (real bug):** the frozen state-integrity guard compared
+  BARE session indices — GC scenarios put a probe at session 2, primary
+  learning sits at session 2 -> deterministic false assert on every learn-A
+  (gate proved it with a diagnostic on rendered seed 5001: intersection
+  [2]). Experiment would have burned GPU and died incomplete. D-2: GC
+  scenarios leaked into learn-A and the probe cells (plan not
+  family-filtered). D-3: dead stopped-marker.
+- Condition A executed same day (prereg section 11 run-script-wiring class,
+  inference level still zero): guard qualified by (scenario, session) pairs;
+  plans filtered to primary families; stopped accumulator; manifest
+  re-emitted (run_cont002.py digest refreshed); executor diagnostic PASS
+  (empty intersection + negative control catches an injected probe pair);
+  preflight-only PASS; **fresh Fable verification: CONDITION-A SATISFIED**
+  (independent manifest re-hash: zero mismatches). Condition B: consolidated
+  regression artifact committed (5/5 PASS). Conditions C/D/E recorded in the
+  gate protocol.
+- NEXT: pilot launch — shared GPU lock held, condition-C chain (self-tests +
+  preflight) immediately before, then `run_cont002.py --stage pilot`
+  (seeds {5001,5002}, cell order learn-A -> A-restored -> A-clean ->
+  B-restored -> B-clean -> GC-A -> GC-B per seed, est 45-85 min GPU).

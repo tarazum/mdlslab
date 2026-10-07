@@ -278,10 +278,13 @@ def run_cell(cell: str, seed: int, scenarios: list[dict], out_dir: Path, run_id:
     t0 = time.monotonic()
     try:
         if cell == "learn-A":
-            plan = [(s, scenario_parts(s)[0]) for s in scenarios]
+            plan = [(s, scenario_parts(s)[0]) for s in scenarios
+                    if s["family"] != "guess_calibration"]
         elif cell in ("A-restored", "A-clean", "B-restored", "B-clean"):
-            plan = [(s, [scenario_parts(s)[1]]) for s in scenarios]
-        else:  # GC cells run whole scenarios
+            plan = [(s, [scenario_parts(s)[1]]) for s in scenarios
+                    if s["family"] != "guess_calibration"]
+        else:  # GC cells run whole GC scenarios (prereg section 2: GC measured
+            # clean on both cores, in the GC cells only — GATE-CONT002 D-2 fix)
             plan = [(s, s["sessions"]) for s in scenarios if s["family"] == "guess_calibration"]
         if cell.endswith("restored"):
             assert export_path is not None and export_path.exists(), "export missing"
@@ -291,9 +294,11 @@ def run_cell(cell: str, seed: int, scenarios: list[dict], out_dir: Path, run_id:
         elif cell != "learn-A":
             assert memory.count() == 0, "clean cell must start from a verified-empty store"
         budget = Budget(**BUDGET_PER_CELL)
+        stopped_any = False
         for scenario, sessions in plan:
             sliced = {**scenario, "sessions": sessions}
             result = run_scenario(sliced, provider, journal, budget, arm="B", memory=memory)
+            stopped_any = stopped_any or bool(result.get("stopped"))
             probes.extend(
                 {**p, "scenario": scenario["id"], "family": scenario["family"]}
                 for p in result["probes"]
@@ -302,10 +307,15 @@ def run_cell(cell: str, seed: int, scenarios: list[dict], out_dir: Path, run_id:
             data = memory.export_dict()
             episodes_exported = len(data.get("episodes", []))
             # State-integrity guard (prereg section 7): learning sessions only.
-            sessions_in_export = {ep.get("session") for ep in data.get("episodes", [])}
-            probe_sessions = {scenario_parts(s)[1]["index"] for s in scenarios}
-            assert not (sessions_in_export & probe_sessions), \
-                f"probe-session content leaked into the export: {sessions_in_export & probe_sessions}"
+            # Qualified by (scenario, session) PAIRS — bare indices collide
+            # across scenario types (GC probes sit at session 2, primary
+            # learning at session 2; GATE-CONT002 D-1 fix).
+            export_pairs = {(ep.get("scenario"), ep.get("session"))
+                            for ep in data.get("episodes", [])}
+            probe_pairs = {(s["id"], scenario_parts(s)[1]["index"])
+                           for s in scenarios if s["family"] != "guess_calibration"}
+            leaked = export_pairs & probe_pairs
+            assert not leaked, f"probe-session content leaked into the export: {leaked}"
             export_path.parent.mkdir(parents=True, exist_ok=True)
             export_path.write_text(
                 json.dumps(data, indent=1, ensure_ascii=True, sort_keys=True) + "\n",
@@ -321,7 +331,7 @@ def run_cell(cell: str, seed: int, scenarios: list[dict], out_dir: Path, run_id:
             "probes": probes,
             "probes_passed": sum(1 for p in probes if p.get("passed") is True),
             "probes_total": len(probes),
-            "stopped": any(p.get("stopped") for p in [{}]) or False,
+            "stopped": stopped_any,
             "budget_violation": budget.violation,
             "memory_episodes": memory.count(),
             "episodes_exported": episodes_exported,
