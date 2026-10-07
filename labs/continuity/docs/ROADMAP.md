@@ -169,6 +169,18 @@ Owner verdict: **"все так" (all defaults accepted), with two follow-ups**
    build after CONT-002 — its critical test 4 (cross-model lesson transfer)
    reuses the CONT-002 cross-core machinery.
 
+## Owner decisions — recorded 2026-10-07 (CONT-002 pre-registration ACCEPTED)
+
+Basis: `docs/EVALUATION-PREP-CONT002.md` (with the PR-REVIEW-CONT002 RC-1..RC-5
+fold), `docs/PR-REVIEW-CONT002.md` (Fable GO-with-changes -> folded ->
+verify-pass GO), and the plain-language briefing delivered in chat the same
+day. Owner verdict (chat): **"приймаю пре-реєстрацію CONT-002"** — the
+behavioral chain (FREEZE -> non-executor gate -> pilot -> pilot-gate
+checkpoint -> confirmatory) is UNBLOCKED. The never-autonomous clause is
+satisfied by this explicit acceptance; all further owner touchpoints are the
+pre-declared ones (pilot GO/NO-GO outcome, MME re-derivation at the
+pilot-gate checkpoint if it fires, stress-governance sign-offs).
+
 ## Never autonomous (unchanged)
 
 - CONT-002 behavioral experiments — anything that measures transfer quality. The single exception is the M2b mechanics smoke (owner-ordered 2026-10-01): export/import plumbing proof only, explicitly no behavioral claims.

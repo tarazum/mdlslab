@@ -2007,3 +2007,22 @@ Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT002.md delivered.
   FIRST, digests, environment pin) -> non-executor gate (incl. RC-4a
   regression artifact + RC-4b script dry-run) -> pilot {5001,5002} ->
   pilot-gate checkpoint -> confirmatory 7 seeds.
+
+## 2026-10-07 — OWNER ACCEPTED the CONT-002 pre-registration; FREEZE milestone START
+
+- Owner (chat): "приймаю пре-реєстрацію CONT-002". Recorded in ROADMAP
+  "Owner decisions — recorded 2026-10-07 (CONT-002 pre-registration
+  ACCEPTED)". The behavioral chain is unblocked; never-autonomous satisfied.
+- FREEZE plan (per EVALUATION-PREP-CONT002 §10/§13 and the cycle-2 freeze
+  checklist): (1) analysis scripts FIRST — analyze_pilot_cont002.py (§2
+  GO/NO-GO incl. the RC-5 invalid-format definition + pilot-gate checkpoint
+  outputs: ΔA ladder, MME re-derivation formula, spread flags) and
+  analyze_confirmatory_cont002.py (§3–§6 verdict machinery, RC-2-gated
+  per-family R, N-4 degenerate-draw handling, N-1/N-2 carried notes), both
+  with --self-test synthetic dry-runs (RC-4b); (2) run_cont002.py — four-cell
+  runner (learn-once-on-A, session slicing, export->import preload, both
+  models digest-pinned, declared cell order, per-cell wall accounting,
+  budget stops, state-integrity guard, resume per PB-075); (3) freeze
+  manifest frozen-config-cont002.json (suite + 7 rendered digests + every
+  script + environment pin per N-5); (4) commit + non-executor Fable gate
+  (incl. RC-4a regression artifact + RC-4b script dry-runs).
