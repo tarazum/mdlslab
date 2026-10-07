@@ -1826,3 +1826,33 @@ Owner brief: docs/OWNER-BRIEF-CONT005-C2-CONFIRMATORY.md (decisions: accept
 result + close direction; accept Opus gate substitution; annotate the results
 digest; next thread CONT-002). CONT-005 closes either way per the
 pre-registered plan.
+
+## 2026-10-07 — Owner acceptance recorded; CONT-005 CLOSED; next-direction consultation
+
+- Owner: "все так" — decisions 1-3 of the brief accepted (result + close;
+  Opus substitution; digest annotation). Recorded in ROADMAP "Owner decisions
+  — recorded 2026-10-07"; RESULTS-DIGEST-2026-10.md annotated (T1's cycle-1
+  0/90 signal reclassified as a surface artifact: 8/60 vs T0 7/60).
+- Standing reviewer queue (owner directive): Fable → Opus → local GLM 5.3
+  Flash, in that order of availability.
+- Commit 6f2d974 (docs/REFLECTION-V2-PROPOSAL.md, 366 lines, authored under
+  the owner's git identity during the confirmatory run) reviewed by the
+  implementing agent: it is the owner's idea retold by the co-owner advisor
+  model — CONT-006 "Reflection as Lesson Extraction" (arms R0-R3 incl. the
+  manual-gold-lessons control R3; 3-way data split; 4 critical causal tests;
+  telemetry-first "NO_LESSON is first-class" design). Quality: strong — the
+  R3 arm directly de-risks the main threat (the core may simply ignore
+  injected lessons, the shared failure mode of both CONT-005 nulls).
+- Implementing-agent recommendation for sequencing (owner to confirm):
+  (1) CONT-006 proposal review cycle NOW (zero GPU, author/reviewer split —
+  review file first, then an independent reviewer from the queue);
+  (2) CONT-002 next arc — its 2026-10-04 deferral condition (label-form
+  probes) is satisfied by the v3 suite work, mechanics proven at M2b,
+  Qwen3.6-35B-A3B already imported in Ollama, and it tests a different axis
+  (state portability) after two nulls on the metadata axis;
+  (3) CONT-006 build AFTER CONT-002 — its critical test 4 (cross-model
+  lesson transfer) reuses exactly the CONT-002 A/B-core machinery, so the
+  sequencing is synergistic rather than competitive.
+- Milestone answer: the proposal does not slot into any M1-M8 entry (arc
+  COMPLETE); it opens a NEW milestone line — "CONT-006 proposal review"
+  (zero GPU) — and then CONT-006 becomes the next-next arc.

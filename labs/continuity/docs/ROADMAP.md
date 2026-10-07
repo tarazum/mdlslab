@@ -142,6 +142,36 @@ Basis: `docs/ARC-REPORT.md`, `docs/REVIEW-FABLE.md` (external Fable review 2026-
 
 Suite v3 + protocol amendments (zero GPU): fixture family redesign per 6(b)/6(c), pre-registration template updates per 6(a)/6(d)/6(e), then the CONT-005 proposal review cycle and a fresh arc plan. CONT-002 behavioral work is gated on 6(b).
 
+## Owner decisions — recorded 2026-10-07 (CONT-005 cycle-2 closing)
+
+Basis: `docs/OWNER-BRIEF-CONT005-C2-CONFIRMATORY.md`, the frozen
+`results-summary.json` (confirm-c2-20261006-230445), and `docs/GATE-V3B.md`.
+Owner verdict: **"все так" (all defaults accepted), with two follow-ups**
+(below).
+
+1. **Cycle-2 confirmatory result: ACCEPTED** — "no confirmatory difference
+   established" (T0-T1 -0.017, CI [-0.167, 0.100]; CI excludes the
+   pre-registered +-0.25 in both directions). CONT-005 (Memory Trust
+   Hierarchy) is CLOSED: provenance annotations and trust machinery do not
+   improve label-form accuracy on this core; T1 stays +5.6% tokens for
+   auditability only.
+2. **GATE-V3B Opus substitution: ACCEPTED.** Standing reviewer queue for
+   this lab from now on: **Fable first; if unavailable, Opus; if both
+   unavailable, the local GLM 5.3 Flash** (owner directive 2026-10-07).
+3. **RESULTS-DIGEST-2026-10.md annotated** with the cycle-2 outcome (the
+   cycle-1 "T1 0/90 promising signal" reclassified as a surface artifact:
+   8/60 vs T0 7/60 on the rebalanced surface).
+4. **Next direction: UNDER DISCUSSION** — CONT-002 (state transfer; the
+   2026-10-04 deferral condition "label-form probes" is now satisfied by the
+   v3 suite work; mechanics proven at M2b; Qwen3.6-35B-A3B already imported)
+   vs CONT-006 Reflection v2 (owner idea via the co-owner model, commit
+   6f2d974, `docs/REFLECTION-V2-PROPOSAL.md`). Implementing-agent
+   recommendation on record in LOG.md 2026-10-07: CONT-002 first (unblocked,
+   different axis after two nulls on the metadata axis, reuses the harness),
+   CONT-006 proposal review cycle in parallel (zero GPU); CONT-006's
+   critical test 4 (cross-model lesson transfer) reuses the CONT-002
+   machinery. Owner to confirm.
+
 ## Never autonomous (unchanged)
 
 - CONT-002 behavioral experiments — anything that measures transfer quality. The single exception is the M2b mechanics smoke (owner-ordered 2026-10-01): export/import plumbing proof only, explicitly no behavioral claims.

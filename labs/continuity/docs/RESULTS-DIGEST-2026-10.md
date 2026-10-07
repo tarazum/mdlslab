@@ -35,12 +35,18 @@ independent (non-executor) gates throughout.
    **anchoring-by-flagging** - marking a record as superseded/untrusted makes
    it MORE salient to the model, not less.
 
-3. **Source annotations alone (T1) are the one promising signal.** Cycle-1
-   label-level re-analysis: trap repeats A 25/90 > T0 15/90 > T2=T3 10/90 >
-   **T1 0/90** - the only config that never repeated a recorded mistake;
-   tied-top overall (0.45). Cycle-2 was designed to test exactly this
-   (primary contrast T0 vs T1); its pilot surfaced test-material problems
-   (see 7) and the confirmatory on rebalanced fixtures is the next step.
+3. **Source annotations alone (T1): cycle 1's promising signal did NOT
+   survive the cycle-2 confirmatory.** Cycle-1 label-level re-analysis: trap
+   repeats A 25/90 > T0 15/90 > T2=T3 10/90 > **T1 0/90**. Cycle-2 was
+   designed to test exactly this (primary contrast T0 vs T1) and CLOSED
+   2026-10-07 with a tight null: T0-T1 = -0.017, 95% CI [-0.167, 0.100] -
+   the CI excludes a +-0.25 effect in both directions, and on the rebalanced
+   mid-difficulty surface T1's trap-repeat cleanliness vanished (8/60 vs T0
+   7/60). Reading for OCL: the cycle-1 "promising signal" was a surface
+   artifact, not an annotation effect; per-record provenance metadata does
+   not buy label accuracy on this core. It remains cheap (+5.6% tokens) and
+   harmless - keep it for auditability, not for accuracy.
+   `results/CONT-005-C2-CONFIRMATORY/confirm-c2-20261006-230445/results-summary.json`
 
 4. **The agent's own earlier wrong answer is sticky (anchoring).** Storing
    the agent's own initial misclassification propagates the error through
@@ -82,18 +88,21 @@ independent (non-executor) gates throughout.
 - If OCL has (or plans) conflict-resolution/supersession layers on top of
   flat records: our evidence says do not expect accuracy wins from the
   resolution MACHINERY itself; flags can hurt by salience.
-- Cheap per-record provenance metadata is the unconfirmed-but-promising
-  middle: zero trap repeats in cycle 1; the proper confirmatory test
-  (rebalanced fixtures, prose flags, true seed replicates) runs next.
+- Cheap per-record provenance metadata: tested to completion in cycle 2 -
+  no accuracy effect (tight null, CI excludes +-0.25); keep for auditability
+  only.
 - Render everything injected into context as prose; keep syntax out.
 - Store the agent's own wrong answers carefully - they anchor future errors
   harder than environment facts.
 
-## Status of the T1 test (why "next step")
+## Status of the T1 test (CLOSED)
 
-Cycle-2 pilot GO/NO-GO (frozen rulebook) routed: CU family too easy (both
-arms 0.05 error), CR bimodal at cluster level (0/12 live), bracket echo
-confirmed. All three fixes go into the held-out confirmatory suite (v3j) at
-FREEZE-B (owner sign-off received 2026-10-06); then Fable gate; then the
-confirmatory run. `docs/EVALUATION-PREP-v3.md`, `docs/PR-REVIEW-v3.md`,
-`docs/GATE-V3A.md`, LOG.md tail.
+Cycle 2 ran to completion: pilot GO/NO-GO routed CU rebalance + owner
+sign-off + NOTE: prose flags into FREEZE-B (v3j, held-out, seeds
+{3001..3005}); gate GO; confirmatory 25/25 on 2026-10-07 returned the tight
+null above. CONT-005 is closed (owner acceptance 2026-10-07). Engineering
+lessons 5-7 above were all validated in the closed cycle: bracket echo went
+70 -> 0 after the NOTE: fix; per-seed variants kept spread tight (sd <=
+0.075); the rebalanced CU family landed mid-scale (error 0.05 -> 0.35/0.30).
+`docs/EVALUATION-PREP-v3.md`, `docs/GATE-V3B.md`,
+`labs/continuity/LOG.md` tail.
