@@ -82,6 +82,12 @@ class OllamaProvider:
             "stream": False,
             "options": dict(self.options),
             "keep_alive": self.keep_alive,
+            # Think-pin (PB-071-style contract field, in every request):
+            # hybrid reasoning models (qwen3.6) otherwise spend the whole
+            # num_predict budget on thinking tokens and emit an EMPTY visible
+            # reply (CONT-002 pilot run 1; owner-approved fix 2026-10-07);
+            # verified a no-op for non-thinking models (granite).
+            "think": False,
         }
         response = self._post("/api/chat", payload)
         message = response.get("message") or {}

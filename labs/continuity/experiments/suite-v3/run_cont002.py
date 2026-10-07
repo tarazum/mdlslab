@@ -367,6 +367,9 @@ def main() -> int:
     parser.add_argument("--preflight-only", action="store_true",
                         help="run the fail-closed preflight (digests + model pins + "
                              "warmups) and exit WITHOUT any inference (gate check)")
+    parser.add_argument("--resume-root", default=None,
+                        help="resume an existing run root (GATE-CONT002 condition D; "
+                             "completed cells skipped, zero repeated inference)")
     args = parser.parse_args()
 
     if args.freeze_manifest:
@@ -381,16 +384,33 @@ def main() -> int:
 
     seeds = PILOT_SEEDS if args.stage == "pilot" else CONFIRMATORY_SEEDS
     ts = time.strftime("%Y%m%d-%H%M%S")
-    run_id = f"cont002-{args.stage}-{ts}"
-    out_root = LAB_ROOT / "results" / ("CONT-002-PILOT" if args.stage == "pilot"
-                                       else "CONT-002-CONFIRMATORY") / run_id
+    if args.resume_root:
+        # GATE-CONT002 condition D / prereg section 11 "path/argument
+        # prefixes" class: resume an existing run root — completed cells are
+        # skipped verbatim (zero repeated inference); failed attempt dirs
+        # are re-run fresh. env.json is refreshed (new preflight) under the
+        # same root; cells.json is rebuilt over ALL completed cells.
+        out_root = Path(args.resume_root).resolve()
+        if not (out_root / "cells.json").exists() and not out_root.name.startswith("cont002-"):
+            raise SystemExit(f"FAIL-CLOSED: --resume-root does not look like a run root: {out_root}")
+        run_id = out_root.name
+    else:
+        run_id = f"cont002-{args.stage}-{ts}"
+        out_root = LAB_ROOT / "results" / ("CONT-002-PILOT" if args.stage == "pilot"
+                                           else "CONT-002-CONFIRMATORY") / run_id
     out_root.mkdir(parents=True, exist_ok=True)
     env = preflight(args.base_url)
     env["run_id"] = run_id
     env["stage"] = args.stage
     env["seeds"] = seeds
-    (out_root / "env.json").write_text(json.dumps(env, indent=1, ensure_ascii=True) + "\n",
-                                       encoding="utf-8")
+    env["resumed"] = bool(args.resume_root)
+    env["resumed_from_invocation_wall_note"] = (
+        "resumed run: total_wall_s in cells.json covers THIS invocation; the "
+        "per-cell wall fields are per-cell sums from each cell's summary "
+        "(template section 5); every invocation's rev is recorded in the run "
+        "record header") if args.resume_root else None
+    (out_root / f"env{'-resumed-' + ts if args.resume_root else ''}.json").write_text(
+        json.dumps(env, indent=1, ensure_ascii=True) + "\n", encoding="utf-8")
     print(f"{run_id}: cells={CELL_ORDER} seeds={seeds}")
 
     t_start = time.monotonic()

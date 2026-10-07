@@ -2131,3 +2131,22 @@ Zero repeated inference attempts survived; failed attempts kept as evidence
   data is valid — they ran under the frozen provider contract as-was).
 - STOPPED for the owner decision. No results read beyond the frozen
   analyzer output.
+
+## 2026-10-07 — THINK-PIN FIX applied (owner-approved) + --resume-root; fresh verification VERIFIED
+
+- Owner (chat): "ок, think-пін. як завершиш, стартуй наступний майлстоун".
+- provider.py: "think": False as a TOP-LEVEL payload field in EVERY /api/chat
+  request (PB-071-style contract addition; NOT inside sampling options) —
+  hybrid reasoning cores otherwise burn num_predict on thinking and emit
+  empty visible replies. Verified no-op for granite.
+- run_cont002.py: --resume-root (GATE-CONT002 condition D; prereg section 11
+  "path/argument prefixes" class): resume an existing run root, completed
+  cells skipped verbatim (zero repeated inference), completed summaries only
+  READ (never rewritten), separate env-resumed-<ts>.json.
+- frozen-config-cont002.json re-emitted: exactly TWO digests changed
+  (provider.py, run_cont002.py); the other 25 byte-identical (fresh Fable
+  verification THINK-PIN FIX VERIFIED, incl. an independent preflight-only
+  PASS and a diff-vs-1cab6e6 manifest comparison).
+- NEXT: resume the pilot run root cont002-pilot-20261007-230147 under the
+  GPU lock with the condition-C chain — only the failed B/GC-B cells re-run;
+  the completed A-side (dA 0.8667) is reused as-is.
