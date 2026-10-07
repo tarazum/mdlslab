@@ -2174,3 +2174,34 @@ Zero repeated inference attempts survived; failed attempts kept as evidence
   seeds {5003..5007}, same frozen scripts, GPU lock + condition-C chain,
   est ~40-60 min; then ONLY analyze_confirmatory_cont002.py over all 7
   seeds -> verdict + run-record header (revs, wall reconciliation).
+
+## 2026-10-08 — CONT-002 CONFIRMATORY COMPLETE 35/35: RETENTION-ESTABLISHED, R = 0.989
+
+Runs of record: results/CONT-002-PILOT/cont002-pilot-20261007-230147 (seeds
+5001,5002; two invocations, revs d1e9f53 + 2d38028) +
+results/CONT-002-CONFIRMATORY/cont002-confirmatory-20261008-020902 (seeds
+5003..5007; rev cdc8859; wall 2429.9 s). Analysis ONLY from the frozen
+analyze_confirmatory_cont002.py (bootstrap 10k, RNG seed 20261007, ratio of
+means, shared indices). Record header filled (revs, wall reconciliation:
+per-cell sums reconcile 927.2 + 2429.6 = 3356.8 s total GPU « 19800 s cap;
+carried notes N-1..N-6 + gate-noted conservative deviations).
+
+**Primary: dA = 0.8667 (95% CI [0.8095, 0.9238]) — estimability gate PASSED
+decisively (floor 0.30, CI excludes 0). R = 0.989 (95% CI [0.9444, 1.0353])
+-> "retained benefit established"** — essentially the ENTIRE core-A memory
+benefit survives the core replacement on this surface. CI excludes 0 and
+R >> MME 0.25; no unstable denominator (0.0 share, 0 non-finite draws);
+completeness 15/15 clusters x 7 seeds x 4 cells.
+
+Surface detail: A-restored 15/15 on ALL 7 seeds; B-restored 15/15 on ALL 7
+seeds; clean baselines at/near the guess band (A-clean 0-4/15, B-clean
+1-4/15); per-family R: DR 1.000, DX 0.979 (pooled gate passed -> per-family
+R reported per RC-2); invalid-format share 0.0 in every cell; guess bands
+A 0.000 (n=36), B 0.024 (n=42). Wall per B cell 80-112 s (think-pin killed
+the ramble mode too). Multi-rev execution pre-declared and stated exactly
+(three revs; pilot data reused per the single-freeze design).
+
+Labeled "agent-pre-registered, pending owner acceptance" — the owner brief
+follows in chat (plain language per the standing preference). No claims
+beyond the two pinned cores @ temp 0 on synthetic v3k content; PB-071/CN-003
+determinism caveat travels with every number.

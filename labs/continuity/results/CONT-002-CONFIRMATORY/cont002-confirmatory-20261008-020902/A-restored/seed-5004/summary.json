@@ -1,0 +1,168 @@
+{
+ "kind": "cont002-cell-summary",
+ "run_id": "cont002-confirmatory-20261008-020902",
+ "cell": "A-restored",
+ "seed": 5004,
+ "model": "granite-code:8b",
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "A26",
+   "observed_normalized": "a26",
+   "observed_label": "A26",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-5301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "G57",
+   "observed_normalized": "g57",
+   "observed_label": "G57",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-5302",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "N30",
+   "observed_normalized": "n30",
+   "observed_label": "N30",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-5303",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "U67",
+   "observed_normalized": "u67",
+   "observed_label": "U67",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-5304",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "V34",
+   "observed_normalized": "v34",
+   "observed_label": "V34",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-5305",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "W88",
+   "observed_normalized": "w88",
+   "observed_label": "W88",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-5306",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "X37",
+   "observed_normalized": "x37",
+   "observed_label": "X37",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-5307",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "J26",
+   "observed_normalized": "j26",
+   "observed_label": "J26",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-5401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "L26",
+   "observed_normalized": "l26",
+   "observed_label": "L26",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-5402",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "P26",
+   "observed_normalized": "p26",
+   "observed_label": "P26",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-5403",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "S26",
+   "observed_normalized": "s26",
+   "observed_label": "S26",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-5404",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "U26",
+   "observed_normalized": "u26",
+   "observed_label": "U26",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-5405",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "W26",
+   "observed_normalized": "w26",
+   "observed_label": "W26",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-5406",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "Y26",
+   "observed_normalized": "y26",
+   "observed_label": "Y26",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-5407",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "B26",
+   "observed_normalized": "b26",
+   "observed_label": "B26",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-5408",
+   "family": "distractor_recall"
+  }
+ ],
+ "probes_passed": 15,
+ "probes_total": 15,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 120,
+ "episodes_exported": null,
+ "duration_s": 65.8,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

@@ -1,0 +1,132 @@
+{
+ "kind": "cont002-cell-summary",
+ "run_id": "cont002-confirmatory-20261008-020902",
+ "cell": "GC-B",
+ "seed": 5005,
+ "model": "qwen36-35b-a3b:mdlslab",
+ "probes": [
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "beeswax",
+   "observed_label": "beeswax",
+   "observed_position": 0,
+   "labels": [
+    "beeswax",
+    "shellac",
+    "cacao",
+    "linseed",
+    "lanolin",
+    "carnauba"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-5501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "7",
+   "observed_label": "7",
+   "observed_position": 3,
+   "labels": [
+    "10",
+    "11",
+    "6",
+    "7",
+    "8",
+    "9"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-5501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "slate",
+   "observed_label": "slate",
+   "observed_position": 0,
+   "labels": [
+    "slate",
+    "coral",
+    "ochre",
+    "crimson",
+    "violet",
+    "teal"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-5502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "10",
+   "observed_label": "10",
+   "observed_position": 2,
+   "labels": [
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-5502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "uphill",
+   "observed_label": "uphill",
+   "observed_position": 4,
+   "labels": [
+    "seaward",
+    "north",
+    "south",
+    "east",
+    "uphill",
+    "downhill"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-5503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "14",
+   "observed_label": "14",
+   "observed_position": 5,
+   "labels": [
+    "15",
+    "16",
+    "17",
+    "18",
+    "13",
+    "14"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-5503",
+   "family": "guess_calibration"
+  }
+ ],
+ "probes_passed": 0,
+ "probes_total": 6,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 24,
+ "episodes_exported": null,
+ "duration_s": 55.7,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

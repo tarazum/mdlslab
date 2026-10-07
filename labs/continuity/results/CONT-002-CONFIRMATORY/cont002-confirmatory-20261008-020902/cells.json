@@ -1,0 +1,324 @@
+{
+ "kind": "cont002-cells",
+ "run_id": "cont002-confirmatory-20261008-020902",
+ "stage": "confirmatory",
+ "derived": true,
+ "cells": {
+  "learn-A/seed-5003": {
+   "wall_s": 71.6,
+   "attempts": 1,
+   "probes_total": 0,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": 60,
+   "export_sha256": "b03767d16712d400dd385690be2b50d6ced1718b8311b89618fb52550e13be7f"
+  },
+  "A-restored/seed-5003": {
+   "wall_s": 65.7,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 15,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "A-clean/seed-5003": {
+   "wall_s": 65.5,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 4,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "B-restored/seed-5003": {
+   "wall_s": 112.4,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 15,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "B-clean/seed-5003": {
+   "wall_s": 80.4,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 1,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "GC-A/seed-5003": {
+   "wall_s": 32.9,
+   "attempts": 1,
+   "probes_total": 6,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "GC-B/seed-5003": {
+   "wall_s": 55.0,
+   "attempts": 1,
+   "probes_total": 6,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "learn-A/seed-5004": {
+   "wall_s": 72.0,
+   "attempts": 1,
+   "probes_total": 0,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": 60,
+   "export_sha256": "9be76ff95a051f0f9370ec4d89731c3729f84e3843617ee6c982419254a64782"
+  },
+  "A-restored/seed-5004": {
+   "wall_s": 65.8,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 15,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "A-clean/seed-5004": {
+   "wall_s": 65.8,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 2,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "B-restored/seed-5004": {
+   "wall_s": 112.3,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 15,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "B-clean/seed-5004": {
+   "wall_s": 80.0,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 1,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "GC-A/seed-5004": {
+   "wall_s": 33.0,
+   "attempts": 1,
+   "probes_total": 6,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "GC-B/seed-5004": {
+   "wall_s": 55.0,
+   "attempts": 1,
+   "probes_total": 6,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "learn-A/seed-5005": {
+   "wall_s": 71.9,
+   "attempts": 1,
+   "probes_total": 0,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": 60,
+   "export_sha256": "0f93fd9095f41b5214570fb52e139256d0526e155c1e9e33feb02313110fdac1"
+  },
+  "A-restored/seed-5005": {
+   "wall_s": 65.7,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 15,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "A-clean/seed-5005": {
+   "wall_s": 65.5,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 2,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "B-restored/seed-5005": {
+   "wall_s": 112.5,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 15,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "B-clean/seed-5005": {
+   "wall_s": 81.6,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 3,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "GC-A/seed-5005": {
+   "wall_s": 37.5,
+   "attempts": 1,
+   "probes_total": 6,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "GC-B/seed-5005": {
+   "wall_s": 55.7,
+   "attempts": 1,
+   "probes_total": 6,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "learn-A/seed-5006": {
+   "wall_s": 72.3,
+   "attempts": 1,
+   "probes_total": 0,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": 60,
+   "export_sha256": "62356e5d47aa9425e3b6f4efda23f6c2fb3b9bed79827afd738788a5335c3e35"
+  },
+  "A-restored/seed-5006": {
+   "wall_s": 65.7,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 15,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "A-clean/seed-5006": {
+   "wall_s": 65.4,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 1,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "B-restored/seed-5006": {
+   "wall_s": 112.9,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 15,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "B-clean/seed-5006": {
+   "wall_s": 80.5,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 1,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "GC-A/seed-5006": {
+   "wall_s": 34.8,
+   "attempts": 1,
+   "probes_total": 6,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "GC-B/seed-5006": {
+   "wall_s": 55.3,
+   "attempts": 1,
+   "probes_total": 6,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "learn-A/seed-5007": {
+   "wall_s": 71.7,
+   "attempts": 1,
+   "probes_total": 0,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": 60,
+   "export_sha256": "9af93f6074a27faeba9656c7210f87866b360ffd7c22da2ff701d09104df0e25"
+  },
+  "A-restored/seed-5007": {
+   "wall_s": 65.7,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 15,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "A-clean/seed-5007": {
+   "wall_s": 65.4,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 1,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "B-restored/seed-5007": {
+   "wall_s": 112.1,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 15,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "B-clean/seed-5007": {
+   "wall_s": 80.6,
+   "attempts": 1,
+   "probes_total": 15,
+   "probes_passed": 4,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "GC-A/seed-5007": {
+   "wall_s": 34.6,
+   "attempts": 1,
+   "probes_total": 6,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  },
+  "GC-B/seed-5007": {
+   "wall_s": 54.8,
+   "attempts": 1,
+   "probes_total": 6,
+   "probes_passed": 0,
+   "budget_violation": null,
+   "episodes_exported": null,
+   "export_sha256": null
+  }
+ },
+ "total_wall_s": 2429.9
+}

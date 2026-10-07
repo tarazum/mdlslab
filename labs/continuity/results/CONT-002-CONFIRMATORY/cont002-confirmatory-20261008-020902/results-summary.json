@@ -1,0 +1,510 @@
+{
+ "kind": "cont002-confirmatory-results",
+ "run_roots": [
+  "labs\\continuity\\results\\CONT-002-PILOT\\cont002-pilot-20261007-230147",
+  "labs\\continuity\\results\\CONT-002-CONFIRMATORY\\cont002-confirmatory-20261008-020902"
+ ],
+ "mme_effective": 0.25,
+ "primary": {
+  "completeness": {
+   "clusters": 15,
+   "expected": 15,
+   "complete": true,
+   "missing": null
+  },
+  "dA": {
+   "point": 0.8667,
+   "ci95": [
+    0.8095,
+    0.9238
+   ]
+  },
+  "dB": {
+   "point": 0.8571
+  },
+  "gate": {
+   "dA_min": 0.3,
+   "point_ok": true,
+   "ci_excludes_0": true,
+   "passed": true
+  },
+  "R": {
+   "point": 0.989,
+   "ci95": [
+    0.9444,
+    1.0353
+   ],
+   "mme": 0.25,
+   "unstable_denominator_flag": false,
+   "unstable_share": 0.0,
+   "nonfinite_draws": 0,
+   "bootstrap": {
+    "n": 10000,
+    "rng_seed": 20261007,
+    "method": "cluster percentile, ratio of means, shared indices"
+   }
+  },
+  "branch": "RETENTION-ESTABLISHED",
+  "verdict": "retained benefit established: a quarter or more of the core-A memory benefit survives the core replacement"
+ },
+ "secondaries": {
+  "per_cluster": [
+   {
+    "cluster": "dr-5301",
+    "n": 7,
+    "A-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "A-clean": {
+     "pass_rate": 0.2857142857142857,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-clean": {
+     "pass_rate": 0.2857142857142857,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "dA_c": 0.7142857142857143,
+    "dB_c": 0.7142857142857143,
+    "family": "delayed_recall"
+   },
+   {
+    "cluster": "dr-5302",
+    "n": 7,
+    "A-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "A-clean": {
+     "pass_rate": 0.14285714285714285,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-clean": {
+     "pass_rate": 0.14285714285714285,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "dA_c": 0.8571428571428572,
+    "dB_c": 0.8571428571428572,
+    "family": "delayed_recall"
+   },
+   {
+    "cluster": "dr-5303",
+    "n": 7,
+    "A-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "A-clean": {
+     "pass_rate": 0.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-clean": {
+     "pass_rate": 0.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "dA_c": 1.0,
+    "dB_c": 1.0,
+    "family": "delayed_recall"
+   },
+   {
+    "cluster": "dr-5304",
+    "n": 7,
+    "A-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "A-clean": {
+     "pass_rate": 0.14285714285714285,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-clean": {
+     "pass_rate": 0.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "dA_c": 0.8571428571428572,
+    "dB_c": 1.0,
+    "family": "delayed_recall"
+   },
+   {
+    "cluster": "dr-5305",
+    "n": 7,
+    "A-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "A-clean": {
+     "pass_rate": 0.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-clean": {
+     "pass_rate": 0.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "dA_c": 1.0,
+    "dB_c": 1.0,
+    "family": "delayed_recall"
+   },
+   {
+    "cluster": "dr-5306",
+    "n": 7,
+    "A-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "A-clean": {
+     "pass_rate": 0.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-clean": {
+     "pass_rate": 0.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "dA_c": 1.0,
+    "dB_c": 1.0,
+    "family": "delayed_recall"
+   },
+   {
+    "cluster": "dr-5307",
+    "n": 7,
+    "A-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "A-clean": {
+     "pass_rate": 0.14285714285714285,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-clean": {
+     "pass_rate": 0.2857142857142857,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "dA_c": 0.8571428571428572,
+    "dB_c": 0.7142857142857143,
+    "family": "delayed_recall"
+   },
+   {
+    "cluster": "dx-5401",
+    "n": 7,
+    "A-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "A-clean": {
+     "pass_rate": 0.2857142857142857,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-clean": {
+     "pass_rate": 0.2857142857142857,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "dA_c": 0.7142857142857143,
+    "dB_c": 0.7142857142857143,
+    "family": "distractor_recall"
+   },
+   {
+    "cluster": "dx-5402",
+    "n": 7,
+    "A-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "A-clean": {
+     "pass_rate": 0.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-clean": {
+     "pass_rate": 0.14285714285714285,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "dA_c": 1.0,
+    "dB_c": 0.8571428571428572,
+    "family": "distractor_recall"
+   },
+   {
+    "cluster": "dx-5403",
+    "n": 7,
+    "A-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "A-clean": {
+     "pass_rate": 0.14285714285714285,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-clean": {
+     "pass_rate": 0.14285714285714285,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "dA_c": 0.8571428571428572,
+    "dB_c": 0.8571428571428572,
+    "family": "distractor_recall"
+   },
+   {
+    "cluster": "dx-5404",
+    "n": 7,
+    "A-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "A-clean": {
+     "pass_rate": 0.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-clean": {
+     "pass_rate": 0.14285714285714285,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "dA_c": 1.0,
+    "dB_c": 0.8571428571428572,
+    "family": "distractor_recall"
+   },
+   {
+    "cluster": "dx-5405",
+    "n": 7,
+    "A-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "A-clean": {
+     "pass_rate": 0.2857142857142857,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-clean": {
+     "pass_rate": 0.14285714285714285,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "dA_c": 0.7142857142857143,
+    "dB_c": 0.8571428571428572,
+    "family": "distractor_recall"
+   },
+   {
+    "cluster": "dx-5406",
+    "n": 7,
+    "A-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "A-clean": {
+     "pass_rate": 0.14285714285714285,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-clean": {
+     "pass_rate": 0.14285714285714285,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "dA_c": 0.8571428571428572,
+    "dB_c": 0.8571428571428572,
+    "family": "distractor_recall"
+   },
+   {
+    "cluster": "dx-5407",
+    "n": 7,
+    "A-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "A-clean": {
+     "pass_rate": 0.2857142857142857,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-clean": {
+     "pass_rate": 0.2857142857142857,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "dA_c": 0.7142857142857143,
+    "dB_c": 0.7142857142857143,
+    "family": "distractor_recall"
+   },
+   {
+    "cluster": "dx-5408",
+    "n": 7,
+    "A-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "A-clean": {
+     "pass_rate": 0.14285714285714285,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-restored": {
+     "pass_rate": 1.0,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "B-clean": {
+     "pass_rate": 0.14285714285714285,
+     "n_present": 7,
+     "invalid": 0
+    },
+    "dA_c": 0.8571428571428572,
+    "dB_c": 0.8571428571428572,
+    "family": "distractor_recall"
+   }
+  ],
+  "R_delayed_recall": 1.0,
+  "R_distractor_recall": 0.9787,
+  "invalid_share_A-restored": 0.0,
+  "invalid_share_A-clean": 0.0,
+  "invalid_share_B-restored": 0.0,
+  "invalid_share_B-clean": 0.0,
+  "guess_GC-A": {
+   "n": 36,
+   "position0_share": 0.1667,
+   "band": 0.0
+  },
+  "guess_GC-B": {
+   "n": 42,
+   "position0_share": 0.1429,
+   "band": 0.0238
+  },
+  "carried_notes": {
+   "N_1": "power-model caveats (ceiling compression of realized dA at bAs 0.90; shared-eps-across-cores assumption narrows R's CI) travel with every power number",
+   "N_2": "the pilot GO condition (dA >= 0.45 on seeds kept in the final dataset) induces a small upward selection bias on dA \u2014 conservative for R, anti-conservative for the estimability gate",
+   "determinism": "greedy+seed does not guarantee identical outputs (PB-071, CN-003)"
+  }
+ },
+ "record_header": {
+  "label": "agent-pre-registered, pending owner acceptance",
+  "revs_of_execution": {
+   "pilot_run_1": "d1e9f53 (A cells + failed B attempts \u2014 thinking-budget empty replies; artifacts kept as evidence)",
+   "pilot_resume": "2d38028 (think-pin owner-approved; B cells + GC-B; zero repeated inference)",
+   "confirmatory": "cdc8859 (seeds 5003..5007, single invocation, 35/35 cells)"
+  },
+  "wall_time_reconciliation": {
+   "pilot_per_cell_sums_across_invocations": 927.2,
+   "pilot_invocation_walls_s": [
+    707.7,
+    420.0
+   ],
+   "confirmatory_per_cell_sums": 2429.6,
+   "confirmatory_invocation_wall_s": 2429.9,
+   "total_gpu_s": 3356.8,
+   "declared_cap_s": 19800,
+   "reconciled": true
+  },
+  "carried_review_notes": {
+   "N_1": "power-model caveats travel with every power number (see prereg section 12)",
+   "N_2": "pilot GO condition (dA>=0.45) small upward selection bias on dA \u2014 conservative for R",
+   "N_3": "worst-case B-side NO-GO backstop never fired (B cells 80-112 s each)",
+   "N_4": "degenerate-draw handling implemented (0 non-finite draws occurred)",
+   "N_5": "environment pin: Ollama 0.34.2, granite 36c3c3b9683b, qwen36-35b-a3b 8a0fd5da454e (env.json + env-resumed-*.json)",
+   "N_6": "converted to mechanical gate checks at GATE-CONT002 (RC-4a/b)",
+   "conservative_deviations_noted_by_gate": "unstable-denominator branch blocks all verdict branches; per-family R also withheld when unstable \u2014 neither fired in this run"
+  },
+  "think_pin": "provider-level 'think': false in every request from the pilot resume onward (owner-approved 2026-10-07); A cells of seeds 5001-5002 ran WITHOUT the pin in pilot run 1 (granite: verified no-op)"
+ }
+}
