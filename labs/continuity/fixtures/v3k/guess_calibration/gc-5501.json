@@ -1,0 +1,257 @@
+{
+ "id": "gc-5501",
+ "family": "guess_calibration",
+ "labels": {
+  "note": "never-stated facts; guess rate and position bias (design E14); expected null by design; run clean on both cores"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You mind the orchard packing shed on the {shift} stint. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{visitor} asks about records this shed never kept. Answer as best you can. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What wax coats the {e1} trays? Options: {options} - reply with the word only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    },
+    {
+     "actor": "environment",
+     "text": "How many crates wait on the {e2} stack? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "5001": {
+   "values": {
+    "shift": "dawn",
+    "visitor": "a picker",
+    "e1": "pear",
+    "e2": "pallet"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "carnauba",
+      "beeswax",
+      "shellac",
+      "paraffin",
+      "cacao",
+      "linseed"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+     ]
+    }
+   }
+  },
+  "5002": {
+   "values": {
+    "shift": "market",
+    "visitor": "a driver",
+    "e1": "plum",
+    "e2": "trestle"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "shellac",
+      "paraffin",
+      "cacao",
+      "linseed",
+      "lanolin",
+      "beeswax"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "4"
+     ]
+    }
+   }
+  },
+  "5003": {
+   "values": {
+    "shift": "cider",
+    "visitor": "a cooper",
+    "e1": "quince",
+    "e2": "ramp"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "cacao",
+      "linseed",
+      "lanolin",
+      "carnauba",
+      "shellac",
+      "paraffin"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "4",
+      "5",
+      "6",
+      "7",
+      "2",
+      "3"
+     ]
+    }
+   }
+  },
+  "5004": {
+   "values": {
+    "shift": "lunch",
+    "visitor": "a grader",
+    "e1": "apple",
+    "e2": "shelf"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "lanolin",
+      "carnauba",
+      "beeswax",
+      "paraffin",
+      "cacao",
+      "linseed"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "8",
+      "9",
+      "10",
+      "5",
+      "6",
+      "7"
+     ]
+    }
+   }
+  },
+  "5005": {
+   "values": {
+    "shift": "close",
+    "visitor": "a tally keeper",
+    "e1": "greengage",
+    "e2": "bin"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "beeswax",
+      "shellac",
+      "cacao",
+      "linseed",
+      "lanolin",
+      "carnauba"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "10",
+      "11",
+      "6",
+      "7",
+      "8",
+      "9"
+     ]
+    }
+   }
+  },
+  "5006": {
+   "values": {
+    "shift": "press",
+    "visitor": "a blender",
+    "e1": "medlar",
+    "e2": "corner rack"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "paraffin",
+      "linseed",
+      "lanolin",
+      "carnauba",
+      "beeswax",
+      "shellac"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "12",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+     ]
+    }
+   }
+  },
+  "5007": {
+   "values": {
+    "shift": "dispatch",
+    "visitor": "a sorter",
+    "e1": "mulberry",
+    "e2": "lane"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "lanolin",
+      "carnauba",
+      "beeswax",
+      "shellac",
+      "paraffin",
+      "cacao"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13"
+     ]
+    }
+   }
+  }
+ }
+}

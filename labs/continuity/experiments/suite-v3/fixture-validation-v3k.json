@@ -1,0 +1,107 @@
+{
+  "kind": "suite-v3-fixture-validation",
+  "created_utc": "2026-10-07T11:45:58Z",
+  "spec": "docs/SUITE-V3-DESIGN.md sections 3-9 (design check ids E9-E14 implemented as V4-V9 here); v3i adds V14-V16 (variant table)",
+  "suite": "fixtures/v3k",
+  "suite_sha256": "06b897f6e727a0cc1ab2201cc03d0f007c80b48194260f97648f36260624e5fe",
+  "variant_seeds": [
+    5001,
+    5002,
+    5003,
+    5004,
+    5005,
+    5006,
+    5007
+  ],
+  "scenario_count": 18,
+  "scenario_instance_count": 126,
+  "checks": [
+    {
+      "check": "V1-manifest",
+      "pass": true,
+      "detail": "suite=v3k; protocol/version ok; families=['delayed_recall', 'distractor_recall', 'guess_calibration']; primary=['delayed_recall', 'distractor_recall'] x15 (expected ['delayed_recall', 'distractor_recall'] x15); variant_seeds=[5001, 5002, 5003, 5004, 5005, 5006, 5007]"
+    },
+    {
+      "check": "V14-variant-table",
+      "pass": true,
+      "detail": "18 scenarios x 7 seeds render; fail-closed errors: none"
+    },
+    {
+      "check": "V2-schema",
+      "pass": true,
+      "detail": "126 scenario-instances; violations: none"
+    },
+    {
+      "check": "V3-disjoint-from-v1-v2",
+      "pass": true,
+      "detail": "dup ids []; id overlap []; shared turn texts 0 []"
+    },
+    {
+      "check": "V4-label-form",
+      "pass": true,
+      "detail": "every probe: >=5 labels, options verbatim in text, reply instruction; violations: none"
+    },
+    {
+      "check": "V5-position-rotation",
+      "pass": true,
+      "detail": "105 scored probes; distinct positions [0, 1, 2, 3, 4, 5]; max share 0.18 (need >=3 distinct, <=0.50)"
+    },
+    {
+      "check": "V6-no-session-leak",
+      "pass": true,
+      "detail": "no label word in any probe-session text (options segment stripped); violations: none"
+    },
+    {
+      "check": "V7-composition",
+      "pass": true,
+      "detail": "suite=v3k; family counts {'delayed_recall': 7, 'distractor_recall': 8, 'guess_calibration': 3}; family plan {'delayed_recall': 7, 'distractor_recall': 8, 'guess_calibration': 3}; primary expectation {'delayed_recall': 7, 'distractor_recall': 8}; cr sub-types {} (need {}); rt sub-type set(); gc probes 6"
+    },
+    {
+      "check": "V8R-recall-eligibility",
+      "pass": true,
+      "detail": "every recall primary (every seed): expected stated in a learning turn; lure (when declared) in labels, stated pre-probe, != expected; 1 probe in last session; violations: none"
+    },
+    {
+      "check": "V9-guess-calibration",
+      "pass": true,
+      "detail": "3 gc scenarios, 6 never-stated probes (all seeds), all expected null"
+    },
+    {
+      "check": "V10-probes-off-first-turns",
+      "pass": true,
+      "detail": "every probe preceded by a non-probe turn in its session; violations: none"
+    },
+    {
+      "check": "V11-primary-shape",
+      "pass": true,
+      "detail": "primary: >=2 sessions, exactly 1 probe, in the LAST session, class transfer_eligible; violations: none"
+    },
+    {
+      "check": "V12-public-safe",
+      "pass": true,
+      "detail": "ASCII, no '@', no http everywhere (all seed instances)"
+    },
+    {
+      "check": "V13-initial-expected",
+      "pass": true,
+      "detail": "initial_expected on s1t1 of every primary classification scenario (CR/RT), drawn from its option vocabulary; violations: none"
+    },
+    {
+      "check": "V14b-token-closure",
+      "pass": true,
+      "detail": "values declared == tokens used in every variant; violations: none"
+    },
+    {
+      "check": "V15-seed-variation",
+      "pass": true,
+      "detail": "probe texts distinct per seed; identical-across-seeds turn share max 0.0 (need <= 0.50); violations: none"
+    },
+    {
+      "check": "V16-label-order-varies",
+      "pass": true,
+      "detail": "per-seed label orders pairwise distinct; expected position >= 3 distinct slots per scenario; violations: none"
+    }
+  ],
+  "verdict": "PASS",
+  "failed_checks": []
+}

@@ -1,0 +1,194 @@
+{
+ "id": "dx-5401",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two codes stated at learning (costume rack target, trap room crate lure); probe asks the target with the lure in options; lure_value declared for validator V8R"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the theater props loft. For the log: the costume rack code is {code}; the trap room crate code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} complete; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the loft register is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the costume rack code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{lure}",
+ "variants": {
+  "5001": {
+   "values": {
+    "code": "J11",
+    "lure": "K33",
+    "chore": "the rigging check",
+    "role": "stage manager"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "J11",
+      "K33",
+      "J16",
+      "J21",
+      "J26",
+      "J31"
+     ],
+     "expected": "J11"
+    }
+   }
+  },
+  "5002": {
+   "values": {
+    "code": "J16",
+    "lure": "K38",
+    "chore": "the costume press",
+    "role": "props master"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "K38",
+      "J11",
+      "J21",
+      "J26",
+      "J31",
+      "J16"
+     ],
+     "expected": "J16"
+    }
+   }
+  },
+  "5003": {
+   "values": {
+    "code": "J21",
+    "lure": "K43",
+    "chore": "the set sweep",
+    "role": "dresser"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "J11",
+      "J16",
+      "J26",
+      "J31",
+      "J21",
+      "K43"
+     ],
+     "expected": "J21"
+    }
+   }
+  },
+  "5004": {
+   "values": {
+    "code": "J26",
+    "lure": "K48",
+    "chore": "the sound walk",
+    "role": "fly operator"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "J16",
+      "J21",
+      "J31",
+      "J26",
+      "K48",
+      "J11"
+     ],
+     "expected": "J26"
+    }
+   }
+  },
+  "5005": {
+   "values": {
+    "code": "J31",
+    "lure": "K53",
+    "chore": "the lamp dusting",
+    "role": "night watchman"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "J21",
+      "J26",
+      "J31",
+      "K53",
+      "J11",
+      "J16"
+     ],
+     "expected": "J31"
+    }
+   }
+  },
+  "5006": {
+   "values": {
+    "code": "J36",
+    "lure": "K58",
+    "chore": "the rope coil round",
+    "role": "set painter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "J26",
+      "J36",
+      "K58",
+      "J11",
+      "J16",
+      "J21"
+     ],
+     "expected": "J36"
+    }
+   }
+  },
+  "5007": {
+   "values": {
+    "code": "J41",
+    "lure": "K63",
+    "chore": "the stair clear-out",
+    "role": "ushering lead"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "J41",
+      "K63",
+      "J11",
+      "J16",
+      "J21",
+      "J26"
+     ],
+     "expected": "J41"
+    }
+   }
+  }
+ }
+}

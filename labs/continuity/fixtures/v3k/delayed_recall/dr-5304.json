@@ -1,0 +1,200 @@
+{
+ "id": "dr-5304",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "reagent fridge code with a NON-label companion fact (anti-echo); learning s1 fact + s2 chore; s3 held-out label-form probe"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the university chemistry stockroom. For the log: the reagent fridge code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} complete; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the store book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the reagent fridge code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "5001": {
+   "values": {
+    "code": "U51",
+    "comp_thing": "fume hood fan",
+    "comp_verb": "hums all day",
+    "chore": "the bottle round",
+    "role": "lab technician"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U56",
+      "U62",
+      "U67",
+      "U73",
+      "U78",
+      "U51"
+     ],
+     "expected": "U51"
+    }
+   }
+  },
+  "5002": {
+   "values": {
+    "code": "U56",
+    "comp_thing": "drying oven",
+    "comp_verb": "ticks at noon",
+    "chore": "the hood wipe-down",
+    "role": "store steward"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U67",
+      "U73",
+      "U78",
+      "U84",
+      "U56",
+      "U62"
+     ],
+     "expected": "U56"
+    }
+   }
+  },
+  "5003": {
+   "values": {
+    "code": "U62",
+    "comp_thing": "spill tray",
+    "comp_verb": "slides when full",
+    "chore": "the stock count",
+    "role": "teaching assistant"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U78",
+      "U84",
+      "U89",
+      "U62",
+      "U67",
+      "U73"
+     ],
+     "expected": "U62"
+    }
+   }
+  },
+  "5004": {
+   "values": {
+    "code": "U67",
+    "comp_thing": "badge drawer",
+    "comp_verb": "sticks in damp",
+    "chore": "the floor rinse",
+    "role": "safety officer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U89",
+      "U95",
+      "U67",
+      "U73",
+      "U78",
+      "U84"
+     ],
+     "expected": "U67"
+    }
+   }
+  },
+  "5005": {
+   "values": {
+    "code": "U73",
+    "comp_thing": "sample rack",
+    "comp_verb": "fills by friday",
+    "chore": "the label rebind",
+    "role": "receiving clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U99",
+      "U73",
+      "U78",
+      "U84",
+      "U89",
+      "U95"
+     ],
+     "expected": "U73"
+    }
+   }
+  },
+  "5006": {
+   "values": {
+    "code": "U78",
+    "comp_thing": "sink tap",
+    "comp_verb": "drips at the seam",
+    "chore": "the glove restock",
+    "role": "glassblower"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U78",
+      "U84",
+      "U89",
+      "U95",
+      "U99",
+      "U104"
+     ],
+     "expected": "U78"
+    }
+   }
+  },
+  "5007": {
+   "values": {
+    "code": "U84",
+    "comp_thing": "first-aid tin",
+    "comp_verb": "rings when bumped",
+    "chore": "the waste pickup",
+    "role": "auditor"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U89",
+      "U95",
+      "U99",
+      "U104",
+      "U109",
+      "U84"
+     ],
+     "expected": "U84"
+    }
+   }
+  }
+ }
+}

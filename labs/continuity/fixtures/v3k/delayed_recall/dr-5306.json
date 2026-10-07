@@ -1,0 +1,200 @@
+{
+ "id": "dr-5306",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "balances bench code with a NON-label companion fact (anti-echo); learning s1 fact + s2 chore; s3 held-out label-form probe"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the university chemistry stockroom. For the log: the balances bench code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} complete; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the store book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the balances bench code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "5001": {
+   "values": {
+    "code": "W72",
+    "comp_thing": "desiccator lid",
+    "comp_verb": "fogs in the morning",
+    "chore": "the bottle round",
+    "role": "lab technician"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W99",
+      "W72",
+      "W77",
+      "W83",
+      "W88",
+      "W94"
+     ],
+     "expected": "W72"
+    }
+   }
+  },
+  "5002": {
+   "values": {
+    "code": "W77",
+    "comp_thing": "weights tray",
+    "comp_verb": "rattles on the move",
+    "chore": "the hood wipe-down",
+    "role": "store steward"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W77",
+      "W83",
+      "W88",
+      "W94",
+      "W99",
+      "W104"
+     ],
+     "expected": "W77"
+    }
+   }
+  },
+  "5003": {
+   "values": {
+    "code": "W83",
+    "comp_thing": "stool pad",
+    "comp_verb": "wears thin at one corner",
+    "chore": "the stock count",
+    "role": "teaching assistant"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W88",
+      "W94",
+      "W99",
+      "W104",
+      "W109",
+      "W83"
+     ],
+     "expected": "W83"
+    }
+   }
+  },
+  "5004": {
+   "values": {
+    "code": "W88",
+    "comp_thing": "log binder",
+    "comp_verb": "opens with a pop",
+    "chore": "the floor rinse",
+    "role": "safety officer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W99",
+      "W104",
+      "W109",
+      "W115",
+      "W88",
+      "W94"
+     ],
+     "expected": "W88"
+    }
+   }
+  },
+  "5005": {
+   "values": {
+    "code": "W94",
+    "comp_thing": "calibration card",
+    "comp_verb": "curls at the edges",
+    "chore": "the label rebind",
+    "role": "receiving clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W109",
+      "W115",
+      "W120",
+      "W94",
+      "W99",
+      "W104"
+     ],
+     "expected": "W94"
+    }
+   }
+  },
+  "5006": {
+   "values": {
+    "code": "W99",
+    "comp_thing": "dust cloth",
+    "comp_verb": "fades in the sun",
+    "chore": "the glove restock",
+    "role": "glassblower"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W120",
+      "W126",
+      "W99",
+      "W104",
+      "W109",
+      "W115"
+     ],
+     "expected": "W99"
+    }
+   }
+  },
+  "5007": {
+   "values": {
+    "code": "W104",
+    "comp_thing": "spare bulb",
+    "comp_verb": "snags on the hinge",
+    "chore": "the waste pickup",
+    "role": "auditor"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W131",
+      "W104",
+      "W109",
+      "W115",
+      "W120",
+      "W126"
+     ],
+     "expected": "W104"
+    }
+   }
+  }
+ }
+}

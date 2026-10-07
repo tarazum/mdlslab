@@ -1,0 +1,24 @@
+{
+ "protocol": "continuity-workload",
+ "version": 3,
+ "families": [
+  "delayed_recall",
+  "distractor_recall",
+  "guess_calibration"
+ ],
+ "primary_families": [
+  "delayed_recall",
+  "distractor_recall"
+ ],
+ "primary_cluster_count": 15,
+ "variant_seeds": [
+  5001,
+  5002,
+  5003,
+  5004,
+  5005,
+  5006,
+  5007
+ ],
+ "description": "Suite v3k for CONT-002 (state transfer across cores, R = dB/dA): the v3i protocol (v3 label-form probes + predeclared per-seed variant table, manifest.variant_seeds = {5001..5007}) with fresh worlds (mountain cable-car stations, university chemistry stockroom, theater props loft, quarry weighbridge office; gc: orchard packing shed, brewery cellar, observatory dome) and ids x-5xxx, disjoint from v1/v2/v2-calibration/v3/v3h/v3i/v3j (validator V3 covers every rendered seed). PRIMARY = delayed_recall x7 + distractor_recall x8 (15 clusters x 7 seeds; sizing per power_calc_cont002.py: K12x5 detection power 0.604 at MME R 0.25 - undersized; K15x7 = 0.801 conservative row). Family rationale: cycles 1-2 measured the largest, cleanest memory benefit on DR/DX (pass ~1.0 with memory vs 0.13-0.15 without), keeping the R denominator estimable by construction; the probe tests storage, not core-specific conflict-resolution policy, so CR/CU/RT are absent (memory-can-hurt transfer is a different question, out of scope per docs/CONT-002-DESIGN.md). Scenario shape serves the 2x2: s1 learning fact(s) (code + non-label companion / target + lure), s2 chore, s3 HELD-OUT probe session (class transfer_eligible) learned once per seed on core A and probed in all four cells (A+restored / A+clean / B+restored / B+clean). guess_calibration x3 (6 never-stated probes) measured clean on BOTH cores (per-core guess bands). Rendering: continuity.fixtures.render_seed_variant (single definition shared by runner, validator, assembly gate)."
+}

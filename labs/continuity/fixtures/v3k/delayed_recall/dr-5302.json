@@ -1,0 +1,200 @@
+{
+ "id": "dr-5302",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "grip carriage code with a NON-label companion fact (anti-echo); learning s1 fact + s2 chore; s3 held-out label-form probe"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the mountain cable-car stations. For the log: the grip carriage code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} complete; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the station log is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the grip carriage code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "5001": {
+   "values": {
+    "code": "G41",
+    "comp_thing": "cable saddle",
+    "comp_verb": "creaks at sunrise",
+    "chore": "the dawn car run",
+    "role": "line fitter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G52",
+      "G57",
+      "G63",
+      "G68",
+      "G41",
+      "G46"
+     ],
+     "expected": "G41"
+    }
+   }
+  },
+  "5002": {
+   "values": {
+    "code": "G46",
+    "comp_thing": "bunker heater",
+    "comp_verb": "warms the morning shift",
+    "chore": "the midday grip inspection",
+    "role": "station attendant"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G63",
+      "G68",
+      "G74",
+      "G46",
+      "G52",
+      "G57"
+     ],
+     "expected": "G46"
+    }
+   }
+  },
+  "5003": {
+   "values": {
+    "code": "G52",
+    "comp_thing": "towel rail",
+    "comp_verb": "steams by noon",
+    "chore": "the evening wind check",
+    "role": "ropeway mechanic"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G74",
+      "G79",
+      "G52",
+      "G57",
+      "G63",
+      "G68"
+     ],
+     "expected": "G52"
+    }
+   }
+  },
+  "5004": {
+   "values": {
+    "code": "G57",
+    "comp_thing": "lantern shelf",
+    "comp_verb": "sings in the dusk run",
+    "chore": "the night anchor test",
+    "role": "rescue marshal"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G85",
+      "G57",
+      "G63",
+      "G68",
+      "G74",
+      "G79"
+     ],
+     "expected": "G57"
+    }
+   }
+  },
+  "5005": {
+   "values": {
+    "code": "G63",
+    "comp_thing": "tool cabinet",
+    "comp_verb": "locks at close",
+    "chore": "the dawn rope grease round",
+    "role": "maintenance planner"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G63",
+      "G68",
+      "G74",
+      "G79",
+      "G85",
+      "G90"
+     ],
+     "expected": "G63"
+    }
+   }
+  },
+  "5006": {
+   "values": {
+    "code": "G68",
+    "comp_thing": "sign frame",
+    "comp_verb": "swings in gusts",
+    "chore": "the counterweight sweep",
+    "role": "cable auditor"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G74",
+      "G79",
+      "G85",
+      "G90",
+      "G96",
+      "G68"
+     ],
+     "expected": "G68"
+    }
+   }
+  },
+  "5007": {
+   "values": {
+    "code": "G74",
+    "comp_thing": "grease drum",
+    "comp_verb": "drips by the drain",
+    "chore": "the brake block look-over",
+    "role": "night controller"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G85",
+      "G90",
+      "G96",
+      "G101",
+      "G74",
+      "G79"
+     ],
+     "expected": "G74"
+    }
+   }
+  }
+ }
+}

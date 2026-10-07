@@ -1,0 +1,200 @@
+{
+ "id": "dr-5305",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "glassware cart code with a NON-label companion fact (anti-echo); learning s1 fact + s2 chore; s3 held-out label-form probe"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the university chemistry stockroom. For the log: the glassware cart code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} complete; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the store book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the glassware cart code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "5001": {
+   "values": {
+    "code": "V18",
+    "comp_thing": "acid cabinet",
+    "comp_verb": "stands by the wall",
+    "chore": "the bottle round",
+    "role": "lab technician"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V34",
+      "V40",
+      "V45",
+      "V18",
+      "V23",
+      "V29"
+     ],
+     "expected": "V18"
+    }
+   }
+  },
+  "5002": {
+   "values": {
+    "code": "V23",
+    "comp_thing": "trolley brake",
+    "comp_verb": "squeals at frost",
+    "chore": "the hood wipe-down",
+    "role": "store steward"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V45",
+      "V51",
+      "V23",
+      "V29",
+      "V34",
+      "V40"
+     ],
+     "expected": "V23"
+    }
+   }
+  },
+  "5003": {
+   "values": {
+    "code": "V29",
+    "comp_thing": "pipette jar",
+    "comp_verb": "foams after use",
+    "chore": "the stock count",
+    "role": "teaching assistant"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V56",
+      "V29",
+      "V34",
+      "V40",
+      "V45",
+      "V51"
+     ],
+     "expected": "V29"
+    }
+   }
+  },
+  "5004": {
+   "values": {
+    "code": "V34",
+    "comp_thing": "glove box",
+    "comp_verb": "sits on the top shelf",
+    "chore": "the floor rinse",
+    "role": "safety officer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V34",
+      "V40",
+      "V45",
+      "V51",
+      "V56",
+      "V62"
+     ],
+     "expected": "V34"
+    }
+   }
+  },
+  "5005": {
+   "values": {
+    "code": "V40",
+    "comp_thing": "wash bottle crate",
+    "comp_verb": "waits by the sink",
+    "chore": "the label rebind",
+    "role": "receiving clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V45",
+      "V51",
+      "V56",
+      "V62",
+      "V67",
+      "V40"
+     ],
+     "expected": "V40"
+    }
+   }
+  },
+  "5006": {
+   "values": {
+    "code": "V45",
+    "comp_thing": "burette stand",
+    "comp_verb": "rocks on the third wheel",
+    "chore": "the glove restock",
+    "role": "glassblower"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V56",
+      "V62",
+      "V67",
+      "V72",
+      "V45",
+      "V51"
+     ],
+     "expected": "V45"
+    }
+   }
+  },
+  "5007": {
+   "values": {
+    "code": "V51",
+    "comp_thing": "cork tray",
+    "comp_verb": "clicks when locked",
+    "chore": "the waste pickup",
+    "role": "auditor"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V67",
+      "V72",
+      "V77",
+      "V51",
+      "V56",
+      "V62"
+     ],
+     "expected": "V51"
+    }
+   }
+  }
+ }
+}

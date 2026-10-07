@@ -1,0 +1,194 @@
+{
+ "id": "dx-5407",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two codes stated at learning (tally board rack target, hose reel cradle lure); probe asks the target with the lure in options; lure_value declared for validator V8R"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the quarry weighbridge office. For the log: the tally board rack code is {code}; the hose reel cradle code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} complete; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the weight ledger is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the tally board rack code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{lure}",
+ "variants": {
+  "5001": {
+   "values": {
+    "code": "Y11",
+    "lure": "Z33",
+    "chore": "the dawn weigh round",
+    "role": "weighbridge clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Y11",
+      "Z33",
+      "Y16",
+      "Y21",
+      "Y26",
+      "Y31"
+     ],
+     "expected": "Y11"
+    }
+   }
+  },
+  "5002": {
+   "values": {
+    "code": "Y16",
+    "lure": "Z38",
+    "chore": "the ticket audit",
+    "role": "haul driver"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Z38",
+      "Y11",
+      "Y21",
+      "Y26",
+      "Y31",
+      "Y16"
+     ],
+     "expected": "Y16"
+    }
+   }
+  },
+  "5003": {
+   "values": {
+    "code": "Y21",
+    "lure": "Z43",
+    "chore": "the belt inspection",
+    "role": "site foreman"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Y11",
+      "Y16",
+      "Y26",
+      "Y31",
+      "Y21",
+      "Z43"
+     ],
+     "expected": "Y21"
+    }
+   }
+  },
+  "5004": {
+   "values": {
+    "code": "Y26",
+    "lure": "Z48",
+    "chore": "the wheel wash",
+    "role": "sample runner"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Y16",
+      "Y21",
+      "Y31",
+      "Y26",
+      "Z48",
+      "Y11"
+     ],
+     "expected": "Y26"
+    }
+   }
+  },
+  "5005": {
+   "values": {
+    "code": "Y31",
+    "lure": "Z53",
+    "chore": "the slate tally",
+    "role": "geologist"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Y21",
+      "Y26",
+      "Y31",
+      "Z53",
+      "Y11",
+      "Y16"
+     ],
+     "expected": "Y31"
+    }
+   }
+  },
+  "5006": {
+   "values": {
+    "code": "Y36",
+    "lure": "Z58",
+    "chore": "the lamp fuel fill",
+    "role": "fitter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Y26",
+      "Y36",
+      "Z58",
+      "Y11",
+      "Y16",
+      "Y21"
+     ],
+     "expected": "Y36"
+    }
+   }
+  },
+  "5007": {
+   "values": {
+    "code": "Y41",
+    "lure": "Z63",
+    "chore": "the fence walk",
+    "role": "shipment planner"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Y41",
+      "Z63",
+      "Y11",
+      "Y16",
+      "Y21",
+      "Y26"
+     ],
+     "expected": "Y41"
+    }
+   }
+  }
+ }
+}

@@ -1898,3 +1898,69 @@ pre-registered plan.
   `docs/REFLECTION-V2-PROPOSAL.md`; fresh session opens
   `docs/SESSION-BRIEF-CONT002.md` (CONT-002 design + pre-registration, zero
   GPU).
+
+## 2026-10-07 — CONT-002 design milestone START (per docs/SESSION-BRIEF-CONT002.md)
+
+- Plan: (1) `docs/CONT-002-DESIGN.md` — the 2×2 {core A granite-code:8b,
+  core B Qwen3.6-35B-A3B} × {state learned on A imported, clean}, primary
+  endpoint R = ΔB/ΔA with the inspirer's non-estimable clause verbatim
+  (research-proposal.md:126), family choice declared (DR/DX primary);
+  (2) suite v3k authoring (protocol v3i as-is, ids x-5xxx, fresh worlds,
+  seeds {5001..5005}) + validator `--suite v3k` extension + regressions
+  v3/v3h/v3i/v3j; (3) power artifact for R's cluster bootstrap (paired
+  4-cell model); (4) `docs/EVALUATION-PREP-CONT002.md` draft (9 template
+  items + all five 2026-10-04 amendments); (5) B-core feasibility note from
+  M2b traces inside the design doc.
+- State: repo clean on main @ 31962bc; entry conditions verified (CONT-005
+  CLOSED + accepted; CONT-002 next arc per owner "ок" 2026-10-07; deferral
+  condition satisfied by v3 label-form work; mechanics 5/5 at M2b).
+- Zero GPU; no behavioral runs (never-autonomous clause stands; behavioral
+  work starts only after owner accepts the pre-registration).
+
+## 2026-10-07 — CONT-002 design milestone COMPLETE (design + suite v3k + prereg draft + power)
+
+Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT002.md delivered.
+
+- `docs/CONT-002-DESIGN.md`: the 2x2 {granite-code:8b, Qwen3.6-35B-A3B} x
+  {restored, clean} with the inspirer's R = dB/dA clause verbatim
+  (research-proposal.md:126); A+restored deliberately uses the SAME
+  export->import pipeline as B+restored (core is the only difference);
+  family choice declared: DR/DX primary (largest cleanest memory benefit,
+  ~0.85 -> the R denominator stays estimable), CR/CU/RT absent
+  (memory-can-hurt transfer is a different question); B-core feasibility
+  note from M2b traces (B+state 8.9 s vs B+clean ramble 73.5 s/turn; total
+  est 2.5-5 h GPU, cap 5.5 h, pilot measures first).
+- `fixtures/v3k` (builder `build_v3k.py`, deterministic re-run verified):
+  18 scenarios = DR x7 + DX x8 (15 primary clusters, class
+  transfer_eligible) + GC x3; seeds {5001..5007} predeclared; fresh worlds
+  (cable-car stations, chemistry stockroom, theater props loft, quarry
+  weighbridge office; gc: orchard shed, brewery cellar, observatory dome);
+  72 turns/seed. Validator extended (--suite v3k: per-suite FAMILY_PLANS,
+  V8R recall-eligibility incl. DX lure structure, per-suite V11 probe
+  class): v3k PASS 16/16 + regressions v3/v3h/v3i/v3j PASS
+  (fixture-validation-v3k.json committed; suite sha256 06b897f6e727a0cc...).
+- SIZING FINDING (the milestone's real number): at the MME R = 0.25 the
+  naive 12 clusters x 5 seeds gives detection power 0.604 — the binding
+  constraint is per-observation binomial noise, not cluster spread (K15x5
+  0.692, K12x7 0.735). Resized to K15x7 -> 0.801 on the conservative row
+  (stress 0.767/0.720 govern via pilot clauses; false positive 0.033;
+  "established"-branch near 0.5 AT exactly MME declared openly, cycle-2
+  precedent). Power artifact: power_calc_cont002.py +
+  power-results-cont002.json (seed 20261007, 15 rows incl. the undersized
+  alternatives kept for the record).
+- `docs/EVALUATION-PREP-CONT002.md` DRAFT: all 9 template items (frozen
+  analysis code incl. pilot GO/NO-GO + confirmatory scripts; infrastructure
+  clause; multi-rev; non-executor gates from the standing queue; wall-time
+  reconciliation incl. per-cell sums; power section with freeze-time
+  re-check; droppable-secondary with pre-declared GC-B trim; carried-over
+  review notes; guessing band on BOTH cores + dB-scale MME clearance).
+  Estimability gate numeric: dA >= 0.30 AND dA CI excludes 0, else
+  "non-estimable, deltas as diagnostics, no alternative denominator".
+  Two-stage: pilot {5001,5002} (feasibility GO/NO-GO: B label-form
+  compliance < 0.30 invalid, wall-time, dA >= 0.45) -> confirmatory all 7
+  seeds, single freeze, pilot data part of the final dataset (analysis
+  frozen before any inference).
+- NEXT: PR-REVIEW-CONT002 by a fresh non-executor session from the queue
+  (Fable -> Opus -> GLM 5.3 Flash) -> fold -> OWNER GATE (explicit
+  acceptance before ANY behavioral run; never-autonomous) -> freeze -> gate
+  -> pilot -> confirmatory.

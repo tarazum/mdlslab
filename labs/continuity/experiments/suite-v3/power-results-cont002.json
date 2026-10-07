@@ -1,0 +1,152 @@
+{
+ "kind": "cont002-power-calc",
+ "endpoint": "R = dB/dA retained-benefit ratio; cluster percentile bootstrap (two-sided 95%) over v3k primary clusters (DR 7 + DX 8 = 15); 7 seed-variant obs/cluster/cell (seeds 5001..5007)",
+ "model": "per cluster c, seed s: eps~N(0,sig_shared) shared by all four cells (cancels inside dA/dB, correlates them); eta~N(0,sig_int) per cell (power killer); bases bAs 0.90 / bAc 0.15 / bBc 0.17 (dA latent 0.75); clip [0.02,0.98]",
+ "gate": "dA point >= 0.30 AND dA cluster-bootstrap CI excludes 0, else non-estimable (inspirer clause); R bootstrap draws with dA* <= 0.05 -> unstable flag if > 10% of draws",
+ "mme": {
+  "R": 0.25,
+  "dA_min": 0.3
+ },
+ "seeds": {
+  "sim_rng": 20261007,
+  "REPS": 3000,
+  "BOOT": 4000
+ },
+ "results": [
+  {
+   "label": "R1 binomial (0,0), R 0.25, K15x7 [sanity]",
+   "detection_power_ci_excl_0": 0.877,
+   "retention_established_branch": 0.512,
+   "harm_branch": 0.0,
+   "non_estimable_gate": 0.0,
+   "unstable_denominator_flag": 0.0,
+   "median_r_ci_width": 0.302
+  },
+  {
+   "label": "R2 conservative (sh .20, siA/B .10), R 0.25, K15x7 [grounds MME]",
+   "detection_power_ci_excl_0": 0.801,
+   "retention_established_branch": 0.477,
+   "harm_branch": 0.0,
+   "non_estimable_gate": 0.0,
+   "unstable_denominator_flag": 0.0,
+   "median_r_ci_width": 0.33
+  },
+  {
+   "label": "R3 conservative, R 0.25, K12x5 [undersized - kept for the record]",
+   "detection_power_ci_excl_0": 0.604,
+   "retention_established_branch": 0.45,
+   "harm_branch": 0.0,
+   "non_estimable_gate": 0.0,
+   "unstable_denominator_flag": 0.0,
+   "median_r_ci_width": 0.434
+  },
+  {
+   "label": "R4 conservative, R 0.25, K15x5 [clusters-only upgrade]",
+   "detection_power_ci_excl_0": 0.692,
+   "retention_established_branch": 0.482,
+   "harm_branch": 0.0,
+   "non_estimable_gate": 0.0,
+   "unstable_denominator_flag": 0.0,
+   "median_r_ci_width": 0.392
+  },
+  {
+   "label": "R5 conservative, R 0.25, K12x7 [seeds-only upgrade]",
+   "detection_power_ci_excl_0": 0.735,
+   "retention_established_branch": 0.486,
+   "harm_branch": 0.0,
+   "non_estimable_gate": 0.0,
+   "unstable_denominator_flag": 0.0,
+   "median_r_ci_width": 0.365
+  },
+  {
+   "label": "R6 stress (siA/B .15), R 0.25, K15x7",
+   "detection_power_ci_excl_0": 0.767,
+   "retention_established_branch": 0.472,
+   "harm_branch": 0.0,
+   "non_estimable_gate": 0.0,
+   "unstable_denominator_flag": 0.0,
+   "median_r_ci_width": 0.346
+  },
+  {
+   "label": "R7 B-stress (siB .20, siA .10), R 0.25, K15x7",
+   "detection_power_ci_excl_0": 0.72,
+   "retention_established_branch": 0.399,
+   "harm_branch": 0.0,
+   "non_estimable_gate": 0.0,
+   "unstable_denominator_flag": 0.0,
+   "median_r_ci_width": 0.34
+  },
+  {
+   "label": "R8 conservative, R 0.15 (sub-MME), K15x7",
+   "detection_power_ci_excl_0": 0.405,
+   "retention_established_branch": 0.098,
+   "harm_branch": 0.0,
+   "non_estimable_gate": 0.0,
+   "unstable_denominator_flag": 0.0,
+   "median_r_ci_width": 0.314
+  },
+  {
+   "label": "R9 conservative, R 0.50, K15x7",
+   "detection_power_ci_excl_0": 1.0,
+   "retention_established_branch": 1.0,
+   "harm_branch": 0.0,
+   "non_estimable_gate": 0.0,
+   "unstable_denominator_flag": 0.0,
+   "median_r_ci_width": 0.357
+  },
+  {
+   "label": "R10 conservative, R 1.00 (full portability), K15x7",
+   "detection_power_ci_excl_0": 1.0,
+   "retention_established_branch": 1.0,
+   "harm_branch": 0.0,
+   "non_estimable_gate": 0.0,
+   "unstable_denominator_flag": 0.0,
+   "median_r_ci_width": 0.388
+  },
+  {
+   "label": "R11 conservative, R 0.00 (false positive), K15x7",
+   "detection_power_ci_excl_0": 0.033,
+   "retention_established_branch": 0.002,
+   "harm_branch": 0.027,
+   "non_estimable_gate": 0.0,
+   "unstable_denominator_flag": 0.0,
+   "median_r_ci_width": 0.292
+  },
+  {
+   "label": "R12 conservative, R -0.25 (harm), K15x7",
+   "detection_power_ci_excl_0": 0.0,
+   "retention_established_branch": 0.0,
+   "harm_branch": 0.697,
+   "non_estimable_gate": 0.0,
+   "unstable_denominator_flag": 0.0,
+   "median_r_ci_width": 0.264
+  },
+  {
+   "label": "R13 conservative, R 0.25, stronger B base (bBc 0.30), K15x7",
+   "detection_power_ci_excl_0": 0.819,
+   "retention_established_branch": 0.576,
+   "harm_branch": 0.0,
+   "non_estimable_gate": 0.0,
+   "unstable_denominator_flag": 0.0,
+   "median_r_ci_width": 0.357
+  },
+  {
+   "label": "R14 conservative, R 0.25, weaker A benefit (dA 0.60), K15x7",
+   "detection_power_ci_excl_0": 0.617,
+   "retention_established_branch": 0.407,
+   "harm_branch": 0.0,
+   "non_estimable_gate": 0.0,
+   "unstable_denominator_flag": 0.0,
+   "median_r_ci_width": 0.395
+  },
+  {
+   "label": "R15 conservative, R 0.25, gate-edge dA 0.35, K15x7",
+   "detection_power_ci_excl_0": 0.167,
+   "retention_established_branch": 0.154,
+   "harm_branch": 0.001,
+   "non_estimable_gate": 0.426,
+   "unstable_denominator_flag": 0.0,
+   "median_r_ci_width": 0.625
+  }
+ ]
+}

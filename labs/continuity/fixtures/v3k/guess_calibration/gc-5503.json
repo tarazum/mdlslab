@@ -1,0 +1,257 @@
+{
+ "id": "gc-5503",
+ "family": "guess_calibration",
+ "labels": {
+  "note": "never-stated facts; guess rate and position bias (design E14); expected null by design; run clean on both cores"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You mind the observatory dome on the {shift} rotation. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{visitor} asks about records this dome never kept. Answer as best you can. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Which way does the {e1} hatch point? Options: {options} - reply with the word only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    },
+    {
+     "actor": "environment",
+     "text": "How many steps climb to the {e2} platform? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "5001": {
+   "values": {
+    "shift": "dusk",
+    "visitor": "a stargazer",
+    "e1": "main shutter",
+    "e2": "ring catwalk"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "uphill",
+      "downhill",
+      "north",
+      "south",
+      "east",
+      "west"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "13",
+      "14",
+      "9",
+      "10",
+      "11",
+      "12"
+     ]
+    }
+   }
+  },
+  "5002": {
+   "values": {
+    "shift": "night",
+    "visitor": "a lens cleaner",
+    "e1": "side shutter",
+    "e2": "inner catwalk"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "seaward",
+      "south",
+      "east",
+      "west",
+      "uphill",
+      "downhill"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "15",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14"
+     ]
+    }
+   }
+  },
+  "5003": {
+   "values": {
+    "shift": "moon",
+    "visitor": "a recorder",
+    "e1": "spare shutter",
+    "e2": "outer catwalk"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "east",
+      "west",
+      "uphill",
+      "downhill",
+      "seaward",
+      "north"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16"
+     ]
+    }
+   }
+  },
+  "5004": {
+   "values": {
+    "shift": "dawn",
+    "visitor": "a rigger",
+    "e1": "rear shutter",
+    "e2": "spiral stair"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "uphill",
+      "downhill",
+      "seaward",
+      "north",
+      "south",
+      "west"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "12"
+     ]
+    }
+   }
+  },
+  "5005": {
+   "values": {
+    "shift": "day",
+    "visitor": "a curator",
+    "e1": "zenith panel",
+    "e2": "main floor"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "seaward",
+      "north",
+      "south",
+      "east",
+      "uphill",
+      "downhill"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "15",
+      "16",
+      "17",
+      "18",
+      "13",
+      "14"
+     ]
+    }
+   }
+  },
+  "5006": {
+   "values": {
+    "shift": "solar",
+    "visitor": "a glazier",
+    "e1": "view slit",
+    "e2": "control deck"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "south",
+      "east",
+      "west",
+      "downhill",
+      "seaward",
+      "north"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "17",
+      "18",
+      "19",
+      "14",
+      "15",
+      "16"
+     ]
+    }
+   }
+  },
+  "5007": {
+   "values": {
+    "shift": "closing",
+    "visitor": "a caretaker",
+    "e1": "vent flap",
+    "e2": "entry landing"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "west",
+      "uphill",
+      "seaward",
+      "north",
+      "south",
+      "east"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "19",
+      "20",
+      "15",
+      "16",
+      "17",
+      "18"
+     ]
+    }
+   }
+  }
+ }
+}

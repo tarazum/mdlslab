@@ -1,0 +1,200 @@
+{
+ "id": "dr-5303",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "brake rig code with a NON-label companion fact (anti-echo); learning s1 fact + s2 chore; s3 held-out label-form probe"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the mountain cable-car stations. For the log: the brake rig code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} complete; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the station log is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the brake rig code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "5001": {
+   "values": {
+    "code": "N14",
+    "comp_thing": "bucket bench",
+    "comp_verb": "holds the evening kit",
+    "chore": "the dawn car run",
+    "role": "line fitter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N36",
+      "N41",
+      "N14",
+      "N19",
+      "N25",
+      "N30"
+     ],
+     "expected": "N14"
+    }
+   }
+  },
+  "5002": {
+   "values": {
+    "code": "N19",
+    "comp_thing": "mop rack",
+    "comp_verb": "stands by the portal",
+    "chore": "the midday grip inspection",
+    "role": "station attendant"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N47",
+      "N19",
+      "N25",
+      "N30",
+      "N36",
+      "N41"
+     ],
+     "expected": "N19"
+    }
+   }
+  },
+  "5003": {
+   "values": {
+    "code": "N25",
+    "comp_thing": "bin store",
+    "comp_verb": "wobbles on the grate",
+    "chore": "the evening wind check",
+    "role": "ropeway mechanic"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N25",
+      "N30",
+      "N36",
+      "N41",
+      "N47",
+      "N52"
+     ],
+     "expected": "N25"
+    }
+   }
+  },
+  "5004": {
+   "values": {
+    "code": "N30",
+    "comp_thing": "rope cradle",
+    "comp_verb": "waits for the second shift",
+    "chore": "the night anchor test",
+    "role": "rescue marshal"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N36",
+      "N41",
+      "N47",
+      "N52",
+      "N58",
+      "N30"
+     ],
+     "expected": "N30"
+    }
+   }
+  },
+  "5005": {
+   "values": {
+    "code": "N36",
+    "comp_thing": "torch box",
+    "comp_verb": "shines after oiling",
+    "chore": "the dawn rope grease round",
+    "role": "maintenance planner"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N47",
+      "N52",
+      "N58",
+      "N63",
+      "N36",
+      "N41"
+     ],
+     "expected": "N36"
+    }
+   }
+  },
+  "5006": {
+   "values": {
+    "code": "N41",
+    "comp_thing": "post sander",
+    "comp_verb": "collects the tags",
+    "chore": "the counterweight sweep",
+    "role": "cable auditor"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N58",
+      "N63",
+      "N69",
+      "N41",
+      "N47",
+      "N52"
+     ],
+     "expected": "N41"
+    }
+   }
+  },
+  "5007": {
+   "values": {
+    "code": "N47",
+    "comp_thing": "chalk tin",
+    "comp_verb": "keeps the spares dry",
+    "chore": "the brake block look-over",
+    "role": "night controller"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N69",
+      "N74",
+      "N47",
+      "N52",
+      "N58",
+      "N63"
+     ],
+     "expected": "N47"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,200 @@
+{
+ "id": "dr-5301",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "haul motor code with a NON-label companion fact (anti-echo); learning s1 fact + s2 chore; s3 held-out label-form probe"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the mountain cable-car stations. For the log: the haul motor code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} complete; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the station log is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the haul motor code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "5001": {
+   "values": {
+    "code": "A12",
+    "comp_thing": "duty kettle",
+    "comp_verb": "whistles at six",
+    "chore": "the dawn car run",
+    "role": "line fitter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "A12",
+      "A17",
+      "A21",
+      "A26",
+      "A31",
+      "A35"
+     ],
+     "expected": "A12"
+    }
+   }
+  },
+  "5002": {
+   "values": {
+    "code": "A17",
+    "comp_thing": "portal lamp",
+    "comp_verb": "glows amber at dusk",
+    "chore": "the midday grip inspection",
+    "role": "station attendant"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "A21",
+      "A26",
+      "A31",
+      "A35",
+      "A39",
+      "A17"
+     ],
+     "expected": "A17"
+    }
+   }
+  },
+  "5003": {
+   "values": {
+    "code": "A21",
+    "comp_thing": "bench radio",
+    "comp_verb": "hums on standby",
+    "chore": "the evening wind check",
+    "role": "ropeway mechanic"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "A31",
+      "A35",
+      "A39",
+      "A43",
+      "A21",
+      "A26"
+     ],
+     "expected": "A21"
+    }
+   }
+  },
+  "5004": {
+   "values": {
+    "code": "A26",
+    "comp_thing": "raft hook",
+    "comp_verb": "rattles in crosswind",
+    "chore": "the night anchor test",
+    "role": "rescue marshal"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "A39",
+      "A43",
+      "A47",
+      "A26",
+      "A31",
+      "A35"
+     ],
+     "expected": "A26"
+    }
+   }
+  },
+  "5005": {
+   "values": {
+    "code": "A31",
+    "comp_thing": "boot dryer",
+    "comp_verb": "ticks after frost",
+    "chore": "the dawn rope grease round",
+    "role": "maintenance planner"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "A47",
+      "A51",
+      "A31",
+      "A35",
+      "A39",
+      "A43"
+     ],
+     "expected": "A31"
+    }
+   }
+  },
+  "5006": {
+   "values": {
+    "code": "A35",
+    "comp_thing": "coat rail",
+    "comp_verb": "sags under load",
+    "chore": "the counterweight sweep",
+    "role": "cable auditor"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "A55",
+      "A35",
+      "A39",
+      "A43",
+      "A47",
+      "A51"
+     ],
+     "expected": "A35"
+    }
+   }
+  },
+  "5007": {
+   "values": {
+    "code": "A39",
+    "comp_thing": "spare fuse box",
+    "comp_verb": "buzzes when wet",
+    "chore": "the brake block look-over",
+    "role": "night controller"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "A39",
+      "A43",
+      "A47",
+      "A51",
+      "A55",
+      "A59"
+     ],
+     "expected": "A39"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,200 @@
+{
+ "id": "dr-5307",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "solvent cabinet code with a NON-label companion fact (anti-echo); learning s1 fact + s2 chore; s3 held-out label-form probe"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the university chemistry stockroom. For the log: the solvent cabinet code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} complete; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the store book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the solvent cabinet code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "5001": {
+   "values": {
+    "code": "X21",
+    "comp_thing": "vent flap",
+    "comp_verb": "flutters in the draft",
+    "chore": "the bottle round",
+    "role": "lab technician"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X21",
+      "X26",
+      "X32",
+      "X37",
+      "X43",
+      "X48"
+     ],
+     "expected": "X21"
+    }
+   }
+  },
+  "5002": {
+   "values": {
+    "code": "X26",
+    "comp_thing": "catch basin",
+    "comp_verb": "catches the odd drip",
+    "chore": "the hood wipe-down",
+    "role": "store steward"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X32",
+      "X37",
+      "X43",
+      "X48",
+      "X54",
+      "X26"
+     ],
+     "expected": "X26"
+    }
+   }
+  },
+  "5003": {
+   "values": {
+    "code": "X32",
+    "comp_thing": "funnel rack",
+    "comp_verb": "warms near the door",
+    "chore": "the stock count",
+    "role": "teaching assistant"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X43",
+      "X48",
+      "X54",
+      "X59",
+      "X32",
+      "X37"
+     ],
+     "expected": "X32"
+    }
+   }
+  },
+  "5004": {
+   "values": {
+    "code": "X37",
+    "comp_thing": "rag bin",
+    "comp_verb": "fills by the week's end",
+    "chore": "the floor rinse",
+    "role": "safety officer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X54",
+      "X59",
+      "X65",
+      "X37",
+      "X43",
+      "X48"
+     ],
+     "expected": "X37"
+    }
+   }
+  },
+  "5005": {
+   "values": {
+    "code": "X43",
+    "comp_thing": "label roll",
+    "comp_verb": "unrolls crooked",
+    "chore": "the label rebind",
+    "role": "receiving clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X65",
+      "X70",
+      "X43",
+      "X48",
+      "X54",
+      "X59"
+     ],
+     "expected": "X43"
+    }
+   }
+  },
+  "5006": {
+   "values": {
+    "code": "X48",
+    "comp_thing": "tweezer pot",
+    "comp_verb": "lives by the scale",
+    "chore": "the glove restock",
+    "role": "glassblower"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X76",
+      "X48",
+      "X54",
+      "X59",
+      "X65",
+      "X70"
+     ],
+     "expected": "X48"
+    }
+   }
+  },
+  "5007": {
+   "values": {
+    "code": "X54",
+    "comp_thing": "goggles shelf",
+    "comp_verb": "holds the spare strap",
+    "chore": "the waste pickup",
+    "role": "auditor"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X54",
+      "X59",
+      "X65",
+      "X70",
+      "X76",
+      "X81"
+     ],
+     "expected": "X54"
+    }
+   }
+  }
+ }
+}

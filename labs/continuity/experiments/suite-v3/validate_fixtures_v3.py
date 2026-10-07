@@ -1,4 +1,4 @@
-"""Pre-inference mechanical validator for fixture suites v3/v3h/v3i (CONT-005).
+"""Pre-inference mechanical validator for fixture suites v3/v3h/v3i/v3j/v3k.
 
 Enforces docs/SUITE-V3-DESIGN.md on fixtures/v3 BEFORE any inference. Fail-closed:
 a failed check means fix-and-regenerate the fixtures, never relax the validator.
@@ -22,9 +22,16 @@ variant-specific checks:
   V16-label-order-varies  per-seed label orders pairwise distinct; expected
                       label position spread >= 3 distinct positions per scenario
 
+Suite v3k (CONT-002 state transfer): PRIMARY = delayed_recall x6 +
+distractor_recall x6 (12 recall clusters, probe class transfer_eligible); no
+CR/CU/RT scenarios at all, so the per-suite FAMILY_PLANS replace the
+CONT-005-hardcoded layout in V1/V7, and recall primaries take the V8R
+structural-eligibility check (learned-fact + lure structure) instead of the
+V8 trap/seed_error check that does not apply to recall probes.
+
 Usage:
     python labs/continuity/experiments/suite-v3/validate_fixtures_v3.py \
-        [--suite v3|v3h|v3i] [--out <path>/fixture-validation-<suite>.json]
+        [--suite v3|v3h|v3i|v3j|v3k] [--out <path>/fixture-validation-<suite>.json]
 
 Exit 0 = PASS; exit 2 = FAIL-CLOSED.
 """
@@ -47,12 +54,28 @@ from continuity.fixtures import render_seed_variant  # noqa: E402
 # Primary-set expectations per suite (PR-REVIEW-v2 required change 1: the
 # validator is suite-parameterized; v3 keeps CR+RT=14, the held-out v3h uses
 # the pilot-informed CR+CU=12, cycle-2 v3i keeps CR+CU=12 with CR sub-types
-# rebalanced toward T1's source/verification surface).
+# rebalanced toward T1's source/verification surface, CONT-002 v3k uses the
+# recall pair DR+DX=12 per docs/CONT-002-DESIGN.md section 2).
 EXPECTED_PRIMARY = {
     "v3": {"correction_reuse": 8, "repeated_task": 6},
     "v3h": {"correction_reuse": 8, "contradiction_update": 4},
     "v3i": {"correction_reuse": 8, "contradiction_update": 4},
     "v3j": {"correction_reuse": 8, "contradiction_update": 4},
+    "v3k": {"delayed_recall": 7, "distractor_recall": 8},
+}
+# Complete per-suite family plans (scenario BASE counts, not multiplied by
+# seeds). v3-v3j layouts are exactly what the pre-v3k V1/V7 checks enforced;
+# v3k drops the CONT-005 correction families entirely (lean transfer suite).
+FAMILY_PLANS = {
+    "v3": {"correction_reuse": 8, "repeated_task": 6, "contradiction_update": 4,
+           "delayed_recall": 3, "distractor_recall": 3, "guess_calibration": 3},
+    "v3h": {"correction_reuse": 8, "contradiction_update": 4, "repeated_task": 6,
+            "delayed_recall": 3, "distractor_recall": 3, "guess_calibration": 3},
+    "v3i": {"correction_reuse": 8, "contradiction_update": 4, "repeated_task": 6,
+            "delayed_recall": 3, "distractor_recall": 3, "guess_calibration": 3},
+    "v3j": {"correction_reuse": 8, "contradiction_update": 4, "repeated_task": 6,
+            "delayed_recall": 3, "distractor_recall": 3, "guess_calibration": 3},
+    "v3k": {"delayed_recall": 7, "distractor_recall": 8, "guess_calibration": 3},
 }
 CR_SUBTYPES = {
     "v3": {
@@ -87,7 +110,20 @@ CR_SUBTYPES = {
         "source_conflict": 2,
         "retraction": 1,
     },
+    # v3k: no correction_reuse scenarios; the expectation is the empty map.
+    "v3k": {},
 }
+# Primary probe class per suite: rm_eligible = repeated-mistake endpoint
+# (CONT-001/CONT-005); transfer_eligible = the CONT-002 R = dB/dA analogue.
+PROBE_CLASS = {
+    "v3": "rm_eligible",
+    "v3h": "rm_eligible",
+    "v3i": "rm_eligible",
+    "v3j": "rm_eligible",
+    "v3k": "transfer_eligible",
+}
+# Families whose primaries carry the trap/seed_error structure checked by V8.
+TRAP_PRIMARY_FAMILIES = {"correction_reuse", "contradiction_update", "repeated_task"}
 SECONDARY_COUNTS = {"delayed_recall": 3, "distractor_recall": 3, "guess_calibration": 3}
 SEED_MECHANISMS = {
     "scripted_agent_answer", "user_override", "retracted_correction", "source_conflict",
@@ -180,6 +216,7 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
             "v3h": fixtures_root / "v3h",
             "v3i": fixtures_root / "v3i",
             "v3j": fixtures_root / "v3j",
+            "v3k": fixtures_root / "v3k",
         }.items()
         if name != suite and p.exists()
     ]
@@ -191,7 +228,7 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
     # V1 manifest
     fams = set(manifest.get("families", []))
     declared_primary = set(manifest.get("primary_families", primary_families))
-    expected_families = primary_families | {"repeated_task", "contradiction_update"} | set(SECONDARY_COUNTS)
+    expected_families = set(FAMILY_PLANS[suite])
     seeds_ok = (
         isinstance(variant_seeds, list)
         and len(variant_seeds) >= 2
@@ -205,7 +242,7 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
         and fams == expected_families
         and declared_primary == primary_families
         and manifest.get("primary_cluster_count") == primary_total
-        and (seeds_ok if suite in ("v3i", "v3j") else True)
+        and (seeds_ok if suite in ("v3i", "v3j", "v3k") else True)
     )
     record("V1-manifest", ok,
            f"suite={suite}; protocol/version ok; families={sorted(fams)}; primary={sorted(declared_primary)} "
@@ -353,12 +390,10 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
     if variant_seeds:
         gc_probes = gc_probes // len(variant_seeds)
         fam_counts = {f: (n // len(variant_seeds)) for f, n in fam_counts.items()}
+    family_plan = FAMILY_PLANS[suite]
     ok = (
         all(fam_counts.get(f) == n for f, n in expected_primary.items())
-        and fam_counts.get("repeated_task") == (
-            expected_primary.get("repeated_task", 6)
-        )
-        and all(fam_counts.get(f) == n for f, n in SECONDARY_COUNTS.items())
+        and fam_counts == family_plan
         and cr_subs == cr_subtypes_expected
         and ("repeated_task" not in primary_families or rt_subs == {"scripted_own_answer"})
         and gc_probes >= 6
@@ -366,34 +401,76 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
     record(
         "V7-composition",
         ok,
-        f"suite={suite}; family counts {fam_counts}; primary expectation {expected_primary}; "
+        f"suite={suite}; family counts {fam_counts}; family plan {family_plan}; "
+        f"primary expectation {expected_primary}; "
         f"cr sub-types {cr_subs} (need {cr_subtypes_expected}); rt sub-type {rt_subs}; gc probes {gc_probes}",
     )
 
-    # V8 (design E13): structural eligibility (primary set per suite, EVERY seed)
+    # V8 (design E13): structural eligibility (primary set per suite, EVERY
+    # seed). Trap primaries (CR/CU/RT) carry the seed_error/trap structure;
+    # recall primaries (DR/DX in v3k) instead carry the learned-fact/lure
+    # structure checked by V8R.
     bad = []
     primary = [s for s in flat if s["family"] in primary_families]
-    for s in primary:
-        seed = s.get("seed_error")
-        probe_turns = probes_of(s)
-        if not isinstance(seed, dict) or seed.get("mechanism") not in SEED_MECHANISMS or not isinstance(seed.get("value"), str):
-            bad.append(f"{s['id']}: seed_error {seed!r}")
-            continue
-        if len(probe_turns) != 1:
-            bad.append(f"{s['id']}: {len(probe_turns)} probes, need exactly 1")
-            continue
-        sess_idx, _, turn = probe_turns[0]
-        labels = turn["probe"].get("labels", [])
-        if seed["value"] not in labels:
-            bad.append(f"{s['id']}: seed value {seed['value']!r} not a probe label")
-        if seed["value"] == turn["probe"].get("expected"):
-            bad.append(f"{s['id']}: seed value equals expected (no trap)")
-        earlier = " ".join(
-            t["text"] for si, _, t in turn_refs(s) if si < sess_idx
-        )
-        if not label_word_hit(seed["value"], earlier):
-            bad.append(f"{s['id']}: seed value never stated before the probe session")
-    record("V8-structural-eligibility", not bad, f"every primary scenario-instance: seed_error valid, trap in labels, trap != expected, trap stated pre-probe; violations: {bad[:5] or 'none'}")
+    if primary_families <= TRAP_PRIMARY_FAMILIES:
+        for s in primary:
+            seed = s.get("seed_error")
+            probe_turns = probes_of(s)
+            if not isinstance(seed, dict) or seed.get("mechanism") not in SEED_MECHANISMS or not isinstance(seed.get("value"), str):
+                bad.append(f"{s['id']}: seed_error {seed!r}")
+                continue
+            if len(probe_turns) != 1:
+                bad.append(f"{s['id']}: {len(probe_turns)} probes, need exactly 1")
+                continue
+            sess_idx, _, turn = probe_turns[0]
+            labels = turn["probe"].get("labels", [])
+            if seed["value"] not in labels:
+                bad.append(f"{s['id']}: seed value {seed['value']!r} not a probe label")
+            if seed["value"] == turn["probe"].get("expected"):
+                bad.append(f"{s['id']}: seed value equals expected (no trap)")
+            earlier = " ".join(
+                t["text"] for si, _, t in turn_refs(s) if si < sess_idx
+            )
+            if not label_word_hit(seed["value"], earlier):
+                bad.append(f"{s['id']}: seed value never stated before the probe session")
+        record("V8-structural-eligibility", not bad, f"every primary scenario-instance: seed_error valid, trap in labels, trap != expected, trap stated pre-probe; violations: {bad[:5] or 'none'}")
+    else:
+        # V8R (v3k recall primaries): the probe's expected value must be a
+        # standalone token in a pre-probe LEARNING turn (the fact the state
+        # must carry); a declared lure_value (DX) must be in labels, stated
+        # pre-probe, and differ from expected; exactly one probe, last
+        # session. lure_value is a {token} template resolved per seed from
+        # the base variant table (render_seed_variant does not touch it).
+        for s_base in scenarios:
+            if s_base["family"] not in primary_families:
+                continue
+            for sd in variant_seeds or [None]:
+                s = render_seed_variant(s_base, sd) if sd is not None else s_base
+                probe_turns = probes_of(s)
+                if len(probe_turns) != 1 or probe_turns[0][0] != s["sessions"][-1]["index"]:
+                    bad.append(f"{s['id']}: need exactly 1 probe in the last session")
+                    continue
+                sess_idx, _, turn = probe_turns[0]
+                expected = turn["probe"].get("expected")
+                labels = turn["probe"].get("labels", [])
+                earlier = " ".join(
+                    t["text"] for si, _, t in turn_refs(s) if si < sess_idx
+                )
+                if not isinstance(expected, str) or expected not in labels:
+                    bad.append(f"{s['id']}: expected {expected!r} not a probe label")
+                elif not label_word_hit(expected, earlier):
+                    bad.append(f"{s['id']}: expected {expected!r} never stated in a learning turn")
+                lure_tmpl = s_base.get("lure_value")
+                if lure_tmpl is not None:
+                    values = s_base["variants"][str(sd)]["values"]
+                    lure = _TOKEN_RE.sub(lambda m: values[m.group(1)], lure_tmpl)
+                    if lure not in labels:
+                        bad.append(f"{s['id']}: lure {lure!r} not in probe labels")
+                    elif not label_word_hit(lure, earlier):
+                        bad.append(f"{s['id']}: lure {lure!r} never stated in a learning turn")
+                    elif lure == expected:
+                        bad.append(f"{s['id']}: lure equals expected")
+        record("V8R-recall-eligibility", not bad, f"every recall primary (every seed): expected stated in a learning turn; lure (when declared) in labels, stated pre-probe, != expected; 1 probe in last session; violations: {bad[:5] or 'none'}")
 
     # V9 (design E14): guess calibration
     gc_scenarios = [s for s in flat if s["family"] == "guess_calibration"]
@@ -420,9 +497,9 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
         last_session = s["sessions"][-1]["index"]
         if len(s["sessions"]) < 2 or len(probe_turns) != 1 or probe_turns[0][0] != last_session:
             bad.append(s["id"])
-        elif probe_turns[0][2]["probe"].get("class") != "rm_eligible":
+        elif probe_turns[0][2]["probe"].get("class") != PROBE_CLASS[suite]:
             bad.append(f"{s['id']}: probe class")
-    record("V11-primary-shape", not bad, f"primary: >=2 sessions, exactly 1 probe, in the LAST session, class rm_eligible; violations: {bad or 'none'}")
+    record("V11-primary-shape", not bad, f"primary: >=2 sessions, exactly 1 probe, in the LAST session, class {PROBE_CLASS[suite]}; violations: {bad or 'none'}")
 
     # V12 public safety
     bad = []

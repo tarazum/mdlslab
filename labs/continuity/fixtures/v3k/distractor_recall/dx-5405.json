@@ -1,0 +1,194 @@
+{
+ "id": "dx-5405",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two codes stated at learning (scale house locker target, fuel bowser cabinet lure); probe asks the target with the lure in options; lure_value declared for validator V8R"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the quarry weighbridge office. For the log: the scale house locker code is {code}; the fuel bowser cabinet code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} complete; nothing else changes. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the weight ledger is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the scale house locker code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{lure}",
+ "variants": {
+  "5001": {
+   "values": {
+    "code": "U11",
+    "lure": "V33",
+    "chore": "the dawn weigh round",
+    "role": "weighbridge clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U21",
+      "U26",
+      "U31",
+      "U11",
+      "V33",
+      "U16"
+     ],
+     "expected": "U11"
+    }
+   }
+  },
+  "5002": {
+   "values": {
+    "code": "U16",
+    "lure": "V38",
+    "chore": "the ticket audit",
+    "role": "haul driver"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U26",
+      "U31",
+      "U16",
+      "V38",
+      "U11",
+      "U21"
+     ],
+     "expected": "U16"
+    }
+   }
+  },
+  "5003": {
+   "values": {
+    "code": "U21",
+    "lure": "V43",
+    "chore": "the belt inspection",
+    "role": "site foreman"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U31",
+      "U21",
+      "V43",
+      "U11",
+      "U16",
+      "U26"
+     ],
+     "expected": "U21"
+    }
+   }
+  },
+  "5004": {
+   "values": {
+    "code": "U26",
+    "lure": "V48",
+    "chore": "the wheel wash",
+    "role": "sample runner"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U26",
+      "V48",
+      "U11",
+      "U16",
+      "U21",
+      "U31"
+     ],
+     "expected": "U26"
+    }
+   }
+  },
+  "5005": {
+   "values": {
+    "code": "U31",
+    "lure": "V53",
+    "chore": "the slate tally",
+    "role": "geologist"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V53",
+      "U11",
+      "U16",
+      "U21",
+      "U26",
+      "U31"
+     ],
+     "expected": "U31"
+    }
+   }
+  },
+  "5006": {
+   "values": {
+    "code": "U36",
+    "lure": "V58",
+    "chore": "the lamp fuel fill",
+    "role": "fitter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U11",
+      "U16",
+      "U21",
+      "U26",
+      "U36",
+      "V58"
+     ],
+     "expected": "U36"
+    }
+   }
+  },
+  "5007": {
+   "values": {
+    "code": "U41",
+    "lure": "V63",
+    "chore": "the fence walk",
+    "role": "shipment planner"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "U16",
+      "U21",
+      "U26",
+      "U41",
+      "V63",
+      "U11"
+     ],
+     "expected": "U41"
+    }
+   }
+  }
+ }
+}
