@@ -143,25 +143,27 @@ change.
   (10,000-equivalent resamples over clusters, RNG seed frozen; degenerate
   draws with ΔA* ≤ 0.05 counted — if >10% of draws, the R CI carries an
   "unstable-denominator" flag). MME on R = **0.25** (a quarter of the
-  measured benefit is the smallest fraction that justifies importing state
-  as the default over re-telling the facts inline; same 0.25 convention as
-  the cycle-2 delta scale). **Power (artifact
-  `experiments/suite-v3/power-results-cont002.json`, `power_calc_cont002.py`,
-  seed 20261007):** at the conservative row (sig_shared 0.20, sig_int 0.10
-  both cores) detection power at MME = **0.801** (K15×7; the undersized
-  K12×5 alternative = 0.604, clusters-only K15×5 = 0.692, seeds-only
-  K12×7 = 0.735 — the sizing table is in the artifact). Stress rows: all-cell
-  si .15 → 0.767; B-side si .20 → 0.720 — the pilot GO/NO-GO attaches
-  pre-declared actions (spread re-check + owner sign-off) if measured spread
-  exceeds the conservative row. At true R the "established" branch
-  additionally requires the point estimate ≥ MME, bounding it near 0.5 AT
-  exactly the MME (0.477 in the artifact) — reported openly, never hidden
-  (cycle-2 house precedent). False-positive at R = 0: detection 0.033,
-  established 0.002. Harm at R = −0.25: 0.697. Guess-band coupling
-  (template §9): the implied ΔB at MME is R_MME × ΔA = 0.25 × 0.85 ≈ 0.21 >
-  0.15 at the design target ΔA ≈ 0.85; if the pilot-measured ΔA < 0.60,
-  R_MME × ΔA drops below the 0.15 guess-band floor and the MME re-derivation
-  is taken at freeze time, owner-visible (pre-declared, not post-hoc).
+measured benefit is the smallest fraction that justifies importing state
+as the default over re-telling the facts inline; same 0.25 convention as
+the cycle-2 delta scale). **Power (artifact
+`experiments/suite-v3/power-results-cont002.json`, `power_calc_cont002.py`,
+seed 20261007):** at the conservative row (sig_shared 0.20, sig_int 0.10
+both cores) detection power at MME = **0.801** (K15×7; the undersized
+K12×5 alternative = 0.604, clusters-only K15×5 = 0.692, seeds-only
+K12×7 = 0.735 — the sizing table is in the artifact). Stress rows: all-cell
+si .15 → 0.767; B-side si .20 → 0.720 — the pilot GO/NO-GO attaches
+pre-declared actions (spread re-check + owner sign-off) if measured spread
+exceeds the conservative row. At true R the "established" branch
+additionally requires the point estimate ≥ MME, bounding it near 0.5 AT
+exactly the MME (0.477 in the artifact) — reported openly, never hidden
+(cycle-2 house precedent). False-positive at R = 0: detection 0.033,
+established 0.002. Harm at R = −0.25: 0.697. Guess-band coupling
+(template §9): the implied ΔB at MME is R_MME × ΔA = 0.25 × 0.85 ≈ 0.21 >
+0.15 at the design target ΔA ≈ 0.85; if the pilot-measured ΔA < 0.60, the
+MME re-derivation executes at the pilot-gate checkpoint (after the frozen
+pilot analysis, before any confirmatory inference, owner-visible) by the
+frozen upward-only formula — see the prereg §5 (binding text; the freeze
+itself precedes the pilot and is immutable).
 - Verdict wording (frozen at freeze): retention established (CI > 0 and
   R ≥ 0.25) / retention below MME (CI > 0, R < 0.25) / harm established
   (CI < 0 — state actively hurts core B) / no confirmatory transfer

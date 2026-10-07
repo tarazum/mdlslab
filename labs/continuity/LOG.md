@@ -1964,3 +1964,46 @@ Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT002.md delivered.
   (Fable -> Opus -> GLM 5.3 Flash) -> fold -> OWNER GATE (explicit
   acceptance before ANY behavioral run; never-autonomous) -> freeze -> gate
   -> pilot -> confirmatory.
+
+## 2026-10-07 — PR-REVIEW-CONT002 COMPLETE: Fable GO-with-changes (RC-1..5) -> folded -> verify-pass GO
+
+- Reviewer: **Fable** (claude --model fable -p, fresh context, read-only,
+  repo root) — first in the standing queue, no substitution needed (owner
+  confirmed availability). Record: docs/PR-REVIEW-CONT002.md (raw review
+  verbatim + executor curation appendix + disposition + verify-pass).
+- Fable's summary: "дизайн і пререєстрація — найчистіші в лабораторії на
+  сьогодні" (inspirer clause reproduced verbatim and operationalized
+  honestly; 12x5 -> 15x7 sizing judged LEGITIMATE design-time sizing, not
+  MME reverse-engineering; single-freeze contamination scheme almost
+  closed). Template coverage 9/9 (2 stretch marks).
+- Required changes, all executor-verified load-bearing and folded same
+  session: RC-1 temporal contradiction (pilot-dependent MME re-derivation
+  was anchored "at freeze" while the single freeze precedes the pilot;
+  thresholds 0.45 vs 0.60 unexplained) -> pilot-gate checkpoint + threshold
+  ladder 0.30/0.45/0.60 + frozen upward-only formula
+  R_MME' = max(0.25, max(0.15, 2*band_max)/dA_measured); RC-2 per-family R
+  backdoor (ratio reporting gated on the pooled estimability gate;
+  non-estimable branch computes NO ratios at all); RC-3 stale validator
+  docstring ("12" after the 15x7 resize — the resize missed the prose;
+  fixed, suites re-PASS); RC-4 gate instructions extended ((a) non-executor
+  regression artifact for v3/v3h/v3i/v3j — the committed verdicts predate
+  the validator extension, so "regressions PASS" was executor
+  self-attestation; (b) frozen-script dry-run verification + clean-cell
+  empty-store isolation); RC-5 invalid-format share defined in the prereg
+  text (stop criterion cannot live only in an unwritten script).
+- Notes folded: N-1/N-2 carried-note obligations named in §12; N-3 worst
+  case stated plainly (~6+ h B-side if every no-record turn rambles; NO-GO
+  is the backstop, the GC-B trim covers only moderate overrun); N-4
+  degenerate-bootstrap-draw handling specified; N-5 Ollama version +
+  offload config pinned into the freeze manifest. N-6 (reviewer sandbox
+  blocked execution) acknowledged and converted into mechanical gate
+  checks via RC-4.
+- Verify-pass: validator v3k + v3/v3h/v3i/v3j PASS x5 post-fold; no
+  pilot-dependent "at freeze" remains; no frozen artifact touched
+  (fixtures/v3k sha256 unchanged; old fixture-validation-*.json unmodified).
+- NEXT: **owner gate** — explicit acceptance of EVALUATION-PREP-CONT002
+  (with the folded RC) before ANY behavioral run (never-autonomous). After
+  acceptance: FREEZE (run script + pilot/confirmatory analysis scripts
+  FIRST, digests, environment pin) -> non-executor gate (incl. RC-4a
+  regression artifact + RC-4b script dry-run) -> pilot {5001,5002} ->
+  pilot-gate checkpoint -> confirmatory 7 seeds.

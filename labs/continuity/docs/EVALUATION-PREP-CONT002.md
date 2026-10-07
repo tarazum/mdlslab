@@ -58,19 +58,35 @@ four cells + GC on both cores). Predeclared GO/NO-GO (computed by the FROZEN
 pilot analysis script, in the freeze manifest per template §1):
 
 1. **B label-form compliance:** invalid-format share on B cells (both
-   restored and clean) < 0.30 per cell (pilot, n = 30 probes/cell). A
+   restored and clean) < 0.30 per cell. **Definition (frozen here, not in a
+   script body):** invalid-format share = the share of probes whose reply
+   yields ZERO or MORE-THAN-ONE distinct standalone label under
+   `extract_label` (the format-miss category of the §8 decomposition);
+   denominator 15 clusters × 2 pilot seeds = 30 probes per cell. A
    non-compliant B floors B+restored and voids the ratio's meaning → NO-GO
    to the owner gate (the prompt-template class of fixes is a declared
    owner-gate decision, never an in-place edit after inference).
 2. **Wall-time feasibility:** extrapolated 7-seed total (per-cell means ×
    remaining seeds, reconciled per template §5) within the 5.5 h GPU cap;
    else the declared trims (GC-B to seeds {5001..5004}) are applied at the
-   gate, or NO-GO.
+   gate, or NO-GO. **Worst case, stated plainly (PR-REVIEW-CONT002 N-3):**
+   if every no-record B turn rambles to the token cap (~42 turns/seed ×
+   73.5 s), the B side alone reaches ~6.3 h — the cap is then exceeded and
+   the GC-B trim (~40–45 min) does NOT close the gap; the backstop for the
+   pathological worst case is NO-GO at this criterion, the trim covers only
+   a moderate overrun.
 3. **ΔA denominator size:** pilot ΔA ≥ 0.45 (n = 2 seeds, reported with its
-   wide uncertainty); if ΔA < 0.45 the MME re-derivation path of §5 fires at
-   freeze (owner-visible). ΔA < 0.30 → non-estimable risk declared to the
-   owner BEFORE the confirmatory (the run may still proceed for the
-   diagnostic deltas — owner decision, recorded either way).
+   wide uncertainty) is the pilot GO floor for proceeding to the
+   confirmatory at all (a feasibility judgement); ΔA < 0.30 additionally
+   triggers the non-estimable risk declaration to the owner BEFORE the
+   confirmatory (the run may still proceed for the diagnostic deltas —
+   owner decision, recorded either way). **Threshold ladder, stated once:**
+   0.30 = the pre-registered estimability-gate floor (§4); 0.45 = the pilot
+   GO floor (run/no-run); 0.60 = the MME re-derivation trigger (§5). Every
+   pilot-dependent adjustment executes at the **pilot-gate checkpoint** —
+   after the frozen pilot analysis, before any confirmatory inference,
+   owner-visible — never "at freeze" (the single FREEZE precedes the pilot;
+   its parameters are immutable, PR-REVIEW-CONT002 RC-1).
 4. **Spread report:** per-cell sd over the 2 pilot seeds is REPORTED, not
    gated (n=2 gates nothing); the freeze-time power re-check (§5) must clear
    the conservative row with the measured between-seed spread; if measured
@@ -106,9 +122,12 @@ never a mean of per-cluster ratios).
 2. If estimable: **R with a two-sided 95% cluster percentile bootstrap**
    over the 15 clusters (resample clusters with replacement; same resample
    indices reused for the ΔA CI and the R CI; RNG seed recorded at freeze;
-   degenerate draws with ΔA* ≤ 0.05 counted — if >10% of draws the R CI
+   degenerate draws with |ΔA*| ≤ 0.05 counted — if >10% of draws the R CI
    carries an "unstable-denominator" flag and no "established" verdict is
-   issued).
+   issued). **Degenerate-draw handling in the frozen script (N-4):** R* is
+   computed for every draw with ΔA* ≠ 0; non-finite draws (ΔA* = 0) are
+   excluded from the percentiles AND their count recorded in the run
+   record; any occurrence is reported.
 
 Direction pre-declared two-sided (R > 0 retention, R < 0 harm); no post-hoc
 switch; negative values reported as-is, never clamped.
@@ -139,15 +158,22 @@ the point estimate ≥ MME, bounding that branch near 0.5 at exactly the MME
 branch rate is 1.000). False positive at R = 0: detection 0.033 /
 established 0.002. Harm branch at R = −0.25: 0.697. Sensitivity: stronger B
 baseline (bBc 0.30) 0.819; weaker ΔA 0.60 → 0.617 (declared limitation; the
-pilot measures actual ΔA). **Freeze-time power re-check (mandatory):** with
-the pilot-measured ΔA and per-cell between-seed spread, the conservative row
-must still clear 0.75 detection at MME, else owner sign-off before the
-confirmatory (stress-row governance, cycle-2 clause-2 pattern). Guess-band
-coupling (template §9): MME-clearance is checked on the ΔB scale: implied
-ΔB at MME = 0.25 × ΔA_measured must be ≥ 0.15 or ≥ 2× the larger core's
-measured |guess − 1/6| deviation; at the design ΔA 0.85 → 0.21 ✓; if the
-pilot ΔA < 0.60, R_MME is re-derived at freeze so that R_MME × ΔA_measured
-clears the band (owner-visible, pre-declared here — not post-hoc).
+pilot measures actual ΔA). **Pilot-gate power re-check (mandatory; runs at
+the pilot-gate checkpoint, not at freeze — RC-1):** with the pilot-measured
+ΔA and per-cell between-seed spread, the conservative row must still clear
+0.75 detection at MME, else owner sign-off before the confirmatory
+(stress-row governance, cycle-2 clause-2 pattern). Guess-band coupling
+(template §9): MME-clearance is checked on the ΔB scale: implied ΔB at MME
+= 0.25 × ΔA_measured must be ≥ 0.15 or ≥ 2× the larger core's measured
+|guess − 1/6| deviation; at the design ΔA 0.85 → 0.21 ✓. **MME
+re-derivation (pre-declared adjustment path, executes at the pilot-gate
+checkpoint):** if the pilot-measured ΔA < 0.60, R_MME is re-derived by the
+frozen formula
+`R_MME' = max(0.25, max(0.15, 2 × band_max) / ΔA_measured)`
+— the MME may move ONLY UPWARD (raising the bar is conservative; lowering
+it on pilot data is prohibited and would void the verdict). Owner-visible,
+pre-declared here with a fixed formula — not post-hoc flexibility
+(PR-REVIEW-CONT002 RC-1).
 
 ## 6. Decision rule (frozen wording)
 
@@ -191,7 +217,13 @@ Secondaries never promoted; direction stated plainly whichever way it points.
 
 ## 8. Secondaries (exploratory, not promotable)
 
-- Per-family R (DR-only vs DX-only) and per-cluster Δ table.
+- Per-family R (DR-only vs DX-only) and per-cluster Δ table — **ratios are
+  computed and reported ONLY if the pooled estimability gate (§4) passed;
+  in the non-estimable branch NO ratio of any kind is computed or reported,
+  including per-family R** (the inspirer's clause bans alternative
+  denominators — an R_DR published over a failed pooled gate is exactly
+  that backdoor; PR-REVIEW-CONT002 RC-2). Per-cluster ΔA/ΔB tables are
+  always reported (deltas, not ratios).
 - ΔA and ΔB with their own CIs (always reported — they are the diagnostics
   of the non-estimable branch and the substance behind R).
 - Invalid-format decomposition per cell (wrong-answer vs format-miss; the
@@ -225,7 +257,11 @@ at FREEZE.
   script AND the confirmatory analysis script (written FIRST, before any
   v3k inference — every analysis script the numbers pass through),
   `runner.py`, `provider.py`, `memory.py`, `fixtures.py`, predeclared seeds
-  {5001..5007} + pilot subset {5001, 5002}.
+  {5001..5007} + pilot subset {5001, 5002}. **Environment pin (N-5):** the
+  Ollama version (M2b baseline: 0.34.2) and the core-B offload
+  configuration are recorded in the freeze manifest and repeated in every
+  run record — wall-time conclusions and ramble behavior are sensitive to
+  them.
 - Post-freeze edits to any frozen path = protocol violation, verdict void.
   The CONT-005 frozen artifacts and `frozen-config-v2/v3a/v3b.json` stay
   untouched as the historical record.
@@ -259,12 +295,33 @@ position rotation, and the **core-neutrality check** (the v3k analogue of
 the cycle-2 arm-neutrality check): fixture texts must not reference either
 core, the memory block format is the existing arm-B renderer byte-identical
 for both cores, and no wording advantage can accrue to the core that
-authored the state (the companion/lure facts are core-neutral). Wall-time
+authored the state (the companion/lure facts are core-neutral). Two
+additions per PR-REVIEW-CONT002 RC-4:
+- **(a) Regression artifact, not self-attestation:** the gate session
+  re-runs `validate_fixtures_v3.py --suite v3|v3h|v3i|v3j` with the
+  v3k-extended validator and commits a NEW consolidated regression-verdict
+  artifact (e.g. `fixture-validation-regressions-post-v3k.json`); the
+  frozen per-suite `fixture-validation-*.json` records are never
+  overwritten — executor-logged regression passes do not count as the gate
+  (template §4; the committed pre-v3k verdicts predate the validator
+  extension).
+- **(b) Script verification:** the gate verifies that the frozen pilot
+  GO/NO-GO and confirmatory analysis scripts implement §2/§4–§6 — minimum
+  bar: a dry-run on synthetic input with a known answer (the v2-hotfix
+  lesson) — and that the run script starts the A+clean and B+clean cells
+  from a verified-empty store (cell isolation).
+Wall-time
 aggregates reconcile per §11. Guess band: empirical rate next to every
 family-level number; the ΔB-scale MME clearance rule of §5; in-run caveat
 "ΔB does not clear the guessing band" if ΔB < 2× max-core band — reported,
 never used to move the MME. Every PR-REVIEW-CONT002 note reappears
-(addressed or acknowledged) in the final run record (template §8).
+(addressed or acknowledged) in the final run record (template §8);
+explicitly carried: **N-1** (power-model caveats: ceiling compression of
+the realized ΔA at bAs 0.90; shared-eps-across-cores assumption narrows
+R's CI) beside every power number, and **N-2** (the pilot GO condition
+ΔA ≥ 0.45 on seeds that stay in the final dataset induces a small upward
+selection bias on ΔA — conservative for R, anti-conservative for the
+estimability gate) in the run-record header.
 
 ## 13. Execution plan
 

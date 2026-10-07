@@ -22,8 +22,8 @@ variant-specific checks:
   V16-label-order-varies  per-seed label orders pairwise distinct; expected
                       label position spread >= 3 distinct positions per scenario
 
-Suite v3k (CONT-002 state transfer): PRIMARY = delayed_recall x6 +
-distractor_recall x6 (12 recall clusters, probe class transfer_eligible); no
+Suite v3k (CONT-002 state transfer): PRIMARY = delayed_recall x7 +
+distractor_recall x8 (15 recall clusters, probe class transfer_eligible); no
 CR/CU/RT scenarios at all, so the per-suite FAMILY_PLANS replace the
 CONT-005-hardcoded layout in V1/V7, and recall primaries take the V8R
 structural-eligibility check (learned-fact + lure structure) instead of the
@@ -55,7 +55,7 @@ from continuity.fixtures import render_seed_variant  # noqa: E402
 # validator is suite-parameterized; v3 keeps CR+RT=14, the held-out v3h uses
 # the pilot-informed CR+CU=12, cycle-2 v3i keeps CR+CU=12 with CR sub-types
 # rebalanced toward T1's source/verification surface, CONT-002 v3k uses the
-# recall pair DR+DX=12 per docs/CONT-002-DESIGN.md section 2).
+# recall pair DR+DX=15 per docs/CONT-002-DESIGN.md section 2).
 EXPECTED_PRIMARY = {
     "v3": {"correction_reuse": 8, "repeated_task": 6},
     "v3h": {"correction_reuse": 8, "contradiction_update": 4},
