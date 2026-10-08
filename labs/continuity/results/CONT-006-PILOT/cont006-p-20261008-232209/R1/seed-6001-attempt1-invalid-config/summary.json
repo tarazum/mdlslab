@@ -1,0 +1,283 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-p-20261008-232209",
+ "arm": "R1",
+ "seed": 6001,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": null,
+ "lesson_store_status": null,
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "berthing",
+   "observed_normalized": "the stern ramp line-up for the mail boat is the correct answer.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "cargo",
+   "observed_normalized": "the deck seal look-over for the feed truck is the correct answer.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6002",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "fueling",
+   "observed_normalized": "berthing.",
+   "observed_label": "berthing",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "crewing",
+   "observed_normalized": "the sign-on tally for the dusk watch is berthing.",
+   "observed_label": "berthing",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6004",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "69",
+   "observed_normalized": "69.",
+   "observed_label": "69",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "19",
+   "observed_normalized": "23",
+   "observed_label": "23",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6102",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "31",
+   "observed_normalized": "40.",
+   "observed_label": "40",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-6103",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "26",
+   "observed_normalized": "26 the platen line feeds grade 26.",
+   "observed_label": "26",
+   "passed": true,
+   "turn_ref": "s4t2",
+   "scenario": "cu-6104",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "F14",
+   "observed_normalized": "f14.",
+   "observed_label": "F14",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-6301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "S23",
+   "observed_normalized": "s39.",
+   "observed_label": "S39",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dr-6302",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "H17",
+   "observed_normalized": "h17.",
+   "observed_label": "H17",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "N17",
+   "observed_normalized": "n17",
+   "observed_label": "N17",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6402",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the flag that marks the edging cart is a blue and white striped flag with a white polka dot in the center. this flag is commonly used by skateboarders and other riders to indicate that the cart is the designated area for parking and riding. the flag is typically flown from the handlebars of the cart and is visible from a distance.",
+   "observed_label": null,
+   "observed_position": null,
+   "labels": [
+    "grenadine",
+    "sage",
+    "ochre",
+    "plum",
+    "drab",
+    "mazarine"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the number of pucks that wait in the rental tub is typically around 21 to 24, depending on the size of the tub and the number of pucks that are being rented at any given time. the rental tub is usually located near the end of the rink and is designed to hold a certain number of pucks for customers to rent. the number of pucks that are in the tub is typically displayed on a digital screen or a sign in the tub.",
+   "observed_label": null,
+   "observed_position": null,
+   "labels": [
+    "21",
+    "24",
+    "27",
+    "30",
+    "33",
+    "36"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "vervain",
+   "observed_label": "vervain",
+   "observed_position": 5,
+   "labels": [
+    "clover",
+    "lovage",
+    "myrtle",
+    "sorrel",
+    "tansy",
+    "vervain"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "56",
+   "observed_label": "56",
+   "observed_position": 4,
+   "labels": [
+    "44",
+    "47",
+    "50",
+    "53",
+    "56",
+    "59"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the watch gallery landing faces forward.",
+   "observed_label": "forward",
+   "observed_position": 2,
+   "labels": [
+    "starboard",
+    "portside",
+    "forward",
+    "abaft",
+    "amidships",
+    "astern"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "there are 24 mantles waiting in the spare drawer.",
+   "observed_label": "24",
+   "observed_position": 2,
+   "labels": [
+    "18",
+    "21",
+    "24",
+    "27",
+    "30",
+    "33"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "servicing",
+   "observed_normalized": "the press calibration round for the theater is a servicing task.",
+   "observed_label": "servicing",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "lending",
+   "observed_normalized": "the tag is 'training'.",
+   "observed_label": "training",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6202",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "storage",
+   "observed_normalized": "the tag is 'training'.",
+   "observed_label": "training",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6203",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 6,
+ "probes_total": 21,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 0,
+ "duration_s": 217.3,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

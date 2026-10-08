@@ -2598,3 +2598,23 @@ Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT006.md delivered.
   moves validation-cluster behavior for BOTH sources.
 - NEXT: Phase P pilot (seeds 6001/6002; R0/R1/R2/R3 on TR+GC; RBAD/RGOLD
   counterfactual subset) -> frozen pilot analysis -> pilot-gate checkpoint.
+
+## 2026-10-08 — Phase P pilot: main arms complete; R1 config defect caught by the freeze guard; R1 re-run
+
+- Pilot run 1 (cont006-p-20261008-232209): R0/R2/R3 arm-seeds complete
+  (R0 3+5, R2 5+5, R3 5+6 of 21 probes); R1 completed but under a BROKEN
+  config: run_cont006 passed the FROZEN calibration self-model path
+  directly to ReflectionEngine, which COMMITS revision updates to
+  selfmodel_path — the historical arm-D harness passed a per-run COPY
+  (selfmodel-run.json). Consequence: R1/seed-6001 mutated the closed
+  CONT-001 artifact results/.../selfmodel-v2-calibration.json (revision
+  1' -> 2' with v3l-derived patterns) and R1/seed-6002 then loaded the
+  MUTATED revision (cross-seed config contamination). CAUGHT FAIL-CLOSED
+  by the freeze-digest preflight on the counterfactual sub-launch — the
+  guard worked exactly as designed.
+- Remediation (same-commit): calibration file restored from git (digest
+  verified vs manifest; the closed CONT-001 record untouched in history);
+  R1 wiring fixed to the arm-D per-run-copy pattern; both R1 pilot
+  attempts invalidated and kept as evidence (seed-*-attempt1-invalid-
+  config); re-running R1 + the counterfactual arms via resume (R0/R2/R3
+  skipped verbatim — zero repeated inference for valid cells).

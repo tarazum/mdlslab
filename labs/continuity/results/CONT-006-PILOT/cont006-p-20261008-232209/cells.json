@@ -1,0 +1,65 @@
+{
+ "kind": "cont006-cells",
+ "run_id": "cont006-p-20261008-232209",
+ "phase": "P",
+ "derived": true,
+ "cells": {
+  "R0/seed-6001": {
+   "wall_s": 202.7,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 3,
+   "lesson_store_sha256": null
+  },
+  "R0/seed-6002": {
+   "wall_s": 193.6,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 5,
+   "lesson_store_sha256": null
+  },
+  "R1/seed-6001": {
+   "wall_s": 217.3,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 6,
+   "lesson_store_sha256": null
+  },
+  "R1/seed-6002": {
+   "wall_s": 234.6,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 2,
+   "lesson_store_sha256": null
+  },
+  "R2/seed-6001": {
+   "wall_s": 197.4,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 5,
+   "lesson_store_sha256": "46efc799f823ef96664676864c67da222e0511d552550e96bd5a89ca69da9cca"
+  },
+  "R2/seed-6002": {
+   "wall_s": 196.6,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 5,
+   "lesson_store_sha256": "46efc799f823ef96664676864c67da222e0511d552550e96bd5a89ca69da9cca"
+  },
+  "R3/seed-6001": {
+   "wall_s": 200.2,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 5,
+   "lesson_store_sha256": "1acf7842a72b3733fcc49bb2dc25da3507599b561bf3e76a33eb4b030ffb4957"
+  },
+  "R3/seed-6002": {
+   "wall_s": 199.8,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 6,
+   "lesson_store_sha256": "1acf7842a72b3733fcc49bb2dc25da3507599b561bf3e76a33eb4b030ffb4957"
+  }
+ },
+ "total_wall_s": 1642.4
+}

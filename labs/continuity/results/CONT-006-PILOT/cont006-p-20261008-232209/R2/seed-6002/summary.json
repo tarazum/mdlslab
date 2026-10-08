@@ -1,0 +1,283 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-p-20261008-232209",
+ "arm": "R2",
+ "seed": 6002,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": "46efc799f823ef96664676864c67da222e0511d552550e96bd5a89ca69da9cca",
+ "lesson_store_status": "active",
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "berthing",
+   "observed_normalized": "berthing.",
+   "observed_label": "berthing",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "cargo",
+   "observed_normalized": "safety",
+   "observed_label": "safety",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6002",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "fueling",
+   "observed_normalized": "fueling.",
+   "observed_label": "fueling",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "crewing",
+   "observed_normalized": "crewing.",
+   "observed_label": "crewing",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6004",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "72",
+   "observed_normalized": "61",
+   "observed_label": "61",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "22",
+   "observed_normalized": "26",
+   "observed_label": "26",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6102",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "34",
+   "observed_normalized": "43",
+   "observed_label": "43",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-6103",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "29",
+   "observed_normalized": "40.",
+   "observed_label": "40",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-6104",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "F19",
+   "observed_normalized": "f30.",
+   "observed_label": "F30",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dr-6301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "S28",
+   "observed_normalized": "s50.",
+   "observed_label": "S50",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dr-6302",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "H23",
+   "observed_normalized": "h29.",
+   "observed_label": "H29",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "N23",
+   "observed_normalized": "n23.",
+   "observed_label": "N23",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6402",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the flag that marks the flood cart is \"plum\".",
+   "observed_label": "plum",
+   "observed_position": 2,
+   "labels": [
+    "sage",
+    "ochre",
+    "plum",
+    "drab",
+    "mazarine",
+    "isabella"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "there are 28 pucks waiting in the sharpening tub.",
+   "observed_label": "28",
+   "observed_position": 2,
+   "labels": [
+    "22",
+    "25",
+    "28",
+    "31",
+    "34",
+    "37"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "sorrel",
+   "observed_label": "sorrel",
+   "observed_position": 2,
+   "labels": [
+    "lovage",
+    "myrtle",
+    "sorrel",
+    "tansy",
+    "vervain",
+    "walnut"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "54",
+   "observed_label": "54",
+   "observed_position": 3,
+   "labels": [
+    "45",
+    "48",
+    "51",
+    "54",
+    "57",
+    "60"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the storm deck landing faces forward.",
+   "observed_label": "forward",
+   "observed_position": 1,
+   "labels": [
+    "portside",
+    "forward",
+    "abaft",
+    "amidships",
+    "astern",
+    "abeam"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "there are 22 mantles waiting in the brass drawer.",
+   "observed_label": "22",
+   "observed_position": 1,
+   "labels": [
+    "19",
+    "22",
+    "25",
+    "28",
+    "31",
+    "34"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "servicing",
+   "observed_normalized": "the correct answer is 'disposal'.",
+   "observed_label": "disposal",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "lending",
+   "observed_normalized": "the correct answer is 'disposal'.",
+   "observed_label": "disposal",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6202",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "storage",
+   "observed_normalized": "the shelf round at the cage mezzanine is a storage errand.",
+   "observed_label": "storage",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6203",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 5,
+ "probes_total": 21,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 0,
+ "duration_s": 196.6,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

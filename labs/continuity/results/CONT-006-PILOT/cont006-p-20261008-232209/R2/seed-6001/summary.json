@@ -1,0 +1,283 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-p-20261008-232209",
+ "arm": "R2",
+ "seed": 6001,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": "46efc799f823ef96664676864c67da222e0511d552550e96bd5a89ca69da9cca",
+ "lesson_store_status": "active",
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "berthing",
+   "observed_normalized": "berthing.",
+   "observed_label": "berthing",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "cargo",
+   "observed_normalized": "berthing.",
+   "observed_label": "berthing",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6002",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "fueling",
+   "observed_normalized": "berthing.",
+   "observed_label": "berthing",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "crewing",
+   "observed_normalized": "safety",
+   "observed_label": "safety",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6004",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "69",
+   "observed_normalized": "69.",
+   "observed_label": "69",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "19",
+   "observed_normalized": "23",
+   "observed_label": "23",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6102",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "31",
+   "observed_normalized": "26",
+   "observed_label": "26",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-6103",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "26",
+   "observed_normalized": "21.",
+   "observed_label": "21",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-6104",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "F14",
+   "observed_normalized": "f14.",
+   "observed_label": "F14",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-6301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "S23",
+   "observed_normalized": "s39.",
+   "observed_label": "S39",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dr-6302",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "H17",
+   "observed_normalized": "h29.",
+   "observed_label": "H29",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "N17",
+   "observed_normalized": "n17.",
+   "observed_label": "N17",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6402",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "plum",
+   "observed_label": "plum",
+   "observed_position": 3,
+   "labels": [
+    "grenadine",
+    "sage",
+    "ochre",
+    "plum",
+    "drab",
+    "mazarine"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "27",
+   "observed_label": "27",
+   "observed_position": 2,
+   "labels": [
+    "21",
+    "24",
+    "27",
+    "30",
+    "33",
+    "36"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "vervain",
+   "observed_label": "vervain",
+   "observed_position": 5,
+   "labels": [
+    "clover",
+    "lovage",
+    "myrtle",
+    "sorrel",
+    "tansy",
+    "vervain"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "56",
+   "observed_label": "56",
+   "observed_position": 4,
+   "labels": [
+    "44",
+    "47",
+    "50",
+    "53",
+    "56",
+    "59"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the watch gallery landing faces forward.",
+   "observed_label": "forward",
+   "observed_position": 2,
+   "labels": [
+    "starboard",
+    "portside",
+    "forward",
+    "abaft",
+    "amidships",
+    "astern"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "there are 27 mantles waiting in the spare drawer.",
+   "observed_label": "27",
+   "observed_position": 3,
+   "labels": [
+    "18",
+    "21",
+    "24",
+    "27",
+    "30",
+    "33"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "servicing",
+   "observed_normalized": "the press calibration round for the theater is a servicing task.",
+   "observed_label": "servicing",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "lending",
+   "observed_normalized": "the correct answer is 'storage'. the other options are not correct because the task is to pick one tag, not to list all the possible tags. the other options are also not correct because they do not match the description of the task. the task is to find the tag that best describes the action of storing the slate cards. the other options are not relevant to the task.",
+   "observed_label": "storage",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6202",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "storage",
+   "observed_normalized": "the bin pass for the survey gear is a disposal task.",
+   "observed_label": "disposal",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6203",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 5,
+ "probes_total": 21,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 0,
+ "duration_s": 197.4,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

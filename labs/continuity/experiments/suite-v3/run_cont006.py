@@ -274,10 +274,18 @@ def run_arm_seed(arm: str, seed: int, scenario_ids: list[str], scenarios: list[d
     selfmodel = None
     reflection = None
     if arm == "R1":
+        # CONT-001 arm-D pattern (line-level precedent): the engine COMMITS
+        # self-model revisions to selfmodel_path — pass a PER-RUN COPY, never
+        # the frozen calibration file (pilot finding: passing the frozen path
+        # mutated the closed CONT-001 artifact; caught fail-closed by the
+        # freeze-digest preflight; file restored from git, R1 pilot attempts
+        # invalidated and re-run under this fix).
+        run_selfmodel = out_dir / "selfmodel-run.json"
+        shutil.copyfile(SELFMODEL, run_selfmodel)
         reflection = ReflectionEngine(
-            selfmodel_path=str(SELFMODEL), memory=memory, journal=journal,
+            selfmodel_path=str(run_selfmodel), memory=memory, journal=journal,
             run_seed=seed,
-            source_artifact="results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json")
+            source_artifact="results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy)")
         selfmodel = reflection.model
     by_id = {s["id"]: s for s in scenarios}
     plan = [by_id[sid] for sid in sorted(scenario_ids) if sid in by_id]
