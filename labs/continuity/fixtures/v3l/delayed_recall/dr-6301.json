@@ -1,0 +1,200 @@
+{
+ "id": "dr-6301",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "tuning pin rack code with a NON-label companion fact (anti-echo); learning s1 fact + s2 chore; s3 held-out label-form probe (FP-5)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the bell foundry loft. For the casting book: the tuning pin rack code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} done; nothing further changes here. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the casting book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the tuning pin rack code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "code": "F14",
+    "comp_thing": "annealing bell",
+    "comp_verb": "hums at noon",
+    "chore": "the sand sieve round",
+    "role": "founder"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "F14",
+      "F19",
+      "F25",
+      "F30",
+      "F36",
+      "F41"
+     ],
+     "expected": "F14"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "code": "F19",
+    "comp_thing": "gate board",
+    "comp_verb": "stands by the flue",
+    "chore": "the mold dust",
+    "role": "tone master"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "F25",
+      "F30",
+      "F36",
+      "F41",
+      "F47",
+      "F19"
+     ],
+     "expected": "F19"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "code": "F25",
+    "comp_thing": "ladle cradle",
+    "comp_verb": "waits for the second pour",
+    "chore": "the ladle scrape",
+    "role": "molder"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "F36",
+      "F41",
+      "F47",
+      "F52",
+      "F25",
+      "F30"
+     ],
+     "expected": "F25"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "code": "F30",
+    "comp_thing": "wax bench",
+    "comp_verb": "warms near the kiln door",
+    "chore": "the clapper oil",
+    "role": "ringer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "F47",
+      "F52",
+      "F58",
+      "F30",
+      "F36",
+      "F41"
+     ],
+     "expected": "F30"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "code": "F36",
+    "comp_thing": "sieve stand",
+    "comp_verb": "collects the green sand",
+    "chore": "the rope splice",
+    "role": "pattern maker"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "F58",
+      "F63",
+      "F36",
+      "F41",
+      "F47",
+      "F52"
+     ],
+     "expected": "F36"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "code": "F41",
+    "comp_thing": "clapper rail",
+    "comp_verb": "swings on the old beam",
+    "chore": "the wax melt",
+    "role": "kiln hand"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "F69",
+      "F41",
+      "F47",
+      "F52",
+      "F58",
+      "F63"
+     ],
+     "expected": "F41"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "code": "F47",
+    "comp_thing": "cope shelf",
+    "comp_verb": "keeps the spare gates dry",
+    "chore": "the gate cut",
+    "role": "shop steward"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "F47",
+      "F52",
+      "F58",
+      "F63",
+      "F69",
+      "F74"
+     ],
+     "expected": "F47"
+    }
+   }
+  }
+ }
+}

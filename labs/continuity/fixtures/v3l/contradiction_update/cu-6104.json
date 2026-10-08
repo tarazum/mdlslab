@@ -1,0 +1,195 @@
+{
+ "id": "cu-6104",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{new}",
+  "mechanism": "retracted_correction"
+ },
+ "labels": {
+  "note": "print workshop ink grade corrected then withdrawn; probe expects ORIGINAL (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You run the print workshop notes. For the log: the platen line feeds grade {old} ink. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the supplier sheet was re-read; the platen line feeds grade {new}, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "The foreman says the correction is withdrawn: the re-read sheet was a draft from the label room and does not apply; the standing grade from the first log holds as before. Amend in one short line."
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "An apprentice asks; the workshop card is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Which grade does the platen line feed? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "old": "26",
+    "new": "32"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "21",
+      "37",
+      "16",
+      "42",
+      "26",
+      "32"
+     ],
+     "expected": "26"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "old": "29",
+    "new": "35"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "40",
+      "19",
+      "45",
+      "29",
+      "35",
+      "24"
+     ],
+     "expected": "29"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "old": "32",
+    "new": "38"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "22",
+      "48",
+      "32",
+      "38",
+      "27",
+      "43"
+     ],
+     "expected": "32"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "old": "35",
+    "new": "41"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "51",
+      "35",
+      "41",
+      "30",
+      "46",
+      "25"
+     ],
+     "expected": "35"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "old": "38",
+    "new": "44"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "38",
+      "44",
+      "33",
+      "49",
+      "28",
+      "54"
+     ],
+     "expected": "38"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "old": "41",
+    "new": "47"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "47",
+      "36",
+      "52",
+      "31",
+      "57",
+      "41"
+     ],
+     "expected": "41"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "old": "44",
+    "new": "50"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "39",
+      "55",
+      "34",
+      "60",
+      "44",
+      "50"
+     ],
+     "expected": "44"
+    }
+   }
+  }
+ }
+}

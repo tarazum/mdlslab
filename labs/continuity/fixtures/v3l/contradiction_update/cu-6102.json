@@ -1,0 +1,185 @@
+{
+ "id": "cu-6102",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "labels": {
+  "note": "kiln room soak count corrected; probe expects NEW value (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You mind the pottery kiln room. For the log: the glaze load soaks {old} hours before firing. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the schedule changed; the glaze load now soaks {new} hours, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A studio aide asks; the kiln log is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How long does the glaze load soak? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "old": "14",
+    "new": "19"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "19",
+      "10",
+      "23",
+      "6",
+      "27",
+      "14"
+     ],
+     "expected": "19"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "old": "17",
+    "new": "22"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "13",
+      "26",
+      "9",
+      "30",
+      "17",
+      "22"
+     ],
+     "expected": "22"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "old": "20",
+    "new": "25"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "29",
+      "12",
+      "33",
+      "20",
+      "25",
+      "16"
+     ],
+     "expected": "25"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "old": "23",
+    "new": "28"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "15",
+      "36",
+      "23",
+      "28",
+      "19",
+      "32"
+     ],
+     "expected": "28"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "old": "26",
+    "new": "31"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "39",
+      "26",
+      "31",
+      "22",
+      "35",
+      "18"
+     ],
+     "expected": "31"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "old": "29",
+    "new": "34"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "29",
+      "34",
+      "25",
+      "38",
+      "21",
+      "42"
+     ],
+     "expected": "34"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "old": "32",
+    "new": "37"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "37",
+      "28",
+      "41",
+      "24",
+      "45",
+      "32"
+     ],
+     "expected": "37"
+    }
+   }
+  }
+ }
+}

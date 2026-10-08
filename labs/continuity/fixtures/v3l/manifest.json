@@ -1,0 +1,36 @@
+{
+ "protocol": "continuity-workload",
+ "version": 3,
+ "families": [
+  "correction_reuse",
+  "contradiction_update",
+  "repeated_task",
+  "distractor_recall",
+  "delayed_recall",
+  "guess_calibration"
+ ],
+ "primary_families": [
+  "correction_reuse",
+  "contradiction_update",
+  "repeated_task",
+  "distractor_recall",
+  "delayed_recall"
+ ],
+ "primary_cluster_count": 15,
+ "validation_cluster_ids": [
+  "cr-6005",
+  "cu-6105",
+  "rt-6204",
+  "dx-6403"
+ ],
+ "variant_seeds": [
+  6001,
+  6002,
+  6003,
+  6004,
+  6005,
+  6006,
+  6007
+ ],
+ "description": "Suite v3l for CONT-006 (Reflection as Lesson Extraction): the v3i protocol (v3 label-form probes + predeclared per-seed variant table, manifest.variant_seeds = {6001..6007}) with fresh worlds and ids x-6xxx, disjoint from v1/v2/v2-calibration/v3/v3h/v3i/v3j/v3k (validator V3 covers every rendered seed). Taxonomy basis: docs/CONT006-TAXONOMY.md (FROZEN before this authoring). PRIMARY transfer clusters (15, class transfer_eligible, the R2-vs-R0 endpoint): cr-6001..6004 (FP-3a x2 + FP-3b x2), cu-6101..6104 (FP-1: superseded_value x2 + retracted_correction x2), rt-6201..6203 (FP-2), dx-6401..6402 (FP-4), dr-6301..6302 (FP-5) \u2014 same underlying failure patterns as the experience corpus (suite v3i/v3j traces), different surface wording and fresh worlds (city ferry terminal, campus equipment cage, greenhouse/kiln/aquarium/print-shop/cheese-cave, ski patrol cache, harbor chandlery, bell foundry, seed vault). VALIDATION clusters (4, activation decisions only, NEVER in the primary endpoint): cr-6005, cu-6105, rt-6204, dx-6403. guess_calibration x3 (6 never-stated probes) measures the working core's guess band. FP-6 (format miss) is exercised by every label-form probe. Structural vocabulary inherited from the frozen suites only (v3i/v3j seed_error mechanisms + initial_expected; v3k lure_value + label windows). Rendering: continuity.fixtures.render_seed_variant (single definition shared by runner, validator, assembly gate)."
+}

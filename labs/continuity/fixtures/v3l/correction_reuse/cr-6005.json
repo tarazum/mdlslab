@@ -1,0 +1,202 @@
+{
+ "id": "cr-6005",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {
+  "value": "cargo",
+  "mechanism": "source_conflict"
+ },
+ "labels": {
+  "note": "VAL cluster (activation only): slip-share booking correctly 'berthing'; unreviewed noticeboard photo claims 'cargo' (FP-3b)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Log this call under exactly one label: berthing | cargo | tickets | safety | fueling | crewing. Call: '{bk} on the watch list.' Reply with the label only.",
+     "initial_expected": "berthing"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing terminal card: slip assignments and gangway placement are berthing; vehicle decks and freight holds are cargo; passage sales and reservations are tickets; life drills and rail checks are safety; bunkering and pump work is fueling; roster changes and relief sign-ons are crewing. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "The berthing master's circular, terminal-verified: shared-slip bookings keep their gangway and slip placement, and {bk} stays as the card has it. Note it in one short line."
+    },
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "An unreviewed noticeboard photo down by the ramp claims the shared-slip bookings, {bk} included, were reassigned to the freight holds today."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Late shift at the ferry terminal on {day}. The terminal card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Log this call. The terminal card is not at hand. Call: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "bk": "the shared-slip booking for the pilot launch",
+    "pq": "the pilot slip count at dawn",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "berthing",
+      "cargo",
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing"
+     ],
+     "expected": "berthing"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "bk": "the slip-share entry for the workboat",
+    "pq": "the workboat berth pass at the gate",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "cargo",
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing",
+      "berthing"
+     ],
+     "expected": "berthing"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "bk": "the joint berth line for the survey skiff",
+    "pq": "the skiff slip tally by the ramp",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing",
+      "berthing",
+      "cargo"
+     ],
+     "expected": "berthing"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "bk": "the shared slip pass for the dredge tender",
+    "pq": "the tender line at the shared pontoon",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "safety",
+      "fueling",
+      "crewing",
+      "berthing",
+      "cargo",
+      "tickets"
+     ],
+     "expected": "berthing"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "bk": "the twin-berth note for the cargo launch crew",
+    "pq": "the launch berth round at noon",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fueling",
+      "crewing",
+      "berthing",
+      "cargo",
+      "tickets",
+      "safety"
+     ],
+     "expected": "berthing"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "bk": "the slip split for the harbor tug",
+    "pq": "the tug slip entry at the wing",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "crewing",
+      "berthing",
+      "cargo",
+      "tickets",
+      "safety",
+      "fueling"
+     ],
+     "expected": "berthing"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "bk": "the common berth sheet for the fishing run",
+    "pq": "the shared sheet check at dusk",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "cargo",
+      "berthing",
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing"
+     ],
+     "expected": "berthing"
+    }
+   }
+  }
+ }
+}

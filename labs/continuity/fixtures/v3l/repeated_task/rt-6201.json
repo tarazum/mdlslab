@@ -1,0 +1,197 @@
+{
+ "id": "rt-6201",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "disposal",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "duty sheet pins 'disposal'; standing card says servicing; probe expects servicing (FP-2)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Pick exactly one tag: lending | servicing | storage | training | disposal | transport. Errand: '{task}.' Reply with the tag only.",
+     "initial_expected": "disposal"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier duty sheet tags {task} as 'disposal'. The standing cage card, verified: bench repair and calibration are servicing; scrap and part-out is disposal. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Duty handover before the {slot} rush. The standing cage card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "New round opens at the cage hatch. The slate cards are locked away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Pick one tag for this errand. No cards are in reach. Errand: '{pq}.' Options: {options} - reply with the tag only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "task": "the grinder bench pass for the shop vacs",
+    "pq": "the press calibration round for the theater",
+    "slot": "first-period"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "lending",
+      "servicing",
+      "storage",
+      "training",
+      "disposal",
+      "transport"
+     ],
+     "expected": "servicing"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "task": "the drill press calibration for the stage crew",
+    "pq": "the sander pass at the cage bench",
+    "slot": "lunch"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "servicing",
+      "storage",
+      "training",
+      "disposal",
+      "transport",
+      "lending"
+     ],
+     "expected": "servicing"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "task": "the belt sander reseating at the tool wall",
+    "pq": "the chuck truing before the set build",
+    "slot": "lab-day"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "storage",
+      "training",
+      "disposal",
+      "transport",
+      "lending",
+      "servicing"
+     ],
+     "expected": "servicing"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "task": "the lathe chuck truing for the scenery build",
+    "pq": "the fence reset for the afternoon crew",
+    "slot": "seminar"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "training",
+      "disposal",
+      "transport",
+      "lending",
+      "servicing",
+      "storage"
+     ],
+     "expected": "servicing"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "task": "the miter saw fence reset at the cage bench",
+    "pq": "the collet check at the tool wall",
+    "slot": "dusk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "disposal",
+      "transport",
+      "lending",
+      "servicing",
+      "storage",
+      "training"
+     ],
+     "expected": "servicing"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "task": "the router collet check for the prop shop",
+    "pq": "the vice look-over for the model shop",
+    "slot": "exam-week"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "transport",
+      "lending",
+      "servicing",
+      "storage",
+      "training",
+      "disposal"
+     ],
+     "expected": "servicing"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "task": "the bench vice re-mount by the north window",
+    "pq": "the grinder sweep before closing",
+    "slot": "open-house"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "servicing",
+      "lending",
+      "storage",
+      "training",
+      "disposal",
+      "transport"
+     ],
+     "expected": "servicing"
+    }
+   }
+  }
+ }
+}

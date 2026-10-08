@@ -1,0 +1,197 @@
+{
+ "id": "rt-6204",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "lending",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "duty sheet pins 'lending'; standing card says training; probe expects training (FP-2)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Pick exactly one tag: lending | servicing | storage | training | disposal | transport. Errand: '{task}.' Reply with the tag only.",
+     "initial_expected": "lending"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier duty sheet tags {task} as 'lending'. The standing cage card, verified: bench repair and calibration are servicing; scrap and part-out is disposal. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Duty handover before the {slot} rush. The standing cage card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "New round opens at the cage hatch. The slate cards are locked away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Pick one tag for this errand. No cards are in reach. Errand: '{pq}.' Options: {options} - reply with the tag only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "task": "the rigging kit sign-out for the stagecraft unit",
+    "pq": "the harness pass for the climbing unit",
+    "slot": "first-period"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "lending",
+      "servicing",
+      "storage",
+      "training",
+      "disposal",
+      "transport"
+     ],
+     "expected": "training"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "task": "the harness checkout for the rope module",
+    "pq": "the kit round before the recert",
+    "slot": "lunch"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "servicing",
+      "storage",
+      "training",
+      "disposal",
+      "transport",
+      "lending"
+     ],
+     "expected": "training"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "task": "the stethoscope pass for the auscultation lab",
+    "pq": "the crate checkout for the drill",
+    "slot": "lab-day"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "storage",
+      "training",
+      "disposal",
+      "transport",
+      "lending",
+      "servicing"
+     ],
+     "expected": "training"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "task": "the torso mannikin loan for the first-aid course",
+    "pq": "the mannikin loan at the afternoon lab",
+    "slot": "seminar"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "training",
+      "disposal",
+      "transport",
+      "lending",
+      "servicing",
+      "storage"
+     ],
+     "expected": "training"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "task": "the splint crate sign-out for the clinic drill",
+    "pq": "the splint pass for the evening course",
+    "slot": "dusk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "disposal",
+      "transport",
+      "lending",
+      "servicing",
+      "storage",
+      "training"
+     ],
+     "expected": "training"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "task": "the CPR dummy checkout for the recert",
+    "pq": "the dummy tally at the cage desk",
+    "slot": "exam-week"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "transport",
+      "lending",
+      "servicing",
+      "storage",
+      "training",
+      "disposal"
+     ],
+     "expected": "training"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "task": "the bandage kit pass for the responder class",
+    "pq": "the bandage round for the class",
+    "slot": "open-house"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "servicing",
+      "lending",
+      "storage",
+      "training",
+      "disposal",
+      "transport"
+     ],
+     "expected": "training"
+    }
+   }
+  }
+ }
+}

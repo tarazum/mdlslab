@@ -1,0 +1,195 @@
+{
+ "id": "cu-6103",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{new}",
+  "mechanism": "retracted_correction"
+ },
+ "labels": {
+  "note": "aquarium quarantine salinity corrected then withdrawn; probe expects ORIGINAL (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You tend the quarantine tanks. For the log: the isolation bank sits at {old} points of salinity. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the meter was recalibrated; the isolation bank sits at {new} points, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "The lab says the correction is withdrawn: the recalibration slip belonged to the display tank next door and does not apply here; the standing level from the first log holds as before. Amend in one short line."
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A keeper asks; the tank sheet is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What is the isolation bank salinity? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "old": "31",
+    "new": "35"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "26",
+      "40",
+      "21",
+      "45",
+      "31",
+      "35"
+     ],
+     "expected": "31"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "old": "34",
+    "new": "38"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "43",
+      "24",
+      "48",
+      "34",
+      "38",
+      "29"
+     ],
+     "expected": "34"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "old": "37",
+    "new": "41"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "27",
+      "51",
+      "37",
+      "41",
+      "32",
+      "46"
+     ],
+     "expected": "37"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "old": "40",
+    "new": "44"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "54",
+      "40",
+      "44",
+      "35",
+      "49",
+      "30"
+     ],
+     "expected": "40"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "old": "43",
+    "new": "47"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "43",
+      "47",
+      "38",
+      "52",
+      "33",
+      "57"
+     ],
+     "expected": "43"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "old": "46",
+    "new": "50"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "50",
+      "41",
+      "55",
+      "36",
+      "60",
+      "46"
+     ],
+     "expected": "46"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "old": "49",
+    "new": "53"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "44",
+      "58",
+      "39",
+      "63",
+      "49",
+      "53"
+     ],
+     "expected": "49"
+    }
+   }
+  }
+ }
+}

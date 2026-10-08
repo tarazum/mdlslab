@@ -1,0 +1,197 @@
+{
+ "id": "rt-6202",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "training",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "duty sheet pins 'training'; standing card says lending; probe expects lending (FP-2)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Pick exactly one tag: lending | servicing | storage | training | disposal | transport. Errand: '{task}.' Reply with the tag only.",
+     "initial_expected": "training"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier duty sheet tags {task} as 'training'. The standing cage card, verified: bench repair and calibration are servicing; scrap and part-out is disposal. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Duty handover before the {slot} rush. The standing cage card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "New round opens at the cage hatch. The slate cards are locked away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Pick one tag for this errand. No cards are in reach. Errand: '{pq}.' Options: {options} - reply with the tag only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "task": "the boom kit sign-out for the film class",
+    "pq": "the meter sign-out for the photo class",
+    "slot": "first-period"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "lending",
+      "servicing",
+      "storage",
+      "training",
+      "disposal",
+      "transport"
+     ],
+     "expected": "lending"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "task": "the light meter checkout for the photo walk",
+    "pq": "the recorder pass at the cage desk",
+    "slot": "lunch"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "servicing",
+      "storage",
+      "training",
+      "disposal",
+      "transport",
+      "lending"
+     ],
+     "expected": "lending"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "task": "the field recorder loan for the podcast unit",
+    "pq": "the tripod loan for the night shoot",
+    "slot": "lab-day"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "storage",
+      "training",
+      "disposal",
+      "transport",
+      "lending",
+      "servicing"
+     ],
+     "expected": "lending"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "task": "the tripod pass-out for the studio shoot",
+    "pq": "the crate checkout before the club",
+    "slot": "seminar"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "training",
+      "disposal",
+      "transport",
+      "lending",
+      "servicing",
+      "storage"
+     ],
+     "expected": "lending"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "task": "the lens crate sign-out for the camera club",
+    "pq": "the gimbal pass for the interview",
+    "slot": "dusk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "disposal",
+      "transport",
+      "lending",
+      "servicing",
+      "storage",
+      "training"
+     ],
+     "expected": "lending"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "task": "the gimbal checkout for the newsroom",
+    "pq": "the monitor round for the edit room",
+    "slot": "exam-week"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "transport",
+      "lending",
+      "servicing",
+      "storage",
+      "training",
+      "disposal"
+     ],
+     "expected": "lending"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "task": "the monitor loan for the editing bay",
+    "pq": "the boom kit tally at closing",
+    "slot": "open-house"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "servicing",
+      "lending",
+      "storage",
+      "training",
+      "disposal",
+      "transport"
+     ],
+     "expected": "lending"
+    }
+   }
+  }
+ }
+}

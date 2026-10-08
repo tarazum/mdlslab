@@ -1,0 +1,185 @@
+{
+ "id": "cu-6105",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "labels": {
+  "note": "VAL cluster (activation only): cheese cave humidity corrected; probe expects NEW (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You mind the cheese cave sheet. For the log: the aging room holds {old} steps of humidity. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the dampers were rebalanced; the aging room now holds {new} steps, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "An affineur asks; the cave sheet is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many humidity steps does the aging room hold? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "old": "43",
+    "new": "51"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "51",
+      "39",
+      "55",
+      "35",
+      "59",
+      "43"
+     ],
+     "expected": "51"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "old": "46",
+    "new": "54"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "42",
+      "58",
+      "38",
+      "62",
+      "46",
+      "54"
+     ],
+     "expected": "54"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "old": "49",
+    "new": "57"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "61",
+      "41",
+      "65",
+      "49",
+      "57",
+      "45"
+     ],
+     "expected": "57"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "old": "52",
+    "new": "60"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "44",
+      "68",
+      "52",
+      "60",
+      "48",
+      "64"
+     ],
+     "expected": "60"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "old": "55",
+    "new": "63"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "71",
+      "55",
+      "63",
+      "51",
+      "67",
+      "47"
+     ],
+     "expected": "63"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "old": "58",
+    "new": "66"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "58",
+      "66",
+      "54",
+      "70",
+      "50",
+      "74"
+     ],
+     "expected": "66"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "old": "61",
+    "new": "69"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "69",
+      "57",
+      "73",
+      "53",
+      "77",
+      "61"
+     ],
+     "expected": "69"
+    }
+   }
+  }
+ }
+}

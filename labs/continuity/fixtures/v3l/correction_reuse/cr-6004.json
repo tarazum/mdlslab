@@ -1,0 +1,202 @@
+{
+ "id": "cr-6004",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {
+  "value": "safety",
+  "mechanism": "source_conflict"
+ },
+ "labels": {
+  "note": "relief sign-on correctly 'crewing'; unreviewed chat channel claims move to 'safety' (FP-3b)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Log this call under exactly one label: berthing | cargo | tickets | safety | fueling | crewing. Call: '{bk} on the watch list.' Reply with the label only.",
+     "initial_expected": "crewing"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing terminal card: slip assignments and gangway placement are berthing; vehicle decks and freight holds are cargo; passage sales and reservations are tickets; life drills and rail checks are safety; bunkering and pump work is fueling; roster changes and relief sign-ons are crewing. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "The duty office forwards the captain's notice; the terminal verified it: relief sign-ons for the night crossings stay with roster changes, and {bk} remains as the card has it. Note it in one short line."
+    },
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "An unreviewed ferry chat channel claims every relief sign-on, {bk} included, was moved to the drill board today."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Late shift at the ferry terminal on {day}. The terminal card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Log this call. The terminal card is not at hand. Call: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "bk": "the relief sign-on for the night crossing",
+    "pq": "the sign-on tally for the dusk watch",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "berthing",
+      "cargo",
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing"
+     ],
+     "expected": "crewing"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "bk": "the substitute mate listing for the dawn run",
+    "pq": "the mate listing at the crew door",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "cargo",
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing",
+      "berthing"
+     ],
+     "expected": "crewing"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "bk": "the extra deckhand entry for the weekend ferry",
+    "pq": "the deckhand round for the first ferry",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing",
+      "berthing",
+      "cargo"
+     ],
+     "expected": "crewing"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "bk": "the standby cook rostering for the mail boat",
+    "pq": "the cook callout on the night boat",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "safety",
+      "fueling",
+      "crewing",
+      "berthing",
+      "cargo",
+      "tickets"
+     ],
+     "expected": "crewing"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "bk": "the night lookout swap on the river run",
+    "pq": "the lookout swap at the gangway hut",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fueling",
+      "crewing",
+      "berthing",
+      "cargo",
+      "tickets",
+      "safety"
+     ],
+     "expected": "crewing"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "bk": "the spare engineer callout for the tide trip",
+    "pq": "the engineer entry for the noon trip",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "crewing",
+      "berthing",
+      "cargo",
+      "tickets",
+      "safety",
+      "fueling"
+     ],
+     "expected": "crewing"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "bk": "the relief purser line for the island service",
+    "pq": "the purser line at the roster desk",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "cargo",
+      "berthing",
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing"
+     ],
+     "expected": "crewing"
+    }
+   }
+  }
+ }
+}

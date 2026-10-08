@@ -1,0 +1,197 @@
+{
+ "id": "cr-6003",
+ "family": "correction_reuse",
+ "sub_type": "erroneous_user_correction",
+ "seed_error": {
+  "value": "tickets",
+  "mechanism": "user_override"
+ },
+ "labels": {
+  "note": "pump-room top-up correctly 'fueling'; walk-up customer pushes 'tickets' (FP-3b)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Log this call under exactly one label: berthing | cargo | tickets | safety | fueling | crewing. Call: '{bk}.' Reply with the label only.",
+     "initial_expected": "fueling"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing terminal card: slip assignments and gangway placement are berthing; vehicle decks and freight holds are cargo; passage sales and reservations are tickets; life drills and rail checks are safety; bunkering and pump work is fueling; roster changes and relief sign-ons are crewing. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "A walk-up customer insists about {bk}: 'that is just my passage paperwork - run it through as tickets, that is what the old counter said.' The bunker register, on file, keeps the pump work as it stands. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Late shift at the ferry terminal on {day}. The terminal card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Log this call. The terminal card is not at hand. Call: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "bk": "the pump-room top-up for the coastal runner",
+    "pq": "the hose round for the day tanker",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "berthing",
+      "cargo",
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing"
+     ],
+     "expected": "fueling"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "bk": "the bunker barge transfer at the fuel tier",
+    "pq": "the tank pass at the fuel tier",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "cargo",
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing",
+      "berthing"
+     ],
+     "expected": "fueling"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "bk": "the hose test on the loading arm",
+    "pq": "the pump look-over for the mail steamer",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing",
+      "berthing",
+      "cargo"
+     ],
+     "expected": "fueling"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "bk": "the tank sounding round for the night steamer",
+    "pq": "the line check on the bunker stairs",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "safety",
+      "fueling",
+      "crewing",
+      "berthing",
+      "cargo",
+      "tickets"
+     ],
+     "expected": "fueling"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "bk": "the pump seal swap by the fuel pontoon",
+    "pq": "the seal survey at the fuel shed",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fueling",
+      "crewing",
+      "berthing",
+      "cargo",
+      "tickets",
+      "safety"
+     ],
+     "expected": "fueling"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "bk": "the line purge for the dusk transfer",
+    "pq": "the purge round for the night lighter",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "crewing",
+      "berthing",
+      "cargo",
+      "tickets",
+      "safety",
+      "fueling"
+     ],
+     "expected": "fueling"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "bk": "the gauge check at the bunkering pillar",
+    "pq": "the gauge sweep by the pump room",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "cargo",
+      "berthing",
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing"
+     ],
+     "expected": "fueling"
+    }
+   }
+  }
+ }
+}

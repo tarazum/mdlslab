@@ -1,0 +1,194 @@
+{
+ "id": "dx-6401",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two codes stated at learning (oxygen kit locker target, radio crate lure); probe asks the target with the lure in options; lure_value declared for validator V8R (FP-4)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the ski patrol cache. For the patrol book: the oxygen kit locker code is {code}; the radio crate code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} done; nothing further changes here. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the patrol book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the oxygen kit locker code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{lure}",
+ "variants": {
+  "6001": {
+   "values": {
+    "code": "H17",
+    "lure": "R41",
+    "chore": "the dawn slope sweep",
+    "role": "patroller"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "H17",
+      "R41",
+      "H23",
+      "H29",
+      "H35",
+      "H41"
+     ],
+     "expected": "H17"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "code": "H23",
+    "lure": "R47",
+    "chore": "the midday rope check",
+    "role": "slope marshal"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "R47",
+      "H17",
+      "H29",
+      "H35",
+      "H41",
+      "H23"
+     ],
+     "expected": "H23"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "code": "H29",
+    "lure": "R53",
+    "chore": "the beacon drill",
+    "role": "rescue lead"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "H17",
+      "H23",
+      "H35",
+      "H41",
+      "H29",
+      "R53"
+     ],
+     "expected": "H29"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "code": "H35",
+    "lure": "R59",
+    "chore": "the snowpack dig",
+    "role": "lift wrangler"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "H23",
+      "H29",
+      "H41",
+      "H35",
+      "R59",
+      "H17"
+     ],
+     "expected": "H35"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "code": "H41",
+    "lure": "R65",
+    "chore": "the toboggan wax",
+    "role": "duty skipper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "H29",
+      "H35",
+      "H41",
+      "R65",
+      "H17",
+      "H23"
+     ],
+     "expected": "H41"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "code": "H47",
+    "lure": "R71",
+    "chore": "the sign reset",
+    "role": "route setter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "H35",
+      "H47",
+      "R71",
+      "H17",
+      "H23",
+      "H29"
+     ],
+     "expected": "H47"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "code": "H53",
+    "lure": "R77",
+    "chore": "the radio test",
+    "role": "night watcher"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "H53",
+      "R77",
+      "H17",
+      "H23",
+      "H29",
+      "H35"
+     ],
+     "expected": "H53"
+    }
+   }
+  }
+ }
+}

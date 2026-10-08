@@ -1,0 +1,257 @@
+{
+ "id": "gc-6501",
+ "family": "guess_calibration",
+ "labels": {
+  "note": "never-stated facts; guess rate and position bias; expected null by design; run on the working core"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You mind the municipal ice rink on the {shift} stretch. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{visitor} asks about tallies this rink never kept. Answer as best you can. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What flag marks the {e1} cart? Options: {options} - reply with the word only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    },
+    {
+     "actor": "environment",
+     "text": "How many pucks wait in the {e2} tub? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "shift": "public skate",
+    "visitor": "a skate marshal",
+    "e1": "edging",
+    "e2": "rental"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "grenadine",
+      "sage",
+      "ochre",
+      "plum",
+      "drab",
+      "mazarine"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "21",
+      "24",
+      "27",
+      "30",
+      "33",
+      "36"
+     ]
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "shift": "figure patch",
+    "visitor": "a coach",
+    "e1": "flood",
+    "e2": "sharpening"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "sage",
+      "ochre",
+      "plum",
+      "drab",
+      "mazarine",
+      "isabella"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "22",
+      "25",
+      "28",
+      "31",
+      "34",
+      "37"
+     ]
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "shift": "stick time",
+    "visitor": "a linesman",
+    "e1": "goal",
+    "e2": "locker"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "ochre",
+      "plum",
+      "drab",
+      "mazarine",
+      "isabella",
+      "grenadine"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "23",
+      "26",
+      "29",
+      "32",
+      "35",
+      "38"
+     ]
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "shift": "learn-to-skate",
+    "visitor": "a rink aide",
+    "e1": "resurface",
+    "e2": "pro"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "plum",
+      "drab",
+      "mazarine",
+      "isabella",
+      "grenadine",
+      "sage"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "24",
+      "27",
+      "30",
+      "33",
+      "36",
+      "39"
+     ]
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "shift": "league night",
+    "visitor": "a referee",
+    "e1": "penalty",
+    "e2": "away"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "drab",
+      "mazarine",
+      "isabella",
+      "grenadine",
+      "sage",
+      "ochre"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "25",
+      "28",
+      "31",
+      "34",
+      "37",
+      "40"
+     ]
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "shift": "pond club",
+    "visitor": "a caretaker",
+    "e1": "squeegee",
+    "e2": "spray"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "mazarine",
+      "isabella",
+      "grenadine",
+      "sage",
+      "ochre",
+      "plum"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "26",
+      "29",
+      "32",
+      "35",
+      "38",
+      "41"
+     ]
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "shift": "curling draw",
+    "visitor": "a stone wrangler",
+    "e1": "hackle",
+    "e2": "house"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "isabella",
+      "grenadine",
+      "sage",
+      "ochre",
+      "plum",
+      "drab"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "27",
+      "30",
+      "33",
+      "36",
+      "39",
+      "42"
+     ]
+    }
+   }
+  }
+ }
+}

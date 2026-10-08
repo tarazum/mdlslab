@@ -1,0 +1,202 @@
+{
+ "id": "cr-6001",
+ "family": "correction_reuse",
+ "sub_type": "valid_correction_environment",
+ "seed_error": {
+  "value": "safety",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "night buoy-line rig logged 'safety'; port captain's bulletin re-routes to berthing; verified correction re-routes to berthing"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Log this call under exactly one label: berthing | cargo | tickets | safety | fueling | crewing. Call: '{bk} on the morning sheet.' Reply with the label only.",
+     "initial_expected": "safety"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your counter log from the previous watch routes {bk} on the morning sheet under 'safety'. Keep the log line in view and acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The standing terminal card: slip assignments and gangway placement are berthing; vehicle decks and freight holds are cargo; passage sales and reservations are tickets; life drills and rail checks are safety; bunkering and pump work is fueling; roster changes and relief sign-ons are crewing. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Terminal control bulletin, verified notice from the port captain's office: the log line routing {bk} under 'safety' is out of date; gangway and slip placement for it are berthing under the standing card. Amend your records in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Late shift at the ferry terminal on {day}. The terminal card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Log this call. The terminal card is not at hand. Call: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "bk": "the night buoy-line rig for pier two",
+    "pq": "the stern ramp line-up for the mail boat",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "berthing",
+      "cargo",
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing"
+     ],
+     "expected": "berthing"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "bk": "the gangway plank shift on the river run",
+    "pq": "the berth sweep before the day cruiser",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "cargo",
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing",
+      "berthing"
+     ],
+     "expected": "berthing"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "bk": "the finger-slip realignment at gate three",
+    "pq": "the gangway count for the school ferry",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing",
+      "berthing",
+      "cargo"
+     ],
+     "expected": "berthing"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "bk": "the mooring ladder swap on the east berth",
+    "pq": "the slip tally at the floating dock",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "safety",
+      "fueling",
+      "crewing",
+      "berthing",
+      "cargo",
+      "tickets"
+     ],
+     "expected": "berthing"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "bk": "the pontoon walkway check at the north quay",
+    "pq": "the ramp pin check for the night crossing",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fueling",
+      "crewing",
+      "berthing",
+      "cargo",
+      "tickets",
+      "safety"
+     ],
+     "expected": "berthing"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "bk": "the slip rope re-lead by the pilot steps",
+    "pq": "the quay line round at the terminal wing",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "crewing",
+      "berthing",
+      "cargo",
+      "tickets",
+      "safety",
+      "fueling"
+     ],
+     "expected": "berthing"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "bk": "the quay ladder survey at the small-craft dock",
+    "pq": "the walkway bolt pass at pier nine",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "cargo",
+      "berthing",
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing"
+     ],
+     "expected": "berthing"
+    }
+   }
+  }
+ }
+}

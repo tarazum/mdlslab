@@ -1,0 +1,107 @@
+{
+ "kind": "cont006-power-calc",
+ "endpoint": "d = S(R2) - S(R0) label-form pass-rate delta on the v3l primary transfer clusters (CR4+CU4+RT3+DX2+DR2 = 15); two-sided 95% cluster percentile bootstrap; 7 seed-variant obs/cluster/arm (seeds 6001..6007)",
+ "model": "per cluster c, seed s: eps~N(0,sig_shared) shared by both arms (cancels inside d); eta~N(0,sig_arm) per arm (power killer); b0 0.42 (C2 T-arm pooled pass on primary families); clip [0.02,0.98]",
+ "mme": {
+  "d": 0.2,
+  "rationale": "MME ladder 0.15/0.175/0.20 was sized at design time (zero GPU): per-observation binomial noise with n=1 probes per cluster-seed-arm binds detection below 0.80 at d 0.15 (row R5) and 0.175 (row R6); 0.20 is the smallest 0.05-step effect detectable at >= 0.80 on the conservative row (R2) \u2014 effects below 0.20 are NOT claimable at this design's power (declared limitation, cycle-2 / CONT-002 sizing precedent); 0.20 also clears the template section 9 guessing-band floor (>= 0.15). MME moved during design-time sizing BEFORE any inference, never after."
+ },
+ "seeds": {
+  "sim_rng": 20261008,
+  "REPS": 3000,
+  "BOOT": 4000
+ },
+ "results": [
+  {
+   "label": "R1 binomial (0,0), d 0.20, K15x7 [sanity]",
+   "detection_power_ci_up": 0.845,
+   "established_branch": 0.505,
+   "harm_branch": 0.0,
+   "median_ci_width": 0.248
+  },
+  {
+   "label": "R2 conservative (sh .20, sa .10), d 0.20 = MME, K15x7 [grounds MME]",
+   "detection_power_ci_up": 0.862,
+   "established_branch": 0.454,
+   "harm_branch": 0.0,
+   "median_ci_width": 0.229
+  },
+  {
+   "label": "R3 conservative, d 0.20, K15x5 [seeds-only reduction - record]",
+   "detection_power_ci_up": 0.763,
+   "established_branch": 0.492,
+   "harm_branch": 0.0,
+   "median_ci_width": 0.267
+  },
+  {
+   "label": "R4 conservative, d 0.20, K12x7 [clusters-only reduction - record]",
+   "detection_power_ci_up": 0.801,
+   "established_branch": 0.48,
+   "harm_branch": 0.0,
+   "median_ci_width": 0.25
+  },
+  {
+   "label": "R5 conservative, d 0.15 (sub-MME), K15x7",
+   "detection_power_ci_up": 0.65,
+   "established_branch": 0.182,
+   "harm_branch": 0.0,
+   "median_ci_width": 0.229
+  },
+  {
+   "label": "R6 conservative, d 0.175 (ladder mid), K15x7",
+   "detection_power_ci_up": 0.775,
+   "established_branch": 0.296,
+   "harm_branch": 0.0,
+   "median_ci_width": 0.229
+  },
+  {
+   "label": "R7 stress (sa .15), d 0.20, K15x7",
+   "detection_power_ci_up": 0.848,
+   "established_branch": 0.416,
+   "harm_branch": 0.0,
+   "median_ci_width": 0.229
+  },
+  {
+   "label": "R8 conservative, d 0.30 (R3-gold-channel scale), K15x7",
+   "detection_power_ci_up": 0.994,
+   "established_branch": 0.921,
+   "harm_branch": 0.0,
+   "median_ci_width": 0.219
+  },
+  {
+   "label": "R9 conservative, d 0.00 (false positive), K15x7",
+   "detection_power_ci_up": 0.038,
+   "established_branch": 0.001,
+   "harm_branch": 0.038,
+   "median_ci_width": 0.229
+  },
+  {
+   "label": "R10 conservative, d -0.15 (harm), K15x7",
+   "detection_power_ci_up": 0.0,
+   "established_branch": 0.0,
+   "harm_branch": 0.652,
+   "median_ci_width": 0.219
+  },
+  {
+   "label": "R11 conservative, d 0.20, weaker base (b0 0.30), K15x7",
+   "detection_power_ci_up": 0.879,
+   "established_branch": 0.434,
+   "harm_branch": 0.0,
+   "median_ci_width": 0.229
+  },
+  {
+   "label": "R12 conservative, d 0.20, stronger base (b0 0.55), K15x7",
+   "detection_power_ci_up": 0.869,
+   "established_branch": 0.394,
+   "harm_branch": 0.0,
+   "median_ci_width": 0.219
+  },
+  {
+   "label": "R13 conservative, d 0.20, headroom edge (b0 0.75), K15x7",
+   "detection_power_ci_up": 0.819,
+   "established_branch": 0.115,
+   "harm_branch": 0.0,
+   "median_ci_width": 0.19
+  }
+ ]
+}

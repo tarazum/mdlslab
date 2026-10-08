@@ -1,0 +1,194 @@
+{
+ "id": "dx-6403",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two codes stated at learning (lever frame lock target, token cabinet lure); probe asks the target with the lure in options; lure_value declared for validator V8R (FP-4)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the rail museum signal box. For the lever log: the lever frame lock code is {code}; the token cabinet code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} done; nothing further changes here. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the lever log is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the lever frame lock code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{lure}",
+ "variants": {
+  "6001": {
+   "values": {
+    "code": "E17",
+    "lure": "M41",
+    "chore": "the dawn lamp test",
+    "role": "signalman"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "E17",
+      "M41",
+      "E23",
+      "E29",
+      "E35",
+      "E41"
+     ],
+     "expected": "E17"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "code": "E23",
+    "lure": "M47",
+    "chore": "the point grease",
+    "role": "museum guide"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "M47",
+      "E17",
+      "E29",
+      "E35",
+      "E41",
+      "E23"
+     ],
+     "expected": "E23"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "code": "E29",
+    "lure": "M53",
+    "chore": "the wire tension round",
+    "role": "track steward"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "E17",
+      "E23",
+      "E35",
+      "E41",
+      "E29",
+      "M53"
+     ],
+     "expected": "E29"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "code": "E35",
+    "lure": "M59",
+    "chore": "the block shelf dust",
+    "role": "lever fitter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "E23",
+      "E29",
+      "E41",
+      "E35",
+      "M59",
+      "E17"
+     ],
+     "expected": "E35"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "code": "E41",
+    "lure": "M65",
+    "chore": "the token wipe",
+    "role": "block inspector"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "E29",
+      "E35",
+      "E41",
+      "M65",
+      "E17",
+      "E23"
+     ],
+     "expected": "E41"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "code": "E47",
+    "lure": "M71",
+    "chore": "the relay check",
+    "role": "token clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "E35",
+      "E47",
+      "M71",
+      "E17",
+      "E23",
+      "E29"
+     ],
+     "expected": "E47"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "code": "E53",
+    "lure": "M77",
+    "chore": "the dusk lamp trim",
+    "role": "night caretaker"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "E53",
+      "M77",
+      "E17",
+      "E23",
+      "E29",
+      "E35"
+     ],
+     "expected": "E53"
+    }
+   }
+  }
+ }
+}

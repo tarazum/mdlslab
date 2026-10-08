@@ -1,0 +1,257 @@
+{
+ "id": "gc-6503",
+ "family": "guess_calibration",
+ "labels": {
+  "note": "never-stated facts; guess rate and position bias; expected null by design; run on the working core"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You watch the lighthouse lamp room on the {shift} watch. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{visitor} asks about notes this lamp room never kept. Answer as best you can. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Which way does the {e1} landing face? Options: {options} - reply with the word only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    },
+    {
+     "actor": "environment",
+     "text": "How many mantles wait in the {e2} drawer? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "shift": "dusk",
+    "visitor": "a keeper",
+    "e1": "watch gallery",
+    "e2": "spare"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "starboard",
+      "portside",
+      "forward",
+      "abaft",
+      "amidships",
+      "astern"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "18",
+      "21",
+      "24",
+      "27",
+      "30",
+      "33"
+     ]
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "shift": "fog",
+    "visitor": "a tender",
+    "e1": "storm deck",
+    "e2": "brass"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "portside",
+      "forward",
+      "abaft",
+      "amidships",
+      "astern",
+      "abeam"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "19",
+      "22",
+      "25",
+      "28",
+      "31",
+      "34"
+     ]
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "shift": "ebb",
+    "visitor": "a pilot",
+    "e1": "service stair",
+    "e2": "wick"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "forward",
+      "abaft",
+      "amidships",
+      "astern",
+      "abeam",
+      "starboard"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "20",
+      "23",
+      "26",
+      "29",
+      "32",
+      "35"
+     ]
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "shift": "gale",
+    "visitor": "a wicker",
+    "e1": "lantern cage",
+    "e2": "oil"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "abaft",
+      "amidships",
+      "astern",
+      "abeam",
+      "starboard",
+      "portside"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "21",
+      "24",
+      "27",
+      "30",
+      "33",
+      "36"
+     ]
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "shift": "calm",
+    "visitor": "a signaler",
+    "e1": "vetting rail",
+    "e2": "clock"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "amidships",
+      "astern",
+      "abeam",
+      "starboard",
+      "portside",
+      "forward"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "22",
+      "25",
+      "28",
+      "31",
+      "34",
+      "37"
+     ]
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "shift": "moon",
+    "visitor": "a trimsman",
+    "e1": "glazed screen",
+    "e2": "weight"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "astern",
+      "abeam",
+      "starboard",
+      "portside",
+      "forward",
+      "abaft"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "23",
+      "26",
+      "29",
+      "32",
+      "35",
+      "38"
+     ]
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "shift": "relief",
+    "visitor": "an inspector",
+    "e1": "lower walk",
+    "e2": "tool"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "abeam",
+      "starboard",
+      "portside",
+      "forward",
+      "abaft",
+      "amidships"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "24",
+      "27",
+      "30",
+      "33",
+      "36",
+      "39"
+     ]
+    }
+   }
+  }
+ }
+}

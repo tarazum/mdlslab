@@ -1,0 +1,194 @@
+{
+ "id": "dx-6402",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two codes stated at learning (paint locker target, rope locker lure); probe asks the target with the lure in options; lure_value declared for validator V8R (FP-4)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the harbor chandlery. For the store ledger: the paint locker code is {code}; the rope locker code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} done; nothing further changes here. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the store ledger is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the paint locker code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{lure}",
+ "variants": {
+  "6001": {
+   "values": {
+    "code": "N17",
+    "lure": "D41",
+    "chore": "the rope coil round",
+    "role": "chandler"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N17",
+      "D41",
+      "N23",
+      "N29",
+      "N35",
+      "N41"
+     ],
+     "expected": "N17"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "code": "N23",
+    "lure": "D47",
+    "chore": "the paint tin count",
+    "role": "deck clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "D47",
+      "N17",
+      "N29",
+      "N35",
+      "N41",
+      "N23"
+     ],
+     "expected": "N23"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "code": "N29",
+    "lure": "D53",
+    "chore": "the brass polish",
+    "role": "bosun"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N17",
+      "N23",
+      "N35",
+      "N41",
+      "N29",
+      "D53"
+     ],
+     "expected": "N29"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "code": "N35",
+    "lure": "D59",
+    "chore": "the bilge pad stack",
+    "role": "yard keeper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N23",
+      "N29",
+      "N41",
+      "N35",
+      "D59",
+      "N17"
+     ],
+     "expected": "N35"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "code": "N41",
+    "lure": "D65",
+    "chore": "the chart fold",
+    "role": "skiff rigger"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N29",
+      "N35",
+      "N41",
+      "D65",
+      "N17",
+      "N23"
+     ],
+     "expected": "N41"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "code": "N47",
+    "lure": "D71",
+    "chore": "the spar wipe",
+    "role": "sign painter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N35",
+      "N47",
+      "D71",
+      "N17",
+      "N23",
+      "N29"
+     ],
+     "expected": "N47"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "code": "N53",
+    "lure": "D77",
+    "chore": "the hook oil",
+    "role": "tally hand"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N53",
+      "D77",
+      "N17",
+      "N23",
+      "N29",
+      "N35"
+     ],
+     "expected": "N53"
+    }
+   }
+  }
+ }
+}

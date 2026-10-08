@@ -1,0 +1,202 @@
+{
+ "id": "cr-6002",
+ "family": "correction_reuse",
+ "sub_type": "valid_correction_tool",
+ "seed_error": {
+  "value": "tickets",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "van-row bundle logged 'tickets'; service-verified manifest scanner re-routes to cargo; verified correction re-routes to cargo"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Log this call under exactly one label: berthing | cargo | tickets | safety | fueling | crewing. Call: '{bk} on the freight list.' Reply with the label only.",
+     "initial_expected": "tickets"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your counter log from the previous watch routes {bk} on the freight list under 'tickets'. Keep the log line in view and acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The standing terminal card: slip assignments and gangway placement are berthing; vehicle decks and freight holds are cargo; passage sales and reservations are tickets; life drills and rail checks are safety; bunkering and pump work is fueling; roster changes and relief sign-ons are crewing. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "The manifest scanner, service-verified this morning, reads {bk} as vehicle-deck freight: cargo under the standing card; the old 'tickets' routing is out of date. Amend your records in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Late shift at the ferry terminal on {day}. The terminal card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Log this call. The terminal card is not at hand. Call: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "bk": "the crane lift for the breakbulk pallets",
+    "pq": "the deck seal look-over for the feed truck",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "berthing",
+      "cargo",
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing"
+     ],
+     "expected": "cargo"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "bk": "the strap-down round for the van row",
+    "pq": "the strap audit for the crate ferry",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "cargo",
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing",
+      "berthing"
+     ],
+     "expected": "cargo"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "bk": "the netting pass over the open trailer",
+    "pq": "the net round on the livestock run",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing",
+      "berthing",
+      "cargo"
+     ],
+     "expected": "cargo"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "bk": "the chock swap on the lower car deck",
+    "pq": "the chock tally for the boatyard haul",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "safety",
+      "fueling",
+      "crewing",
+      "berthing",
+      "cargo",
+      "tickets"
+     ],
+     "expected": "cargo"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "bk": "the lashing check for the steel coils",
+    "pq": "the lashing pass at the tailboard lift",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fueling",
+      "crewing",
+      "berthing",
+      "cargo",
+      "tickets",
+      "safety"
+     ],
+     "expected": "cargo"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "bk": "the pallet count for the drum shipment",
+    "pq": "the drum count for the morning lighter",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "crewing",
+      "berthing",
+      "cargo",
+      "tickets",
+      "safety",
+      "fueling"
+     ],
+     "expected": "cargo"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "bk": "the trestle move for the machine crates",
+    "pq": "the crate survey on the machinery deck",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "cargo",
+      "berthing",
+      "tickets",
+      "safety",
+      "fueling",
+      "crewing"
+     ],
+     "expected": "cargo"
+    }
+   }
+  }
+ }
+}

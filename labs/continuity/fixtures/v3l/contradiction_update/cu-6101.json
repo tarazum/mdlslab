@@ -1,0 +1,185 @@
+{
+ "id": "cu-6101",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "labels": {
+  "note": "greenhouse mist line setting corrected; probe expects NEW value (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You keep the greenhouse notes. For the log: the mist line runs {old} clicks overnight. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the regulator was swapped; the mist line now runs {new} clicks, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A grower asks; the greenhouse book is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What does the mist line run overnight? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "old": "62",
+    "new": "69"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "69",
+      "58",
+      "73",
+      "54",
+      "77",
+      "62"
+     ],
+     "expected": "69"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "old": "65",
+    "new": "72"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "61",
+      "76",
+      "57",
+      "80",
+      "65",
+      "72"
+     ],
+     "expected": "72"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "old": "68",
+    "new": "75"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "79",
+      "60",
+      "83",
+      "68",
+      "75",
+      "64"
+     ],
+     "expected": "75"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "old": "71",
+    "new": "78"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "63",
+      "86",
+      "71",
+      "78",
+      "67",
+      "82"
+     ],
+     "expected": "78"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "old": "74",
+    "new": "81"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "89",
+      "74",
+      "81",
+      "70",
+      "85",
+      "66"
+     ],
+     "expected": "81"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "old": "77",
+    "new": "84"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "77",
+      "84",
+      "73",
+      "88",
+      "69",
+      "92"
+     ],
+     "expected": "84"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "old": "80",
+    "new": "87"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "87",
+      "76",
+      "91",
+      "72",
+      "95",
+      "80"
+     ],
+     "expected": "87"
+    }
+   }
+  }
+ }
+}

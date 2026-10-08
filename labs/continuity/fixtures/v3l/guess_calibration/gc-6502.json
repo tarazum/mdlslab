@@ -1,0 +1,257 @@
+{
+ "id": "gc-6502",
+ "family": "guess_calibration",
+ "labels": {
+  "note": "never-stated facts; guess rate and position bias; expected null by design; run on the working core"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You keep the weaving mill dyehouse on the {shift} kettle. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{visitor} asks about marks this dyehouse never recorded. Answer as best you can. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What scent tags the {e1} vat? Options: {options} - reply with the word only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    },
+    {
+     "actor": "environment",
+     "text": "How many skeins hang on the {e2} rail? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "shift": "indigo",
+    "visitor": "a dyer",
+    "e1": "madder",
+    "e2": "hank"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "clover",
+      "lovage",
+      "myrtle",
+      "sorrel",
+      "tansy",
+      "vervain"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "44",
+      "47",
+      "50",
+      "53",
+      "56",
+      "59"
+     ]
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "shift": "logwood",
+    "visitor": "a loom tuner",
+    "e1": "cochineal",
+    "e2": "braid"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "lovage",
+      "myrtle",
+      "sorrel",
+      "tansy",
+      "vervain",
+      "walnut"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "45",
+      "48",
+      "51",
+      "54",
+      "57",
+      "60"
+     ]
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "shift": "weld",
+    "visitor": "a colorist",
+    "e1": "fuscous",
+    "e2": "warp"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "myrtle",
+      "sorrel",
+      "tansy",
+      "vervain",
+      "walnut",
+      "clover"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "46",
+      "49",
+      "52",
+      "55",
+      "58",
+      "61"
+     ]
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "shift": "alum",
+    "visitor": "a shift boss",
+    "e1": "chrome",
+    "e2": "selvage"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "sorrel",
+      "tansy",
+      "vervain",
+      "walnut",
+      "clover",
+      "lovage"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "47",
+      "50",
+      "53",
+      "56",
+      "59",
+      "62"
+     ]
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "shift": "sumac",
+    "visitor": "a bundle hand",
+    "e1": "orchil",
+    "e2": "bobbin"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "tansy",
+      "vervain",
+      "walnut",
+      "clover",
+      "lovage",
+      "myrtle"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "48",
+      "51",
+      "54",
+      "57",
+      "60",
+      "63"
+     ]
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "shift": "turmeric",
+    "visitor": "a water carrier",
+    "e1": "cudbear",
+    "e2": "reel"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "vervain",
+      "walnut",
+      "clover",
+      "lovage",
+      "myrtle",
+      "sorrel"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "49",
+      "52",
+      "55",
+      "58",
+      "61",
+      "64"
+     ]
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "shift": "annatto",
+    "visitor": "an ash lad",
+    "e1": "litmus",
+    "e2": "spool"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "walnut",
+      "clover",
+      "lovage",
+      "myrtle",
+      "sorrel",
+      "tansy"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "50",
+      "53",
+      "56",
+      "59",
+      "62",
+      "65"
+     ]
+    }
+   }
+  }
+ }
+}

@@ -2226,3 +2226,109 @@ determinism caveat travels with every number.
   test 4).
 - NEXT: fresh session opens docs/SESSION-BRIEF-CONT006.md and executes the
   CONT-006 design milestone.
+
+## 2026-10-08 — CONT-006 design milestone START (per docs/SESSION-BRIEF-CONT006.md)
+
+- Plan: (1) `docs/CONT-006-DESIGN.md` — arms R0/R1/R2/R3 (R3 inherits R2's
+  retrieval/injection machinery, validator, prompt slot, renderer, token
+  budget; only the lesson source differs), 3-way data split (experience /
+  validation / held-out transfer), two-phase rule (no lesson injection during
+  experience accumulation), reflection-worker architecture (preferred R2
+  reflector qwen36-35b-a3b:mdlslab digest-frozen; same-core reflector =
+  secondary), NO_LESSON first-class, lesson schema + lifecycle with the TWO
+  validation meanings, anti-salience prose rendering, primary endpoint
+  candidate = R2 vs R0 label-form transfer improvement on 12-15 clusters,
+  critical tests 1-4 placement (3 -> pilot, 4 -> bounded later stage); (2)
+  `docs/CONT006-TAXONOMY.md` frozen BEFORE any lesson authoring and before
+  transfer-fixture authoring; (3) experience-corpus manifest from the
+  committed CONT-005-C2 traces (50 arm-seeds, zero GPU) with digests +
+  per-trace failure classes + fresh-supplement rule; (4) suite v3l (protocol
+  v3i as-is, ids x-6xxx, fresh worlds, seeds {6001..6007} predeclared,
+  validation clusters + held-out transfer clusters, disjoint from ALL prior
+  suites) + validator `--suite v3l` + regressions v3..v3k; (5) prereg draft
+  `docs/EVALUATION-PREP-CONT006.md` per PREREG-REQUIREMENTS-V2 (9 items +
+  five 2026-10-04 amendments); (6) power artifact (paired R2-R0 cluster
+  model).
+- State: repo clean on main @ 8077a26; entry conditions verified (CONT-002
+  ACCEPTED + CLOSED; folded proposal 562a1cb + both reviews on record;
+  provider think-pin inherited via OllamaProvider).
+- Zero GPU; no worker/transfer inference (never-autonomous; behavioral chain
+  owner-gated after the PR-REVIEW fold). `src/continuity/reflection.py`
+  untouched (R1 stays byte-stable).
+
+## 2026-10-08 — CONT-006 design milestone COMPLETE (taxonomy + corpus + v3l + prereg draft + power)
+
+Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT006.md delivered.
+
+- `docs/CONT006-TAXONOMY.md` FROZEN before any lesson/fixture authoring:
+  FP-0 NO_LESSON-heavy, FP-1 supersession-miss (CN-008), FP-2 own-answer
+  anchoring (CN-007, D−C +0.5015), FP-3a correction-application-miss,
+  FP-3b unverified-source-deference, FP-4 distractor-susceptibility, FP-5
+  storage-miss, FP-6 format-miss (cross-cutting; EMPIRICALLY HEAVY: 132/278
+  cr and 134/226 rt pooled C2 failures are format misses) + closed FP-X
+  OTHER class; family->class mapping frozen; transfer-suite obligations
+  binding.
+- Experience corpus manifest (`experiments/cont006/` selector + json,
+  byte-deterministic): ALL 50 CONT-005-C2 arm-seed traces (v3i pilot 25 +
+  v3j confirmatory 25 — NOTE: the C2 pilot ran suite v3i x-3xxx, the
+  confirmatory v3j x-4xxx; the selector maps both), per-trace sha256 +
+  taxonomy-class histogram; pooled coverage FP-1 118 / FP-2 226 / FP-3a
+  129 / FP-3b 103 / FP-4 27 / FP-5 26 / FP-6 271 (FP-X 0); fresh-supplement
+  rule declared (does not fire); CONT-001-confirmatory reserve NOT selected
+  (free-form caveat). Taxonomy digest embedded as the freeze-ordering
+  evidence.
+- `fixtures/v3l` (builder `build_v3l.py`, deterministic re-run verified):
+  22 scenarios = 15 PRIMARY transfer clusters (CR4 FP-3a/3b + CU4 FP-1 +
+  RT3 FP-2 + DX2 FP-4 + DR2 FP-5; every class >= 2 clusters) + 4 VALIDATION
+  clusters (cr-6005/cu-6105/rt-6204/dx-6403; V17-pinned; activation only,
+  never the primary) + GC x3; ids x-6xxx; seeds {6001..6007}; fresh worlds
+  (ferry terminal, campus equipment cage, greenhouse/kiln/aquarium/print
+  shop/cheese cave, ski patrol cache, chandlery, signal box, bell foundry,
+  seed vault, ice rink, dyehouse, lighthouse); 103 turns/seed; texts
+  disjoint from ALL prior suites (V3 every seed both ways; caught+fixed one
+  shared chore-template collision). Validator extended (`--suite v3l`):
+  per-suite FAMILY_PLANS/CR_SUBTYPES/PROBE_CLASS, V7 validation-id
+  subtraction, V8 MIXED dispatch (trap check for CR/CU/RT instances + V8R
+  learned-fact/lure for DX/DR in one suite), NEW V17-validation-split:
+  **v3l PASS 18/18 + regressions v3/v3h/v3i/v3j/v3k PASS x5**
+  (fixture-validation-v3l.json committed). Builder lessons: RT mechanism
+  vocabulary is frozen ('scripted_agent_answer', not sub-type names);
+  V13's initial-vocab regex requires "exactly one <word>:"; 7 seeds exceed
+  6 label rotations -> fixed-vocab families use 7 explicit permutations.
+- `docs/CONT-006-DESIGN.md`: arms R0/R1/R2/R3 (R3 inherits ALL R2 delivery
+  machinery — only the lesson source differs; RC-1), interpretation grid,
+  declared R1<=R0 = parroting replication; 3-way split + two-phase rule;
+  worker architecture (qwen36-35b-a3b reflector digest-pinned, think-pin
+  inherited, post-experience single-batch trigger frozen, NO_LESSON
+  first-class, raw log with prompt-digest/response-hash); schema +
+  lifecycle with the TWO validation meanings separated; store-level
+  activation rule (VAL clusters, +0.05 fail-closed); anti-salience prose
+  rendering (<= 220 tokens, no quoting, evidence by id); critical tests
+  1/2 bounded follow-ups, 3 -> pilot (BAD + GOLD-TRIV counterfactual
+  arms), 4 -> bounded later stage on the CONT-002 machinery with the
+  non-estimable clause; feasibility ~3.5-4 h GPU total; freeze-chain
+  diagram.
+- SIZING (power_calc_cont006.py + power-results-cont006.json, seed
+  20261008; paired two-arm model, b0 0.42 = C2 T-arm pooled pass): the MME
+  LADDER is the milestone's real number — at K15x7, detection power 0.650
+  @ d0.15 / 0.775 @ 0.175 / **0.862 @ 0.20 (MME, conservative row; stress
+  0.848; headroom-edge b0 0.75 -> 0.819; false-positive 0.038; gold-channel
+  scale d0.30 -> 0.994)**. MME on Delta = 0.20 absolute: the smallest
+  0.05-step effect detectable at >= 0.80 — per-observation binomial noise
+  with n=1 probes binds (same lesson as CONT-002); declared limitation,
+  effects below 0.20 not claimable; clears the template section-9 floor.
+- `docs/EVALUATION-PREP-CONT006.md` DRAFT: all 9 template items + five
+  2026-10-04 amendments; phases W (worker) -> G (R3 blind authoring) -> V
+  (activation, store freeze BEFORE any transfer inference) -> P (pilot:
+  BAD-lesson safety incl. the >= 4-word verbatim-span parroting definition
+  frozen in text, GOLD-TRIV manipulation >= 0.10 format improvement,
+  wall-time, R0 headroom <= 0.75, spread, compliance) -> C (confirmatory);
+  channel-dead stop (both stores fail activation AND GOLD-TRIV fails ->
+  no launch, owner decision); completeness/store-integrity/retrieval-
+  telemetry guards; GC droppable-secondary trim; carried notes CN-A/CN-B;
+  gates incl. v3..v3l regression artifact + script dry-runs +
+  contamination gate on the R3 authoring inputs.
+- NEXT: PR-REVIEW-CONT006 by a fresh non-executor session from the standing
+  queue (Fable -> Opus -> local GLM 5.3 Flash) -> fold -> OWNER GATE
+  (explicit acceptance before ANY worker/transfer inference;
+  never-autonomous) -> freeze -> gates -> Phase W.

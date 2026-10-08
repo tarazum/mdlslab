@@ -1,0 +1,200 @@
+{
+ "id": "dr-6302",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "access drawer code with a NON-label companion fact (anti-echo); learning s1 fact + s2 chore; s3 held-out label-form probe (FP-5)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the seed vault annex. For the vault ledger: the access drawer code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} done; nothing further changes here. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the vault ledger is not at hand. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the access drawer code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "6001": {
+   "values": {
+    "code": "S23",
+    "comp_thing": "pollen tin",
+    "comp_verb": "ticks in the cold",
+    "chore": "the humidity read",
+    "role": "curator"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S39",
+      "S45",
+      "S50",
+      "S23",
+      "S28",
+      "S34"
+     ],
+     "expected": "S23"
+    }
+   }
+  },
+  "6002": {
+   "values": {
+    "code": "S28",
+    "comp_thing": "dessicant tray",
+    "comp_verb": "sits by the north rack",
+    "chore": "the drawer count",
+    "role": "germination aide"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S50",
+      "S56",
+      "S28",
+      "S34",
+      "S39",
+      "S45"
+     ],
+     "expected": "S28"
+    }
+   }
+  },
+  "6003": {
+   "values": {
+    "code": "S34",
+    "comp_thing": "forceps jar",
+    "comp_verb": "waits for the spring count",
+    "chore": "the packet seal check",
+    "role": "vault keeper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S61",
+      "S34",
+      "S39",
+      "S45",
+      "S50",
+      "S56"
+     ],
+     "expected": "S34"
+    }
+   }
+  },
+  "6004": {
+   "values": {
+    "code": "S39",
+    "comp_thing": "germ dish",
+    "comp_verb": "fogs at the door",
+    "chore": "the frost blanket swap",
+    "role": "field botanist"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S39",
+      "S45",
+      "S50",
+      "S56",
+      "S61",
+      "S67"
+     ],
+     "expected": "S39"
+    }
+   }
+  },
+  "6005": {
+   "values": {
+    "code": "S45",
+    "comp_thing": "seal roll",
+    "comp_verb": "holds the tiny envelopes",
+    "chore": "the label press",
+    "role": "archive clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S50",
+      "S56",
+      "S61",
+      "S67",
+      "S72",
+      "S45"
+     ],
+     "expected": "S45"
+    }
+   }
+  },
+  "6006": {
+   "values": {
+    "code": "S50",
+    "comp_thing": "stereo lens",
+    "comp_verb": "slides under the bench",
+    "chore": "the lint trap clean",
+    "role": "dry-room tender"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S61",
+      "S67",
+      "S72",
+      "S78",
+      "S50",
+      "S56"
+     ],
+     "expected": "S50"
+    }
+   }
+  },
+  "6007": {
+   "values": {
+    "code": "S56",
+    "comp_thing": "sample spoon",
+    "comp_verb": "rings when tapped",
+    "chore": "the dusk lock round",
+    "role": "night warden"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S72",
+      "S78",
+      "S83",
+      "S56",
+      "S61",
+      "S67"
+     ],
+     "expected": "S56"
+    }
+   }
+  }
+ }
+}
