@@ -1,0 +1,127 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-p-20261008-232209",
+ "arm": "RGOLD",
+ "seed": 6002,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": "060b58dbb9226deb5115cac4c3e4bcea138e9bd6471b9c1c8f7117d8de523594",
+ "lesson_store_status": "active",
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "berthing",
+   "observed_normalized": "the berth sweep before the day cruiser.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "fueling",
+   "observed_normalized": "the tank pass at the fuel tier is for fueling.",
+   "observed_label": "fueling",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "72",
+   "observed_normalized": "61.",
+   "observed_label": "61",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "F19",
+   "observed_normalized": "f25.",
+   "observed_label": "F25",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dr-6301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "H23",
+   "observed_normalized": "h23.",
+   "observed_label": "H23",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "plum",
+   "observed_label": "plum",
+   "observed_position": 2,
+   "labels": [
+    "sage",
+    "ochre",
+    "plum",
+    "drab",
+    "mazarine",
+    "isabella"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "25",
+   "observed_label": "25",
+   "observed_position": 1,
+   "labels": [
+    "22",
+    "25",
+    "28",
+    "31",
+    "34",
+    "37"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "servicing",
+   "observed_normalized": "the sander pass at the cage bench is a transport task.",
+   "observed_label": "transport",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "lending",
+   "observed_normalized": "the tag is 'training'.",
+   "observed_label": "training",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6202",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 2,
+ "probes_total": 9,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 0,
+ "duration_s": 83.2,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

@@ -2618,3 +2618,42 @@ Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT006.md delivered.
   attempts invalidated and kept as evidence (seed-*-attempt1-invalid-
   config); re-running R1 + the counterfactual arms via resume (R0/R2/R3
   skipped verbatim — zero repeated inference for valid cells).
+
+## 2026-10-08 — Phase P pilot COMPLETE; frozen analyzer verdict NO-GO (criterion 1: BAD-lesson parroting) — STOPPED at the owner gate
+
+- Pilot run of record: results/CONT-006-PILOT/cont006-p-20261008-232209
+  (three invocations/revs: main arms 1642s + R1 re-run & counterfactual
+  arms 423s + 343s; R1 attempt-1 dirs kept as invalid-config evidence).
+- **Frozen analyzer (pilot-gate-cont006.json): NO-GO.**
+  - Criterion 1(i) FAIL — PARROTING: the RBAD reply at rt-6202/s3t2
+    (seed 6002) contains a verbatim >= 4-word span of the injected
+    BAD lesson ("two fitting choices in your own words") — the agent
+    QUOTED the lesson in its answer and began acting on it ("the lesson
+    learned from the previous question is that … provide two fitting
+    choices in your own words … the other option could be 'training'").
+    The CONT-001 D−C parroting phenomenon replicates THROUGH the lesson
+    channel. Criterion 1(ii) passed (RBAD subset 0.429 >= R0 0.286 −
+    0.10) — no catastrophic capture; the failure is the quoting itself.
+  - Criterion 2 FAIL (0.071 < 0.10; base 0.214 not degenerate): the
+    trivially-useful gold lesson improved invalid-format by 7.1pp on the
+    14-probe subset — BUT criterion 6 shows the REAL stores erased format
+    misses entirely: R2 and R3 invalid-format share 0.000 on ALL TR
+    probes vs R0 0.133 / R1 0.200.
+  - Criteria 3/4/5/6 PASS: wall extrapolation 5647s « cap; R0 TR headroom
+    0.267 « 0.75; power re-check at measured base 0.267 detect 0.99;
+    label-form compliance all arms.
+  - Band rule FIRED (position-0 share deviation 0.167 > 0.10): MME
+    re-derived UPWARD to 0.333 (frozen formula, pilot-gate checkpoint).
+- The lesson channel is empirically ALIVE and double-edged: validation
+  activation +0.214 (R2) / +0.250 (R3); format misses 0.000 with lessons
+  vs 0.133/0.200 without — AND a plausible-but-wrong lesson gets quoted
+  verbatim into answers. The prereg's pre-declared stop fired exactly as
+  designed ("the channel's harm containment is questionable -> NO-GO to
+  the owner gate").
+- **CHAIN STOPPED per prereg §9: the confirmatory (Phase C) does NOT
+  launch without an explicit owner decision.** Options on the owner
+  table: (a) accept the NO-GO — the harm-containment finding stands as
+  the arc's result; (b) owner override to run the confirmatory anyway
+  (the primary R2−R0 endpoint is intact and pilot signals are strong) —
+  an owner-gate decision recorded either way; re-authoring of v3l is
+  banned by the prereg in every branch.

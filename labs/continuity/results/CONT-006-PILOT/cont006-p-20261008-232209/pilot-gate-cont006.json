@@ -1,0 +1,50 @@
+{
+ "kind": "cont006-pilot-gate",
+ "criteria": [
+  {
+   "criterion": "1-bad-lesson-safety",
+   "status": "FAIL",
+   "detail": "parroting 4-gram hits ['rt-6202/s3t2']; RBAD subset pass 0.42857142857142855 vs R0 0.2857142857142857 (floor 0.186)"
+  },
+  {
+   "criterion": "2-gold-triv-manipulation",
+   "status": "FAIL",
+   "detail": "invalid-format share R0 0.214 -> RGOLD 0.143 (improvement 0.071, need >= 0.10; denominator 7 clusters x 2 seeds = 14 probes/arm, no gc)"
+  },
+  {
+   "criterion": "3-wall-time",
+   "status": "PASS",
+   "detail": "pilot main-arm wall 1613s -> extrapolated 7-seed 5647s vs cap 18000s (GC trim to seeds 6001..6004 pre-declared at the gate if a moderate overrun)"
+  },
+  {
+   "criterion": "4-r0-headroom",
+   "status": "PASS",
+   "detail": "pilot R0 TR pass 0.26666666666666666 (stop line 0.75; above -> \u00a75 headroom stop, owner decision before the confirmatory, no automatic parameter move)"
+  },
+  {
+   "criterion": "5-spread-power-recheck",
+   "status": "PASS",
+   "detail": "per-arm between-seed sd (R0, reported, n=2 gates nothing): 0.06666666666666665; power re-check at b0=0.26666666666666666, sig_arm=0.10: detect 0.857 (need >= 0.75; below -> owner sign-off, stress-row governance)"
+  },
+  {
+   "criterion": "6-label-form-compliance",
+   "status": "PASS",
+   "detail": "invalid-format share per main arm: {'R0': 0.13333333333333333, 'R1': 0.2, 'R2': 0.0, 'R3': 0.0} (< 0.30 each); violations none"
+  }
+ ],
+ "band_rule": {
+  "band_dev": 0.16666666666666666,
+  "n_gc": 12,
+  "fired": true,
+  "mme_rederived": 0.3333333333333333,
+  "note": "upward-only re-derivation at the pilot-gate checkpoint (prereg \u00a75 RC-2); lowering prohibited"
+ },
+ "verdict": "NO-GO",
+ "owner_actions": [],
+ "carried_notes": {
+  "CN-B": "pilot GO criteria condition the launch, not the estimate; the headroom criterion reads R0 only",
+  "CN-C": "criterion 1(ii) runs on ~14 probes (binomial sd ~0.12); a violation routes to the owner gate, never an automatic stop"
+ },
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless",
+ "run_root": "C:\\projects\\mdlslab\\labs\\continuity\\results\\CONT-006-PILOT\\cont006-p-20261008-232209"
+}

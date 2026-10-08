@@ -19,14 +19,14 @@
    "lesson_store_sha256": null
   },
   "R1/seed-6001": {
-   "wall_s": 217.3,
+   "wall_s": 213.7,
    "attempts": 1,
    "probes_total": 21,
    "probes_passed": 6,
    "lesson_store_sha256": null
   },
   "R1/seed-6002": {
-   "wall_s": 234.6,
+   "wall_s": 209.4,
    "attempts": 1,
    "probes_total": 21,
    "probes_passed": 2,
@@ -59,7 +59,35 @@
    "probes_total": 21,
    "probes_passed": 6,
    "lesson_store_sha256": "1acf7842a72b3733fcc49bb2dc25da3507599b561bf3e76a33eb4b030ffb4957"
+  },
+  "RBAD/seed-6001": {
+   "wall_s": 91.1,
+   "attempts": 1,
+   "probes_total": 9,
+   "probes_passed": 4,
+   "lesson_store_sha256": "50d59327fbf620d3d8f3c3d40ee47c27f6a0de8e7b7a0ef0d8ea1ee8e71cf85a"
+  },
+  "RBAD/seed-6002": {
+   "wall_s": 86.1,
+   "attempts": 1,
+   "probes_total": 9,
+   "probes_passed": 2,
+   "lesson_store_sha256": "50d59327fbf620d3d8f3c3d40ee47c27f6a0de8e7b7a0ef0d8ea1ee8e71cf85a"
+  },
+  "RGOLD/seed-6001": {
+   "wall_s": 82.9,
+   "attempts": 1,
+   "probes_total": 9,
+   "probes_passed": 4,
+   "lesson_store_sha256": "060b58dbb9226deb5115cac4c3e4bcea138e9bd6471b9c1c8f7117d8de523594"
+  },
+  "RGOLD/seed-6002": {
+   "wall_s": 83.2,
+   "attempts": 1,
+   "probes_total": 9,
+   "probes_passed": 2,
+   "lesson_store_sha256": "060b58dbb9226deb5115cac4c3e4bcea138e9bd6471b9c1c8f7117d8de523594"
   }
  },
- "total_wall_s": 1642.4
+ "total_wall_s": 343.3
 }

@@ -1,0 +1,127 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-p-20261008-232209",
+ "arm": "RGOLD",
+ "seed": 6001,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": "060b58dbb9226deb5115cac4c3e4bcea138e9bd6471b9c1c8f7117d8de523594",
+ "lesson_store_status": "active",
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "berthing",
+   "observed_normalized": "the stern ramp line-up for the mail boat is for berthing.",
+   "observed_label": "berthing",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "fueling",
+   "observed_normalized": "the hose round for the day tanker.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "69",
+   "observed_normalized": "69.",
+   "observed_label": "69",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "F14",
+   "observed_normalized": "f14.",
+   "observed_label": "F14",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-6301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "H17",
+   "observed_normalized": "h23.",
+   "observed_label": "H23",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "plum",
+   "observed_label": "plum",
+   "observed_position": 3,
+   "labels": [
+    "grenadine",
+    "sage",
+    "ochre",
+    "plum",
+    "drab",
+    "mazarine"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "27",
+   "observed_label": "27",
+   "observed_position": 2,
+   "labels": [
+    "21",
+    "24",
+    "27",
+    "30",
+    "33",
+    "36"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "servicing",
+   "observed_normalized": "the press calibration round for the theater is a servicing task.",
+   "observed_label": "servicing",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "lending",
+   "observed_normalized": "the tag is 'storage'.",
+   "observed_label": "storage",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6202",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 4,
+ "probes_total": 9,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 0,
+ "duration_s": 82.9,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

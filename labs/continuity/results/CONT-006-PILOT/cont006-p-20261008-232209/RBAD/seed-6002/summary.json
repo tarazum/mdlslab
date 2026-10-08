@@ -1,0 +1,127 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-p-20261008-232209",
+ "arm": "RBAD",
+ "seed": 6002,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": "50d59327fbf620d3d8f3c3d40ee47c27f6a0de8e7b7a0ef0d8ea1ee8e71cf85a",
+ "lesson_store_status": "active",
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "berthing",
+   "observed_normalized": "the berth sweep is a safety measure that should be taken before a day cruiser. therefore, the most fitting option is \"safety\".",
+   "observed_label": "safety",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "fueling",
+   "observed_normalized": "the tank pass at the fuel tier is for fueling.",
+   "observed_label": "fueling",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "72",
+   "observed_normalized": "61.",
+   "observed_label": "61",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "F19",
+   "observed_normalized": "f30",
+   "observed_label": "F30",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dr-6301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "H23",
+   "observed_normalized": "h23.",
+   "observed_label": "H23",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "plum",
+   "observed_label": "plum",
+   "observed_position": 2,
+   "labels": [
+    "sage",
+    "ochre",
+    "plum",
+    "drab",
+    "mazarine",
+    "isabella"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "25",
+   "observed_label": "25",
+   "observed_position": 1,
+   "labels": [
+    "22",
+    "25",
+    "28",
+    "31",
+    "34",
+    "37"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "servicing",
+   "observed_normalized": "the sander pass at the cage bench is a transport task.",
+   "observed_label": "transport",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "lending",
+   "observed_normalized": "the correct answer is 'disposal'. the lesson learned from the previous question is that when offering a closed list of choices, it is best to provide two fitting choices in your own words. in this case, the other option could be 'training', as the recorder may need to be trained on how to use the equipment properly. however, since the other option is not as relevant to the situation as 'disposal', it is better to focus on that option and provide more details about how the recorder will be disposed of safely and responsibly.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6202",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 2,
+ "probes_total": 9,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 0,
+ "duration_s": 86.1,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

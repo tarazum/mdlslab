@@ -83,7 +83,10 @@ def load_pilot(root: Path) -> dict:
         if not arm_dir.is_dir() or arm_dir.name.startswith("_"):
             continue
         for seed_dir in sorted(arm_dir.iterdir()):
-            if not seed_dir.is_dir() or not seed_dir.name.startswith("seed-"):
+            # canonical cells only: ^seed-\d{4}$ — invalidated attempt dirs
+            # (seed-NNNN-attemptK-invalid-*) are EVIDENCE, never data
+            # (the c679547 telemetry-aggregation class).
+            if not seed_dir.is_dir() or not re.fullmatch(r"seed-\d{4}", seed_dir.name):
                 continue
             summary = seed_dir / "summary.json"
             if summary.exists():
