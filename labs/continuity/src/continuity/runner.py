@@ -54,6 +54,7 @@ from typing import Any
 
 from .events import EventJournal
 from .claims import format_trust_block
+from .lessons import LessonChannel
 from .memory import MemoryStore
 from .policy import ACTION_SET
 from .policy import decide as policy_decide
@@ -190,14 +191,28 @@ def run_scenario(
     selfmodel: dict | None = None,
     reflection: ReflectionEngine | None = None,
     worldmodel: WorldModel | None = None,
+    lessons: LessonChannel | None = None,
 ) -> dict[str, Any]:
-    if arm not in ("A", "B", "C", "D", "E", "T0", "T1", "T2", "T3"):
+    # CONT-006 arms (additive; existing arms byte-comparable in behavior —
+    # lessons default None and the R-branches never touch them):
+    #   R0 = persistent memory (flat renderer), no lessons (T0-equivalent)
+    #   R1 = deterministic MVP reflection in-run (D-equivalent: selfmodel +
+    #        reflection.py, byte-stable baseline)
+    #   R2/R3 = flat memory + the lesson channel (worker store / gold store)
+    #   RBAD/RGOLD = flat memory + a one-lesson counterfactual channel
+    #        (pilot-only safety/manipulation arms, never in the primary)
+    valid_arms = ("A", "B", "C", "D", "E", "T0", "T1", "T2", "T3",
+                  "R0", "R1", "R2", "R3", "RBAD", "RGOLD")
+    memory_arms = ("B", "C", "D", "E", "T0", "T1", "T2", "T3",
+                   "R0", "R1", "R2", "R3", "RBAD", "RGOLD")
+    lesson_arms = ("R2", "R3", "RBAD", "RGOLD")
+    if arm not in valid_arms:
         raise ValueError(f"unknown arm: {arm!r}")
-    if arm in ("B", "C", "D", "E", "T0", "T1", "T2", "T3") and memory is None:
+    if arm in memory_arms and memory is None:
         raise ValueError(f"arm {arm} requires a memory store")
-    if arm in ("C", "D", "E") and selfmodel is None:
+    if arm in ("C", "D", "E", "R1") and selfmodel is None:
         raise ValueError(f"arm {arm} requires a self-model")
-    if arm in ("D", "E") and reflection is None:
+    if arm in ("D", "E", "R1") and reflection is None:
         raise ValueError(f"arm {arm} requires a reflection engine")
     if arm == "E" and worldmodel is None:
         raise ValueError("arm E requires a world model")
@@ -205,6 +220,10 @@ def run_scenario(
         raise ValueError("worldmodel is arm-E only (A/B/C/D behavior-identity guard)")
     if arm in ("T1", "T2", "T3") and selfmodel is not None:
         raise ValueError("selfmodel is not part of the T-arms (CONT-005 memory-side ablation)")
+    if arm in lesson_arms and lessons is None:
+        raise ValueError(f"arm {arm} requires a lesson channel")
+    if arm not in lesson_arms and lessons is not None:
+        raise ValueError("the lesson channel is R2/R3/RBAD/RGOLD only (CONT-006)")
     sid = scenario["id"]
     # Arm-A trace payloads stay byte-identical to the M1 pilot (comparability);
     # arms B/C/D/E add their marker.
@@ -249,7 +268,7 @@ def run_scenario(
                 scenario=sid,
                 session=session["index"],
             )
-            if arm in ("C", "D", "E"):
+            if arm in ("C", "D", "E", "R1"):
                 # Fixed injection rule: the self-model summary goes into EVERY
                 # session (session-independent), as one system message right
                 # after the base prompt, rendered from the current revision.
@@ -309,6 +328,31 @@ def run_scenario(
                         "renderer": (
                             "trust" if arm in ("T1", "T2", "T3") else "flat"
                         ),
+                    },
+                    scenario=sid,
+                    session=session["index"],
+                )
+            if lessons is not None:
+                # CONT-006 lesson channel (design §7, R2/R3/RBAD/RGOLD only):
+                # retrieve once per session (EVERY session), query = the
+                # session's first environment turn, render as ONE plain-prose
+                # system message; retrieval telemetry per session (the M2b
+                # "was the block actually rendered" check, at scale).
+                selected = lessons.retrieve(session["turns"][0]["text"])
+                if selected:
+                    context.append(
+                        {"role": "system", "content": lessons.render(selected)}
+                    )
+                journal.emit(
+                    "lessons.injected",
+                    {
+                        "query_turn_ref": f"s{session['index']}t1",
+                        "lesson_ids": [les["lessonId"] for les in selected],
+                        "injected": bool(selected),
+                        "chars": len(lessons.render(selected)) if selected else 0,
+                        "renderer": "prose",
+                        "store_sha256": lessons.digest,
+                        "store_status": lessons.status,
                     },
                     scenario=sid,
                     session=session["index"],
@@ -444,7 +488,7 @@ def run_scenario(
                 journal.emit("budget.stop", {"violation": violation}, scenario=sid)
                 stopped = True
                 break
-        if not stopped and arm in ("D", "E"):
+        if not stopped and arm in ("D", "E", "R1"):
             # M4: ONE bounded reflection pass after each non-stopped session.
             # Accepted summaries feed later sessions through the unchanged
             # memory injection rule; accepted self-model revisions render in
@@ -477,7 +521,7 @@ def run_scenario(
         "budget_violation": budget.violation,
         "duration_s": round(time.monotonic() - budget.started, 1),
     }
-    if arm in ("D", "E") and reflection is not None:
+    if arm in ("D", "E", "R1") and reflection is not None:
         decisions = [d for r in reflection_reports for d in r["decisions"]]
         summary["reflection"] = {
             "passes": len(reflection_reports),

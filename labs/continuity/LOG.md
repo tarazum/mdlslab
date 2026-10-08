@@ -2419,3 +2419,56 @@ Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT006.md delivered.
   manifests refer to their run-time revs, git-verifiable); (4) freeze
   manifest frozen-config-cont006.json (digests + env pin); (5) commit +
   non-executor gates.
+
+## 2026-10-08 — CONT-006 FREEZE complete (36 digests; analysis scripts first; live preflight PASS)
+
+- Analysis scripts authored FIRST (cycle-2 freeze order): analyze_pilot_cont006.py
+  (all six §9 criteria incl. the frozen 4-gram parroting definition, the
+  degenerate-base clause, denominators without gc-6501 = 14 probes/arm,
+  headroom, spread + §5 power re-check + band-rule MME re-derivation;
+  --self-test PASS x3: GO / NO-GO-parroting / degenerate-base) and
+  analyze_confirmatory_cont006.py (Δ = S(R2)−S(R0), cluster bootstrap
+  EXACTLY 10,000 draws RNG 20261008, four frozen-wording branches,
+  per-CELL completeness guard — the self-test CAUGHT a real bug: the guard
+  first checked cluster-level coverage instead of all 15x7x4 cell-probes;
+  fixed, --self-test PASS x4: established / null / harm / incomplete).
+- New frozen pipeline code: src/continuity/lessons.py (LessonStore + §7.1
+  evidence validator incl. the 526-token anti-overfit vocabulary collected
+  from v3i/v3j/v3l fixtures + Jaccard-0.70 dedup + keyword retrieval + the
+  prose renderer <= 165 words) and src/continuity/reflection_v2.py (the
+  Phase W worker: per-trace condensed bundles, the frozen reflection prompt
+  template, reflector config qwen36-35b-a3b digest-pinned with worker
+  num_ctx 8192 / num_predict 768, raw log with prompt-digest/response-hash/
+  token-counts/done_reason per call). src/continuity/reflection.py
+  UNTOUCHED (R1 byte-stable witness in the manifest).
+- Runner: additive R0/R1/R2/R3/RBAD/RGOLD arms + the lessons.injected
+  channel (every session, query = first env turn, prose block, store
+  digest pinned per event). events.py: one additive event type
+  (lessons.injected). NOTE (closed-experiment manifests): frozen-config-
+  cont002.json digests runner/provider/events at their CONT-002 run revs —
+  verifiable via git history; the CONT-006 manifest digests the current
+  bytes. Offline executor smoke (zero inference): T0 regression clean, R0,
+  R2 channel injects with digest telemetry, fail-closed guard (lessons on
+  R0 rejected), R1 MVP-reflection path over the frozen calibration
+  self-model — PASS x6.
+- run_cont006.py: phased runner (W / G-validate / V / V-activate / P / C)
+  with preflight (freeze digest re-hash fail-closed + model pins +
+  warmups), resume per PB-075, wall guard 270 min vs the 300 min declared
+  cap, per-arm-seed budgets, cells.json merge for the shared pilot root,
+  the pre-declared GC trim, and the Phase V-activate STORE FREEZE step
+  (store-level activation rule, fail-closed on missing/invalid VAL
+  probes, active stores = full-copy or EMPTY, written BEFORE any transfer
+  request).
+- frozen-config-cont006.json: 36 digests (suite v3l + 7 rendered seeds +
+  2 analyzers + worker/pipeline modules + runner/provider/memory/fixtures/
+  events/claims/reflection witness + taxonomy + corpus manifest + selector
+  + counterfactual lessons + checker + validator + builder + run script +
+  power pair + validation json + prereg/design/review/template/spec +
+  calibration self-model) + model pins + environment pin.
+- Live --preflight-only PASS: Ollama version prefix ok, granite +
+  qwen36-35b-a3b:mdlslab digest-pinned after warmup (CN-001 order),
+  warmups 8.9s / 24.7s. Zero CONT-006 inference at this point.
+- NEXT: non-executor gate (fixture v3..v3l regression artifact + freeze
+  re-hash + script dry-runs + preflight + contamination-readiness) ->
+  Phase W (worker) -> Phase G (blind R3) -> contamination gate ->
+  Phase V -> V-activate -> Phase P -> pilot-gate -> Phase C.

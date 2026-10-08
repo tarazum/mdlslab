@@ -24,6 +24,7 @@ EVENT_TYPES = frozenset(
         "session.context_reset",
         "memory.append",
         "memory.injected",
+        "lessons.injected",
         "selfmodel.injected",
         "reflection.start",
         "reflection.proposal",
