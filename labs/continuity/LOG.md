@@ -2508,3 +2508,21 @@ Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT006.md delivered.
   authoring, separate isolated session) in parallel -> contamination gate
   -> Phase V -> V-activate (store freeze) -> Phase P -> pilot-gate ->
   Phase C.
+
+## 2026-10-08 — Phase W run 1 crash (pre-inference, zero worker calls) + rendering fix
+
+- Phase W invocation 1 crashed at the FIRST prompt build: str.format() on
+  REFLECTION_PROMPT_TEMPLATE hit literal JSON braces in the output contract
+  (KeyError '"verdict"'). Zero worker inference requests were issued; the
+  empty attempt dir kept as evidence. Fix class = prereg §11
+  "rendering-related fixes legal only before any inference of the affected
+  stage" — template switched to @@TOKEN@@ substitution, and build_bundle
+  condensed to KEY TURNS ONLY (source-marked env turns, first stated-fact
+  turn, probe question, initial+probe agent replies, compact verdicts;
+  plain chore/ack turns dropped — no failure evidence): bundles 31k ->
+  13k chars (~3.3k tokens; +template ~4.8k total, fits worker num_ctx
+  8192 with the 768 output budget). freeze manifest re-emitted
+  (reflection_v2 digest refreshed; the worker prompt TEMPLATE text is
+  unchanged — only the substitution mechanism and the assembly rule).
+- Relaunching Phase W; Phase G (blind R3 authoring subagent) running in
+  parallel (isolated inputs; touches none of the frozen paths).

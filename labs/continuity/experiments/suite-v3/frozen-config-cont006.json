@@ -1,6 +1,6 @@
 {
  "kind": "cont006-freeze-manifest",
- "created_utc": "2026-10-08T18:44:40Z",
+ "created_utc": "2026-10-08T18:50:54Z",
  "prereg": "docs/EVALUATION-PREP-CONT006.md (owner-accepted 2026-10-08)",
  "seeds": {
   "all": [
@@ -111,7 +111,7 @@
   "src/continuity/events.py": "4fc9ba4fcbf3998489715c817ae5a2b3eefe678811ee8bf38250d4ab0f0e2f38",
   "src/continuity/claims.py": "028e5e1f2de2e997dc1b21c2be7d16d5fe2efc54646ee915d10ce45f91d0303a",
   "src/continuity/lessons.py": "bb73c5f366bbf078414bcd7da02e98134ac2f16ed3a7e66eb906152b442f50dc",
-  "src/continuity/reflection_v2.py": "66e4a986088b7ae12af6cd097cef4df17f961ed6cd9369b18f50fff05552c27d",
+  "src/continuity/reflection_v2.py": "7c8dc548c2a1dfd53fee29385a9d799684f3a36b80c58f5db4a4e522b230fbdd",
   "src/continuity/reflection.py": "07079eeefc1a463d925acc36f799bf894257edb0e17c6bc711f20c89912a1364",
   "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json": "1545f365d3f97a87bbfb4887abb493c2bfa844165dcde0e40598616a80807c0d"
  }

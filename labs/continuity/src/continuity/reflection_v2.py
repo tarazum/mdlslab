@@ -62,9 +62,9 @@ Taxonomy of failure patterns seen across past work:
 - FP-5 storage miss: a plainly stated fact was not retrievable at question time.
 - FP-6 format miss: the reply was not exactly one option label (prose, multiple labels, or empty).
 
-Work log digest — {run}|{arm}|seed-{seed} ({n_scenarios} scenario-runs; each line is prefixed by its evidence ref; scenario metadata: family, taxonomy class, key facts, abbreviated agent answers, probe result):
+Work log digest — @@RUN@@|@@ARM@@|seed-@@SEED@@ (@@N@@ scenario-runs; each line is prefixed by its evidence ref; scenario metadata: family, taxonomy class, key facts, abbreviated agent answers, probe result):
 
-{digest}
+@@DIGEST@@
 
 Rules for output:
 - Reply with ONE JSON object only, no other text: {"verdict": "NO_LESSON"} or {"verdict": "NEW_LESSON", "lessons": [ ... one to three objects ... ]}.
@@ -116,10 +116,13 @@ def _abbreviate(text: str, n_words: int = 12) -> str:
 def build_bundle(trace: dict) -> str:
     """Condensed digest of one arm-seed trace (the frozen assembly rule).
 
-    Per scenario-run: family/class header line, the key turns (learning
-    facts, corrections with source_type, the probe), abbreviated agent
-    answers, and the probe verdict. gc scenario-runs are dropped (FP-0
-    material; the prompt taxonomy already covers the class).
+    Per scenario-run: family/class header; then KEY TURNS ONLY (num_ctx
+    budget — plain chore/ack turns carry no failure evidence and are
+    dropped): environment turns WITH a source_type marker (corrections,
+    retractions, own-answer injections), the first environment turn of the
+    scenario (the stated facts), the probe question; agent replies only on
+    the initial classification turn and the probe turn; one compact PROBE
+    verdict line. Every line carries its evidence ref verbatim.
     """
     path = LAB_ROOT / trace["trace"]
     events: dict[str, list[dict]] = {}
@@ -139,24 +142,35 @@ def build_bundle(trace: dict) -> str:
         evs = events[sid]
         sub = SCENARIO_CLASSES.get(sid, "?")
         lines.append(f"### {prefix}|{sid} family={sid[:2]} class={sub}")
+        probe_refs = {(e.get("payload") or {}).get("turn_ref") for e in evs
+                      if e["type"] == "probe.result"}
+        first_env_seen = False
         for e in evs:
-            p = e.get("payload") or {}
-            ref = f"{prefix}|{sid}|{p.get('turn_ref', '?')}"
+            pl = e.get("payload") or {}
+            ref = f"{prefix}|{sid}|{pl.get('turn_ref', '?')}"
+            turn_ref = pl.get("turn_ref", "")
             if e["type"] == "env.turn":
-                marker = ""
-                src = e.get("payload", {}).get("source_type")
+                src = pl.get("source_type")
                 if src:
-                    marker = f" [source: {src}]"
-                lines.append(f"{ref} ENV{marker}: {_abbreviate(p.get('text', ''), 18)}")
+                    lines.append(f"{ref} ENV [source: {src}]: "
+                                 f"{_abbreviate(pl.get('text', ''), 14)}")
+                elif turn_ref in probe_refs:
+                    lines.append(f"{ref} PROBE-Q: "
+                                 f"{_abbreviate(pl.get('text', ''), 10)}")
+                elif not first_env_seen:
+                    first_env_seen = True
+                    lines.append(f"{ref} ENV: "
+                                 f"{_abbreviate(pl.get('text', ''), 14)}")
             elif e["type"] == "agent.response":
-                lines.append(f"{ref} AGENT: {_abbreviate(p.get('content', ''), 10)}")
+                if (turn_ref.startswith("s1") and turn_ref.endswith("t1")) \
+                        or turn_ref in probe_refs:
+                    lines.append(f"{ref} AGENT: "
+                                 f"{_abbreviate(pl.get('content', ''), 6)}")
             else:
-                fmt = "format-miss" if p.get("observed_label") is None else (
-                    "pass" if p.get("passed") else "wrong-label")
-                exp = p.get("expected")
-                obs = p.get("observed_label")
-                lines.append(
-                    f"{ref} PROBE: expected={exp!r} observed={obs!r} -> {fmt}")
+                fmt = "format-miss" if pl.get("observed_label") is None else (
+                    "pass" if pl.get("passed") else "wrong-label")
+                lines.append(f"{ref} PROBE: expected={pl.get('expected')!r} "
+                             f"observed={pl.get('observed_label')!r} -> {fmt}")
     return "\n".join(lines)
 
 
@@ -223,9 +237,16 @@ def run_worker(
     with raw_log_path.open("w", encoding="utf-8") as raw_log:
         for trace in manifest["traces"]:
             digest = build_bundle(trace)
-            prompt = REFLECTION_PROMPT_TEMPLATE.format(
-                run=trace["run"], arm=trace["arm"], seed=trace["seed"],
-                n_scenarios=digest.count("### "), digest=digest,
+            # Token substitution (NOT str.format — the template carries
+            # literal JSON braces in its output contract). Phase-W crash-fix
+            # before ANY worker call (prereg section 11 rendering class).
+            prompt = (
+                REFLECTION_PROMPT_TEMPLATE
+                .replace("@@RUN@@", trace["run"])
+                .replace("@@ARM@@", trace["arm"])
+                .replace("@@SEED@@", str(trace["seed"]))
+                .replace("@@N@@", str(digest.count("### ")))
+                .replace("@@DIGEST@@", digest)
             )
             reply = prov.chat([{"role": "user", "content": prompt}])
             parsed = parse_worker_reply(reply["content"])
