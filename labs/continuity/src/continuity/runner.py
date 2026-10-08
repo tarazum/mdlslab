@@ -81,6 +81,13 @@ MEMORY_BLOCK_HEADER = (
 )
 
 
+# Single source of truth for memory-arm membership (CN-012 / F-1 / RC-1):
+# every arm-gated code path (validation, APPEND, guards) derives from this
+# tuple — no parallel lists.
+MEMORY_ARMS = ("B", "C", "D", "E", "T0", "T1", "T2", "T3",
+               "R0", "R1", "R2", "R3", "RBAD", "RGOLD")
+
+
 def format_memory_block(episodes: list[dict[str, Any]]) -> str:
     lines = [MEMORY_BLOCK_HEADER]
     for ep in episodes:
@@ -203,8 +210,7 @@ def run_scenario(
     #        (pilot-only safety/manipulation arms, never in the primary)
     valid_arms = ("A", "B", "C", "D", "E", "T0", "T1", "T2", "T3",
                   "R0", "R1", "R2", "R3", "RBAD", "RGOLD")
-    memory_arms = ("B", "C", "D", "E", "T0", "T1", "T2", "T3",
-                   "R0", "R1", "R2", "R3", "RBAD", "RGOLD")
+    memory_arms = MEMORY_ARMS  # module-level single source of truth (CN-012)
     lesson_arms = ("R2", "R3", "RBAD", "RGOLD")
     if arm not in valid_arms:
         raise ValueError(f"unknown arm: {arm!r}")
@@ -449,13 +455,15 @@ def run_scenario(
                 scenario=sid,
                 session=session["index"],
             )
-            if arm in ("B", "C", "D", "E", "T0", "T1", "T2", "T3",
-                       "R0", "R1", "R2", "R3", "RBAD", "RGOLD"):
+            if arm in memory_arms:
                 # Remember both sides of the exchange, immediately after it.
-                # CN-012: the R-arms were missing from this tuple for the
-                # entire first behavioral chain — appends silently never
-                # happened and every arm ran memoryless; the tuple now
-                # derives from memory_arms so it can never drift again.
+                # CN-012 (fixed per REVIEW-FABLE-CONT006 F-1 /
+                # REVIEW-CONT006-CN012-RERUN RC-1): this used to be a SECOND
+                # hard-coded arm tuple that drifted from the validation
+                # tuple — the R-arms were missing and the whole first
+                # behavioral chain ran memoryless. Membership now derives
+                # from the single source of truth above (memory_arms), so
+                # the two lists can never drift apart again.
                 for role, content in (
                     ("environment", turn["text"]),
                     ("assistant", reply["content"]),

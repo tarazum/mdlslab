@@ -2759,3 +2759,83 @@ bounded later stage (CONT-002 machinery) — NOT run.
 - СТАТУС: CONT-006 поведінковий результат ІНВАЛІДНИЙ; перезапуск —
   тільки після перегумування експерименту + незалежного рев'ю Fable
   (директива owner-а). Черга: перевірити доступність Fable.
+
+## 2026-10-09 — Fable full-arc independent review (post-invalidation) + co-owner rerun review; F-1/F-2/RC-1/RC-2 folded
+
+- Fable review (owner directive; limit reset): docs/REVIEW-FABLE-CONT006.md
+  (raw verbatim + executor curation 7/7 CONFIRMED + disposition).
+  **Invalidation CONFIRMED independently.** Three NEW findings: F-1 (the
+  CN-012 fix kept a hard-coded append tuple whose comment falsely claimed
+  derivation — the drift vector alive), F-2 (the memory guard carried its
+  own third parallel arm list), F-3 (the anchor-divergence signal — pilot
+  R0 0.267 vs anchor 0.525, Phase V S0 0.0714 — was PRINTED in artifacts
+  with no stop criterion attached; the deepest process lesson: gates
+  checked "not too easy", never "why is a memory arm at half its anchor").
+  Rethink plan: per-family headroom (0.15, 0.85) both arms + anchor-
+  divergence halt; MME back to 0.20 + band min-n fix; multi-trace worker
+  bundles (FIX-A/B become design); FP-6 store cap + class-coverage report;
+  fresh v3m suite (v3l NOT reusable for a confirmatory endpoint — the
+  rethink is informed by v3l per-cluster results); live-telemetry gate
+  before any analyzer reads results; short design milestone + 2-seed
+  calibration pilot before the rerun.
+- Co-owner review (995b19a): docs/REVIEW-CONT006-CN012-RERUN.md — RC-1..RC-6
+  (largely overlapping Fable) + paired arm-equivalence audit (RC-3) + the
+  accidental-ablation preservation (RC-5) + Stage A (same-model repaired
+  rerun; R1 optional) / Stage B (hosted-model replication as a SEPARATE
+  external-validity experiment, ceiling-effect caution). Verdict: RERUN
+  REQUIRED / HYPOTHESIS STILL OPEN. Open divergence to resolve in the
+  rethink: suite reuse (Fable: v3m needed; co-owner: v3l "subject to the
+  new review chain").
+- Folded same day (zero GPU): F-1/F-2/RC-1 — MEMORY_ARMS module-level
+  single source of truth; append branch and the memory guard both derive
+  from it (no parallel lists left); RC-2/Fable-C.2 —
+  experiments/cont006/combined_channel_smoke.py committed as a permanent
+  regression test (every memory arm on a REAL multi-session v3l scenario;
+  PASS x5: appends, non-empty injections s>=2, lesson renders, R0/R2/R3
+  IDENTICAL episodic refs, no context clip); freeze manifest refreshed
+  (38 entries). CN-012 wording refined per curation: R1's reflection ran
+  and committed (53 commits in the checked seed) — the episode-derived
+  pathway was the starved one.
+- NEXT (owner-gated): the rethink design milestone (Fable C/D + co-owner
+  RC-3..RC-6; incl. the v3m-vs-v3l divergence and the Stage-B hosted-
+  replication question) -> new review chain -> repaired rerun.
+
+## 2026-10-09 — Fable full-arc independent review (post-invalidation) + co-owner rerun review; F-1/F-2/RC-1/RC-2 folded
+
+- Fable review (owner directive; limit reset): docs/REVIEW-FABLE-CONT006.md
+  (raw verbatim + executor curation 7/7 CONFIRMED + disposition).
+  Invalidation CONFIRMED independently. Three NEW findings: F-1 (the
+  CN-012 fix kept a hard-coded append tuple whose comment falsely claimed
+  derivation — the drift vector alive), F-2 (the memory guard carried its
+  own third parallel arm list), F-3 (the anchor-divergence signal — pilot
+  R0 0.267 vs anchor 0.525, Phase V S0 0.0714 — was PRINTED in artifacts
+  with no stop criterion attached; the deepest process lesson: gates
+  checked ceiling-headroom, never why a memory arm sits at half its
+  anchor). Rethink plan: per-family headroom (0.15, 0.85) both arms +
+  anchor-divergence halt; MME back to 0.20 + band min-n fix; multi-trace
+  worker bundles (FIX-A/B become design); FP-6 store cap + class-coverage
+  report; fresh v3m suite (v3l NOT reusable for a confirmatory endpoint —
+  the rethink is informed by v3l per-cluster results); live-telemetry
+  gate before any analyzer reads results; short design milestone + 2-seed
+  calibration pilot before the rerun.
+- Co-owner review (995b19a): docs/REVIEW-CONT006-CN012-RERUN.md — RC-1..RC-6
+  (largely overlapping Fable) + paired arm-equivalence audit (RC-3) + the
+  accidental-ablation preservation (RC-5) + Stage A (same-model repaired
+  rerun; R1 optional) / Stage B (hosted-model replication as a SEPARATE
+  external-validity experiment, ceiling-effect caution). Verdict: RERUN
+  REQUIRED / HYPOTHESIS STILL OPEN. Open divergence for the rethink:
+  suite reuse (Fable: v3m needed; co-owner: v3l subject to the new
+  review chain).
+- Folded same day (zero GPU): F-1/F-2/RC-1 — MEMORY_ARMS module-level
+  single source of truth; the append branch and the memory guard both
+  derive from it (no parallel lists left); RC-2/Fable-C.2 —
+  experiments/cont006/combined_channel_smoke.py committed as a permanent
+  regression test (every memory arm on a REAL multi-session v3l scenario;
+  PASS x5: appends, non-empty injections at s>=2, lesson renders,
+  R0/R2/R3 IDENTICAL episodic refs, no context clip); freeze manifest
+  refreshed. CN-012 wording refined per curation: R1's reflection ran and
+  committed (53 commits in the checked seed) — the episode-derived
+  pathway was the starved one.
+- NEXT (owner-gated): the rethink design milestone (Fable C/D + co-owner
+  RC-3..RC-6; incl. the v3m-vs-v3l divergence and the Stage-B hosted-
+  replication question) -> new review chain -> repaired rerun.

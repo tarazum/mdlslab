@@ -108,6 +108,7 @@ FROZEN_PATHS = [
     "experiments/cont006/counterfactual-lessons.json",
     "experiments/cont006/check_counterfactual_lessons.py",
     "experiments/cont006/revalidate_stores.py",
+    "experiments/cont006/combined_channel_smoke.py",
     "experiments/suite-v3/validate_fixtures_v3.py",
     "experiments/suite-v3/build_v3l.py",
     "experiments/suite-v3/run_cont006.py",
@@ -305,7 +306,10 @@ def run_arm_seed(arm: str, seed: int, scenario_ids: list[str], scenarios: list[d
         # NO non-empty injections at session >= 2 is a misconfiguration — the
         # summary is marked invalid instead of completed (completeness is
         # judged downstream; silent memoryless runs are void).
-        appends_expected = arm in ("R0", "R1", "R2", "R3", "RBAD", "RGOLD")
+        # F-2 / RC-1: guard membership derives from the runner's single
+        # source of truth — no third parallel arm list.
+        from continuity.runner import MEMORY_ARMS as _RUNNER_MEMORY_ARMS
+        appends_expected = arm in _RUNNER_MEMORY_ARMS
         append_events = sum(1 for line in (out_dir / "trace.jsonl")
                             .read_text(encoding="utf-8").splitlines()
                             if '"memory.append"' in line)
