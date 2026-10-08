@@ -2205,3 +2205,24 @@ Labeled "agent-pre-registered, pending owner acceptance" — the owner brief
 follows in chat (plain language per the standing preference). No claims
 beyond the two pinned cores @ temp 0 on synthetic v3k content; PB-071/CN-003
 determinism caveat travels with every number.
+
+## 2026-10-08 — CONT-002 ACCEPTED + CLOSED; CONT-006 GO — session brief authored
+
+- Owner (chat): "accept, go CONT-006". Recorded in ROADMAP "Owner decisions
+  — recorded 2026-10-08": CONT-002 result ACCEPTED (R = 0.989 [0.944,
+  1.035]; closed with a positive verdict; scope caveats on record) and
+  CONT-006 GO (design + pre-registration milestone first, zero GPU;
+  behavioral runs owner-gated).
+- docs/SESSION-BRIEF-CONT006.md authored: entry conditions (folded
+  proposal 562a1cb + both reviews; proven CONT-002 machinery; provider
+  think-pin), scope (design doc with R0-R3 arms and the two-phase rule,
+  frozen failure-pattern taxonomy BEFORE any authoring, zero-GPU experience
+  corpus from committed traces, suite v3l transfer fixtures, prereg draft
+  per the proposal's readiness checklist, power artifact), non-goals
+  (reflection.py byte-stable; no inference), exit artifacts, and the full
+  chain (PR-REVIEW from the standing queue -> fold -> owner gate ->
+  pipeline freeze -> R3 blind authoring -> contamination gate -> pilot with
+  bad-lesson + manipulation checks -> confirmatory -> bounded cross-model
+  test 4).
+- NEXT: fresh session opens docs/SESSION-BRIEF-CONT006.md and executes the
+  CONT-006 design milestone.

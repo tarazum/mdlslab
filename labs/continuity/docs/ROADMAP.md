@@ -181,6 +181,24 @@ satisfied by this explicit acceptance; all further owner touchpoints are the
 pre-declared ones (pilot GO/NO-GO outcome, MME re-derivation at the
 pilot-gate checkpoint if it fires, stress-governance sign-offs).
 
+## Owner decisions — recorded 2026-10-08 (CONT-002 result ACCEPTED; CONT-006 GO)
+
+Basis: the CONT-002 confirmatory record (`results/CONT-002-CONFIRMATORY/cont002-confirmatory-20261008-020902/results-summary.json`), the frozen analysis verdict, and the plain-language owner brief delivered in chat. Owner verdict (chat): **"accept, go CONT-006"**.
+
+1. **CONT-002 result: ACCEPTED** — "retained benefit established" (R = 0.989,
+   95% CI [0.944, 1.035]; dA = 0.867 [0.810, 0.924]). CONT-002 is **CLOSED**
+   with a positive verdict: on the v3k recall surface, the learned persistent
+   state transfers across cores essentially in full (scope: the two pinned
+   cores @ temp 0; synthetic content; correction-family state out of scope by
+   design). The "agent-pre-registered, pending owner acceptance" label is
+   satisfied by this entry.
+2. **CONT-006 ("Reflection as Lesson Extraction", REFLECTION-V2-PROPOSAL.md
+   with RC-1..RC-5 folded at 562a1cb): GO** — the build starts with a
+   design + pre-registration milestone (zero GPU) per the house
+   one-milestone-per-session model; its critical test 4 (cross-model lesson
+   transfer) reuses the now-proven CONT-002 four-cell machinery. Behavioral
+   runs remain owner-gated per the standing never-autonomous clause.
+
 ## Never autonomous (unchanged)
 
 - CONT-002 behavioral experiments — anything that measures transfer quality. The single exception is the M2b mechanics smoke (owner-ordered 2026-10-01): export/import plumbing proof only, explicitly no behavioral claims.
