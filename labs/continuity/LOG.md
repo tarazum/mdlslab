@@ -2390,3 +2390,32 @@ Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT006.md delivered.
   contamination/freeze) -> Phase W (worker) -> Phase G (R3 blind) ->
   Phase V (activation, store freeze) -> Phase P (pilot + BAD/GOLD-TRIV)
   -> pilot-gate checkpoint -> Phase C (confirmatory).
+
+## 2026-10-08 — OWNER ACCEPTED the CONT-006 pre-registration; FREEZE milestone START
+
+- Owner (chat): "приймаю пре-реєстрацію CONT-006". Recorded in ROADMAP
+  "Owner decisions — recorded 2026-10-08". The behavioral chain is
+  unblocked; never-autonomous satisfied by the explicit acceptance.
+- FREEZE plan (per EVALUATION-PREP-CONT006 §11, cycle-2 freeze order —
+  analysis scripts FIRST): (1) analyze_pilot_cont006.py (§9 GO/NO-GO
+  criteria 1-6 incl. the frozen parroting/4-gram definition, degenerate-
+  base clause, denominators without gc-6501, headroom, spread + the §5
+  power re-check and band-rule MME re-derivation) and
+  analyze_confirmatory_cont006.py (§3-§4 verdict machinery: cluster
+  bootstrap exactly 10,000 draws RNG 20261008, four frozen-wording
+  branches, completeness/store-integrity guards, secondaries incl. R3/R1
+  contrasts + invalid-format decomposition + per-class table with the
+  FP-3a/FP-2 co-signature note + run-record header with carried
+  CN-A/B/C), both with --self-test; (2) reflection_v2.py — the NEW
+  versioned worker module (session-bundle assembly, frozen reflection
+  prompt, provider call on the qwen reflector with think-pin, raw log with
+  prompt-digest/response-hash/token-counts/done_reason) + the deterministic
+  evidence validator/dedup (§7.1 a-e) + retrieval/renderer (prose, <= 220
+  tokens, anti-salience token checks); src/continuity/reflection.py stays
+  byte-stable (R1 baseline); (3) run_cont006.py — phase runner (W/G/V/P/C,
+  four arms + counterfactual pilot arms, per-arm store digest pinning,
+  budgets, wall accounting, resume per PB-075, --preflight-only); additive
+  lesson-channel parameter in runner.py (default off; closed-experiment
+  manifests refer to their run-time revs, git-verifiable); (4) freeze
+  manifest frozen-config-cont006.json (digests + env pin); (5) commit +
+  non-executor gates.

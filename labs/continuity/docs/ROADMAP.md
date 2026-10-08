@@ -199,6 +199,24 @@ Basis: the CONT-002 confirmatory record (`results/CONT-002-CONFIRMATORY/cont002-
    transfer) reuses the now-proven CONT-002 four-cell machinery. Behavioral
    runs remain owner-gated per the standing never-autonomous clause.
 
+## Owner decisions — recorded 2026-10-08 (CONT-006 pre-registration ACCEPTED)
+
+Basis: the design milestone (commit 0bf6352: frozen taxonomy FP-0..FP-6,
+experience corpus 50 traces, suite v3l validator PASS 19/19 + regressions
+PASS x5, power artifact) and the independent PR-REVIEW cycle
+(docs/PR-REVIEW-CONT006.md, commit c7a5b27: Fable GO-with-changes RC-1..RC-5,
+all folded same session, verify-pass GO, curatorial verification 5/5
+CONFIRMED). Owner verdict (chat): **"приймаю пре-реєстрацію CONT-006"** —
+the full behavioral chain is UNBLOCKED under the pre-declared gates:
+FREEZE (analysis scripts first) -> non-executor fixture/freeze gates ->
+Phase W (worker pass) -> Phase G (R3 blind authoring) -> contamination
+gate -> Phase V (activation; active stores committed + digested BEFORE any
+transfer request) -> Phase P (pilot incl. BAD-lesson safety + GOLD-TRIV
+manipulation checks) -> pilot-gate checkpoint (owner-visible; stop
+conditions route back to the owner) -> Phase C (confirmatory). Bounded
+later stage after verdict: critical test 4 (cross-model lesson transfer on
+the CONT-002 machinery, own budget, non-estimable clause).
+
 ## Never autonomous (unchanged)
 
 - CONT-002 behavioral experiments — anything that measures transfer quality. The single exception is the M2b mechanics smoke (owner-ordered 2026-10-01): export/import plumbing proof only, explicitly no behavioral claims.
