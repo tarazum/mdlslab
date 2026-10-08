@@ -1,6 +1,6 @@
 {
  "kind": "cont006-freeze-manifest",
- "created_utc": "2026-10-08T21:05:35Z",
+ "created_utc": "2026-10-08T21:16:25Z",
  "prereg": "docs/EVALUATION-PREP-CONT006.md (owner-accepted 2026-10-08)",
  "seeds": {
   "all": [
@@ -101,7 +101,7 @@
   "experiments/suite-v3/build_v3l.py": "cec8769c5280c80a7863ccedcd877d1de019a697be0785a7707b1cab89cadb25",
   "experiments/suite-v3/run_cont006.py": "b80f9b627fab47641b356e80881e00a8ddb3646bc8108cc1019928ccde268293",
   "experiments/suite-v3/analyze_pilot_cont006.py": "17afaf00a045fb0c79ae74295630ecc9ba13d16a675a2a9ec636e188e126090d",
-  "experiments/suite-v3/analyze_confirmatory_cont006.py": "1249d15513f44b3e786521faf50e0479e3cc4662ae0eee99dbebe18246be077f",
+  "experiments/suite-v3/analyze_confirmatory_cont006.py": "806e3e9ca455b16103b02195f338a7ed81afa5462d2f4a26f9d489bc1e7ca53f",
   "experiments/suite-v3/power_calc_cont006.py": "a1e36ee691760d745b7c5c0b915686bb3c6d839fb9cc13f2465120f5c767e4c5",
   "experiments/suite-v3/power-results-cont006.json": "2055d79782619aea1642037b4aba483b6ba0ccbbd7504d358803e6e231400cf8",
   "experiments/suite-v3/fixture-validation-v3l.json": "b8e6e8776f174407438356d7567b624d0618e824939f5ede119077e01409557f",

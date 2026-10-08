@@ -2657,3 +2657,22 @@ Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT006.md delivered.
   (the primary R2−R0 endpoint is intact and pilot signals are strong) —
   an owner-gate decision recorded either way; re-authoring of v3l is
   banned by the prereg in every branch.
+
+## 2026-10-09 — OWNER OVERRIDE: pilot NO-GO overridden, confirmatory authorized (Phase C START)
+
+- Owner (chat): "(b) Дозволити фінальний забіг попри NO-GO". Recorded in
+  ROADMAP "Owner decisions — recorded 2026-10-09". The pre-declared legal
+  branch of prereg §9 ("owner decision recorded either way"); the primary
+  R2−R0 endpoint is unaffected by the pilot findings (counterfactual arms
+  never enter it); the harm-containment finding rides the run record as a
+  headline secondary (PW-OVERRIDE carried note, embedded in the frozen
+  analyzer's header); the band-derived MME 0.333 governs the verdict.
+- Pre-launch fixes (c679547 telemetry-aggregation class, pre-Phase-C
+  inference, digest refreshed): the confirmatory analyzer's loader now
+  accepts only canonical ^seed-\d{4}$ cells (invalidated R1 pilot attempt
+  dirs are evidence, never data — same fix as the pilot analyzer);
+  PW-OVERRIDE carried note added.
+- Phase C: seeds {6003..6007}, arms R0/R1/R2/R3, TR+GC (18 scenarios,
+  103 turns/arm-seed), active stores pinned by digest (r2 46efc799…,
+  r3 1acf7842…). Est ~70 min GPU under the shared lock; wall guard 270 min
+  vs the 300 min declared cap.

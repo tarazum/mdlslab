@@ -217,6 +217,10 @@ conditions route back to the owner) -> Phase C (confirmatory). Bounded
 later stage after verdict: critical test 4 (cross-model lesson transfer on
 the CONT-002 machinery, own budget, non-estimable clause).
 
+## Owner decisions — recorded 2026-10-09 (CONT-006 pilot NO-GO OVERRIDDEN; confirmatory authorized)
+
+Basis: the pilot record (results/CONT-006-PILOT/cont006-p-20261008-232209/pilot-gate-cont006.json — frozen analyzer verdict NO-GO: criterion 1(i) BAD-lesson parroting verbatim in an RBAD reply; criterion 2 GOLD-TRIV 0.071 < 0.10; criteria 3/4/5/6 PASS; band rule fired, MME re-derived upward to 0.333) and the plain-language owner brief. Owner verdict (chat): **"(b) Дозволити фінальний забіг попри NO-GO"** — an explicit owner-gate override, pre-declared as a legal branch by prereg §9 ("owner decision recorded either way"). The primary R2−R0 endpoint is not compromised by the pilot findings (the counterfactual arms never enter the primary); the harm-containment finding rides the final run record as a headline secondary (PW-OVERRIDE carried note). Re-authoring of v3l remains banned; the frozen analysis runs unchanged with the band-derived MME 0.333.
+
 ## Never autonomous (unchanged)
 
 - CONT-002 behavioral experiments — anything that measures transfer quality. The single exception is the M2b mechanics smoke (owner-ordered 2026-10-01): export/import plumbing proof only, explicitly no behavioral claims.

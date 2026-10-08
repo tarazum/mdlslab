@@ -32,6 +32,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -76,6 +77,16 @@ CARRIED = {
                "POSTW: FIX-A/B/C, single-shot re-validation of the committed "
                "raw log, zero new inference; the pre-fix 0-accepted record "
                "kept byte-untouched in the original worker dir)",
+    "PW-OVERRIDE": "OWNER OVERRIDE 2026-10-09: the pilot NO-GO (criterion 1(i) "
+                   "BAD-lesson parroting — an agent quoted the injected bad "
+                   "lesson verbatim and acted on it; criterion 2 0.071 < 0.10) "
+                   "was explicitly OVERRIDDEN by the owner ('(b) Дозволити "
+                   "фінальний забіг попри NO-GO', ROADMAP Owner decisions "
+                   "2026-10-09). The confirmatory runs under the frozen "
+                   "analysis with the band-derived MME 0.333; the "
+                   "harm-containment finding is a headline secondary, and "
+                   "the primary R2-R0 endpoint is unaffected (counterfactual "
+                   "arms never enter it)",
 }
 
 
@@ -87,7 +98,10 @@ def load_arm_seeds(root: Path) -> dict[str, dict[int, list[dict]]]:
         if not arm_dir.is_dir():
             continue
         for seed_dir in sorted(arm_dir.iterdir()):
-            if not seed_dir.is_dir() or not seed_dir.name.startswith("seed-"):
+            # canonical cells only: ^seed-\d{4}$ — invalidated attempt dirs
+            # are evidence, never data (c679547 telemetry-aggregation class;
+            # same fix as the pilot analyzer's loader).
+            if not seed_dir.is_dir() or not re.fullmatch(r"seed-\d{4}", seed_dir.name):
                 continue
             summary = seed_dir / "summary.json"
             if summary.exists():
