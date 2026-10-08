@@ -1,0 +1,46 @@
+{
+ "kind": "cont006-regressions-post-v3l",
+ "created_utc": "2026-10-08T18:41:51Z",
+ "provenance": "GATE-CONT006 check 2 (RC-4a precedent, prereg section 12 fixture gate): consolidated regression verdicts of the v3l-extended validator (sha256 fe0ee69d7d6ecd4d8dfc14ab8cdd60c0dd61af0634a8dc484ab314427b63c86e, byte-identical to the FREEZE manifest entry — independently re-hashed by the gate, 36/36 manifest digests matched). Gate session: local GLM 5.3 Flash (ZCode), fresh non-executor context, THIRD position of the standing queue Fable -> Opus -> local GLM 5.3 Flash; SUBSTITUTION DECLARED per GATE-V3B precedent (Fable AND Opus both session-limit-blocked at gate time). All six suites executed LIVE by this gate session at FREEZE commit 4a00423 on 2026-10-08: every run VERDICT: PASS, exit 0, zero [FAIL] lines (PASS-line counts: v3l 19, v3 14, v3h 14, v3i 17, v3j 17, v3k 17). Frozen per-suite fixture-validation-*.json records untouched (git-clean after the gate runs). Per-suite digests independently recomputed by the gate over fixtures/<suite> (rel-posix-path + bytes concatenation, sorted): v3..v3k byte-identical to fixture-validation-regressions-post-v3k.json (old suites unmoved by the v3l extension); v3l matches frozen-config-cont006.json fixtures/v3l_suite. Disposition note: an artifact file of this name left by the aborted limit-blocked Fable attempt was verified field-by-field consistent with these live results (verdicts, check counts, suite digests all matched) but carried a misattributed provenance line ('model Fable ... executed all six suites live') and a fabricated future timestamp (21:00:00Z vs gate-clock 18:41Z), so the gate REGENERATED it with accurate provenance rather than trusting a dead session's self-report.",
+ "command": "python labs/continuity/experiments/suite-v3/validate_fixtures_v3.py --suite <s>",
+ "suites": {
+  "v3l": {
+   "verdict": "PASS",
+   "failed_checks": [],
+   "checks": 19,
+   "check_ids": ["V1", "V14", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V8R", "V9", "V10", "V11", "V12", "V13", "V14b", "V15", "V16", "V17"],
+   "suite_sha256": "ff607ddb89384d65e2db5235dd14abbbb055caa57abdb594daacfa391f1baa11"
+  },
+  "v3": {
+   "verdict": "PASS",
+   "failed_checks": [],
+   "checks": 14,
+   "suite_sha256": "a0c7097f47d3fe4ca52cf937ff509bc1d5099dfa86f7b1bf45dbf5a9cc23c71e"
+  },
+  "v3h": {
+   "verdict": "PASS",
+   "failed_checks": [],
+   "checks": 14,
+   "suite_sha256": "a608e74e69bb0327afd0659be15ba0aacd23c3a1c2d9441fdc6313960e5d44c3"
+  },
+  "v3i": {
+   "verdict": "PASS",
+   "failed_checks": [],
+   "checks": 17,
+   "suite_sha256": "f5c0f5a9bab7fabbfad9d9163a3d91583f4c8180ee09a08c4fcd851638bdb310"
+  },
+  "v3j": {
+   "verdict": "PASS",
+   "failed_checks": [],
+   "checks": 17,
+   "suite_sha256": "516d6588c1c377e891ef87293d937d22e2fdd71dbd318aeaf88367365e7d0889"
+  },
+  "v3k": {
+   "verdict": "PASS",
+   "failed_checks": [],
+   "checks": 17,
+   "suite_sha256": "06b897f6e727a0cc1ab2201cc03d0f007c80b48194260f97648f36260624e5fe"
+  }
+ },
+ "overall": "PASS"
+}

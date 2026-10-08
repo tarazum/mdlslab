@@ -117,9 +117,12 @@ def completeness(data: dict[str, dict[int, list[dict]]], seeds: list[int]) -> li
     return missing
 
 
-def delta_ci(d_c: np.ndarray, rng: np.random.Generator) -> dict:
+def delta_ci(d_c: np.ndarray, idx: np.ndarray) -> dict:
+    """Percentile bootstrap CI over cluster deltas. GATE-CONT006 D-1 fix: the
+    resample index array is generated ONCE per run record and REUSED for
+    every CI in that record (prereg section 4: "the same resample indices
+    used for any secondary CI computed in the same run record")."""
     d = float(d_c.mean())
-    idx = rng.integers(0, len(d_c), size=(BOOT, len(d_c)))
     stars = d_c[idx].mean(axis=1)
     lo, hi = (float(x) for x in np.percentile(stars, [2.5, 97.5]))
     return {"delta": round(d, 4), "ci_lo": round(lo, 4), "ci_hi": round(hi, 4),
@@ -166,6 +169,7 @@ def analyze(pilot_root: Path | None, conf_root: Path | None) -> dict:
     d_primary = np.array([r2[s] - r0[s] for s in TR_IDS], dtype=float)
     d_r3 = np.array([r3[s] - r0[s] for s in TR_IDS], dtype=float)
     d_r1 = np.array([r1[s] - r0[s] for s in TR_IDS], dtype=float)
+    idx = rng.integers(0, len(TR_IDS), size=(BOOT, len(TR_IDS)))  # ONE draw, shared
     # MME: the pilot-gate band-rule re-derivation supersedes UPWARD only
     mme = MME_D
     band_note = None
@@ -176,9 +180,9 @@ def analyze(pilot_root: Path | None, conf_root: Path | None) -> dict:
             if fired.get("fired"):
                 mme = max(MME_D, float(fired.get("mme_rederived", MME_D)))
                 band_note = f"band-rule upward re-derivation applied: MME {mme}"
-    prim = delta_ci(d_primary, rng)
-    sec_r3 = delta_ci(d_r3, rng)
-    sec_r1 = delta_ci(d_r1, rng)
+    prim = delta_ci(d_primary, idx)
+    sec_r3 = delta_ci(d_r3, idx)
+    sec_r1 = delta_ci(d_r1, idx)
     # invalid-format decomposition per arm (TR probes)
     fmt = {}
     for arm in ARMS:
@@ -263,7 +267,8 @@ def _analyze_data(data: dict) -> dict:
     r0 = arm_cluster_pass(data, "R0", SEEDS)
     r2 = arm_cluster_pass(data, "R2", SEEDS)
     d = np.array([r2[s] - r0[s] for s in TR_IDS], dtype=float)
-    prim = delta_ci(d, rng)
+    idx = rng.integers(0, len(TR_IDS), size=(BOOT, len(TR_IDS)))
+    prim = delta_ci(d, idx)
     return {"verdict": verdict_of(prim, MME_D), "primary": prim}
 
 
