@@ -93,6 +93,18 @@ Possible future questions:
 
 **Suggested relationship:** no separate lab yet. Revisit when a specific Qwen model answers an experiment need.
 
+### OmO + Herdr: agent orchestration versus terminal runtime
+
+**Category:** agent harness / persistent coding-agent workspace  
+**Candidate value:** high for bounded comparisons; independent evaluation of both layers  
+**Priority effect:** none; keep current experiments unchanged
+
+[Evaluation proposal](proposals/2026-10-08-omo-herdr-agent-workspace-evaluation.md) records separate test questions for OmO's multi-model orchestration and memory (Kibitzer), Herdr's terminal persistence and agent-state visibility, and the optional third-party OmO Herdr DAG viewer.
+
+Test Herdr first with existing Codex and Claude Code CLIs, then assess OmO independently on matched, sanitized tasks. ZCode/GLM IDE behavior does not automatically become a Herdr pane. Evaluate Windows support, provider/billing boundaries, security permissions, status accuracy, task correctness, token costs, and overlap with Continuity before scheduling a dedicated experiment.
+
+**Suggested relationship:** cross-cutting candidate for agent tooling and Continuity, not a new lab or immediate migration.
+
 ## Promotion rule
 
 A candidate should move from this page into `labs/` only when all of the following are true:
