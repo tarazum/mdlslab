@@ -301,6 +301,19 @@ def run_arm_seed(arm: str, seed: int, scenario_ids: list[str], scenarios: list[d
             stopped_any = stopped_any or bool(result.get("stopped"))
             probes.extend({**p, "scenario": scenario["id"], "family": scenario["family"]}
                           for p in result["probes"])
+        # CN-012 fail-closed guard: a memory arm that produced NO appends or
+        # NO non-empty injections at session >= 2 is a misconfiguration — the
+        # summary is marked invalid instead of completed (completeness is
+        # judged downstream; silent memoryless runs are void).
+        appends_expected = arm in ("R0", "R1", "R2", "R3", "RBAD", "RGOLD")
+        append_events = sum(1 for line in (out_dir / "trace.jsonl")
+                            .read_text(encoding="utf-8").splitlines()
+                            if '"memory.append"' in line)
+        inj_events = [line for line in (out_dir / "trace.jsonl")
+                      .read_text(encoding="utf-8").splitlines()
+                      if '"memory.injected"' in line]
+        inj_nonempty = sum(1 for line in inj_events if '"injected": true' in line)
+        guard_ok = (not appends_expected) or (append_events > 0 and inj_nonempty > 0)
         wall_s = round(time.monotonic() - t0, 1)
         summary = {
             "kind": "cont006-arm-seed-summary", "run_id": run_id, "arm": arm,
@@ -312,7 +325,11 @@ def run_arm_seed(arm: str, seed: int, scenario_ids: list[str], scenarios: list[d
             "probes_total": len(probes),
             "stopped": stopped_any, "budget_violation": budget.violation,
             "memory_episodes": memory.count(), "duration_s": wall_s,
-            "completed": True, "determinism_caveat": DETERMINISM_CAVEAT,
+            "memory_guard": {"appends": append_events,
+                             "injections_nonempty": inj_nonempty,
+                             "passed": guard_ok},
+            "completed": guard_ok,  # CN-012: memoryless memory-arm = invalid cell
+            "determinism_caveat": DETERMINISM_CAVEAT,
         }
         (out_dir / "summary.json").write_text(
             json.dumps(summary, indent=1, ensure_ascii=True) + "\n", encoding="utf-8")

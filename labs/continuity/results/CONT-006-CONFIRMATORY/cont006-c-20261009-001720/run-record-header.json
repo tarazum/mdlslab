@@ -40,5 +40,13 @@
   "GATE-CONT006-POSTW (GO-with-fixes; FIX-A/B/C; D-PW-7)",
   "GATE-CONT006-CONTAMINATION (GO)",
   "GATE-CONT006-VFIX (GO-with-fixes; FIX-R/S)"
- ]
+ ],
+ "verdict_status": "INVALID \u2014 CN-012: all four arms ran WITHOUT persistent memory (runner append-tuple omission); the pre-registered arms were not the arms that ran; the frozen analyzer output stands as a record of an unregistered lessons-only ablation (\u2248 prereg critical test 1), NOT as the CONT-006 primary verdict",
+ "invalidation": {
+  "finding": "docs/FINDINGS.md CN-012 (2026-10-09, owner-instigated post-verdict audit)",
+  "evidence": "0 memory.append events across every v3l arm-seed trace vs 1300 in a C2 T-arm run; all memory.injected empty; stores 0 episodes",
+  "effect": "R0 = no-memory agent (not \"memory, no lessons\"); R2/R3 = lessons-vs-nothing (not lessons-on-top-of-memory); R1 reflection had zero episodes; VAL activations +0.214/+0.250 are lesson-vs-nothing effects",
+  "still_valid": "pilot RBAD parroting (lesson-channel property, memory-independent); worker/R3 authoring/stores/gates (pre-behavioral); suite v3l; analyzers",
+  "re_run": "owner-gated, pending the experiment rethink + independent Fable review (owner directive 2026-10-09)"
+ }
 }

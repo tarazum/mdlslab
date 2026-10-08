@@ -1,6 +1,6 @@
 {
  "kind": "cont006-freeze-manifest",
- "created_utc": "2026-10-08T21:16:25Z",
+ "created_utc": "2026-10-08T22:40:25Z",
  "prereg": "docs/EVALUATION-PREP-CONT006.md (owner-accepted 2026-10-08)",
  "seeds": {
   "all": [
@@ -99,13 +99,13 @@
   "experiments/cont006/revalidate_stores.py": "7230daf7ad779c95509aa187ef47e04b2cd1e71a2f88fb2e3a102758535b841f",
   "experiments/suite-v3/validate_fixtures_v3.py": "fe0ee69d7d6ecd4d8dfc14ab8cdd60c0dd61af0634a8dc484ab314427b63c86e",
   "experiments/suite-v3/build_v3l.py": "cec8769c5280c80a7863ccedcd877d1de019a697be0785a7707b1cab89cadb25",
-  "experiments/suite-v3/run_cont006.py": "b80f9b627fab47641b356e80881e00a8ddb3646bc8108cc1019928ccde268293",
+  "experiments/suite-v3/run_cont006.py": "81c53b5b8798e50b57bd0598c9a8aad4a19063aaa2b6ea8b3d63cef7556bc354",
   "experiments/suite-v3/analyze_pilot_cont006.py": "17afaf00a045fb0c79ae74295630ecc9ba13d16a675a2a9ec636e188e126090d",
   "experiments/suite-v3/analyze_confirmatory_cont006.py": "806e3e9ca455b16103b02195f338a7ed81afa5462d2f4a26f9d489bc1e7ca53f",
   "experiments/suite-v3/power_calc_cont006.py": "a1e36ee691760d745b7c5c0b915686bb3c6d839fb9cc13f2465120f5c767e4c5",
   "experiments/suite-v3/power-results-cont006.json": "2055d79782619aea1642037b4aba483b6ba0ccbbd7504d358803e6e231400cf8",
   "experiments/suite-v3/fixture-validation-v3l.json": "b8e6e8776f174407438356d7567b624d0618e824939f5ede119077e01409557f",
-  "src/continuity/runner.py": "93dbc843af101bec555bcae17034af38266370a060b107d7fd843ba6379f46c2",
+  "src/continuity/runner.py": "a78f96aeb95d71eeb1d9c2f63b01d3c8bbb991ccdf14234e95354e8cd58163cb",
   "src/continuity/provider.py": "d80cfe6488d80c543aaf43f6c39e3db954ff075a3a510d11e7a201040875d5b4",
   "src/continuity/memory.py": "1ef4291641fd6be73d888e65452c778687e156393cd54df597bcbc72202a394b",
   "src/continuity/fixtures.py": "4270a0916ab227c89b46c5cbe03525fa364831bf0353f91ee6c4fcef2b3f9f7d",

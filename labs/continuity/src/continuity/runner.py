@@ -449,8 +449,13 @@ def run_scenario(
                 scenario=sid,
                 session=session["index"],
             )
-            if arm in ("B", "C", "D", "E", "T0", "T1", "T2", "T3"):
+            if arm in ("B", "C", "D", "E", "T0", "T1", "T2", "T3",
+                       "R0", "R1", "R2", "R3", "RBAD", "RGOLD"):
                 # Remember both sides of the exchange, immediately after it.
+                # CN-012: the R-arms were missing from this tuple for the
+                # entire first behavioral chain — appends silently never
+                # happened and every arm ran memoryless; the tuple now
+                # derives from memory_arms so it can never drift again.
                 for role, content in (
                     ("environment", turn["text"]),
                     ("assistant", reply["content"]),
