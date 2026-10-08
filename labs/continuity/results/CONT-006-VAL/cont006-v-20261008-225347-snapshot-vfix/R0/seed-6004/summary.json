@@ -1,0 +1,59 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-v-20261008-225347",
+ "arm": "R0",
+ "seed": 6004,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": null,
+ "lesson_store_status": null,
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "berthing",
+   "observed_normalized": "the tender line at the shared pontoon is for fueling.",
+   "observed_label": "fueling",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6005",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "60",
+   "observed_normalized": "64.",
+   "observed_label": "64",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6105",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "E35",
+   "observed_normalized": "e23.",
+   "observed_label": "E23",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6403",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "training",
+   "observed_normalized": "the tag is 'servicing'.",
+   "observed_label": "servicing",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6204",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 0,
+ "probes_total": 4,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 0,
+ "duration_s": 44.7,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

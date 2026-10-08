@@ -407,20 +407,30 @@ def run_transfer_phase(phase: str, arms: list[str], seeds: list[int],
 
 def phase_v_activate(val_root: Path) -> dict:
     def rates(arm: str) -> tuple[float | None, int, int]:
+        """FIX-S (GATE-CONT006-VFIX): a VAL probe is INVALID iff MISSING
+        (no summary / not completed / probe count != expected) or MALFORMED
+        (record without kind/scenario/passed). A format-miss reply
+        (observed_label None, passed False) is a VALID scored observation
+        (prereg §14 category). Applied SYMMETRICALLY to R0 and the lesson
+        arms (closes the VF-3 guard gap)."""
         passed = total = invalid = 0
         for seed in ALL_SEEDS:
             summary = val_root / arm / f"seed-{seed}" / "summary.json"
             if not summary.exists():
                 return None, total, invalid
             data = json.loads(summary.read_text(encoding="utf-8"))
+            if not data.get("completed"):
+                return None, total, invalid
             probes = [p for p in data.get("probes", [])
                       if p.get("kind") != "guess_calibration"]
-            if not probes:
+            if len(probes) != len(VAL_IDS):
                 return None, total, invalid
             for p in probes:
+                if not {"kind", "scenario", "passed"} <= set(p):
+                    invalid += 1
+                    continue
                 total += 1
                 passed += 1 if p.get("passed") is True else 0
-                invalid += 1 if p.get("observed_label") is None else 0
         return (passed / total if total else None), total, invalid
 
     s0, n0, inv0 = rates("R0")

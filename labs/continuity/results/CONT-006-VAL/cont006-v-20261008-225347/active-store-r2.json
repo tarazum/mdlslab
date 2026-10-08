@@ -1,0 +1,179 @@
+{
+ "kind": "cont006-lesson-store",
+ "lessons": [
+  {
+   "applicability": [
+    "Task requires selecting exactly one item from a provided list.",
+    "Prompt uses imperative verbs like 'Sort', 'Log', or 'Classify' with 'exactly one label' constraint."
+   ],
+   "bundle": "CONT-005-C2-PILOT|A|seed-2001",
+   "cluster_id": "C00",
+   "context": "Classification and sorting tasks requiring a single label from a defined set.",
+   "createdBy": "reflection-worker",
+   "createdUtc": "2026-10-08T18:51:52Z",
+   "evidence": [
+    "CONT-005-C2-PILOT|A|seed-2001|rt-3201",
+    "CONT-005-C2-PILOT|A|seed-2001|rt-3205",
+    "CONT-005-C2-PILOT|A|seed-2001|cr-3002",
+    "CONT-005-C2-PILOT|A|seed-2001|cr-3003",
+    "CONT-005-C2-PILOT|A|seed-2001|cr-3007",
+    "CONT-005-C2-PILOT|A|seed-2001|cr-3008",
+    "CONT-005-C2-PILOT|A|seed-2002|rt-3201",
+    "CONT-005-C2-PILOT|A|seed-2002|rt-3203",
+    "CONT-005-C2-PILOT|A|seed-2002|rt-3204",
+    "CONT-005-C2-PILOT|A|seed-2002|rt-3206",
+    "CONT-005-C2-PILOT|A|seed-2002|cr-3003",
+    "CONT-005-C2-PILOT|A|seed-2002|cr-3008",
+    "CONT-005-C2-PILOT|T1|seed-2003|rt-3201",
+    "CONT-005-C2-PILOT|T1|seed-2003|rt-3203",
+    "CONT-005-C2-PILOT|T1|seed-2003|cr-3001",
+    "CONT-005-C2-PILOT|T1|seed-2003|cr-3003",
+    "CONT-005-C2-PILOT|T1|seed-2003|cr-3006",
+    "CONT-005-C2-PILOT|T3|seed-2003|rt-3201",
+    "CONT-005-C2-PILOT|T3|seed-2003|rt-3203",
+    "CONT-005-C2-PILOT|T3|seed-2003|cr-3001",
+    "CONT-005-C2-PILOT|T3|seed-2003|cr-3003",
+    "CONT-005-C2-PILOT|T3|seed-2003|cr-3006",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3004|rt-4203",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3004|rt-4205",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3004|rt-4206",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4001",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4004",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4005"
+   ],
+   "lesson": "When instructed to sort or log into exactly one label, output only the single correct label string. Do not include explanatory text, quotes, or multiple options.",
+   "lessonId": "LL-W-001",
+   "merged_candidate_count": 5,
+   "merged_from_bundles": [
+    "CONT-005-C2-CONFIRMATORY|A|seed-3004",
+    "CONT-005-C2-PILOT|A|seed-2001",
+    "CONT-005-C2-PILOT|A|seed-2002",
+    "CONT-005-C2-PILOT|T1|seed-2003",
+    "CONT-005-C2-PILOT|T3|seed-2003"
+   ],
+   "observation": "The agent frequently produced prose, partial phrases, or empty responses instead of the exact required label, leading to format misses or wrong-label errors.",
+   "recommendedBehavior": "Output the raw label string only. Avoid conversational fillers or restating the question.",
+   "status": "evidence-validated",
+   "supersedesLessonIds": [],
+   "title": "Strict Single-Label Output Enforcement"
+  },
+  {
+   "applicability": [
+    "Task involves classification or sorting into a fixed set of labels.",
+    "Prompt specifies 'exactly one label' or similar constraint."
+   ],
+   "bundle": "CONT-005-C2-PILOT|T0|seed-2005",
+   "cluster_id": "C01",
+   "context": "When the task requires sorting or logging into exactly one label from a provided list.",
+   "createdBy": "reflection-worker",
+   "createdUtc": "2026-10-08T18:56:46Z",
+   "evidence": [
+    "CONT-005-C2-PILOT|T0|seed-2005|rt-3201|s3t2",
+    "CONT-005-C2-PILOT|T0|seed-2005|rt-3202|s3t2",
+    "CONT-005-C2-PILOT|T0|seed-2005|rt-3203|s3t2",
+    "CONT-005-C2-PILOT|T0|seed-2005|rt-3205|s3t2",
+    "CONT-005-C2-PILOT|T0|seed-2005|rt-3206|s3t2",
+    "CONT-005-C2-PILOT|T0|seed-2005|cr-3003|s3t2",
+    "CONT-005-C2-PILOT|T0|seed-2005|cr-3008|s4t2",
+    "CONT-005-C2-PILOT|T3|seed-2005|rt-3201",
+    "CONT-005-C2-PILOT|T3|seed-2005|rt-3202",
+    "CONT-005-C2-PILOT|T3|seed-2005|rt-3203",
+    "CONT-005-C2-PILOT|T3|seed-2005|rt-3204",
+    "CONT-005-C2-PILOT|T3|seed-2005|rt-3205",
+    "CONT-005-C2-PILOT|T3|seed-2005|rt-3206",
+    "CONT-005-C2-PILOT|T3|seed-2005|cr-3003",
+    "CONT-005-C2-PILOT|T3|seed-2005|cr-3004",
+    "CONT-005-C2-PILOT|T3|seed-2005|cr-3008"
+   ],
+   "lesson": "Always output exactly one option label from the provided list. Do not include explanations, greetings, or prose. If the answer is one of the options, output only that label.",
+   "lessonId": "LL-W-012",
+   "merged_candidate_count": 2,
+   "merged_from_bundles": [
+    "CONT-005-C2-PILOT|T0|seed-2005",
+    "CONT-005-C2-PILOT|T3|seed-2005"
+   ],
+   "observation": "The agent frequently outputs prose, explanations, or empty strings instead of the single required label, leading to format misses.",
+   "recommendedBehavior": "Output only the single correct label string. Suppress all conversational filler or reasoning text.",
+   "status": "evidence-validated",
+   "supersedesLessonIds": [],
+   "title": "Format Compliance for Classification Tasks"
+  },
+  {
+   "applicability": [
+    "Task involves classification or sorting into a fixed set of labels",
+    "Instruction specifies 'exactly one label' or similar format constraint"
+   ],
+   "bundle": "CONT-005-C2-PILOT|T2|seed-2005",
+   "cluster_id": "C02",
+   "context": "When instructed to sort or log items into exactly one label from a provided list, the output must strictly adhere to the requested format.",
+   "createdBy": "reflection-worker",
+   "createdUtc": "2026-10-08T19:01:41Z",
+   "evidence": [
+    "CONT-005-C2-PILOT|T2|seed-2005|rt-3201",
+    "CONT-005-C2-PILOT|T2|seed-2005|rt-3202",
+    "CONT-005-C2-PILOT|T2|seed-2005|rt-3204",
+    "CONT-005-C2-PILOT|T2|seed-2005|rt-3205",
+    "CONT-005-C2-PILOT|T2|seed-2005|cr-3003",
+    "CONT-005-C2-PILOT|T2|seed-2005|cr-3008",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3001|rt-4202",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3001|rt-4203",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3001|cr-4001",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3001|cr-4002",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3001|cr-4003",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3001|cr-4008",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3004|rt-4201|s3t2",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3004|rt-4203|s3t2",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3004|cr-4001|s3t2",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3004|cr-4002|s3t2",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3004|cr-4003|s3t2",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3004|cr-4005|s3t2"
+   ],
+   "lesson": "Always output exactly one option label from the provided list. Do not include explanatory text, prefixes, or multiple options. Ensure the response matches the required format precisely.",
+   "lessonId": "LL-W-022",
+   "merged_candidate_count": 3,
+   "merged_from_bundles": [
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3001",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3004",
+    "CONT-005-C2-PILOT|T2|seed-2005"
+   ],
+   "observation": "Multiple runs resulted in format misses or wrong labels because the agent provided prose explanations, multiple labels, or ignored the specific constraint to output only the label.",
+   "recommendedBehavior": "Output only the single correct label string. Avoid any surrounding text or reasoning in the final answer.",
+   "status": "evidence-validated",
+   "supersedesLessonIds": [],
+   "title": "Format Compliance in Classification Tasks"
+  },
+  {
+   "applicability": [
+    "When a scenario involves an update, correction, or supersession of a value.",
+    "When multiple values for the same entity are presented across turns."
+   ],
+   "bundle": "CONT-005-C2-CONFIRMATORY|T0|seed-3002",
+   "cluster_id": "C03",
+   "context": "Scenarios involving updated or withdrawn values where an outdated value was ignored in favor of the current one.",
+   "createdBy": "reflection-worker",
+   "createdUtc": "2026-10-08T19:08:08Z",
+   "evidence": [
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3002|cu-4101|s4t2",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3002|cu-4102|s3t2",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3002|cr-4008|s4t2",
+    "CONT-005-C2-CONFIRMATORY|T1|seed-3005|cu-4101|s1t1",
+    "CONT-005-C2-CONFIRMATORY|T1|seed-3005|cu-4102|s1t1"
+   ],
+   "lesson": "Always prioritize the most recent verified value or correction over previously stated or initial values. If a correction exists, apply it immediately and ignore the superseded data.",
+   "lessonId": "LL-W-034",
+   "merged_candidate_count": 2,
+   "merged_from_bundles": [
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3002",
+    "CONT-005-C2-CONFIRMATORY|T1|seed-3005"
+   ],
+   "observation": "The agent failed to apply verified corrections or updated values, instead retaining or selecting outdated information.",
+   "recommendedBehavior": "Identify the latest verified state. Discard any prior or conflicting values. Answer based solely on the current verified state.",
+   "status": "evidence-validated",
+   "supersedesLessonIds": [],
+   "title": "FP-1 Supersession Resolution"
+  }
+ ],
+ "source": "worker",
+ "status": "active",
+ "store_sha256": "46efc799f823ef96664676864c67da222e0511d552550e96bd5a89ca69da9cca"
+}

@@ -2571,3 +2571,30 @@ Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT006.md delivered.
   results/CONT-006-WORKER/ (originals) and …-v2/ (canonical for Phase V).
 - NEXT: contamination gate (prereg §12) -> Phase V (activation) ->
   V-activate (STORE FREEZE) -> Phase P pilot -> pilot-gate -> Phase C.
+
+## 2026-10-08 — Phase V COMPLETE + STORE FREEZE: both stores ACTIVATED (R2 +0.2143, R3 +0.2500)
+
+- Phase V run 1 (cont006-v-20261008-225347): R0 7/7 (2/28 = 0.0714), R2 7/7
+  (8/28 = 0.2857), R3 crashed pre-inference on every arm-seed — the frozen
+  renderer hard-failed the R3 store's 200-206-word top-3 blocks vs the
+  165-word budget. GATE-CONT006-VFIX (local GLM 5.3 Flash, substitution
+  declared): **GO-with-fixes** — FIX-R (budget-FIT renderer: greedy in
+  frozen retrieval order, stop-at-first-misfit, renumber, hard error only
+  when a single lesson cannot fit; byte-identical for R2 — max block 138;
+  lessons.injected telemetry now reports RENDERED ids + budget_dropped,
+  VF-2) and FIX-S (activation invalid-probe semantics: MISSING/MALFORMED
+  blocks, format-miss is a VALID scored observation — the gate found the
+  frozen code let ONE R2 prose reply veto a +0.2143 signal while R0's
+  EIGHT format-misses were silently scored, VF-3 asymmetry; outcome
+  invariant under the exclude-reading, +0.1963 — not outcome-engineered).
+  Evidence snapshot taken before the re-run (…-snapshot-vfix); 11
+  conditions recorded in docs/GATE-CONT006-VFIX.md.
+- Phase V resume (R3 only; R0/R2 skipped verbatim — zero repeated
+  inference): R3 7/7 (9/28 = 0.3214).
+- **V-activate (final): R2 ACTIVATE (SX−S0 = +0.2143, 0.2857 vs 0.0714);
+  R3 ACTIVATE (+0.2500, 0.3214 vs 0.0714). Active stores committed +
+  digested (r2 46efc799…, r3 1acf7842…) BEFORE any transfer request —
+  prereg §6/§7.2 store freeze satisfied.** The lesson channel demonstrably
+  moves validation-cluster behavior for BOTH sources.
+- NEXT: Phase P pilot (seeds 6001/6002; R0/R1/R2/R3 on TR+GC; RBAD/RGOLD
+  counterfactual subset) -> frozen pilot analysis -> pilot-gate checkpoint.

@@ -346,19 +346,41 @@ def retrieve(query_text: str, store: dict, top_k: int = LESSON_TOP_K) -> list[di
     return [les for score, les in scored if score > 0][:top_k]
 
 
-def render_block(selected: list[dict]) -> str:
+def render_block(selected: list[dict]) -> tuple[str, list[dict]]:
     """Plain-prose rendering, one numbered line per lesson, imperative
-    behavioral form, no quoting (design §7 anti-salience)."""
-    lines = [LESSON_BLOCK_HEADER]
-    for i, les in enumerate(selected, start=1):
+    behavioral form, no quoting (design §7 anti-salience).
+
+    FIX-R (GATE-CONT006-VFIX, predicate pinned): lessons are included
+    GREEDILY in the given (frozen retrieval) order, stopping at the first
+    lesson that would exceed the MAX_RENDER_WORDS budget; the block is
+    renumbered over the lessons actually rendered. Hard error iff the
+    header plus a SINGLE lesson exceeds the budget, or whenever NOTHING
+    fits (never a header-only render of a non-empty selection). Returns
+    (block, rendered_lessons) — telemetry must report the RENDERED ids."""
+    def line_for(i: int, les: dict) -> str:
         when = "; ".join(str(a) for a in les.get("applicability", [])) or "relevant"
-        lines.append(f"{i}. {les['title']}. When {when}: {les['recommendedBehavior']}")
-    block = "\n".join(lines)
-    if len(block.split()) > MAX_RENDER_WORDS:
+        return f"{i}. {les['title']}. When {when}: {les['recommendedBehavior']}"
+
+    if not selected:
+        raise ValueError("render_block: empty selection")
+    header_words = len(LESSON_BLOCK_HEADER.split())
+    single = len(line_for(1, selected[0]).split())
+    if header_words + single > MAX_RENDER_WORDS:
         raise ValueError(
-            f"rendered lesson block {len(block.split())} words > budget {MAX_RENDER_WORDS}"
-        )
-    return block
+            f"single lesson renders {header_words + single} words > budget "
+            f"{MAX_RENDER_WORDS} (header + first lesson)")
+    lines = [LESSON_BLOCK_HEADER]
+    rendered: list[dict] = []
+    for les in selected:
+        candidate = line_for(len(rendered) + 1, les)
+        used = sum(len(x.split()) for x in lines)
+        if used + len(candidate.split()) > MAX_RENDER_WORDS:
+            break
+        lines.append(candidate)
+        rendered.append(les)
+    if not rendered:
+        raise ValueError("no lesson fits the render budget")
+    return "\n".join(lines), rendered
 
 
 class LessonChannel:
@@ -377,7 +399,7 @@ class LessonChannel:
     def retrieve(self, query_text: str) -> list[dict]:
         return retrieve(query_text, self.store)
 
-    def render(self, selected: list[dict]) -> str:
+    def render(self, selected: list[dict]) -> tuple[str, list[dict]]:
         return render_block(selected)
 
 

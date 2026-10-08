@@ -1,0 +1,59 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-v-20261008-225347",
+ "arm": "R0",
+ "seed": 6001,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": null,
+ "lesson_store_status": null,
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "berthing",
+   "observed_normalized": "the pilot slip count at dawn.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6005",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "51",
+   "observed_normalized": "55",
+   "observed_label": "55",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6105",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "E17",
+   "observed_normalized": "e23.",
+   "observed_label": "E23",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6403",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "training",
+   "observed_normalized": "the harness pass for the climbing unit.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6204",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 0,
+ "probes_total": 4,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 0,
+ "duration_s": 50.2,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

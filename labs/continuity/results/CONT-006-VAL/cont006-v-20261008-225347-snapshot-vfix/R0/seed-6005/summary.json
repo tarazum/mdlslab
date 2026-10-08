@@ -1,0 +1,59 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-v-20261008-225347",
+ "arm": "R0",
+ "seed": 6005,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": null,
+ "lesson_store_status": null,
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "berthing",
+   "observed_normalized": "the launch berth round at noon.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6005",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "63",
+   "observed_normalized": "67",
+   "observed_label": "67",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6105",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "E41",
+   "observed_normalized": "e29.",
+   "observed_label": "E29",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6403",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "training",
+   "observed_normalized": "the splint pass for the evening course.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6204",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 0,
+ "probes_total": 4,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 0,
+ "duration_s": 43.7,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

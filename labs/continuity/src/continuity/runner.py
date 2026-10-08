@@ -339,17 +339,24 @@ def run_scenario(
                 # system message; retrieval telemetry per session (the M2b
                 # "was the block actually rendered" check, at scale).
                 selected = lessons.retrieve(session["turns"][0]["text"])
+                block = None
+                rendered_ids: list[str] = []
                 if selected:
-                    context.append(
-                        {"role": "system", "content": lessons.render(selected)}
-                    )
+                    block, rendered = lessons.render(selected)
+                    # FIX-R condition 2 (GATE-CONT006-VFIX): telemetry
+                    # reports the RENDERED lessons (post-budget-fit), not
+                    # the retrieved set — the M2b rendered-check reads this.
+                    rendered_ids = [les["lessonId"] for les in rendered]
+                    context.append({"role": "system", "content": block})
                 journal.emit(
                     "lessons.injected",
                     {
                         "query_turn_ref": f"s{session['index']}t1",
-                        "lesson_ids": [les["lessonId"] for les in selected],
-                        "injected": bool(selected),
-                        "chars": len(lessons.render(selected)) if selected else 0,
+                        "retrieved_ids": [les["lessonId"] for les in selected],
+                        "lesson_ids": rendered_ids,
+                        "injected": bool(rendered_ids),
+                        "budget_dropped": len(selected) - len(rendered_ids),
+                        "chars": len(block) if block else 0,
                         "renderer": "prose",
                         "store_sha256": lessons.digest,
                         "store_status": lessons.status,

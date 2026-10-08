@@ -1,0 +1,3 @@
+{"payload": {"arm": "R3", "family": "correction_reuse", "scenario": "cr-6005"}, "run_id": "cont006-v-20261008-225347-R3-seed6001", "scenario": "cr-6005", "seq": 1, "session": null, "ts": "2026-10-08T20:04:57Z", "type": "scenario.start"}
+{"payload": {"index": 1}, "run_id": "cont006-v-20261008-225347-R3-seed6001", "scenario": "cr-6005", "seq": 2, "session": 1, "ts": "2026-10-08T20:04:57Z", "type": "session.start"}
+{"payload": {"reason": "arm-R3 session-local reset; persistent memory store retained"}, "run_id": "cont006-v-20261008-225347-R3-seed6001", "scenario": "cr-6005", "seq": 3, "session": 1, "ts": "2026-10-08T20:04:57Z", "type": "session.context_reset"}
