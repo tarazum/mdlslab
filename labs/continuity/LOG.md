@@ -2676,3 +2676,51 @@ Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT006.md delivered.
   103 turns/arm-seed), active stores pinned by digest (r2 46efc799…,
   r3 1acf7842…). Est ~70 min GPU under the shared lock; wall guard 270 min
   vs the 300 min declared cap.
+
+## 2026-10-09 — CONT-006 CONFIRMATORY COMPLETE: "no confirmatory difference established" (Δ = 0.019, CI [−0.076, 0.114], MME 0.333)
+
+Runs of record: VAL cont006-v-20261008-225347 + PILOT cont006-p-20261008-232209
+(3 invocations) + CONFIRMATORY cont006-c-20261009-001720 (wall 4033.2 s,
+20/20 arm-seeds). Analysis ONLY from the frozen analyze_confirmatory_
+cont006.py over all 7 seeds (pilot seeds part of the dataset — single
+freeze; exactly 10,000 draws RNG 20261008, shared indices; the band-rule
+upward re-derivation applied: MME 0.333).
+
+**Primary: Δ = S(R2) − S(R0) = 0.019, 95% CI [−0.076, 0.114] — CI includes
+0, far below the MME -> "no confirmatory difference established."** The
+worker's evidence-validated lessons did NOT improve held-out transfer pass
+rates. Completeness 15x7x4 (cell guard); guess bands per arm recorded.
+
+Secondaries (the real story of this run):
+- **Channel liveness is PROVEN at scale**: invalid-format share on all 105
+  TR probes x arms — R0 0.162 / R1 0.133 vs **R2 0.0095 / R3 0.029**: the
+  format-discipline lessons erased format misses almost completely. The
+  delivery channel changes behavior, replicably, on every seed.
+- But the cured format misses converted into WRONG-LABEL answers, not
+  correct ones: pass rates flat (R1−R0 = 0.000; R3−R0 = 0.029 [−0.057,
+  0.105]; R2−R0 = 0.019). The interpretation grid's third branch fires:
+  the channel is NOT dead (R2/R3 format effect + VAL activations +0.21/
+  +0.25) — the knowledge carried by current-generation lessons does not
+  convert to correct answers on the trap-heavy TR surface. The null is
+  about LESSON CONTENT, not delivery.
+- Per-class (descriptive, N-3 co-signature note applies): R2 +0.238 on
+  FP-2 (anchoring family — its strongest class), −0.143 on FP-3b; R3
+  +0.143 on FP-3a and FP-4. No class carries a consistent both-arm gain.
+- Harm containment (owner-override headline): the pilot's BAD-lesson
+  parroting finding stands — the channel that reliably teaches format can
+  just as reliably teach a wrong rule verbatim (agent quoted the injected
+  lesson and acted on it). Lesson channels need adversarial validation
+  before deployment; this is CONT-001's parroting phenomenon reproduced
+  through a NEW mechanism.
+- Run-record header committed (revs ae8edb4..HEAD, wall reconciliation:
+  behavioral total 6949.8 s cell-sums across all attempts incl. invalidated
+  evidence cells + worker ~40 min qwen — far under the 5 h cap; carried
+  notes CN-A/B/C, N-3, PW-6, PW-GATE, PW-OVERRIDE embedded in the frozen
+  analyzer's header).
+
+Labeled "agent-pre-registered + owner override, pending owner acceptance".
+Scope caveats: one working core (granite-code:8b) + one reflector
+(qwen36-35b-a3b) @ temp 0, synthetic v3l content, 4-lesson worker store /
+8-lesson gold store, activation rule at +0.05 directional; PB-071/CN-003
+determinism caveat travels with every number. Cross-model test 4 remains a
+bounded later stage (CONT-002 machinery) — NOT run.

@@ -1,0 +1,44 @@
+{
+ "kind": "cont006-run-record-header",
+ "label": "agent-pre-registered + owner override (2026-10-09), pending owner acceptance",
+ "revs_of_execution": {
+  "7a1b607": "continuity(cont-006): OWNER OVERRIDE recorded \u2014 confirmatory authorized despite pilot NO-GO; analyzer loader fix + PW-OVERRIDE carried note",
+  "5650e33": "continuity(cont-006): PILOT COMPLETE \u2014 frozen analyzer NO-GO (BAD-lesson parroting verbatim in RBAD reply; GOLD-TRIV 0.071<0.10; MME re-derived 0.333; format-miss 0.000 with lessons) \u2014 chain stopped at owner gate per prereg",
+  "c60686e": "docs: index OmO and Herdr as deferred research candidates",
+  "bd240b6": "docs: propose bounded OmO and Herdr agent runtime evaluation",
+  "553dbab": "continuity(cont-006): R1 config defect (engine mutated frozen calibration file \u2014 caught by freeze digest guard); restored, per-run-copy wiring, R1 pilot attempts invalidated for re-run",
+  "2182250": "continuity(cont-006): pre-inference launch fix \u2014 GC_IDS constant call sites (zero inference; infra clause)",
+  "17f6b32": "continuity(cont-006): Phase V + STORE FREEZE \u2014 VFIX gate (FIX-R budget-fit renderer, FIX-S activation semantics) executed; R2 ACTIVATED +0.2143, R3 +0.2500; active stores digested pre-transfer",
+  "b1e914b": "continuity(cont-006): contamination gate GO (0 v3l hits, R3 blindness verified, chain 37/37) \u2014 Phase V unblocked",
+  "8991027": "continuity(cont-006): Phases W+G complete \u2014 worker 50/50 (58 candidates), blind R3 8/8; GATE-POSTW GO-with-fixes (FIX-A/B/C + D-PW-7 store round-trip bug) executed + re-checks PASS; v2 stores frozen",
+  "c9176d3": "continuity(cont-006): Phase W pre-inference crash fix (token substitution + condensed key-turn bundles, 3.3k tokens); digest refresh; R3 blind authoring in flight",
+  "5a9db88": "continuity(cont-006): GATE GO-with-conditions (GLM Flash substitution declared); condition A (D-1 shared bootstrap indices) executed + verified SATISFIED; regression artifact; condition B",
+  "4a00423": "continuity(cont-006): FREEZE complete \u2014 36 digests, analyzers first (self-tests PASS, cell-guard bug caught), lessons+reflection_v2 modules, R-arms runner wiring (offline smoke PASS x6), live preflight PASS"
+ },
+ "runs_of_record": {
+  "phase_w_worker": "results/CONT-006-WORKER/cont006-worker-20261008-215103 (+ -v2 re-validation)",
+  "phase_v_activation": "results/CONT-006-VAL/cont006-v-20261008-225347 (+ snapshot-vfix)",
+  "phase_p_pilot": "results/CONT-006-PILOT/cont006-p-20261008-232209 (3 invocations; R1 attempt-1 dirs invalidated-config, kept as evidence)",
+  "phase_c_confirmatory": "results/CONT-006-CONFIRMATORY/cont006-c-20261009-001720"
+ },
+ "wall_reconciliation_s": {
+  "phase_v_cells": 960.4,
+  "phase_p_cells": 1956.7,
+  "phase_c_cells": 4032.7,
+  "behavioral_total": 6949.8,
+  "worker_pass_qwen_approx": 2400,
+  "declared_gpu_cap": 18000,
+  "within_cap": true,
+  "note": "cell walls summed across ALL attempts incl. invalidated R1 evidence cells; cells.json is DERIVED (audit path = per-cell summaries + traces)"
+ },
+ "owner_decisions": [
+  "2026-10-08 prereg ACCEPTED (pre-freeze)",
+  "2026-10-09 pilot NO-GO OVERRIDDEN \u2014 confirmatory authorized (b); harm-containment finding carried as headline secondary"
+ ],
+ "gates": [
+  "GATE-CONT006 (GO; D-1)",
+  "GATE-CONT006-POSTW (GO-with-fixes; FIX-A/B/C; D-PW-7)",
+  "GATE-CONT006-CONTAMINATION (GO)",
+  "GATE-CONT006-VFIX (GO-with-fixes; FIX-R/S)"
+ ]
+}

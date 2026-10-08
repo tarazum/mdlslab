@@ -1,0 +1,283 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-c-20261009-001720",
+ "arm": "R1",
+ "seed": 6007,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": null,
+ "lesson_store_status": null,
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "berthing",
+   "observed_normalized": "the call is logged. the options are: cargo, berthing, tickets, safety, fueling, crewing. please reply with the label only.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "cargo",
+   "observed_normalized": "the call is logged. the options are: cargo, berthing, tickets, safety, fueling, crewing. please reply with the label only.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6002",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "fueling",
+   "observed_normalized": "the call is logged. the options are: cargo, berthing, tickets, safety, fueling, crewing. please reply with the label only.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "crewing",
+   "observed_normalized": "the call is logged. the options are: cargo, berthing, tickets, safety, fueling, crewing. please reply with the label only.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6004",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "87",
+   "observed_normalized": "87",
+   "observed_label": "87",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "37",
+   "observed_normalized": "41",
+   "observed_label": "41",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6102",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "49",
+   "observed_normalized": "44.",
+   "observed_label": "44",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-6103",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "44",
+   "observed_normalized": "55.",
+   "observed_label": "55",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-6104",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "F47",
+   "observed_normalized": "f52.",
+   "observed_label": "F52",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dr-6301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "S56",
+   "observed_normalized": "s72.",
+   "observed_label": "S72",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dr-6302",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "H53",
+   "observed_normalized": "h23.",
+   "observed_label": "H23",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "N53",
+   "observed_normalized": "n53",
+   "observed_label": "N53",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6402",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the flag that marks the hackle cart is \"plum\".",
+   "observed_label": "plum",
+   "observed_position": 4,
+   "labels": [
+    "isabella",
+    "grenadine",
+    "sage",
+    "ochre",
+    "plum",
+    "drab"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "there are 39 pucks waiting in the house tub.",
+   "observed_label": "39",
+   "observed_position": 4,
+   "labels": [
+    "27",
+    "30",
+    "33",
+    "36",
+    "39",
+    "42"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "sorrel",
+   "observed_label": "sorrel",
+   "observed_position": 4,
+   "labels": [
+    "walnut",
+    "clover",
+    "lovage",
+    "myrtle",
+    "sorrel",
+    "tansy"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "62",
+   "observed_label": "62",
+   "observed_position": 4,
+   "labels": [
+    "50",
+    "53",
+    "56",
+    "59",
+    "62",
+    "65"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the lower walk landing faces forward.",
+   "observed_label": "forward",
+   "observed_position": 3,
+   "labels": [
+    "abeam",
+    "starboard",
+    "portside",
+    "forward",
+    "abaft",
+    "amidships"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "there are 39 mantles waiting in the tool drawer.",
+   "observed_label": "39",
+   "observed_position": 5,
+   "labels": [
+    "24",
+    "27",
+    "30",
+    "33",
+    "36",
+    "39"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "servicing",
+   "observed_normalized": "servicing",
+   "observed_label": "servicing",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "lending",
+   "observed_normalized": "the correct answer is 'training'. this is because the slate cards are locked away, so the only option that makes sense is 'training'. the other options are not relevant to the situation.",
+   "observed_label": "training",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6202",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "storage",
+   "observed_normalized": "the correct answer is 'training'. this is because the slate cards are locked away, so the only option that makes sense is 'training'. the other options are not relevant to the situation.",
+   "observed_label": "training",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6203",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 3,
+ "probes_total": 21,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 0,
+ "duration_s": 222.8,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

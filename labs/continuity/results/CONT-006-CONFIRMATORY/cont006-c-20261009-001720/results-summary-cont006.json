@@ -1,0 +1,155 @@
+{
+ "kind": "cont006-confirmatory",
+ "primary": {
+  "endpoint": "delta = S(R2) - S(R0), 15 TR clusters x 7 seeds",
+  "mme": 0.3333333333333333,
+  "band_note": "band-rule upward re-derivation applied: MME 0.3333333333333333",
+  "bootstrap": {
+   "draws": 10000,
+   "rng_seed": 20261008,
+   "method": "cluster percentile, same indices reused for every CI in this record"
+  },
+  "delta": 0.019,
+  "ci_lo": -0.0762,
+  "ci_hi": 0.1143,
+  "ci_excludes_0_up": false,
+  "ci_excludes_0_down": false
+ },
+ "verdict": "no confirmatory difference established",
+ "secondaries": {
+  "note": "exploratory, never promotable (prereg \u00a714)",
+  "r3_minus_r0_channel_viability": {
+   "delta": 0.0286,
+   "ci_lo": -0.0571,
+   "ci_hi": 0.1048,
+   "ci_excludes_0_up": false,
+   "ci_excludes_0_down": false
+  },
+  "r1_minus_r0_parroting_replication": {
+   "delta": 0.0,
+   "ci_lo": -0.1048,
+   "ci_hi": 0.1143,
+   "ci_excludes_0_up": false,
+   "ci_excludes_0_down": false
+  },
+  "invalid_format_decomposition": {
+   "R0": {
+    "probes": 105,
+    "wrong_label": 68,
+    "format_miss": 17,
+    "format_miss_share": 0.1619
+   },
+   "R1": {
+    "probes": 105,
+    "wrong_label": 71,
+    "format_miss": 14,
+    "format_miss_share": 0.1333
+   },
+   "R2": {
+    "probes": 105,
+    "wrong_label": 82,
+    "format_miss": 1,
+    "format_miss_share": 0.0095
+   },
+   "R3": {
+    "probes": 105,
+    "wrong_label": 79,
+    "format_miss": 3,
+    "format_miss_share": 0.0286
+   }
+  },
+  "per_taxonomy_class_delta": {
+   "FP-1": {
+    "clusters": [
+     "cu-6101",
+     "cu-6102",
+     "cu-6103",
+     "cu-6104"
+    ],
+    "delta_mean_r2_minus_r0": 0.0,
+    "delta_mean_r3_minus_r0": -0.0357
+   },
+   "FP-2": {
+    "clusters": [
+     "rt-6201",
+     "rt-6202",
+     "rt-6203"
+    ],
+    "delta_mean_r2_minus_r0": 0.2381,
+    "delta_mean_r3_minus_r0": 0.0952
+   },
+   "FP-3a": {
+    "clusters": [
+     "cr-6001",
+     "cr-6002"
+    ],
+    "delta_mean_r2_minus_r0": 0.0,
+    "delta_mean_r3_minus_r0": 0.1429
+   },
+   "FP-3b": {
+    "clusters": [
+     "cr-6003",
+     "cr-6004"
+    ],
+    "delta_mean_r2_minus_r0": -0.1429,
+    "delta_mean_r3_minus_r0": -0.1429
+   },
+   "FP-4": {
+    "clusters": [
+     "dx-6401",
+     "dx-6402"
+    ],
+    "delta_mean_r2_minus_r0": 0.0,
+    "delta_mean_r3_minus_r0": 0.1429
+   },
+   "FP-5": {
+    "clusters": [
+     "dr-6301",
+     "dr-6302"
+    ],
+    "delta_mean_r2_minus_r0": -0.0714,
+    "delta_mean_r3_minus_r0": 0.0
+   }
+  },
+  "guess_band_and_position": {
+   "R0": {
+    "n": 42,
+    "valid_share": 0.9762,
+    "position0_share": 0.0488,
+    "band_dev": 0.1179
+   },
+   "R1": {
+    "n": 42,
+    "valid_share": 1.0,
+    "position0_share": 0.0714,
+    "band_dev": 0.0952
+   },
+   "R2": {
+    "n": 42,
+    "valid_share": 0.9286,
+    "position0_share": 0.0513,
+    "band_dev": 0.1154
+   },
+   "R3": {
+    "n": 42,
+    "valid_share": 0.9048,
+    "position0_share": 0.0526,
+    "band_dev": 0.114
+   }
+  }
+ },
+ "header": {
+  "revs": "recorded from env.json files at run-record assembly",
+  "wall_reconciliation": "per-arm totals = sum over arm-seed summaries across BOTH roots (template \u00a75)",
+  "carried_notes": {
+   "CN-A": "power-model caveats: paired-eps assumption narrows \u0394's CI; b0 anchored to C2 T-arms (corrected 0.525, PR-REVIEW-CONT006 RC-1) \u2014 if R0 behaves differently the realized power shifts; the pilot-gate re-check governs",
+   "CN-B": "pilot GO criteria 1\u20132 condition the LAUNCH, not the estimate \u2014 no endpoint-value condition selects the dataset; the headroom criterion reads R0 only",
+   "CN-C": "pilot criterion 1(ii) runs on ~14 probes (binomial sd ~0.12); a violation routes to the owner gate, never an automatic stop",
+   "N-3": "FP-3a clusters (cr-6001/6002) seed the agent's own wrong first answer by construction \u2014 per-class \u0394 partially co-measures FP-2 susceptibility; class attribution reads weaker than it looks",
+   "PW-6": "worker sampling config frozen since FREEZE is num_ctx 8192 / num_predict 768 (reflection_v2.WORKER_OPTIONS) while prereg \u00a71 quotes the WORKING-CORE config 4096/256 \u2014 different roles, declared per GATE-CONT006-POSTW condition 10 (low materiality)",
+   "PW-GATE": "R2/R3 stores are the post-W v2 artifacts (GATE-CONT006-POSTW: FIX-A/B/C, single-shot re-validation of the committed raw log, zero new inference; the pre-fix 0-accepted record kept byte-untouched in the original worker dir)",
+   "PW-OVERRIDE": "OWNER OVERRIDE 2026-10-09: the pilot NO-GO (criterion 1(i) BAD-lesson parroting \u2014 an agent quoted the injected bad lesson verbatim and acted on it; criterion 2 0.071 < 0.10) was explicitly OVERRIDDEN by the owner ('(b) \u0414\u043e\u0437\u0432\u043e\u043b\u0438\u0442\u0438 \u0444\u0456\u043d\u0430\u043b\u044c\u043d\u0438\u0439 \u0437\u0430\u0431\u0456\u0433 \u043f\u043e\u043f\u0440\u0438 NO-GO', ROADMAP Owner decisions 2026-10-09). The confirmatory runs under the frozen analysis with the band-derived MME 0.333; the harm-containment finding is a headline secondary, and the primary R2-R0 endpoint is unaffected (counterfactual arms never enter it)"
+  },
+  "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+ }
+}

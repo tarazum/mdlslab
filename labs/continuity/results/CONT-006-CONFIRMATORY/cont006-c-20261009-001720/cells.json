@@ -1,0 +1,149 @@
+{
+ "kind": "cont006-cells",
+ "run_id": "cont006-c-20261009-001720",
+ "phase": "C",
+ "derived": true,
+ "cells": {
+  "R0/seed-6003": {
+   "wall_s": 205.3,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 3,
+   "lesson_store_sha256": null
+  },
+  "R0/seed-6004": {
+   "wall_s": 194.1,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 2,
+   "lesson_store_sha256": null
+  },
+  "R0/seed-6005": {
+   "wall_s": 191.6,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 4,
+   "lesson_store_sha256": null
+  },
+  "R0/seed-6006": {
+   "wall_s": 194.8,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 1,
+   "lesson_store_sha256": null
+  },
+  "R0/seed-6007": {
+   "wall_s": 191.2,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 2,
+   "lesson_store_sha256": null
+  },
+  "R1/seed-6003": {
+   "wall_s": 212.2,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 2,
+   "lesson_store_sha256": null
+  },
+  "R1/seed-6004": {
+   "wall_s": 205.2,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 2,
+   "lesson_store_sha256": null
+  },
+  "R1/seed-6005": {
+   "wall_s": 216.8,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 3,
+   "lesson_store_sha256": null
+  },
+  "R1/seed-6006": {
+   "wall_s": 216.4,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 2,
+   "lesson_store_sha256": null
+  },
+  "R1/seed-6007": {
+   "wall_s": 222.8,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 3,
+   "lesson_store_sha256": null
+  },
+  "R2/seed-6003": {
+   "wall_s": 197.2,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 3,
+   "lesson_store_sha256": "46efc799f823ef96664676864c67da222e0511d552550e96bd5a89ca69da9cca"
+  },
+  "R2/seed-6004": {
+   "wall_s": 196.8,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 1,
+   "lesson_store_sha256": "46efc799f823ef96664676864c67da222e0511d552550e96bd5a89ca69da9cca"
+  },
+  "R2/seed-6005": {
+   "wall_s": 194.9,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 3,
+   "lesson_store_sha256": "46efc799f823ef96664676864c67da222e0511d552550e96bd5a89ca69da9cca"
+  },
+  "R2/seed-6006": {
+   "wall_s": 192.9,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 2,
+   "lesson_store_sha256": "46efc799f823ef96664676864c67da222e0511d552550e96bd5a89ca69da9cca"
+  },
+  "R2/seed-6007": {
+   "wall_s": 197.6,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 3,
+   "lesson_store_sha256": "46efc799f823ef96664676864c67da222e0511d552550e96bd5a89ca69da9cca"
+  },
+  "R3/seed-6003": {
+   "wall_s": 202.0,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 5,
+   "lesson_store_sha256": "1acf7842a72b3733fcc49bb2dc25da3507599b561bf3e76a33eb4b030ffb4957"
+  },
+  "R3/seed-6004": {
+   "wall_s": 200.4,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 1,
+   "lesson_store_sha256": "1acf7842a72b3733fcc49bb2dc25da3507599b561bf3e76a33eb4b030ffb4957"
+  },
+  "R3/seed-6005": {
+   "wall_s": 202.9,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 3,
+   "lesson_store_sha256": "1acf7842a72b3733fcc49bb2dc25da3507599b561bf3e76a33eb4b030ffb4957"
+  },
+  "R3/seed-6006": {
+   "wall_s": 200.1,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 0,
+   "lesson_store_sha256": "1acf7842a72b3733fcc49bb2dc25da3507599b561bf3e76a33eb4b030ffb4957"
+  },
+  "R3/seed-6007": {
+   "wall_s": 197.5,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 3,
+   "lesson_store_sha256": "1acf7842a72b3733fcc49bb2dc25da3507599b561bf3e76a33eb4b030ffb4957"
+  }
+ },
+ "total_wall_s": 4033.2
+}

@@ -1,0 +1,1036 @@
+{
+  "agentId": "continuity/granite-code:8b@36c3c3b9683b",
+  "capabilities": [
+    {
+      "binomial_sd": 0.1076,
+      "family": "contradiction_update",
+      "passed": 10,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "reflection (M4, deterministic): cumulative in-run probe counts after family completion; CN-009 exposure \u2014 renders into later sessions of the same run",
+        "numbers": {
+          "observed_passed": 1,
+          "observed_total": 3,
+          "observed_turn_refs": [
+            "s3t2",
+            "s3t2",
+            "s4t2",
+            "s4t2"
+          ],
+          "previous": {
+            "passed": 9,
+            "total": 9
+          },
+          "seed": 6007
+        },
+        "source_artifact": "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy)"
+      },
+      "rate": 0.833,
+      "seeds": [
+        11,
+        22,
+        33,
+        6007
+      ],
+      "total": 12,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.953,
+        "low": 0.552
+      }
+    },
+    {
+      "binomial_sd": 0.125,
+      "family": "correction_reuse",
+      "passed": 9,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "reflection (M4, deterministic): cumulative in-run probe counts after family completion; CN-009 exposure \u2014 renders into later sessions of the same run",
+        "numbers": {
+          "observed_passed": 0,
+          "observed_total": 3,
+          "observed_turn_refs": [
+            "s3t2",
+            "s3t2",
+            "s3t2",
+            "s3t2"
+          ],
+          "previous": {
+            "passed": 9,
+            "total": 9
+          },
+          "seed": 6007
+        },
+        "source_artifact": "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy)"
+      },
+      "rate": 0.75,
+      "seeds": [
+        11,
+        22,
+        33,
+        6007
+      ],
+      "total": 12,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.911,
+        "low": 0.468
+      }
+    },
+    {
+      "binomial_sd": 0.125,
+      "family": "delayed_recall",
+      "passed": 9,
+      "probes_per_seed": 4,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 3,
+            "22": 3,
+            "33": 3
+          },
+          "probes_per_seed": 4,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 0.75,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 12,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.911,
+        "low": 0.468
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "distractor_recall",
+      "passed": 9,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 3,
+            "22": 3,
+            "33": 3
+          },
+          "probes_per_seed": 3,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 1.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 9,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 1.0,
+        "low": 0.701
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "repeated_task",
+      "passed": 0,
+      "probes_per_seed": 6,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 0,
+            "22": 0,
+            "33": 0
+          },
+          "probes_per_seed": 6,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 0.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 18,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.176,
+        "low": 0.0
+      }
+    }
+  ],
+  "createdUtc": "2026-10-01T22:00:58Z",
+  "format": "continuity-selfmodel",
+  "history": [
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 9
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 1,
+      "updatedUtc": "2026-10-01T22:00:58Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 9
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 2,
+      "updatedUtc": "2026-10-08T21:48:45Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 9
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 3,
+      "updatedUtc": "2026-10-08T21:49:00Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 4,
+      "updatedUtc": "2026-10-08T21:49:13Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 5,
+      "updatedUtc": "2026-10-08T21:49:30Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 6,
+      "updatedUtc": "2026-10-08T21:49:54Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 10,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 7,
+      "updatedUtc": "2026-10-08T21:50:07Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 10,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 8,
+      "updatedUtc": "2026-10-08T21:50:25Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 10,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 9,
+      "updatedUtc": "2026-10-08T21:50:34Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 10,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 10,
+      "updatedUtc": "2026-10-08T21:50:43Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 10,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 11,
+      "updatedUtc": "2026-10-08T21:50:52Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 10,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 12,
+      "updatedUtc": "2026-10-08T21:51:15Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 10,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 13,
+      "updatedUtc": "2026-10-08T21:51:27Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 10,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 14,
+      "updatedUtc": "2026-10-08T21:51:36Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 10,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 15,
+      "updatedUtc": "2026-10-08T21:52:01Z"
+    }
+  ],
+  "knownFailurePatterns": [
+    {
+      "evidence": {
+        "numbers": {
+          "family": "repeated_task",
+          "observed_normalized": [
+            "classify this incident report. report: 'a visitor's badge opens the staff corridor door.' reply with the label only. security",
+            "classify this incident report. report: 'the atrium door handle came off in a visitor's hand.' reply with the label only. security",
+            "classify this incident report. report: 'the booking system drops half of the evening-class sign-ups.' reply with the label only. program",
+            "classify this incident report. report: 'the hall thermostat reads 14 degrees all morning.' reply with the label only. computing",
+            "classify this incident report. report: 'three ceiling lights are flickering in the reading room.' reply with the label only. facilities",
+            "classify this incident report. report: 'thursday's yoga class has no instructor this week.' reply with the label only. computing",
+            "classify this incident report. report: 'thursday's yoga class has no instructor this week.' reply with the label only. facilities"
+          ],
+          "pass_count": 0,
+          "scenario": "cal-RT1",
+          "seeds": 3
+        },
+        "refs": [
+          "labs/continuity/docs/FINDINGS.md#CN-007",
+          "calibration scenario cal-RT1 (v2-calibration suite)"
+        ]
+      },
+      "id": "CN-007",
+      "pattern": "The agent's own early answers, once stored in persistent memory, anchor later answers even when a later session supplies the correcting rubric; an early misclassification can repeat across sessions instead of being revised.",
+      "title": "own-answer anchoring"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "family": "contradiction_update",
+          "observed_normalized": [
+            "platform 1 is 20 meters long.",
+            "platform 2 is 15 meters long.",
+            "the waiting room seats 24 people."
+          ],
+          "pass_count": 9,
+          "scenario": "cal-CU1",
+          "seeds": 3
+        },
+        "refs": [
+          "labs/continuity/docs/FINDINGS.md#CN-008",
+          "calibration scenario cal-CU1 (v2-calibration suite)"
+        ]
+      },
+      "id": "CN-008",
+      "pattern": "When a later session corrects an earlier fact, keyword memory recalls both versions and the superseded value may be repeated even though the correction was retrieved first; conflict resolution is the gap.",
+      "title": "no supersession of corrected facts"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "berthing",
+          "family": "correction_reuse",
+          "observed_normalized": [
+            "the call is logged. the options are: cargo, berthing, tickets, safety, fueling, crewing. please reply with the label only."
+          ],
+          "pass_count": 0,
+          "scenario": "cr-6001",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 3, proposal P-0002)"
+        ]
+      },
+      "id": "REF-0002",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario cr-6001 (family correction_reuse) was answered 'the call is logged. the options are: cargo, berthing, tickets, safety, fueling, crewing. please reply with the label only.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: correction_reuse / cr-6001"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "cargo",
+          "family": "correction_reuse",
+          "observed_normalized": [
+            "the call is logged. the options are: cargo, berthing, tickets, safety, fueling, crewing. please reply with the label only."
+          ],
+          "pass_count": 0,
+          "scenario": "cr-6002",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 6, proposal P-0006)"
+        ]
+      },
+      "id": "REF-0006",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario cr-6002 (family correction_reuse) was answered 'the call is logged. the options are: cargo, berthing, tickets, safety, fueling, crewing. please reply with the label only.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: correction_reuse / cr-6002"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "fueling",
+          "family": "correction_reuse",
+          "observed_normalized": [
+            "the call is logged. the options are: cargo, berthing, tickets, safety, fueling, crewing. please reply with the label only."
+          ],
+          "pass_count": 0,
+          "scenario": "cr-6003",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 9, proposal P-0010)"
+        ]
+      },
+      "id": "REF-0010",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario cr-6003 (family correction_reuse) was answered 'the call is logged. the options are: cargo, berthing, tickets, safety, fueling, crewing. please reply with the label only.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: correction_reuse / cr-6003"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "crewing",
+          "family": "correction_reuse",
+          "observed_normalized": [
+            "the call is logged. the options are: cargo, berthing, tickets, safety, fueling, crewing. please reply with the label only."
+          ],
+          "pass_count": 0,
+          "scenario": "cr-6004",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 12, proposal P-0014)"
+        ]
+      },
+      "id": "REF-0014",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario cr-6004 (family correction_reuse) was answered 'the call is logged. the options are: cargo, berthing, tickets, safety, fueling, crewing. please reply with the label only.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: correction_reuse / cr-6004"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "37",
+          "family": "contradiction_update",
+          "observed_normalized": [
+            "41"
+          ],
+          "pass_count": 0,
+          "scenario": "cu-6102",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 18, proposal P-0019)"
+        ]
+      },
+      "id": "REF-0019",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario cu-6102 (family contradiction_update) was answered '41' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: contradiction_update / cu-6102"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "49",
+          "family": "contradiction_update",
+          "observed_normalized": [
+            "44."
+          ],
+          "pass_count": 0,
+          "scenario": "cu-6103",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s4t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 22, proposal P-0024)"
+        ]
+      },
+      "id": "REF-0024",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s4t2 in scenario cu-6103 (family contradiction_update) was answered '44.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: contradiction_update / cu-6103"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "44",
+          "family": "contradiction_update",
+          "observed_normalized": [
+            "55."
+          ],
+          "pass_count": 0,
+          "scenario": "cu-6104",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s4t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 26, proposal P-0029)"
+        ]
+      },
+      "id": "REF-0029",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s4t2 in scenario cu-6104 (family contradiction_update) was answered '55.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: contradiction_update / cu-6104"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "F47",
+          "family": "delayed_recall",
+          "observed_normalized": [
+            "f52."
+          ],
+          "pass_count": 0,
+          "scenario": "dr-6301",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 29, proposal P-0031)"
+        ]
+      },
+      "id": "REF-0031",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario dr-6301 (family delayed_recall) was answered 'f52.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: delayed_recall / dr-6301"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "S56",
+          "family": "delayed_recall",
+          "observed_normalized": [
+            "s72."
+          ],
+          "pass_count": 0,
+          "scenario": "dr-6302",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 32, proposal P-0035)"
+        ]
+      },
+      "id": "REF-0035",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario dr-6302 (family delayed_recall) was answered 's72.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: delayed_recall / dr-6302"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "H53",
+          "family": "distractor_recall",
+          "observed_normalized": [
+            "h23."
+          ],
+          "pass_count": 0,
+          "scenario": "dx-6401",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 35, proposal P-0037)"
+        ]
+      },
+      "id": "REF-0037",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario dx-6401 (family distractor_recall) was answered 'h23.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: distractor_recall / dx-6401"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "the flag that marks the hackle cart is \"plum\"."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-6501",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 40, proposal P-0042)"
+        ]
+      },
+      "id": "REF-0042",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario gc-6501 (family guess_calibration) was answered 'the flag that marks the hackle cart is \"plum\".' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-6501"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "there are 39 pucks waiting in the house tub."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-6501",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s2t3"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 40, proposal P-0043)"
+        ]
+      },
+      "id": "REF-0043",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t3 in scenario gc-6501 (family guess_calibration) was answered 'there are 39 pucks waiting in the house tub.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-6501"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "sorrel"
+          ],
+          "pass_count": 0,
+          "scenario": "gc-6502",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 42, proposal P-0046)"
+        ]
+      },
+      "id": "REF-0046",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario gc-6502 (family guess_calibration) was answered 'sorrel' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-6502"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "62"
+          ],
+          "pass_count": 0,
+          "scenario": "gc-6502",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s2t3"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 42, proposal P-0047)"
+        ]
+      },
+      "id": "REF-0047",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t3 in scenario gc-6502 (family guess_calibration) was answered '62' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-6502"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "the lower walk landing faces forward."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-6503",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 44, proposal P-0050)"
+        ]
+      },
+      "id": "REF-0050",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario gc-6503 (family guess_calibration) was answered 'the lower walk landing faces forward.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-6503"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "there are 39 mantles waiting in the tool drawer."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-6503",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s2t3"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 44, proposal P-0051)"
+        ]
+      },
+      "id": "REF-0051",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t3 in scenario gc-6503 (family guess_calibration) was answered 'there are 39 mantles waiting in the tool drawer.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-6503"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "lending",
+          "family": "repeated_task",
+          "observed_normalized": [
+            "the correct answer is 'training'. this is because the slate cards are locked away, so the only option that makes sense is 'training'. the other options are not relevant to the situation."
+          ],
+          "pass_count": 0,
+          "scenario": "rt-6202",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 50, proposal P-0056)"
+        ]
+      },
+      "id": "REF-0056",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario rt-6202 (family repeated_task) was answered \"the correct answer is 'training'. this is because the slate cards are locked away, so the only option that makes sense is 'training'. the other options are not relevant to the situation.\" and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: repeated_task / rt-6202"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "storage",
+          "family": "repeated_task",
+          "observed_normalized": [
+            "the correct answer is 'training'. this is because the slate cards are locked away, so the only option that makes sense is 'training'. the other options are not relevant to the situation."
+          ],
+          "pass_count": 0,
+          "scenario": "rt-6203",
+          "seed": 6007,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 53, proposal P-0060)"
+        ]
+      },
+      "id": "REF-0060",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario rt-6203 (family repeated_task) was answered \"the correct answer is 'training'. this is because the slate cards are locked away, so the only option that makes sense is 'training'. the other options are not relevant to the situation.\" and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: repeated_task / rt-6203"
+    }
+  ],
+  "lastConsolidation": "2026-10-08T21:52:14Z",
+  "provenance": {
+    "agent_id_basis": {
+      "model": "granite-code:8b",
+      "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd"
+    },
+    "derived_from": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json",
+    "method": "capabilities recomputed from per-family probe counts of the designated calibration run; failure patterns seeded from CN-007/CN-008 evidence in the same calibration aggregate",
+    "note": "calibration-only estimation per docs/EVALUATION-PREP.md 6.8 (CN-009 fix): calibration scenarios are disjoint from the evaluation suite and from fixtures/v1; no M1-M6 or pilot aggregate feeds this store; calibration probes_per_seed per family exceeds the evaluation suite's, so the reflection double-count guard keeps in-run capability updates disabled during the confirmatory run"
+  },
+  "revision": 16,
+  "schemaVersion": 1,
+  "updatedUtc": "2026-10-08T21:52:14Z"
+}

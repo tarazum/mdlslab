@@ -1,0 +1,283 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-c-20261009-001720",
+ "arm": "R3",
+ "seed": 6004,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": "1acf7842a72b3733fcc49bb2dc25da3507599b561bf3e76a33eb4b030ffb4957",
+ "lesson_store_status": "active",
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "berthing",
+   "observed_normalized": "slip tally.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "cargo",
+   "observed_normalized": "safety",
+   "observed_label": "safety",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6002",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "fueling",
+   "observed_normalized": "safety",
+   "observed_label": "safety",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "crewing",
+   "observed_normalized": "safety",
+   "observed_label": "safety",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-6004",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "78",
+   "observed_normalized": "67",
+   "observed_label": "67",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "28",
+   "observed_normalized": "36.",
+   "observed_label": "36",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cu-6102",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "40",
+   "observed_normalized": "44.",
+   "observed_label": "44",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-6103",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "35",
+   "observed_normalized": "41.",
+   "observed_label": "41",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-6104",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "F30",
+   "observed_normalized": "f47.",
+   "observed_label": "F47",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dr-6301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "S39",
+   "observed_normalized": "s50.",
+   "observed_label": "S50",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dr-6302",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "H35",
+   "observed_normalized": "h23.",
+   "observed_label": "H23",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "N35",
+   "observed_normalized": "n23.",
+   "observed_label": "N23",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dx-6402",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the flag that marks the resurface cart is \"grenadine\".",
+   "observed_label": "grenadine",
+   "observed_position": 4,
+   "labels": [
+    "plum",
+    "drab",
+    "mazarine",
+    "isabella",
+    "grenadine",
+    "sage"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "there are 39 pucks waiting in the pro tub.",
+   "observed_label": "39",
+   "observed_position": 5,
+   "labels": [
+    "24",
+    "27",
+    "30",
+    "33",
+    "36",
+    "39"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "vervain",
+   "observed_label": "vervain",
+   "observed_position": 2,
+   "labels": [
+    "sorrel",
+    "tansy",
+    "vervain",
+    "walnut",
+    "clover",
+    "lovage"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "56",
+   "observed_label": "56",
+   "observed_position": 3,
+   "labels": [
+    "47",
+    "50",
+    "53",
+    "56",
+    "59",
+    "62"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "astern",
+   "observed_label": "astern",
+   "observed_position": 2,
+   "labels": [
+    "abaft",
+    "amidships",
+    "astern",
+    "abeam",
+    "starboard",
+    "portside"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-6503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "30",
+   "observed_label": "30",
+   "observed_position": 3,
+   "labels": [
+    "21",
+    "24",
+    "27",
+    "30",
+    "33",
+    "36"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-6503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "servicing",
+   "observed_normalized": "the tag is \"servicing\".",
+   "observed_label": "servicing",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "lending",
+   "observed_normalized": "the tag is \"servicing\".",
+   "observed_label": "servicing",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6202",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "storage",
+   "observed_normalized": "the rack sweep at the rear bay is a servicing task.",
+   "observed_label": "servicing",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-6203",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 1,
+ "probes_total": 21,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 0,
+ "duration_s": 200.4,
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}
