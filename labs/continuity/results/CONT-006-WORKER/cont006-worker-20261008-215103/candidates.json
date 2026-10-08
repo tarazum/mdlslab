@@ -1,0 +1,1883 @@
+{
+ "kind": "cont006-worker-candidates",
+ "candidates": [
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2001|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2001|rt-3205': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2001|cr-3002': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2001|cr-3003': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2001|cr-3007': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2001|cr-3008': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-001",
+    "status": "candidate",
+    "title": "Strict Single-Label Output Enforcement",
+    "context": "Classification and sorting tasks requiring a single label from a defined set.",
+    "observation": "The agent frequently produced prose, partial phrases, or empty responses instead of the exact required label, leading to format misses or wrong-label errors.",
+    "lesson": "When instructed to sort or log into exactly one label, output only the single correct label string. Do not include explanatory text, quotes, or multiple options.",
+    "applicability": [
+     "Task requires selecting exactly one item from a provided list.",
+     "Prompt uses imperative verbs like 'Sort', 'Log', or 'Classify' with 'exactly one label' constraint."
+    ],
+    "recommendedBehavior": "Output the raw label string only. Avoid conversational fillers or restating the question.",
+    "evidence": [
+     "CONT-005-C2-PILOT|A|seed-2001|rt-3201",
+     "CONT-005-C2-PILOT|A|seed-2001|rt-3205",
+     "CONT-005-C2-PILOT|A|seed-2001|cr-3002",
+     "CONT-005-C2-PILOT|A|seed-2001|cr-3003",
+     "CONT-005-C2-PILOT|A|seed-2001|cr-3007",
+     "CONT-005-C2-PILOT|A|seed-2001|cr-3008"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:51:52Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2002|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2002|rt-3203': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2002|rt-3204': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2002|rt-3206': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2002|cr-3003': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2002|cr-3008': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-002",
+    "status": "candidate",
+    "title": "Strict Single-Label Output Enforcement",
+    "context": "Classification tasks requiring a single label from a provided set.",
+    "observation": "The agent frequently produced prose, multiple labels, or empty responses instead of the required single label, leading to format misses.",
+    "lesson": "When asked to sort or classify into exactly one label, output ONLY the single correct label string. Do not include explanatory text, multiple options, or conversational filler.",
+    "applicability": [
+     "Task requires selecting exactly one item from a defined list.",
+     "Prompt explicitly states 'exactly one label' or similar constraint."
+    ],
+    "recommendedBehavior": "Identify the single best matching label and return it as the sole content of the response.",
+    "evidence": [
+     "CONT-005-C2-PILOT|A|seed-2002|rt-3201",
+     "CONT-005-C2-PILOT|A|seed-2002|rt-3203",
+     "CONT-005-C2-PILOT|A|seed-2002|rt-3204",
+     "CONT-005-C2-PILOT|A|seed-2002|rt-3206",
+     "CONT-005-C2-PILOT|A|seed-2002|cr-3003",
+     "CONT-005-C2-PILOT|A|seed-2002|cr-3008"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:52:24Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2003|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2003|rt-3202': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2003|rt-3203': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2003|rt-3205': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2003|rt-3206': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2003|cr-3002': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2003|cr-3003': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-003",
+    "status": "candidate",
+    "title": "Strict Single-Label Output Enforcement",
+    "context": "Classification and sorting tasks requiring a single label from a defined set.",
+    "observation": "The agent frequently produced prose, multiple labels, or empty responses instead of the required single label, even when the correct label was identified internally.",
+    "lesson": "Always output exactly one valid label from the provided options. Do not include explanatory text, prefixes, or multiple choices. If the answer is one of the options, output only that option string.",
+    "applicability": [
+     "Tasks with explicit 'exactly one label' constraints",
+     "Multiple-choice classification scenarios"
+    ],
+    "recommendedBehavior": "Extract the single correct option and return it verbatim without surrounding text.",
+    "evidence": [
+     "CONT-005-C2-PILOT|A|seed-2003|rt-3201",
+     "CONT-005-C2-PILOT|A|seed-2003|rt-3202",
+     "CONT-005-C2-PILOT|A|seed-2003|rt-3203",
+     "CONT-005-C2-PILOT|A|seed-2003|rt-3205",
+     "CONT-005-C2-PILOT|A|seed-2003|rt-3206",
+     "CONT-005-C2-PILOT|A|seed-2003|cr-3002",
+     "CONT-005-C2-PILOT|A|seed-2003|cr-3003"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:52:58Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2004|dr-3301': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2004|dr-3302': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2004|dr-3303': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '5'",
+    "blocked label token 'storage'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-004",
+    "status": "candidate",
+    "title": "FP-5 Storage Miss: Verify Retrieval of Explicitly Stated Facts",
+    "context": "When the environment explicitly states a fact (e.g., a code or count) in the initial log, the agent must ensure this information is stored and retrievable for subsequent queries.",
+    "observation": "In multiple scenarios (dr-3301, dr-3302, dr-3303), the agent acknowledged the stated code but failed to retrieve it correctly in the probe, providing a wrong label instead.",
+    "lesson": "Upon receiving an explicit fact in the log, immediately confirm its storage. Before answering a probe, verify that the stored value matches the query target. Do not guess or rely on similar-looking distractors if the stored value is available.",
+    "applicability": [
+     "Environment provides a specific fact (code, number, label) in the initial instruction.",
+     "Subsequent query asks for that specific fact."
+    ],
+    "recommendedBehavior": "Explicitly acknowledge the fact and mentally or explicitly tag it for retrieval. When queried, retrieve the exact stored value. If the stored value is not found, indicate inability to answer rather than guessing.",
+    "evidence": [
+     "CONT-005-C2-PILOT|A|seed-2004|dr-3301",
+     "CONT-005-C2-PILOT|A|seed-2004|dr-3302",
+     "CONT-005-C2-PILOT|A|seed-2004|dr-3303"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:53:40Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2004|dx-3401': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2004|dx-3402': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2004|dx-3403': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '4'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-005",
+    "status": "candidate",
+    "title": "FP-4 Distractor Susceptibility: Prioritize Explicit Target Over Similar Lures",
+    "context": "When the probe question asks for a specific item, the agent must distinguish the target from similar-looking options (distractors) provided in the query.",
+    "observation": "In scenarios dx-3401, dx-3402, dx-3403, the agent selected a distractor option that looked similar to the target or was present in the options list, rather than the correct target code.",
+    "lesson": "When presented with multiple options in a query, carefully match the query's target description to the correct option. Do not select an option simply because it appears in the list or resembles the target. Verify the match against the stored fact.",
+    "applicability": [
+     "Query provides multiple options.",
+     "One option is the correct target, others are distractors."
+    ],
+    "recommendedBehavior": "Identify the target from the query. Compare the target to the stored fact. Select the option that exactly matches the stored fact. Ignore other options in the list.",
+    "evidence": [
+     "CONT-005-C2-PILOT|A|seed-2004|dx-3401",
+     "CONT-005-C2-PILOT|A|seed-2004|dx-3402",
+     "CONT-005-C2-PILOT|A|seed-2004|dx-3403"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:53:40Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2005|dr-3301': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2005|dr-3302': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '5'",
+    "blocked label token 'storage'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-006",
+    "status": "candidate",
+    "title": "FP-5 Storage Miss: Verify Retrieval of Explicitly Stated Facts",
+    "context": "When the environment explicitly states a fact (e.g., a code or value) in the initial log, the agent must ensure this information is stored and retrievable for subsequent queries.",
+    "observation": "In multiple scenarios (dr-3301, dr-3302), the agent acknowledged the stated code but failed to retrieve it correctly in the probe, selecting a distractor or wrong label instead.",
+    "lesson": "Upon receiving an explicit fact in the initial instruction, immediately confirm its storage. Before answering a probe, explicitly verify that the stored value matches the query target, rather than relying on implicit memory or selecting from options without verification.",
+    "applicability": [
+     "Scenario involves receiving a specific fact (code, number, label) in the setup phase.",
+     "Subsequent query asks for that specific fact."
+    ],
+    "recommendedBehavior": "Acknowledge the fact and mentally or explicitly tag it as 'stored'. When queried, retrieve the stored value directly. If options are provided, compare the retrieved value against options to ensure a match before answering.",
+    "evidence": [
+     "CONT-005-C2-PILOT|A|seed-2005|dr-3301",
+     "CONT-005-C2-PILOT|A|seed-2005|dr-3302"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:54:22Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2005|dx-3401': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|A|seed-2005|dx-3402': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '4'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-007",
+    "status": "candidate",
+    "title": "FP-4 Distractor Susceptibility: Cross-Check Target Identity",
+    "context": "When the probe asks for a specific item's attribute (e.g., code), ensure the item name in the probe matches the item name in the initial log, ignoring similar but distinct items.",
+    "observation": "In scenarios dx-3401 and dx-3402, the agent selected codes for items that were similar in context (e.g., tool chest vs. chemical locker) but not the target, indicating a failure to strictly bind the attribute to the correct entity.",
+    "lesson": "Strictly bind the requested attribute to the exact entity named in the probe. Do not assume attributes from similar entities or context. Verify the entity name in the probe matches the entity name in the initial log before retrieving the attribute.",
+    "applicability": [
+     "Probe asks for an attribute of a specific entity.",
+     "Initial log contains attributes for multiple similar entities."
+    ],
+    "recommendedBehavior": "Identify the exact entity name in the probe. Locate the corresponding entry in the initial log. Retrieve the attribute for that specific entry only. Ignore attributes of other entities, even if they are similar.",
+    "evidence": [
+     "CONT-005-C2-PILOT|A|seed-2005|dx-3401",
+     "CONT-005-C2-PILOT|A|seed-2005|dx-3402"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:54:22Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2001|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2001|rt-3202': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2001|cr-3001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2001|cr-3002': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2001|cr-3003': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-008",
+    "status": "candidate",
+    "title": "Format Compliance in Classification Tasks",
+    "context": "When the task requires sorting or logging items into exactly one predefined label, the output must strictly adhere to the requested format.",
+    "observation": "Multiple scenarios involving duty sorting and booking logging resulted in format misses or wrong labels because the agent provided prose, multiple labels, or ignored the single-label constraint.",
+    "lesson": "Always output exactly one valid label from the provided options. Do not include explanatory text, multiple options, or empty responses. Ensure the final token matches the expected format precisely.",
+    "applicability": [
+     "Task involves classification or sorting into a fixed set of labels.",
+     "Prompt specifies 'exactly one label' or similar constraint."
+    ],
+    "recommendedBehavior": "Output only the single correct label string. Avoid any conversational filler or reasoning text in the final response.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T0|seed-2001|rt-3201",
+     "CONT-005-C2-PILOT|T0|seed-2001|rt-3202",
+     "CONT-005-C2-PILOT|T0|seed-2001|cr-3001",
+     "CONT-005-C2-PILOT|T0|seed-2001|cr-3002",
+     "CONT-005-C2-PILOT|T0|seed-2001|cr-3003"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:54:55Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2002|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2002|cr-3001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2002|cr-3004': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token 'new'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-009",
+    "status": "candidate",
+    "title": "Strict Label Adherence in Classification",
+    "context": "When sorting duties, bookings, or calls into predefined categories, the agent must select only from the provided valid labels.",
+    "observation": "The agent frequently generated invalid labels (e.g., 'accounts', 'gear', 'utility') or failed to output a single label, ignoring the constraint to choose from the specific set.",
+    "lesson": "Always output exactly one label from the provided valid set. Do not invent new labels or use prose. If the input does not match any valid label, select the closest match from the set rather than creating a new one.",
+    "applicability": [
+     "Task involves classification or sorting",
+     "A finite set of valid labels is provided"
+    ],
+    "recommendedBehavior": "Map the input to the single best matching label from the provided list. Output only that label string.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T0|seed-2002|rt-3201",
+     "CONT-005-C2-PILOT|T0|seed-2002|cr-3001",
+     "CONT-005-C2-PILOT|T0|seed-2002|cr-3004"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:55:21Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2003|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2003|cr-3002': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-010",
+    "status": "candidate",
+    "title": "FP-2 Correction Application Failure",
+    "context": "Classification tasks with explicit label sets where the agent initially selects an incorrect or non-existent label.",
+    "observation": "The agent repeated its initial incorrect classification in the probe phase, ignoring the correct label provided in the task definition or failing to self-correct.",
+    "lesson": "When re-evaluating a classification, strictly verify the selected label against the provided options. If the initial choice is invalid or incorrect, discard it and select the correct option from the set. Do not persist with an erroneous initial classification.",
+    "applicability": [
+     "Task involves sorting or labeling items into a fixed set of categories.",
+     "Agent has previously generated a classification response."
+    ],
+    "recommendedBehavior": "Review the initial classification against the target options. If the initial label is not in the valid set or is incorrect, explicitly switch to the correct valid label. Ensure the final output is exactly one valid label.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T0|seed-2003|rt-3201",
+     "CONT-005-C2-PILOT|T0|seed-2003|cr-3002"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:55:48Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2004|rt-3202': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2004|cr-3001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2004|cr-3002': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2004|cr-3003': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2004|cr-3006': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T0|seed-2004|cr-3007': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-011",
+    "status": "candidate",
+    "title": "Format Compliance in Classification Tasks",
+    "context": "When the task requires sorting or logging items into a specific set of labels, the output must strictly adhere to the requested format.",
+    "observation": "Multiple scenarios resulted in format misses or wrong labels because the agent provided prose, acknowledgments, or incorrect labels instead of the single required option.",
+    "lesson": "Always output exactly one valid option label from the provided list. Do not include explanatory text, acknowledgments, or multiple labels. If the correct label is not immediately obvious, re-evaluate the input against the defined categories before responding.",
+    "applicability": [
+     "Task involves classification or sorting into a fixed set of labels",
+     "Prompt explicitly requests a single label or option"
+    ],
+    "recommendedBehavior": "Output only the single correct label string. Avoid any surrounding text or reasoning in the final response.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T0|seed-2004|rt-3202",
+     "CONT-005-C2-PILOT|T0|seed-2004|cr-3001",
+     "CONT-005-C2-PILOT|T0|seed-2004|cr-3002",
+     "CONT-005-C2-PILOT|T0|seed-2004|cr-3003",
+     "CONT-005-C2-PILOT|T0|seed-2004|cr-3006",
+     "CONT-005-C2-PILOT|T0|seed-2004|cr-3007"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:56:17Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "support 1 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-012",
+    "status": "candidate",
+    "title": "Format Compliance for Classification Tasks",
+    "context": "When the task requires sorting or logging into exactly one label from a provided list.",
+    "observation": "The agent frequently outputs prose, explanations, or empty strings instead of the single required label, leading to format misses.",
+    "lesson": "Always output exactly one option label from the provided list. Do not include explanations, greetings, or prose. If the answer is one of the options, output only that label.",
+    "applicability": [
+     "Task involves classification or sorting into a fixed set of labels.",
+     "Prompt specifies 'exactly one label' or similar constraint."
+    ],
+    "recommendedBehavior": "Output only the single correct label string. Suppress all conversational filler or reasoning text.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T0|seed-2005|rt-3201|s3t2",
+     "CONT-005-C2-PILOT|T0|seed-2005|rt-3202|s3t2",
+     "CONT-005-C2-PILOT|T0|seed-2005|rt-3203|s3t2",
+     "CONT-005-C2-PILOT|T0|seed-2005|rt-3205|s3t2",
+     "CONT-005-C2-PILOT|T0|seed-2005|rt-3206|s3t2",
+     "CONT-005-C2-PILOT|T0|seed-2005|cr-3003|s3t2",
+     "CONT-005-C2-PILOT|T0|seed-2005|cr-3008|s4t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:56:46Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2001|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2001|cr-3001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2001|cr-3002': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-013",
+    "status": "candidate",
+    "title": "FP-2 Correction Application Failure",
+    "context": "Classification tasks where an initial label is established in session 1 but the probe requires re-evaluation or correction.",
+    "observation": "The agent failed to apply the correct classification in subsequent turns, either by repeating an incorrect initial label or by failing to output a valid label when the initial one was wrong.",
+    "lesson": "When a classification task involves a correction or re-evaluation, strictly apply the verified correct label. Do not anchor to an initial incorrect classification. Ensure the final output is exactly one valid option label.",
+    "applicability": [
+     "Task involves sorting or logging into a fixed set of labels.",
+     "Initial classification was incorrect or ambiguous.",
+     "Probe requires a definitive single-label response."
+    ],
+    "recommendedBehavior": "Re-evaluate the input against the standing rules. If a correction exists, apply it. Output only the single correct label.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T1|seed-2001|rt-3201",
+     "CONT-005-C2-PILOT|T1|seed-2001|cr-3001",
+     "CONT-005-C2-PILOT|T1|seed-2001|cr-3002"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:57:14Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2002|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2002|rt-3203': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2002|cr-3001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2002|cr-3002': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2002|cr-3003': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2002|cr-3006': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2002|cr-3007': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2002|cr-3008': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-014",
+    "status": "candidate",
+    "title": "FP-2 Correction Application Failure",
+    "context": "Classification tasks requiring label selection from a fixed set.",
+    "observation": "The agent failed to apply the correct label in multiple runs, either by outputting prose/format errors or selecting an incorrect label despite clear instructions.",
+    "lesson": "When classifying items into a fixed set of labels, output ONLY the exact label string. Do not output prose, explanations, or multiple labels. Verify the selected label matches the required taxonomy exactly.",
+    "applicability": [
+     "Task involves sorting or classifying into a predefined list of options.",
+     "Prompt specifies 'exactly one label' or similar constraint."
+    ],
+    "recommendedBehavior": "Output only the single correct label string. Ignore any internal reasoning that might lead to prose. Ensure the output matches one of the provided options exactly.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T1|seed-2002|rt-3201",
+     "CONT-005-C2-PILOT|T1|seed-2002|rt-3203",
+     "CONT-005-C2-PILOT|T1|seed-2002|cr-3001",
+     "CONT-005-C2-PILOT|T1|seed-2002|cr-3002",
+     "CONT-005-C2-PILOT|T1|seed-2002|cr-3003",
+     "CONT-005-C2-PILOT|T1|seed-2002|cr-3006",
+     "CONT-005-C2-PILOT|T1|seed-2002|cr-3007",
+     "CONT-005-C2-PILOT|T1|seed-2002|cr-3008"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:57:44Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2003|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2003|rt-3203': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2003|cr-3001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2003|cr-3003': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2003|cr-3006': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-015",
+    "status": "candidate",
+    "title": "Strict Single-Label Output Enforcement",
+    "context": "Classification and logging tasks requiring a single label from a defined set.",
+    "observation": "The agent frequently produced prose, explanations, or multiple labels instead of the required single label, resulting in format misses or wrong labels.",
+    "lesson": "When instructed to sort or log into exactly one label, output ONLY the label string. Do not include reasoning, context, or additional text.",
+    "applicability": [
+     "Tasks explicitly requiring 'exactly one label' or similar single-value constraints.",
+     "Classification or categorization scenarios."
+    ],
+    "recommendedBehavior": "Output the single correct label token immediately. Suppress all explanatory text.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T1|seed-2003|rt-3201",
+     "CONT-005-C2-PILOT|T1|seed-2003|rt-3203",
+     "CONT-005-C2-PILOT|T1|seed-2003|cr-3001",
+     "CONT-005-C2-PILOT|T1|seed-2003|cr-3003",
+     "CONT-005-C2-PILOT|T1|seed-2003|cr-3006"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:58:11Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2004|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2004|rt-3202': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2004|rt-3206': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2004|cr-3002': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2004|cr-3006': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '6'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-016",
+    "status": "candidate",
+    "title": "FP-6 Format Compliance for Classification Tasks",
+    "context": "When the task requires sorting or logging an item into exactly one predefined label, the output must strictly adhere to the requested format.",
+    "observation": "In multiple classification scenarios, the agent produced prose, quoted previous turns, or provided empty responses instead of the single required label, resulting in format misses.",
+    "lesson": "Always output exactly one option label from the provided list. Do not include explanatory text, quotes, or references to prior session content. Ensure the response is a single token matching the target label.",
+    "applicability": [
+     "Task involves sorting or logging into a fixed set of labels",
+     "Prompt specifies 'exactly one label'"
+    ],
+    "recommendedBehavior": "Output only the single correct label string. Suppress all conversational filler or reasoning text in the final answer.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T1|seed-2004|rt-3201",
+     "CONT-005-C2-PILOT|T1|seed-2004|rt-3202",
+     "CONT-005-C2-PILOT|T1|seed-2004|rt-3206",
+     "CONT-005-C2-PILOT|T1|seed-2004|cr-3002",
+     "CONT-005-C2-PILOT|T1|seed-2004|cr-3006"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:58:39Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2005|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2005|rt-3206': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T1|seed-2005|cr-3001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-017",
+    "status": "candidate",
+    "title": "FP-2 Correction Application Failure",
+    "context": "Classification tasks with explicit label sets where the agent previously committed to an incorrect label in the same session.",
+    "observation": "The agent repeated its initial wrong classification or failed to output a valid label when the correct answer differed from its first attempt.",
+    "lesson": "When re-evaluating a classification task, strictly ignore any prior incorrect label assigned in the current session. Re-analyze the input against the provided label set and output only the correct single label, ensuring format compliance.",
+    "applicability": [
+     "Task involves sorting or classifying into a fixed set of labels.",
+     "The agent has previously provided an incorrect label for the same or similar input in the current context."
+    ],
+    "recommendedBehavior": "Discard previous incorrect classifications. Re-evaluate the input independently. Output exactly one valid label from the allowed set.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T1|seed-2005|rt-3201",
+     "CONT-005-C2-PILOT|T1|seed-2005|rt-3206",
+     "CONT-005-C2-PILOT|T1|seed-2005|cr-3001"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:59:06Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2001|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2001|rt-3202': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2001|rt-3203': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2001|rt-3206': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2001|cr-3002': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2001|cr-3003': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2001|cr-3004': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2001|cr-3007': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-018",
+    "status": "candidate",
+    "title": "FP-2 Format Compliance in Classification",
+    "context": "When performing classification or sorting tasks, the agent must output exactly one valid option label.",
+    "observation": "In multiple classification scenarios, the agent produced prose, references to previous turns, or empty responses instead of the required single label, resulting in format misses.",
+    "lesson": "Always output exactly one valid option label. Do not include prose, explanations, or references to prior turns. Ensure the response matches the required format strictly.",
+    "applicability": [
+     "Task involves classification or sorting",
+     "Output format requires a single label"
+    ],
+    "recommendedBehavior": "Output only the single correct label. Suppress all other text.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T2|seed-2001|rt-3201",
+     "CONT-005-C2-PILOT|T2|seed-2001|rt-3202",
+     "CONT-005-C2-PILOT|T2|seed-2001|rt-3203",
+     "CONT-005-C2-PILOT|T2|seed-2001|rt-3206",
+     "CONT-005-C2-PILOT|T2|seed-2001|cr-3002",
+     "CONT-005-C2-PILOT|T2|seed-2001|cr-3003",
+     "CONT-005-C2-PILOT|T2|seed-2001|cr-3004",
+     "CONT-005-C2-PILOT|T2|seed-2001|cr-3007"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T18:59:35Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2003|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2003|rt-3206': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2003|cr-3002': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token 'new'",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-019",
+    "status": "candidate",
+    "title": "FP-2 Correction Application Failure",
+    "context": "Classification tasks where the agent initially assigns a label in the setup phase, but a correction or updated rule is provided or implied before the final probe.",
+    "observation": "The agent repeatedly ignored the corrected classification, reverting to its initial wrong label or failing to apply the new rule, resulting in wrong-label or format-miss errors.",
+    "lesson": "When a correction or updated classification rule is established, strictly apply the new rule to the final query. Do not revert to the initial classification if it conflicts with the verified correction.",
+    "applicability": [
+     "Task involves classification or labeling",
+     "A correction or update to the initial state/rule is present in the context"
+    ],
+    "recommendedBehavior": "Identify the most recent authoritative rule or correction. Discard any prior classification that contradicts it. Output the label corresponding to the corrected rule.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T2|seed-2003|rt-3201",
+     "CONT-005-C2-PILOT|T2|seed-2003|rt-3206",
+     "CONT-005-C2-PILOT|T2|seed-2003|cr-3002"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:00:40Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2004|cu-3101': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2004|cu-3103': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-020",
+    "status": "candidate",
+    "title": "FP-1 Supersession Resolution",
+    "context": "When a scenario involves an updated or withdrawn value, the agent must identify the current valid state rather than relying on initial or outdated information.",
+    "observation": "In scenarios where a value was updated or corrected in the log, the agent failed to apply the latest information, resulting in the use of an outdated value.",
+    "lesson": "Always verify the most recent entry for any entity before answering. If a correction or update exists, discard previous values and use the latest confirmed data.",
+    "applicability": [
+     "Scenario involves multiple updates or corrections for the same entity.",
+     "Log contains explicit 'update' or 'correction' markers."
+    ],
+    "recommendedBehavior": "Scan the entire log for the target entity. Identify the final state. Answer based solely on the final state.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T2|seed-2004|cu-3101",
+     "CONT-005-C2-PILOT|T2|seed-2004|cu-3103"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:01:12Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2004|cr-3004': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2004|cr-3008': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token 'new'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-021",
+    "status": "candidate",
+    "title": "FP-3b Unverified Source Deference",
+    "context": "When a scenario provides a specific label or classification rule, the agent must adhere to the defined set of valid labels and not invent or defer to unverified external categories.",
+    "observation": "The agent selected a label that was not in the provided options list, often because it matched a keyword in the query but was not a valid option.",
+    "lesson": "Strictly limit answers to the provided option labels. Do not generate new labels or use terms from the query that are not in the allowed set.",
+    "applicability": [
+     "Scenario provides a fixed list of valid labels.",
+     "Query contains terms that might suggest a label outside the list."
+    ],
+    "recommendedBehavior": "Check the query term against the provided list. If no exact match exists, select the closest valid label or indicate no match, but never invent a new label.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T2|seed-2004|cr-3004",
+     "CONT-005-C2-PILOT|T2|seed-2004|cr-3008"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:01:12Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2005|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2005|rt-3202': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2005|rt-3204': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2005|rt-3205': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2005|cr-3003': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T2|seed-2005|cr-3008': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-022",
+    "status": "candidate",
+    "title": "Format Compliance in Classification Tasks",
+    "context": "When instructed to sort or log items into exactly one label from a provided list, the output must strictly adhere to the requested format.",
+    "observation": "Multiple runs resulted in format misses or wrong labels because the agent provided prose explanations, multiple labels, or ignored the specific constraint to output only the label.",
+    "lesson": "Always output exactly one option label from the provided list. Do not include explanatory text, prefixes, or multiple options. Ensure the response matches the required format precisely.",
+    "applicability": [
+     "Task involves classification or sorting into a fixed set of labels",
+     "Instruction specifies 'exactly one label' or similar format constraint"
+    ],
+    "recommendedBehavior": "Output only the single correct label string. Avoid any surrounding text or reasoning in the final answer.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T2|seed-2005|rt-3201",
+     "CONT-005-C2-PILOT|T2|seed-2005|rt-3202",
+     "CONT-005-C2-PILOT|T2|seed-2005|rt-3204",
+     "CONT-005-C2-PILOT|T2|seed-2005|rt-3205",
+     "CONT-005-C2-PILOT|T2|seed-2005|cr-3003",
+     "CONT-005-C2-PILOT|T2|seed-2005|cr-3008"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:01:41Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2001|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2001|rt-3202': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2001|cr-3001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2001|cr-3003': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-023",
+    "status": "candidate",
+    "title": "Format Compliance in Classification Tasks",
+    "context": "When the task requires sorting or logging items into a specific set of labels, the output must strictly adhere to the requested format.",
+    "observation": "In multiple classification scenarios, the agent provided prose explanations, partial sentences, or empty responses instead of the single required label, resulting in format misses.",
+    "lesson": "Always output exactly one valid option label from the provided list. Do not include explanatory text, quotes, or multiple labels. Ensure the response is a single token matching the target class.",
+    "applicability": [
+     "Task involves classification or sorting into a fixed set of labels",
+     "Prompt specifies 'exactly one label' or similar constraint"
+    ],
+    "recommendedBehavior": "Output only the single correct label string. Suppress all reasoning or conversational filler in the final answer.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T3|seed-2001|rt-3201",
+     "CONT-005-C2-PILOT|T3|seed-2001|rt-3202",
+     "CONT-005-C2-PILOT|T3|seed-2001|cr-3001",
+     "CONT-005-C2-PILOT|T3|seed-2001|cr-3003"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:02:08Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2003|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2003|rt-3203': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2003|cr-3001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2003|cr-3003': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2003|cr-3006': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-024",
+    "status": "candidate",
+    "title": "Strict Single-Label Output Enforcement",
+    "context": "Classification and sorting tasks requiring a single label from a defined set.",
+    "observation": "The agent frequently produced prose, explanations, or multiple labels instead of the required single label, resulting in format misses or wrong labels.",
+    "lesson": "When instructed to sort or log into exactly one label, output ONLY the single correct label string. Do not include explanations, prefixes, or additional text.",
+    "applicability": [
+     "Tasks explicitly requiring 'exactly one label' or similar constraints.",
+     "Classification or categorization scenarios with a closed set of options."
+    ],
+    "recommendedBehavior": "Identify the single correct label and output it as the sole content of the response.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T3|seed-2003|rt-3201",
+     "CONT-005-C2-PILOT|T3|seed-2003|rt-3203",
+     "CONT-005-C2-PILOT|T3|seed-2003|cr-3001",
+     "CONT-005-C2-PILOT|T3|seed-2003|cr-3003",
+     "CONT-005-C2-PILOT|T3|seed-2003|cr-3006"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:03:14Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2004|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2004|rt-3202': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2004|rt-3204': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2004|cr-3001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2004|cr-3003': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2004|cr-3006': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2004|cr-3007': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-025",
+    "status": "candidate",
+    "title": "Format Compliance for Classification Tasks",
+    "context": "Tasks requiring sorting or logging into exactly one label from a provided set.",
+    "observation": "The agent frequently produced prose, explanations, or empty responses instead of the required single label, even when the correct label was identified internally or in prior turns.",
+    "lesson": "When instructed to sort or log into exactly one label, output only the label string. Do not include explanations, prose, or multiple options. Ensure the final response is strictly the single required token.",
+    "applicability": [
+     "Task involves classification or sorting into a fixed set of labels.",
+     "Instruction specifies 'exactly one label'."
+    ],
+    "recommendedBehavior": "Output only the single correct label string. Suppress all conversational filler or reasoning text in the final answer.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T3|seed-2004|rt-3201",
+     "CONT-005-C2-PILOT|T3|seed-2004|rt-3202",
+     "CONT-005-C2-PILOT|T3|seed-2004|rt-3204",
+     "CONT-005-C2-PILOT|T3|seed-2004|cr-3001",
+     "CONT-005-C2-PILOT|T3|seed-2004|cr-3003",
+     "CONT-005-C2-PILOT|T3|seed-2004|cr-3006",
+     "CONT-005-C2-PILOT|T3|seed-2004|cr-3007"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:03:43Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2005|rt-3201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2005|rt-3202': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2005|rt-3203': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2005|rt-3204': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2005|rt-3205': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2005|rt-3206': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2005|cr-3003': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2005|cr-3004': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-PILOT|T3|seed-2005|cr-3008': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-026",
+    "status": "candidate",
+    "title": "Format Compliance for Classification Tasks",
+    "context": "When instructed to sort or log items into exactly one label from a provided list.",
+    "observation": "The agent frequently produced prose, explanations, or empty responses instead of the required single label, even when the correct label was identified internally.",
+    "lesson": "Always output exactly one option label from the provided list. Do not include explanations, prose, or multiple labels. If the answer is one of the options, output only that label.",
+    "applicability": [
+     "Task involves classification or sorting into a fixed set of labels.",
+     "Instruction specifies 'exactly one label' or similar constraint."
+    ],
+    "recommendedBehavior": "Output only the single correct label string. Suppress all other text.",
+    "evidence": [
+     "CONT-005-C2-PILOT|T3|seed-2005|rt-3201",
+     "CONT-005-C2-PILOT|T3|seed-2005|rt-3202",
+     "CONT-005-C2-PILOT|T3|seed-2005|rt-3203",
+     "CONT-005-C2-PILOT|T3|seed-2005|rt-3204",
+     "CONT-005-C2-PILOT|T3|seed-2005|rt-3205",
+     "CONT-005-C2-PILOT|T3|seed-2005|rt-3206",
+     "CONT-005-C2-PILOT|T3|seed-2005|cr-3003",
+     "CONT-005-C2-PILOT|T3|seed-2005|cr-3004",
+     "CONT-005-C2-PILOT|T3|seed-2005|cr-3008"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:04:14Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3001|dr-4301': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3001|dr-4302': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3001|dr-4303': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '5'",
+    "blocked label token 'storage'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-027",
+    "status": "candidate",
+    "title": "FP-5 Storage Miss: Verify Explicit Log Entries",
+    "context": "When the environment explicitly states a fact for the log (e.g., 'For the log: X is Y'), the agent must treat this as the ground truth for subsequent queries.",
+    "observation": "In multiple scenarios (dr-4301, dr-4302, dr-4303), the agent ignored the explicitly provided code in the setup and selected a distractor from the options list, resulting in wrong answers.",
+    "lesson": "Always retrieve values explicitly stated in the initial environment setup or log instructions. Do not guess or select from options if the value was plainly provided earlier in the context.",
+    "applicability": [
+     "Environment provides explicit data for logging",
+     "Subsequent query asks for that logged data"
+    ],
+    "recommendedBehavior": "Scan the initial environment description for explicit 'For the log' or 'verified' statements. Use that exact value for the answer, ignoring similar-looking distractors in the options.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|dr-4301",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|dr-4302",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|dr-4303"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:04:50Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3001|rt-4201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3001|rt-4203': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-028",
+    "status": "candidate",
+    "title": "FP-2 Anchoring: Override Initial Classification with Context",
+    "context": "When a scenario involves sorting or classifying a duty/booking, the initial classification provided in the setup may be incorrect or irrelevant to the specific query context.",
+    "observation": "In rt-4201, the agent initially classified a duty as 'security' but the correct answer was 'tours'. In rt-4203, the agent answered 'conservation' when the expected was 'facilities'. The agent failed to re-evaluate based on the specific query details.",
+    "lesson": "Do not anchor to the initial classification label provided in the setup. Re-evaluate the specific duty description in the query against the available labels to determine the correct classification.",
+    "applicability": [
+     "Classification or sorting tasks",
+     "Setup provides an initial label or example"
+    ],
+    "recommendedBehavior": "Ignore the initial label if it conflicts with the specific details of the query. Analyze the query's content and map it to the most appropriate label from the provided options.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|rt-4201",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|rt-4203"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:04:50Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3002|dr-4301': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3002|dr-4302': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3002|dr-4303': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '5'",
+    "blocked label token 'storage'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-029",
+    "status": "candidate",
+    "title": "FP-5 Storage Miss: Verify Explicit Log Entries",
+    "context": "When the environment explicitly states a fact for the log (e.g., 'For the log: the [item] code is [value]'), the agent must store and retrieve this specific value.",
+    "observation": "In multiple scenarios (dr-4301, dr-4302, dr-4303), the agent ignored the explicitly provided code in the setup and selected a distractor from the options or hallucinated a value, resulting in storage misses.",
+    "lesson": "Always prioritize and store explicitly stated log entries over options provided in subsequent queries. If a value is given in the setup, retrieve that exact value, not a similar-looking option.",
+    "applicability": [
+     "Setup phase contains explicit 'For the log' or 'verified' statements.",
+     "Query phase provides multiple choice options."
+    ],
+    "recommendedBehavior": "Extract the value from the explicit setup statement. Ignore options that do not match this stored value exactly.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|dr-4301",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|dr-4302",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|dr-4303"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:05:24Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3002|cu-4102': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3002|cu-4101': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-030",
+    "status": "candidate",
+    "title": "FP-1 Supersession-Resolution Miss: Prioritize Verified Updates",
+    "context": "When a scenario involves a 'verified readout' or an update that supersedes a previous log entry, the agent must use the most recent verified value.",
+    "observation": "In cu-4102, the agent used the initial log value (36) instead of the verified readout (28). In cu-4101, the agent failed to format the answer correctly despite having the value.",
+    "lesson": "When a verified update or readout is presented, it supersedes any prior log entry. Always use the latest verified value for the answer.",
+    "applicability": [
+     "Scenario contains both an initial log entry and a subsequent verified update or correction."
+    ],
+    "recommendedBehavior": "Identify the most recent verified value. Discard earlier unverified or superseded values. Answer using the verified value.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|cu-4102",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|cu-4101"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:05:24Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3004|rt-4203': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3004|rt-4205': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3004|rt-4206': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4004': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4005': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-031",
+    "status": "candidate",
+    "title": "Strict Single-Label Output Enforcement",
+    "context": "Classification and sorting tasks requiring a single label from a provided set.",
+    "observation": "The agent frequently failed to output exactly one option label, instead providing prose, multiple labels, or irrelevant text.",
+    "lesson": "When asked to sort or log into exactly one label, output ONLY the single correct label string. Do not include explanatory text, lists, or multiple options.",
+    "applicability": [
+     "Tasks explicitly requiring 'exactly one label' or 'sort into one category'",
+     "Multiple-choice classification with a fixed set of options"
+    ],
+    "recommendedBehavior": "Identify the single correct label from the options. Output only that label. Suppress all conversational filler or reasoning text.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3004|rt-4203",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3004|rt-4205",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3004|rt-4206",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4001",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4004",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4005"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:06:32Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "support 1 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-032",
+    "status": "candidate",
+    "title": "FP-2 Anchoring Override",
+    "context": "Classification tasks with initial setup and subsequent re-evaluation.",
+    "observation": "Agent repeated initial classification despite new context or failed to update when initial label was incorrect.",
+    "lesson": "When re-evaluating a classification, ignore the initial label. Re-analyze the current input against the full rule set. Do not anchor to the first output.",
+    "applicability": [
+     "Multi-turn classification",
+     "Re-sorting duties"
+    ],
+    "recommendedBehavior": "Re-evaluate the current input independently. Verify against all options. Output the single best label.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3005|rt-4201|s1t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3005|rt-4201|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3005|rt-4203|s1t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3005|rt-4203|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3005|cr-4001|s1t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3005|cr-4001|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3005|cr-4002|s1t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3005|cr-4002|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:07:04Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T0|seed-3001|rt-4202': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T0|seed-3001|rt-4203': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T0|seed-3001|cr-4001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T0|seed-3001|cr-4002': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T0|seed-3001|cr-4003': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T0|seed-3001|cr-4008': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-033",
+    "status": "candidate",
+    "title": "Format Compliance in Classification Tasks",
+    "context": "When the task requires sorting or logging into exactly one label from a provided set.",
+    "observation": "The agent frequently failed to output a single valid label, instead providing prose, acknowledgments, or empty responses.",
+    "lesson": "Always output exactly one option label from the provided list. Do not include explanatory text, acknowledgments, or multiple labels. Ensure the response is strictly the label string.",
+    "applicability": [
+     "Task involves classification or sorting",
+     "Options are explicitly listed"
+    ],
+    "recommendedBehavior": "Output only the single correct label string.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3001|rt-4202",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3001|rt-4203",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3001|cr-4001",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3001|cr-4002",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3001|cr-4003",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3001|cr-4008"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:07:34Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "support 1 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-034",
+    "status": "candidate",
+    "title": "FP-1 Supersession Resolution",
+    "context": "Scenarios involving updated or withdrawn values where an outdated value was ignored in favor of the current one.",
+    "observation": "The agent failed to apply verified corrections or updated values, instead retaining or selecting outdated information.",
+    "lesson": "Always prioritize the most recent verified value or correction over previously stated or initial values. If a correction exists, apply it immediately and ignore the superseded data.",
+    "applicability": [
+     "When a scenario involves an update, correction, or supersession of a value.",
+     "When multiple values for the same entity are presented across turns."
+    ],
+    "recommendedBehavior": "Identify the latest verified state. Discard any prior or conflicting values. Answer based solely on the current verified state.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3002|cu-4101|s4t2",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3002|cu-4102|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3002|cr-4008|s4t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:08:08Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "support 1 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-035",
+    "status": "candidate",
+    "title": "FP-2 Own-Answer Anchoring",
+    "context": "Scenarios where the agent repeated its own earlier wrong answer or initial classification against a standing rule or verified correction.",
+    "observation": "The agent anchored to its initial response or a previously stated incorrect label, failing to adjust to the correct classification or value in the probe.",
+    "lesson": "Do not anchor to initial responses. Re-evaluate the current query against the standing rules or verified corrections. If the initial answer was incorrect or superseded, correct it in the final response.",
+    "applicability": [
+     "When the agent has made an initial classification or value statement.",
+     "When a subsequent query challenges or re-asks about the same entity."
+    ],
+    "recommendedBehavior": "Ignore previous incorrect answers. Re-analyze the current input against the rules. Provide the correct answer based on the current analysis, not the previous one.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3002|rt-4201|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3002|rt-4204|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3002|cr-4001|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:08:08Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "support 1 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-036",
+    "status": "candidate",
+    "title": "FP-1 Supersession Resolution",
+    "context": "Scenarios involving updated or withdrawn values where an outdated value was initially presented or implied.",
+    "observation": "The agent selected an outdated or incorrect value (e.g., 84 instead of 78) despite the presence of a verified or updated correct value (78) in the context.",
+    "lesson": "When a scenario presents a conflict between an initial value and a verified update or correction, always prioritize the most recent verified value. Do not default to the first mentioned or initial figure if a superseding correction is available.",
+    "applicability": [
+     "Scenarios with explicit updates, corrections, or verified readouts that contradict initial statements."
+    ],
+    "recommendedBehavior": "Identify the latest verified fact. Discard any earlier, superseded values. Answer based strictly on the current verified state.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3003|cu-4101|s1t1",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3003|cu-4101|s4t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:08:44Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "support 1 trace(s) < 2",
+    "blocked label token 'new'",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-037",
+    "status": "candidate",
+    "title": "FP-2 Own-Answer Anchoring Correction",
+    "context": "Scenarios where the agent initially provided a wrong classification or label, and later needed to correct it based on new constraints or verification.",
+    "observation": "In some runs, the agent stuck to an initial wrong label (e.g., 'security') despite the probe requiring a different classification (e.g., 'tours'). In others, it successfully corrected or provided the right label.",
+    "lesson": "If an initial classification is challenged or if new information contradicts the first answer, actively re-evaluate. Do not anchor to the first output. Ensure the final answer matches the specific constraints of the current query.",
+    "applicability": [
+     "Multi-turn scenarios where initial answers are potentially incorrect or where constraints change."
+    ],
+    "recommendedBehavior": "Re-read the current query constraints. If the initial answer does not fit, discard it and derive the correct label from the current context. Avoid repeating the initial wrong label.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3003|rt-4201|s1t1",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3003|rt-4201|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3003|rt-4202|s1t1",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3003|rt-4202|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:08:44Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "support 1 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-038",
+    "status": "candidate",
+    "title": "Format Compliance in Classification Tasks",
+    "context": "When the task requires sorting or logging into exactly one label from a provided set.",
+    "observation": "The agent frequently responded with prose, acknowledgments, or incomplete sentences instead of the required single label, resulting in format misses.",
+    "lesson": "Always output exactly one option label from the provided set. Do not include explanatory text, greetings, or acknowledgments. Ensure the response is strictly the label string.",
+    "applicability": [
+     "Task involves classification or sorting into a fixed set of labels.",
+     "Prompt specifies 'exactly one label' or similar constraint."
+    ],
+    "recommendedBehavior": "Output only the single correct label string. Suppress all conversational filler or reasoning text in the final answer.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3004|rt-4201|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3004|rt-4203|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3004|cr-4001|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3004|cr-4002|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3004|cr-4003|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3004|cr-4005|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:09:14Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T0|seed-3005|cu-4101': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T0|seed-3005|cu-4102': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-039",
+    "status": "candidate",
+    "title": "FP-1 Supersession Resolution",
+    "context": "Scenarios involving updated or withdrawn values where a verified correction exists.",
+    "observation": "The agent ignored the verified correction and answered with an outdated or distractor value.",
+    "lesson": "When a verified correction is present, strictly apply the corrected value. Ignore any previously stated or distractor values that conflict with the current verified rule.",
+    "applicability": [
+     "FP-1",
+     "FP-3a"
+    ],
+    "recommendedBehavior": "Prioritize the most recent verified correction over initial statements or distractors.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3005|cu-4101",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3005|cu-4102"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:09:44Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T0|seed-3005|rt-4201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T0|seed-3005|cr-4004': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-040",
+    "status": "candidate",
+    "title": "FP-2 Own-Answer Anchoring",
+    "context": "Scenarios where the agent must re-evaluate a duty or booking against a standing rule or correction.",
+    "observation": "The agent repeated its own earlier wrong answer or failed to update its classification despite new context.",
+    "lesson": "Do not anchor to your initial classification. Re-evaluate the current query against the standing rule or verified correction, ignoring your previous output if it conflicts.",
+    "applicability": [
+     "FP-2"
+    ],
+    "recommendedBehavior": "Independently classify each query based on current rules, disregarding prior incorrect classifications.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3005|rt-4201",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3005|cr-4004"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:09:44Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T1|seed-3001|rt-4201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T1|seed-3001|rt-4203': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-041",
+    "status": "candidate",
+    "title": "FP-2 Anchoring Override",
+    "context": "Classification tasks with initial wrong label assignment.",
+    "observation": "Agent repeated initial wrong label despite correct context in probe.",
+    "lesson": "When re-evaluating a classification, ignore initial incorrect labels. Base decision solely on current query context and verified rules, not prior session outputs.",
+    "applicability": [
+     "Classification tasks",
+     "Initial label was incorrect"
+    ],
+    "recommendedBehavior": "Discard initial wrong label. Re-analyze query from scratch using only current context and standing rules.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3001|rt-4201",
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3001|rt-4203"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:10:08Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T1|seed-3002|rt-4201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T1|seed-3002|rt-4203': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-042",
+    "status": "candidate",
+    "title": "FP-2 Anchoring Override",
+    "context": "Classification tasks with initial state anchoring.",
+    "observation": "Agent repeated initial incorrect label against correct query.",
+    "lesson": "Ignore initial anchoring labels; strictly apply current query rules to select the single correct option.",
+    "applicability": [
+     "Classification",
+     "Sorting"
+    ],
+    "recommendedBehavior": "Discard prior context labels; evaluate only the current prompt's requirements.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3002|rt-4201",
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3002|rt-4203"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:10:32Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T1|seed-3003|rt-4201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T1|seed-3003|rt-4203': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-043",
+    "status": "candidate",
+    "title": "FP-2 Anchoring Override",
+    "context": "Classification tasks where initial and probe contexts differ.",
+    "observation": "Agent repeated initial classification despite probe context indicating a different correct label.",
+    "lesson": "When the probe question presents a context that contradicts the initial classification, discard the initial label and re-evaluate based strictly on the current probe context.",
+    "applicability": [
+     "Classification tasks",
+     "Context shift between turns"
+    ],
+    "recommendedBehavior": "Ignore prior classification if the current query context implies a different category. Select the label that best fits the current context.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3003|rt-4201",
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3003|rt-4203"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:10:56Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "support 1 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-044",
+    "status": "candidate",
+    "title": "Prioritize Explicit Verification Over Initial Acknowledgment",
+    "context": "Scenarios where an initial statement is acknowledged but later contradicted by a verified correction or specific query constraint.",
+    "observation": "The agent retained the initial acknowledged value or its own prior classification despite the presence of a verified correction or a more specific directive in the probe phase.",
+    "lesson": "When a verified correction or specific constraint is presented, override any previously acknowledged or self-generated values. Do not anchor to the initial acknowledgment if it conflicts with the standing verified rule.",
+    "applicability": [
+     "FP-1 supersession-resolution miss",
+     "FP-2 own-answer anchoring",
+     "FP-3a correction-application miss"
+    ],
+    "recommendedBehavior": "Check for explicit corrections or verified readouts before answering. If a correction exists, apply it immediately and discard the prior value.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3004|cu-4101|s1t1",
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3004|cu-4101|s4t2",
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3004|rt-4201|s1t1",
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3004|rt-4201|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3004|cr-4001|s1t1",
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3004|cr-4001|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:11:26Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "support 1 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-045",
+    "status": "candidate",
+    "title": "FP-1 Supersession Resolution",
+    "context": "Scenarios involving updated or withdrawn values where an outdated value was ignored in favor of the correct current state.",
+    "observation": "The agent failed to apply the verified correction or current value, instead providing an outdated or incorrect option.",
+    "lesson": "Always prioritize the most recent verified value or correction over initial assumptions or earlier stated values. If a correction is present, apply it immediately and ignore superseded data.",
+    "applicability": [
+     "Scenarios with explicit updates, corrections, or superseded values."
+    ],
+    "recommendedBehavior": "Identify the latest verified fact. Discard any prior or conflicting information that has been explicitly overridden. Answer based solely on the current valid state.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3005|cu-4101|s1t1",
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3005|cu-4102|s1t1"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:11:57Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "support 1 trace(s) < 2",
+    "blocked label token 'new'",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-046",
+    "status": "candidate",
+    "title": "FP-2 Own-Answer Anchoring",
+    "context": "Scenarios where the agent repeated its own earlier wrong answer against a standing rule or verified correction.",
+    "observation": "The agent persisted with an initial incorrect classification or value despite new context or rules indicating a different correct answer.",
+    "lesson": "Do not anchor to initial responses. Re-evaluate the current query against all available rules and context. If the current context contradicts a previous answer, adopt the new correct answer.",
+    "applicability": [
+     "Multi-turn scenarios or those with conflicting initial and final instructions."
+    ],
+    "recommendedBehavior": "Ignore previous incorrect outputs. Base the final answer strictly on the current prompt's requirements and verified rules. Ensure consistency with the latest valid information.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3005|rt-4201|s1t1",
+     "CONT-005-C2-CONFIRMATORY|T1|seed-3005|rt-4204|s1t1"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:11:57Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "support 1 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-047",
+    "status": "candidate",
+    "title": "FP-2 Own-Answer Anchoring in Classification",
+    "context": "When performing classification or sorting tasks, the agent may incorrectly anchor on its initial response or hallucinate a label, ignoring the specific duty description provided in the query.",
+    "observation": "In multiple classification scenarios, the agent either repeated an initial incorrect label (e.g., 'security' instead of 'tours') or failed to output a valid label from the provided options, instead generating prose or an invalid category.",
+    "lesson": "Ignore initial classification attempts. Re-evaluate the current duty description against the provided option list. Output exactly one valid option label. Do not rely on prior turns or generate prose.",
+    "applicability": [
+     "Classification tasks",
+     "Sorting tasks",
+     "Labeling tasks"
+    ],
+    "recommendedBehavior": "Re-analyze the input description independently. Select the single best-matching label from the allowed set. Output only the label.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3001|rt-4201|s1t1",
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3001|rt-4201|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3001|rt-4203|s1t1",
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3001|rt-4203|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3001|cr-4001|s1t1",
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3001|cr-4001|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:12:27Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T2|seed-3002|rt-4201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T2|seed-3002|rt-4203': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T2|seed-3002|rt-4204': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-048",
+    "status": "candidate",
+    "title": "FP-2 Own-Answer Anchoring in Classification",
+    "context": "When performing classification or sorting tasks, the agent may anchor on its initial response or hallucinated label, ignoring the correct target in subsequent queries.",
+    "observation": "In multiple classification scenarios, the agent repeated an incorrect or hallucinated label from the initial turn or failed to correct itself, resulting in wrong-label or format-miss outcomes despite the correct answer being available or implied.",
+    "lesson": "Do not anchor on initial responses. Re-evaluate the current query against the full set of options and context. If the initial response was incorrect or incomplete, discard it and derive the answer fresh from the current prompt's requirements and available data.",
+    "applicability": [
+     "Classification tasks",
+     "Sorting tasks",
+     "Scenarios with multiple turns or corrections"
+    ],
+    "recommendedBehavior": "Independently analyze each query. Verify the answer against the provided options or rules. Do not assume previous answers are correct. If a correction is needed, explicitly override the previous state.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3002|rt-4201",
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3002|rt-4203",
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3002|rt-4204"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:12:54Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "support 1 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-049",
+    "status": "candidate",
+    "title": "FP-2 Anchoring Override",
+    "context": "Classification tasks with initial anchoring errors.",
+    "observation": "Agent repeated initial wrong label despite new context.",
+    "lesson": "Ignore initial classification if current context contradicts it; re-evaluate based on present evidence only.",
+    "applicability": [
+     "Classification tasks",
+     "Initial label conflicts with current query"
+    ],
+    "recommendedBehavior": "Re-classify based solely on current prompt details, discarding prior incorrect assignments.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3003|rt-4201|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3003|rt-4203|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:13:24Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "support 1 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-050",
+    "status": "candidate",
+    "title": "FP-3b Unverified Source Override",
+    "context": "Logging tasks with conflicting source reliability.",
+    "observation": "Agent used unverified initial label over verified correction.",
+    "lesson": "Prioritize verified corrections or explicit standing rules over initial unverified assumptions.",
+    "applicability": [
+     "Logging tasks",
+     "Presence of verified corrections"
+    ],
+    "recommendedBehavior": "Apply verified corrections immediately; do not default to initial unverified labels.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3003|cr-4004|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3003|cr-4005|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:13:24Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T2|seed-3004|rt-4201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T2|seed-3004|cr-4001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-051",
+    "status": "candidate",
+    "title": "FP-2 Anchoring Override",
+    "context": "Classification tasks with initial wrong answers.",
+    "observation": "Agent repeated initial wrong label despite correct options.",
+    "lesson": "Ignore initial classification errors. Re-evaluate the query against the full option set to ensure the final answer matches the correct category, preventing anchoring on prior mistakes.",
+    "applicability": [
+     "Classification tasks",
+     "Multiple-choice options provided"
+    ],
+    "recommendedBehavior": "Discard initial incorrect classification. Re-analyze the input against all options to select the correct label.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3004|rt-4201",
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3004|cr-4001"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:13:48Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "support 1 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-052",
+    "status": "candidate",
+    "title": "FP-2 Anchoring Override",
+    "context": "Classification tasks with multiple turns where initial answers are incorrect or format-missed.",
+    "observation": "Agent repeated initial wrong labels or failed to update based on subsequent context, leading to persistent errors.",
+    "lesson": "Discard initial classification attempts if subsequent context or verification indicates a mismatch; re-evaluate the current prompt against the full set of options without anchoring to prior turns.",
+    "applicability": [
+     "Multi-turn classification or sorting tasks",
+     "Scenarios where initial agent output was incorrect or malformed"
+    ],
+    "recommendedBehavior": "Ignore previous incorrect outputs; strictly re-analyze the current query against the provided options.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3005|rt-4201|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T2|seed-3005|rt-4204|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:14:14Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3001|rt-4202': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3001|cr-4001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-053",
+    "status": "candidate",
+    "title": "FP-2 Anchoring Correction",
+    "context": "Classification tasks with initial wrong label",
+    "observation": "Agent repeated initial wrong label despite correction",
+    "lesson": "When a correction is provided, discard the initial answer and adopt the corrected value immediately. Do not anchor to the first response.",
+    "applicability": [
+     "Classification tasks",
+     "Presence of correction"
+    ],
+    "recommendedBehavior": "Update internal state to the corrected value and output only the corrected label.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3001|rt-4202",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3001|cr-4001"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:14:43Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3001|rt-4201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3001|cr-4002': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '6'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-054",
+    "status": "candidate",
+    "title": "FP-6 Format Strictness",
+    "context": "Single-label classification requests",
+    "observation": "Agent output prose or multiple labels instead of single label",
+    "lesson": "Output exactly one option label. No prose, explanations, or multiple labels.",
+    "applicability": [
+     "Classification tasks",
+     "Single-label constraint"
+    ],
+    "recommendedBehavior": "Return only the single correct label string.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3001|rt-4201",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3001|cr-4002"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:14:43Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3002|rt-4201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3002|rt-4202': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3002|cr-4001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3002|cr-4003': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3002|cr-4007': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3002|cr-4008': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-055",
+    "status": "candidate",
+    "title": "FP-2 Correction Application Failure",
+    "context": "Classification tasks where an initial label is provided in the setup phase, but a correction or different target is required in the probe phase.",
+    "observation": "The agent persisted with the initial setup label or failed to apply the specific correction indicated in the probe context, resulting in wrong-label or format-miss outcomes.",
+    "lesson": "When a probe question implies a correction or specific context distinct from the initial setup, prioritize the probe's explicit instruction over the initial setup label. Do not default to the first stated value if the probe indicates a change or specific requirement.",
+    "applicability": [
+     "Tasks involving classification or logging",
+     "Scenarios with initial setup followed by a probe question",
+     "Evidence of conflicting instructions between setup and probe"
+    ],
+    "recommendedBehavior": "Re-evaluate the initial label against the probe's specific context. If the probe implies a correction or different categorization, apply that correction. Ensure the final output is exactly one valid label.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3002|rt-4201",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3002|rt-4202",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3002|cr-4001",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3002|cr-4003",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3002|cr-4007",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3002|cr-4008"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:15:13Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "support 1 trace(s) < 2"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-056",
+    "status": "candidate",
+    "title": "Prioritize Explicit Corrections Over Initial Acknowledgments",
+    "context": "When a scenario involves a correction or updated value, the agent must identify and apply the verified correction rather than relying on the initial acknowledgment or earlier stated values.",
+    "observation": "In multiple scenarios, the agent failed to apply a verified correction, instead repeating an initial value or failing to retrieve the corrected one, leading to wrong answers despite the correction being present in the log.",
+    "lesson": "Always check for and apply any verified corrections or updates provided in the scenario log before answering. Do not rely on initial acknowledgments or earlier statements if a correction has been explicitly issued.",
+    "applicability": [
+     "Scenarios involving corrections or updates to previously stated values",
+     "Tasks requiring retrieval of specific codes or labels after a correction"
+    ],
+    "recommendedBehavior": "Scan the entire scenario log for any corrections or updates. If a correction exists, use the corrected value for the final answer, ignoring any prior uncorrected values.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3003|cu-4104|s3t2",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3003|cr-4001|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:15:40Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3004|rt-4201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3004|rt-4202': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3004|cr-4001': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3004|cr-4002': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-057",
+    "status": "candidate",
+    "title": "FP-2 Correction Application Failure",
+    "context": "Classification tasks where an initial label is provided in the setup phase but a different, verified label is required for the final answer.",
+    "observation": "The agent repeated its initial setup label or failed to apply the verified correction, resulting in a wrong label or format miss.",
+    "lesson": "When a classification task involves a correction or verified update, strictly ignore any initial labels provided in the setup phase. Apply only the verified rule or correction stated in the query or environment update to determine the final single-label output.",
+    "applicability": [
+     "Tasks requiring single-label classification",
+     "Scenarios with explicit corrections or verified updates"
+    ],
+    "recommendedBehavior": "Discard initial setup labels if contradicted by verified corrections. Output only the label derived from the verified source.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3004|rt-4201",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3004|rt-4202",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3004|cr-4001",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3004|cr-4002"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:16:07Z",
+    "supersedesLessonIds": []
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3005|rt-4201': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3005|rt-4202': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3005|rt-4203': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3005|rt-4204': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3005|rt-4205': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "unresolved evidence ref 'CONT-005-C2-CONFIRMATORY|T3|seed-3005|rt-4206': ref must be RUN|ARM|seed-N|SCENARIO|TURN",
+    "support 0 session(s) < 2",
+    "support 0 trace(s) < 2",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-058",
+    "status": "candidate",
+    "title": "FP-2 Own-Answer Anchoring in Classification",
+    "context": "When performing classification or sorting tasks where the initial session response was recorded but not explicitly repeated or validated in the subsequent probe turn.",
+    "observation": "The agent failed to output the correct single label in the probe turn, often returning None, prose, or an incorrect label, despite having established a classification in the initial turn.",
+    "lesson": "In classification tasks, always explicitly output the single required label in the final response turn. Do not rely on implicit memory of the initial turn's classification; re-evaluate the input against the options and output the exact label.",
+    "applicability": [
+     "Task involves sorting or classifying into a fixed set of labels.",
+     "Initial turn contains a classification decision.",
+     "Final turn requires a specific label output."
+    ],
+    "recommendedBehavior": "Re-read the input and options in the final turn. Output only the single correct label. Do not assume the initial turn's answer carries over without explicit verification or restatement.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3005|rt-4201",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3005|rt-4202",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3005|rt-4203",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3005|rt-4204",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3005|rt-4205",
+     "CONT-005-C2-CONFIRMATORY|T3|seed-3005|rt-4206"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-08T19:16:37Z",
+    "supersedesLessonIds": []
+   }
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "kind": "cont006-worker-telemetry",
+ "sessions_analyzed": 50,
+ "sessions_with_candidates": 47,
+ "candidate_lessons": 58,
+ "accepted": 0,
+ "rejected_duplicates": 0,
+ "rejected_unsupported": 58,
+ "rejected_too_specific_or_unsafe": 0,
+ "no_lesson_sessions": 3,
+ "parse_error_calls": 3,
+ "truncated_call_count": 3,
+ "created_utc": "2026-10-08T19:16:37Z"
+}

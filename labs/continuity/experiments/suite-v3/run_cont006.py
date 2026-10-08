@@ -107,6 +107,7 @@ FROZEN_PATHS = [
     "experiments/cont006/select_experience_corpus.py",
     "experiments/cont006/counterfactual-lessons.json",
     "experiments/cont006/check_counterfactual_lessons.py",
+    "experiments/cont006/revalidate_stores.py",
     "experiments/suite-v3/validate_fixtures_v3.py",
     "experiments/suite-v3/build_v3l.py",
     "experiments/suite-v3/run_cont006.py",

@@ -68,6 +68,14 @@ CARRIED = {
     "N-3": "FP-3a clusters (cr-6001/6002) seed the agent's own wrong first "
            "answer by construction — per-class Δ partially co-measures FP-2 "
            "susceptibility; class attribution reads weaker than it looks",
+    "PW-6": "worker sampling config frozen since FREEZE is num_ctx 8192 / "
+            "num_predict 768 (reflection_v2.WORKER_OPTIONS) while prereg §1 "
+            "quotes the WORKING-CORE config 4096/256 — different roles, "
+            "declared per GATE-CONT006-POSTW condition 10 (low materiality)",
+    "PW-GATE": "R2/R3 stores are the post-W v2 artifacts (GATE-CONT006-"
+               "POSTW: FIX-A/B/C, single-shot re-validation of the committed "
+               "raw log, zero new inference; the pre-fix 0-accepted record "
+               "kept byte-untouched in the original worker dir)",
 }
 
 

@@ -1,6 +1,6 @@
 {
  "kind": "cont006-freeze-manifest",
- "created_utc": "2026-10-08T18:50:54Z",
+ "created_utc": "2026-10-08T19:44:42Z",
  "prereg": "docs/EVALUATION-PREP-CONT006.md (owner-accepted 2026-10-08)",
  "seeds": {
   "all": [
@@ -96,11 +96,12 @@
   "experiments/cont006/select_experience_corpus.py": "82596816e9421b48093a99eda55fcd2d9ce4c5e21415ff1121dcac6649c94407",
   "experiments/cont006/counterfactual-lessons.json": "cdc53a4d708ef7bc97624e8d28217eb1060ed9d23377693adee3fd917566ea19",
   "experiments/cont006/check_counterfactual_lessons.py": "5da49ae8678238c5379cc45c96ad1640c194b7fe848ab2dc8c5a9076e4037a8e",
+  "experiments/cont006/revalidate_stores.py": "7230daf7ad779c95509aa187ef47e04b2cd1e71a2f88fb2e3a102758535b841f",
   "experiments/suite-v3/validate_fixtures_v3.py": "fe0ee69d7d6ecd4d8dfc14ab8cdd60c0dd61af0634a8dc484ab314427b63c86e",
   "experiments/suite-v3/build_v3l.py": "cec8769c5280c80a7863ccedcd877d1de019a697be0785a7707b1cab89cadb25",
-  "experiments/suite-v3/run_cont006.py": "c7edccb7832f9b06f3e7aa84ea8b51f753a69e1e3d0cc03eec73d9a367cdc33b",
+  "experiments/suite-v3/run_cont006.py": "c40175baab9678d7dd7477967c94494d21fdd2237af324a5b9810e31587625f7",
   "experiments/suite-v3/analyze_pilot_cont006.py": "1c5c01df908ff5abf3601046043e906a0b92088296af06f0797c68f9ad88427a",
-  "experiments/suite-v3/analyze_confirmatory_cont006.py": "2c48b0fda3c0b20dc72c90a8965f660dcd78f9b566cd0543df864e26aa88e3d2",
+  "experiments/suite-v3/analyze_confirmatory_cont006.py": "1249d15513f44b3e786521faf50e0479e3cc4662ae0eee99dbebe18246be077f",
   "experiments/suite-v3/power_calc_cont006.py": "a1e36ee691760d745b7c5c0b915686bb3c6d839fb9cc13f2465120f5c767e4c5",
   "experiments/suite-v3/power-results-cont006.json": "2055d79782619aea1642037b4aba483b6ba0ccbbd7504d358803e6e231400cf8",
   "experiments/suite-v3/fixture-validation-v3l.json": "b8e6e8776f174407438356d7567b624d0618e824939f5ede119077e01409557f",
@@ -110,7 +111,7 @@
   "src/continuity/fixtures.py": "4270a0916ab227c89b46c5cbe03525fa364831bf0353f91ee6c4fcef2b3f9f7d",
   "src/continuity/events.py": "4fc9ba4fcbf3998489715c817ae5a2b3eefe678811ee8bf38250d4ab0f0e2f38",
   "src/continuity/claims.py": "028e5e1f2de2e997dc1b21c2be7d16d5fe2efc54646ee915d10ce45f91d0303a",
-  "src/continuity/lessons.py": "bb73c5f366bbf078414bcd7da02e98134ac2f16ed3a7e66eb906152b442f50dc",
+  "src/continuity/lessons.py": "9172171615de4df9e3460b708e81c38c4b0146a2c05f7c886ba32a8ecec4ef1e",
   "src/continuity/reflection_v2.py": "7c8dc548c2a1dfd53fee29385a9d799684f3a36b80c58f5db4a4e522b230fbdd",
   "src/continuity/reflection.py": "07079eeefc1a463d925acc36f799bf894257edb0e17c6bc711f20c89912a1364",
   "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json": "1545f365d3f97a87bbfb4887abb493c2bfa844165dcde0e40598616a80807c0d"

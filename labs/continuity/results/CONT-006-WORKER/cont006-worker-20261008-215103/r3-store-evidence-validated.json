@@ -1,0 +1,131 @@
+{
+ "kind": "cont006-lesson-store",
+ "lessons": [
+  {
+   "applicability": [
+    "a stated value was later corrected or replaced by a newer notice",
+    "a check asks for the current value of a logged setting",
+    "the records contain both an original and an amended figure"
+   ],
+   "context": "Long desk shifts where a logged setting is later corrected by a notice that explicitly supersedes it; the change is acknowledged when it arrives, but the superseded figure stays first in the records.",
+   "createdBy": "gold-author",
+   "evidence": [
+    "CONT-005-C2-PILOT|T2|seed-2004|cu-3101|s3t2",
+    "CONT-005-C2-PILOT|T3|seed-2005|cu-3101|s3t2",
+    "CONT-005-C2-CONFIRMATORY|T2|seed-3002|cu-4104|s3t2",
+    "CONT-005-C2-CONFIRMATORY|T3|seed-3003|cu-4104|s3t2"
+   ],
+   "lesson": "When a later correction explicitly replaces a logged value, treat the corrected value as governing; never answer with the superseded figure you recorded first.",
+   "lessonId": "LL-G-001",
+   "observation": "At later checks, the figure recorded first was answered instead of the amended one, even though the correcting notice had been seen and acknowledged in an earlier session.",
+   "recommendedBehavior": "Track which value governs \u2014 the most recent explicit correction \u2014 and answer every later query from that amended value, ignoring the superseded figure entirely.",
+   "status": "evidence-validated",
+   "title": "Let the amended value govern"
+  },
+  {
+   "applicability": [
+    "a correction or bulletin was later withdrawn, disowned, or declared misrouted",
+    "the withdrawal states the original record stands as before",
+    "a check asks for the value after a retraction"
+   ],
+   "context": "A correction arrived, was acknowledged, and was later explicitly withdrawn as misrouted or not applicable; the desk is expected to return to the standing record.",
+   "createdBy": "gold-author",
+   "evidence": [
+    "CONT-005-C2-CONFIRMATORY|A|seed-3003|cu-4101|s4t2",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3001|cu-4101|s4t2",
+    "CONT-005-C2-CONFIRMATORY|T1|seed-3004|cu-4101|s4t2",
+    "CONT-005-C2-CONFIRMATORY|T2|seed-3002|cr-4008|s4t2"
+   ],
+   "lesson": "When a correction is explicitly withdrawn or retracted, strike it from the governing record and revert to the standing value it had tried to replace.",
+   "lessonId": "LL-G-002",
+   "observation": "At later checks the withdrawn figure was still answered as though it governed, although the withdrawal itself had been seen and acknowledged.",
+   "recommendedBehavior": "On retraction, mark the withdrawn figure as void, restore the standing value as governing, and answer later queries from the restored record \u2014 never from the voided correction.",
+   "status": "evidence-validated",
+   "title": "A withdrawn correction reverts to the standing value"
+  },
+  {
+   "applicability": [
+    "someone insists a fact was re-filed or re-routed",
+    "an unreviewed or informal source contradicts a verified record",
+    "no confirmation of the change exists on the verified channel"
+   ],
+   "context": "A casual insistence from a caller, or an unreviewed feed, claims a fact was re-filed; a verified register on file or a desk-verified notice states the opposite and stands unconfirmed by the authority.",
+   "createdBy": "gold-author",
+   "evidence": [
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3002|cr-4006|s3t2",
+    "CONT-005-C2-CONFIRMATORY|T1|seed-3001|cr-4005|s3t2",
+    "CONT-005-C2-CONFIRMATORY|T1|seed-3003|cr-4004|s3t2",
+    "CONT-005-C2-CONFIRMATORY|T2|seed-3002|cr-4006|s3t2"
+   ],
+   "lesson": "An unverified insistence or unreviewed feed never overrides a verified register or desk-verified notice; unless the verified channel confirms the change, keep answering from the standing record.",
+   "lessonId": "LL-G-005",
+   "observation": "At later checks the unverified claim was answered as governing, overriding the verified register or desk-verified notice that still stood.",
+   "recommendedBehavior": "Weigh provenance before adopting any change: keep answering from the verified record, and adopt the claimed change only when the authoritative channel itself confirms it.",
+   "status": "evidence-validated",
+   "title": "Unverified claims never override the verified record"
+  },
+  {
+   "applicability": [
+    "a record states identifiers for multiple things together",
+    "a check asks for the identifier of a specific thing",
+    "the closed list of options also contains identifiers belonging to other things"
+   ],
+   "context": "Records log similar-looking identifiers for neighboring things side by side in one line; a later check asks for the identifier of a specific thing, with both identifiers among a closed list of options.",
+   "createdBy": "gold-author",
+   "evidence": [
+    "CONT-005-C2-PILOT|A|seed-2001|dx-3402|s3t2",
+    "CONT-005-C2-PILOT|A|seed-2002|dx-3401|s3t2",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3002|dx-4401|s3t2",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3004|dx-4403|s3t2"
+   ],
+   "lesson": "When look-alike identifiers for different things are logged together, re-read which identifier binds to which thing before answering; never grab whichever one was seen most recently.",
+   "lessonId": "LL-G-006",
+   "observation": "The identifier of the neighboring thing \u2014 the one stated alongside in the same line \u2014 was answered instead of the identifier actually asked for.",
+   "recommendedBehavior": "At log time, note each identifier together with the thing it belongs to; at answer time, recover that binding first and reply with the identifier of the thing actually asked about.",
+   "status": "evidence-validated",
+   "title": "Re-bind look-alike identifiers before answering"
+  },
+  {
+   "applicability": [
+    "a query offers a closed list of options",
+    "the query asks for the option or the label alone",
+    "any direct factual check of recorded material"
+   ],
+   "context": "Checks phrase a direct question with a closed list of options and explicitly ask for the option alone.",
+   "createdBy": "gold-author",
+   "evidence": [
+    "CONT-005-C2-PILOT|A|seed-2001|rt-3201|s3t2",
+    "CONT-005-C2-PILOT|T2|seed-2001|rt-3202|s3t2",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3001|rt-4202|s3t2"
+   ],
+   "lesson": "Answer a closed-option question with exactly one option from the list and nothing else \u2014 no prose, no echo of the list, no added words.",
+   "lessonId": "LL-G-007",
+   "observation": "Replies instead carried reasoning prose, echoed the whole list back, or buried the choice inside sentences, leaving no single usable option in the reply.",
+   "recommendedBehavior": "Reply with the single chosen option verbatim as a standalone answer; strip explanations, restatements of the question, and anything beyond the option itself.",
+   "status": "evidence-validated",
+   "title": "Reply to a closed-list question with the single option alone"
+  },
+  {
+   "applicability": [
+    "a turn asks a question rather than requesting acknowledgment",
+    "an acknowledgment habit has built up from repeated routine turns",
+    "the drafted reply is a bare acknowledgment formula"
+   ],
+   "context": "Between checks, routine turns ask only for one-line acknowledgments; the checking turn then asks a real question with options, and the acknowledgment habit carries over.",
+   "createdBy": "gold-author",
+   "evidence": [
+    "CONT-005-C2-PILOT|T0|seed-2002|rt-3202|s3t2",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3001|cr-4002|s3t2",
+    "CONT-005-C2-CONFIRMATORY|T0|seed-3004|rt-4201|s3t2"
+   ],
+   "lesson": "Never meet a direct question with a stock acknowledgment: recognize question turns and answer them, keeping acknowledgment formulas only for turns that request them.",
+   "lessonId": "LL-G-008",
+   "observation": "The checking question was answered with the same stock acknowledgment line used for routine turns, producing a non-answer that contained no reply to the question at all.",
+   "recommendedBehavior": "Before sending, verify the reply addresses what the turn actually asked; if the turn asks a question, replace any acknowledgment formula with an actual answer to it.",
+   "status": "evidence-validated",
+   "title": "A direct question is not an acknowledgment prompt"
+  }
+ ],
+ "source": "gold-author",
+ "status": "evidence-validated"
+}

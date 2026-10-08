@@ -1,0 +1,6 @@
+{
+ "provenance": "Post-W re-validation per GATE-CONT006-POSTW (GO-with-fixes; local GLM 5.3 Flash non-executor gate, substitution declared): FIX-A 4-part ref resolution to the single probe event; FIX-B cross-trace support assembly (greedy clustering, Jaccard >= 0.70 vs any member, first-appearing text, unioned evidence); FIX-C template-token skip. Derived from the committed raw-worker-log.jsonl with ZERO new inference; single-shot (condition 4). The pre-fix record (58 candidates, 0 accepted \u2014 frozen-prompt-vs-frozen-validator contradiction, gate finding PW-2/PW-3) stays byte-untouched in the original worker dir.",
+ "r2_store_sha256": "a15d02060ac69611a1ba6562522e7e12ca23e3a80705548fa07e1085cd15b976",
+ "r3_store_sha256": "6f7cc01da2816dc2f0b0818057b1a62240d2ed7487242f7a3bfb5f9c4453b153",
+ "gate": "docs/GATE-CONT006-POSTW.md"
+}

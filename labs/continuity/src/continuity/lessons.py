@@ -74,7 +74,12 @@ def _blocked_vocab() -> set[str]:
             vocab.add(s["id"].lower())
             seed = s.get("seed_error") or {}
             if isinstance(seed.get("value"), str):
-                vocab |= lesson_words(seed["value"])
+                # FIX-C (GATE-CONT006-POSTW): pure template tokens
+                # ('{old}', '{new}', '{alt}') are fixture syntax, never
+                # rendered label values — the rendered values stay blocked
+                # by the numeral/code rules. Skip them.
+                if not re.fullmatch(r"\{[a-z_]+\}", seed["value"]):
+                    vocab |= lesson_words(seed["value"])
             if isinstance(s.get("initial_expected"), str):
                 vocab |= lesson_words(s["initial_expected"])
             for var in (s.get("variants") or {}).values():
@@ -148,32 +153,61 @@ class CorpusIndex:
         self.manifest = json.loads(path.read_text(encoding="utf-8"))
         self.traces = {t["trace"]: t for t in self.manifest["traces"]}
         self._events: dict[str, set[str]] = {}
+        self._probe_events: dict[str, set[str]] = {}
 
     def _refs_for_trace(self, trace_rel: str) -> set[str]:
-        if trace_rel not in self._events:
-            keys: set[str] = set()
-            path = LAB_ROOT / trace_rel
-            for line in path.read_text(encoding="utf-8").splitlines():
-                try:
-                    e = json.loads(line)
-                except json.JSONDecodeError:
-                    continue
-                if e.get("type") in ("env.turn", "agent.response", "probe.result"):
-                    ref = (e.get("payload") or {}).get("turn_ref")
-                    if ref and e.get("scenario"):
-                        keys.add(f"{e['scenario']}|{ref}")
-            self._events[trace_rel] = keys
+        self._load_trace(trace_rel)
         return self._events[trace_rel]
 
+    def _probes_for_trace(self, trace_rel: str) -> set[str]:
+        self._load_trace(trace_rel)
+        return self._probe_events[trace_rel]
+
+    def _load_trace(self, trace_rel: str) -> None:
+        if trace_rel in self._events:
+            return
+        keys: set[str] = set()
+        probes: set[str] = set()
+        path = LAB_ROOT / trace_rel
+        for line in path.read_text(encoding="utf-8").splitlines():
+            try:
+                e = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if e.get("type") in ("env.turn", "agent.response", "probe.result"):
+                ref = (e.get("payload") or {}).get("turn_ref")
+                if ref and e.get("scenario"):
+                    keys.add(f"{e['scenario']}|{ref}")
+                    if e["type"] == "probe.result":
+                        probes.add(f"{e['scenario']}|{ref}")
+        self._events[trace_rel] = keys
+        self._probe_events[trace_rel] = probes
+
     def resolve(self, ref: str) -> tuple[bool, str]:
+        """FIX-A (GATE-CONT006-POSTW): accepts 5-part refs (exact event) and
+        4-part refs RUN|ARM|seed-N|SCENARIO, which resolve DETERMINISTICALLY
+        to that scenario-run's single probe event (every non-gc scenario-run
+        in the corpus has exactly one probe — gate-verified exhaustively;
+        fail-closed if a reachable scenario ever has probe count != 1)."""
         parts = ref.split("|")
-        if len(parts) != 5:
-            return False, "ref must be RUN|ARM|seed-N|SCENARIO|TURN"
-        run, arm, seed_dir, scenario, turn = parts
         for trace_rel, t in self.traces.items():
-            if t["run"] == run and t["arm"] == arm and f"seed-{t['seed']}" == seed_dir:
-                ok = f"{scenario}|{turn}" in self._refs_for_trace(trace_rel)
-                return ok, ("resolved" if ok else "scenario/turn not in trace")
+            if (t["run"] == parts[0] and t["arm"] == parts[1]
+                    and f"seed-{t['seed']}" == parts[2]):
+                keys = self._refs_for_trace(trace_rel)
+                if len(parts) == 5:
+                    run, arm, seed_dir, scenario, turn = parts
+                    ok = f"{scenario}|{turn}" in keys
+                    return ok, ("resolved" if ok else "scenario/turn not in trace")
+                if len(parts) == 4:
+                    scenario = parts[3]
+                    probes = self._probes_for_trace(trace_rel)
+                    probe_turns = sorted(k.split("|")[1] for k in probes
+                                         if k.startswith(f"{scenario}|"))
+                    if len(probe_turns) == 1:
+                        return True, f"resolved-to-probe {scenario}|{probe_turns[0]}"
+                    return False, (f"scenario {scenario} has {len(probe_turns)} probes "
+                                   "(fail-closed: 4-part resolution needs exactly 1)")
+                return False, "ref must be RUN|ARM|seed-N|SCENARIO|TURN"
         return False, "no such trace in the corpus manifest"
 
 
@@ -194,9 +228,18 @@ def validate_candidate(
         if not ok:
             reasons.append(f"unresolved evidence ref {ref!r}: {why}")
             continue
-        run, arm, seed_dir, scenario, turn = ref.split("|")
+        parts = ref.split("|")
+        trace_key = "|".join(parts[:3])
+        if len(parts) == 5:
+            scenario, turn = parts[3], parts[4]
+        else:  # FIX-A: the why-string carries the resolved probe turn
+            m = re.match(r"resolved-to-probe ([a-z]{2}-\d+)\|(.+)", why)
+            if not m:
+                reasons.append(f"unresolved evidence ref {ref!r}: {why}")
+                continue
+            scenario, turn = m.group(1), m.group(2)
         session = turn.split("t")[0]
-        resolved_keys.add((f"{run}|{arm}|{seed_dir}", scenario, session))
+        resolved_keys.add((trace_key, scenario, session))
     # (b) >= 2 distinct sessions in >= 2 distinct traces
     traces = {k[0] for k in resolved_keys}
     if len(resolved_keys) < 2:
@@ -238,13 +281,16 @@ def store_digest(store: dict) -> str:
     return hashlib.sha256(_canonical(store).encode("utf-8")).hexdigest()
 
 
-def make_store(lessons: list[dict], source: str, status: str) -> dict:
+def make_store(lessons: list[dict], source: str, status: str,
+               provenance: str | None = None) -> dict:
     store = {
         "kind": "cont006-lesson-store",
         "status": status,  # evidence-validated | active | empty
         "source": source,  # worker | gold-author | counterfactual | activation
         "lessons": lessons,
     }
+    if provenance is not None:
+        store["provenance"] = provenance
     store["store_sha256"] = store_digest(store)
     return store
 
@@ -257,8 +303,14 @@ def load_store(path: Path) -> dict:
 
 
 def save_store(store: dict, path: Path) -> str:
+    """D-PW-7 fix (GATE-CONT006-POSTW): the file carries the store_sha256
+    field so load_store round-trips; the digest is computed over the payload
+    WITHOUT the field (semantics unchanged)."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(_canonical(store) + "\n", encoding="utf-8")
+    payload = json.loads(_canonical(store))
+    payload["store_sha256"] = store["store_sha256"]
+    path.write_text(json.dumps(payload, sort_keys=True, indent=1) + "\n",
+                    encoding="utf-8")
     return store["store_sha256"]
 
 

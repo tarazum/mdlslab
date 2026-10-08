@@ -2526,3 +2526,48 @@ Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT006.md delivered.
   unchanged — only the substitution mechanism and the assembly rule).
 - Relaunching Phase W; Phase G (blind R3 authoring subagent) running in
   parallel (isolated inputs; touches none of the frozen paths).
+
+## 2026-10-08 — Phase W + Phase G COMPLETE; GATE-CONT006-POSTW (GO-with-fixes) executed; v2 stores frozen
+
+- **Phase W (worker, run of record cont006-worker-20261008-215103, 50/50
+  bundles on qwen36-35b-a3b think-pinned)**: 47 bundles with candidates, 58
+  candidates, 3 parse errors == 3 truncated calls (N-6 telemetry works),
+  3 NO_LESSON. Frozen pre-fix validation: 0 accepted — GATE-CONT006-POSTW
+  (local GLM 5.3 Flash, substitution declared; Fable+Opus session-limited)
+  diagnosed a frozen-prompt-vs-frozen-validator CONTRADICTION: (i) the
+  bundle header refs are 4-part scenario-level (ambiguous interface; worker
+  cited 172 scenario-level vs 57 turn-level refs) while §7.1(a)'s frozen
+  resolver demanded 5-part; (ii) per-trace bundles can never satisfy §7.1(b)
+  (>=2 traces) and rule (c) REJECTED cross-trace repeats as duplicates
+  instead of merging — 58/58 rejections predetermined by construction.
+- **Gate verdict GO-with-fixes** (record: docs/GATE-CONT006-POSTW.md): FIX-A
+  (4-part refs resolve deterministically to the scenario's single probe
+  event; gate exhaustively verified probe-count==1 over all 50 traces;
+  fail-closed otherwise); FIX-B (cross-trace support assembly: greedy
+  sequential clustering, join iff Jaccard >= 0.70 vs any member — the SAME
+  frozen threshold — first-appearing text, unioned evidence; the gate
+  INDEPENDENTLY re-implemented the predicate and matched field-by-field);
+  FIX-C (template tokens '{old}'/'{new}'/'{alt}' are fixture syntax, not
+  label values — vocab 526 -> 523; real labels/numerals stay blocked). Ten
+  conditions incl. single-shot (4), originals byte-untouched (5), sibling
+  dir with canonical names (7), zero new inference (9), PW-6 worker-config
+  note (10).
+- **D-PW-7 (blocking, caught by the gate's verification round): save_store
+  never wrote store_sha256 into the file -> load_store failed on EVERY
+  store it writes — Phase V would have crashed before the first call.**
+  Latent since FREEZE. Fixed (parse-modify-dump; digest semantics
+  unchanged). R-1: candidates-v2.json now carries ALL 58 per-candidate
+  records + a clusters section; both stores embed the provenance block.
+- **v2 stores (re-validation of the committed raw log, zero new
+  inference):** R2 = 4 evidence-validated lessons (LL-W-001/012/022/034:
+  3 format-class FP-6 clusters of 2-5 traces + 1 FP-1 supersession pair;
+  46 singletons rejected single-trace), sha256 a15d02060ac6…; R3 = 8/8
+  gold lessons (LL-G-001..008), sha256 6f7cc01da281…. Gate re-checks
+  (a)-(d) all PASS: loads round-trip, accepted sets exact, 58 records,
+  manifest 37/37.
+- Freeze manifest refreshed through the approved fixes (lessons.py,
+  reflection_v2.py, run_cont006.py, analyzers, + revalidate_stores.py =
+  37 entries). Worker telemetry + candidates + raw log committed under
+  results/CONT-006-WORKER/ (originals) and …-v2/ (canonical for Phase V).
+- NEXT: contamination gate (prereg §12) -> Phase V (activation) ->
+  V-activate (STORE FREEZE) -> Phase P pilot -> pilot-gate -> Phase C.
