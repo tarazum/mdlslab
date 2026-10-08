@@ -586,7 +586,7 @@ def main() -> int:
             raise SystemExit("FAIL-CLOSED: Phase P needs --active-dir with the "
                              "frozen ACTIVE stores (run Phase V-activate first)")
         root = _opt(args.resume_root)
-        run_transfer_phase("P", MAIN_ARMS, PILOT_SEEDS, TR_IDS + GC_IDS(),
+        run_transfer_phase("P", MAIN_ARMS, PILOT_SEEDS, TR_IDS + GC_IDS,
                            args.base_url, store_dir=active, store_kind="active",
                            resume_root=root, gc_trim=args.gc_trim)
         run_transfer_phase("P", ["RBAD", "RGOLD"], PILOT_SEEDS, CF_SUBSET,
@@ -600,7 +600,7 @@ def main() -> int:
             raise SystemExit("FAIL-CLOSED: Phase C needs --active-dir with the "
                              "frozen ACTIVE stores")
         run_transfer_phase("C", MAIN_ARMS, [s for s in ALL_SEEDS if s not in PILOT_SEEDS],
-                           TR_IDS + GC_IDS(), args.base_url, store_dir=active,
+                           TR_IDS + GC_IDS, args.base_url, store_dir=active,
                            store_kind="active", resume_root=_opt(args.resume_root),
                            gc_trim=args.gc_trim)
         return 0
