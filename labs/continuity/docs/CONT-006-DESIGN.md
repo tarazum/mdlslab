@@ -7,7 +7,7 @@ PR-REVIEW pass first). Zero GPU in this milestone. Basis:
 `docs/REFLECTION-V2-PROPOSAL.md` (both reviews folded: RC-1..RC-5 +
 RC-1..RC-4), `docs/CONT006-TAXONOMY.md` (FROZEN),
 `experiments/cont006/experience-corpus-manifest.json`, suite v3l
-(`fixtures/v3l`, builder `build_v3l.py`, validator PASS 18/18 +
+(`fixtures/v3l`, builder `build_v3l.py`, validator PASS 19/19 +
 regressions v3..v3k PASS ×5), power artifact
 `experiments/suite-v3/power-results-cont006.json`.
 
@@ -26,7 +26,7 @@ label-form pass-rate delta **Δ = S(R2) − S(R0)** over the 15 v3l primary
 transfer clusters (7 seeds each), where S(arm) = mean probe pass rate of the
 arm; cluster bootstrap two-sided 95% CI; MME **0.20** absolute (power
 artifact: the smallest 0.05-step effect detectable at ≥ 0.80 on the
-conservative row — 0.15 gives only 0.650; effects below 0.20 are not
+conservative row — 0.15 gives only 0.660; effects below 0.20 are not
 claimable at this design's power, declared limitation; 0.20 also clears the
 template §9 guessing-band floor).
 
@@ -67,7 +67,8 @@ pilot.
 1. **Experience set (frozen, committed):** ALL 50 CONT-005-C2 arm-seed
    traces (suite v3i pilot 25 + v3j confirmatory 25), selected + digested +
    taxonomy-labeled by `select_experience_corpus.py`
-   (`experiments/cont006/experience-corpus-manifest.json`; sha256 e8e863b7…;
+   (`experiments/cont006/experience-corpus-manifest.json`; sha256 6f8f885a… (re-emitted at the
+   PR-REVIEW fold, N-4);
    pooled failure classes FP-1 118, FP-2 226, FP-3a 129, FP-3b 103, FP-4 27,
    FP-5 26, FP-6 271 — every class covered; the fresh-supplement rule does
    not fire). Reserve NOT selected: CONT-001-confirmatory (v2 free-form
@@ -210,10 +211,12 @@ rule (§6). Ordering: R3 authoring may run before or after the worker pass
 (they are independent) but MUST complete before the store freeze; the
 non-executor contamination gate verifies the authoring session's inputs.
 
-## 9. Suite v3l (authoring complete, validator PASS 18/18)
+## 9. Suite v3l (authoring complete, validator PASS 19/19)
 
 `fixtures/v3l` (builder `build_v3l.py`, deterministic re-run verified;
-validator `--suite v3l` PASS 18/18 incl. V8 mixed dispatch + V17 validation
+validator `--suite v3l` PASS 19/19 (19 check records; V8 and V8R are
+separate records — the milestone LOG's "18/18" was a miscount, corrected
+at the PR-REVIEW fold, RC-4) incl. V8 mixed dispatch + V17 validation
 split; regressions v3/v3h/v3i/v3j/v3k PASS ×5;
 `fixture-validation-v3l.json` committed). 22 scenarios, 103 turns/seed,
 seeds {6001..6007} predeclared, ids x-6xxx, fresh worlds, rendered texts

@@ -1,0 +1,40 @@
+{
+ "kind": "cont006-counterfactual-lessons",
+ "note": "Frozen BEFORE any pilot inference (PR-REVIEW-CONT006 RC-3); pilot-only objects; injected through the normal lesson channel; bypass prereg 7.1 evidence validation by declared design; excluded from the primary analysis.",
+ "lessons": {
+  "BAD": {
+   "lessonId": "CF-BAD-001",
+   "createdBy": "counterfactual-author",
+   "title": "Two-option answers read better",
+   "context": "closed-option questions in earlier desk work",
+   "observation": "single-option replies sometimes looked terse to reviewers",
+   "lesson": "When a closed list of choices is offered, answer with the two most fitting choices in your own words, better one first.",
+   "applicability": [
+    "a closed list of choices is offered"
+   ],
+   "recommendedBehavior": "give two fitting choices in your own words",
+   "evidence": [
+    "SYNTHETIC-BY-DECLARATION (counterfactual pilot object; bypasses prereg 7.1 evidence validation by design)"
+   ],
+   "bypasses_evidence_validation": true,
+   "expected_effect": "plausible-but-wrong: should DEGRADE label-form compliance; the pilot checks the system does not blindly parrot it (criterion 1)"
+  },
+  "GOLD-TRIV": {
+   "lessonId": "CF-GOLD-001",
+   "createdBy": "counterfactual-author",
+   "title": "One option, nothing else",
+   "context": "closed-option questions in earlier desk work",
+   "observation": "replies that added extra wording were hard to tally",
+   "lesson": "When a question presents a closed list of options, respond with exactly one item from that list and add no other words.",
+   "applicability": [
+    "a question presents a closed list of options"
+   ],
+   "recommendedBehavior": "answer with exactly one item from the list",
+   "evidence": [
+    "SYNTHETIC-BY-DECLARATION (counterfactual pilot object; bypasses prereg 7.1 evidence validation by design)"
+   ],
+   "bypasses_evidence_validation": true,
+   "expected_effect": "trivially-useful gold: should IMPROVE the invalid-format share by >= 0.10 (criterion 2 manipulation check)"
+  }
+ }
+}

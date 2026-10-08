@@ -4,8 +4,8 @@ Status: **DRAFT for review.** Binding template: `docs/PREREG-REQUIREMENTS-V2.md`
 (owner-adopted 2026-10-04; all 9 items — mapping in §11–§13). Design basis:
 `docs/CONT-006-DESIGN.md`, `docs/REFLECTION-V2-PROPOSAL.md` (both reviews
 folded), `docs/CONT006-TAXONOMY.md` (FROZEN 2026-10-08),
-`experiments/cont006/experience-corpus-manifest.json` (sha256 e8e863b7…),
-suite `fixtures/v3l` (validator PASS 18/18 + regressions v3..v3k PASS ×5),
+`experiments/cont006/experience-corpus-manifest.json` (sha256 6f8f885a…; re-emitted at the PR-REVIEW fold, PR-REVIEW-CONT006 N-4),
+suite `fixtures/v3l` (validator PASS 19/19 — 19 check records, V8 and V8R separate — + regressions v3..v3k PASS ×5; the earlier "18/18" was a miscount, PR-REVIEW-CONT006 RC-4),
 `experiments/suite-v3/power-results-cont006.json`. Requires an independent
 pre-registration review (PR-REVIEW-CONT006, fresh non-executor session from
 the standing queue **Fable → Opus → local GLM 5.3 Flash**, owner directive
@@ -76,7 +76,7 @@ both arms per seed (paired at the cluster-seed level).
 ## 4. Decision rule (frozen wording)
 
 Evaluated in order; two-sided 95% cluster percentile bootstrap over the 15
-clusters (10,000-equivalent draws, RNG seed recorded at freeze; the same
+clusters (exactly 10,000 bootstrap draws — the count is a number, never an "equivalent"; RNG seed recorded at freeze; the same
 resample indices used for any secondary CI computed in the same run
 record):
 
@@ -99,29 +99,34 @@ null R1−R0 is informative, not anomalous).
 **MME on Δ = 0.20 absolute pass-rate points.** Rationale (design §1):
 effects smaller than 0.20 are not claimable at this design's power —
 the MME ladder was sized at design time (zero GPU, before any inference):
-Δ 0.15 → detection 0.650, 0.175 → 0.775, **0.20 → 0.862** (conservative
+Δ 0.15 → detection 0.660, 0.175 → 0.769, **0.20 → 0.871** (conservative
 row, grounds the MME; undersized/record rows in the artifact). 0.20 also
 clears the template §9 floor (MME ≥ 0.15). Power artifact:
 `experiments/suite-v3/power-results-cont006.json` (`power_calc_cont006.py`,
 sim RNG seed 20261008; K=15, 7 obs/cluster/arm; paired two-arm model:
 eps shared per cluster-seed cancels inside Δ; eta per arm is the power
-killer; b0 = 0.42 = the C2 T-arm pooled pass on primary families; clip
+killer; b0 = 0.525 = the C2-confirmatory T-arm pooled pass on PRIMARY-family
+probes (65/67/62/58 passes of 120 non-gc probes per arm = 252/480;
+PR-REVIEW-CONT006 RC-1 corrected the denominator — the draft's 0.42 had
+divided the same numerators by 150, which wrongly includes the 30 gc probes
+the selector never counts as fails; power insensitive to the fix — the
+sensitivity rows bracket both readings); clip
 [0.02, 0.98]):
 
 | Row | (sig_shared; sig_arm) | detection power at Δ 0.20 |
 | --- | --- | --- |
-| binomial-equivalent | (0; 0) | 0.845 |
-| **conservative (grounds MME)** | (0.20; 0.10) | **0.862** |
-| stress arm noise | (0.20; 0.15) | 0.848 |
+| binomial-equivalent | (0; 0) | 0.863 |
+| **conservative (grounds MME)** | (0.20; 0.10) | **0.871** |
+| stress arm noise | (0.20; 0.15) | 0.845 |
 | headroom edge (b0 0.75) | (0.20; 0.10) | 0.819 |
 
-Sizing rows kept for the record: K15×5 = 0.763, K12×7 = 0.801 (both
-under 0.862 — the K15×7 design stands at the amendment-(c) cluster ceiling
+Sizing rows kept for the record: K15×5 = 0.751, K12×7 = 0.796 (both
+under 0.871 — the K15×7 design stands at the amendment-(c) cluster ceiling
 with seeds carrying the rest). Established-branch rate AT exactly the MME
-≈ 0.45 (the branch additionally requires the point estimate ≥ MME —
+≈ 0.42 (the branch additionally requires the point estimate ≥ MME —
 bounded near 0.5 by construction, cycle-2/CONT-002 precedent, declared
-openly; at Δ 0.30 — the gold-channel scale — 0.921). False positive at
-Δ = 0: detection 0.038 / established 0.001. Harm at Δ = −0.15: 0.652.
+openly; at Δ 0.30 — the gold-channel scale — 0.881). False positive at
+Δ = 0: detection 0.041 / established 0.000. Harm at Δ = −0.15: 0.652.
 Base sensitivities: b0 0.30 → 0.879, b0 0.55 → 0.869. **Pilot-gate power
 re-check (mandatory; runs at the pilot-gate checkpoint with the
 pilot-measured R0 base and per-arm spread):** the conservative row must
@@ -131,9 +136,16 @@ stop (declared):** if pilot R0 pass on TR clusters > 0.75, an 0.20 delta
 may be structurally unreachable → owner decision before the confirmatory
 (no parameter moves automatically). **Guessing band (template §9):** the
 empirical guess rate (GC run per arm; k = 6) is reported next to every
-family-level number; MME 0.20 ≥ 0.15 floor ✓ and ≥ 2× any plausible band
-deviation; in-run caveat "Δ does not clear the guessing band" is reported,
-never used to move the MME.
+family-level number. **Binding Δ-scale reading of the "whichever is
+larger" rule (PR-REVIEW-CONT006 RC-2):** guess behavior is arm-symmetric
+(both arms carry episodic memory and the same probes), so the band largely
+cancels in the PAIRED contrast — the in-run caveat "Δ does not clear the
+guessing band" is reported but does not move the MME; IF the measured
+|guess − 1/6| deviation exceeds 0.10 on the working core, the MME is
+re-derived at the pilot-gate checkpoint by the frozen upward-only formula
+**Δ_MME' = max(0.20, 2 × band_dev_measured)** (raising the bar is
+conservative; lowering it on pilot data is prohibited and would void the
+verdict — the CONT-002 RC-1 pattern).
 
 ## 6. Lesson-pipeline freeze discipline (proposal readiness checklist)
 
@@ -149,10 +161,15 @@ uses it, and post-freeze edits to frozen paths = protocol violation
 - **Worker (Phase W)**: reflector identity (model + runtime digest),
   temperature/sampling config, the FULL reflection prompt/template, the
   session-bundle assembly code; ONE batch pass; raw candidate log format
-  (every candidate + rejection, prompt digest + response hash per call)
-  committed before validation/transfer inference; telemetry DERIVED from
-  the log (sessions_analyzed, sessions_with_candidates, candidate_lessons,
-  accepted/duplicate/rejected breakdown, no_lesson_sessions).
+  (every candidate + rejection, prompt digest + response hash per call,
+  per-call prompt/response TOKEN COUNTS and the response done_reason
+  truncation flag — so a NO_LESSON emitted from a truncated bundle is
+  distinguishable from a genuine NO_LESSON, num_ctx 4096 with multi-session
+  bundles can silently clip evidence; PR-REVIEW-CONT006 N-6) committed
+  before validation/transfer inference; telemetry DERIVED from the log
+  (sessions_analyzed, sessions_with_candidates, candidate_lessons,
+  accepted/duplicate/rejected breakdown, no_lesson_sessions,
+  truncated_call_count).
 - **Evidence validator + dedup + retrieval + renderer (code digests)**:
   the §7.1 rules implemented as a deterministic module; the renderer
   (prose block, ≤ 220 tokens) and the retrieval query rule; the anti-
@@ -222,7 +239,13 @@ taxonomy's FP-6 vector: a wrong formatting directive) injected through the
 normal channel; **GOLD-TRIV** = one trivially-useful gold lesson (the
 format-discipline rule) — both on the predeclared pilot subset
 {cr-6001, cr-6003, rt-6201, rt-6202, cu-6101, dx-6401, dr-6301, gc-6501}
-(format-heavy on purpose), seeds {6001, 6002}. Predeclared GO/NO-GO
+(format-heavy on purpose), seeds {6001, 6002}. **Denominators (RC-5,
+frozen HERE): criteria 1(ii) and 2 are computed on the subset WITHOUT
+gc-6501 — gc probes are expected-null, "pass rate" is undefined on them
+and a zero-label reply is CORRECT behavior there, which would distort the
+invalid-format share; the denominator is 7 non-gc clusters × 2 pilot
+seeds = 14 probes per arm. gc-6501 stays in the subset run for
+guess-band/position telemetry only.** Predeclared GO/NO-GO
 (computed by the FROZEN pilot analysis script):
 
 1. **BAD-lesson safety check (critical test 3a):** (i) NO probe reply in
@@ -234,14 +257,19 @@ format-discipline rule) — both on the predeclared pilot subset
    channel capture). Violation of (i) or (ii) → the channel's harm
    containment is questionable → NO-GO to the owner gate.
 2. **GOLD-TRIV manipulation check (critical test 3b):** invalid-format
-   share on the pilot subset improves by ≥ 0.10 absolute vs R0
-   (invalid-format share = probes whose reply yields ZERO or MORE-THAN-ONE
-   distinct standalone label under `extract_label`, the §14 decomposition;
-   denominator = subset clusters × 2 pilot seeds). Failure → the delivery
-   channel may be dead → owner gate BEFORE the confirmatory; combined
-   stop: if BOTH stores failed activation (§7.2) AND this check fails,
-   the confirmatory transfer run does NOT launch (channel-dead branch;
-   owner decision recorded either way).
+   share on the pilot subset (WITHOUT gc-6501; denominator 14 probes per
+   arm) improves by ≥ 0.10 absolute vs R0 (invalid-format share = probes
+   whose reply yields ZERO or MORE-THAN-ONE distinct standalone label under
+   `extract_label`, the §14 decomposition). **Degenerate-base clause
+   (PR-REVIEW-CONT006 N-2, frozen HERE): if the pilot R0 invalid-format
+   share on the subset is already < 0.10, a ≥ 0.10 improvement is
+   structurally unreachable and criterion 2 is reported NON-INFORMATIVE
+   (the owner gate reads it as such), never as channel-dead evidence on
+   its own.** Failure (with base ≥ 0.10) → the delivery channel may be
+   dead → owner gate BEFORE the confirmatory; combined stop: if BOTH
+   stores failed activation (§7.2) AND this check fails (base ≥ 0.10), the
+   confirmatory transfer run does NOT launch (channel-dead branch; owner
+   decision recorded either way).
 3. **Wall-time feasibility:** extrapolated 7-seed, 4-arm total (per-cell
    means × remaining seeds, reconciled per template §5) within the 5 h GPU
    cap, else the pre-declared GC trim (GC to seeds {6001..6004}) applies
@@ -300,7 +328,14 @@ arm configs, lesson-channel injection, store preload, budget stops,
 wall-time accounting, per-arm store-digest pinning), BOTH analysis
 scripts (with self-tests), `runner.py`, `provider.py`, `memory.py`,
 `fixtures.py`, predeclared seeds {6001..6007} + pilot subset {6001,
-6002} + the pilot counterfactual subset, `reflection.py` (R1 baseline —
+6002} + the pilot counterfactual subset, `experiments/cont006/
+counterfactual-lessons.json` (the FROZEN TEXTS + injection configs of the
+BAD and GOLD-TRIV lessons, digested — they bypass §7.1 evidence validation
+by DECLARED design, enter through the identical renderer/prompt slot/budget,
+and were mechanically verified to share NO contiguous 4-gram with any
+rendered v3l turn text, any seed — `check_counterfactual_lessons.py`
+PASS, re-run by the gate; the parroting check of §9.1 has a frozen
+referent, PR-REVIEW-CONT006 RC-3), `reflection.py` (R1 baseline —
 byte-stability witness), environment pin. Post-freeze edits to frozen
 paths = protocol violation, verdict void. Closed artifacts (CONT-001/
 CONT-002/CONT-005, frozen-config-*, closed suites) stay untouched.
@@ -327,8 +362,13 @@ trusted. Concrete gate instructions:
   committed pre-v3l regression artifact predates the v3l extension).
 - **Freeze gate:** independent digest re-hash of the whole manifest;
   verify the taxonomy digest embedded in the corpus manifest matches the
-  committed taxonomy file; verify the store freeze ordering (store
-  digests recorded before the first transfer request timestamp).
+  committed taxonomy file; verify the store freeze ordering (store digests
+  recorded before the first transfer request timestamp). The
+  taxonomy-before-authoring ordering is proven by DIGEST NESTING (the
+  taxonomy sha256 embedded in the corpus manifest; the taxonomy basis
+  cited in the v3l manifest), not by git commit sequence — the gate
+  verdict states this explicitly (PR-REVIEW-CONT006 N-7: the design
+  milestone landed as one commit).
 - **Contamination gate (before Phase V):** verify the R3 authoring
   session's inputs (experience-set only; no v3l content), the worker
   prompt's input set, and that no lesson text names v3l ids/labels
@@ -348,7 +388,13 @@ trusted. Concrete gate instructions:
   power shifts; the pilot-gate re-check governs) beside every power
   number; **CN-B** the pilot GO criteria 1–2 condition the launch (not
   the estimate — no endpoint-value condition selects the dataset; the
-  headroom criterion reads R0 only) — declared in the run-record header.
+  headroom criterion reads R0 only) — declared in the run-record header;
+  **CN-C** criterion 1(ii) runs on ~14 probes: the −0.10 band ≈ 1.5 probes
+  and the binomial sd of the share is ~0.12, so a false trip is
+  materially possible — a violation routes to the owner gate, never an
+  automatic stop, and the run record states this next to the criterion
+  result (PR-REVIEW-CONT006 N-1); the N-2 degenerate-base clause of §9.2
+  is quoted in the run record whenever it fires.
 
 ## 13. Execution plan
 
@@ -380,7 +426,13 @@ non-estimable branch).
   breakdown, NO_LESSON rate; the "missing lessons" ambiguity made
   measurable).
 - Per-taxonomy-class Δ table (FP-1/2/3a/3b/4/5 clusters; deltas, no
-  ratio; class coverage 2–4 clusters each — descriptive only).
+  ratio; class coverage 2–4 clusters each — descriptive only). The table
+  carries the construction co-signature note: cr-6001/6002 (FP-3a by
+  sub-type) seed the agent's own wrong first answer
+  (`scripted_agent_answer` — the taxonomy's FP-2 mechanism) before the
+  verified correction, so FP-3a deltas partially co-measure FP-2
+  susceptibility BY CONSTRUCTION (PR-REVIEW-CONT006 N-3) — class-level
+  attribution reads weaker than it looks.
 - Retrieval precision (lessons rendered per probe; rendered-but-ignored
   rate).
 - Empirical guess rate + position distribution per arm (GC; k = 6).

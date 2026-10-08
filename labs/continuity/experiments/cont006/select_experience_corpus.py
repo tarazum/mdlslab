@@ -141,8 +141,10 @@ def main() -> int:
                       "authoring and transfer-fixture authoring",
         },
         "selection_rule": (
-            "ALL committed CONT-005-C2 arm-seed traces (suite v3j; pilot 25 + "
-            "confirmatory 25) are selected as the CONT-006 experience corpus; "
+            "ALL committed CONT-005-C2 arm-seed traces (the C2 pilot ran "
+            "suite v3i ids x-3xxx, the C2 confirmatory ran suite v3j ids "
+            "x-4xxx; pilot 25 + confirmatory 25) are selected as the CONT-006 "
+            "experience corpus; "
             "every taxonomy class FP-1..FP-6 has >= 20 pooled failure instances "
             "(coverage table below), so the fresh-supplement rule does not fire. "
             "Reserve NOT selected: CONT-001-confirmatory (v2 free-form probes, "

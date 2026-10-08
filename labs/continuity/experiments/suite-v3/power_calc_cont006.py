@@ -16,11 +16,15 @@ in the power_calc_cont002.py lineage, two cells instead of four):
     p(R0)     = clip(b0 + eps + eta0)          # eta ~ N(0, sig_arm) per arm
     p(R2)     = clip(b0 + d_true + eps + eta2) # the lesson treatment
 
-Bases: b0 = 0.42 (the C2 T-arm pooled pass rate on v3j primary families:
-(65+67+62+58)/4/150; R0 is the closest committed analogue of the lesson-free
-memory-on configuration); d_true at the MME row = MME. The lesson injection
-is an arm-level treatment; eta does NOT cancel — the power killer (as in
-CONT-002). Clip [0.02, 0.98].
+Bases: b0 = 0.525 (the C2-confirmatory T-arm pooled pass rate on PRIMARY
+family probes: passes 65/67/62/58 of 120 non-gc probes per arm = 252/480;
+PR-REVIEW-CONT006 RC-1 corrected the denominator — the pilot run's 0.42 had
+wrongly divided the same numerators by 150, which includes the 30 gc probes
+the selector never counts as fails; R0 is the closest committed analogue of
+the lesson-free memory-on configuration); d_true at the MME row = MME. The
+lesson injection is an arm-level treatment; eta does NOT cancel — the power
+killer (as in CONT-002). Clip [0.02, 0.98]. Sensitivity rows keep b0 0.30 /
+0.55 / 0.75, which bracket the former 0.42 reading.
 
 Analysis replicated EXACTLY as pre-registered: per cluster, seed means ->
 d_c = mean_R2 - mean_R0; d = mean over clusters; two-sided 95% cluster
@@ -48,7 +52,7 @@ K = 15                 # v3l primary transfer clusters (CR4+CU4+RT3+DX2+DR2)
 N_OBS = 7              # seed-variant observations per cluster (6001..6007)
 MME_D = 0.20           # pre-registered MME on the absolute pass-rate delta
 CLIP = (0.02, 0.98)
-B0 = 0.42              # R0 base (C2 T-arm pooled pass on primary families)
+B0 = 0.525             # R0 base (C2 T-arm pooled pass on primary families, 252/480)
 
 
 def simulate(b0: float, d_true: float, sig_shared: float, sig_arm: float,
@@ -123,7 +127,7 @@ def main() -> None:
                     "obs/cluster/arm (seeds 6001..6007)",
         "model": "per cluster c, seed s: eps~N(0,sig_shared) shared by both arms "
                  "(cancels inside d); eta~N(0,sig_arm) per arm (power killer); "
-                 "b0 0.42 (C2 T-arm pooled pass on primary families); clip [0.02,0.98]",
+                 "b0 0.525 (C2-confirmatory T-arm pooled pass on PRIMARY-family probes, 252/480; PR-REVIEW-CONT006 RC-1 corrected denominator); clip [0.02,0.98]",
         "mme": {"d": MME_D,
                 "rationale": "MME ladder 0.15/0.175/0.20 was sized at design time "
                              "(zero GPU): per-observation binomial noise with n=1 "

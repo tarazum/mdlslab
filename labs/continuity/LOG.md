@@ -2332,3 +2332,61 @@ Zero GPU; all exit artifacts of docs/SESSION-BRIEF-CONT006.md delivered.
   queue (Fable -> Opus -> local GLM 5.3 Flash) -> fold -> OWNER GATE
   (explicit acceptance before ANY worker/transfer inference;
   never-autonomous) -> freeze -> gates -> Phase W.
+
+## 2026-10-08 — PR-REVIEW-CONT006 COMPLETE: Fable GO-with-changes (RC-1..5) -> folded -> verify-pass GO
+
+- Reviewer: **Fable** (claude --model fable -p, fresh context, read-only,
+  repo root; first in the standing queue, no substitution). Record:
+  docs/PR-REVIEW-CONT006.md (raw verbatim + executor curation + disposition
+  + verify-pass). Sandbox blocked python for the reviewer (N-8, declared);
+  every execution-verified claim was covered documentally and converted to
+  mechanical gate checks per the RC-4a precedent.
+- Fable's summary: "найдисциплінованіша пререєстрація лабораторії" —
+  CONT-002 lessons (pilot-gate checkpoint, stop-criteria in TEXT, gate
+  regressions, carried notes) imported systematically; contamination chain
+  worker->store->transfer closed; MME ladder judged honest CONSERVATIVE
+  design-time sizing (bar moved UP before any data, full trail kept).
+  Template coverage 9/9 (2 stretch marks, both closed in the fold).
+- **RC-1 (real arithmetic bug, caught by the reviewer's manual check):**
+  power base b0 = 0.42 divided the T-arm primary PASS counts (65/67/62/58)
+  by 150 — wrongly including the 30 gc probes the selector never counts as
+  fails. Correct pooled base = 252/480 = **0.525**. Curatorial verification
+  CONFIRMED numerically from the corpus manifest (per-arm fails T0 55 /
+  T1 53 / T2 58 / T3 62; 120 non-gc probes/arm). Power insensitive
+  (sensitivity rows bracketed both readings): artifact regenerated —
+  conservative at MME 0.862 -> **0.871**; MME 0.20 stands.
+- RC-2: template §9 "whichever is larger" bound for the paired-delta
+  endpoint -> binding reading + frozen upward-only re-derivation
+  Δ_MME' = max(0.20, 2 × band_dev_measured) at the pilot-gate checkpoint.
+  RC-3: BAD/GOLD-TRIV counterfactual lesson TEXTS were unfrozen while the
+  stop-criteria referenced them -> experiments/cont006/
+  counterfactual-lessons.json (digest cdc53a4d…; §7.1 bypass declared) +
+  check_counterfactual_lessons.py: NO contiguous 4-gram of either lesson
+  shared with ANY rendered v3l text, any seed (also kills the false
+  parroting-trigger concern on probe instructions like "reply with the
+  label only"). RC-4: v3l validator verdict is **19** check records (V8
+  and V8R separate), not "18/18" — miscount fixed everywhere (LOG history
+  append-only; correction recorded here + in the review record).
+  RC-5: pilot criteria 1(ii)/2 now computed WITHOUT gc-6501 (expected-null
+  probes; denominator 14 probes/arm in the text) + N-2 degenerate-base
+  clause (R0 invalid-format base < 0.10 -> criterion 2 NON-INFORMATIVE).
+- Notes folded: N-1 -> carried CN-C (binomial noise on ~14 probes; owner
+  gate, never auto-stop); N-3 -> FP-3a/FP-2 co-signature note on the
+  per-class table; N-4 -> corpus manifest wording fixed (C2 pilot ran
+  suite v3i x-3xxx, confirmatory v3j x-4xxx), re-emitted, digest
+  e8e863b7… -> **6f8f885a…** (prereg/design refs updated); N-5 ->
+  exactly 10,000 draws; N-6 -> worker raw-log token counts + truncation
+  flag (NO_LESSON-from-truncation distinguishable); N-7 -> freeze gate
+  proves taxonomy-before-authoring ordering by digest nesting.
+- Verify-pass: validator v3l PASS 19/19 + regressions v3/v3h/v3i/v3j/v3k
+  PASS x5; 4-gram check PASS; corpus manifest byte-stable; power numbers
+  in prereg §5 all match the regenerated artifact; no stale numbers; no
+  frozen artifact touched.
+- NEXT: **OWNER GATE** — explicit acceptance of EVALUATION-PREP-CONT006
+  (with the folded RC) before ANY inference (worker pass included;
+  never-autonomous). After acceptance: FREEZE (analysis scripts first,
+  worker module + prompt + validator/dedup/retrieval/renderer, run script,
+  digests) -> non-executor gates (fixture v3..v3l regression artifact,
+  contamination/freeze) -> Phase W (worker) -> Phase G (R3 blind) ->
+  Phase V (activation, store freeze) -> Phase P (pilot + BAD/GOLD-TRIV)
+  -> pilot-gate checkpoint -> Phase C (confirmatory).

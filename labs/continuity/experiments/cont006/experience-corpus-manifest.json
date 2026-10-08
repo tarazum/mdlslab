@@ -5,7 +5,7 @@
   "sha256": "c93088bfb697bef39a4859e053300dbdbfd50ccebf0e91ad62b36abf8bd30a81",
   "status": "FROZEN for authoring purposes 2026-10-08, before lesson authoring and transfer-fixture authoring"
  },
- "selection_rule": "ALL committed CONT-005-C2 arm-seed traces (suite v3j; pilot 25 + confirmatory 25) are selected as the CONT-006 experience corpus; every taxonomy class FP-1..FP-6 has >= 20 pooled failure instances (coverage table below), so the fresh-supplement rule does not fire. Reserve NOT selected: CONT-001-confirmatory (v2 free-form probes, PR-REVIEW note-2 label-form caveat; cited as evidence in the taxonomy, not worker input) and CONT-005 cycle-1 runs (superseded by C2). Fresh supplement ONLY if a taxonomy class lacks coverage; any supplement is a new owner-gated run with its own digest.",
+ "selection_rule": "ALL committed CONT-005-C2 arm-seed traces (the C2 pilot ran suite v3i ids x-3xxx, the C2 confirmatory ran suite v3j ids x-4xxx; pilot 25 + confirmatory 25) are selected as the CONT-006 experience corpus; every taxonomy class FP-1..FP-6 has >= 20 pooled failure instances (coverage table below), so the fresh-supplement rule does not fire. Reserve NOT selected: CONT-001-confirmatory (v2 free-form probes, PR-REVIEW note-2 label-form caveat; cited as evidence in the taxonomy, not worker input) and CONT-005 cycle-1 runs (superseded by C2). Fresh supplement ONLY if a taxonomy class lacks coverage; any supplement is a new owner-gated run with its own digest.",
  "counts": {
   "traces": 50,
   "probes": 1500,
