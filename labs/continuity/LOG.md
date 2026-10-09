@@ -2925,3 +2925,68 @@ decisions executed: rethink = yes; fresh suite v3m; Stage B deferred.
 - NEXT (RC-6, owner-visible at each step): implementer self-review of the
   V2 package -> Fable independent review -> co-owner review -> OWNER
   ACCEPT -> freeze V2 -> worker v2 pass -> calibration pilot -> chain.
+
+## 2026-10-09 — RC-6 STEP 1/4: implementer SELF-REVIEW of the V2 package (9 findings, all folded same session)
+
+Chain: self-review (this) -> Fable -> co-owner -> OWNER ACCEPT (never-
+autonomous; zero behavioral inference before it). Method per RC-6:
+DIRECT inspection of representative traces/artifacts, every mechanical
+gate RE-RUN (all zero GPU), determinism double-checked.
+
+- Direct trace re-read (invalid run R2/seed-6003): 0 memory.append, 35/35
+  memory.injected empty (injected:false), 53/53 lessons.injected live with
+  pinned store digest; completed:true + memory_episodes:0 (historical
+  pre-guard record) — CN-012 signature exactly as audited.
+- Re-run battery: validator v3m PASS 19/19 + regressions x6; build_v3m
+  byte-identical; live gate on invalid run FAIL 20/20 exit 2 (fail-closed
+  re-confirmed); combined smoke PASS x5; power V2 byte-identical (MME
+  0.20, b0 0.525); bundles byte-identical; audit PASS (but see SR-1).
+- Findings SR-1..SR-9, ALL folded + re-verified:
+  SR-1 arm-equivalence-audit.json embedded a per-process object address ->
+  NOT byte-stable for the freeze manifest; now stable module.qualname,
+  double-run byte-identical.
+  SR-2 FP-6 cap was prose-only (no class schema, no cap code, no coverage
+  telemetry); now mechanical in src/continuity/reflection_v2.py: lesson
+  "class" field (worker prompt tags it), apply_class_cap (keep-first,
+  uniform R2/R3), class_coverage telemetry.
+  SR-2b R3 "8->7" had no recorded decision; gold-lesson-classes.json
+  annotates all 8 (LL-G-007 AND LL-G-008 are FP-6 — a bare ack IS a prose
+  reply); recap_r3_v2.py: 8/8 section-7.1 -> cap -> 7 lessons (LL-G-008
+  drops, keep-first), r3-store-v2.json sha 48064a02..., deterministic x2.
+  SR-3 run_worker_v2 did not exist (run_worker is still V1 per-trace) and
+  worker_v2_bundles.prompt_for was dead-wrong (@@-tokens on a {}-template);
+  V2 executor + template now in src (single source), broken helper deleted,
+  bundles artifact byte-identical.
+  SR-4 three contradictory chain orders (A.6 vs A.3-title vs DESIGN-V2
+  which had calibration BEFORE worker — impossible); canonical order fixed
+  in both docs; A.3 retitled (before the STORE freeze, not the protocol
+  freeze).
+  SR-5 gate verified FAIL-only; T5 docstring promised appends/2 equality,
+  code checked only zero (and /2 is wrong — episodes 1:1 with appends);
+  T5 now the real equality + missing-summary fails; --self-test added
+  (healthy R0/R2 root PASS + CN-012-sim FAIL; both directions, zero GPU).
+  SR-6 valid_arms parallel superset tuple -> module assert
+  set(MEMORY_ARMS) <= set(valid_arms).
+  SR-7 num_ctx checked consistent (agent 4096 = gate; reflector 8192) —
+  no change.
+  SR-8 power V2 artifact still said "v3l ... seeds 6001..6007"; now names
+  v3m/7001..7007 explicitly; regenerated, byte-stable, MME 0.20 stands.
+  SR-9 counterfactual 4-gram check scanned v3l only; extended to
+  v3l+v3m x all seeds: PASS, 0 shared 4-grams (early Phase-P evidence).
+- Post-fold regression battery ALL GREEN (validators x7, smoke, gate
+  self-test both directions, gate-invalid exit 2, audit, bundles, recap,
+  4-gram).
+- Honest declarations for reviewers: run_worker_v2 unexecuted under a real
+  provider (owner-gated first run); anchor 0.525 is cross-suite (C2
+  surfaces) — tolerance + halt-and-investigate semantics buffer it;
+  gold class annotation is implementer-judged (rationale recorded; lesson
+  TEXT untouched — blind protocol intact).
+- Artifacts: docs/SELF-REVIEW-CONT006-V2.md (full report); new files
+  gold-lesson-classes.json, recap_r3_v2.py, r3-validation-v3.json,
+  r3-store-v2.json; updated live_telemetry_gate.py (T5 + self-test),
+  reflection_v2.py (V2 block), worker_v2_bundles.py, check_counterfactual_
+  lessons.py, arm_equivalence_audit.py, runner.py (assert), power_calc_
+  cont006_v2.py, power-results-cont006-v2.json, EVALUATION-PREP-CONT006-
+  V2.md, CONT-006-DESIGN-V2.md.
+- NEXT: RC-6 step 2 — Fable independent review (queue: Fable -> Opus ->
+  GLM 5.3 Flash), then co-owner, then owner accept.

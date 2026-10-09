@@ -4,9 +4,9 @@ Power calculation for the CONT-006 primary endpoint: R2 - R0 transfer delta.
 
 Design (docs/CONT-006-DESIGN.md, docs/EVALUATION-PREP-CONT006.md): paired
 two-arm comparison {R0 = persistent memory, no lessons; R2 = same + ACTIVE
-worker lessons through the lesson channel} on the v3l PRIMARY transfer
+worker lessons through the lesson channel} on the v3m PRIMARY transfer
 clusters (15 = CR x4 + CU x4 + RT x3 + DX x2 + DR x2), 7 seed-variant
-observations per cluster per arm (seeds 6001..6007), one held-out label-form
+observations per cluster per arm (v3m seeds 7001..7007; sized at design time on the composition-identical v3l plan before v3m existed), one held-out label-form
 probe per observation (scoring SUITE-V3-DESIGN section 3).
 
 Simulated data-generating model per cluster c, seed s (paired-variant model
@@ -53,8 +53,8 @@ import numpy as np
 rng = np.random.default_rng(20261009)
 REPS = 3000
 BOOT = 4000
-K = 15                 # v3l primary transfer clusters (CR4+CU4+RT3+DX2+DR2)
-N_OBS = 7              # seed-variant observations per cluster (6001..6007)
+K = 15                 # v3m primary transfer clusters (CR4+CU4+RT3+DX2+DR2)
+N_OBS = 7              # seed-variant observations per cluster (7001..7007)
 MME_D = 0.20           # V2: MME stays 0.20 (band = caveat-only, see module docstring)
 CLIP = (0.02, 0.98)
 B0 = 0.525             # R0 base (C2 T-arm pooled pass on primary families, 252/480)
@@ -126,10 +126,11 @@ def main() -> None:
     out = Path(__file__).parent / "power-results-cont006-v2.json"
     out.write_text(json.dumps({
         "kind": "cont006-power-calc-v2",
-        "endpoint": "d = S(R2) - S(R0) label-form pass-rate delta on the v3l "
+        "endpoint": "d = S(R2) - S(R0) label-form pass-rate delta on the v3m "
                     "primary transfer clusters (CR4+CU4+RT3+DX2+DR2 = 15); "
                     "two-sided 95% cluster percentile bootstrap; 7 seed-variant "
-                    "obs/cluster/arm (seeds 6001..6007)",
+                    "obs/cluster/arm (v3m seeds 7001..7007; design-sized before v3m "
+                    "authoring on the composition-identical plan)",
         "model": "per cluster c, seed s: eps~N(0,sig_shared) shared by both arms "
                  "(cancels inside d); eta~N(0,sig_arm) per arm (power killer); "
                  "b0 0.525 (C2-confirmatory T-arm pooled pass on PRIMARY-family probes, 252/480; PR-REVIEW-CONT006 RC-1 corrected denominator); clip [0.02,0.98]",

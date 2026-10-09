@@ -60,7 +60,7 @@
   "fixture_rendering": {
    "definition": "continuity.fixtures.render_seed_variant",
    "shared_by": "runner, validator, gates (single import)",
-   "object": "<function render_seed_variant at 0x00000133AD756340>"
+   "object": "continuity.fixtures.render_seed_variant"
   },
   "session_semantics": "context reset per session for ALL arms; memory store retained for all memory arms; lesson channel injected per session for lesson arms only (verified live by experiments/cont006/combined_channel_smoke.py)",
   "seed_semantics": "sampler seed == variant seed (house convention; PB-071 caveat travels); identical across arms"

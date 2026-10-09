@@ -42,10 +42,12 @@ unregistered lessons-only ablation.
    arm-equivalence-audit.json (PASS) enters the freeze manifest; the
    review chain re-verifies its source checks.
 
-### A.3 — Calibration pilot (new stage, before freeze sign-off)
+### A.3 — Calibration pilot (new stage, before the store freeze and any transfer phase)
 
 R0 + R2 × seeds {7001, 7002} on v3m WITH memory (~15 min GPU), after the
-owner accepts this prereg and the worker v2 pass produces the R2 store.
+owner accepts this prereg and the worker v2 pass produces the R2 store
+(the pilot's position in the chain: after worker v2 + R3 recap +
+contamination gate, before Phase V — see A.6).
 Pre-declared checks (computed by the frozen pilot machinery; GO required
 for the transfer phases):
 1. **Per-family headroom**: every TR family mean pass ∈ (0.15, 0.85) for
@@ -71,9 +73,14 @@ format pinned by a worked example and an explicit preference for
 substance over formatting lessons). Cross-trace support is cited by the
 worker natively; §7.1(b) is satisfiable as designed (no post-hoc merge).
 §7.1 rules otherwise unchanged; **FP-6 cap**: at most ONE format-
-discipline lesson per store (uniform for R2 and R3; class-coverage
-telemetry is a declared store report). R3 gold lessons reused verbatim
-from the blind authoring (protocol intact), capped 8 → 7.
+discipline lesson per store (uniform for R2 and R3; mechanically
+`continuity.reflection_v2.apply_class_cap`, worker lessons carry a
+taxonomy `class` field, class-coverage telemetry is written with the
+store). R3 gold lessons reused verbatim from the blind authoring
+(protocol intact), capped 8 → 7 (declared classes in
+experiments/cont006/gold-lesson-classes.json; recap artifact
+experiments/cont006/r3-store-v2.json — LL-G-008 drops, keep-first by
+lessonId among FP-6).
 
 ### A.5 — MME and the guessing band (V1 §5 amended)
 
@@ -117,7 +124,12 @@ out of scope here.
 
 Everything in V1's manifest PLUS: build_v3m.py, fixtures/v3m (+ 7 rendered
 seed digests), fixture-validation-v3m.json, worker_v2_bundles.py +
-worker_v2_bundles.json, live_telemetry_gate.py, arm_equivalence_audit.py +
-.json, combined_channel_smoke.py, power_calc_cont006_v2.py +
-power-results-cont006-v2.json, this document, CONT-006-DESIGN-V2.md.
-V1's manifest stays untouched as the invalidated chain's record.
+worker_v2_bundles.json, src/continuity/reflection_v2.py (now carries the
+V2 worker template, run_worker_v2, the class schema and apply_class_cap),
+gold-lesson-classes.json, recap_r3_v2.py + r3-validation-v3.json +
+r3-store-v2.json, live_telemetry_gate.py (incl. --self-test),
+arm_equivalence_audit.py + .json, combined_channel_smoke.py,
+check_counterfactual_lessons.py (v3l+v3m 4-gram scan),
+power_calc_cont006_v2.py + power-results-cont006-v2.json, this document,
+CONT-006-DESIGN-V2.md. V1's manifest stays untouched as the invalidated
+chain's record.

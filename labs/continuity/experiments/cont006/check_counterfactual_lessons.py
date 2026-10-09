@@ -15,10 +15,11 @@ containing a contiguous >= 4-word verbatim span of the injected BAD-lesson
 text. Probe instructions legitimately contain phrases like "reply with the
 label only"; if the BAD-lesson text shared such a 4-gram with any RENDERED
 v3l turn text, a compliant reply could trigger a FALSE parroting flag. This
-script therefore verifies mechanically, for EVERY v3l scenario and EVERY
-variant seed {6001..6007}: no contiguous 4-gram (lowercased,
-punctuation-stripped, whitespace-tokenized) of either counterfactual lesson
-text occurs in any rendered turn text. Fail-closed; exit 0 = PASS.
+script therefore verifies mechanically, for EVERY v3l AND v3m scenario and
+EVERY variant seed (v3l {6001..6007}, v3m {7001..7007}): no contiguous
+4-gram (lowercased, punctuation-stripped, whitespace-tokenized) of either
+counterfactual lesson text occurs in any rendered turn text. Fail-closed;
+exit 0 = PASS.
 
 Deterministic: no RNG, no wall-clock. Re-running prints PASS/FAIL and the
 digests; the JSON payload lives in counterfactual-lessons.json.
@@ -103,26 +104,33 @@ def main() -> int:
                                + " " + LESSONS["GOLD-TRIV"]["recommendedBehavior"]
                                + " " + LESSONS["GOLD-TRIV"]["title"]))
     hits: list[str] = []
-    for path in sorted((LAB_ROOT / "fixtures" / "v3l").rglob("*.json")):
-        if path.name == "manifest.json":
-            continue
-        base = json.loads(path.read_text(encoding="utf-8"))
-        for seed in (6001, 6002, 6003, 6004, 6005, 6006, 6007):
-            rendered = render_seed_variant(base, seed)
-            for sess in rendered["sessions"]:
-                for turn in sess["turns"]:
-                    grams = ngrams(tokens(turn["text"]))
-                    overlap = (grams & bad_grams) | (grams & gold_grams)
-                    if overlap:
-                        hits.append(f"{base['id']} seed {seed}: {sorted(overlap)[:2]}")
+    # V2 (RC-6 self-review): the rerun's behavioral surface is v3m — the
+    # 4-gram non-overlap must hold against BOTH the invalidated chain's v3l
+    # (historical regression anchor) and every rendered v3m seed {7001..7007}.
+    suites = {"v3l": (6001, 6002, 6003, 6004, 6005, 6006, 6007),
+              "v3m": (7001, 7002, 7003, 7004, 7005, 7006, 7007)}
+    for suite, seeds in suites.items():
+        for path in sorted((LAB_ROOT / "fixtures" / suite).rglob("*.json")):
+            if path.name == "manifest.json":
+                continue
+            base = json.loads(path.read_text(encoding="utf-8"))
+            for seed in seeds:
+                rendered = render_seed_variant(base, seed)
+                for sess in rendered["sessions"]:
+                    for turn in sess["turns"]:
+                        grams = ngrams(tokens(turn["text"]))
+                        overlap = (grams & bad_grams) | (grams & gold_grams)
+                        if overlap:
+                            hits.append(f"{suite}/{base['id']} seed {seed}: "
+                                        f"{sorted(overlap)[:2]}")
     digest = hashlib.sha256(OUT.read_bytes()).hexdigest()
     print(f"BAD 4-grams: {len(bad_grams)}; GOLD 4-grams: {len(gold_grams)}")
-    print(f"shared 4-grams vs ALL rendered v3l texts (every seed): "
+    print(f"shared 4-grams vs ALL rendered v3l+v3m texts (every seed): "
           f"{len(hits)} {hits[:4] or 'NONE'}")
     print(f"counterfactual-lessons.json sha256: {digest[:16]}...")
     if hits:
         print("VERDICT: FAIL (a counterfactual lesson shares a 4-gram with a "
-              "rendered v3l text — reword the lesson)")
+              "rendered v3l/v3m text — reword the lesson)")
         return 2
     print("VERDICT: PASS")
     return 0

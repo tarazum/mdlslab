@@ -90,10 +90,15 @@ correctness; an active poisoned lesson is quoted verbatim and followed
 
 ## Chain (V2)
 
-RC-6 review chain → owner accept → freeze V2 → calibration pilot
-(R0+R2 × 2 seeds, live gates) → worker v2 pass (multi-trace bundles) →
-R3 store recapped → Phase V (activation; anchor-checked) → store freeze →
-Phase P pilot (incl. BAD/GOLD-TRIV on v3m; live gate before analysis) →
-pilot-gate checkpoint → Phase C → live gate → frozen analyzer → verdict.
+RC-6 review chain → owner accept → freeze V2 → worker v2 pass (multi-trace
+bundles; FP-6 cap + class telemetry) → R3 store recapped (classes + cap,
+uniform with R2) → contamination gate → calibration pilot (R0+R2 × 2 seeds
+on v3m with memory, live gates; needs the worker v2 store — hence AFTER the
+worker pass; before the store freeze and any transfer phase) → Phase V
+(activation; anchor-checked) → store freeze → Phase P pilot (incl.
+BAD/GOLD-TRIV on v3m; live gate before analysis) → pilot-gate checkpoint →
+Phase C → live gate → frozen analyzer → verdict.
 Every phase's traces pass the live-telemetry gate before anything reads
-them.
+them. (RC-6 self-review fold: this chain previously placed the calibration
+pilot BEFORE the worker pass — impossible, R2 needs the worker store; the
+order above is canonical and matches prereg A.3/A.6.)

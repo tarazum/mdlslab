@@ -1,0 +1,38 @@
+{
+ "kind": "cont006-gold-lesson-classes",
+ "note": "RC-6 self-review fold (DESIGN-V2 section 4): the FP-6 store cap needs a deterministic per-lesson taxonomy class for the blind-authored gold candidates. Classes annotate WHICH failure pattern each lesson addresses, judged from the frozen lesson text (docs/CONT-006-DESIGN.md taxonomy); the gold lessons themselves stay byte-untouched in r3-candidates.json (blind protocol intact). Cap rule: at most ONE FP-6 lesson per store, keep-first in lessonId order -> LL-G-007 stays, LL-G-008 drops (8 -> 7, matching DESIGN-V2 section 10; the dropped lesson remains in the candidates record).",
+ "classes": {
+  "LL-G-001": {
+   "class": "FP-1",
+   "rationale": "amended value must govern over the superseded first-recorded figure — supersession resolution"
+  },
+  "LL-G-002": {
+   "class": "FP-1",
+   "rationale": "withdrawn/retracted correction reverts to the standing value — supersession (retraction) resolution"
+  },
+  "LL-G-003": {
+   "class": "FP-2",
+   "rationale": "treat your earlier classification as provisional; re-derive from the standing rule — own-answer anchoring"
+  },
+  "LL-G-004": {
+   "class": "FP-3a",
+   "rationale": "apply a verified correction to the record at once — correction-application"
+  },
+  "LL-G-005": {
+   "class": "FP-3b",
+   "rationale": "unverified insistence never overrides the verified record — unverified-source deference"
+  },
+  "LL-G-006": {
+   "class": "FP-4",
+   "rationale": "re-bind look-alike identifiers before answering — distractor susceptibility"
+  },
+  "LL-G-007": {
+   "class": "FP-6",
+   "rationale": "answer a closed-option question with exactly one option and nothing else — reply formatting discipline"
+  },
+  "LL-G-008": {
+   "class": "FP-6",
+   "rationale": "a bare acknowledgment formula meets a direct question — the reply is not the requested answer form (prose), i.e. FP-6 by the operational definition"
+  }
+ }
+}

@@ -64,7 +64,10 @@ def main() -> int:
     from continuity.fixtures import render_seed_variant
     rendering = {"definition": "continuity.fixtures.render_seed_variant",
                  "shared_by": "runner, validator, gates (single import)",
-                 "object": str(render_seed_variant)}
+                 # stable identity (repr carries a per-process address -> the
+                 # artifact must be byte-stable for the freeze manifest)
+                 "object": (f"{render_seed_variant.__module__}."
+                            f"{render_seed_variant.__qualname__}")}
     # 6. session reset semantics identical for every arm (context reset +
     #    persistent store retained; verified by the combined channel smoke)
     session_semantics = ("context reset per session for ALL arms; memory store "

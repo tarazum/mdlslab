@@ -1,6 +1,6 @@
 {
  "kind": "cont006-power-calc-v2",
- "endpoint": "d = S(R2) - S(R0) label-form pass-rate delta on the v3l primary transfer clusters (CR4+CU4+RT3+DX2+DR2 = 15); two-sided 95% cluster percentile bootstrap; 7 seed-variant obs/cluster/arm (seeds 6001..6007)",
+ "endpoint": "d = S(R2) - S(R0) label-form pass-rate delta on the v3m primary transfer clusters (CR4+CU4+RT3+DX2+DR2 = 15); two-sided 95% cluster percentile bootstrap; 7 seed-variant obs/cluster/arm (v3m seeds 7001..7007; design-sized before v3m authoring on the composition-identical plan)",
  "model": "per cluster c, seed s: eps~N(0,sig_shared) shared by both arms (cancels inside d); eta~N(0,sig_arm) per arm (power killer); b0 0.525 (C2-confirmatory T-arm pooled pass on PRIMARY-family probes, 252/480; PR-REVIEW-CONT006 RC-1 corrected denominator); clip [0.02,0.98]",
  "mme": {
   "d": 0.2,

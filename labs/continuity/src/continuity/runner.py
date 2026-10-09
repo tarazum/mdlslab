@@ -211,6 +211,9 @@ def run_scenario(
     valid_arms = ("A", "B", "C", "D", "E", "T0", "T1", "T2", "T3",
                   "R0", "R1", "R2", "R3", "RBAD", "RGOLD")
     memory_arms = MEMORY_ARMS  # module-level single source of truth (CN-012)
+    # the literal above is a name-validity superset; it must never drift
+    # below the single source (F-1/F-2 class guard, RC-6 self-review)
+    assert set(memory_arms) <= set(valid_arms), (memory_arms, valid_arms)
     lesson_arms = ("R2", "R3", "RBAD", "RGOLD")
     if arm not in valid_arms:
         raise ValueError(f"unknown arm: {arm!r}")
