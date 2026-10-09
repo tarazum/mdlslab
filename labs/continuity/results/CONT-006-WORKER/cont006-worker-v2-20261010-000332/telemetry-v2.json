@@ -1,0 +1,25 @@
+{
+ "kind": "cont006-worker-v2-telemetry",
+ "calls": 9,
+ "parse_error_calls": 0,
+ "truncated_call_count": 0,
+ "no_lesson_bundles": 0,
+ "candidate_lessons": 9,
+ "accepted": 5,
+ "rejected_duplicates": 0,
+ "rejected_unsupported": 0,
+ "rejected_too_specific_or_unsafe": 4,
+ "untagged_or_invalid_class": 0,
+ "dropped_by_fp6_cap": [],
+ "class_coverage_pre_cap": {
+  "FP-3a": 2,
+  "FP-3b": 2,
+  "FP-1": 1
+ },
+ "class_coverage_store": {
+  "FP-3a": 2,
+  "FP-3b": 2,
+  "FP-1": 1
+ },
+ "created_utc": "2026-10-09T21:08:00Z"
+}

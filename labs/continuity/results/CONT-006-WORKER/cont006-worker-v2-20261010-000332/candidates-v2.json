@@ -1,0 +1,279 @@
+{
+ "kind": "cont006-worker-candidates-v2",
+ "candidate_record_count": 9,
+ "records": [
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "blocked label token '3'",
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-001",
+    "status": "candidate",
+    "class": "FP-1",
+    "title": "FP-1 Supersession-Resolution Miss",
+    "context": "When a scenario involves a retraction or update to a previously established classification or value, the agent must prioritize the latest directive over prior context.",
+    "observation": "Across multiple runs, the agent failed to apply the updated 'fuel' or 'tanker' label when prompted by a retraction probe, instead defaulting to earlier labels like 'berths' or 'rescue', or failing to output a label entirely.",
+    "lesson": "Always verify if the current query implies a correction or retraction of prior state. If so, discard previous classifications and apply the explicitly stated new value, ensuring the output matches the required format exactly.",
+    "applicability": [
+     "Scenario involves a follow-up or probe after an initial classification.",
+     "The prompt contains language indicating a change, correction, or retraction (e.g., 'not', 'update', 'retract').",
+     "The required output is a single label from a defined set."
+    ],
+    "recommendedBehavior": "1. Detect retraction cues in the prompt. 2. Ignore prior agent outputs or context that conflict with the new directive. 3. Output only the new, correct label.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4008|s4t2",
+     "CONT-005-C2-PILOT|A|seed-2001|cr-3008|s4t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4008|s4t2",
+     "CONT-005-C2-PILOT|A|seed-2002|cr-3008|s4t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-09T21:04:36Z",
+    "supersedesLessonIds": [],
+    "bundle": "cr-FP1-retraction"
+   }
+  },
+  {
+   "disposition": "accepted",
+   "reasons": [],
+   "lesson": {
+    "lessonId": "LL-W-002",
+    "status": "evidence-validated",
+    "class": "FP-3a",
+    "title": "Prioritize Explicit Correction Over Initial Classification",
+    "context": "When a scenario includes an explicit correction or re-classification instruction that contradicts an initial or default classification, the corrected value must be applied.",
+    "observation": "The agent repeatedly failed to apply the corrected label provided in the probe, instead reverting to an initial guess, a distractor, or a format error.",
+    "lesson": "Always treat the latest explicit correction as the ground truth. Discard previous classifications immediately upon receiving a verified correction, regardless of initial confidence or pattern matching.",
+    "applicability": [
+     "Scenario contains a correction or re-classification instruction",
+     "Correction contradicts prior agent output"
+    ],
+    "recommendedBehavior": "Identify the corrected value in the prompt. Output ONLY the corrected label. Do not re-evaluate or justify based on initial impressions.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4001|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4001|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2001|cr-3001|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2002|cr-3001|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-09T21:04:59Z",
+    "supersedesLessonIds": [],
+    "bundle": "cr-FP3a-vce"
+   }
+  },
+  {
+   "disposition": "accepted",
+   "reasons": [],
+   "lesson": {
+    "lessonId": "LL-W-003",
+    "status": "evidence-validated",
+    "class": "FP-3a",
+    "title": "FP-3a: Apply Verified Corrections to Override Initial Classification",
+    "context": "When a scenario includes a verified correction or probe that contradicts an initial agent classification, the initial classification must be discarded.",
+    "observation": "The agent repeatedly failed to apply the corrected target label provided in the probe phase, instead retaining its initial wrong label or failing to output a valid label.",
+    "lesson": "Always prioritize the verified correction or probe instruction over the initial classification. If a correction is provided, the final answer must reflect the corrected value, not the initial guess.",
+    "applicability": [
+     "Scenario contains a correction or probe",
+     "Initial classification differs from correction"
+    ],
+    "recommendedBehavior": "Upon receiving a correction or probe, immediately update the classification to match the verified target. Do not rely on the initial assessment.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4002|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2001|cr-3002|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4002|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2003|cr-3002|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-09T21:05:22Z",
+    "supersedesLessonIds": [],
+    "bundle": "cr-FP3a-vct"
+   }
+  },
+  {
+   "disposition": "accepted",
+   "reasons": [],
+   "lesson": {
+    "lessonId": "LL-W-004",
+    "status": "evidence-validated",
+    "class": "FP-3b",
+    "title": "FP-3b: Prioritize Explicit Instruction Over Contextual Distractors",
+    "context": "When a task instruction explicitly defines the target classification or action, and the surrounding context or previous turns contain similar but distinct values or labels.",
+    "observation": "The agent consistently selected a label present in the immediate context or derived from prior turns (e.g., 'utility', 'conservation') instead of the specific label mandated by the current explicit instruction (e.g., 'engine', 'tours').",
+    "lesson": "Always resolve the target value strictly from the explicit instruction provided in the current turn. Ignore or deprioritize similar values mentioned in the context, previous turns, or distractor text. Do not infer the target from surrounding semantic cues if the instruction is explicit.",
+    "applicability": [
+     "Task involves classification or logging into a specific category.",
+     "The instruction explicitly names the target category or action.",
+     "Context contains similar or related categories that could act as distractors."
+    ],
+    "recommendedBehavior": "Identify the explicit target in the instruction. Verify it against the allowed options. Output only that target. Do not use context to override the explicit instruction.",
+    "evidence": [
+     "CONT-005-C2-PILOT|A|seed-2001|cr-3004|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2002|cr-3004|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4005|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4005|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-09T21:05:47Z",
+    "supersedesLessonIds": [],
+    "bundle": "cr-FP3b-euc"
+   }
+  },
+  {
+   "disposition": "accepted",
+   "reasons": [],
+   "lesson": {
+    "lessonId": "LL-W-005",
+    "status": "evidence-validated",
+    "class": "FP-3b",
+    "title": "FP-3b: Prioritize Explicit Verification Over Initial Classification",
+    "context": "When a probe question explicitly references a verification artifact (e.g., 'desk card', 'roster card') that contradicts or refines an initial classification, the agent must defer to the verified state.",
+    "observation": "The agent repeatedly ignored explicit verification cues in probe questions, defaulting to initial guesses or distractor values instead of applying the corrected classification.",
+    "lesson": "When a probe explicitly references a verification source (card, roster, office record), treat that source as the ground truth. Override any initial classification or heuristic guess with the value derived from the verified source.",
+    "applicability": [
+     "Probe questions contain explicit references to verification artifacts",
+     "Initial classification conflicts with the verification source",
+     "Task requires sorting or logging into a specific label"
+    ],
+    "recommendedBehavior": "Identify the verification source mentioned in the probe. Extract the correct label/value from that source. Output only that label, ignoring initial impressions or similar distractors.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4007|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4007|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3003|cr-4007|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4006|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-09T21:06:11Z",
+    "supersedesLessonIds": [],
+    "bundle": "cr-FP3b-sc"
+   }
+  },
+  {
+   "disposition": "accepted",
+   "reasons": [],
+   "lesson": {
+    "lessonId": "LL-W-006",
+    "status": "evidence-validated",
+    "class": "FP-1",
+    "title": "FP-1: Prioritize Explicitly Stated Values Over Implicit or Default Assumptions",
+    "context": "When the environment provides a specific value for a log entry, that value overrides any default, implied, or previously held assumptions about the entity.",
+    "observation": "Across multiple scenarios, the agent failed to retrieve the explicitly stated value (e.g., '24', '30', '28') and instead provided an incorrect value (e.g., '22', '26', '36'), often matching a distractor or a default assumption.",
+    "lesson": "Always extract the value explicitly stated in the current environment prompt for the specific entity asked. Do not rely on implicit defaults, similar-looking numbers in options, or prior knowledge if a specific value is provided in the immediate context.",
+    "applicability": [
+     "The environment prompt contains a specific value for the queried entity.",
+     "The query asks for that specific entity's value."
+    ],
+    "recommendedBehavior": "Identify the specific value assigned to the entity in the current environment description. Select the option that matches this value exactly. Ignore other numbers in the options or context unless they are explicitly linked to the target entity.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|cu-4103|s4t2",
+     "CONT-005-C2-PILOT|A|seed-2001|cu-3101|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|cu-4102|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3003|cu-4103|s4t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-09T21:06:37Z",
+    "supersedesLessonIds": [],
+    "bundle": "cu-FP1"
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "blocked label token '5'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-007",
+    "status": "candidate",
+    "class": "FP-5",
+    "title": "FP-5: Verify Stored Facts Against Explicit Context",
+    "context": "When retrieving specific codes or identifiers from a provided log or context, the agent must ensure the stored value matches the explicit information given in the current scenario's setup.",
+    "observation": "The agent consistently retrieved incorrect codes that did not match the explicitly stated values in the environment setup, indicating a failure to accurately store or retrieve the specific fact presented.",
+    "lesson": "Upon receiving a setup statement containing a specific fact (e.g., a code), explicitly verify and store this exact value. When queried, retrieve this stored value directly. Do not guess, infer, or rely on similar-looking but incorrect values.",
+    "applicability": [
+     "Scenario involves retrieving a specific, explicitly stated fact from the initial context.",
+     "The agent has access to the initial setup information."
+    ],
+    "recommendedBehavior": "Read the setup statement carefully. Identify the specific fact requested. Store it exactly as written. When answering, output only that exact stored value. Double-check that the retrieved value matches the one in the setup.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|dr-4301|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|dr-4302|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|dr-4303|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2001|dr-3302|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2001|dr-3303|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2002|dr-3301|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|dr-4301|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|dr-4302|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|dr-4303|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2002|dr-3302|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2002|dr-3303|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2003|dr-3301|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-09T21:07:09Z",
+    "supersedesLessonIds": [],
+    "bundle": "dr-FP5"
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "blocked label token '4'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-008",
+    "status": "candidate",
+    "class": "FP-4",
+    "title": "FP-4 Distractor Susceptibility in Code Retrieval",
+    "context": "When retrieving specific alphanumeric codes for items from a log, multiple similar codes may be present in the context or options.",
+    "observation": "The agent consistently selected an incorrect code that resembled the target or appeared in the options, rather than the explicitly stated correct code.",
+    "lesson": "Strictly verify the target item's code against the explicit log entry. Do not guess or select from options based on pattern matching or similarity. If the correct code is not explicitly stated in the immediate context, do not infer it from similar-looking codes.",
+    "applicability": [
+     "Retrieval of specific codes or identifiers",
+     "Multiple similar alphanumeric options present"
+    ],
+    "recommendedBehavior": "Locate the exact code associated with the requested item in the log. If the log does not contain the code, state that it is not found. Do not select a code that merely looks similar or is listed in options unless it is explicitly linked to the item.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|dx-4402|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|dx-4403|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|dx-4401|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2001|dx-3401|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2001|dx-3402|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-09T21:07:35Z",
+    "supersedesLessonIds": [],
+    "bundle": "dx-FP4"
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-009",
+    "status": "candidate",
+    "class": "FP-2",
+    "title": "FP-2: Reject Initial Anchoring in Favor of Explicit Constraints",
+    "context": "When an initial classification is incorrect and a subsequent prompt provides explicit constraints or corrections (e.g., 'slate cards are not...'), the agent must discard the initial anchor.",
+    "observation": "The agent repeatedly anchored to its first wrong label or generated prose/format errors when forced to re-evaluate against new constraints, ignoring the standing rule implied by the correction.",
+    "lesson": "When a prompt explicitly negates or constrains the initial classification, immediately discard the initial answer. Re-evaluate the duty against the provided options and constraints without referencing the previous incorrect output.",
+    "applicability": [
+     "Prompt contains negation or exclusion criteria (e.g., 'not...')",
+     "Initial answer was identified as incorrect or irrelevant"
+    ],
+    "recommendedBehavior": "Acknowledge the constraint, discard the prior label, and select the correct label from the allowed set based solely on the current prompt's explicit instructions.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|rt-4201|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|rt-4203|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2001|rt-3203|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2003|rt-3202|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-09T21:08:00Z",
+    "supersedesLessonIds": [],
+    "bundle": "rt-FP2"
+   }
+  }
+ ]
+}
