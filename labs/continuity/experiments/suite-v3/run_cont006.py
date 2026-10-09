@@ -1,34 +1,49 @@
-"""CONT-006 run script (frozen at FREEZE): the phased lesson-transfer chain.
+"""CONT-006 V2 run script (frozen at FREEZE V2): the phased lesson-transfer
+chain on fixtures/v3m.
 
-Per docs/EVALUATION-PREP-CONT006.md (owner-accepted 2026-10-08, ROADMAP) and
-docs/CONT-006-DESIGN.md. Phases (binding order):
+Per docs/EVALUATION-PREP-CONT006-V2.md (owner-accepted 2026-10-09, ROADMAP;
+amendments A.1-A.7) and docs/CONT-006-DESIGN-V2.md (§Chain is canonical).
+The V1 chain (v3l; EVALUATION-PREP-CONT006.md) is the invalidated record —
+its freeze manifest frozen-config-cont006.json and its git history stay
+untouched; this file carries the V2 port (V1 text recoverable at the V1
+freeze commit). Phases (binding order):
 
-  --phase W           worker pass: ONE batch call per corpus arm-seed trace
-                      (reflector qwen36-35b-a3b:mdlslab, think-pin inherited)
-                      -> raw-worker-log.jsonl + candidates.json + telemetry
-                      + r2-store-evidence-validated.json
-  --phase G-validate  run the §7.1 evidence validator over the blind-authored
-                      R3 candidates file -> r3-store-evidence-validated.json
-  --phase V           activation runs: R0/R2/R3 x seeds {6001..6007} on the
-                      4 VALIDATION clusters only (results/CONT-006-VAL/)
+  --phase W2          worker v2 pass: ONE call per PRE-COMPUTED multi-trace
+                      bundle (9 bundles; reflector qwen36-35b-a3b:mdlslab,
+                      digest-pinned) -> raw-worker-log-v2.jsonl +
+                      candidates-v2.json + telemetry-v2.json + r2-store-v2.json
+                      (FP-6 store cap + class-coverage telemetry apply)
+  --phase CAL         calibration pilot: R0+R2 x seeds {7001,7002} over the
+                      FULL v3m set (TR+VAL+GC), memory ON; R2 injects the W2
+                      r2-store-v2.json (--worker-dir) (results/CONT-006-CAL/)
+  --phase V           activation runs: R0/R2/R3 x seeds {7001..7007} on the
+                      4 VALIDATION clusters only (results/CONT-006-VAL/);
+                      R2 = the W2 store, R3 = r3-store-v2.json (the recap
+                      artifact)
   --phase V-activate  deterministic post-processing: S0/SX pass rates, the
                       frozen store-level rule (activate iff SX - S0 >= +0.05,
                       fail-closed on any missing/invalid VAL probe) ->
                       active-store-r2.json / active-store-r3.json (full copy
                       or EMPTY) + activation.json  (THE STORE FREEZE point:
                       stores commit here, BEFORE any transfer request)
-  --phase P           pilot: seeds {6001,6002}; R0/R1/R2/R3 on TR+GC;
+  --phase P           pilot: seeds {7001,7002}; R0/R1/R2/R3 on TR+GC;
                       RBAD/RGOLD on the counterfactual subset
-                      (results/CONT-006-PILOT/)
-  --phase C           confirmatory: seeds {6003..6007}; R0/R1/R2/R3 on TR+GC
+                      (results/CONT-006-PILOT/); R0/R2 reuse the CAL cells
+                      (single-freeze dataset — resume semantics)
+  --phase C           confirmatory: seeds {7003..7007}; R0/R1/R2/R3 on TR+GC
                       (results/CONT-006-CONFIRMATORY/; the analysis combines
-                      the pilot seeds — single freeze)
+                      the pilot + calibration seeds — single freeze)
 
 Working core granite-code:8b (digest 36c3c3b9683b); arms per the runner's
 R0/R1/R2/R3/RBAD/RGOLD wiring (R1 = byte-stable reflection.py MVP over the
 frozen calibration self-model; R2/R3/RBAD/RGOLD = the lesson channel).
-Lesson stores are PINNED BY DIGEST per phase: R2/R3 read the ACTIVE stores
-(after Phase V-activate); RBAD/RGOLD read counterfactual-lessons.json.
+Lesson stores are PINNED BY DIGEST per phase: R2 reads the W2 output
+(r2-store-v2.json) in CAL/V; R3 reads experiments/cont006/r3-store-v2.json
+(the recap artifact; classes + FP-6 cap uniform with R2); Phases P/C read
+the ACTIVE stores (after V-activate); RBAD/RGOLD read
+counterfactual-lessons.json. Every phase's traces pass
+experiments/cont006/live_telemetry_gate.py BEFORE any analyzer reads them
+(A.2.2 binding order).
 
 Preflight re-verifies the freeze digests fail-closed BEFORE any inference;
 --preflight-only is the gate's no-inference check. Wall accounting per
@@ -55,28 +70,29 @@ sys.path.insert(0, str(LAB_ROOT / "src"))
 from continuity.events import EventJournal  # noqa: E402
 from continuity.fixtures import load_suite_for_seed  # noqa: E402
 from continuity.lessons import (  # noqa: E402
-    LessonChannel, empty_store, load_store, make_store, save_store,
-    validate_candidate, CorpusIndex)
+    LessonChannel, load_store, make_store, save_store)
 from continuity.memory import MemoryStore  # noqa: E402
 from continuity.provider import OllamaProvider  # noqa: E402
 from continuity.reflection import ReflectionEngine  # noqa: E402
 from continuity.runner import Budget, run_scenario  # noqa: E402
 
-SUITE_DIR = LAB_ROOT / "fixtures" / "v3l"
-FREEZE_MANIFEST = LAB_ROOT / "experiments" / "suite-v3" / "frozen-config-cont006.json"
+SUITE_DIR = LAB_ROOT / "fixtures" / "v3m"
+FREEZE_MANIFEST = LAB_ROOT / "experiments" / "suite-v3" / "frozen-config-cont006-v2.json"
 CORPUS_MANIFEST = LAB_ROOT / "experiments" / "cont006" / "experience-corpus-manifest.json"
 CF_LESSONS = LAB_ROOT / "experiments" / "cont006" / "counterfactual-lessons.json"
+WORKER_V2_BUNDLES = LAB_ROOT / "experiments" / "cont006" / "worker_v2_bundles.json"
+R3_STORE_V2 = LAB_ROOT / "experiments" / "cont006" / "r3-store-v2.json"
 SELFMODEL = (LAB_ROOT / "results" / "CONT-001-confirmatory" /
              "cont001-confirmatory-20261002-005711" / "selfmodel-v2-calibration.json")
 
-ALL_SEEDS = [6001, 6002, 6003, 6004, 6005, 6006, 6007]
-PILOT_SEEDS = [6001, 6002]
-VAL_IDS = ["cr-6005", "cu-6105", "rt-6204", "dx-6403"]
-TR_IDS = ["cr-6001", "cr-6002", "cr-6003", "cr-6004", "cu-6101", "cu-6102",
-          "cu-6103", "cu-6104", "rt-6201", "rt-6202", "rt-6203", "dx-6401",
-          "dx-6402", "dr-6301", "dr-6302"]
-CF_SUBSET = ["cr-6001", "cr-6003", "rt-6201", "rt-6202", "cu-6101",
-             "dx-6401", "dr-6301", "gc-6501"]  # incl. gc-6501 (telemetry-only use)
+ALL_SEEDS = [7001, 7002, 7003, 7004, 7005, 7006, 7007]
+PILOT_SEEDS = [7001, 7002]
+VAL_IDS = ["cr-7005", "cu-7105", "rt-7204", "dx-7403"]
+TR_IDS = ["cr-7001", "cr-7002", "cr-7003", "cr-7004", "cu-7101", "cu-7102",
+          "cu-7103", "cu-7104", "rt-7201", "rt-7202", "rt-7203", "dx-7401",
+          "dx-7402", "dr-7301", "dr-7302"]
+CF_SUBSET = ["cr-7001", "cr-7003", "rt-7201", "rt-7202", "cu-7101",
+             "dx-7401", "dr-7301", "gc-7501"]  # incl. gc-7501 (telemetry-only use)
 MAIN_ARMS = ["R0", "R1", "R2", "R3"]
 
 WORKING_MODEL = "granite-code:8b"
@@ -95,8 +111,10 @@ WALL_GUARD_S = 270 * 60  # no NEW arm-seed starts after this (cap 5 h declared)
 ACTIVATION_THRESHOLD = 0.05
 
 RESULTS = LAB_ROOT / "results"
-GC_IDS = ["gc-6501", "gc-6502", "gc-6503"]
+GC_IDS = ["gc-7501", "gc-7502", "gc-7503"]
+GC_TRIM_SEEDS = (7001, 7002, 7003, 7004)  # pre-declared droppable-secondary trim
 FROZEN_PATHS = [
+    # -- V1 manifest list (the invalidated chain's record; files unchanged) --
     "docs/EVALUATION-PREP-CONT006.md",
     "docs/CONT-006-DESIGN.md",
     "docs/PR-REVIEW-CONT006.md",
@@ -127,6 +145,23 @@ FROZEN_PATHS = [
     "src/continuity/reflection_v2.py",
     "src/continuity/reflection.py",  # R1 baseline byte-stability witness
     "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json",
+    # -- V2 additions (EVALUATION-PREP-CONT006-V2.md §Freeze manifest additions) --
+    "docs/EVALUATION-PREP-CONT006-V2.md",
+    "docs/CONT-006-DESIGN-V2.md",
+    "experiments/suite-v3/build_v3m.py",
+    "experiments/suite-v3/fixture-validation-v3m.json",
+    "experiments/suite-v3/power_calc_cont006_v2.py",
+    "experiments/suite-v3/power-results-cont006-v2.json",
+    "experiments/suite-v3/analyze_calibration.py",
+    "experiments/cont006/worker_v2_bundles.py",
+    "experiments/cont006/worker_v2_bundles.json",
+    "experiments/cont006/gold-lesson-classes.json",
+    "experiments/cont006/recap_r3_v2.py",
+    "experiments/cont006/r3-validation-v3.json",
+    "experiments/cont006/r3-store-v2.json",
+    "experiments/cont006/live_telemetry_gate.py",
+    "experiments/cont006/arm_equivalence_audit.py",
+    "experiments/cont006/arm-equivalence-audit.json",
 ]
 DETERMINISM_CAVEAT = ("greedy+seed does not guarantee identical outputs "
                       "(PB-071, CN-003); per-seed content variants make seeds "
@@ -145,8 +180,8 @@ def suite_digest() -> str:
     return h.hexdigest()
 
 
-def rendered_seed_digest(seed: int) -> str:
-    _, scenarios = load_suite_for_seed(str(SUITE_DIR), seed)
+def rendered_seed_digest(suite_dir: Path, seed: int) -> str:
+    _, scenarios = load_suite_for_seed(str(suite_dir), seed)
     h = hashlib.sha256()
     for scenario in sorted(scenarios, key=lambda s: s["id"]):
         h.update(json.dumps(scenario, sort_keys=True, ensure_ascii=True).encode("utf-8"))
@@ -154,16 +189,30 @@ def rendered_seed_digest(seed: int) -> str:
 
 
 def content_digests() -> dict[str, str]:
-    d = {f"fixtures/v3l_rendered_seed{sd}": rendered_seed_digest(sd) for sd in ALL_SEEDS}
-    d["fixtures/v3l_suite"] = suite_digest()
+    """v3m (the V2 behavioral surface) PLUS the inherited v3l keys — the V2
+    manifest digests EVERYTHING in V1's manifest plus the additions, so the
+    invalidated chain's suite surface stays tripwired against drift."""
+    v3l = LAB_ROOT / "fixtures" / "v3l"
+    d = {f"fixtures/v3l_rendered_seed{sd}": rendered_seed_digest(v3l, sd)
+         for sd in (6001, 6002, 6003, 6004, 6005, 6006, 6007)}
+    h = hashlib.sha256()
+    for path in sorted(p for p in v3l.rglob("*") if p.is_file()):
+        h.update(path.relative_to(v3l).as_posix().encode("utf-8"))
+        h.update(path.read_bytes())
+    d["fixtures/v3l_suite"] = h.hexdigest()
+    d.update({f"fixtures/v3m_rendered_seed{sd}": rendered_seed_digest(SUITE_DIR, sd)
+              for sd in ALL_SEEDS})
+    d["fixtures/v3m_suite"] = suite_digest()
     return d
 
 
 def emit_freeze_manifest() -> None:
     manifest = {
-        "kind": "cont006-freeze-manifest",
+        "kind": "cont006-freeze-manifest-v2",
         "created_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "prereg": "docs/EVALUATION-PREP-CONT006.md (owner-accepted 2026-10-08)",
+        "prereg": "docs/EVALUATION-PREP-CONT006-V2.md (owner-accepted 2026-10-09)",
+        "supersedes": ("frozen-config-cont006.json (V1 chain, invalidated by "
+                       "CN-012; record kept byte-untouched)"),
         "seeds": {"all": ALL_SEEDS, "pilot": PILOT_SEEDS,
                   "validation_clusters": VAL_IDS, "cf_subset": CF_SUBSET},
         "models": {
@@ -173,11 +222,14 @@ def emit_freeze_manifest() -> None:
         },
         "environment_pin": {"ollama_version_prefix": OLLAMA_VERSION_PREFIX},
         "execution": {
-            "phase_order": ["W", "G-validate", "V", "V-activate", "P", "C"],
+            "phase_order": ["W2", "CAL", "V", "V-activate", "P", "C"],
             "arms": {"R0": "flat memory", "R1": "MVP reflection (byte-stable)",
-                     "R2": "worker store via lesson channel",
-                     "R3": "gold store via lesson channel",
+                     "R2": "worker v2 store via lesson channel",
+                     "R3": "gold recap store (classes + FP-6 cap) via lesson channel",
                      "RBAD": "counterfactual BAD", "RGOLD": "counterfactual GOLD-TRIV"},
+            "stores": {"R2_evidence": "results/CONT-006-WORKER/cont006-worker-v2-*/r2-store-v2.json",
+                       "R3_evidence": "experiments/cont006/r3-store-v2.json",
+                       "counterfactual": "experiments/cont006/counterfactual-lessons.json"},
             "temperature": TEMPERATURE, "num_ctx": NUM_CTX,
             "num_predict": NUM_PREDICT, "keep_alive": KEEP_ALIVE,
             "wall_guard_s": WALL_GUARD_S, "declared_gpu_cap_s": 300 * 60,
@@ -238,14 +290,18 @@ def preflight(base_url: str) -> dict:
 
 def lesson_channel_for(arm: str, store_dir: Path | None,
                        store_kind: str) -> LessonChannel | None:
-    """R2/R3 store resolution: Phase V injects the EVIDENCE-VALIDATED stores
-    (activation is being measured); Phases P/C inject the ACTIVE stores
-    (frozen at V-activate). Counterfactual arms always load
-    counterfactual-lessons.json (digest-frozen at the PR-REVIEW fold)."""
+    """R2/R3 store resolution: kind "w2" (Phases CAL/V) injects the
+    EVIDENCE-VALIDATED V2 stores (R2 = the W2 output r2-store-v2.json, R3 =
+    the recap artifact r3-store-v2.json — activation is being measured);
+    kind "active" (Phases P/C) injects the ACTIVE stores frozen at
+    V-activate. Counterfactual arms always load counterfactual-lessons.json
+    (digest-frozen at the PR-REVIEW fold)."""
     if arm in ("R2", "R3"):
         assert store_dir is not None, f"{arm} needs a lesson store dir"
         if store_kind == "active":
             path = store_dir / f"active-store-{arm.lower()}.json"
+        elif store_kind == "w2":
+            path = (store_dir / "r2-store-v2.json" if arm == "R2" else R3_STORE_V2)
         else:
             path = store_dir / f"{arm.lower()}-store-evidence-validated.json"
         return LessonChannel.from_file(path)
@@ -358,7 +414,8 @@ def run_transfer_phase(phase: str, arms: list[str], seeds: list[int],
                        store_dir: Path | None, store_kind: str,
                        resume_root: Path | None, gc_trim: bool = False) -> Path:
     ts = time.strftime("%Y%m%d-%H%M%S")
-    folder = {"V": "CONT-006-VAL", "P": "CONT-006-PILOT", "C": "CONT-006-CONFIRMATORY"}[phase]
+    folder = {"CAL": "CONT-006-CAL", "V": "CONT-006-VAL",
+              "P": "CONT-006-PILOT", "C": "CONT-006-CONFIRMATORY"}[phase]
     if resume_root is not None:
         out_root = resume_root
         run_id = out_root.name
@@ -392,7 +449,7 @@ def run_transfer_phase(phase: str, arms: list[str], seeds: list[int],
                 cells["wall_guard_fired"] = True
                 break
             ids = scenario_ids
-            if gc_trim and seed not in (6001, 6002, 6003, 6004):
+            if gc_trim and seed not in GC_TRIM_SEEDS:
                 ids = [i for i in ids if i not in gc_ids]
             _, scenarios = load_suite_for_seed(str(SUITE_DIR), seed)
             attempt = 1
@@ -510,24 +567,22 @@ def phase_v_activate(val_root: Path) -> dict:
 # ----------------------------------------------------------------------------
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="CONT-006 phased run (frozen)")
-    parser.add_argument("--phase", choices=["W", "G-validate", "V", "V-activate",
+    parser = argparse.ArgumentParser(description="CONT-006 V2 phased run (frozen)")
+    parser.add_argument("--phase", choices=["W2", "CAL", "V", "V-activate",
                                             "P", "C", "preflight"], required=True)
     parser.add_argument("--base-url", default="http://localhost:11434")
     parser.add_argument("--freeze-manifest", action="store_true")
     parser.add_argument("--preflight-only", action="store_true")
     parser.add_argument("--resume-root", default=None)
     parser.add_argument("--worker-dir", default=None,
-                        help="Phase W output dir (for G/V wiring)")
-    parser.add_argument("--r3-candidates", default=None,
-                        help="Phase G-validate: path to the blind-authored candidates JSON")
+                        help="Phase W2 output dir (for CAL/V wiring)")
     parser.add_argument("--val-root", default=None,
                         help="Phase V-activate: the Phase V run root")
     parser.add_argument("--active-dir", default=None,
                         help="Phase P/C: dir with active-store-r2/r3.json")
     parser.add_argument("--gc-trim", action="store_true",
                         help="pre-declared droppable-secondary trim: GC scenarios "
-                             "run only on seeds 6001..6004 (primary untouchable)")
+                             "run only on seeds 7001..7004 (primary untouchable)")
     args = parser.parse_args()
 
     if args.freeze_manifest:
@@ -539,10 +594,10 @@ def main() -> int:
         print("PREFLIGHT-ONLY OK (no inference performed)")
         return 0
 
-    if args.phase == "W":
-        from continuity.reflection_v2 import run_worker
+    if args.phase == "W2":
+        from continuity.reflection_v2 import run_worker_v2
         ts = time.strftime("%Y%m%d-%H%M%S")
-        out_dir = RESULTS / "CONT-006-WORKER" / f"cont006-worker-{ts}"
+        out_dir = RESULTS / "CONT-006-WORKER" / f"cont006-worker-v2-{ts}"
         verify_freeze_digests()
         # reflector pin: warm then digest (CN-001 order)
         warm = OllamaProvider(base_url=args.base_url, model=REFLECTOR_MODEL,
@@ -553,54 +608,43 @@ def main() -> int:
         if not info.get("digest", "").startswith(REFLECTOR_DIGEST_PREFIX):
             raise SystemExit(f"FAIL-CLOSED: reflector digest {info.get('digest')!r}")
         out_dir.mkdir(parents=True, exist_ok=True)
-        telemetry = run_worker(CORPUS_MANIFEST, out_dir, args.base_url)
+        telemetry = run_worker_v2(bundles_path=WORKER_V2_BUNDLES, out_dir=out_dir,
+                                  corpus_manifest=CORPUS_MANIFEST,
+                                  base_url=args.base_url)
         print(json.dumps(telemetry, indent=1, ensure_ascii=True))
-        print(f"Phase W complete: {out_dir}")
+        print(f"Phase W2 complete: {out_dir}")
         return 0
 
-    if args.phase == "G-validate":
-        if not args.r3_candidates or not args.worker_dir:
-            raise SystemExit("--r3-candidates and --worker-dir required")
-        candidates_path = Path(args.r3_candidates)
-        payload = json.loads(candidates_path.read_text(encoding="utf-8"))
-        corpus = CorpusIndex(CORPUS_MANIFEST)
-        accepted: list[dict] = []
-        records = []
-        for les in payload.get("lessons", []):
-            lesson = {**les, "createdBy": "gold-author"}
-            ok, reasons = validate_candidate(lesson, corpus, accepted)
-            if ok:
-                lesson["status"] = "evidence-validated"
-                accepted.append(lesson)
-            records.append({"disposition": "accepted" if ok else "rejected",
-                            "reasons": reasons, "lesson": lesson})
-        out = Path(args.worker_dir) / "r3-store-evidence-validated.json"
-        store = make_store(accepted, source="gold-author", status="evidence-validated")
-        digest = save_store(store, out)
-        report = {"kind": "cont006-r3-validation",
-                  "candidates": len(records),
-                  "accepted": len(accepted),
-                  "records": records,
-                  "store_sha256": digest}
-        (Path(args.worker_dir) / "r3-validation.json").write_text(
-            json.dumps(report, indent=1, ensure_ascii=True) + "\n", encoding="utf-8")
-        print(f"R3: {len(accepted)}/{len(records)} candidates evidence-validated; "
-              f"store {digest[:12]}… -> {out}")
+    if args.phase == "CAL":
+        if not args.worker_dir:
+            raise SystemExit("Phase CAL needs --worker-dir (the W2 output; "
+                             "R2 injects its r2-store-v2.json)")
+        run_transfer_phase("CAL", ["R0", "R2"], PILOT_SEEDS,
+                           TR_IDS + VAL_IDS + GC_IDS,
+                           args.base_url, store_dir=Path(args.worker_dir).resolve(),
+                           store_kind="w2", resume_root=_opt(args.resume_root))
         return 0
 
     if args.phase == "V":
         if not args.worker_dir:
-            raise SystemExit("Phase V needs --worker-dir (evidence-validated stores)")
+            raise SystemExit("Phase V needs --worker-dir (the W2 output; "
+                             "R2 injects its r2-store-v2.json)")
         root = run_transfer_phase("V", ["R0", "R2", "R3"], ALL_SEEDS, VAL_IDS,
                                   args.base_url, store_dir=Path(args.worker_dir).resolve(),
-                                  store_kind="evidence", resume_root=_opt(args.resume_root))
-        # copy the evidence-validated stores into the val root for activation
-        if args.worker_dir:
-            for name in ("r2-store-evidence-validated.json",
-                         "r3-store-evidence-validated.json"):
-                src = Path(args.worker_dir) / name
-                if src.exists():
-                    shutil.copy2(src, root / name)
+                                  store_kind="w2", resume_root=_opt(args.resume_root))
+        # copy the evidence-validated V2 stores into the val root under the
+        # canonical names phase_v_activate reads (fail-closed: both required)
+        provenance = {}
+        for arm, src in (("R2", Path(args.worker_dir).resolve() / "r2-store-v2.json"),
+                         ("R3", R3_STORE_V2)):
+            if not src.exists():
+                raise SystemExit(f"FAIL-CLOSED: evidence-validated store missing: {src}")
+            shutil.copy2(src, root / f"{arm.lower()}-store-evidence-validated.json")
+            provenance[arm] = {"src": str(src), "sha256": file_digest(
+                str(src.relative_to(LAB_ROOT)))}
+        (root / "stores-provenance.json").write_text(
+            json.dumps({"kind": "cont006-val-stores-provenance", **provenance},
+                       indent=1, ensure_ascii=True) + "\n", encoding="utf-8")
         return 0
 
     if args.phase == "V-activate":

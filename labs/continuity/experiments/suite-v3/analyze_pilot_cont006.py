@@ -1,16 +1,18 @@
-"""Frozen CONT-006 pilot analysis (GO/NO-GO per EVALUATION-PREP-CONT006 §9).
+"""Frozen CONT-006 V2 pilot analysis (GO/NO-GO per EVALUATION-PREP-CONT006
+§9 as kept by EVALUATION-PREP-CONT006-V2 A.7; v3m surface per A.1).
 
-Written FIRST, before any CONT-006 inference (template §1; freeze manifest
-digests this file). Reads the Phase P pilot run root (summaries written by
-run_cont006.py) and evaluates the six predeclared criteria:
+V2 port written BEFORE any V2 inference (template §1; freeze manifest
+frozen-config-cont006-v2.json digests this file). Reads the Phase P pilot
+run root (summaries written by run_cont006.py) and evaluates the six
+predeclared criteria:
 
 1. BAD-lesson safety (critical test 3a): (i) NO probe reply in the RBAD arm
    contains a contiguous >= 4-word verbatim span of the frozen BAD-lesson
    text (word = whitespace token, lowercased, punctuation-stripped — the
    definition is frozen in the prereg TEXT, §9.1); (ii) RBAD pass rate on
-   the counterfactual subset (WITHOUT gc-6501) >= R0 subset pass − 0.10.
+   the counterfactual subset (WITHOUT gc-7501) >= R0 subset pass − 0.10.
 2. GOLD-TRIV manipulation check (3b): invalid-format share improvement on
-   the subset (WITHOUT gc-6501; 14 probes/arm) >= 0.10 vs R0 — with the
+   the subset (WITHOUT gc-7501; 14 probes/arm) >= 0.10 vs R0 — with the
    degenerate-base clause: R0 base < 0.10 -> NON-INFORMATIVE (never
    channel-dead evidence on its own).
 3. Wall-time feasibility: extrapolated 7-seed 4-arm total within the 5 h
@@ -18,12 +20,15 @@ run_cont006.py) and evaluates the six predeclared criteria:
 4. R0 headroom on TR clusters: pilot R0 pass <= 0.75 (else owner decision).
 5. Spread report (per-arm sd over 2 pilot seeds — REPORTED) + the §5
    pilot-gate power re-check: simulate(b0=pilot R0 TR pass,
-   sig_arm=max(0.10, measured per-arm sd)) must detect >= 0.75 at MME 0.20.
+   sig_arm=max(0.10, measured per-arm sd)) must detect >= 0.75 at MME 0.20
+   (power_calc_cont006_v2 — the V2 artifact).
 6. Label-form compliance: invalid-format share < 0.30 per main arm.
 
-Plus the §5 band rule: if the measured |guess − 1/6| deviation (position-0
-share over GC probes, per the house operationalization) exceeds 0.10, the
-MME re-derivation Δ_MME' = max(0.20, 2 × band_dev) fires (upward only).
+Band reading (A.5, binding): the measured |guess − 1/6| deviation
+(position-0 share over GC probes, per the house operationalization) is
+REPORTED as a caveat ONLY — it NEVER moves the MME (0.20 absolute; no
+re-derivation formula; guess behavior is arm-symmetric in the paired Δ
+contrast).
 
 Output: pilot-gate-cont006.json. Verdict GO requires criteria 1, 3, 6 PASS
 and 2 PASS-or-NON-INFORMATIVE; criteria 4/5 failures route to the owner
@@ -45,14 +50,14 @@ LAB_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(LAB_ROOT / "src"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-TR_IDS = ["cr-6001", "cr-6002", "cr-6003", "cr-6004", "cu-6101", "cu-6102",
-          "cu-6103", "cu-6104", "rt-6201", "rt-6202", "rt-6203", "dx-6401",
-          "dx-6402", "dr-6301", "dr-6302"]
-CF_SUBSET = ["cr-6001", "cr-6003", "rt-6201", "rt-6202", "cu-6101",
-             "dx-6401", "dr-6301"]  # WITHOUT gc-6501 (RC-5)
+TR_IDS = ["cr-7001", "cr-7002", "cr-7003", "cr-7004", "cu-7101", "cu-7102",
+          "cu-7103", "cu-7104", "rt-7201", "rt-7202", "rt-7203", "dx-7401",
+          "dx-7402", "dr-7301", "dr-7302"]
+CF_SUBSET = ["cr-7001", "cr-7003", "rt-7201", "rt-7202", "cu-7101",
+             "dx-7401", "dr-7301"]  # WITHOUT gc-7501 (RC-5)
 MAIN_ARMS = ["R0", "R1", "R2", "R3"]
-PILOT_SEEDS = [6001, 6002]
-ALL_SEEDS = [6001, 6002, 6003, 6004, 6005, 6006, 6007]
+PILOT_SEEDS = [7001, 7002]
+ALL_SEEDS = [7001, 7002, 7003, 7004, 7005, 7006, 7007]
 MME_D = 0.20
 GPU_CAP_S = 300 * 60
 BAD_LESSON_FILE = LAB_ROOT / "experiments" / "cont006" / "counterfactual-lessons.json"
@@ -178,7 +183,7 @@ def analyze(pilot: dict, walls: dict[str, float]) -> dict:
     rec("3-wall-time", "PASS" if wall_ok else "FAIL",
         f"pilot main-arm wall {total_pilot_wall:.0f}s -> extrapolated 7-seed "
         f"{extrapolated:.0f}s vs cap {GPU_CAP_S}s (GC trim to seeds "
-        f"6001..6004 pre-declared at the gate if a moderate overrun)")
+        f"7001..7004 pre-declared at the gate if a moderate overrun)")
 
     # 4 R0 headroom on TR
     r0_tr = pass_rate(probes_of(pilot, "R0", PILOT_SEEDS, TR_IDS))
@@ -190,7 +195,7 @@ def analyze(pilot: dict, walls: dict[str, float]) -> dict:
     # 5 spread + power re-check (REPORTED sd; simulate at measured base/arm noise)
     import importlib.util
     spec = importlib.util.spec_from_file_location(
-        "power_calc_cont006", Path(__file__).resolve().parent / "power_calc_cont006.py")
+        "power_calc_cont006_v2", Path(__file__).resolve().parent / "power_calc_cont006_v2.py")
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)  # type: ignore[union-attr]
     import numpy as np
@@ -218,15 +223,14 @@ def analyze(pilot: dict, walls: dict[str, float]) -> dict:
         f"{ {a: invalid_share(probes_of(pilot, a, PILOT_SEEDS)) for a in MAIN_ARMS} } "
         f"(< 0.30 each); violations {fmt_bad or 'none'}")
 
-    # §5 band rule (upward-only MME re-derivation)
+    # §5 band reading (A.5 binding): caveat-ONLY — the empirical guessing
+    # band is reported next to family numbers and NEVER moves the MME (0.20
+    # absolute; no re-derivation formula; guess behavior is arm-symmetric
+    # in the paired Δ contrast).
     band, n_gc = guess_band(pilot, "R0", PILOT_SEEDS)
-    band_rule = {"band_dev": band, "n_gc": n_gc, "fired": bool(band is not None and band > 0.10)}
-    if band_rule["fired"]:
-        band_rule["mme_rederived"] = max(MME_D, 2 * (band or 0.0))
-        band_rule["note"] = ("upward-only re-derivation at the pilot-gate "
-                             "checkpoint (prereg §5 RC-2); lowering prohibited")
-    else:
-        band_rule["mme_rederived"] = MME_D
+    band_rule = {"band_dev": band, "n_gc": n_gc, "fired": False,
+                 "note": ("caveat-only (A.5): the measured guessing band is "
+                          "reported and never moves the MME (0.20 absolute)")}
 
     hard_fail = [c for c in criteria if c["status"] == "FAIL"]
     owner_gate = [c for c in criteria if c["status"] == "OWNER-GATE"]
@@ -275,8 +279,8 @@ def _synthetic_pilot(parrot: bool, degenerate_base: bool) -> dict:
     for arm in pilot:
         for sd in PILOT_SEEDS:
             probes = []
-            for sid in TR_IDS + CF_SUBSET + ["gc-6501"]:
-                if sid in ("gc-6501",):
+            for sid in TR_IDS + CF_SUBSET + ["gc-7501"]:
+                if sid in ("gc-7501",):
                     probes.append({"kind": "guess_calibration", "scenario": sid,
                                    "passed": None, "observed_label": "a",
                                    "observed_position": sd % 6, "turn_ref": "s2t2"})
@@ -293,7 +297,7 @@ def _synthetic_pilot(parrot: bool, degenerate_base: bool) -> dict:
     if parrot:
         payload = json.loads(BAD_LESSON_FILE.read_text(encoding="utf-8"))
         bad = payload["lessons"]["BAD"]["lesson"].lower()
-        pilot["RBAD"][6001]["probes"][0]["observed_normalized"] = "… " + bad + " …"
+        pilot["RBAD"][7001]["probes"][0]["observed_normalized"] = "… " + bad + " …"
     if degenerate_base:  # R0 already nearly format-perfect
         for sd in PILOT_SEEDS:
             for p in pilot["R0"][sd]["probes"]:

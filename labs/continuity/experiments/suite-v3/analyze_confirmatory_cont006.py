@@ -1,8 +1,11 @@
-"""Frozen CONT-006 confirmatory analysis (EVALUATION-PREP-CONT006 §3–§4).
+"""Frozen CONT-006 V2 confirmatory analysis (EVALUATION-PREP-CONT006 §3–§4
+as kept by EVALUATION-PREP-CONT006-V2 A.7; v3m surface per A.1).
 
-Written FIRST, before any CONT-006 inference (template §1). Reads the Phase
-P (pilot) + Phase C (confirmatory) run roots — the pilot seeds {6001,6002}
-are part of the final dataset (single freeze) — and computes:
+V2 port written BEFORE any V2 inference (template §1; freeze manifest
+frozen-config-cont006-v2.json digests this file). Reads the Phase P (pilot)
++ Phase C (confirmatory) run roots — the pilot seeds {7001,7002} are part
+of the final dataset (single freeze; the R0/R2 pilot cells reuse the
+calibration arm-seeds) — and computes:
 
 PRIMARY: Δ = S(R2) − S(R0) over the 15 TR clusters x 7 seeds (cluster mean
 per arm; Δ_c per cluster; Δ = cluster mean). Two-sided 95% cluster
@@ -13,16 +16,18 @@ Decision rule (frozen wording, §4): CI excludes 0 upward AND Δ >= MME ->
 "lesson transfer established"; CI > 0 and Δ < MME -> "directional
 improvement below the minimum meaningful effect"; CI excludes 0 downward ->
 "lessons actively hurt"; else "no confirmatory difference established".
-MME = 0.20 absolute (the prereg §5 ladder; the pilot-gate band-rule
-re-derivation, if it fired, supersedes — read from pilot-gate-cont006.json
-when present and applied UPWARD only).
+MME = 0.20 ABSOLUTE (A.5): the empirical guessing band is reported next to
+family numbers and NEVER moves the MME (caveat-only; no re-derivation
+formula — the V1 band-rule supersession is repealed).
 
 Completeness guard: 15 x 7 x 4 primary cell-probes present, else INCOMPLETE
 (no substitution). Secondaries (never promotable): R3−R0, R1−R0 with CIs;
 invalid-format decomposition per arm; per-taxonomy-class Δ table (carries
 the FP-3a/FP-2 co-signature note N-3); guess band + position per arm;
 carried notes CN-A/B/C in the run-record header alongside revs + wall
-reconciliation (template §5/§8).
+reconciliation (template §5/§8). The run-record header MUST also carry the
+CN-012 invalidation note, the accidental-ablation label of the V1 chain,
+the PW-OVERRIDE history and the V2 amendment list A.1–A.7 (CARRIED below).
 
 --self-test: synthetic matrices for the established / null / harm /
 incomplete branches — no GPU, no real run roots.
@@ -40,16 +45,19 @@ import numpy as np
 
 LAB_ROOT = Path(__file__).resolve().parents[2]
 
-TR_IDS = ["cr-6001", "cr-6002", "cr-6003", "cr-6004", "cu-6101", "cu-6102",
-          "cu-6103", "cu-6104", "rt-6201", "rt-6202", "rt-6203", "dx-6401",
-          "dx-6402", "dr-6301", "dr-6302"]
-CLASS_OF = {"cr-6001": "FP-3a", "cr-6002": "FP-3a", "cr-6003": "FP-3b",
-            "cr-6004": "FP-3b", "cu-6101": "FP-1", "cu-6102": "FP-1",
-            "cu-6103": "FP-1", "cu-6104": "FP-1", "rt-6201": "FP-2",
-            "rt-6202": "FP-2", "rt-6203": "FP-2", "dx-6401": "FP-4",
-            "dx-6402": "FP-4", "dr-6301": "FP-5", "dr-6302": "FP-5"}
+TR_IDS = ["cr-7001", "cr-7002", "cr-7003", "cr-7004", "cu-7101", "cu-7102",
+          "cu-7103", "cu-7104", "rt-7201", "rt-7202", "rt-7203", "dx-7401",
+          "dx-7402", "dr-7301", "dr-7302"]
+# v3m sub_types (verified from fixtures/v3m): cr-7001 valid_correction_
+# environment + cr-7002 valid_correction_tool -> FP-3a; cr-7003 erroneous_
+# user_correction + cr-7004 source_conflict -> FP-3b
+CLASS_OF = {"cr-7001": "FP-3a", "cr-7002": "FP-3a", "cr-7003": "FP-3b",
+            "cr-7004": "FP-3b", "cu-7101": "FP-1", "cu-7102": "FP-1",
+            "cu-7103": "FP-1", "cu-7104": "FP-1", "rt-7201": "FP-2",
+            "rt-7202": "FP-2", "rt-7203": "FP-2", "dx-7401": "FP-4",
+            "dx-7402": "FP-4", "dr-7301": "FP-5", "dr-7302": "FP-5"}
 ARMS = ["R0", "R1", "R2", "R3"]
-SEEDS = [6001, 6002, 6003, 6004, 6005, 6006, 6007]
+SEEDS = [7001, 7002, 7003, 7004, 7005, 7006, 7007]
 BOOT = 10_000
 RNG_SEED = 20261008
 MME_D = 0.20
@@ -57,6 +65,29 @@ DETERMINISM_CAVEAT = ("greedy+seed does not guarantee identical outputs "
                       "(PB-071, CN-003); per-seed content variants make seeds "
                       "true replicates regardless")
 CARRIED = {
+    "CN-012-INVALIDATION": "the V1 chain (v3l, frozen-config-cont006.json) "
+                           "ran every R-arm MEMORYLESS — the runner's append "
+                           "tuple omitted the R-arms (CN-012); its verdict "
+                           "'no confirmatory difference' (Δ = 0.019) is "
+                           "INVALID as a test of the registered arms and is "
+                           "preserved as an unregistered exploratory "
+                           "datapoint (an accidental lessons-WITHOUT-memory "
+                           "ablation ≈ prereg critical test 1)",
+    "V2-AMENDMENTS": "A.1 suite v3m (fresh worlds; V3+V18 disjointness); "
+                     "A.2 memory discipline (MEMORY_ARMS single source + "
+                     "live-telemetry gate before every analyzer); A.3 "
+                     "calibration pilot (family bands + anchor 0.525±0.15); "
+                     "A.4 worker v2 multi-trace bundles + FP-6 store cap + "
+                     "class schema; A.5 MME 0.20 absolute, band caveat-only; "
+                     "A.6 chain/gates order; A.7 arms/endpoint/decision-rule "
+                     "unchanged (R1 stays; parroting-replication R1<=R0 "
+                     "finally testable with memory alive)",
+    "V2-STORES": "R2 store = the W2 worker-v2 pass output (multi-trace "
+                 "bundles, FP-6 cap, class-coverage telemetry); R3 store = "
+                 "the blind-authored gold recap with declared classes + the "
+                 "same FP-6 cap (LL-G-008 dropped, 8->7; recap artifact "
+                 "r3-store-v2.json); both activated per the +0.05 "
+                 "store-level rule at Phase V",
     "CN-A": "power-model caveats: paired-eps assumption narrows Δ's CI; b0 "
             "anchored to C2 T-arms (corrected 0.525, PR-REVIEW-CONT006 RC-1) — "
             "if R0 behaves differently the realized power shifts; the "
@@ -66,27 +97,23 @@ CARRIED = {
             "criterion reads R0 only",
     "CN-C": "pilot criterion 1(ii) runs on ~14 probes (binomial sd ~0.12); a "
             "violation routes to the owner gate, never an automatic stop",
-    "N-3": "FP-3a clusters (cr-6001/6002) seed the agent's own wrong first "
+    "N-3": "FP-3a clusters (cr-7001/7002) seed the agent's own wrong first "
            "answer by construction — per-class Δ partially co-measures FP-2 "
            "susceptibility; class attribution reads weaker than it looks",
     "PW-6": "worker sampling config frozen since FREEZE is num_ctx 8192 / "
             "num_predict 768 (reflection_v2.WORKER_OPTIONS) while prereg §1 "
             "quotes the WORKING-CORE config 4096/256 — different roles, "
             "declared per GATE-CONT006-POSTW condition 10 (low materiality)",
-    "PW-GATE": "R2/R3 stores are the post-W v2 artifacts (GATE-CONT006-"
-               "POSTW: FIX-A/B/C, single-shot re-validation of the committed "
-               "raw log, zero new inference; the pre-fix 0-accepted record "
-               "kept byte-untouched in the original worker dir)",
-    "PW-OVERRIDE": "OWNER OVERRIDE 2026-10-09: the pilot NO-GO (criterion 1(i) "
-                   "BAD-lesson parroting — an agent quoted the injected bad "
-                   "lesson verbatim and acted on it; criterion 2 0.071 < 0.10) "
-                   "was explicitly OVERRIDDEN by the owner ('(b) Дозволити "
-                   "фінальний забіг попри NO-GO', ROADMAP Owner decisions "
-                   "2026-10-09). The confirmatory runs under the frozen "
-                   "analysis with the band-derived MME 0.333; the "
-                   "harm-containment finding is a headline secondary, and "
-                   "the primary R2-R0 endpoint is unaffected (counterfactual "
-                   "arms never enter it)",
+    "PW-OVERRIDE": "OWNER OVERRIDE 2026-10-09 (V1 chain history): the V1 "
+                   "pilot NO-GO (criterion 1(i) BAD-lesson parroting — an "
+                   "agent quoted the injected bad lesson verbatim and acted "
+                   "on it; criterion 2 0.071 < 0.10) was explicitly "
+                   "OVERRIDDEN by the owner ('(b) Дозволити фінальний забіг "
+                   "попри NO-GO', ROADMAP Owner decisions 2026-10-09). That "
+                   "V1 confirmatory is the invalidated memoryless run; the "
+                   "harm-containment finding rides THIS run record as a "
+                   "headline secondary, and the primary R2-R0 endpoint is "
+                   "unaffected (counterfactual arms never enter it)",
 }
 
 
@@ -192,16 +219,12 @@ def analyze(pilot_root: Path | None, conf_root: Path | None) -> dict:
     d_r3 = np.array([r3[s] - r0[s] for s in TR_IDS], dtype=float)
     d_r1 = np.array([r1[s] - r0[s] for s in TR_IDS], dtype=float)
     idx = rng.integers(0, len(TR_IDS), size=(BOOT, len(TR_IDS)))  # ONE draw, shared
-    # MME: the pilot-gate band-rule re-derivation supersedes UPWARD only
+    # MME 0.20 ABSOLUTE (A.5): the empirical guessing band is reported in
+    # secondaries.guess_band_and_position as a caveat and NEVER moves the
+    # MME — the V1 band-rule upward re-derivation is repealed.
     mme = MME_D
-    band_note = None
-    if pilot_root is not None:
-        pg = pilot_root / "pilot-gate-cont006.json"
-        if pg.exists():
-            fired = json.loads(pg.read_text(encoding="utf-8")).get("band_rule", {})
-            if fired.get("fired"):
-                mme = max(MME_D, float(fired.get("mme_rederived", MME_D)))
-                band_note = f"band-rule upward re-derivation applied: MME {mme}"
+    band_note = ("MME 0.20 absolute; band caveat-only (A.5) — see "
+                 "secondaries.guess_band_and_position")
     prim = delta_ci(d_primary, idx)
     sec_r3 = delta_ci(d_r3, idx)
     sec_r1 = delta_ci(d_r1, idx)
@@ -276,7 +299,7 @@ def _synthetic(delta_r2: float | None, delta_r3: float = 0.0) -> dict:
                                "observed_label": "x" if passed else None})
             data[arm][sd] = probes
     if delta_r2 is None:  # incompleteness: drop one cluster-seed-arm cell
-        data["R2"][6004] = [p for p in data["R2"][6004] if p["scenario"] != "dr-6302"]
+        data["R2"][7004] = [p for p in data["R2"][7004] if p["scenario"] != "dr-7302"]
     return data
 
 
