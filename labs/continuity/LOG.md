@@ -3159,3 +3159,57 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   suite v3n [default yes], 2) diagnostic cr trace read first [default
   yes], 3) stop the arc [default no]).
 - Declared deviations: none. Model/tool substitutions: none.
+
+## 2026-10-10 — owner defaults ACCEPTED ("ок по дефолтах"): v3n authored + A.8 drafted (zero GPU beyond none; no behavioral inference)
+
+- Owner decision recorded in ROADMAP ("Owner decisions — recorded
+  2026-10-10 (CONT-006 V2 calibration STOP: all three brief defaults
+  ACCEPTED)"): (1) v3n authoring authorized; (2) zero-GPU cr diagnostic
+  authorized and run FIRST; (3) the arc continues. Behavioral inference on
+  v3n remains never-autonomous pending the A.8 review + owner acceptance.
+- Diagnostic (docs/DIAGNOSTIC-CONT006-V2-CR.md, from the CAL traces): at
+  every cr probe the R2 arm retrieves LL-W-005+LL-W-002+LL-W-003 — all
+  worker lessons prescribe "output only the explicitly-stated/corrected
+  label; do not infer from context", which suppresses exactly the
+  memory-based category inference the cr probe requires. R2 failure modes:
+  'Acknowledged.' deflection and prompt-echo loops (format collapse);
+  R0's cr misses on the same cells are ordinary wrong-label prose
+  (semantic). Independent suite-side defect: v3m family difficulty was
+  bimodal (dx/dr 1.0 ceiling both arms; cr 0.25/0.0 floor). Declared
+  caveat for the rerun record: worker lessons are corpus-shaped (the
+  corpus never contains transfer-inference probes) — the R2−R0 contrast
+  on cr reads as transfer-vs-suppression of memory-based inference.
+- Suite v3n AUTHORED (build_v3n.py; commit follows): 22 scenarios = 15 TR
+  (cr-8001..8004 vce/vct/euc/sc + cu-8101..8104 + rt-8201..8203 +
+  dx-8401/8402 + dr-8301/8302) + VAL cr-8005/cu-8105/rt-8204/dx-8403 +
+  GC×3; ids x-8xxx, seeds {8001..8007}; fresh worlds (bell foundry casting
+  office; hospital linen room; greenhouse bench / chandlery / weaving
+  loft / cider press / clock bench; alpine refuge / ferry engine room /
+  botanical greenhouse; bindery vault / grain bourse; bell tower rope
+  room / ferry landing / ice house). Difficulty re-aim: cr EASIER (probe
+  reports carry the exact head-noun phrase of one card line — "loam
+  build", "metal tap", "strike check", "flash trim", "clapper store",
+  "crated load"), dx HARDER (lure re-confirmed in s2 + transposition code
+  pairs C17/C71…), dr HARDER (two same-kind interference codes logged in
+  s2; lure_value = o1), cu/rt/gc unchanged mechanics. Validator extended
+  (--suite v3n; V18 parameterized — v3n checked vs ALL suites incl.
+  v3m). v3n PASS 20/20; regressions v3..v3m PASS ×7; V18 verified BOTH
+  ways (injected v3m mint-assay sentence -> FAIL; restored -> PASS);
+  counterfactual lessons pre-checked vs every rendered v3n text: 0 shared
+  4-grams. Suite sha256 9201d710…. Authoring iterations folded before
+  commit: gc-8503 asker collided with v3m gc-7503 (V3) + label 'saw'
+  leaked in its own probe text (V6); dr/dx filler windows restarted at
+  the alphabet head producing duplicate per-seed label orders (V15/V16)
+  — fixed to the v3m window device; cr s1t1 shared an opening 5-gram
+  with v3m (V18) — prefixed "For the foundry desk:"; cr-8003 insist
+  inherited clerk/paperwork/always phrasing from v3m cr-7003 (V18) —
+  reworded.
+- A.8 DRAFT (docs/EVALUATION-PREP-CONT006-V2-A8.md): the v3n amendment —
+  one change (the suite); stores REUSED byte-identically (W2/R3 are
+  suite-independent; no new worker inference); chain re-runs from the
+  v3n re-freeze (contamination -> calibration -> V -> P -> C); MME 0.20,
+  bands, anchor, arms, endpoint unchanged; run record adds the v3m STOP
+  note + corpus-coverage caveat; Fable diff-pass sufficient per its
+  closing note, then the owner gate.
+- Next: Fable diff-pass on A.8 + v3n -> fold -> owner acceptance -> fresh
+  EXEC session (re-freeze on v3n; W2/R3 stores reused; CAL on v3n).
