@@ -3213,3 +3213,58 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   closing note, then the owner gate.
 - Next: Fable diff-pass on A.8 + v3n -> fold -> owner acceptance -> fresh
   EXEC session (re-freeze on v3n; W2/R3 stores reused; CAL on v3n).
+
+## 2026-10-10 — V2A chain: review fold + FREEZE V3 + gates green; v3n calibration STOP-OUT-OF-BAND (second, different profile; owner checkpoint)
+
+- Owner authorization recorded (ROADMAP "Owner decisions — recorded
+  2026-10-10 (CONT-006 A.8 ACCEPTED; autonomous full-chain completion
+  AUTHORIZED)"): verbatim "роби усі необхідні кроки, в тому числі і запуск
+  Фабл чи іншої моделі. треба щоби ти автономно повністю закінчив цю
+  задачу." — with the pre-declared stop branches explicitly kept binding.
+- A.8 diff-pass review: Fable AND Opus session-limit-blocked (reset 2:30am
+  Kyiv) → GLM 5.3 ZCode subagent per the house queue (69 tool uses;
+  validator re-run live by the reviewer). Verdict GO-WITH-CHANGES:
+  K-1 CRITICAL (check_counterfactual_lessons scanned v3l+v3m only — the
+  Phase-P CF gate would be vacuous on v3n) + K-2..K-6 minor. ALL folded
+  same session: K-1 suites map + v3n (re-run PASS, 0 shared 4-grams
+  across v3l+v3m+v3n); K-2 prereq string cites the ROADMAP entry; K-3
+  SESSION-BRIEF-CONT006-V2A-EXEC.md (v3n ground truth, stores reused,
+  W2/R3-recap skipped); K-4 reading note in A.8 §2; K-5
+  regressions-v3n.json (8 suites live PASS); K-6 port committed before
+  freeze. Review record: docs/REVIEW-CONT006-A8.md (raw verbatim + fold
+  log). Reviewer independently confirmed: composition/mechanics verified
+  per rendered seed (cr head-noun 35/35, dx transpositions 21/21, dr
+  interference 14/14); stores suite-independent; prior: cr lever
+  sufficient, overshoot more likely than floor.
+- FREEZE V3: run_cont006.py + 3 analyzers ported to x-8xxx/8001..8007
+  (confirmatory CARRIED adds V3M-CAL-STOP + CORPUS-COVERAGE; N-3 ids);
+  contamination gate --suite parameterized; frozen-config-cont006-v3.json
+  (75 digests: v3n surface + v3l/v3m tripwires + V2A paths); preflight
+  PASS; committed before any v3n inference.
+- Contamination gate on v3n: PASS — 0 shared 4-grams, all 12 lesson
+  texts vs every rendered v3n turn text (stores byte-identical to V2:
+  R2 file 66b2ba54…, R3 00fc09ca…).
+- CAL on v3n (results/CONT-006-CAL/cont006-cal-20261010-012838; wall
+  1040.5s): memory ON 4/4 cells (~200 episodes each; live gate PASS
+  before the analyzer). Frozen verdict STOP-OUT-OF-BAND:
+  - breaches: R0/dx 1.0, R0/dr 1.0, R2/dr 1.0 (n=4 per family);
+  - the v3n levers that WORKED: cr 0.25→0.625 R0 (in band; R2 0.375 in
+    band — the diagnosed lesson-suppression effect is now MEASURABLE:
+    R2−R0 on cr = −0.25); dx R2 0.75 (lure salience bites the lesson
+    arm); cu 0.625/0.5; rt 0.167/0.333;
+  - anchor PASS (R0 TR pooled 0.633 vs 0.525, dev 0.108); invalid-share
+    R0 0.132 / R2 0.079 PASS.
+  Reading: two suites with different mechanics place dx/dr at a
+  STRUCTURAL ceiling for granite+memory at this task scale — surface
+  tweaks (salience, same-kind interference) do not move R0 off 1.0.
+- Consequence per A.3 (and the authorization entry's clause 3): the
+  chain STOPS before Phase V; NO v3n edits, NO parameter moves; Phase
+  V/P/C not run. Owner brief written:
+  docs/OWNER-BRIEF-CONT006-V2A-CAL-STOP.md — decisions: (1) amendment
+  A.9 relaxing the family band for dx/dr ONLY (ceiling with declared
+  caveat: improvement unmeasurable, harm measurable; endpoint leans on
+  11/15 in-band clusters, power ~0.8 retained) and continue on v3n
+  [default yes]; (2) author v3o with structurally harder dx/dr [default
+  no]; (3) stop the arc [default no].
+- Declared deviations: reviewer-model substitution (Fable/Opus → GLM 5.3,
+  queue rule). Model/tool substitutions otherwise: none.
