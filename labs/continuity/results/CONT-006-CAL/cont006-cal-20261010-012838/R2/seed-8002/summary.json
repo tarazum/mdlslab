@@ -1,0 +1,328 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-cal-20261010-012838",
+ "arm": "R2",
+ "seed": 8002,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": "f82efc3fcffe17e88ff714656326b4cbf4a2b1cb0e574b8b0e9be226346320b2",
+ "lesson_store_status": "evidence-validated",
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "moulding",
+   "observed_normalized": "moulding",
+   "observed_label": "moulding",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "tuning",
+   "observed_normalized": "the note listen before the gate close is related to the fettling process in the foundry. therefore, the correct label for this report is \"fettling\".",
+   "observed_label": "fettling",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8002",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "dispatch",
+   "observed_normalized": "the report is filed under the label 'dispatch'.",
+   "observed_label": "dispatch",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "pouring",
+   "observed_normalized": "the ladle melt on the small pour remains as the card has it.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8004",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "stocking",
+   "observed_normalized": "the report is filed under the label 'moulding'.",
+   "observed_label": "moulding",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8005",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "56",
+   "observed_normalized": "56",
+   "observed_label": "56",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "31",
+   "observed_normalized": "31",
+   "observed_label": "31",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8102",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "41",
+   "observed_normalized": "46",
+   "observed_label": "46",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-8103",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "17",
+   "observed_normalized": "23",
+   "observed_label": "23",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-8104",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "40",
+   "observed_normalized": "40",
+   "observed_label": "40",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8105",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "N31",
+   "observed_normalized": "n31",
+   "observed_label": "N31",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-8301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "R38",
+   "observed_normalized": "r38",
+   "observed_label": "R38",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-8302",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "C23",
+   "observed_normalized": "c23",
+   "observed_label": "C23",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "M23",
+   "observed_normalized": "m23",
+   "observed_label": "M23",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8402",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "S23",
+   "observed_normalized": "s32",
+   "observed_label": "S32",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8403",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "acknowledge.",
+   "observed_label": null,
+   "observed_position": null,
+   "labels": [
+    "brass",
+    "copper",
+    "pewter",
+    "iron",
+    "steel",
+    "gunmetal"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "acknowledge.",
+   "observed_label": null,
+   "observed_position": null,
+   "labels": [
+    "13",
+    "16",
+    "19",
+    "22",
+    "25",
+    "28"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the correct answer is \"birch\". birch is a type of hardwood that is often used to make seats and other furniture. it is known for its strength and durability, making it a popular choice for furniture-making.",
+   "observed_label": "birch",
+   "observed_position": 3,
+   "labels": [
+    "bastard",
+    "pitch",
+    "rosin",
+    "birch",
+    "pine",
+    "coal"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the correct answer is \"26\". the number of fenders that ride the outer rail of a train is typically determined by the number of wheels on the train. most modern trains have two wheels on each axle, so the number of wheels is equal to the number of axles. the number of fenders that ride the outer rail is therefore twice the number of axles. in this case, there are two axles, so there are 26 fenders that ride the outer rail.",
+   "observed_label": "26",
+   "observed_position": 1,
+   "labels": [
+    "23",
+    "26",
+    "29",
+    "32",
+    "35",
+    "38"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "chisel",
+   "observed_label": "chisel",
+   "observed_position": 5,
+   "labels": [
+    "saw",
+    "tongs",
+    "hook",
+    "spade",
+    "auger",
+    "chisel"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "52",
+   "observed_label": "52",
+   "observed_position": 3,
+   "labels": [
+    "43",
+    "46",
+    "49",
+    "52",
+    "55",
+    "58"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "pressing",
+   "observed_normalized": "collection.",
+   "observed_label": "collection",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "mending",
+   "observed_normalized": "collection.",
+   "observed_label": "collection",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8202",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "folding",
+   "observed_normalized": "collection.",
+   "observed_label": "collection",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8203",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "collection",
+   "observed_normalized": "collection.",
+   "observed_label": "collection",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8204",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 10,
+ "probes_total": 25,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 206,
+ "duration_s": 249.9,
+ "memory_guard": {
+  "appends": 206,
+  "injections_nonempty": 43,
+  "passed": true
+ },
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}
