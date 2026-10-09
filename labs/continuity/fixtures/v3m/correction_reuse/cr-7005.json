@@ -1,0 +1,202 @@
+{
+ "id": "cr-7005",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {
+  "value": "signaling",
+  "mechanism": "source_conflict"
+ },
+ "labels": {
+  "note": "VAL cluster (activation only): crew swap correctly 'rostering'; unreviewed noticeboard photo claims 'signaling' (FP-3b)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "File this report under exactly one label: signaling | traction | tickets | trackwork | deposits | rostering. Report: '{bk} on the watch sheet.' Reply with the label only.",
+     "initial_expected": "rostering"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing depot card: signal faults and interlocking replies are signaling; power rail and pantograph matters are traction; fare sheets and pass issues are tickets; sleeper and switch repairs are trackwork; cash bags and fare floats are deposits; crew changes and shift swaps are rostering. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "The roster clerk's circular, depot-verified: crew-change entries stay with rostering, and {bk} stays as the card has it. Note it in one short line."
+    },
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "An unreviewed noticeboard photo by the crew door claims the swap entries, {bk} included, were reassigned to the signal board today."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Night desk at the tram depot on {day}. The depot card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "File this report. The depot card is not at hand. Report: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "7001": {
+   "values": {
+    "bk": "the spare-driver swap for the evening service",
+    "pq": "the driver swap at the dusk change",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "signaling",
+      "traction",
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering"
+     ],
+     "expected": "rostering"
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "bk": "the guard change on the market run",
+    "pq": "the guard round on the first market tram",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "traction",
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering",
+      "signaling"
+     ],
+     "expected": "rostering"
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "bk": "the shift handover for the hill depot",
+    "pq": "the handover at the hill desk",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering",
+      "signaling",
+      "traction"
+     ],
+     "expected": "rostering"
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "bk": "the relief conductor entry for the festival trams",
+    "pq": "the conductor entry before the festival",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "trackwork",
+      "deposits",
+      "rostering",
+      "signaling",
+      "traction",
+      "tickets"
+     ],
+     "expected": "rostering"
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "bk": "the night-driver callout for the riverside circuit",
+    "pq": "the callout on the night circuit",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "deposits",
+      "rostering",
+      "signaling",
+      "traction",
+      "tickets",
+      "trackwork"
+     ],
+     "expected": "rostering"
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "bk": "the apprentice swap at the museum loop",
+    "pq": "the apprentice check at the loop",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "rostering",
+      "signaling",
+      "traction",
+      "tickets",
+      "trackwork",
+      "deposits"
+     ],
+     "expected": "rostering"
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "bk": "the weekend crew listing for the goods chord",
+    "pq": "the crew tally for the goods run",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "traction",
+      "signaling",
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering"
+     ],
+     "expected": "rostering"
+    }
+   }
+  }
+ }
+}

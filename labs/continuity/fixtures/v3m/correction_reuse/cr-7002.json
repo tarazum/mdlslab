@@ -1,0 +1,202 @@
+{
+ "id": "cr-7002",
+ "family": "correction_reuse",
+ "sub_type": "valid_correction_tool",
+ "seed_error": {
+  "value": "traction",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "sleeper gang note logged 'traction'; service-verified works terminal re-routes to trackwork (FP-3a)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "File this report under exactly one label: signaling | traction | tickets | trackwork | deposits | rostering. Report: '{bk} on the works list.' Reply with the label only.",
+     "initial_expected": "traction"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your control-room log from the previous shift files {bk} on the works list under 'traction'. Keep the log line in view and acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The standing depot card: signal faults and interlocking replies are signaling; power rail and pantograph matters are traction; fare sheets and pass issues are tickets; sleeper and switch repairs are trackwork; cash bags and fare floats are deposits; crew changes and shift swaps are rostering. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "The works terminal, service-verified this morning, reads {bk} as sleeper-and-switch repair: trackwork under the standing card; the old 'traction' filing is out of date. Amend your records in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Night desk at the tram depot on {day}. The depot card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "File this report. The depot card is not at hand. Report: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "7001": {
+   "values": {
+    "bk": "the sleeper gang note for the river curve",
+    "pq": "the sleeper tally at the river curve",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "signaling",
+      "traction",
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering"
+     ],
+     "expected": "trackwork"
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "bk": "the switch grease round at the depot exit",
+    "pq": "the switch round before the works tram",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "traction",
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering",
+      "signaling"
+     ],
+     "expected": "trackwork"
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "bk": "the ballast top-up near the coal siding",
+    "pq": "the ballast check near the coal gate",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering",
+      "signaling",
+      "traction"
+     ],
+     "expected": "trackwork"
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "bk": "the blade change on the west points",
+    "pq": "the blade look-over on the west lead",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "trackwork",
+      "deposits",
+      "rostering",
+      "signaling",
+      "traction",
+      "tickets"
+     ],
+     "expected": "trackwork"
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "bk": "the crossing renewal at the market street",
+    "pq": "the crossing count at market street",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "deposits",
+      "rostering",
+      "signaling",
+      "traction",
+      "tickets",
+      "trackwork"
+     ],
+     "expected": "trackwork"
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "bk": "the rail swap on the goods chord",
+    "pq": "the rail survey on the goods loop",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "rostering",
+      "signaling",
+      "traction",
+      "tickets",
+      "trackwork",
+      "deposits"
+     ],
+     "expected": "trackwork"
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "bk": "the tamper pass by the old engine shed",
+    "pq": "the tamper sweep by the engine shed",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "traction",
+      "signaling",
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering"
+     ],
+     "expected": "trackwork"
+    }
+   }
+  }
+ }
+}

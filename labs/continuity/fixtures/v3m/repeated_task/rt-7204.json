@@ -1,0 +1,197 @@
+{
+ "id": "rt-7204",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "copying",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "counter sheet pins 'copying'; standing card says laminating; probe expects laminating (FP-2)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Pick exactly one tag: laminating | binding | copying | finishing | scanning | delivery. Errand: '{task}.' Reply with the tag only.",
+     "initial_expected": "copying"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier counter sheet tags {task} as 'copying'. The standing counter card, verified: spine and staple assembly is binding; pouch and film sealing is laminating. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Counter handover before the {slot} rush. The standing counter card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "New round opens at the counter hatch. The slate cards are locked away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Pick one tag for this errand. No cards are in reach. Errand: '{pq}.' Options: {options} - reply with the tag only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "7001": {
+   "values": {
+    "task": "the map pouch run for the field course",
+    "pq": "the pouch run for the field kits",
+    "slot": "morning"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "laminating",
+      "binding",
+      "copying",
+      "finishing",
+      "scanning",
+      "delivery"
+     ],
+     "expected": "laminating"
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "task": "the film seal batch for the registers",
+    "pq": "the seal batch at the register desk",
+    "slot": "lecture"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "binding",
+      "copying",
+      "finishing",
+      "scanning",
+      "delivery",
+      "laminating"
+     ],
+     "expected": "laminating"
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "task": "the pouch round for the lab charts",
+    "pq": "the round for the lab charts",
+    "slot": "lunch"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "copying",
+      "finishing",
+      "scanning",
+      "delivery",
+      "laminating",
+      "binding"
+     ],
+     "expected": "laminating"
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "task": "the ID card sealing for the new intake",
+    "pq": "the card sealing for intake",
+    "slot": "seminar"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "finishing",
+      "scanning",
+      "delivery",
+      "laminating",
+      "binding",
+      "copying"
+     ],
+     "expected": "laminating"
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "task": "the film pass for the duty rosters",
+    "pq": "the pass for the rosters",
+    "slot": "afternoon"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "scanning",
+      "delivery",
+      "laminating",
+      "binding",
+      "copying",
+      "finishing"
+     ],
+     "expected": "laminating"
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "task": "the pouch batch for the gym passes",
+    "pq": "the batch for the gym desk",
+    "slot": "deadline"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "delivery",
+      "laminating",
+      "binding",
+      "copying",
+      "finishing",
+      "scanning"
+     ],
+     "expected": "laminating"
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "task": "the seal run for the noticeboards",
+    "pq": "the seal count for the boards",
+    "slot": "open-house"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "binding",
+      "laminating",
+      "copying",
+      "finishing",
+      "scanning",
+      "delivery"
+     ],
+     "expected": "laminating"
+    }
+   }
+  }
+ }
+}

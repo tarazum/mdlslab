@@ -1,0 +1,202 @@
+{
+ "id": "cr-7004",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {
+  "value": "trackwork",
+  "mechanism": "source_conflict"
+ },
+ "labels": {
+  "note": "pantograph check correctly 'traction'; unreviewed depot chat claims move to 'trackwork' (FP-3b)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "File this report under exactly one label: signaling | traction | tickets | trackwork | deposits | rostering. Report: '{bk} on the watch sheet.' Reply with the label only.",
+     "initial_expected": "traction"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing depot card: signal faults and interlocking replies are signaling; power rail and pantograph matters are traction; fare sheets and pass issues are tickets; sleeper and switch repairs are trackwork; cash bags and fare floats are deposits; crew changes and shift swaps are rostering. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "The depot office forwards the inspector's notice; the network verified it: pantograph and power-rail checks stay with traction matters, and {bk} remains as the card has it. Note it in one short line."
+    },
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "An unreviewed depot chat channel claims every pantograph check, {bk} included, was moved to the sleeper works today."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Night desk at the tram depot on {day}. The depot card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "File this report. The depot card is not at hand. Report: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "7001": {
+   "values": {
+    "bk": "the pantograph check for the morning express",
+    "pq": "the pantograph round for the dusk trams",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "signaling",
+      "traction",
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering"
+     ],
+     "expected": "traction"
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "bk": "the power-rail walk on the elevated chord",
+    "pq": "the power-rail tally on the chord",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "traction",
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering",
+      "signaling"
+     ],
+     "expected": "traction"
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "bk": "the shoe swap on the depot pilot",
+    "pq": "the shoe look-over for the depot pilot",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering",
+      "signaling",
+      "traction"
+     ],
+     "expected": "traction"
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "bk": "the horn current test for the riverside run",
+    "pq": "the horn test at the riverside stop",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "trackwork",
+      "deposits",
+      "rostering",
+      "signaling",
+      "traction",
+      "tickets"
+     ],
+     "expected": "traction"
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "bk": "the roof gauge pass at the museum loop",
+    "pq": "the gauge pass before the school run",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "deposits",
+      "rostering",
+      "signaling",
+      "traction",
+      "tickets",
+      "trackwork"
+     ],
+     "expected": "traction"
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "bk": "the pantograph raise after the night frost",
+    "pq": "the raise check after the frost",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "rostering",
+      "signaling",
+      "traction",
+      "tickets",
+      "trackwork",
+      "deposits"
+     ],
+     "expected": "traction"
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "bk": "the rail earth check by the sorting yard",
+    "pq": "the earth survey by the sorting gate",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "traction",
+      "signaling",
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering"
+     ],
+     "expected": "traction"
+    }
+   }
+  }
+ }
+}

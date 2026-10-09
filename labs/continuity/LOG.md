@@ -2839,3 +2839,89 @@ bounded later stage (CONT-002 machinery) — NOT run.
 - NEXT (owner-gated): the rethink design milestone (Fable C/D + co-owner
   RC-3..RC-6; incl. the v3m-vs-v3l divergence and the Stage-B hosted-
   replication question) -> new review chain -> repaired rerun.
+
+## 2026-10-09 — CONT-006 RETHINK design milestone START (owner: rethink=так, v3m, Stage B пізніше)
+
+- Owner decisions (chat): (1) стартувати rethink design-мілстоун — ТАК;
+  (2) розбіжність рев'ю вирішена на користь НОВОГО сюіту v3m (Fable:
+  дизайнер-side контамінація — перегрунтування калібується на v3l-результатах);
+  (3) Stage B (hosted-моделі) — в кінці, по мірі доступності моделей.
+- Scope (Fable C/D + ко-овнер RC-3..RC-6): v3m (ids x-7xxx, сіди
+  {7001..7007}, свіжі світи, план 15TR+4VAL+3GC як у v3l, механіки
+  успадковані); worker v2 — мультитрейс-бандли по сімействах/класах
+  (крос-трейс evidence стає природним, FIX-A/B конвертуються в дизайн);
+  FP-6 per-class cap 1 + class-coverage телеметрія стора; MME назад 0.20
+  з band-читанням caveat-only (paired-Δ арм-симетричний; вибір Fable);
+  per-family headroom (0.15, 0.85) ОБИДВІ арми контрасту + anchor-
+  divergence halt (|виміряне − анкер| > 0.15 → halt & investigate) у
+  Phase V і пілоті; live-telemetry гейт перед будь-яким аналізатором;
+  paired arm-equivalence аудит (RC-3); calibration-пілот (R0+R2 × 2 сіди
+  на v3m з пам'яттю — перевірка смуг/анкора ДО фризу; поза смугою →
+  НОВИЙ сюіт, не редагування v3m; в смузі → сіди part of final dataset,
+  CONT-002 single-freeze патерн). R1 лишається (Fable C.5: з пам'яттю
+  parroting-реплікація нарешті тестована). R3 gold — реюз (blind цілий),
+  FP-6 cap застосовується рівномірно. BAD/GOLD-TRIV — реюз текстів +
+  4-грам re-check проти v3m.
+- Вихідні артефакти: build_v3m.py + fixtures/v3m + валідатор v3m +
+  регресії; reflection_v2 мультитрейс; lessons FP-6 cap;
+  live_telemetry_gate.py; arm-equivalence аудит; power V2;
+  EVALUATION-PREP-CONT006-V2.md; DESIGN-V2 аденда; коміт. Далі за RC-6:
+  self-review → Fable → ко-овнер → owner accept → freeze → calibration
+  pilot → gates → Phases V/P/C.
+
+## 2026-10-09 — CONT-006 RETHINK design milestone COMPLETE (v3m + worker v2 + live gates + prereg V2 + power V2)
+
+Zero behavioral GPU (worker/calibration runs are post-review-chain). Owner
+decisions executed: rethink = yes; fresh suite v3m; Stage B deferred.
+
+- **fixtures/v3m** (build_v3m.py, deterministic re-run verified): 22
+  scenarios = 15 TR (cr4/cu4/rt3/dx2/dr2, classes FP-3a x2, FP-3b x2,
+  FP-1 x4, FP-2 x3, FP-4 x2, FP-5 x2) + 4 VAL (cr-7005/cu-7105/rt-7204/
+  dx-7403) + GC x3; ids x-7xxx; seeds {7001..7007}; fresh worlds (tram
+  depot control room, print-room counter, planetarium/pump house/
+  mountain hut/pottery/windmill, aquarium/ski lodge/gliding hangar, mint
+  assay room, apiary, rigging loft/marsh station/slate store); 103
+  turns/seed. Validator extended (--suite v3m): **PASS 19/19 + regressions
+  v3/v3h/v3i/v3j/v3k/v3l PASS x6** (suite sha256 cb5975d66233133e…).
+  Authoring iterations caught by the validator: 3 turn-text collisions
+  with prior suites (V3), gc entity words colliding with option pools
+  (V6) — all fixed before the PASS.
+- **Worker v2 bundles** (experiments/cont006/worker_v2_bundles.py):
+  8 multi-trace bundles grouped by family/sub-type (12 scenario-runs
+  each, fails-first, deterministic; 3-12 distinct traces per bundle;
+  ~1.6k tokens/bundle vs num_ctx 8192): cross-trace evidence becomes
+  native (Fable C.3 — FIX-A/B converted to design); ONE 5-part ref
+  format pinned by worked example; prompt prefers substance over
+  formatting lessons. Artifact committed.
+- **FP-6 cap** (Fable C.4): <= 1 format-discipline lesson per store,
+  uniform for R2/R3 (the invalid run's 3 near-copy format lessons took
+  265/265/228 injections vs 37 for the supersession lesson); class-
+  coverage telemetry declared. R3 gold reused, capped 8 -> 7 (blind
+  protocol intact).
+- **Live gates**: live_telemetry_gate.py (T1-T5 over every trace BEFORE
+  any analyzer; verified FAIL-CLOSED on the invalid run — 20/20 traces
+  flagged exactly as CN-012 predicts); combined_channel_smoke.py (all
+  memory arms, real multi-session scenario, PASS x5 incl. R0/R2/R3
+  identical episodic refs — committed as a permanent regression test);
+  arm_equivalence_audit.py + artifact (RC-3: single-source membership,
+  provider contract, retrieval/renderer constants, runner source
+  checks — PASS).
+- **Power V2** (power_calc_cont006_v2.py, seed 20261009): **MME back to
+  0.20** (the 0.333 was a small-n artifact of the invalid memoryless
+  pilot; V2 band reading = caveat-only, never moves the MME);
+  conservative row 0.871; sensitivity b0 0.30/0.55/0.75 -> 0.863/0.879/
+  0.815; false positive 0.040.
+- **docs/EVALUATION-PREP-CONT006-V2.md** (DRAFT for the RC-6 chain):
+  amendments A.1-A.7 — v3m; memory discipline (single source + live
+  gate order); the CALIBRATION PILOT stage (R0+R2 x 2 seeds on v3m with
+  memory, pre-freeze-sign-off: per-family headroom (0.15, 0.85) BOTH
+  arms + anchor-divergence halt |R0 - 0.525| <= 0.15 + live gate +
+  compliance; out of band -> NEW suite, never a v3m edit; in band ->
+  seeds part of the final dataset, single freeze); worker v2; MME 0.20;
+  the chain with live gates before every analyzer; what V2 does NOT
+  change (arms incl. R1, endpoint, decision rule, activation,
+  counterfactual texts + v3m 4-gram re-check). docs/CONT-006-DESIGN-V2.md
+  carries the full traceability (every change -> its review item).
+- NEXT (RC-6, owner-visible at each step): implementer self-review of the
+  V2 package -> Fable independent review -> co-owner review -> OWNER
+  ACCEPT -> freeze V2 -> worker v2 pass -> calibration pilot -> chain.

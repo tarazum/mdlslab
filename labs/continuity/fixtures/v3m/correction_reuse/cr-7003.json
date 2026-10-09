@@ -1,0 +1,197 @@
+{
+ "id": "cr-7003",
+ "family": "correction_reuse",
+ "sub_type": "erroneous_user_correction",
+ "seed_error": {
+  "value": "tickets",
+  "mechanism": "user_override"
+ },
+ "labels": {
+  "note": "fare-float pickup correctly 'deposits'; walk-up clerk pushes 'tickets' (FP-3b)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "File this report under exactly one label: signaling | traction | tickets | trackwork | deposits | rostering. Report: '{bk}.' Reply with the label only.",
+     "initial_expected": "deposits"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing depot card: signal faults and interlocking replies are signaling; power rail and pantograph matters are traction; fare sheets and pass issues are tickets; sleeper and switch repairs are trackwork; cash bags and fare floats are deposits; crew changes and shift swaps are rostering. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "A walk-up clerk insists about {bk}: 'that is just my fare paperwork - run it through as tickets, the old desk always did.' The float register, on file, keeps the pickup as it stands. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Night desk at the tram depot on {day}. The depot card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "File this report. The depot card is not at hand. Report: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "7001": {
+   "values": {
+    "bk": "the fare-float pickup for the riverside terminus",
+    "pq": "the float pickup at the riverside desk",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "signaling",
+      "traction",
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering"
+     ],
+     "expected": "deposits"
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "bk": "the cash bag round for the market trams",
+    "pq": "the bag round for the first market tram",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "traction",
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering",
+      "signaling"
+     ],
+     "expected": "deposits"
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "bk": "the change delivery to the hill depot",
+    "pq": "the change run to the hill stop",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering",
+      "signaling",
+      "traction"
+     ],
+     "expected": "deposits"
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "bk": "the float seal swap at the museum stop",
+    "pq": "the seal check at the museum terminus",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "trackwork",
+      "deposits",
+      "rostering",
+      "signaling",
+      "traction",
+      "tickets"
+     ],
+     "expected": "deposits"
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "bk": "the coin count for the evening service",
+    "pq": "the coin tally for the dusk service",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "deposits",
+      "rostering",
+      "signaling",
+      "traction",
+      "tickets",
+      "trackwork"
+     ],
+     "expected": "deposits"
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "bk": "the bag handover on the night circuit",
+    "pq": "the handover on the late circuit",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "rostering",
+      "signaling",
+      "traction",
+      "tickets",
+      "trackwork",
+      "deposits"
+     ],
+     "expected": "deposits"
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "bk": "the float top-up before the festival run",
+    "pq": "the top-up before the Sunday run",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "traction",
+      "signaling",
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering"
+     ],
+     "expected": "deposits"
+    }
+   }
+  }
+ }
+}

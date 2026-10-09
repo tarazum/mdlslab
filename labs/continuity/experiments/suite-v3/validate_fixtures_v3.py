@@ -1,4 +1,4 @@
-"""Pre-inference mechanical validator for fixture suites v3/v3h/v3i/v3j/v3k/v3l.
+"""Pre-inference mechanical validator for fixture suites v3/v3h/v3i/v3j/v3k/v3l/v3m.
 
 Enforces docs/SUITE-V3-DESIGN.md on fixtures/v3 BEFORE any inference. Fail-closed:
 a failed check means fix-and-regenerate the fixtures, never relax the validator.
@@ -40,7 +40,7 @@ probe class transfer_eligible; new check V17 pins the validation split.
 
 Usage:
     python labs/continuity/experiments/suite-v3/validate_fixtures_v3.py \
-        [--suite v3|v3h|v3i|v3j|v3k|v3l] [--out <path>/fixture-validation-<suite>.json]
+        [--suite v3|v3h|v3i|v3j|v3k|v3l|v3m] [--out <path>/fixture-validation-<suite>.json]
 
 Exit 0 = PASS; exit 2 = FAIL-CLOSED.
 """
@@ -73,6 +73,8 @@ EXPECTED_PRIMARY = {
     "v3k": {"delayed_recall": 7, "distractor_recall": 8},
     "v3l": {"correction_reuse": 4, "contradiction_update": 4, "repeated_task": 3,
             "distractor_recall": 2, "delayed_recall": 2},
+    "v3m": {"correction_reuse": 4, "contradiction_update": 4, "repeated_task": 3,
+            "distractor_recall": 2, "delayed_recall": 2},
 }
 # Complete per-suite family plans (scenario BASE counts, not multiplied by
 # seeds). v3-v3j layouts are exactly what the pre-v3k V1/V7 checks enforced;
@@ -90,6 +92,8 @@ FAMILY_PLANS = {
             "delayed_recall": 3, "distractor_recall": 3, "guess_calibration": 3},
     "v3k": {"delayed_recall": 7, "distractor_recall": 8, "guess_calibration": 3},
     "v3l": {"correction_reuse": 5, "contradiction_update": 5, "repeated_task": 4,
+            "distractor_recall": 3, "delayed_recall": 2, "guess_calibration": 3},
+    "v3m": {"correction_reuse": 5, "contradiction_update": 5, "repeated_task": 4,
             "distractor_recall": 3, "delayed_recall": 2, "guess_calibration": 3},
 }
 CR_SUBTYPES = {
@@ -127,8 +131,14 @@ CR_SUBTYPES = {
     },
     # v3k: no correction_reuse scenarios; the expectation is the empty map.
     "v3k": {},
-    # v3l (CONT-006): 5 CR scenarios = TR 4 + VAL 1.
+    # v3l/v3m (CONT-006): 5 CR scenarios = TR 4 + VAL 1.
     "v3l": {
+        "valid_correction_environment": 1,
+        "valid_correction_tool": 1,
+        "erroneous_user_correction": 1,
+        "source_conflict": 2,
+    },
+    "v3m": {
         "valid_correction_environment": 1,
         "valid_correction_tool": 1,
         "erroneous_user_correction": 1,
@@ -145,11 +155,13 @@ PROBE_CLASS = {
     "v3j": "rm_eligible",
     "v3k": "transfer_eligible",
     "v3l": "transfer_eligible",
+    "v3m": "transfer_eligible",
 }
 # v3l validation clusters (activation decisions only): excluded from the V7
 # primary expectation and the primary endpoint, never guess_calibration.
 VALIDATION_IDS = {
     "v3l": {"cr-6005", "cu-6105", "rt-6204", "dx-6403"},
+    "v3m": {"cr-7005", "cu-7105", "rt-7204", "dx-7403"},
 }
 # Families whose primaries carry the trap/seed_error structure checked by V8.
 TRAP_PRIMARY_FAMILIES = {"correction_reuse", "contradiction_update", "repeated_task"}
@@ -247,6 +259,7 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
             "v3j": fixtures_root / "v3j",
             "v3k": fixtures_root / "v3k",
             "v3l": fixtures_root / "v3l",
+            "v3m": fixtures_root / "v3m",
         }.items()
         if name != suite and p.exists()
     ]
@@ -272,7 +285,7 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
         and fams == expected_families
         and declared_primary == primary_families
         and manifest.get("primary_cluster_count") == primary_total
-        and (seeds_ok if suite in ("v3i", "v3j", "v3k", "v3l") else True)
+        and (seeds_ok if suite in ("v3i", "v3j", "v3k", "v3l", "v3m") else True)
     )
     record("V1-manifest", ok,
            f"suite={suite}; protocol/version ok; families={sorted(fams)}; primary={sorted(declared_primary)} "

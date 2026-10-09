@@ -1,0 +1,185 @@
+{
+ "id": "cu-7105",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "labels": {
+  "note": "VAL cluster (activation only): windmill brake clicks corrected; probe expects NEW (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You mind the windmill log. For the log: the brake takes {old} clicks to seat. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the pawl was replaced; the brake now takes {new} clicks, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A sweeps mate asks; the windmill tally is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many clicks does the brake take? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "7001": {
+   "values": {
+    "old": "33",
+    "new": "41"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "41",
+      "29",
+      "45",
+      "25",
+      "49",
+      "33"
+     ],
+     "expected": "41"
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "old": "36",
+    "new": "44"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "32",
+      "48",
+      "28",
+      "52",
+      "36",
+      "44"
+     ],
+     "expected": "44"
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "old": "39",
+    "new": "47"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "51",
+      "31",
+      "55",
+      "39",
+      "47",
+      "35"
+     ],
+     "expected": "47"
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "old": "42",
+    "new": "50"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "34",
+      "58",
+      "42",
+      "50",
+      "38",
+      "54"
+     ],
+     "expected": "50"
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "old": "45",
+    "new": "53"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "61",
+      "45",
+      "53",
+      "41",
+      "57",
+      "37"
+     ],
+     "expected": "53"
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "old": "48",
+    "new": "56"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "48",
+      "56",
+      "44",
+      "60",
+      "40",
+      "64"
+     ],
+     "expected": "56"
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "old": "51",
+    "new": "59"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "59",
+      "47",
+      "63",
+      "43",
+      "67",
+      "51"
+     ],
+     "expected": "59"
+    }
+   }
+  }
+ }
+}

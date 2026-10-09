@@ -1,0 +1,36 @@
+{
+ "protocol": "continuity-workload",
+ "version": 3,
+ "families": [
+  "correction_reuse",
+  "contradiction_update",
+  "repeated_task",
+  "distractor_recall",
+  "delayed_recall",
+  "guess_calibration"
+ ],
+ "primary_families": [
+  "correction_reuse",
+  "contradiction_update",
+  "repeated_task",
+  "distractor_recall",
+  "delayed_recall"
+ ],
+ "primary_cluster_count": 15,
+ "validation_cluster_ids": [
+  "cr-7005",
+  "cu-7105",
+  "rt-7204",
+  "dx-7403"
+ ],
+ "variant_seeds": [
+  7001,
+  7002,
+  7003,
+  7004,
+  7005,
+  7006,
+  7007
+ ],
+ "description": "Suite v3m for the CONT-006 RETHINK (owner-directed 2026-10-09; REVIEW-FABLE-CONT006 C.6 + REVIEW-CONT006-CN012-RERUN): a FRESH confirmatory surface \u2014 the rethink decisions are informed by v3l per-cluster results, so v3l cannot serve as the new endpoint. Composition identical to v3l (15 TR primary transfer clusters of class transfer_eligible + 4 VAL activation-only + GC x3; every taxonomy class >= 2 primary clusters), mechanics INHERITED from the frozen suites only (v3i/v3j seed_error mechanisms + initial_expected; v3k lure_value + label windows), fresh worlds (tram depot control room, print-room counter, planetarium/pump house/mountain hut/pottery workshop/windmill, aquarium/ski lodge/gliding hangar, mint assay room, apiary shed, rigging loft/marsh station/slate store), ids x-7xxx, seeds {7001..7007}, disjoint from ALL prior suites (validator V3, every seed both ways). Design-time difficulty intent: C2 memory-armed family bands (the calibration pilot verifies with memory ON before freeze; out of band -> a NEW suite, never a v3m edit). Rendering: continuity.fixtures.render_seed_variant."
+}

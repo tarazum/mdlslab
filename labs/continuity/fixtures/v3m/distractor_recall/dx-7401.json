@@ -1,0 +1,194 @@
+{
+ "id": "dx-7401",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two codes stated at learning (pump room locker target, kitchen crate lure); probe asks the target with the lure in options; lure_value declared for validator V8R (FP-4)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the town aquarium back office. For the feed log: the pump room locker code is {code}; the kitchen crate code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} finished; all else stands as before. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the feed log is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the pump room locker code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{lure}",
+ "variants": {
+  "7001": {
+   "values": {
+    "code": "T13",
+    "lure": "Q47",
+    "chore": "the dawn glass wipe",
+    "role": "keeper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "T13",
+      "Q47",
+      "T19",
+      "T25",
+      "T31",
+      "T37"
+     ],
+     "expected": "T13"
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "code": "T19",
+    "lure": "Q53",
+    "chore": "the pump strainer rinse",
+    "role": "aquarist"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Q53",
+      "T13",
+      "T25",
+      "T31",
+      "T37",
+      "T19"
+     ],
+     "expected": "T19"
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "code": "T25",
+    "lure": "Q59",
+    "chore": "the salt mix round",
+    "role": "filter tender"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "T13",
+      "T19",
+      "T31",
+      "T37",
+      "T25",
+      "Q59"
+     ],
+     "expected": "T25"
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "code": "T31",
+    "lure": "Q65",
+    "chore": "the kelp trim",
+    "role": "ticket lead"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "T19",
+      "T25",
+      "T37",
+      "T31",
+      "Q65",
+      "T13"
+     ],
+     "expected": "T31"
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "code": "T37",
+    "lure": "Q71",
+    "chore": "the hood light check",
+    "role": "diver"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "T25",
+      "T31",
+      "T37",
+      "Q71",
+      "T13",
+      "T19"
+     ],
+     "expected": "T37"
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "code": "T43",
+    "lure": "Q77",
+    "chore": "the bucket scrub",
+    "role": "curator"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "T31",
+      "T43",
+      "Q77",
+      "T13",
+      "T19",
+      "T25"
+     ],
+     "expected": "T43"
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "code": "T49",
+    "lure": "Q83",
+    "chore": "the dusk top-off",
+    "role": "night watcher"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "T49",
+      "Q83",
+      "T13",
+      "T19",
+      "T25",
+      "T31"
+     ],
+     "expected": "T49"
+    }
+   }
+  }
+ }
+}

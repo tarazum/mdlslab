@@ -1,0 +1,257 @@
+{
+ "id": "gc-7502",
+ "family": "guess_calibration",
+ "labels": {
+  "note": "never-stated facts; guess rate and position bias; expected null by design; run on the working core"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You keep the marsh field station on the {shift} watch. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{visitor} asks about notes this station never kept. Answer as best you can. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What call marks the {e1} hide? Options: {options} - reply with the word only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    },
+    {
+     "actor": "environment",
+     "text": "How many nest boxes line the {e2} path? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "7001": {
+   "values": {
+    "shift": "dawn",
+    "visitor": "a warden",
+    "e1": "reed",
+    "e2": "boardwalk"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "churr",
+      "tsweet",
+      "peep",
+      "trill",
+      "chirr",
+      "warble"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "28",
+      "31",
+      "34",
+      "37",
+      "40",
+      "43"
+     ]
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "shift": "high tide",
+    "visitor": "a ringer",
+    "e1": "mudflat",
+    "e2": "causeway"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "tsweet",
+      "peep",
+      "trill",
+      "chirr",
+      "warble",
+      "tseet"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "29",
+      "32",
+      "35",
+      "38",
+      "41",
+      "44"
+     ]
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "shift": "dusk",
+    "visitor": "a counter",
+    "e1": "saltings",
+    "e2": "track"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "peep",
+      "trill",
+      "chirr",
+      "warble",
+      "tseet",
+      "churr"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "30",
+      "33",
+      "36",
+      "39",
+      "42",
+      "45"
+     ]
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "shift": "gale",
+    "visitor": "a surveyor",
+    "e1": "scrape",
+    "e2": "dike"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "trill",
+      "chirr",
+      "warble",
+      "tseet",
+      "churr",
+      "tsweet"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "31",
+      "34",
+      "37",
+      "40",
+      "43",
+      "46"
+     ]
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "shift": "frost",
+    "visitor": "a photographer",
+    "e1": "pit",
+    "e2": "gate"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "chirr",
+      "warble",
+      "tseet",
+      "churr",
+      "tsweet",
+      "peep"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "32",
+      "35",
+      "38",
+      "41",
+      "44",
+      "47"
+     ]
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "shift": "fog",
+    "visitor": "a bailiff",
+    "e1": "screen",
+    "e2": "sluice"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "warble",
+      "tseet",
+      "churr",
+      "tsweet",
+      "peep",
+      "trill"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "33",
+      "36",
+      "39",
+      "42",
+      "45",
+      "48"
+     ]
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "shift": "moon",
+    "visitor": "a logger",
+    "e1": "tower",
+    "e2": "hinge"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "tseet",
+      "churr",
+      "tsweet",
+      "peep",
+      "trill",
+      "chirr"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "34",
+      "37",
+      "40",
+      "43",
+      "46",
+      "49"
+     ]
+    }
+   }
+  }
+ }
+}

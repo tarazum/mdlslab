@@ -1,0 +1,7 @@
+{
+ "kind": "cont006-live-telemetry-gate",
+ "run_root": "C:\\projects\\mdlslab\\labs\\continuity\\results\\CONT-006-CONFIRMATORY\\cont006-c-20261009-001720",
+ "traces_checked": 20,
+ "failures": 20,
+ "verdict": "FAIL"
+}

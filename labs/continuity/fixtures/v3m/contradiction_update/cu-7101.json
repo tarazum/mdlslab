@@ -1,0 +1,185 @@
+{
+ "id": "cu-7101",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "labels": {
+  "note": "planetarium dome shutter drive corrected; probe expects NEW value (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You keep the planetarium notes. For the log: the dome shutter drive runs {old} steps per cycle. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the gearbox was overhauled; the dome shutter drive now runs {new} steps, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A dome attendant asks; the planetarium sheet is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many steps does the dome shutter drive run? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "7001": {
+   "values": {
+    "old": "52",
+    "new": "59"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "59",
+      "48",
+      "63",
+      "44",
+      "67",
+      "52"
+     ],
+     "expected": "59"
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "old": "55",
+    "new": "62"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "51",
+      "66",
+      "47",
+      "70",
+      "55",
+      "62"
+     ],
+     "expected": "62"
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "old": "58",
+    "new": "65"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "69",
+      "50",
+      "73",
+      "58",
+      "65",
+      "54"
+     ],
+     "expected": "65"
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "old": "61",
+    "new": "68"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "53",
+      "76",
+      "61",
+      "68",
+      "57",
+      "72"
+     ],
+     "expected": "68"
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "old": "64",
+    "new": "71"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "79",
+      "64",
+      "71",
+      "60",
+      "75",
+      "56"
+     ],
+     "expected": "71"
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "old": "67",
+    "new": "74"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "67",
+      "74",
+      "63",
+      "78",
+      "59",
+      "82"
+     ],
+     "expected": "74"
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "old": "70",
+    "new": "77"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "77",
+      "66",
+      "81",
+      "62",
+      "85",
+      "70"
+     ],
+     "expected": "77"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,257 @@
+{
+ "id": "gc-7501",
+ "family": "guess_calibration",
+ "labels": {
+  "note": "never-stated facts; guess rate and position bias; expected null by design; run on the working core"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You mind the boatyard rigging loft on the {shift} stretch. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{visitor} asks about tallies this loft never kept. Answer as best you can. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What twine wraps the {e1} splice? Options: {options} - reply with the word only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    },
+    {
+     "actor": "environment",
+     "text": "How many fathom coils wait in the {e2} bin? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "7001": {
+   "values": {
+    "shift": "haul-out",
+    "visitor": "a rigger",
+    "e1": "jib",
+    "e2": "tar"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "jute",
+      "sisal",
+      "hemp",
+      "coir",
+      "manila",
+      "flax"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "31",
+      "34",
+      "37",
+      "40",
+      "43",
+      "46"
+     ]
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "shift": "varnish",
+    "visitor": "a boatwright",
+    "e1": "main",
+    "e2": "splicing"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "sisal",
+      "hemp",
+      "coir",
+      "manila",
+      "flax",
+      "cotton"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "32",
+      "35",
+      "38",
+      "41",
+      "44",
+      "47"
+     ]
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "shift": "tide-work",
+    "visitor": "a tender",
+    "e1": "mizzen",
+    "e2": "spare"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "hemp",
+      "coir",
+      "manila",
+      "flax",
+      "cotton",
+      "jute"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "33",
+      "36",
+      "39",
+      "42",
+      "45",
+      "48"
+     ]
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "shift": "lay-day",
+    "visitor": "a keeper",
+    "e1": "staysail",
+    "e2": "drying"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "coir",
+      "manila",
+      "flax",
+      "cotton",
+      "jute",
+      "sisal"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "34",
+      "37",
+      "40",
+      "43",
+      "46",
+      "49"
+     ]
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "shift": "launch day",
+    "visitor": "a haulmaster",
+    "e1": "spanker",
+    "e2": "oakum"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "manila",
+      "flax",
+      "cotton",
+      "jute",
+      "sisal",
+      "hemp"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "35",
+      "38",
+      "41",
+      "44",
+      "47",
+      "50"
+     ]
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "shift": "survey",
+    "visitor": "an usher",
+    "e1": "gaff",
+    "e2": "chain"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "flax",
+      "cotton",
+      "jute",
+      "sisal",
+      "hemp",
+      "coir"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "36",
+      "39",
+      "42",
+      "45",
+      "48",
+      "51"
+     ]
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "shift": "winter lay",
+    "visitor": "a ferryman",
+    "e1": "whisker",
+    "e2": "laid-up"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "cotton",
+      "jute",
+      "sisal",
+      "hemp",
+      "coir",
+      "manila"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "37",
+      "40",
+      "43",
+      "46",
+      "49",
+      "52"
+     ]
+    }
+   }
+  }
+ }
+}

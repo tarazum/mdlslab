@@ -1,0 +1,202 @@
+{
+ "id": "cr-7001",
+ "family": "correction_reuse",
+ "sub_type": "valid_correction_environment",
+ "seed_error": {
+  "value": "tickets",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "point-fault reply logged 'tickets'; verified control notice re-routes to signaling (FP-3a)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "File this report under exactly one label: signaling | traction | tickets | trackwork | deposits | rostering. Report: '{bk} on the morning sheet.' Reply with the label only.",
+     "initial_expected": "tickets"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your control-room log from the previous shift files {bk} on the morning sheet under 'tickets'. Keep the log line in view and acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The standing depot card: signal faults and interlocking replies are signaling; power rail and pantograph matters are traction; fare sheets and pass issues are tickets; sleeper and switch repairs are trackwork; cash bags and fare floats are deposits; crew changes and shift swaps are rostering. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Control-room bulletin, verified notice from the network office: the log line filing {bk} under 'tickets' is out of date; interlocking and signal-board replies for it are signaling under the standing card. Amend your records in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Night desk at the tram depot on {day}. The depot card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "File this report. The depot card is not at hand. Report: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "7001": {
+   "values": {
+    "bk": "the points fault at the east crossover",
+    "pq": "the lamp test for the night circuit",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "signaling",
+      "traction",
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering"
+     ],
+     "expected": "signaling"
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "bk": "the signal lamp outage near the museum loop",
+    "pq": "the board check after the depot shunt",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "traction",
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering",
+      "signaling"
+     ],
+     "expected": "signaling"
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "bk": "the interlocking reply for the depot throat",
+    "pq": "the points round before the first tram",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering",
+      "signaling",
+      "traction"
+     ],
+     "expected": "signaling"
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "bk": "the board reset after the platform overrun",
+    "pq": "the signal sweep at the museum stop",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "trackwork",
+      "deposits",
+      "rostering",
+      "signaling",
+      "traction",
+      "tickets"
+     ],
+     "expected": "signaling"
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "bk": "the track-circuit flicker by the sorting siding",
+    "pq": "the crossing tally at the goods gate",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "deposits",
+      "rostering",
+      "signaling",
+      "traction",
+      "tickets",
+      "trackwork"
+     ],
+     "expected": "signaling"
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "bk": "the crossing-bell fault at the mill bridge",
+    "pq": "the circuit look-over for the school run",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "rostering",
+      "signaling",
+      "traction",
+      "tickets",
+      "trackwork",
+      "deposits"
+     ],
+     "expected": "signaling"
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "bk": "the axle-counter trip on the north chord",
+    "pq": "the bell pass by the canal bridge",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "traction",
+      "signaling",
+      "tickets",
+      "trackwork",
+      "deposits",
+      "rostering"
+     ],
+     "expected": "signaling"
+    }
+   }
+  }
+ }
+}

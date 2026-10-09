@@ -1,0 +1,69 @@
+{
+ "kind": "cont006-arm-equivalence-audit",
+ "arms": [
+  "R0",
+  "R1",
+  "R2",
+  "R3",
+  "RBAD",
+  "RGOLD"
+ ],
+ "expected_diffs": {
+  "R0 vs R2": [
+   "lesson store: none vs worker store"
+  ],
+  "R0 vs R3": [
+   "lesson store: none vs gold store"
+  ],
+  "R2 vs R3": [
+   "lesson store: worker vs gold"
+  ],
+  "R0 vs R1": [
+   "reflection machinery: none vs deterministic MVP + selfmodel block"
+  ],
+  "R0 vs RBAD": [
+   "lesson store: none vs counterfactual BAD"
+  ],
+  "R0 vs RGOLD": [
+   "lesson store: none vs counterfactual GOLD-TRIV"
+  ]
+ },
+ "verified": {
+  "memory_membership_single_source": {
+   "R0": true,
+   "R1": true,
+   "R2": true,
+   "R3": true,
+   "RBAD": true,
+   "RGOLD": true
+  },
+  "provider_sampling_contract": {
+   "temperature": 0.0,
+   "seed": 0,
+   "num_ctx": 4096,
+   "num_predict": 256
+  },
+  "retrieval_and_rendering": {
+   "memory_top_k": 8,
+   "lesson_top_k": 3,
+   "render_budget_words": 165,
+   "memory_renderer": "flat (format_memory_block) for every R-arm",
+   "lesson_renderer": "prose (render_block) for lesson arms"
+  },
+  "runner_source_checks": {
+   "append_from_memory_arms": true,
+   "no_second_arm_tuple": true,
+   "lesson_guard": true,
+   "selfmodel_R1_only_among_R": true,
+   "reflection_R1_only_among_R": true
+  },
+  "fixture_rendering": {
+   "definition": "continuity.fixtures.render_seed_variant",
+   "shared_by": "runner, validator, gates (single import)",
+   "object": "<function render_seed_variant at 0x00000133AD756340>"
+  },
+  "session_semantics": "context reset per session for ALL arms; memory store retained for all memory arms; lesson channel injected per session for lesson arms only (verified live by experiments/cont006/combined_channel_smoke.py)",
+  "seed_semantics": "sampler seed == variant seed (house convention; PB-071 caveat travels); identical across arms"
+ },
+ "conclusion": "R0/R2/R3 differ ONLY by the lesson store; RBAD/RGOLD only by the counterfactual store; R1 additionally carries the deterministic MVP reflection. All other machinery is shared module-level code."
+}

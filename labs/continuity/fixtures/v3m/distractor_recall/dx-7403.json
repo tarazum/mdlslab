@@ -1,0 +1,194 @@
+{
+ "id": "dx-7403",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two codes stated at learning (parachute rack target, trailer box lure); probe asks the target with the lure in options; lure_value declared for validator V8R (FP-4)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the gliding club hangar. For the rigging book: the parachute rack code is {code}; the trailer box code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} finished; all else stands as before. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the rigging book is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the parachute rack code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{lure}",
+ "variants": {
+  "7001": {
+   "values": {
+    "code": "X13",
+    "lure": "G47",
+    "chore": "the wing cover round",
+    "role": "duty pilot"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X13",
+      "G47",
+      "X19",
+      "X25",
+      "X31",
+      "X37"
+     ],
+     "expected": "X13"
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "code": "X19",
+    "lure": "G53",
+    "chore": "the tire pressure check",
+    "role": "winch driver"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G53",
+      "X13",
+      "X25",
+      "X31",
+      "X37",
+      "X19"
+     ],
+     "expected": "X19"
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "code": "X25",
+    "lure": "G59",
+    "chore": "the canopy polish",
+    "role": "rigger"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X13",
+      "X19",
+      "X31",
+      "X37",
+      "X25",
+      "G59"
+     ],
+     "expected": "X25"
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "code": "X31",
+    "lure": "G65",
+    "chore": "the tail dolly grease",
+    "role": "cadet lead"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X19",
+      "X25",
+      "X37",
+      "X31",
+      "G65",
+      "X13"
+     ],
+     "expected": "X31"
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "code": "X37",
+    "lure": "G71",
+    "chore": "the rope coil tidy",
+    "role": "instructor"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X25",
+      "X31",
+      "X37",
+      "G71",
+      "X13",
+      "X19"
+     ],
+     "expected": "X37"
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "code": "X43",
+    "lure": "G77",
+    "chore": "the pitot cover swap",
+    "role": "hangar keeper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X31",
+      "X43",
+      "G77",
+      "X13",
+      "X19",
+      "X25"
+     ],
+     "expected": "X43"
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "code": "X49",
+    "lure": "G83",
+    "chore": "the dusk tie-down",
+    "role": "night watchman"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "X49",
+      "G83",
+      "X13",
+      "X19",
+      "X25",
+      "X31"
+     ],
+     "expected": "X49"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,185 @@
+{
+ "id": "cu-7102",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "labels": {
+  "note": "village pump house valve turns corrected; probe expects NEW value (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You mind the pump house sheet. For the log: the inlet valve takes {old} turns to close. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the spindle was re-seated; the inlet valve now takes {new} turns, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A bailiff asks; the pump house card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many turns does the inlet valve take? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "7001": {
+   "values": {
+    "old": "23",
+    "new": "28"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "28",
+      "19",
+      "32",
+      "15",
+      "36",
+      "23"
+     ],
+     "expected": "28"
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "old": "26",
+    "new": "31"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "22",
+      "35",
+      "18",
+      "39",
+      "26",
+      "31"
+     ],
+     "expected": "31"
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "old": "29",
+    "new": "34"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "38",
+      "21",
+      "42",
+      "29",
+      "34",
+      "25"
+     ],
+     "expected": "34"
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "old": "32",
+    "new": "37"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "24",
+      "45",
+      "32",
+      "37",
+      "28",
+      "41"
+     ],
+     "expected": "37"
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "old": "35",
+    "new": "40"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "48",
+      "35",
+      "40",
+      "31",
+      "44",
+      "27"
+     ],
+     "expected": "40"
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "old": "38",
+    "new": "43"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "38",
+      "43",
+      "34",
+      "47",
+      "30",
+      "51"
+     ],
+     "expected": "43"
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "old": "41",
+    "new": "46"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "46",
+      "37",
+      "50",
+      "33",
+      "54",
+      "41"
+     ],
+     "expected": "46"
+    }
+   }
+  }
+ }
+}

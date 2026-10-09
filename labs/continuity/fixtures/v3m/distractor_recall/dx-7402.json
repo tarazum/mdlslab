@@ -1,0 +1,194 @@
+{
+ "id": "dx-7402",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two codes stated at learning (avalanche locker target, boot cabinet lure); probe asks the target with the lure in options; lure_value declared for validator V8R (FP-4)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the ski lodge gear room. For the gear ledger: the avalanche locker code is {code}; the boot cabinet code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} finished; all else stands as before. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the gear ledger is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the avalanche locker code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{lure}",
+ "variants": {
+  "7001": {
+   "values": {
+    "code": "V13",
+    "lure": "B47",
+    "chore": "the boot dry rack",
+    "role": "lift operator"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V13",
+      "B47",
+      "V19",
+      "V25",
+      "V31",
+      "V37"
+     ],
+     "expected": "V13"
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "code": "V19",
+    "lure": "B53",
+    "chore": "the pole strap check",
+    "role": "patroller"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "B53",
+      "V13",
+      "V25",
+      "V31",
+      "V37",
+      "V19"
+     ],
+     "expected": "V19"
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "code": "V25",
+    "lure": "B59",
+    "chore": "the wax bench tidy",
+    "role": "boot fitter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V13",
+      "V19",
+      "V31",
+      "V37",
+      "V25",
+      "B59"
+     ],
+     "expected": "V25"
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "code": "V31",
+    "lure": "B65",
+    "chore": "the helmet shelf wipe",
+    "role": "night porter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V19",
+      "V25",
+      "V37",
+      "V31",
+      "B65",
+      "V13"
+     ],
+     "expected": "V31"
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "code": "V37",
+    "lure": "B71",
+    "chore": "the binding gauge round",
+    "role": "instructor"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V25",
+      "V31",
+      "V37",
+      "B71",
+      "V13",
+      "V19"
+     ],
+     "expected": "V37"
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "code": "V43",
+    "lure": "B77",
+    "chore": "the glove bin sort",
+    "role": "shuttle driver"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V31",
+      "V43",
+      "B77",
+      "V13",
+      "V19",
+      "V25"
+     ],
+     "expected": "V43"
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "code": "V49",
+    "lure": "B83",
+    "chore": "the evening stove fill",
+    "role": "gear steward"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V49",
+      "B83",
+      "V13",
+      "V19",
+      "V25",
+      "V31"
+     ],
+     "expected": "V49"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,200 @@
+{
+ "id": "dr-7302",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "queen cage drawer code with a NON-label companion fact (anti-echo); learning s1 fact + s2 chore; s3 held-out label-form probe (FP-5)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the farm apiary shed. For the hive ledger: the queen cage drawer code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} finished; all else stands as before. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the hive ledger is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the queen cage drawer code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "7001": {
+   "values": {
+    "code": "P27",
+    "comp_thing": "smoker bellows",
+    "comp_verb": "hisses when lit",
+    "chore": "the smoker fuel fill",
+    "role": "beekeeper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "P43",
+      "P49",
+      "P54",
+      "P27",
+      "P32",
+      "P38"
+     ],
+     "expected": "P27"
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "code": "P32",
+    "comp_thing": "hive tool tin",
+    "comp_verb": "sits by the door",
+    "chore": "the frame lift round",
+    "role": "farm hand"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "P54",
+      "P60",
+      "P32",
+      "P38",
+      "P43",
+      "P49"
+     ],
+     "expected": "P32"
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "code": "P38",
+    "comp_thing": "veil peg",
+    "comp_verb": "waits for the spring round",
+    "chore": "the veil wash",
+    "role": "inspector"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "P65",
+      "P38",
+      "P43",
+      "P49",
+      "P54",
+      "P60"
+     ],
+     "expected": "P38"
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "code": "P43",
+    "comp_thing": "feeder jar",
+    "comp_verb": "fogs in the cold",
+    "chore": "the feeder mix",
+    "role": "helper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "P43",
+      "P49",
+      "P54",
+      "P60",
+      "P65",
+      "P71"
+     ],
+     "expected": "P43"
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "code": "P49",
+    "comp_thing": "wax block",
+    "comp_verb": "rings when tapped",
+    "chore": "the entrance reducer check",
+    "role": "honey packer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "P54",
+      "P60",
+      "P65",
+      "P71",
+      "P76",
+      "P49"
+     ],
+     "expected": "P49"
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "code": "P54",
+    "comp_thing": "queen cage rack",
+    "comp_verb": "slips on the shelf edge",
+    "chore": "the wax box tidy",
+    "role": "student"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "P65",
+      "P71",
+      "P76",
+      "P82",
+      "P54",
+      "P60"
+     ],
+     "expected": "P54"
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "code": "P60",
+    "comp_thing": "glove clip",
+    "comp_verb": "holds the tiny tacks",
+    "chore": "the dusk strap pass",
+    "role": "night watch"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "P76",
+      "P82",
+      "P87",
+      "P60",
+      "P65",
+      "P71"
+     ],
+     "expected": "P60"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,195 @@
+{
+ "id": "cu-7103",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{new}",
+  "mechanism": "retracted_correction"
+ },
+ "labels": {
+  "note": "mountain hut stove flue corrected then withdrawn; probe expects ORIGINAL (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You tend the mountain hut records. For the log: the stove flue opens {old} turns for the night. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the damper was rebuilt; the stove flue opens {new} turns, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "The warden says the correction is withdrawn: the rebuild slip belonged to the lower hut and does not apply here; the standing setting from the first log holds as before. Amend in one short line."
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A walking guide asks; the hut sheet is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many turns does the stove flue open? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "7001": {
+   "values": {
+    "old": "41",
+    "new": "45"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "36",
+      "50",
+      "31",
+      "55",
+      "41",
+      "45"
+     ],
+     "expected": "41"
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "old": "44",
+    "new": "48"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "53",
+      "34",
+      "58",
+      "44",
+      "48",
+      "39"
+     ],
+     "expected": "44"
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "old": "47",
+    "new": "51"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "37",
+      "61",
+      "47",
+      "51",
+      "42",
+      "56"
+     ],
+     "expected": "47"
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "old": "50",
+    "new": "54"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "64",
+      "50",
+      "54",
+      "45",
+      "59",
+      "40"
+     ],
+     "expected": "50"
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "old": "53",
+    "new": "57"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "53",
+      "57",
+      "48",
+      "62",
+      "43",
+      "67"
+     ],
+     "expected": "53"
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "old": "56",
+    "new": "60"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "60",
+      "51",
+      "65",
+      "46",
+      "70",
+      "56"
+     ],
+     "expected": "56"
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "old": "59",
+    "new": "63"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "54",
+      "68",
+      "49",
+      "73",
+      "59",
+      "63"
+     ],
+     "expected": "59"
+    }
+   }
+  }
+ }
+}

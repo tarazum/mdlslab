@@ -1,0 +1,200 @@
+{
+ "id": "dr-7301",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "bullion drawer code with a NON-label companion fact (anti-echo); learning s1 fact + s2 chore; s3 held-out label-form probe (FP-5)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the old mint assay room. For the assay book: the bullion drawer code is {code}; the {comp_thing} {comp_verb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{chore} finished; all else stands as before. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the assay book is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the bullion drawer code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "7001": {
+   "values": {
+    "code": "K19",
+    "comp_thing": "ingot tray",
+    "comp_verb": "warms by the furnace",
+    "chore": "the scale zero check",
+    "role": "assayer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "K19",
+      "K24",
+      "K30",
+      "K35",
+      "K41",
+      "K46"
+     ],
+     "expected": "K19"
+    }
+   }
+  },
+  "7002": {
+   "values": {
+    "code": "K24",
+    "comp_thing": "crucible rack",
+    "comp_verb": "sits by the pour bench",
+    "chore": "the crucible brush",
+    "role": "melter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "K30",
+      "K35",
+      "K41",
+      "K46",
+      "K52",
+      "K24"
+     ],
+     "expected": "K24"
+    }
+   }
+  },
+  "7003": {
+   "values": {
+    "code": "K30",
+    "comp_thing": "flux pot",
+    "comp_verb": "waits for the evening melt",
+    "chore": "the drawer count",
+    "role": "clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "K41",
+      "K46",
+      "K52",
+      "K57",
+      "K30",
+      "K35"
+     ],
+     "expected": "K30"
+    }
+   }
+  },
+  "7004": {
+   "values": {
+    "code": "K35",
+    "comp_thing": "weight box",
+    "comp_verb": "gathers dust under the hood",
+    "chore": "the flux tin shake",
+    "role": "guard"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "K52",
+      "K57",
+      "K63",
+      "K35",
+      "K41",
+      "K46"
+     ],
+     "expected": "K35"
+    }
+   }
+  },
+  "7005": {
+   "values": {
+    "code": "K41",
+    "comp_thing": "tongs rail",
+    "comp_verb": "clicks when the door swings",
+    "chore": "the tray polish",
+    "role": "polisher"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "K63",
+      "K68",
+      "K41",
+      "K46",
+      "K52",
+      "K57"
+     ],
+     "expected": "K41"
+    }
+   }
+  },
+  "7006": {
+   "values": {
+    "code": "K46",
+    "comp_thing": "mould shelf",
+    "comp_verb": "hangs by the ledger desk",
+    "chore": "the weight set wipe",
+    "role": "apprentice"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "K74",
+      "K46",
+      "K52",
+      "K57",
+      "K63",
+      "K68"
+     ],
+     "expected": "K46"
+    }
+   }
+  },
+  "7007": {
+   "values": {
+    "code": "K52",
+    "comp_thing": "punch case",
+    "comp_verb": "keeps the spare gates dry",
+    "chore": "the dusk lock round",
+    "role": "night warden"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "K52",
+      "K57",
+      "K63",
+      "K68",
+      "K74",
+      "K79"
+     ],
+     "expected": "K52"
+    }
+   }
+  }
+ }
+}
