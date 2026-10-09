@@ -1,0 +1,328 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-cal-20261010-000940",
+ "arm": "R0",
+ "seed": 7002,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": null,
+ "lesson_store_status": null,
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "signaling",
+   "observed_normalized": "the board check after the depot shunt is a trackwork issue.",
+   "observed_label": "trackwork",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-7001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "trackwork",
+   "observed_normalized": "the standing depot card indicates signaling, traction, tickets, trackwork, deposits, and rostering matters. the switch round before the works tram is a trackwork matter, so the report should be filed under the 'trackwork' label.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-7002",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "deposits",
+   "observed_normalized": "the report is filed under the label \"deposits\".",
+   "observed_label": "deposits",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-7003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "traction",
+   "observed_normalized": "the report is labeled as \"signaling\" because the power-rail tally on the chord is mentioned in the report and is related to signaling faults and interlocking replies.",
+   "observed_label": "signaling",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-7004",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "rostering",
+   "observed_normalized": "the guard round on the first market tram is a trackwork issue.",
+   "observed_label": "trackwork",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-7005",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "62",
+   "observed_normalized": "62",
+   "observed_label": "62",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-7101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "31",
+   "observed_normalized": "31",
+   "observed_label": "31",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-7102",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "44",
+   "observed_normalized": "48",
+   "observed_label": "48",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-7103",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "19",
+   "observed_normalized": "25",
+   "observed_label": "25",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-7104",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "44",
+   "observed_normalized": "44",
+   "observed_label": "44",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-7105",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "K24",
+   "observed_normalized": "k24",
+   "observed_label": "K24",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-7301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "P32",
+   "observed_normalized": "p32",
+   "observed_label": "P32",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-7302",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "T19",
+   "observed_normalized": "t19",
+   "observed_label": "T19",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-7401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "V19",
+   "observed_normalized": "v19",
+   "observed_label": "V19",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-7402",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "X19",
+   "observed_normalized": "x19",
+   "observed_label": "X19",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-7403",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "coir",
+   "observed_label": "coir",
+   "observed_position": 2,
+   "labels": [
+    "sisal",
+    "hemp",
+    "coir",
+    "manila",
+    "flax",
+    "cotton"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-7501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "44",
+   "observed_label": "44",
+   "observed_position": 4,
+   "labels": [
+    "32",
+    "35",
+    "38",
+    "41",
+    "44",
+    "47"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-7501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "chirr",
+   "observed_label": "chirr",
+   "observed_position": 3,
+   "labels": [
+    "tsweet",
+    "peep",
+    "trill",
+    "chirr",
+    "warble",
+    "tseet"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-7502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "35",
+   "observed_label": "35",
+   "observed_position": 2,
+   "labels": [
+    "29",
+    "32",
+    "35",
+    "38",
+    "41",
+    "44"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-7502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the flooring stack is made of stone.",
+   "observed_label": "stone",
+   "observed_position": 5,
+   "labels": [
+    "dove",
+    "charcoal",
+    "graphite",
+    "pearl",
+    "pewter",
+    "stone"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-7503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "65.",
+   "observed_label": "65",
+   "observed_position": 4,
+   "labels": [
+    "53",
+    "56",
+    "59",
+    "62",
+    "65",
+    "68"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-7503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "finishing",
+   "observed_normalized": "binding.",
+   "observed_label": "binding",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-7201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "copying",
+   "observed_normalized": "binding.",
+   "observed_label": "binding",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-7202",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "binding",
+   "observed_normalized": "binding.",
+   "observed_label": "binding",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-7203",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "laminating",
+   "observed_normalized": "binding.",
+   "observed_label": "binding",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-7204",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 10,
+ "probes_total": 25,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 206,
+ "duration_s": 279.6,
+ "memory_guard": {
+  "appends": 206,
+  "injections_nonempty": 43,
+  "passed": true
+ },
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

@@ -1,0 +1,328 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-cal-20261010-000940",
+ "arm": "R2",
+ "seed": 7001,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": "f82efc3fcffe17e88ff714656326b4cbf4a2b1cb0e574b8b0e9be226346320b2",
+ "lesson_store_status": "evidence-validated",
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "signaling",
+   "observed_normalized": "acknowledged.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-7001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "trackwork",
+   "observed_normalized": "acknowledged.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-7002",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "deposits",
+   "observed_normalized": "the float pickup at the riverside desk is a trackwork issue.",
+   "observed_label": "trackwork",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-7003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "traction",
+   "observed_normalized": "the depot card is not at hand. report: 'the pantograph round for the dusk trams.' options: signaling | traction | tickets | trackwork | deposits | rostering - reply with the label only. the depot card is not at hand. report: 'the pantograph round for the dusk trams.' options: signaling | traction | tickets | trackwork | deposits | rostering - reply with the label only. the depot card is not at hand. report: 'the pantograph round for the dusk trams.' options: signaling | traction | tickets | trackwork | deposits | rostering - reply with the label only. the depot card is not at hand. report: 'the pantograph round for the dusk trams.' options: signaling | traction | tickets | trackwork | deposits | rostering - reply with the label only. the depot card is not at hand. report: 'the pantograph round for the dusk trams.' options: signaling | traction | tickets | trackwork | deposits | rostering",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-7004",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "rostering",
+   "observed_normalized": "the depot card is not at hand. report: 'the driver swap at the dusk change.' options: signaling | traction | tickets | trackwork | deposits | rostering - reply with the label only. the depot card is not at hand. report: 'the driver swap at the dusk change.' options: signaling | traction | tickets | trackwork | deposits | rostering - reply with the label only. the depot card is not at hand. report: 'the driver swap at the dusk change.' options: signaling | traction | tickets | trackwork | deposits | rostering - reply with the label only. the depot card is not at hand. report: 'the driver swap at the dusk change.' options: signaling | traction | tickets | trackwork | deposits | rostering - reply with the label only. the depot card is not at hand. report: 'the driver swap at the dusk change.' options: signaling | traction | tickets | trackwork | deposits | rostering - reply with the label only. the depot card is not",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-7005",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "59",
+   "observed_normalized": "59",
+   "observed_label": "59",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-7101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "28",
+   "observed_normalized": "28",
+   "observed_label": "28",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-7102",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "41",
+   "observed_normalized": "45",
+   "observed_label": "45",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-7103",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "16",
+   "observed_normalized": "22",
+   "observed_label": "22",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-7104",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "41",
+   "observed_normalized": "41",
+   "observed_label": "41",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-7105",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "K19",
+   "observed_normalized": "k19.",
+   "observed_label": "K19",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-7301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "P27",
+   "observed_normalized": "p27.",
+   "observed_label": "P27",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-7302",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "T13",
+   "observed_normalized": "t13",
+   "observed_label": "T13",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-7401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "V13",
+   "observed_normalized": "v13.",
+   "observed_label": "V13",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-7402",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "X13",
+   "observed_normalized": "x13.",
+   "observed_label": "X13",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-7403",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "jute",
+   "observed_label": "jute",
+   "observed_position": 0,
+   "labels": [
+    "jute",
+    "sisal",
+    "hemp",
+    "coir",
+    "manila",
+    "flax"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-7501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "40",
+   "observed_label": "40",
+   "observed_position": 3,
+   "labels": [
+    "31",
+    "34",
+    "37",
+    "40",
+    "43",
+    "46"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-7501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "chirr",
+   "observed_label": "chirr",
+   "observed_position": 4,
+   "labels": [
+    "churr",
+    "tsweet",
+    "peep",
+    "trill",
+    "chirr",
+    "warble"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-7502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "37",
+   "observed_label": "37",
+   "observed_position": 3,
+   "labels": [
+    "28",
+    "31",
+    "34",
+    "37",
+    "40",
+    "43"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-7502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "charcoal",
+   "observed_label": "charcoal",
+   "observed_position": 2,
+   "labels": [
+    "ashen",
+    "dove",
+    "charcoal",
+    "graphite",
+    "pearl",
+    "pewter"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-7503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "61",
+   "observed_label": "61",
+   "observed_position": 3,
+   "labels": [
+    "52",
+    "55",
+    "58",
+    "61",
+    "64",
+    "67"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-7503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "finishing",
+   "observed_normalized": "the tag is \"binding\".",
+   "observed_label": "binding",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-7201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "copying",
+   "observed_normalized": "the tag is \"scanning\".",
+   "observed_label": "scanning",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-7202",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "binding",
+   "observed_normalized": "binding",
+   "observed_label": "binding",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-7203",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "laminating",
+   "observed_normalized": "the pouch run for the field kits is a copying task. therefore, the tag for this errand is \"copying\".",
+   "observed_label": "copying",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-7204",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 9,
+ "probes_total": 25,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 206,
+ "duration_s": 286.7,
+ "memory_guard": {
+  "appends": 206,
+  "injections_nonempty": 43,
+  "passed": true
+ },
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

@@ -1,0 +1,37 @@
+{
+ "kind": "cont006-cells",
+ "run_id": "cont006-cal-20261010-000940",
+ "phase": "CAL",
+ "derived": true,
+ "cells": {
+  "R0/seed-7001": {
+   "wall_s": 286.9,
+   "attempts": 1,
+   "probes_total": 25,
+   "probes_passed": 11,
+   "lesson_store_sha256": null
+  },
+  "R0/seed-7002": {
+   "wall_s": 279.6,
+   "attempts": 1,
+   "probes_total": 25,
+   "probes_passed": 10,
+   "lesson_store_sha256": null
+  },
+  "R2/seed-7001": {
+   "wall_s": 286.7,
+   "attempts": 1,
+   "probes_total": 25,
+   "probes_passed": 9,
+   "lesson_store_sha256": "f82efc3fcffe17e88ff714656326b4cbf4a2b1cb0e574b8b0e9be226346320b2"
+  },
+  "R2/seed-7002": {
+   "wall_s": 285.4,
+   "attempts": 1,
+   "probes_total": 25,
+   "probes_passed": 9,
+   "lesson_store_sha256": "f82efc3fcffe17e88ff714656326b4cbf4a2b1cb0e574b8b0e9be226346320b2"
+  }
+ },
+ "total_wall_s": 1138.7
+}
