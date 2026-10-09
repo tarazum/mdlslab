@@ -2,8 +2,9 @@
 
 4-gram scan of ALL lesson texts (title + lesson + recommendedBehavior) in
 the V2 lesson stores — r2-store-v2.json (the W2 worker-v2 output) AND
-r3-store-v2.json (the recap artifact) — against EVERY rendered v3m turn
-text (all 7 seeds {7001..7007}). Required: ZERO shared 4-grams. Tokenizer
+r3-store-v2.json (the recap artifact) — against EVERY rendered turn text
+of the behavioral surface (--suite v3n per A.8; v3m kept for the stopped
+chain), all 7 of its seeds. Required: ZERO shared 4-grams. Tokenizer
 and n-gram functions are REUSED from check_counterfactual_lessons.py (the
 counterfactual lessons themselves are already covered by that script).
 
@@ -29,7 +30,6 @@ from check_counterfactual_lessons import ngrams, tokens  # noqa: E402
 from continuity.fixtures import render_seed_variant  # noqa: E402
 
 R3_STORE = LAB_ROOT / "experiments" / "cont006" / "r3-store-v2.json"
-SEEDS = (7001, 7002, 7003, 7004, 7005, 7006, 7007)
 FIELDS = ("title", "lesson", "recommendedBehavior")
 
 
@@ -47,18 +47,24 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--r2-store", required=True,
                         help="path to the W2 output r2-store-v2.json")
+    parser.add_argument("--suite", default="v3n",
+                        choices=["v3m", "v3n"],
+                        help="behavioral surface to scan (A.8: v3n; v3m kept "
+                             "for the stopped chain's re-verification)")
     args = parser.parse_args()
     r2_path = Path(args.r2_store).resolve()
 
     stores = {"R2": r2_path, "R3": R3_STORE}
     grams_by_store = {name: store_grams(path) for name, path in stores.items()}
+    suite_seeds = {"v3m": (7001, 7002, 7003, 7004, 7005, 7006, 7007),
+                   "v3n": (8001, 8002, 8003, 8004, 8005, 8006, 8007)}[args.suite]
 
     hits: list[str] = []
-    for path in sorted((LAB_ROOT / "fixtures" / "v3m").rglob("*.json")):
+    for path in sorted((LAB_ROOT / "fixtures" / args.suite).rglob("*.json")):
         if path.name == "manifest.json":
             continue
         base = json.loads(path.read_text(encoding="utf-8"))
-        for seed in SEEDS:
+        for seed in suite_seeds:
             rendered = render_seed_variant(base, seed)
             for sess in rendered["sessions"]:
                 for turn in sess["turns"]:
@@ -76,7 +82,7 @@ def main() -> int:
         "r2_store_sha256": hashlib.sha256(r2_path.read_bytes()).hexdigest(),
         "r3_store_sha256": hashlib.sha256(R3_STORE.read_bytes()).hexdigest(),
         "lessons_scanned": {name: len(g) for name, g in grams_by_store.items()},
-        "rendered_surface": "fixtures/v3m, every turn text, seeds 7001..7007",
+        "rendered_surface": f"fixtures/{args.suite}, every turn text, seeds {suite_seeds[0]}..{suite_seeds[-1]}",
         "shared_4grams": len(hits),
         "hits": hits[:10],
         "verdict": "PASS" if not hits else "FAIL",
@@ -85,7 +91,7 @@ def main() -> int:
     out.write_text(json.dumps(verdict, indent=1, ensure_ascii=True) + "\n",
                    encoding="utf-8")
     print(f"lessons scanned: {verdict['lessons_scanned']}")
-    print(f"shared 4-grams vs ALL rendered v3m turn texts (7 seeds): "
+    print(f"shared 4-grams vs ALL rendered {args.suite} turn texts (7 seeds): "
           f"{len(hits)} {hits[:4] or 'NONE'}")
     print(f"r2 store sha256: {verdict['r2_store_sha256'][:16]}…; "
           f"r3 store sha256: {verdict['r3_store_sha256'][:16]}…")

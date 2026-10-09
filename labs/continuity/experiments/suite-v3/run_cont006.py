@@ -1,11 +1,13 @@
-"""CONT-006 V2 run script (frozen at FREEZE V2): the phased lesson-transfer
-chain on fixtures/v3m.
+"""CONT-006 V2A run script (frozen at FREEZE V3): the phased lesson-transfer
+chain on fixtures/v3n.
 
-Per docs/EVALUATION-PREP-CONT006-V2.md (owner-accepted 2026-10-09, ROADMAP;
-amendments A.1-A.7) and docs/CONT-006-DESIGN-V2.md (§Chain is canonical).
-The V1 chain (v3l; EVALUATION-PREP-CONT006.md) is the invalidated record —
-its freeze manifest frozen-config-cont006.json and its git history stay
-untouched; this file carries the V2 port (V1 text recoverable at the V1
+Per docs/EVALUATION-PREP-CONT006-V2.md (A.1-A.7, owner-accepted 2026-10-09)
++ docs/EVALUATION-PREP-CONT006-V2-A8.md (the v3n amendment; owner-accepted
+2026-10-10, ROADMAP) and docs/CONT-006-DESIGN-V2.md (§Chain is canonical).
+The V1 chain (v3l) and the V2 chain (v3m; calibration STOP-OUT-OF-BAND,
+calibration-verdict.json 2026-10-10) are the earlier records — their
+freeze manifests and git history stay untouched; this file carries the
+v3n port (v3m-era text recoverable at the frozen-config-cont006-v2.json
 freeze commit). Phases (binding order):
 
   --phase W2          worker v2 pass: ONE call per PRE-COMPUTED multi-trace
@@ -13,10 +15,10 @@ freeze commit). Phases (binding order):
                       digest-pinned) -> raw-worker-log-v2.jsonl +
                       candidates-v2.json + telemetry-v2.json + r2-store-v2.json
                       (FP-6 store cap + class-coverage telemetry apply)
-  --phase CAL         calibration pilot: R0+R2 x seeds {7001,7002} over the
+  --phase CAL         calibration pilot: R0+R2 x seeds {8001,8002} over the
                       FULL v3m set (TR+VAL+GC), memory ON; R2 injects the W2
                       r2-store-v2.json (--worker-dir) (results/CONT-006-CAL/)
-  --phase V           activation runs: R0/R2/R3 x seeds {7001..7007} on the
+  --phase V           activation runs: R0/R2/R3 x seeds {8001..8007} on the
                       4 VALIDATION clusters only (results/CONT-006-VAL/);
                       R2 = the W2 store, R3 = r3-store-v2.json (the recap
                       artifact)
@@ -26,7 +28,7 @@ freeze commit). Phases (binding order):
                       active-store-r2.json / active-store-r3.json (full copy
                       or EMPTY) + activation.json  (THE STORE FREEZE point:
                       stores commit here, BEFORE any transfer request)
-  --phase P           pilot: seeds {7001,7002}; R0/R1/R2/R3 on TR+GC;
+  --phase P           pilot: seeds {8001,8002}; R0/R1/R2/R3 on TR+GC;
                       RBAD/RGOLD on the counterfactual subset
                       (results/CONT-006-PILOT/); R0/R2 reuse the CAL cells
                       (single-freeze dataset — resume semantics)
@@ -76,8 +78,8 @@ from continuity.provider import OllamaProvider  # noqa: E402
 from continuity.reflection import ReflectionEngine  # noqa: E402
 from continuity.runner import Budget, run_scenario  # noqa: E402
 
-SUITE_DIR = LAB_ROOT / "fixtures" / "v3m"
-FREEZE_MANIFEST = LAB_ROOT / "experiments" / "suite-v3" / "frozen-config-cont006-v2.json"
+SUITE_DIR = LAB_ROOT / "fixtures" / "v3n"
+FREEZE_MANIFEST = LAB_ROOT / "experiments" / "suite-v3" / "frozen-config-cont006-v3.json"
 CORPUS_MANIFEST = LAB_ROOT / "experiments" / "cont006" / "experience-corpus-manifest.json"
 CF_LESSONS = LAB_ROOT / "experiments" / "cont006" / "counterfactual-lessons.json"
 WORKER_V2_BUNDLES = LAB_ROOT / "experiments" / "cont006" / "worker_v2_bundles.json"
@@ -85,14 +87,14 @@ R3_STORE_V2 = LAB_ROOT / "experiments" / "cont006" / "r3-store-v2.json"
 SELFMODEL = (LAB_ROOT / "results" / "CONT-001-confirmatory" /
              "cont001-confirmatory-20261002-005711" / "selfmodel-v2-calibration.json")
 
-ALL_SEEDS = [7001, 7002, 7003, 7004, 7005, 7006, 7007]
-PILOT_SEEDS = [7001, 7002]
-VAL_IDS = ["cr-7005", "cu-7105", "rt-7204", "dx-7403"]
-TR_IDS = ["cr-7001", "cr-7002", "cr-7003", "cr-7004", "cu-7101", "cu-7102",
-          "cu-7103", "cu-7104", "rt-7201", "rt-7202", "rt-7203", "dx-7401",
-          "dx-7402", "dr-7301", "dr-7302"]
-CF_SUBSET = ["cr-7001", "cr-7003", "rt-7201", "rt-7202", "cu-7101",
-             "dx-7401", "dr-7301", "gc-7501"]  # incl. gc-7501 (telemetry-only use)
+ALL_SEEDS = [8001, 8002, 8003, 8004, 8005, 8006, 8007]
+PILOT_SEEDS = [8001, 8002]
+VAL_IDS = ["cr-8005", "cu-8105", "rt-8204", "dx-8403"]
+TR_IDS = ["cr-8001", "cr-8002", "cr-8003", "cr-8004", "cu-8101", "cu-8102",
+          "cu-8103", "cu-8104", "rt-8201", "rt-8202", "rt-8203", "dx-8401",
+          "dx-8402", "dr-8301", "dr-8302"]
+CF_SUBSET = ["cr-8001", "cr-8003", "rt-8201", "rt-8202", "cu-8101",
+             "dx-8401", "dr-8301", "gc-8501"]  # incl. gc-8501 (telemetry-only use)
 MAIN_ARMS = ["R0", "R1", "R2", "R3"]
 
 WORKING_MODEL = "granite-code:8b"
@@ -111,8 +113,8 @@ WALL_GUARD_S = 270 * 60  # no NEW arm-seed starts after this (cap 5 h declared)
 ACTIVATION_THRESHOLD = 0.05
 
 RESULTS = LAB_ROOT / "results"
-GC_IDS = ["gc-7501", "gc-7502", "gc-7503"]
-GC_TRIM_SEEDS = (7001, 7002, 7003, 7004)  # pre-declared droppable-secondary trim
+GC_IDS = ["gc-8501", "gc-8502", "gc-8503"]
+GC_TRIM_SEEDS = (8001, 8002, 8003, 8004)  # pre-declared droppable-secondary trim
 FROZEN_PATHS = [
     # -- V1 manifest list (the invalidated chain's record; files unchanged) --
     "docs/EVALUATION-PREP-CONT006.md",
@@ -162,6 +164,12 @@ FROZEN_PATHS = [
     "experiments/cont006/live_telemetry_gate.py",
     "experiments/cont006/arm_equivalence_audit.py",
     "experiments/cont006/arm-equivalence-audit.json",
+    # -- v3n additions (EVALUATION-PREP-CONT006-V2-A8.md) --
+    "docs/EVALUATION-PREP-CONT006-V2-A8.md",
+    "docs/DIAGNOSTIC-CONT006-V2-CR.md",
+    "experiments/suite-v3/build_v3n.py",
+    "experiments/suite-v3/fixture-validation-v3n.json",
+    "experiments/cont006/contamination_gate_v2.py",
 ]
 DETERMINISM_CAVEAT = ("greedy+seed does not guarantee identical outputs "
                       "(PB-071, CN-003); per-seed content variants make seeds "
@@ -189,30 +197,34 @@ def rendered_seed_digest(suite_dir: Path, seed: int) -> str:
 
 
 def content_digests() -> dict[str, str]:
-    """v3m (the V2 behavioral surface) PLUS the inherited v3l keys — the V2
-    manifest digests EVERYTHING in V1's manifest plus the additions, so the
-    invalidated chain's suite surface stays tripwired against drift."""
-    v3l = LAB_ROOT / "fixtures" / "v3l"
-    d = {f"fixtures/v3l_rendered_seed{sd}": rendered_seed_digest(v3l, sd)
-         for sd in (6001, 6002, 6003, 6004, 6005, 6006, 6007)}
-    h = hashlib.sha256()
-    for path in sorted(p for p in v3l.rglob("*") if p.is_file()):
-        h.update(path.relative_to(v3l).as_posix().encode("utf-8"))
-        h.update(path.read_bytes())
-    d["fixtures/v3l_suite"] = h.hexdigest()
-    d.update({f"fixtures/v3m_rendered_seed{sd}": rendered_seed_digest(SUITE_DIR, sd)
+    """v3n (the V2A behavioral surface) PLUS the inherited v3l/v3m keys —
+    the V3 manifest keeps every earlier chain's suite surface tripwired
+    against drift (v3l: invalidated V1; v3m: calibration-stopped V2)."""
+    d: dict[str, str] = {}
+    for name, seeds in (("v3l", (6001, 6002, 6003, 6004, 6005, 6006, 6007)),
+                        ("v3m", (7001, 7002, 7003, 7004, 7005, 7006, 7007))):
+        suite_dir = LAB_ROOT / "fixtures" / name
+        d.update({f"fixtures/{name}_rendered_seed{sd}": rendered_seed_digest(suite_dir, sd)
+                  for sd in seeds})
+        h = hashlib.sha256()
+        for path in sorted(p for p in suite_dir.rglob("*") if p.is_file()):
+            h.update(path.relative_to(suite_dir).as_posix().encode("utf-8"))
+            h.update(path.read_bytes())
+        d[f"fixtures/{name}_suite"] = h.hexdigest()
+    d.update({f"fixtures/v3n_rendered_seed{sd}": rendered_seed_digest(SUITE_DIR, sd)
               for sd in ALL_SEEDS})
-    d["fixtures/v3m_suite"] = suite_digest()
+    d["fixtures/v3n_suite"] = suite_digest()
     return d
 
 
 def emit_freeze_manifest() -> None:
     manifest = {
-        "kind": "cont006-freeze-manifest-v2",
+        "kind": "cont006-freeze-manifest-v3",
         "created_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "prereg": "docs/EVALUATION-PREP-CONT006-V2.md (owner-accepted 2026-10-09)",
-        "supersedes": ("frozen-config-cont006.json (V1 chain, invalidated by "
-                       "CN-012; record kept byte-untouched)"),
+        "prereg": "docs/EVALUATION-PREP-CONT006-V2.md (A.1-A.7) + A.8 (EVALUATION-PREP-CONT006-V2-A8.md; owner-accepted 2026-10-10)",
+        "supersedes": ("frozen-config-cont006.json (V1, invalidated by CN-012) "
+                       "and frozen-config-cont006-v2.json (V2, calibration "
+                       "STOP-OUT-OF-BAND on v3m); records kept byte-untouched"),
         "seeds": {"all": ALL_SEEDS, "pilot": PILOT_SEEDS,
                   "validation_clusters": VAL_IDS, "cf_subset": CF_SUBSET},
         "models": {
@@ -227,7 +239,7 @@ def emit_freeze_manifest() -> None:
                      "R2": "worker v2 store via lesson channel",
                      "R3": "gold recap store (classes + FP-6 cap) via lesson channel",
                      "RBAD": "counterfactual BAD", "RGOLD": "counterfactual GOLD-TRIV"},
-            "stores": {"R2_evidence": "results/CONT-006-WORKER/cont006-worker-v2-*/r2-store-v2.json",
+            "stores": {"R2_evidence": "results/CONT-006-WORKER/cont006-worker-v2-20261010-000332/r2-store-v2.json (A.8: reused byte-identically; suite-independent)",
                        "R3_evidence": "experiments/cont006/r3-store-v2.json",
                        "counterfactual": "experiments/cont006/counterfactual-lessons.json"},
             "temperature": TEMPERATURE, "num_ctx": NUM_CTX,
@@ -567,7 +579,7 @@ def phase_v_activate(val_root: Path) -> dict:
 # ----------------------------------------------------------------------------
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="CONT-006 V2 phased run (frozen)")
+    parser = argparse.ArgumentParser(description="CONT-006 V2A phased run on v3n (frozen)")
     parser.add_argument("--phase", choices=["W2", "CAL", "V", "V-activate",
                                             "P", "C", "preflight"], required=True)
     parser.add_argument("--base-url", default="http://localhost:11434")
@@ -582,7 +594,7 @@ def main() -> int:
                         help="Phase P/C: dir with active-store-r2/r3.json")
     parser.add_argument("--gc-trim", action="store_true",
                         help="pre-declared droppable-secondary trim: GC scenarios "
-                             "run only on seeds 7001..7004 (primary untouchable)")
+                             "run only on seeds 8001..8004 (primary untouchable)")
     args = parser.parse_args()
 
     if args.freeze_manifest:

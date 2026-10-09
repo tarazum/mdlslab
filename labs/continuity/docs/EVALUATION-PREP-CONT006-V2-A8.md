@@ -30,6 +30,12 @@ remains NEVER-AUTONOMOUS until the owner accepts this amendment.
    cu/rt/gc mechanics unchanged (cu 0.5 and rt 0.33 were in-band).
    Out of band at the v3n calibration -> a NEW suite again (never a v3n
    edit); the A.3 bands and the 0.525 anchor are unchanged.
+   Reading note (K-4 of the 2026-10-10 diff-pass review, carried): 3/35
+   rendered cr probe reports carry modifier-position stems from other card
+   lines (e.g. "before the pour" ~ trap 'pouring' in cr-8001 seed 8007);
+   the head-noun mapping claim holds as worded (the exact head noun of
+   exactly one card line is always present) — these modifiers are minor
+   noise, reported here so the cr family numbers read honestly.
 3. Store reuse (declared): the R2 store (W2 worker-v2 output, committed)
    and the R3 store (r3-store-v2.json recap artifact) are SUITE-INDEPENDENT
    — the worker pass ran over the frozen CONT-005-C2 corpus (v3i/v3j

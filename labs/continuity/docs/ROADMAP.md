@@ -265,6 +265,25 @@ calibration -> V -> P -> C) is prepared as DRAFT amendments, and any
 behavioral inference on v3n requires the next pre-registration
 acceptance (never-autonomous clause unchanged).
 
+## Owner decisions — recorded 2026-10-10 (CONT-006 A.8 ACCEPTED; autonomous full-chain completion AUTHORIZED)
+
+Basis: the A.8 draft (docs/EVALUATION-PREP-CONT006-V2-A8.md — the v3n
+amendment) and the diff-pass review docs/REVIEW-CONT006-A8.md
+(GO-with-changes K-1..K-6, all folded same session; model substitution
+declared: Fable and Opus session-limit-blocked → GLM 5.3 per the house
+review queue). Owner verdict (chat): **"роби усі необхідні кроки, в тому
+числі і запуск Фабл чи іншої моделі. треба щоби ти автономно повністю
+закінчив цю задачу."** — explicitly: (1) A.8 (the v3n suite swap with
+byte-identical store reuse) is ACCEPTED; (2) the FULL V2A execution chain
+on v3n (freeze V3 → contamination gate → calibration pilot → Phase V →
+Phase P → Phase C → run record → close-out) is authorized to run
+AUTONOMOUSLY to completion, including the review-model launch (done, with
+the declared substitution); (3) the pre-declared stop branches stay
+binding: calibration out-of-band → STOP + record + owner; pilot-gate NO-GO
+→ halt + report (an owner override remains the owner's move); any
+anchor/family-band/freeze-guard/live-gate failure → halt. The v3m
+calibration cells are NOT part of the v3n dataset.
+
 ## Never autonomous (unchanged)
 
 - CONT-002 behavioral experiments — anything that measures transfer quality. The single exception is the M2b mechanics smoke (owner-ordered 2026-10-01): export/import plumbing proof only, explicitly no behavioral claims.

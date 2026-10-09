@@ -3,9 +3,9 @@ CONT006-V2.md; DESIGN-V2 §9).
 
 Written BEFORE the calibration pilot runs (template §1; RC-4b discipline:
 the --self-test over synthetic run roots ran BEFORE this file was digested
-into frozen-config-cont006-v2.json). Reads the Phase CAL run root
-(results/CONT-006-CAL/cont006-cal-*; R0+R2 x seeds {7001,7002} over the
-full v3m set, memory ON, summaries written by run_cont006.py) and the
+into frozen-config-cont006-v3.json). Reads the Phase CAL run root
+(results/CONT-006-CAL/cont006-cal-*; R0+R2 x seeds {8001,8002} over the
+full v3n set, memory ON, summaries written by run_cont006.py) and the
 live-telemetry gate verdict that must have been produced FIRST (A.2.2
 binding order: gate exit 0 before any analyzer reads the root).
 
@@ -43,11 +43,11 @@ from pathlib import Path
 
 LAB_ROOT = Path(__file__).resolve().parents[2]
 
-TR_IDS = ["cr-7001", "cr-7002", "cr-7003", "cr-7004", "cu-7101", "cu-7102",
-          "cu-7103", "cu-7104", "rt-7201", "rt-7202", "rt-7203", "dx-7401",
-          "dx-7402", "dr-7301", "dr-7302"]
-VAL_IDS = ["cr-7005", "cu-7105", "rt-7204", "dx-7403"]
-CAL_SEEDS = [7001, 7002]
+TR_IDS = ["cr-8001", "cr-8002", "cr-8003", "cr-8004", "cu-8101", "cu-8102",
+          "cu-8103", "cu-8104", "rt-8201", "rt-8202", "rt-8203", "dx-8401",
+          "dx-8402", "dr-8301", "dr-8302"]
+VAL_IDS = ["cr-8005", "cu-8105", "rt-8204", "dx-8403"]
+CAL_SEEDS = [8001, 8002]
 CAL_ARMS = ["R0", "R2"]
 FAMILIES = ["cr", "cu", "rt", "dx", "dr"]
 FAMILY_LO = 0.15
@@ -201,7 +201,7 @@ def verdict_record(root: Path, criteria: list[dict], verdict: str | None,
 
 def _synthetic_root(tmp: Path, name: str, r0_tr_pass: float,
                     family_override: tuple[str, float] | None = None) -> Path:
-    """Builds a CAL-shaped root: R0/R2 x seed-7001/7002 x 19 scored probes
+    """Builds a CAL-shaped root: R0/R2 x seed-8001/8002 x 19 scored probes
     (+ 6 gc), a PASS live-gate verdict, and a cells.json with modest walls.
     r0_tr_pass drives the R0 TR pass pattern; family_override forces one
     R0 family's pass rate (family-band breach case)."""

@@ -1,8 +1,8 @@
-"""Frozen CONT-006 V2 pilot analysis (GO/NO-GO per EVALUATION-PREP-CONT006
-§9 as kept by EVALUATION-PREP-CONT006-V2 A.7; v3m surface per A.1).
+"""Frozen CONT-006 V2A pilot analysis (GO/NO-GO per EVALUATION-PREP-CONT006
+§9 as kept by EVALUATION-PREP-CONT006-V2 A.7; v3n surface per A.1+A.8).
 
 V2 port written BEFORE any V2 inference (template §1; freeze manifest
-frozen-config-cont006-v2.json digests this file). Reads the Phase P pilot
+frozen-config-cont006-v3.json digests this file). Reads the Phase P pilot
 run root (summaries written by run_cont006.py) and evaluates the six
 predeclared criteria:
 
@@ -10,9 +10,9 @@ predeclared criteria:
    contains a contiguous >= 4-word verbatim span of the frozen BAD-lesson
    text (word = whitespace token, lowercased, punctuation-stripped — the
    definition is frozen in the prereg TEXT, §9.1); (ii) RBAD pass rate on
-   the counterfactual subset (WITHOUT gc-7501) >= R0 subset pass − 0.10.
+   the counterfactual subset (WITHOUT gc-8501) >= R0 subset pass − 0.10.
 2. GOLD-TRIV manipulation check (3b): invalid-format share improvement on
-   the subset (WITHOUT gc-7501; 14 probes/arm) >= 0.10 vs R0 — with the
+   the subset (WITHOUT gc-8501; 14 probes/arm) >= 0.10 vs R0 — with the
    degenerate-base clause: R0 base < 0.10 -> NON-INFORMATIVE (never
    channel-dead evidence on its own).
 3. Wall-time feasibility: extrapolated 7-seed 4-arm total within the 5 h
@@ -50,14 +50,14 @@ LAB_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(LAB_ROOT / "src"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-TR_IDS = ["cr-7001", "cr-7002", "cr-7003", "cr-7004", "cu-7101", "cu-7102",
-          "cu-7103", "cu-7104", "rt-7201", "rt-7202", "rt-7203", "dx-7401",
-          "dx-7402", "dr-7301", "dr-7302"]
-CF_SUBSET = ["cr-7001", "cr-7003", "rt-7201", "rt-7202", "cu-7101",
-             "dx-7401", "dr-7301"]  # WITHOUT gc-7501 (RC-5)
+TR_IDS = ["cr-8001", "cr-8002", "cr-8003", "cr-8004", "cu-8101", "cu-8102",
+          "cu-8103", "cu-8104", "rt-8201", "rt-8202", "rt-8203", "dx-8401",
+          "dx-8402", "dr-8301", "dr-8302"]
+CF_SUBSET = ["cr-8001", "cr-8003", "rt-8201", "rt-8202", "cu-8101",
+             "dx-8401", "dr-8301"]  # WITHOUT gc-8501 (RC-5)
 MAIN_ARMS = ["R0", "R1", "R2", "R3"]
-PILOT_SEEDS = [7001, 7002]
-ALL_SEEDS = [7001, 7002, 7003, 7004, 7005, 7006, 7007]
+PILOT_SEEDS = [8001, 8002]
+ALL_SEEDS = [8001, 8002, 8003, 8004, 8005, 8006, 8007]
 MME_D = 0.20
 GPU_CAP_S = 300 * 60
 BAD_LESSON_FILE = LAB_ROOT / "experiments" / "cont006" / "counterfactual-lessons.json"
@@ -183,7 +183,7 @@ def analyze(pilot: dict, walls: dict[str, float]) -> dict:
     rec("3-wall-time", "PASS" if wall_ok else "FAIL",
         f"pilot main-arm wall {total_pilot_wall:.0f}s -> extrapolated 7-seed "
         f"{extrapolated:.0f}s vs cap {GPU_CAP_S}s (GC trim to seeds "
-        f"7001..7004 pre-declared at the gate if a moderate overrun)")
+        f"8001..8004 pre-declared at the gate if a moderate overrun)")
 
     # 4 R0 headroom on TR
     r0_tr = pass_rate(probes_of(pilot, "R0", PILOT_SEEDS, TR_IDS))
@@ -279,8 +279,8 @@ def _synthetic_pilot(parrot: bool, degenerate_base: bool) -> dict:
     for arm in pilot:
         for sd in PILOT_SEEDS:
             probes = []
-            for sid in TR_IDS + CF_SUBSET + ["gc-7501"]:
-                if sid in ("gc-7501",):
+            for sid in TR_IDS + CF_SUBSET + ["gc-8501"]:
+                if sid in ("gc-8501",):
                     probes.append({"kind": "guess_calibration", "scenario": sid,
                                    "passed": None, "observed_label": "a",
                                    "observed_position": sd % 6, "turn_ref": "s2t2"})
@@ -297,7 +297,7 @@ def _synthetic_pilot(parrot: bool, degenerate_base: bool) -> dict:
     if parrot:
         payload = json.loads(BAD_LESSON_FILE.read_text(encoding="utf-8"))
         bad = payload["lessons"]["BAD"]["lesson"].lower()
-        pilot["RBAD"][7001]["probes"][0]["observed_normalized"] = "… " + bad + " …"
+        pilot["RBAD"][8001]["probes"][0]["observed_normalized"] = "… " + bad + " …"
     if degenerate_base:  # R0 already nearly format-perfect
         for sd in PILOT_SEEDS:
             for p in pilot["R0"][sd]["probes"]:

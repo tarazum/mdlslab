@@ -107,8 +107,11 @@ def main() -> int:
     # V2 (RC-6 self-review): the rerun's behavioral surface is v3m — the
     # 4-gram non-overlap must hold against BOTH the invalidated chain's v3l
     # (historical regression anchor) and every rendered v3m seed {7001..7007}.
+    # A.8 (K-1 fold of the 2026-10-10 diff-pass review): the V2A surface is
+    # v3n — the scan covers v3l + v3m (anchors) + v3n (live surface).
     suites = {"v3l": (6001, 6002, 6003, 6004, 6005, 6006, 6007),
-              "v3m": (7001, 7002, 7003, 7004, 7005, 7006, 7007)}
+              "v3m": (7001, 7002, 7003, 7004, 7005, 7006, 7007),
+              "v3n": (8001, 8002, 8003, 8004, 8005, 8006, 8007)}
     for suite, seeds in suites.items():
         for path in sorted((LAB_ROOT / "fixtures" / suite).rglob("*.json")):
             if path.name == "manifest.json":
@@ -125,7 +128,7 @@ def main() -> int:
                                         f"{sorted(overlap)[:2]}")
     digest = hashlib.sha256(OUT.read_bytes()).hexdigest()
     print(f"BAD 4-grams: {len(bad_grams)}; GOLD 4-grams: {len(gold_grams)}")
-    print(f"shared 4-grams vs ALL rendered v3l+v3m texts (every seed): "
+    print(f"shared 4-grams vs ALL rendered " + "+".join(suites) + " texts (every seed): "
           f"{len(hits)} {hits[:4] or 'NONE'}")
     print(f"counterfactual-lessons.json sha256: {digest[:16]}...")
     if hits:

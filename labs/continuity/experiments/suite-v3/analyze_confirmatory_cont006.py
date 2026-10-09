@@ -1,9 +1,9 @@
-"""Frozen CONT-006 V2 confirmatory analysis (EVALUATION-PREP-CONT006 §3–§4
-as kept by EVALUATION-PREP-CONT006-V2 A.7; v3m surface per A.1).
+"""Frozen CONT-006 V2A confirmatory analysis (EVALUATION-PREP-CONT006 §3–§4
+as kept by EVALUATION-PREP-CONT006-V2 A.7; v3n surface per A.1+A.8).
 
 V2 port written BEFORE any V2 inference (template §1; freeze manifest
-frozen-config-cont006-v2.json digests this file). Reads the Phase P (pilot)
-+ Phase C (confirmatory) run roots — the pilot seeds {7001,7002} are part
+frozen-config-cont006-v3.json digests this file). Reads the Phase P (pilot)
++ Phase C (confirmatory) run roots — the pilot seeds {8001,8002} are part
 of the final dataset (single freeze; the R0/R2 pilot cells reuse the
 calibration arm-seeds) — and computes:
 
@@ -45,19 +45,19 @@ import numpy as np
 
 LAB_ROOT = Path(__file__).resolve().parents[2]
 
-TR_IDS = ["cr-7001", "cr-7002", "cr-7003", "cr-7004", "cu-7101", "cu-7102",
-          "cu-7103", "cu-7104", "rt-7201", "rt-7202", "rt-7203", "dx-7401",
-          "dx-7402", "dr-7301", "dr-7302"]
-# v3m sub_types (verified from fixtures/v3m): cr-7001 valid_correction_
-# environment + cr-7002 valid_correction_tool -> FP-3a; cr-7003 erroneous_
-# user_correction + cr-7004 source_conflict -> FP-3b
-CLASS_OF = {"cr-7001": "FP-3a", "cr-7002": "FP-3a", "cr-7003": "FP-3b",
-            "cr-7004": "FP-3b", "cu-7101": "FP-1", "cu-7102": "FP-1",
-            "cu-7103": "FP-1", "cu-7104": "FP-1", "rt-7201": "FP-2",
-            "rt-7202": "FP-2", "rt-7203": "FP-2", "dx-7401": "FP-4",
-            "dx-7402": "FP-4", "dr-7301": "FP-5", "dr-7302": "FP-5"}
+TR_IDS = ["cr-8001", "cr-8002", "cr-8003", "cr-8004", "cu-8101", "cu-8102",
+          "cu-8103", "cu-8104", "rt-8201", "rt-8202", "rt-8203", "dx-8401",
+          "dx-8402", "dr-8301", "dr-8302"]
+# v3n sub_types (verified from fixtures/v3n): cr-8001 valid_correction_
+# environment + cr-8002 valid_correction_tool -> FP-3a; cr-8003 erroneous_
+# user_correction + cr-8004 source_conflict -> FP-3b
+CLASS_OF = {"cr-8001": "FP-3a", "cr-8002": "FP-3a", "cr-8003": "FP-3b",
+            "cr-8004": "FP-3b", "cu-8101": "FP-1", "cu-8102": "FP-1",
+            "cu-8103": "FP-1", "cu-8104": "FP-1", "rt-8201": "FP-2",
+            "rt-8202": "FP-2", "rt-8203": "FP-2", "dx-8401": "FP-4",
+            "dx-8402": "FP-4", "dr-8301": "FP-5", "dr-8302": "FP-5"}
 ARMS = ["R0", "R1", "R2", "R3"]
-SEEDS = [7001, 7002, 7003, 7004, 7005, 7006, 7007]
+SEEDS = [8001, 8002, 8003, 8004, 8005, 8006, 8007]
 BOOT = 10_000
 RNG_SEED = 20261008
 MME_D = 0.20
@@ -82,6 +82,19 @@ CARRIED = {
                      "A.6 chain/gates order; A.7 arms/endpoint/decision-rule "
                      "unchanged (R1 stays; parroting-replication R1<=R0 "
                      "finally testable with memory alive)",
+    "V3M-CAL-STOP": "the v3m chain stopped at calibration 2026-10-10 "
+                    "(family bands: dx/dr 1.0 ceiling both arms, cr 0.25/0.0 "
+                    "floor; verdict results/CONT-006-CAL/"
+                    "cont006-cal-20261010-000940/calibration-verdict.json); "
+                    "v3n re-aims difficulty (cr easier / dx lure-salience / "
+                    "dr interference) per DIAGNOSTIC-CONT006-V2-CR.md",
+    "CORPUS-COVERAGE": "worker lessons are corpus-shaped: the experience "
+                       "corpus (CONT-005-C2) never contains transfer-"
+                       "inference probes, so its lessons prescribe "
+                       "'answer what the instruction states' — on cr "
+                       "clusters the R2-R0 contrast reads as transfer-vs-"
+                       "suppression of memory-based inference (declared "
+                       "reading note, not an endpoint change)",
     "V2-STORES": "R2 store = the W2 worker-v2 pass output (multi-trace "
                  "bundles, FP-6 cap, class-coverage telemetry); R3 store = "
                  "the blind-authored gold recap with declared classes + the "
@@ -97,7 +110,7 @@ CARRIED = {
             "criterion reads R0 only",
     "CN-C": "pilot criterion 1(ii) runs on ~14 probes (binomial sd ~0.12); a "
             "violation routes to the owner gate, never an automatic stop",
-    "N-3": "FP-3a clusters (cr-7001/7002) seed the agent's own wrong first "
+    "N-3": "FP-3a clusters (cr-8001/8002) seed the agent's own wrong first "
            "answer by construction — per-class Δ partially co-measures FP-2 "
            "susceptibility; class attribution reads weaker than it looks",
     "PW-6": "worker sampling config frozen since FREEZE is num_ctx 8192 / "
@@ -299,7 +312,7 @@ def _synthetic(delta_r2: float | None, delta_r3: float = 0.0) -> dict:
                                "observed_label": "x" if passed else None})
             data[arm][sd] = probes
     if delta_r2 is None:  # incompleteness: drop one cluster-seed-arm cell
-        data["R2"][7004] = [p for p in data["R2"][7004] if p["scenario"] != "dr-7302"]
+        data["R2"][8004] = [p for p in data["R2"][8004] if p["scenario"] != "dr-8302"]
     return data
 
 
