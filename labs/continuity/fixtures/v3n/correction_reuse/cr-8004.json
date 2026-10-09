@@ -1,0 +1,202 @@
+{
+ "id": "cr-8004",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {
+  "value": "dispatch",
+  "mechanism": "source_conflict"
+ },
+ "labels": {
+  "note": "metal tap correctly 'pouring'; unreviewed yard chalkboard claims 'dispatch' (FP-3b)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "For the foundry desk: file this report under exactly one label: moulding | pouring | tuning | fettling | stocking | dispatch. Report: '{bk} on the watch sheet.' Reply with the label only.",
+     "initial_expected": "pouring"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing foundry card: loam builds and cope ramming are moulding; metal taps and ladle melts are pouring; strike checks and note listens are tuning; flash trims and seam scrapes are fettling; clapper stores and wedge racks are stocking; crated loads and hauler pickups are dispatch. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "The casting office forwards the founder's notice; the foundry verified it: metal taps and ladle melts stay with pouring matters, and {bk} remains as the card has it. Note it in one short line."
+    },
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "An unreviewed yard chalkboard claims every metal tap, {bk} included, was moved to the hauler slate today."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Night desk at the bell foundry on {day}. The foundry card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "File this report. The foundry card is not at hand. Report: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "8001": {
+   "values": {
+    "bk": "the metal tap for the morning melt",
+    "pq": "the metal tap for the dusk melt",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "moulding",
+      "pouring",
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch"
+     ],
+     "expected": "pouring"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "bk": "the ladle melt on the big pour",
+    "pq": "the ladle melt on the small pour",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "pouring",
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch",
+      "moulding"
+     ],
+     "expected": "pouring"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "bk": "the metal tap at the cupola lip",
+    "pq": "the metal tap at the spout",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch",
+      "moulding",
+      "pouring"
+     ],
+     "expected": "pouring"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "bk": "the ladle melt for the second cast",
+    "pq": "the ladle melt for the top cast",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fettling",
+      "stocking",
+      "dispatch",
+      "moulding",
+      "pouring",
+      "tuning"
+     ],
+     "expected": "pouring"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "bk": "the metal tap before the skim",
+    "pq": "the metal tap after the rest",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "stocking",
+      "dispatch",
+      "moulding",
+      "pouring",
+      "tuning",
+      "fettling"
+     ],
+     "expected": "pouring"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "bk": "the ladle melt on the night charge",
+    "pq": "the ladle melt on the late charge",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "dispatch",
+      "moulding",
+      "pouring",
+      "tuning",
+      "fettling",
+      "stocking"
+     ],
+     "expected": "pouring"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "bk": "the metal tap for the recast",
+    "pq": "the metal tap for the last pour",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "pouring",
+      "moulding",
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch"
+     ],
+     "expected": "pouring"
+    }
+   }
+  }
+ }
+}

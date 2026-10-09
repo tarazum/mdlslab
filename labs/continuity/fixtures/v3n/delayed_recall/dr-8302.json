@@ -1,0 +1,216 @@
+{
+ "id": "dr-8302",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "silk sample drawer code stated at learning; s2 logs TWO other entities' codes of the same kind (interference \u2014 v3n difficulty fold); probe asks the {thing} code with all three in options; lure_value = the first interference code (FP-5 binding under interference)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the grain bourse weighing room. For the weigh book: the silk sample drawer code is {code}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "For the log: the {ot1} code is {o1}; the {ot2} code is {o2}; all else stands as before. {chore} finished. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the weigh book is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the silk sample drawer code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{o1}",
+ "variants": {
+  "8001": {
+   "values": {
+    "code": "R33",
+    "o1": "R38",
+    "o2": "R44",
+    "ot1": "hemp sample rack",
+    "ot2": "malt proof cabinet",
+    "chore": "the pan brush",
+    "role": "weigher"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "R33",
+      "R38",
+      "R44",
+      "R49",
+      "R55",
+      "R60"
+     ],
+     "expected": "R33"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "code": "R38",
+    "o1": "R44",
+    "o2": "R49",
+    "ot1": "hemp sample rack",
+    "ot2": "malt proof cabinet",
+    "chore": "the beam chain oil",
+    "role": "clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "R44",
+      "R49",
+      "R55",
+      "R60",
+      "R66",
+      "R38"
+     ],
+     "expected": "R38"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "code": "R44",
+    "o1": "R49",
+    "o2": "R55",
+    "ot1": "hemp sample rack",
+    "ot2": "malt proof cabinet",
+    "chore": "the weight box count",
+    "role": "porter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "R55",
+      "R60",
+      "R66",
+      "R71",
+      "R44",
+      "R49"
+     ],
+     "expected": "R44"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "code": "R49",
+    "o1": "R55",
+    "o2": "R60",
+    "ot1": "hemp sample rack",
+    "ot2": "malt proof cabinet",
+    "chore": "the scoop rinse",
+    "role": "sample man"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "R66",
+      "R71",
+      "R77",
+      "R49",
+      "R55",
+      "R60"
+     ],
+     "expected": "R49"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "code": "R55",
+    "o1": "R60",
+    "o2": "R66",
+    "ot1": "hemp sample rack",
+    "ot2": "malt proof cabinet",
+    "chore": "the hopper scrape",
+    "role": "mill buyer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "R77",
+      "R82",
+      "R55",
+      "R60",
+      "R66",
+      "R71"
+     ],
+     "expected": "R55"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "code": "R60",
+    "o1": "R66",
+    "o2": "R71",
+    "ot1": "hemp sample rack",
+    "ot2": "malt proof cabinet",
+    "chore": "the bench slate wipe",
+    "role": "keeper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "R88",
+      "R60",
+      "R66",
+      "R71",
+      "R77",
+      "R82"
+     ],
+     "expected": "R60"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "code": "R66",
+    "o1": "R71",
+    "o2": "R77",
+    "ot1": "hemp sample rack",
+    "ot2": "malt proof cabinet",
+    "chore": "the dusk seal round",
+    "role": "night guard"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "R66",
+      "R71",
+      "R77",
+      "R82",
+      "R88",
+      "R93"
+     ],
+     "expected": "R66"
+    }
+   }
+  }
+ }
+}

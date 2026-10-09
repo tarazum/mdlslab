@@ -1,0 +1,185 @@
+{
+ "id": "cu-8102",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "labels": {
+  "note": "chandlery spar coats corrected; probe expects NEW value (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You mind the chandlery ledger. For the log: the new spar takes {old} varnish coats. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the thinner batch changed; the new spar takes {new} varnish coats, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A rigger asks; the chandlery card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many varnish coats does the new spar take? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "8001": {
+   "values": {
+    "old": "21",
+    "new": "28"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "28",
+      "17",
+      "32",
+      "13",
+      "36",
+      "21"
+     ],
+     "expected": "28"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "old": "24",
+    "new": "31"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "20",
+      "35",
+      "16",
+      "39",
+      "24",
+      "31"
+     ],
+     "expected": "31"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "old": "27",
+    "new": "34"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "38",
+      "19",
+      "42",
+      "27",
+      "34",
+      "23"
+     ],
+     "expected": "34"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "old": "30",
+    "new": "37"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "22",
+      "45",
+      "30",
+      "37",
+      "26",
+      "41"
+     ],
+     "expected": "37"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "old": "33",
+    "new": "40"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "48",
+      "33",
+      "40",
+      "29",
+      "44",
+      "25"
+     ],
+     "expected": "40"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "old": "36",
+    "new": "43"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "36",
+      "43",
+      "32",
+      "47",
+      "28",
+      "51"
+     ],
+     "expected": "43"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "old": "39",
+    "new": "46"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "46",
+      "35",
+      "50",
+      "31",
+      "54",
+      "39"
+     ],
+     "expected": "46"
+    }
+   }
+  }
+ }
+}

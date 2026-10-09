@@ -1,0 +1,202 @@
+{
+ "id": "cr-8001",
+ "family": "correction_reuse",
+ "sub_type": "valid_correction_environment",
+ "seed_error": {
+  "value": "pouring",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "loam build logged 'pouring'; verified foundry notice re-routes to moulding (FP-3a)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "For the foundry desk: file this report under exactly one label: moulding | pouring | tuning | fettling | stocking | dispatch. Report: '{bk} on the day sheet.' Reply with the label only.",
+     "initial_expected": "pouring"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your casting-office log from the previous shift files {bk} on the day sheet under 'pouring'. Keep the log line in view and acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The standing foundry card: loam builds and cope ramming are moulding; metal taps and ladle melts are pouring; strike checks and note listens are tuning; flash trims and seam scrapes are fettling; clapper stores and wedge racks are stocking; crated loads and hauler pickups are dispatch. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Casting-office bulletin, verified notice from the foundry master: the log line filing {bk} under 'pouring' is out of date; loam builds and cope ramming are moulding under the standing card. Amend your records in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Night desk at the bell foundry on {day}. The foundry card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "File this report. The foundry card is not at hand. Report: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "8001": {
+   "values": {
+    "bk": "the loam build for the east pit",
+    "pq": "the loam build for the night cast",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "moulding",
+      "pouring",
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch"
+     ],
+     "expected": "moulding"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "bk": "the cope ramming at the tenor pit",
+    "pq": "the cope ramming before the morning melt",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "pouring",
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch",
+      "moulding"
+     ],
+     "expected": "moulding"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "bk": "the loam build on the false bell",
+    "pq": "the loam build on the pattern",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch",
+      "moulding",
+      "pouring"
+     ],
+     "expected": "moulding"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "bk": "the cope ramming for the tenor crown",
+    "pq": "the cope ramming at the west pit",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fettling",
+      "stocking",
+      "dispatch",
+      "moulding",
+      "pouring",
+      "tuning"
+     ],
+     "expected": "moulding"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "bk": "the loam build at the south pit",
+    "pq": "the loam build after the sift",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "stocking",
+      "dispatch",
+      "moulding",
+      "pouring",
+      "tuning",
+      "fettling"
+     ],
+     "expected": "moulding"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "bk": "the cope ramming on the bell core",
+    "pq": "the cope ramming for the flat crown",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "dispatch",
+      "moulding",
+      "pouring",
+      "tuning",
+      "fettling",
+      "stocking"
+     ],
+     "expected": "moulding"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "bk": "the loam build for the great bell",
+    "pq": "the loam build before the pour",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "pouring",
+      "moulding",
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch"
+     ],
+     "expected": "moulding"
+    }
+   }
+  }
+ }
+}

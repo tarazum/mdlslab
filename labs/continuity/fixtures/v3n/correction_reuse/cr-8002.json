@@ -1,0 +1,202 @@
+{
+ "id": "cr-8002",
+ "family": "correction_reuse",
+ "sub_type": "valid_correction_tool",
+ "seed_error": {
+  "value": "fettling",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "strike check logged 'fettling'; tuning-fork sheet re-routes to tuning (FP-3a)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "For the foundry desk: file this report under exactly one label: moulding | pouring | tuning | fettling | stocking | dispatch. Report: '{bk} on the pitch list.' Reply with the label only.",
+     "initial_expected": "fettling"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your casting-office log from the previous shift files {bk} on the pitch list under 'fettling'. Keep the log line in view and acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "The standing foundry card: loam builds and cope ramming are moulding; metal taps and ladle melts are pouring; strike checks and note listens are tuning; flash trims and seam scrapes are fettling; clapper stores and wedge racks are stocking; crated loads and hauler pickups are dispatch. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "The tuning-fork sheet, bench-verified this morning, reads {bk} as a strike check and note listen: tuning under the standing card; the old 'fettling' filing is out of date. Amend your records in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Night desk at the bell foundry on {day}. The foundry card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "File this report. The foundry card is not at hand. Report: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "8001": {
+   "values": {
+    "bk": "the strike check on the treble bell",
+    "pq": "the strike check for the dusk round",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "moulding",
+      "pouring",
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch"
+     ],
+     "expected": "tuning"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "bk": "the note listen for the mezzo bell",
+    "pq": "the note listen before the gate close",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "pouring",
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch",
+      "moulding"
+     ],
+     "expected": "tuning"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "bk": "the strike check at the frame head",
+    "pq": "the strike check on the flat bell",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch",
+      "moulding",
+      "pouring"
+     ],
+     "expected": "tuning"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "bk": "the note listen on the bass bell",
+    "pq": "the note listen for the morning round",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fettling",
+      "stocking",
+      "dispatch",
+      "moulding",
+      "pouring",
+      "tuning"
+     ],
+     "expected": "tuning"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "bk": "the strike check for the practice round",
+    "pq": "the strike check at the yoke",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "stocking",
+      "dispatch",
+      "moulding",
+      "pouring",
+      "tuning",
+      "fettling"
+     ],
+     "expected": "tuning"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "bk": "the note listen at the clapper gap",
+    "pq": "the note listen on the small bell",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "dispatch",
+      "moulding",
+      "pouring",
+      "tuning",
+      "fettling",
+      "stocking"
+     ],
+     "expected": "tuning"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "bk": "the strike check on the new casting",
+    "pq": "the strike check after the hang",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "pouring",
+      "moulding",
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch"
+     ],
+     "expected": "tuning"
+    }
+   }
+  }
+ }
+}

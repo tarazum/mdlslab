@@ -1,0 +1,195 @@
+{
+ "id": "dx-8402",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two codes stated at learning (spare parts locker target, paint locker lure); the LURE is re-confirmed in s2 (salience competition \u2014 v3n difficulty fold); probe asks the target with the lure in options; lure_value declared for validator V8R (FP-4)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the ferry engine room. For the engine book: the spare parts locker code is {code}; the paint locker code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Reminder from the yard office: the paint locker code {lure} was re-confirmed this morning and still stands. {chore} finished. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives from the yard office run; the engine book is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the spare parts locker code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{lure}",
+ "variants": {
+  "8001": {
+   "values": {
+    "code": "M17",
+    "lure": "M71",
+    "chore": "the crank case wipe",
+    "role": "engineer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "M17",
+      "M71",
+      "M23",
+      "M45",
+      "M68",
+      "M19"
+     ],
+     "expected": "M17"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "code": "M23",
+    "lure": "M32",
+    "chore": "the cooling strainer rinse",
+    "role": "mate"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "M32",
+      "M17",
+      "M45",
+      "M68",
+      "M19",
+      "M23"
+     ],
+     "expected": "M23"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "code": "M45",
+    "lure": "M54",
+    "chore": "the deck plate sweep",
+    "role": "fitter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "M17",
+      "M23",
+      "M68",
+      "M19",
+      "M45",
+      "M54"
+     ],
+     "expected": "M45"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "code": "M68",
+    "lure": "M86",
+    "chore": "the gauge glass polish",
+    "role": "deckhand"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "M23",
+      "M45",
+      "M19",
+      "M68",
+      "M86",
+      "M17"
+     ],
+     "expected": "M68"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "code": "M19",
+    "lure": "M91",
+    "chore": "the drip tray empty",
+    "role": "purser"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "M45",
+      "M68",
+      "M19",
+      "M91",
+      "M17",
+      "M23"
+     ],
+     "expected": "M19"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "code": "M26",
+    "lure": "M62",
+    "chore": "the tool rail tidy",
+    "role": "skipper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "M68",
+      "M26",
+      "M62",
+      "M17",
+      "M23",
+      "M45"
+     ],
+     "expected": "M26"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "code": "M38",
+    "lure": "M83",
+    "chore": "the dusk lamp check",
+    "role": "night watch"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "M38",
+      "M83",
+      "M17",
+      "M23",
+      "M45",
+      "M68"
+     ],
+     "expected": "M38"
+    }
+   }
+  }
+ }
+}

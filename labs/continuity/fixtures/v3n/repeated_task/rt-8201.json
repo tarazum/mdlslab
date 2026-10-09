@@ -1,0 +1,197 @@
+{
+ "id": "rt-8201",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "collection",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "counter sheet pins 'collection'; standing card says pressing; probe expects pressing (FP-2)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Pick exactly one tag: washing | drying | mending | pressing | folding | collection. Errand: '{task}.' Reply with the tag only.",
+     "initial_expected": "collection"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier hatch sheet tags {task} as 'collection'. The standing linen card, verified: stitch and patch work is mending; iron and steam passes are pressing. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Hatch handover before {slot}. The standing linen card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "New round opens at the linen hatch. The slate cards are locked away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Pick one tag for this errand. No cards are in reach. Errand: '{pq}.' Options: {options} - reply with the tag only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "8001": {
+   "values": {
+    "task": "the iron pass for the theatre linen",
+    "pq": "the iron pass for the evening linen",
+    "slot": "morning"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "washing",
+      "drying",
+      "mending",
+      "pressing",
+      "folding",
+      "collection"
+     ],
+     "expected": "pressing"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "task": "the steam run for the ward sheets",
+    "pq": "the steam run before the ward round",
+    "slot": "ward round"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "drying",
+      "mending",
+      "pressing",
+      "folding",
+      "collection",
+      "washing"
+     ],
+     "expected": "pressing"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "task": "the iron pass on the pillow slips",
+    "pq": "the iron pass on the cot sheets",
+    "slot": "lunch"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "mending",
+      "pressing",
+      "folding",
+      "collection",
+      "washing",
+      "drying"
+     ],
+     "expected": "pressing"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "task": "the steam run for the clinic gowns",
+    "pq": "the steam run for the day gowns",
+    "slot": "theatre list"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "pressing",
+      "folding",
+      "collection",
+      "washing",
+      "drying",
+      "mending"
+     ],
+     "expected": "pressing"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "task": "the iron pass for the night bedding",
+    "pq": "the iron pass at the far bench",
+    "slot": "afternoon"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "folding",
+      "collection",
+      "washing",
+      "drying",
+      "mending",
+      "pressing"
+     ],
+     "expected": "pressing"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "task": "the steam run on the table linen",
+    "pq": "the steam run for the theatre packs",
+    "slot": "admissions"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "collection",
+      "washing",
+      "drying",
+      "mending",
+      "pressing",
+      "folding"
+     ],
+     "expected": "pressing"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "task": "the iron pass for the admission packs",
+    "pq": "the iron pass before the shut",
+    "slot": "night shift"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "drying",
+      "washing",
+      "mending",
+      "pressing",
+      "folding",
+      "collection"
+     ],
+     "expected": "pressing"
+    }
+   }
+  }
+ }
+}

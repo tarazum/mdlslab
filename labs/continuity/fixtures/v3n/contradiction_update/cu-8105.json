@@ -1,0 +1,185 @@
+{
+ "id": "cu-8105",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "labels": {
+  "note": "VAL cluster (activation only): clock bench beat counts corrected; probe expects NEW (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You mind the clock bench card. For the log: the gallery beat counts {old} ticks per swing. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the pendulum was shortened; the gallery beat now counts {new} ticks per swing, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A clock mate asks; the bench card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many ticks does the gallery beat count per swing? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "8001": {
+   "values": {
+    "old": "29",
+    "new": "37"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "37",
+      "25",
+      "41",
+      "21",
+      "45",
+      "29"
+     ],
+     "expected": "37"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "old": "32",
+    "new": "40"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "28",
+      "44",
+      "24",
+      "48",
+      "32",
+      "40"
+     ],
+     "expected": "40"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "old": "35",
+    "new": "43"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "47",
+      "27",
+      "51",
+      "35",
+      "43",
+      "31"
+     ],
+     "expected": "43"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "old": "38",
+    "new": "46"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "30",
+      "54",
+      "38",
+      "46",
+      "34",
+      "50"
+     ],
+     "expected": "46"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "old": "41",
+    "new": "49"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "57",
+      "41",
+      "49",
+      "37",
+      "53",
+      "33"
+     ],
+     "expected": "49"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "old": "44",
+    "new": "52"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "44",
+      "52",
+      "40",
+      "56",
+      "36",
+      "60"
+     ],
+     "expected": "52"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "old": "47",
+    "new": "55"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "55",
+      "43",
+      "59",
+      "39",
+      "63",
+      "47"
+     ],
+     "expected": "55"
+    }
+   }
+  }
+ }
+}

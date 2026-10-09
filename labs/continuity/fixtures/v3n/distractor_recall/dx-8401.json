@@ -1,0 +1,195 @@
+{
+ "id": "dx-8401",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two codes stated at learning (wood store hatch target, fuel crate lure); the LURE is re-confirmed in s2 (salience competition \u2014 v3n difficulty fold); probe asks the target with the lure in options; lure_value declared for validator V8R (FP-4)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the alpine refuge stove room. For the stove log: the wood store hatch code is {code}; the fuel crate code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Reminder from the fuel depot: the fuel crate code {lure} was re-confirmed this morning and still stands. {chore} finished. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives from the fuel depot run; the stove log is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the wood store hatch code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{lure}",
+ "variants": {
+  "8001": {
+   "values": {
+    "code": "C17",
+    "lure": "C71",
+    "chore": "the boot rack sweep",
+    "role": "warden"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "C17",
+      "C71",
+      "C23",
+      "C45",
+      "C68",
+      "C19"
+     ],
+     "expected": "C17"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "code": "C23",
+    "lure": "C32",
+    "chore": "the kindling box fill",
+    "role": "guide"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "C32",
+      "C17",
+      "C45",
+      "C68",
+      "C19",
+      "C23"
+     ],
+     "expected": "C23"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "code": "C45",
+    "lure": "C54",
+    "chore": "the window scrape",
+    "role": "custodian"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "C17",
+      "C23",
+      "C68",
+      "C19",
+      "C45",
+      "C54"
+     ],
+     "expected": "C45"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "code": "C68",
+    "lure": "C86",
+    "chore": "the lantern glass wipe",
+    "role": "night porter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "C23",
+      "C45",
+      "C19",
+      "C68",
+      "C86",
+      "C17"
+     ],
+     "expected": "C68"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "code": "C19",
+    "lure": "C91",
+    "chore": "the water urn rinse",
+    "role": "patroller"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "C45",
+      "C68",
+      "C19",
+      "C91",
+      "C17",
+      "C23"
+     ],
+     "expected": "C19"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "code": "C26",
+    "lure": "C62",
+    "chore": "the bench brush",
+    "role": "carrier"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "C68",
+      "C26",
+      "C62",
+      "C17",
+      "C23",
+      "C45"
+     ],
+     "expected": "C26"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "code": "C38",
+    "lure": "C83",
+    "chore": "the dusk shutter bar",
+    "role": "hut keeper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "C38",
+      "C83",
+      "C17",
+      "C23",
+      "C45",
+      "C68"
+     ],
+     "expected": "C38"
+    }
+   }
+  }
+ }
+}

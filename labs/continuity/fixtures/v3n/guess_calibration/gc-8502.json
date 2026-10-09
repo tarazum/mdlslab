@@ -1,0 +1,257 @@
+{
+ "id": "gc-8502",
+ "family": "guess_calibration",
+ "labels": {
+  "note": "never-stated facts; guess rate and position bias; expected null by design; run on the working core"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You keep the ferry landing stage on the {shift} watch. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{visitor} asks about notes this stage never kept. Answer as best you can. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What tar seals the {e1} seams? Options: {options} - reply with the word only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    },
+    {
+     "actor": "environment",
+     "text": "How many fenders ride the {e2} rail? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "8001": {
+   "values": {
+    "shift": "first sailing",
+    "visitor": "a deckhand",
+    "e1": "gangway",
+    "e2": "pontoon"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "stockholm",
+      "bastard",
+      "pitch",
+      "rosin",
+      "birch",
+      "pine"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "22",
+      "25",
+      "28",
+      "31",
+      "34",
+      "37"
+     ]
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "shift": "slack water",
+    "visitor": "a rigger",
+    "e1": "top plank",
+    "e2": "outer"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "bastard",
+      "pitch",
+      "rosin",
+      "birch",
+      "pine",
+      "coal"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "23",
+      "26",
+      "29",
+      "32",
+      "35",
+      "38"
+     ]
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "shift": "neap tide",
+    "visitor": "a tally lad",
+    "e1": "knee brace",
+    "e2": "inner"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "pitch",
+      "rosin",
+      "birch",
+      "pine",
+      "coal",
+      "stockholm"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "24",
+      "27",
+      "30",
+      "33",
+      "36",
+      "39"
+     ]
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "shift": "spring tide",
+    "visitor": "a watchman",
+    "e1": "stringer",
+    "e2": "gate"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "rosin",
+      "birch",
+      "pine",
+      "coal",
+      "stockholm",
+      "bastard"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "25",
+      "28",
+      "31",
+      "34",
+      "37",
+      "40"
+     ]
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "shift": "gale stand",
+    "visitor": "a caulker",
+    "e1": "rubbing strake",
+    "e2": "step"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "birch",
+      "pine",
+      "coal",
+      "stockholm",
+      "bastard",
+      "pitch"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "26",
+      "29",
+      "32",
+      "35",
+      "38",
+      "41"
+     ]
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "shift": "night crossing",
+    "visitor": "a purser",
+    "e1": "deck joint",
+    "e2": "lamp"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "pine",
+      "coal",
+      "stockholm",
+      "bastard",
+      "pitch",
+      "rosin"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "27",
+      "30",
+      "33",
+      "36",
+      "39",
+      "42"
+     ]
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "shift": "ice watch",
+    "visitor": "a ferryman",
+    "e1": "boot edge",
+    "e2": "post"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "coal",
+      "stockholm",
+      "bastard",
+      "pitch",
+      "rosin",
+      "birch"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "28",
+      "31",
+      "34",
+      "37",
+      "40",
+      "43"
+     ]
+    }
+   }
+  }
+ }
+}

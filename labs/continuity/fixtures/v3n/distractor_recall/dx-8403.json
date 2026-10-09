@@ -1,0 +1,195 @@
+{
+ "id": "dx-8403",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "two codes stated at learning (tool chest target, seed drawer lure); the LURE is re-confirmed in s2 (salience competition \u2014 v3n difficulty fold); probe asks the target with the lure in options; lure_value declared for validator V8R (FP-4)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the botanical greenhouse potting shed. For the potting book: the tool chest code is {code}; the seed drawer code is {lure}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Reminder from the estate store: the seed drawer code {lure} was re-confirmed this morning and still stands. {chore} finished. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives from the estate store run; the potting book is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the tool chest code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{lure}",
+ "variants": {
+  "8001": {
+   "values": {
+    "code": "S17",
+    "lure": "S71",
+    "chore": "the mist line flush",
+    "role": "gardener"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S17",
+      "S71",
+      "S23",
+      "S45",
+      "S68",
+      "S19"
+     ],
+     "expected": "S17"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "code": "S23",
+    "lure": "S32",
+    "chore": "the tray rack wipe",
+    "role": "grower"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S32",
+      "S17",
+      "S45",
+      "S68",
+      "S19",
+      "S23"
+     ],
+     "expected": "S23"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "code": "S45",
+    "lure": "S54",
+    "chore": "the cane store tidy",
+    "role": "curator"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S17",
+      "S23",
+      "S68",
+      "S19",
+      "S45",
+      "S54"
+     ],
+     "expected": "S45"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "code": "S68",
+    "lure": "S86",
+    "chore": "the label drawer sort",
+    "role": "helper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S23",
+      "S45",
+      "S19",
+      "S68",
+      "S86",
+      "S17"
+     ],
+     "expected": "S68"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "code": "S19",
+    "lure": "S91",
+    "chore": "the sand bin top-up",
+    "role": "student"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S45",
+      "S68",
+      "S19",
+      "S91",
+      "S17",
+      "S23"
+     ],
+     "expected": "S19"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "code": "S26",
+    "lure": "S62",
+    "chore": "the hose coil hang",
+    "role": "porter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S68",
+      "S26",
+      "S62",
+      "S17",
+      "S23",
+      "S45"
+     ],
+     "expected": "S26"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "code": "S38",
+    "lure": "S83",
+    "chore": "the dusk vent wind",
+    "role": "night waterer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "S38",
+      "S83",
+      "S17",
+      "S23",
+      "S45",
+      "S68"
+     ],
+     "expected": "S38"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,197 @@
+{
+ "id": "rt-8204",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "folding",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "counter sheet pins 'folding'; standing card says collection; probe expects collection (FP-2)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Pick exactly one tag: washing | drying | mending | pressing | folding | collection. Errand: '{task}.' Reply with the tag only.",
+     "initial_expected": "folding"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier hatch sheet tags {task} as 'folding'. The standing linen card, verified: stitch and patch work is mending; iron and steam passes are pressing. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Hatch handover before {slot}. The standing linen card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "New round opens at the linen hatch. The slate cards are locked away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Pick one tag for this errand. No cards are in reach. Errand: '{pq}.' Options: {options} - reply with the tag only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "8001": {
+   "values": {
+    "task": "the hamper pickup for the east wing",
+    "pq": "the hamper pickup for the evening wing",
+    "slot": "morning"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "washing",
+      "drying",
+      "mending",
+      "pressing",
+      "folding",
+      "collection"
+     ],
+     "expected": "collection"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "task": "the ward round on the surgical floor",
+    "pq": "the ward round before the theatre list",
+    "slot": "ward round"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "drying",
+      "mending",
+      "pressing",
+      "folding",
+      "collection",
+      "washing"
+     ],
+     "expected": "collection"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "task": "the hamper pickup at the sluice door",
+    "pq": "the hamper pickup at the side door",
+    "slot": "lunch"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "mending",
+      "pressing",
+      "folding",
+      "collection",
+      "washing",
+      "drying"
+     ],
+     "expected": "collection"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "task": "the ward round for the children's bay",
+    "pq": "the ward round for the observation bay",
+    "slot": "theatre list"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "pressing",
+      "folding",
+      "collection",
+      "washing",
+      "drying",
+      "mending"
+     ],
+     "expected": "collection"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "task": "the hamper pickup on the clinic run",
+    "pq": "the hamper pickup on the late run",
+    "slot": "afternoon"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "folding",
+      "collection",
+      "washing",
+      "drying",
+      "mending",
+      "pressing"
+     ],
+     "expected": "collection"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "task": "the ward round at the day room",
+    "pq": "the ward round at the east desk",
+    "slot": "admissions"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "collection",
+      "washing",
+      "drying",
+      "mending",
+      "pressing",
+      "folding"
+     ],
+     "expected": "collection"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "task": "the hamper pickup for the night wing",
+    "pq": "the hamper pickup after the tally",
+    "slot": "night shift"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "drying",
+      "washing",
+      "mending",
+      "pressing",
+      "folding",
+      "collection"
+     ],
+     "expected": "collection"
+    }
+   }
+  }
+ }
+}

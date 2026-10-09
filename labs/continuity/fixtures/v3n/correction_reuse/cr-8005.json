@@ -1,0 +1,202 @@
+{
+ "id": "cr-8005",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {
+  "value": "moulding",
+  "mechanism": "source_conflict"
+ },
+ "labels": {
+  "note": "VAL cluster (activation only): clapper store correctly 'stocking'; unreviewed pinboard claims 'moulding' (FP-3b)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "For the foundry desk: file this report under exactly one label: moulding | pouring | tuning | fettling | stocking | dispatch. Report: '{bk} on the watch sheet.' Reply with the label only.",
+     "initial_expected": "stocking"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing foundry card: loam builds and cope ramming are moulding; metal taps and ladle melts are pouring; strike checks and note listens are tuning; flash trims and seam scrapes are fettling; clapper stores and wedge racks are stocking; crated loads and hauler pickups are dispatch. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "The stores clerk's memo, foundry-verified: clapper stores stay with stocking, and {bk} stays as the card has it. Note it in one short line."
+    },
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "An unreviewed pinboard by the shed door claims the clapper stores, {bk} included, were moved to the loam bench today."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Night desk at the bell foundry on {day}. The foundry card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "File this report. The foundry card is not at hand. Report: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "8001": {
+   "values": {
+    "bk": "the clapper store for the treble set",
+    "pq": "the clapper store for the night check",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "moulding",
+      "pouring",
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch"
+     ],
+     "expected": "stocking"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "bk": "the wedge rack at the shed wall",
+    "pq": "the wedge rack before the hang",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "pouring",
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch",
+      "moulding"
+     ],
+     "expected": "stocking"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "bk": "the clapper store for the bass bell",
+    "pq": "the clapper store on the shelf",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch",
+      "moulding",
+      "pouring"
+     ],
+     "expected": "stocking"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "bk": "the wedge rack on the bench side",
+    "pq": "the wedge rack for the dusk round",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fettling",
+      "stocking",
+      "dispatch",
+      "moulding",
+      "pouring",
+      "tuning"
+     ],
+     "expected": "stocking"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "bk": "the clapper store for the field kit",
+    "pq": "the clapper store at the door",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "stocking",
+      "dispatch",
+      "moulding",
+      "pouring",
+      "tuning",
+      "fettling"
+     ],
+     "expected": "stocking"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "bk": "the wedge rack at the north shed",
+    "pq": "the wedge rack after the count",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "dispatch",
+      "moulding",
+      "pouring",
+      "tuning",
+      "fettling",
+      "stocking"
+     ],
+     "expected": "stocking"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "bk": "the clapper store for the spare set",
+    "pq": "the clapper store for the new pin",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "pouring",
+      "moulding",
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch"
+     ],
+     "expected": "stocking"
+    }
+   }
+  }
+ }
+}

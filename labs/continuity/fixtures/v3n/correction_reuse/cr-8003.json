@@ -1,0 +1,197 @@
+{
+ "id": "cr-8003",
+ "family": "correction_reuse",
+ "sub_type": "erroneous_user_correction",
+ "seed_error": {
+  "value": "stocking",
+  "mechanism": "user_override"
+ },
+ "labels": {
+  "note": "crated load correctly 'dispatch'; yard clerk pushes 'stocking' (FP-3b)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "For the foundry desk: file this report under exactly one label: moulding | pouring | tuning | fettling | stocking | dispatch. Report: '{bk}.' Reply with the label only.",
+     "initial_expected": "dispatch"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing foundry card: loam builds and cope ramming are moulding; metal taps and ladle melts are pouring; strike checks and note listens are tuning; flash trims and seam scrapes are fettling; clapper stores and wedge racks are stocking; crated loads and hauler pickups are dispatch. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "A shed hand presses about {bk}: 'count that one as stocking for my shelf list - every earlier tally has done so.' The hauler book, on file, keeps the entry as it stands. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Night desk at the bell foundry on {day}. The foundry card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "File this report. The foundry card is not at hand. Report: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "8001": {
+   "values": {
+    "bk": "the crated load for the river wharf",
+    "pq": "the crated load for the night haul",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "moulding",
+      "pouring",
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch"
+     ],
+     "expected": "dispatch"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "bk": "the hauler pickup at the north gate",
+    "pq": "the hauler pickup before the gate shut",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "pouring",
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch",
+      "moulding"
+     ],
+     "expected": "dispatch"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "bk": "the crated load for the parish church",
+    "pq": "the crated load on the sledge",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch",
+      "moulding",
+      "pouring"
+     ],
+     "expected": "dispatch"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "bk": "the hauler pickup on the load day",
+    "pq": "the hauler pickup for the dusk run",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "fettling",
+      "stocking",
+      "dispatch",
+      "moulding",
+      "pouring",
+      "tuning"
+     ],
+     "expected": "dispatch"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "bk": "the crated load for the belfry job",
+    "pq": "the crated load at the wharf door",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "stocking",
+      "dispatch",
+      "moulding",
+      "pouring",
+      "tuning",
+      "fettling"
+     ],
+     "expected": "dispatch"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "bk": "the hauler pickup at the canal yard",
+    "pq": "the hauler pickup after the tally",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "dispatch",
+      "moulding",
+      "pouring",
+      "tuning",
+      "fettling",
+      "stocking"
+     ],
+     "expected": "dispatch"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "bk": "the crated load for the fair field",
+    "pq": "the crated load for the second bell",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "pouring",
+      "moulding",
+      "tuning",
+      "fettling",
+      "stocking",
+      "dispatch"
+     ],
+     "expected": "dispatch"
+    }
+   }
+  }
+ }
+}

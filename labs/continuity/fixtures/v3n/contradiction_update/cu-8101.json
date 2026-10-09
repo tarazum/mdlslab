@@ -1,0 +1,185 @@
+{
+ "id": "cu-8101",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "labels": {
+  "note": "greenhouse bench soil scoops corrected; probe expects NEW value (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You keep the greenhouse bench book. For the log: the seed tray takes {old} soil scoops per fill. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the scoop gauge was swapped; the seed tray now takes {new} soil scoops per fill, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A grower asks; the bench book is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many soil scoops does the seed tray take per fill? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "8001": {
+   "values": {
+    "old": "47",
+    "new": "53"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "53",
+      "43",
+      "57",
+      "39",
+      "61",
+      "47"
+     ],
+     "expected": "53"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "old": "50",
+    "new": "56"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "46",
+      "60",
+      "42",
+      "64",
+      "50",
+      "56"
+     ],
+     "expected": "56"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "old": "53",
+    "new": "59"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "63",
+      "45",
+      "67",
+      "53",
+      "59",
+      "49"
+     ],
+     "expected": "59"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "old": "56",
+    "new": "62"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "48",
+      "70",
+      "56",
+      "62",
+      "52",
+      "66"
+     ],
+     "expected": "62"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "old": "59",
+    "new": "65"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "73",
+      "59",
+      "65",
+      "55",
+      "69",
+      "51"
+     ],
+     "expected": "65"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "old": "62",
+    "new": "68"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "62",
+      "68",
+      "58",
+      "72",
+      "54",
+      "76"
+     ],
+     "expected": "68"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "old": "65",
+    "new": "71"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "71",
+      "61",
+      "75",
+      "57",
+      "79",
+      "65"
+     ],
+     "expected": "71"
+    }
+   }
+  }
+ }
+}

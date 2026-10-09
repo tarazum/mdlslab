@@ -1,0 +1,216 @@
+{
+ "id": "dr-8301",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "folio press bay code stated at learning; s2 logs TWO other entities' codes of the same kind (interference \u2014 v3n difficulty fold); probe asks the {thing} code with all three in options; lure_value = the first interference code (FP-5 binding under interference)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the bindery vault room. For the binding register: the folio press bay code is {code}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "For the log: the {ot1} code is {o1}; the {ot2} code is {o2}; all else stands as before. {chore} finished. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the binding register is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the folio press bay code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{o1}",
+ "variants": {
+  "8001": {
+   "values": {
+    "code": "N26",
+    "o1": "N31",
+    "o2": "N37",
+    "ot1": "trimmer cabinet",
+    "ot2": "gilt roll stand",
+    "chore": "the bone folder wipe",
+    "role": "binder"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N26",
+      "N31",
+      "N37",
+      "N42",
+      "N48",
+      "N53"
+     ],
+     "expected": "N26"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "code": "N31",
+    "o1": "N37",
+    "o2": "N42",
+    "ot1": "trimmer cabinet",
+    "ot2": "gilt roll stand",
+    "chore": "the press screw oil",
+    "role": "finisher"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N37",
+      "N42",
+      "N48",
+      "N53",
+      "N59",
+      "N31"
+     ],
+     "expected": "N31"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "code": "N37",
+    "o1": "N42",
+    "o2": "N48",
+    "ot1": "trimmer cabinet",
+    "ot2": "gilt roll stand",
+    "chore": "the type drawer count",
+    "role": "apprentice"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N48",
+      "N53",
+      "N59",
+      "N64",
+      "N37",
+      "N42"
+     ],
+     "expected": "N37"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "code": "N42",
+    "o1": "N48",
+    "o2": "N53",
+    "ot1": "trimmer cabinet",
+    "ot2": "gilt roll stand",
+    "chore": "the glue pot stir",
+    "role": "clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N59",
+      "N64",
+      "N70",
+      "N42",
+      "N48",
+      "N53"
+     ],
+     "expected": "N42"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "code": "N48",
+    "o1": "N53",
+    "o2": "N59",
+    "ot1": "trimmer cabinet",
+    "ot2": "gilt roll stand",
+    "chore": "the cutting mat brush",
+    "role": "forwarder"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N70",
+      "N75",
+      "N48",
+      "N53",
+      "N59",
+      "N64"
+     ],
+     "expected": "N48"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "code": "N53",
+    "o1": "N59",
+    "o2": "N64",
+    "ot1": "trimmer cabinet",
+    "ot2": "gilt roll stand",
+    "chore": "the clamp rail dust",
+    "role": "porter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N81",
+      "N53",
+      "N59",
+      "N64",
+      "N70",
+      "N75"
+     ],
+     "expected": "N53"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "code": "N59",
+    "o1": "N64",
+    "o2": "N70",
+    "ot1": "trimmer cabinet",
+    "ot2": "gilt roll stand",
+    "chore": "the dusk shelf check",
+    "role": "night watch"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "N59",
+      "N64",
+      "N70",
+      "N75",
+      "N81",
+      "N86"
+     ],
+     "expected": "N59"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "protocol": "continuity-workload",
+ "version": 3,
+ "families": [
+  "correction_reuse",
+  "contradiction_update",
+  "repeated_task",
+  "distractor_recall",
+  "delayed_recall",
+  "guess_calibration"
+ ],
+ "primary_families": [
+  "correction_reuse",
+  "contradiction_update",
+  "repeated_task",
+  "distractor_recall",
+  "delayed_recall"
+ ],
+ "primary_cluster_count": 15,
+ "validation_cluster_ids": [
+  "cr-8005",
+  "cu-8105",
+  "rt-8204",
+  "dx-8403"
+ ],
+ "variant_seeds": [
+  8001,
+  8002,
+  8003,
+  8004,
+  8005,
+  8006,
+  8007
+ ],
+ "description": "Suite v3n for the CONT-006 V2 RERUN after the v3m calibration STOP-OUT-OF-BAND (owner-authorized 2026-10-10, ROADMAP; diagnostic docs/DIAGNOSTIC-CONT006-V2-CR.md): v3m's family difficulty was bimodal under a memory-armed agent (dx/dr 1.0 ceiling, cr 0.25 floor). Composition identical to v3m (15 TR primary transfer clusters of class transfer_eligible + 4 VAL activation-only + GC x3; every taxonomy class >= 2 primary clusters), mechanics INHERITED from the frozen suites only (v3i/v3j seed_error mechanisms + initial_expected; v3k lure_value + label windows), fresh worlds (bell foundry casting office, hospital linen room, greenhouse bench/chandlery/weaving loft/cider press/clock bench, alpine refuge/ferry engine room/botanical greenhouse, bindery vault/grain bourse, bell tower/ferry landing/ice house), ids x-8xxx, seeds {8001..8007}, disjoint from ALL prior suites incl. v3m (validator V3 every seed both ways + V18 world-freshness). Difficulty re-aim (design-time, from the v3m CALIBRATION evidence): cr EASIER (probe reports carry the exact head-noun phrase of one card line \u2014 lexically transparent mapping), dx HARDER (lure re-confirmed in s2 while the expected code is stated once \u2014 salience competition), dr HARDER (two other entities' codes of the same kind logged in s2 \u2014 interference binding), cu/rt unchanged mechanics. The calibration pilot verifies the bands with memory ON before freeze (out of band -> a NEW suite, never a v3n edit). Rendering: continuity.fixtures.render_seed_variant."
+}

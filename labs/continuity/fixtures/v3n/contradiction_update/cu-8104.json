@@ -1,0 +1,195 @@
+{
+ "id": "cu-8104",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{new}",
+  "mechanism": "retracted_correction"
+ },
+ "labels": {
+  "note": "cider press house rack turns corrected then withdrawn; probe expects ORIGINAL (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You run the press house sheet. For the log: the cheese rack winds {old} turns per pressing. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the screw was re-set; the cheese rack winds {new} turns per pressing, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "The press master says the correction is withdrawn: the re-set slip came from the mill house press and does not apply; the standing turns from the first log hold as before. Amend in one short line."
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "An orchard hand asks; the press sheet is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many turns does the cheese rack wind per pressing? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "8001": {
+   "values": {
+    "old": "14",
+    "new": "20"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "9",
+      "25",
+      "4",
+      "30",
+      "14",
+      "20"
+     ],
+     "expected": "14"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "old": "17",
+    "new": "23"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "28",
+      "7",
+      "33",
+      "17",
+      "23",
+      "12"
+     ],
+     "expected": "17"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "old": "20",
+    "new": "26"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "10",
+      "36",
+      "20",
+      "26",
+      "15",
+      "31"
+     ],
+     "expected": "20"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "old": "23",
+    "new": "29"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "39",
+      "23",
+      "29",
+      "18",
+      "34",
+      "13"
+     ],
+     "expected": "23"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "old": "26",
+    "new": "32"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "26",
+      "32",
+      "21",
+      "37",
+      "16",
+      "42"
+     ],
+     "expected": "26"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "old": "29",
+    "new": "35"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "35",
+      "24",
+      "40",
+      "19",
+      "45",
+      "29"
+     ],
+     "expected": "29"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "old": "32",
+    "new": "38"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "27",
+      "43",
+      "22",
+      "48",
+      "32",
+      "38"
+     ],
+     "expected": "32"
+    }
+   }
+  }
+ }
+}

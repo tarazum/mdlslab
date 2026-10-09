@@ -1,0 +1,195 @@
+{
+ "id": "cu-8103",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{new}",
+  "mechanism": "retracted_correction"
+ },
+ "labels": {
+  "note": "weaving loft warp threads corrected then withdrawn; probe expects ORIGINAL (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You tend the weaving loft tally. For the log: the linen warp holds {old} threads per span. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the reed was re-slotted; the linen warp holds {new} threads per span, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "The weaver says the correction is withdrawn: the re-slotted reed belonged to the sample loom and does not apply here; the standing count from the first log holds as before. Amend in one short line."
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A cloth merchant asks; the loft tally is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many threads does the linen warp hold per span? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "8001": {
+   "values": {
+    "old": "38",
+    "new": "43"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "33",
+      "48",
+      "28",
+      "53",
+      "38",
+      "43"
+     ],
+     "expected": "38"
+    }
+   }
+  },
+  "8002": {
+   "values": {
+    "old": "41",
+    "new": "46"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "51",
+      "31",
+      "56",
+      "41",
+      "46",
+      "36"
+     ],
+     "expected": "41"
+    }
+   }
+  },
+  "8003": {
+   "values": {
+    "old": "44",
+    "new": "49"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "34",
+      "59",
+      "44",
+      "49",
+      "39",
+      "54"
+     ],
+     "expected": "44"
+    }
+   }
+  },
+  "8004": {
+   "values": {
+    "old": "47",
+    "new": "52"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "62",
+      "47",
+      "52",
+      "42",
+      "57",
+      "37"
+     ],
+     "expected": "47"
+    }
+   }
+  },
+  "8005": {
+   "values": {
+    "old": "50",
+    "new": "55"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "50",
+      "55",
+      "45",
+      "60",
+      "40",
+      "65"
+     ],
+     "expected": "50"
+    }
+   }
+  },
+  "8006": {
+   "values": {
+    "old": "53",
+    "new": "58"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "58",
+      "48",
+      "63",
+      "43",
+      "68",
+      "53"
+     ],
+     "expected": "53"
+    }
+   }
+  },
+  "8007": {
+   "values": {
+    "old": "56",
+    "new": "61"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "51",
+      "66",
+      "46",
+      "71",
+      "56",
+      "61"
+     ],
+     "expected": "56"
+    }
+   }
+  }
+ }
+}

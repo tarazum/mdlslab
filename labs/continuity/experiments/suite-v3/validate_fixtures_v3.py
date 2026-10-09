@@ -40,7 +40,7 @@ probe class transfer_eligible; new check V17 pins the validation split.
 
 Usage:
     python labs/continuity/experiments/suite-v3/validate_fixtures_v3.py \
-        [--suite v3|v3h|v3i|v3j|v3k|v3l|v3m] [--out <path>/fixture-validation-<suite>.json]
+        [--suite v3|v3h|v3i|v3j|v3k|v3l|v3m|v3n] [--out <path>/fixture-validation-<suite>.json]
 
 Exit 0 = PASS; exit 2 = FAIL-CLOSED.
 """
@@ -75,6 +75,8 @@ EXPECTED_PRIMARY = {
             "distractor_recall": 2, "delayed_recall": 2},
     "v3m": {"correction_reuse": 4, "contradiction_update": 4, "repeated_task": 3,
             "distractor_recall": 2, "delayed_recall": 2},
+    "v3n": {"correction_reuse": 4, "contradiction_update": 4, "repeated_task": 3,
+            "distractor_recall": 2, "delayed_recall": 2},
 }
 # Complete per-suite family plans (scenario BASE counts, not multiplied by
 # seeds). v3-v3j layouts are exactly what the pre-v3k V1/V7 checks enforced;
@@ -94,6 +96,8 @@ FAMILY_PLANS = {
     "v3l": {"correction_reuse": 5, "contradiction_update": 5, "repeated_task": 4,
             "distractor_recall": 3, "delayed_recall": 2, "guess_calibration": 3},
     "v3m": {"correction_reuse": 5, "contradiction_update": 5, "repeated_task": 4,
+            "distractor_recall": 3, "delayed_recall": 2, "guess_calibration": 3},
+    "v3n": {"correction_reuse": 5, "contradiction_update": 5, "repeated_task": 4,
             "distractor_recall": 3, "delayed_recall": 2, "guess_calibration": 3},
 }
 CR_SUBTYPES = {
@@ -144,6 +148,15 @@ CR_SUBTYPES = {
         "erroneous_user_correction": 1,
         "source_conflict": 2,
     },
+    # v3n (CONT-006 V2 rerun): sub-type composition identical to v3m —
+    # difficulty re-aimed via wording/structure levers only (cr transparent
+    # head-noun mapping; dx lure salience; dr interference).
+    "v3n": {
+        "valid_correction_environment": 1,
+        "valid_correction_tool": 1,
+        "erroneous_user_correction": 1,
+        "source_conflict": 2,
+    },
 }
 # Primary probe class per suite: rm_eligible = repeated-mistake endpoint
 # (CONT-001/CONT-005); transfer_eligible = the CONT-002 R = dB/dA analogue
@@ -156,12 +169,14 @@ PROBE_CLASS = {
     "v3k": "transfer_eligible",
     "v3l": "transfer_eligible",
     "v3m": "transfer_eligible",
+    "v3n": "transfer_eligible",
 }
-# v3l validation clusters (activation decisions only): excluded from the V7
-# primary expectation and the primary endpoint, never guess_calibration.
+# v3l/v3m/v3n validation clusters (activation decisions only): excluded from
+# the V7 primary expectation and the primary endpoint, never guess_calibration.
 VALIDATION_IDS = {
     "v3l": {"cr-6005", "cu-6105", "rt-6204", "dx-6403"},
     "v3m": {"cr-7005", "cu-7105", "rt-7204", "dx-7403"},
+    "v3n": {"cr-8005", "cu-8105", "rt-8204", "dx-8403"},
 }
 # Families whose primaries carry the trap/seed_error structure checked by V8.
 TRAP_PRIMARY_FAMILIES = {"correction_reuse", "contradiction_update", "repeated_task"}
@@ -260,6 +275,7 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
             "v3k": fixtures_root / "v3k",
             "v3l": fixtures_root / "v3l",
             "v3m": fixtures_root / "v3m",
+            "v3n": fixtures_root / "v3n",
         }.items()
         if name != suite and p.exists()
     ]
@@ -285,7 +301,7 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
         and fams == expected_families
         and declared_primary == primary_families
         and manifest.get("primary_cluster_count") == primary_total
-        and (seeds_ok if suite in ("v3i", "v3j", "v3k", "v3l", "v3m") else True)
+        and (seeds_ok if suite in ("v3i", "v3j", "v3k", "v3l", "v3m", "v3n") else True)
     )
     record("V1-manifest", ok,
            f"suite={suite}; protocol/version ok; families={sorted(fams)}; primary={sorted(declared_primary)} "
@@ -738,17 +754,18 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
                f"primary-family, probe class {PROBE_CLASS[suite]}; excluded from the V7 "
                f"primary expectation and NEVER part of the primary endpoint")
 
-    # V18 (v3m only): world freshness vs ALL prior suites (K-2 fold of
+    # V18 (v3m/v3n): world freshness vs ALL prior suites (K-2 fold of
     # REVIEW-FABLE-CONT006-V2 — the first v3m cut reused the planetarium
     # (v3h) and pottery-kiln (v3l) worlds). Two mechanical signals:
     #  (a) rare-vocabulary overlap: content words appearing in <= 6
-    #      scenarios suite-wide; a v3m scenario must share < 4 with any
-    #      single prior-suite scenario (register verbs excluded);
+    #      scenarios suite-wide; a scenario of the suite under test must
+    #      share < 4 with any single other-suite scenario (register verbs
+    #      excluded);
     #  (b) opening-phrase reuse: no shared 5-gram across suites within the
     #      first 8 words of any session-opening turn (the world-
     #      establishing prefix; protocol closings come later and differ).
-    if suite == "v3m":
-        ok, detail = check_world_freshness(fixtures_root, scenarios)
+    if suite in ("v3m", "v3n"):
+        ok, detail = check_world_freshness(fixtures_root, suite, scenarios)
         record("V18-world-freshness", ok, detail)
 
     failed = [c for c in checks if not c["pass"]]
@@ -767,7 +784,8 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
     }
 
 
-PRIOR_SUITES = ("v3", "v3h", "v3i", "v3j", "v3k", "v3l")
+# Suites scanned by check_world_freshness (see all_suites there); kept for
+# documentation: the suite under test is compared against every other.
 # Register verbs of the desk-log protocol: excluded from the rare-vocab
 # signal (they survive the df<=6 filter by chance and are not world words).
 WORLD_FRESHNESS_STOP = {
@@ -803,18 +821,22 @@ def _opening_prefix_grams(scenario: dict) -> set[tuple[str, ...]]:
     return grams
 
 
-def check_world_freshness(fixtures_root: Path, v3m_scenarios: list[dict]):
+def check_world_freshness(fixtures_root: Path, suite: str,
+                          suite_scenarios: list[dict]):
     """K-2 (REVIEW-FABLE-CONT006-V2): 'fresh worlds' must be a mechanical
-    property, not prose. Reads raw fixtures of ALL suites from disk."""
+    property, not prose. Reads raw fixtures of ALL suites from disk; the
+    suite under test is compared against every OTHER suite (v3n thus also
+    checks against v3m)."""
+    all_suites = ("v3", "v3h", "v3i", "v3j", "v3k", "v3l", "v3m", "v3n")
     vocab: dict[str, set[str]] = {}
     openings: dict[str, set[tuple[str, ...]]] = {}
-    for suite in PRIOR_SUITES + ("v3m",):
-        for path in sorted((fixtures_root / suite).rglob("*.json")):
+    for s_name in all_suites:
+        for path in sorted((fixtures_root / s_name).rglob("*.json")):
             if path.name == "manifest.json":
                 continue
             s_ = json.loads(path.read_text(encoding="utf-8"))
-            vocab[f"{suite}/{s_['id']}"] = _world_freshness_vocab(s_)
-            openings[f"{suite}/{s_['id']}"] = _opening_prefix_grams(s_)
+            vocab[f"{s_name}/{s_['id']}"] = _world_freshness_vocab(s_)
+            openings[f"{s_name}/{s_['id']}"] = _opening_prefix_grams(s_)
     df: dict[str, int] = {}
     for words in vocab.values():
         for w in words:
@@ -824,10 +846,10 @@ def check_world_freshness(fixtures_root: Path, v3m_scenarios: list[dict]):
                 if df.get(w, 0) <= 6 and w not in WORLD_FRESHNESS_STOP}
     vocab_bad: list[str] = []
     open_bad: list[str] = []
-    for s in v3m_scenarios:
-        mine = f"v3m/{s['id']}"
+    for s in suite_scenarios:
+        mine = f"{suite}/{s['id']}"
         for sid in vocab:
-            if sid.startswith("v3m/"):
+            if sid.startswith(f"{suite}/"):
                 continue
             shared = rare(mine) & rare(sid)
             if len(shared) >= 4:
@@ -836,9 +858,9 @@ def check_world_freshness(fixtures_root: Path, v3m_scenarios: list[dict]):
                 open_bad.append(f"{mine} <-> {sid}: "
                                 f"{sorted(openings[mine] & openings[sid])[:1]}")
     ok = not vocab_bad and not open_bad
-    return ok, (f"no v3m scenario shares >=4 rare content words (df<=6, "
+    return ok, (f"no {suite} scenario shares >=4 rare content words (df<=6, "
                 f"register verbs excluded) or an opening 5-gram with ANY "
-                f"prior-suite scenario; vocabulary collisions: "
+                f"other-suite scenario; vocabulary collisions: "
                 f"{vocab_bad[:4] or 'none'}; opening collisions: "
                 f"{open_bad[:4] or 'none'}")
 
