@@ -3087,3 +3087,75 @@ load-bearing claims reproduced by the implementer BEFORE folding.
 - Kickoff line for the owner: "Прочитай
   labs/continuity/docs/SESSION-BRIEF-CONT006-V2-EXEC.md і виконай
   milestone згідно бріфа. Перевір entry-умови до будь-яких дій."
+
+## 2026-10-10 — CONT-006 V2 execution chain: FREEZE + W2 + gates green; CALIBRATION STOP-OUT-OF-BAND (pre-declared A.3 branch; Phases V/P/C NOT run)
+
+Entry conditions verified before any action: git clean @ af024d8; ROADMAP
+owner-accept entry present (line 224, the never-autonomous gate); Ollama
+0.34.2 with granite-code:8b (36c3c3b9683b) + qwen36-35b-a3b:mdlslab
+(8a0fd5da454e); validator --suite v3m PASS 20/20 live; suite sha
+6c82a3710158fea9….
+
+- Step 0: V1 preflight fails-closed on exactly the 6 declared post-V1-freeze
+  V2-fold files (check_counterfactual_lessons.py, combined_channel_smoke.py,
+  validate_fixtures_v3.py, provider.py, reflection_v2.py, runner.py — all
+  from commits 9cd9e9d..fa44fd6; guard healthy, not drift); substance
+  (env/warmups/model pins) verified separately. Zero-GPU battery green:
+  validator v3..v3m PASS x7; combined_channel_smoke PASS (6 arms);
+  live_telemetry_gate --self-test PASS both directions; recap_r3_v2
+  byte-identical (store content sha 48064a02…, git clean);
+  check_counterfactual_lessons PASS; power_calc_cont006_v2 exit 0
+  (deterministic rewrite); arm_equivalence_audit PASS.
+- Step 1 (FREEZE V2, commit 0f22b1c-ish → see git log): run_cont006.py
+  ported to v3m (W2 + CAL phases; store_kind "w2": R2 = W2 output
+  r2-store-v2.json, R3 = recap artifact; VAL store copies fail-closed;
+  GC trim seeds 7001..7004; V1 W/G-validate blocks removed — V1 recoverable
+  at the V1 freeze commit). Analyzers ported: v3m ids/seeds; MME 0.20
+  ABSOLUTE with band caveat-only (A.5: pilot band_rule now report-only;
+  confirmatory no longer reads any re-derivation); CARRIED now carries
+  CN-012-INVALIDATION + V2-AMENDMENTS + V2-STORES + updated N-3 (cr-7001/
+  7002) + PW-OVERRIDE history. NEW analyze_calibration.py (A.3: family
+  bands (0.15,0.85) both arms, anchor 0.525±0.15, live-gate-first,
+  invalid-share <0.30, wall note; self-test x3 BEFORE digesting — RC-4b).
+  Self-tests green x10 (calibration 3, pilot 3, confirmatory 4).
+  frozen-config-cont006-v2.json: 62 digests (V1 file list + V2 additions +
+  v3l content-digest tripwires retained). Full preflight PASS after emit.
+  Committed BEFORE any inference (hard rule).
+- Step 2 (W2): 9/9 bundle calls, 0 parse-errors, 0 truncated; 9 candidates
+  → 5 accepted (FP-3a x2, FP-3b x2, FP-1 x1), 4 rejected by the §7.1
+  validator on "blocked label token" (content-leak catch, fail-closed), 0
+  untagged classes; FP-6 cap idle (no FP-6 lessons); class-coverage
+  telemetry written; R2 store file-sha 66b2ba54…, store-content sha
+  f82efc3f…. Known cosmetic: telemetry-v2.json file is written before
+  r2_store_sha256 is appended (value present in run stdout + inside the
+  store JSON; reflection_v2.py is frozen — not touched).
+- Step 3: recap re-run byte-identical (git clean; 48064a02…).
+- Step 4: contamination gate PASS — 0 shared 4-grams of all 12 V2 lesson
+  texts (R2 x5 + R3 x7, title+lesson+recommendedBehavior) vs every
+  rendered v3m turn text, seeds 7001..7007 (scanner:
+  experiments/cont006/contamination_gate_v2.py, reuses the frozen
+  tokens/ngrams).
+- Step 5 (CAL): R0+R2 x seeds 7001/7002 over the full v3m set, memory ON
+  (206/218/201/200 episodes per cell; CN-012 did NOT recur — live gate
+  PASS 4/4 traces BEFORE the analyzer, per A.2.2 binding order).
+  Frozen verdict STOP-OUT-OF-BAND:
+  - family headroom breach: dx=1.0 and dr=1.0 for BOTH arms (ceiling —
+    no headroom to measure improvement; 4/4 probes each) and cr floor:
+    R0 0.25, R2 0.0 (R2 cr format collapse: invalid-share R2 0.211 vs
+    R0 0.105, concentrated on cr — all 5 accepted lessons are
+    correction-class FP-3a/3b/FP-1);
+  - anchor PASS: R0 pooled TR 0.533 vs 0.525 (dev 0.008);
+  - live gate PASS; invalid-share PASS; wall note 1139 s → 7970 s
+    extrapolated (vs 18000 s cap).
+  Consequence (pre-declared, A.3 + brief Step 5): chain STOPS before
+  Phase V. NO v3m edits, NO parameter moves, NO behavioral inference past
+  the gate. Phases V/P/C blocked pending owner decision; a NEW suite is
+  authored only after the owner decides. Per-cell pass pattern across arms
+  is identical outside cr (cu P,P,F,F; rt only 7203; dx/dr all-pass) —
+  content difficulty dominates; the lesson store moves almost only cr,
+  in the wrong direction there.
+- Owner brief written: docs/OWNER-BRIEF-CONT006-V2-CAL-STOP.md (template
+  format; plain-language first; decisions with defaults: 1) authorize new
+  suite v3n [default yes], 2) diagnostic cr trace read first [default
+  yes], 3) stop the arc [default no]).
+- Declared deviations: none. Model/tool substitutions: none.
