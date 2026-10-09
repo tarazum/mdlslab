@@ -8,7 +8,7 @@
   "R2": 5,
   "R3": 7
  },
- "rendered_surface": "fixtures/v3m, every turn text, seeds 7001..7007",
+ "rendered_surface": "fixtures/v3n, every turn text, seeds 8001..8007",
  "shared_4grams": 0,
  "hits": [],
  "verdict": "PASS"
