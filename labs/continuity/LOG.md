@@ -3058,3 +3058,32 @@ load-bearing claims reproduced by the implementer BEFORE folding.
 - NEXT: RC-6 step 3 — co-owner review (owner routes; brief in
   docs/RC6-NEXT-STEPS note in the step-2 report), then step 4 — OWNER
   ACCEPT (never-autonomous; zero behavioral inference before it).
+
+## 2026-10-09 — RC-6 CLOSED at step 4: OWNER ACCEPT V2; co-owner step WAIVED; execution UNBLOCKED via SESSION-BRIEF
+
+- Owner decision (chat, verbatim basis): "даю дозвіл на старт
+  експерименту. ревю фабла досить. на ко-овнер чекати не будемо" —
+  (1) EVALUATION-PREP-CONT006-V2.md ACCEPTED; (2) RC-6 step 3 (co-owner
+  review) WAIVED by owner decision — Fable's GO-with-changes + 100%-folded
+  state judged sufficient; the co-owner may still review post-hoc, any
+  findings feed the next amendment cycle; (3) the behavioral execution
+  chain is UNBLOCKED. Recorded in ROADMAP "Owner decisions — recorded
+  2026-10-09 (CONT-006 V2 pre-registration ACCEPTED…)".
+- Prepared for the fresh execution session (this session deliberately
+  adds NO new machinery after the closed review chain — all execution
+  work happens in the fresh session as freeze-time work):
+  docs/SESSION-BRIEF-CONT006-V2-EXEC.md — self-contained brief (entry
+  conditions incl. the ROADMAP accept-entry gate; Step 0 preflight +
+  zero-GPU battery; Step 1 FREEZE V2 with exact port specs: v3m
+  ids/seeds, W2 + CAL phase wiring, analyzer ports at MME 0.20
+  band-caveat-only, analyze_calibration.py per A.3 with self-test;
+  Steps 2-9: worker v2 -> recap verify -> contamination 4-gram -> 
+  calibration pilot (owner checkpoint armed; out-of-band = STOP, new
+  suite only after owner) -> Phase V -> Phase P (calibration-cell reuse,
+  single-freeze dataset; pilot-gate checkpoint = owner decision) ->
+  Phase C -> run record with required header notes -> owner brief).
+  Hard rules: live gate before every analyzer; no v3m edits/parameter
+  moves/MME moves; anchor halt; digest guards; commit per phase.
+- Kickoff line for the owner: "Прочитай
+  labs/continuity/docs/SESSION-BRIEF-CONT006-V2-EXEC.md і виконай
+  milestone згідно бріфа. Перевір entry-умови до будь-яких дій."

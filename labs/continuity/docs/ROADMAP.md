@@ -221,6 +221,32 @@ the CONT-002 machinery, own budget, non-estimable clause).
 
 Basis: the pilot record (results/CONT-006-PILOT/cont006-p-20261008-232209/pilot-gate-cont006.json — frozen analyzer verdict NO-GO: criterion 1(i) BAD-lesson parroting verbatim in an RBAD reply; criterion 2 GOLD-TRIV 0.071 < 0.10; criteria 3/4/5/6 PASS; band rule fired, MME re-derived upward to 0.333) and the plain-language owner brief. Owner verdict (chat): **"(b) Дозволити фінальний забіг попри NO-GO"** — an explicit owner-gate override, pre-declared as a legal branch by prereg §9 ("owner decision recorded either way"). The primary R2−R0 endpoint is not compromised by the pilot findings (the counterfactual arms never enter the primary); the harm-containment finding rides the final run record as a headline secondary (PW-OVERRIDE carried note). Re-authoring of v3l remains banned; the frozen analysis runs unchanged with the band-derived MME 0.333.
 
+## Owner decisions — recorded 2026-10-09 (CONT-006 V2 pre-registration ACCEPTED; rerun UNBLOCKED; co-owner review step WAIVED)
+
+Basis: the RC-6 review chain on the V2 (rethink) package after the CN-012
+invalidation — implementer self-review `docs/SELF-REVIEW-CONT006-V2.md`
+(9 findings SR-1..SR-9, all folded same session, commit 7450b08), Fable
+independent review `docs/REVIEW-FABLE-CONT006-V2.md` (GO-with-changes;
+5 critical K-1..K-5 + Б-1..Б-7, ALL folded same session with 100% curation
+confirmation, commit fa44fd6), and the plain-language chat briefing
+(reflection-v2 status: the main question is still OPEN and untested; the
+invalid run was an accidental lessons-WITHOUT-memory ablation). Owner
+verdict (chat): **"даю дозвіл на старт експерименту. ревю фабла досить. на
+ко-овнера чекати не будемо"** — explicitly: (1) the V2 pre-registration
+(docs/EVALUATION-PREP-CONT006-V2.md, amendments A.1-A.7) is ACCEPTED;
+(2) the RC-6 step-3 co-owner review is WAIVED by owner decision (Fable's
+review judged sufficient; the co-owner remains free to review post-hoc and
+any findings feed the next amendment cycle); (3) the behavioral execution
+chain (FREEZE V2 -> worker v2 pass -> R3 recap -> contamination gate ->
+calibration pilot -> Phase V -> store freeze -> Phase P pilot ->
+pilot-gate checkpoint -> Phase C -> frozen analyzer -> verdict) is
+UNBLOCKED, to run in a fresh session per
+`docs/SESSION-BRIEF-CONT006-V2-EXEC.md`. The never-autonomous clause is
+satisfied by this explicit acceptance; all further owner touchpoints are
+the pre-declared ones: calibration out-of-band -> STOP + owner; the
+pilot-gate checkpoint outcome; any halt-and-investigate firing
+(anchor-divergence, live-gate FAIL, freeze-digest guard).
+
 ## Never autonomous (unchanged)
 
 - CONT-002 behavioral experiments — anything that measures transfer quality. The single exception is the M2b mechanics smoke (owner-ordered 2026-10-01): export/import plumbing proof only, explicitly no behavioral claims.
