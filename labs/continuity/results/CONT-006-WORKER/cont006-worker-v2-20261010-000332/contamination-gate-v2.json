@@ -1,0 +1,15 @@
+{
+ "kind": "cont006-v2-contamination-gate",
+ "prereg": "EVALUATION-PREP-CONT006-V2.md A.1/A.6 (contamination gate)",
+ "r2_store": "C:\\projects\\mdlslab\\labs\\continuity\\results\\CONT-006-WORKER\\cont006-worker-v2-20261010-000332\\r2-store-v2.json",
+ "r2_store_sha256": "66b2ba543c5e594277d81bc9b3d31878345e46b78011849c6d24e0a012498940",
+ "r3_store_sha256": "00fc09ca4ea69cdbe0c518a311fc69a4f05fcbb39147e5b20ea0ab97e09a0daf",
+ "lessons_scanned": {
+  "R2": 5,
+  "R3": 7
+ },
+ "rendered_surface": "fixtures/v3m, every turn text, seeds 7001..7007",
+ "shared_4grams": 0,
+ "hits": [],
+ "verdict": "PASS"
+}
