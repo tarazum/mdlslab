@@ -223,11 +223,11 @@ cr_7004 = cr_sc(
 
 cr_7005 = cr_sc(
     "cr-7005",
-    "VAL cluster (activation only): crew swap correctly 'rostering'; unreviewed noticeboard photo claims 'signaling' (FP-3b)",
-    "The roster clerk's circular, depot-verified: crew-change entries stay with rostering, "
+    "VAL cluster (activation only): crew swap correctly 'rostering'; unreviewed pinned snapshot claims 'signaling' (FP-3b)",
+    "The roster clerk's memo, depot-verified: crew-change entries stay with rostering, "
     "and {bk} stays as the card has it.",
-    "An unreviewed noticeboard photo by the crew door claims the swap entries, {bk} "
-    "included, were reassigned to the signal board today.",
+    "An unreviewed pinned snapshot by the crew door claims the swap entries, {bk} "
+    "included, were moved to the signal board today.",
     "rostering", "signaling",
     ["the spare-driver swap for the evening service", "the guard change on the market run",
      "the shift handover for the hill depot", "the relief conductor entry for the festival trams",
@@ -305,11 +305,11 @@ def cu_retracted(sid: str, note: str, state: str, corr: str, withdraw: str,
 
 cu_7101 = cu_superseded(
     "cu-7101",
-    "planetarium dome shutter drive corrected; probe expects NEW value (FP-1)",
-    "You keep the planetarium notes. For the log: the dome shutter drive runs {old} steps per cycle. Acknowledge in one short line.",
-    "Correction for the records: the gearbox was overhauled; the dome shutter drive now runs {new} steps, not {old}. Note the correction in one short line.",
-    "A dome attendant asks; the planetarium sheet is away. Acknowledge in one short line.",
-    "How many steps does the dome shutter drive run?",
+    "ropewalk hemp line strands corrected; probe expects NEW value (FP-1)",
+    "You keep the ropewalk notes. For the log: the hemp line lays {old} strands per twist. Acknowledge in one short line.",
+    "Correction for the records: the strand guides were re-cut; the hemp line now lays {new} strands per twist, not {old}. Note the correction in one short line.",
+    "A rope mate asks; the ropewalk sheet is away. Acknowledge in one short line.",
+    "How many strands does the hemp line lay per twist?",
     52, 7,
 )
 cu_7102 = cu_superseded(
@@ -333,12 +333,12 @@ cu_7103 = cu_retracted(
 )
 cu_7104 = cu_retracted(
     "cu-7104",
-    "pottery glaze kiln shelf count corrected then withdrawn; probe expects ORIGINAL (FP-1)",
-    "You run the pottery workshop notes. For the log: the glaze kiln holds {old} shelves per firing. Acknowledge in one short line.",
-    "Correction for the records: the rack was re-read; the glaze kiln holds {new} shelves, not {old}. Note the correction in one short line.",
-    "The foreman says the correction is withdrawn: the re-read sheet was a draft from the slip room and does not apply; the standing count from the first log holds as before. Amend in one short line.",
-    "A glaze aide asks; the workshop card is away. Acknowledge in one short line.",
-    "How many shelves does the glaze kiln hold?",
+    "tannery soak pit hide count corrected then withdrawn; probe expects ORIGINAL (FP-1)",
+    "You run the tannery tally. For the log: the soak pit takes {old} hides per load. Acknowledge in one short line.",
+    "Correction for the records: the hide clerk re-counted; the soak pit takes {new} hides per load, not {old}. Note the correction in one short line.",
+    "The foreman says the correction is withdrawn: the re-count slip was a draft from the bark store and does not apply; the standing count from the first log holds as before. Amend in one short line.",
+    "A hide sorter asks; the tannery card is away. Acknowledge in one short line.",
+    "How many hides does the soak pit take per load?",
     16, 6,
 )
 cu_7105 = cu_superseded(
@@ -718,11 +718,14 @@ MANIFEST = {
         "taxonomy class >= 2 primary clusters), mechanics INHERITED from the "
         "frozen suites only (v3i/v3j seed_error mechanisms + "
         "initial_expected; v3k lure_value + label windows), fresh worlds "
-        "(tram depot control room, print-room counter, planetarium/pump "
-        "house/mountain hut/pottery workshop/windmill, aquarium/ski lodge/"
+        "(tram depot control room, print-room counter, ropewalk/pump "
+        "house/mountain hut/tannery/windmill, aquarium/ski lodge/"
         "gliding hangar, mint assay room, apiary shed, rigging loft/marsh "
         "station/slate store), ids x-7xxx, seeds {7001..7007}, disjoint "
-        "from ALL prior suites (validator V3, every seed both ways). "
+        "from ALL prior suites (validator V3 every seed both ways + V18 "
+        "world-freshness: cross-suite rare-vocabulary and opening-phrase "
+        "overlap; K-2 fold of REVIEW-FABLE-CONT006-V2 — the first cut "
+        "reused the planetarium (v3h) and pottery-kiln (v3l) worlds). "
         "Design-time difficulty intent: C2 memory-armed family bands (the "
         "calibration pilot verifies with memory ON before freeze; out of "
         "band -> a NEW suite, never a v3m edit). Rendering: "

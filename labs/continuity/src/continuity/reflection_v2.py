@@ -80,7 +80,11 @@ FAMILY_CLASS = {"cu": "FP-1", "rt": "FP-2", "dx": "FP-4", "dr": "FP-5", "gc": "F
 CR_SUBTYPE_CLASS = {
     "valid_correction_environment": "FP-3a", "valid_correction_tool": "FP-3a",
     "erroneous_user_correction": "FP-3b", "source_conflict": "FP-3b",
-    "retraction": "FP-1", "scripted_agent_answer": "FP-2",
+    "retraction": "FP-1",
+    # Б-6 (REVIEW-FABLE-CONT006-V2): inert for THIS corpus — rt scenarios
+    # carry sub_type "scripted_own_answer" and classify via FAMILY_CLASS;
+    # kept for taxonomy completeness (matches the CONT-006-DESIGN table).
+    "scripted_agent_answer": "FP-2",
 }
 _FAMILY_DIR = {
     "cr": "correction_reuse", "cu": "contradiction_update",
@@ -474,8 +478,20 @@ def run_worker_v2(
                 telemetry["candidate_lessons"] += 1
                 cls = str(les.get("class", "")).strip()
                 if cls not in VALID_CLASSES:
-                    cls = ""
+                    # K-3 fold (REVIEW-FABLE-CONT006-V2): a candidate without
+                    # a valid class tag never enters the store — the FP-6 cap
+                    # is mechanical over the worker's declared classification,
+                    # so an untaggable candidate must fail closed here, not
+                    # silently bypass the cap.
                     telemetry["untagged_or_invalid_class"] += 1
+                    records.append({
+                        "disposition": "rejected",
+                        "reasons": ["schema: missing/invalid class field "
+                                    "(the prompt requires FP-1..FP-6)"],
+                        "lesson": {**les, "class": cls or None,
+                                   "bundle": bundle["bundle"]},
+                    })
+                    continue
                 lesson = {
                     "lessonId": les.get("lessonId") or f"LL-W-{len(records) + 1:03d}",
                     "status": "candidate",

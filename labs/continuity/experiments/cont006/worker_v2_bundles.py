@@ -34,17 +34,25 @@ from continuity.reflection_v2 import (  # noqa: E402
 
 CORPUS = LAB_ROOT / "experiments" / "cont006" / "experience-corpus-manifest.json"
 
-FAMILY_GROUPS = [
-    # (group name, scenario filter): one bundle per group
-    ("cu-FP1", lambda sid: sid[:2] == "cu"),
-    ("rt-FP2", lambda sid: sid[:2] == "rt"),
-    ("cr-FP3a-vce", lambda sid: sid[:2] == "cr" and sid.endswith(("7001", "3001", "4001", "6001")) or (sid[:2] == "cr" and sid[3] in "37" and sid.endswith("01"))),
-    ("cr-FP3a-vct", lambda sid: sid[:2] == "cr" and sid.endswith(("02",))),
-    ("cr-FP3b-euc", lambda sid: sid[:2] == "cr" and sid.endswith(("03",))),
-    ("cr-FP3b-sc", lambda sid: sid[:2] == "cr" and sid.endswith(("04", "05", "06", "07", "08"))),
-    ("dx-FP4", lambda sid: sid[:2] == "dx"),
-    ("dr-FP5", lambda sid: sid[:2] == "dr"),
-]
+# K-1 fold (REVIEW-FABLE-CONT006-V2): groups derive from the fixtures'
+# ACTUAL sub_type (single source), never from id-suffix patterns — the
+# suffix lambdas misclassified cr-x003 (vce) as euc and cr-x004/x005 (euc)
+# as sc, and cr-FP3a-vce degenerated into 12 repeats of one scenario.
+SUBTYPE_GROUP = {
+    "valid_correction_environment": "cr-FP3a-vce",
+    "valid_correction_tool": "cr-FP3a-vct",
+    "erroneous_user_correction": "cr-FP3b-euc",
+    "source_conflict": "cr-FP3b-sc",
+    "retraction": "cr-FP1-retraction",
+}
+FAMILY_GROUP = {"cu": "cu-FP1", "rt": "rt-FP2", "dx": "dx-FP4", "dr": "dr-FP5"}
+
+
+def group_for(sid: str, sub_type: str) -> str | None:
+    fam = sid[:2]
+    if fam == "cr":
+        return SUBTYPE_GROUP.get(sub_type)
+    return FAMILY_GROUP.get(fam)
 
 MAX_RUNS_PER_BUNDLE = 12
 
@@ -68,31 +76,36 @@ def scenario_runs(trace: dict) -> list[dict]:
                 order.append(sid)
             events.setdefault(sid, []).append(e)
     out = []
-    classes = _scenario_classes()
+    classes = _scenario_meta()
     for sid in order:
         evs = events[sid]
         failed = any(e["type"] == "probe.result" and not e["payload"].get("passed")
                      for e in evs)
-        out.append({"sid": sid, "cls": classes.get(sid, "?"), "events": evs,
-                    "failed": failed})
+        out.append({"sid": sid, "cls": classes.get(sid, ("?", "?"))[0],
+                    "sub_type": classes.get(sid, ("?", "?"))[1],
+                    "events": evs, "failed": failed})
     return out
 
 
-_CLASSES_CACHE: dict[str, str] | None = None
+_CLASSES_CACHE: dict[str, tuple[str, str]] | None = None
 
 
-def _scenario_classes() -> dict[str, str]:
+def _scenario_meta() -> dict[str, tuple[str, str]]:
+    """sid -> (taxonomy class, sub_type), read from the fixtures themselves
+    (single source; K-1: grouping keys off the REAL sub_type)."""
     global _CLASSES_CACHE
     if _CLASSES_CACHE is None:
-        out: dict[str, str] = {}
+        out: dict[str, tuple[str, str]] = {}
         for suite in ("v3i", "v3j"):
             for path in sorted((LAB_ROOT / "fixtures" / suite).rglob("*.json")):
                 if path.name == "manifest.json":
                     continue
                 s_ = json.loads(path.read_text(encoding="utf-8"))
                 fam = s_["id"][:2]
-                out[s_["id"]] = (CR_SUBTYPE_CLASS.get(s_.get("sub_type", ""), "?")
-                                 if fam == "cr" else FAMILY_CLASS.get(fam, "?"))
+                out[s_["id"]] = (
+                    CR_SUBTYPE_CLASS.get(s_.get("sub_type", ""), "?")
+                    if fam == "cr" else FAMILY_CLASS.get(fam, "?"),
+                    s_.get("sub_type", "?"))
         _CLASSES_CACHE = out
     return _CLASSES_CACHE
 
@@ -127,21 +140,31 @@ def _scenario_lines(prefix: str, sid: str, cls: str, evs: list[dict]) -> list[st
 
 
 def build_bundles() -> list[dict]:
-    """One bundle per family group; scenario-runs ranked fails-first within
-    the per-bundle cap; deterministic order (run, arm, seed, sid)."""
+    """One bundle per family/sub-type group (fixture-derived); scenario-
+    diverse fails-first within the per-bundle cap (Б-5 interleave: rank
+    within each scenario first, so rank-0 of EVERY scenario enters before
+    rank-1 of any); deterministic order (run, arm, seed, sid)."""
     manifest = json.loads(CORPUS.read_text(encoding="utf-8"))
-    runs_by_group: dict[str, list[dict]] = {name: [] for name, _ in FAMILY_GROUPS}
+    runs_by_group: dict[str, list[dict]] = {}
     for trace in manifest["traces"]:
         prefix = f"{trace['run']}|{trace['arm']}|seed-{trace['seed']}"
         for run in scenario_runs(trace):
-            for name, keep in FAMILY_GROUPS:
-                if keep(run["sid"]):
-                    runs_by_group[name].append({**run, "prefix": prefix,
-                                                "trace_key": prefix})
+            name = group_for(run["sid"], run["sub_type"])
+            if name is None:
+                continue
+            runs_by_group.setdefault(name, []).append(
+                {**run, "prefix": prefix, "trace_key": prefix})
     bundles = []
     for name, runs in runs_by_group.items():
         runs.sort(key=lambda r: (not r["failed"], r["prefix"], r["sid"]))
-        kept = runs[:MAX_RUNS_PER_BUNDLE]
+        by_sid: dict[str, list[dict]] = {}
+        for r in runs:
+            by_sid.setdefault(r["sid"], []).append(r)
+        ranked = [{**r, "_rank": i}
+                  for rs in by_sid.values() for i, r in enumerate(rs)]
+        ranked.sort(key=lambda r: (not r["failed"], r["_rank"],
+                                   r["prefix"], r["sid"]))
+        kept = ranked[:MAX_RUNS_PER_BUNDLE]
         digest_lines: list[str] = []
         for r in kept:
             digest_lines.extend(_scenario_lines(r["prefix"], r["sid"], r["cls"], r["events"]))
@@ -149,9 +172,11 @@ def build_bundles() -> list[dict]:
             "bundle": name,
             "n_runs": len(kept),
             "n_traces": len({r["trace_key"] for r in kept}),
+            "n_scenarios": len({r["sid"] for r in kept}),
             "digest": "\n".join(digest_lines),
             "skipped_runs": len(runs) - len(kept),
         })
+    bundles.sort(key=lambda b: b["bundle"])
     return bundles
 
 

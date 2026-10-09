@@ -738,6 +738,19 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
                f"primary-family, probe class {PROBE_CLASS[suite]}; excluded from the V7 "
                f"primary expectation and NEVER part of the primary endpoint")
 
+    # V18 (v3m only): world freshness vs ALL prior suites (K-2 fold of
+    # REVIEW-FABLE-CONT006-V2 — the first v3m cut reused the planetarium
+    # (v3h) and pottery-kiln (v3l) worlds). Two mechanical signals:
+    #  (a) rare-vocabulary overlap: content words appearing in <= 6
+    #      scenarios suite-wide; a v3m scenario must share < 4 with any
+    #      single prior-suite scenario (register verbs excluded);
+    #  (b) opening-phrase reuse: no shared 5-gram across suites within the
+    #      first 8 words of any session-opening turn (the world-
+    #      establishing prefix; protocol closings come later and differ).
+    if suite == "v3m":
+        ok, detail = check_world_freshness(fixtures_root, scenarios)
+        record("V18-world-freshness", ok, detail)
+
     failed = [c for c in checks if not c["pass"]]
     return {
         "kind": "suite-v3-fixture-validation",
@@ -752,6 +765,82 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
         "verdict": "PASS" if not failed else "FAIL",
         "failed_checks": [c["check"] for c in failed],
     }
+
+
+PRIOR_SUITES = ("v3", "v3h", "v3i", "v3j", "v3k", "v3l")
+# Register verbs of the desk-log protocol: excluded from the rare-vocab
+# signal (they survive the df<=6 filter by chance and are not world words).
+WORLD_FRESHNESS_STOP = {
+    "just", "keeps", "kept", "through", "walk", "walks", "stay", "stays",
+    "staying", "read", "reads", "saying", "says", "said", "were", "was",
+    "been", "being", "include", "includes", "included", "including",
+    "remain", "remains", "remained", "take", "takes", "took", "hold",
+    "holds", "held", "want", "wants", "wanted", "made", "make", "makes",
+    "need", "needs", "needed", "come", "comes", "came", "give", "gives",
+    "given", "gave", "know", "knows", "knew", "tell", "tells", "told",
+}
+
+
+def _world_freshness_vocab(scenario: dict) -> set[str]:
+    words: set[str] = set()
+    for sess in scenario.get("sessions", []):
+        for t in sess.get("turns", []):
+            words |= {w for w in re.findall(r"[a-z]{4,}", t.get("text", "").lower())}
+    words |= {w for w in re.findall(r"[a-z]{4,}", json.dumps(scenario.get("options", []), ensure_ascii=False).lower())}
+    return words
+
+
+def _opening_prefix_grams(scenario: dict) -> set[tuple[str, ...]]:
+    """World-establishing prefix = FIRST session's opening turn only (later
+    sessions legitimately open with protocol formulas like 'Correction for
+    the records:', shared by design across all suites)."""
+    grams: set[tuple[str, ...]] = set()
+    turns = scenario.get("sessions", [{}])[0].get("turns", [])
+    if turns:
+        head = re.sub(r"[^a-z0-9 ]", " ", turns[0].get("text", "").lower()).split()[:8]
+        for i in range(len(head) - 4):
+            grams.add(tuple(head[i:i + 5]))
+    return grams
+
+
+def check_world_freshness(fixtures_root: Path, v3m_scenarios: list[dict]):
+    """K-2 (REVIEW-FABLE-CONT006-V2): 'fresh worlds' must be a mechanical
+    property, not prose. Reads raw fixtures of ALL suites from disk."""
+    vocab: dict[str, set[str]] = {}
+    openings: dict[str, set[tuple[str, ...]]] = {}
+    for suite in PRIOR_SUITES + ("v3m",):
+        for path in sorted((fixtures_root / suite).rglob("*.json")):
+            if path.name == "manifest.json":
+                continue
+            s_ = json.loads(path.read_text(encoding="utf-8"))
+            vocab[f"{suite}/{s_['id']}"] = _world_freshness_vocab(s_)
+            openings[f"{suite}/{s_['id']}"] = _opening_prefix_grams(s_)
+    df: dict[str, int] = {}
+    for words in vocab.values():
+        for w in words:
+            df[w] = df.get(w, 0) + 1
+    def rare(sid: str) -> set[str]:
+        return {w for w in vocab[sid]
+                if df.get(w, 0) <= 6 and w not in WORLD_FRESHNESS_STOP}
+    vocab_bad: list[str] = []
+    open_bad: list[str] = []
+    for s in v3m_scenarios:
+        mine = f"v3m/{s['id']}"
+        for sid in vocab:
+            if sid.startswith("v3m/"):
+                continue
+            shared = rare(mine) & rare(sid)
+            if len(shared) >= 4:
+                vocab_bad.append(f"{mine} <-> {sid}: {sorted(shared)[:6]}")
+            if openings[mine] & openings[sid]:
+                open_bad.append(f"{mine} <-> {sid}: "
+                                f"{sorted(openings[mine] & openings[sid])[:1]}")
+    ok = not vocab_bad and not open_bad
+    return ok, (f"no v3m scenario shares >=4 rare content words (df<=6, "
+                f"register verbs excluded) or an opening 5-gram with ANY "
+                f"prior-suite scenario; vocabulary collisions: "
+                f"{vocab_bad[:4] or 'none'}; opening collisions: "
+                f"{open_bad[:4] or 'none'}")
 
 
 def main() -> int:

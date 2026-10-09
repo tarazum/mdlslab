@@ -6,7 +6,7 @@
   "mechanism": "superseded_value"
  },
  "labels": {
-  "note": "planetarium dome shutter drive corrected; probe expects NEW value (FP-1)"
+  "note": "ropewalk hemp line strands corrected; probe expects NEW value (FP-1)"
  },
  "sessions": [
   {
@@ -15,7 +15,7 @@
     {
      "actor": "environment",
      "source_type": "environment",
-     "text": "You keep the planetarium notes. For the log: the dome shutter drive runs {old} steps per cycle. Acknowledge in one short line."
+     "text": "You keep the ropewalk notes. For the log: the hemp line lays {old} strands per twist. Acknowledge in one short line."
     }
    ]
   },
@@ -25,7 +25,7 @@
     {
      "actor": "environment",
      "source_type": "environment",
-     "text": "Correction for the records: the gearbox was overhauled; the dome shutter drive now runs {new} steps, not {old}. Note the correction in one short line."
+     "text": "Correction for the records: the strand guides were re-cut; the hemp line now lays {new} strands per twist, not {old}. Note the correction in one short line."
     }
    ]
   },
@@ -34,11 +34,11 @@
    "turns": [
     {
      "actor": "environment",
-     "text": "A dome attendant asks; the planetarium sheet is away. Acknowledge in one short line."
+     "text": "A rope mate asks; the ropewalk sheet is away. Acknowledge in one short line."
     },
     {
      "actor": "environment",
-     "text": "How many steps does the dome shutter drive run? Options: {options} - reply with the number only.",
+     "text": "How many strands does the hemp line lay per twist? Options: {options} - reply with the number only.",
      "probe": {
       "kind": "exact_match",
       "class": "transfer_eligible"

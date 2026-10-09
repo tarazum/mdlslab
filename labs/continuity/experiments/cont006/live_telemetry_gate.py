@@ -38,7 +38,8 @@ LAB_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(LAB_ROOT / "src"))
 
 LESSON_ARMS = {"R2", "R3", "RBAD", "RGOLD"}
-NUM_CTX = 4096
+from continuity.provider import DEFAULT_NUM_CTX  # noqa: E402  (Б-3: structural pin)
+NUM_CTX = DEFAULT_NUM_CTX
 HEADROOM = 512
 
 
@@ -49,8 +50,9 @@ def check_trace(trace_path: Path, arm: str) -> tuple[bool, list[str]]:
     appends = [e for e in events if e["type"] == "memory.append"]
     inj = [e for e in events if e["type"] == "memory.injected"]
     inj_ok = [e for e in inj if e["payload"].get("episode_count")]
-    les = [e for e in events if e["type"] == "lessons.injected"]
-    les_ok = [e for e in les if e["payload"].get("injected")]
+    les = [e for e in events if e["type"].startswith("lessons.")]
+    les_ok = [e for e in les if e["type"] == "lessons.injected"
+              and e["payload"].get("injected")]
     responses = [e for e in events if e["type"] == "agent.response"]
 
     # T1
@@ -60,23 +62,37 @@ def check_trace(trace_path: Path, arm: str) -> tuple[bool, list[str]]:
     if not inj_ok:
         problems.append("T2: no non-empty memory.injected at any session")
     else:
-        # refs resolve to earlier appends of the same scenario
-        appended_refs = {(a["scenario"], a["payload"]["turn_ref"], a["payload"]["role"])
-                         for a in appends}
+        if not any((e.get("session") or 0) >= 2 for e in inj_ok):
+            problems.append("T2: no non-empty memory.injected at session >= 2")
+        # refs resolve to appends committed EARLIER (seq ordering, not just
+        # membership — K-5 fold of REVIEW-FABLE-CONT006-V2)
+        appended_refs: dict[tuple, int] = {}
+        for a in appends:
+            key = (a["scenario"], a["payload"]["turn_ref"], a["payload"]["role"])
+            appended_refs[key] = min(appended_refs.get(key, a["seq"]), a["seq"])
         for e in inj_ok:
             for ref in e["payload"].get("episode_refs", []):
                 turn_ref, role = ref.rsplit("|", 1)
-                if (e["scenario"], turn_ref, role) not in appended_refs:
+                key = (e["scenario"], turn_ref, role)
+                if key not in appended_refs:
                     problems.append(f"T2: injected ref {ref!r} does not resolve "
-                                    f"to an earlier append")
-    # T3
+                                    f"to an append")
+                elif appended_refs[key] >= e["seq"]:
+                    problems.append(f"T2: injected ref {ref!r} resolves to an "
+                                    f"append committed at seq "
+                                    f"{appended_refs[key]} >= injection seq "
+                                    f"{e['seq']} (not earlier)")
+    # T3 (forbidden branch covers ALL lessons.* event types — K-5)
     if arm in LESSON_ARMS and not les_ok:
         problems.append("T3: lesson arm with zero rendered lesson blocks")
     if arm not in LESSON_ARMS and les:
         problems.append("T3: non-lesson arm emitted lessons.* events")
-    # T4
+    # T4 (missing usage fails, not passes — Б-2)
     for r in responses:
-        pt = r["payload"].get("usage", {}).get("prompt_tokens", 0)
+        pt = r["payload"].get("usage", {}).get("prompt_tokens")
+        if pt is None:
+            problems.append("T4: agent.response without usage.prompt_tokens")
+            break
         if pt >= NUM_CTX - HEADROOM:
             problems.append(f"T4: prompt_tokens {pt} within {HEADROOM} of "
                             f"num_ctx {NUM_CTX} (silent clip risk)")

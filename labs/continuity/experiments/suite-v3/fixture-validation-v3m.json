@@ -1,9 +1,9 @@
 {
   "kind": "suite-v3-fixture-validation",
-  "created_utc": "2026-10-09T11:08:28Z",
+  "created_utc": "2026-10-09T16:16:03Z",
   "spec": "docs/SUITE-V3-DESIGN.md sections 3-9 (design check ids E9-E14 implemented as V4-V9 here); v3i adds V14-V16 (variant table)",
   "suite": "fixtures/v3m",
-  "suite_sha256": "cb5975d66233133e0ab1f1d56421a335b36409dcf2175159febf921cf78970b6",
+  "suite_sha256": "6c82a3710158fea9b3fd126c2eeacd0689a2e7f60820a30965a78eae83ba468b",
   "variant_seeds": [
     7001,
     7002,
@@ -110,6 +110,11 @@
       "check": "V17-validation-split",
       "pass": true,
       "detail": "validation clusters ['cr-7005', 'cu-7105', 'dx-7403', 'rt-7204'] declared in manifest, present, primary-family, probe class transfer_eligible; excluded from the V7 primary expectation and NEVER part of the primary endpoint"
+    },
+    {
+      "check": "V18-world-freshness",
+      "pass": true,
+      "detail": "no v3m scenario shares >=4 rare content words (df<=6, register verbs excluded) or an opening 5-gram with ANY prior-suite scenario; vocabulary collisions: none; opening collisions: none"
     }
   ],
   "verdict": "PASS",

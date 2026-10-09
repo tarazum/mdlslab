@@ -6,7 +6,7 @@
   "mechanism": "retracted_correction"
  },
  "labels": {
-  "note": "pottery glaze kiln shelf count corrected then withdrawn; probe expects ORIGINAL (FP-1)"
+  "note": "tannery soak pit hide count corrected then withdrawn; probe expects ORIGINAL (FP-1)"
  },
  "sessions": [
   {
@@ -15,7 +15,7 @@
     {
      "actor": "environment",
      "source_type": "environment",
-     "text": "You run the pottery workshop notes. For the log: the glaze kiln holds {old} shelves per firing. Acknowledge in one short line."
+     "text": "You run the tannery tally. For the log: the soak pit takes {old} hides per load. Acknowledge in one short line."
     }
    ]
   },
@@ -25,7 +25,7 @@
     {
      "actor": "environment",
      "source_type": "environment",
-     "text": "Correction for the records: the rack was re-read; the glaze kiln holds {new} shelves, not {old}. Note the correction in one short line."
+     "text": "Correction for the records: the hide clerk re-counted; the soak pit takes {new} hides per load, not {old}. Note the correction in one short line."
     }
    ]
   },
@@ -35,7 +35,7 @@
     {
      "actor": "environment",
      "source_type": "environment",
-     "text": "The foreman says the correction is withdrawn: the re-read sheet was a draft from the slip room and does not apply; the standing count from the first log holds as before. Amend in one short line."
+     "text": "The foreman says the correction is withdrawn: the re-count slip was a draft from the bark store and does not apply; the standing count from the first log holds as before. Amend in one short line."
     }
    ]
   },
@@ -44,11 +44,11 @@
    "turns": [
     {
      "actor": "environment",
-     "text": "A glaze aide asks; the workshop card is away. Acknowledge in one short line."
+     "text": "A hide sorter asks; the tannery card is away. Acknowledge in one short line."
     },
     {
      "actor": "environment",
-     "text": "How many shelves does the glaze kiln hold? Options: {options} - reply with the number only.",
+     "text": "How many hides does the soak pit take per load? Options: {options} - reply with the number only.",
      "probe": {
       "kind": "exact_match",
       "class": "transfer_eligible"

@@ -15,12 +15,17 @@ worker pass, calibration pilot, or any transfer run.
 ### A.1 — Suite: fixtures/v3m (replaces v3l for every behavioral phase)
 
 `fixtures/v3m` (builder `build_v3m.py`, deterministic; validator
-`--suite v3m` PASS 19/19 + regressions v3/v3h/v3i/v3j/v3k/v3l PASS ×6;
-fixture-validation-v3m.json committed; suite sha256 cb5975d66233133e…).
+`--suite v3m` PASS 20/20 + regressions v3/v3h/v3i/v3j/v3k/v3l PASS ×6;
+fixture-validation-v3m.json committed; suite sha256 6c82a3710158fea9…).
 Composition identical to V1's v3l description (15 TR + 4 VAL cr-7005/
 cu-7105/rt-7204/dx-7403 + GC×3; ids x-7xxx; seeds {7001..7007} pre-
 declared; texts disjoint from ALL prior suites incl. v3l — V3 every seed
-both ways). v3l and the entire invalid-chain record stay committed and
+both ways + V18 world-freshness, added at the RC-6 Fable fold: no v3m
+scenario shares ≥4 rare content words or an opening 5-gram with ANY
+prior-suite scenario; the first cut reused the planetarium (v3h) and
+pottery-kiln (v3l) worlds — cu-7101/cu-7104 re-worlded to ropewalk/
+tannery, cr-7005 decorations re-worded; the check is verified BOTH ways:
+FAIL on the old fixtures naming all three collisions, PASS on the new). v3l and the entire invalid-chain record stay committed and
 untouched; the invalid run is labeled (run-record header) as an
 unregistered lessons-only ablation.
 
@@ -65,22 +70,28 @@ confirmatory adds seeds — the CONT-002 pattern).
 
 ### A.4 — Worker v2 (multi-trace bundles; FIX-A/B become design)
 
-Phase W re-runs over the SAME frozen corpus with bundles grouped by
-family/sub-type across traces (8 bundles × 12 scenario-runs, fails-first,
+Phase W re-runs over the SAME frozen corpus with bundles grouped by the
+fixtures' ACTUAL family/sub-type (9 bundles × 12 scenario-runs —
+cr-FP3a-vce/cr-FP3a-vct/cr-FP3b-euc/cr-FP3b-sc/cr-FP1-retraction/cu-FP1/
+rt-FP2/dx-FP4/dr-FP5; fails-first with scenario-diversity interleave,
 deterministic order; artifact experiments/cont006/worker_v2_bundles.json;
 prompt = reflection_v2 WORKER_V2_PROMPT_TEMPLATE with the 5-part ref
 format pinned by a worked example and an explicit preference for
 substance over formatting lessons). Cross-trace support is cited by the
 worker natively; §7.1(b) is satisfiable as designed (no post-hoc merge).
 §7.1 rules otherwise unchanged; **FP-6 cap**: at most ONE format-
-discipline lesson per store (uniform for R2 and R3; mechanically
-`continuity.reflection_v2.apply_class_cap`, worker lessons carry a
-taxonomy `class` field, class-coverage telemetry is written with the
-store). R3 gold lessons reused verbatim from the blind authoring
+discipline lesson per store, keep-first in acceptance order (uniform for
+R2 and R3; mechanically `continuity.reflection_v2.apply_class_cap`;
+worker lessons carry a taxonomy `class` field REQUIRED by the prompt — a
+candidate with a missing/invalid class is REJECTED as a schema violation,
+fail-closed, so the cap cannot be bypassed by an untagged lesson; the cap
+is mechanical over the worker's model-declared classification and is
+declared as such; class-coverage telemetry is written with the store).
+R3 gold lessons reused verbatim from the blind authoring
 (protocol intact), capped 8 → 7 (declared classes in
 experiments/cont006/gold-lesson-classes.json; recap artifact
-experiments/cont006/r3-store-v2.json — LL-G-008 drops, keep-first by
-lessonId among FP-6).
+experiments/cont006/r3-store-v2.json — LL-G-008 drops; the R3 candidate
+list is in lessonId order, so list order == lessonId order there).
 
 ### A.5 — MME and the guessing band (V1 §5 amended)
 

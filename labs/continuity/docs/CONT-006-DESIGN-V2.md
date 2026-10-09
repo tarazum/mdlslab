@@ -40,12 +40,15 @@ correctness; an active poisoned lesson is quoted verbatim and followed
    — T1 appends, T2 refs-resolve-to-earlier-appends, T3 lesson renders,
    T4 context clip, T5 summary cross-check; verified FAIL-CLOSED on the
    invalid run: 20/20 traces flagged).
-3. **Multi-trace worker bundles** (Fable C.3 — FIX-A/B become design): 8
-   bundles grouped by family/sub-type across the whole corpus (12
-   scenario-runs each, fails-first, deterministic order), ONE 5-part ref
-   format pinned by a worked example, cross-trace citation natural (3–12
-   distinct traces per bundle); the prompt explicitly prefers SUBSTANCE
-   lessons over formatting. Pre-computed artifact:
+3. **Multi-trace worker bundles** (Fable C.3 — FIX-A/B become design): 9
+   bundles grouped by the fixtures' ACTUAL sub_type across the whole corpus
+   (cr-FP3a-vce/vct, cr-FP3b-euc/sc, cr-FP1-retraction, cu/rt/dx/dr; 12
+   scenario-runs each, fails-first with scenario-diversity interleave,
+   deterministic order; the first cut's suffix-based grouping misclassified
+   the cr sub-types — Fable K-1, folded), ONE 5-part ref format pinned by
+   a worked example, cross-trace citation natural (≥2 distinct traces per
+   bundle, most span 5–12); the prompt explicitly prefers SUBSTANCE lessons
+   over formatting. Pre-computed artifact:
    experiments/cont006/worker_v2_bundles.json. The worker pass re-runs on
    the same corpus (its input) under this design after the review chain.
 4. **FP-6 store cap** (Fable C.4): the lesson pipeline accepts at most ONE

@@ -15,7 +15,15 @@
 
 **Worker v2 bundle (cr-FP3a-vce, read directly):** 12 scenario-runs from **12 distinct traces**, fails-first, every digest line carrying the 5-part evidence ref; probe lines show expected/observed/wrong-label. The §7.1(b) ≥2-distinct-traces rule is now satisfiable natively (in the invalid chain only 4/58 candidates had cross-trace support post-hoc).
 
-**Rendered v3m (cu-7101, seed 7001, rendered this session):** fresh world (planetarium), typed sources, R5 supersession markers present; composition matches the v3l plan (3 sessions, probe-in-last-session per validator).
+**Rendered v3m (cu-7101, seed 7001, rendered this session):** typed
+sources, R5 supersession markers present; composition matches the v3l
+plan (3 sessions, probe-in-last-session per validator). NOTE — the
+original §A line here claimed "fresh world (planetarium)"; that was
+WRONG (Fable K-2, confirmed): cu-7101 reused the v3h planetarium world
+down to the opening phrase, and cu-7104 reused the v3l pottery-kiln
+world (cr-7005 also shared office decorations with v3l cr-6005). All
+three were re-worlded/re-worded at the Fable fold and world freshness
+became a mechanical validator check (V18), verified both directions.
 
 ## B. Re-executed verification battery (all zero GPU, this session)
 

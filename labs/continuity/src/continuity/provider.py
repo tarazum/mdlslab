@@ -15,6 +15,9 @@ class ProviderError(RuntimeError):
     pass
 
 
+DEFAULT_NUM_CTX = 4096  # structural pin shared by the runner/gate (Б-3)
+
+
 class OllamaProvider:
     def __init__(
         self,
@@ -22,7 +25,7 @@ class OllamaProvider:
         model: str = "granite-code:8b",
         temperature: float = 0.0,
         seed: int = 42,
-        num_ctx: int = 4096,
+        num_ctx: int = DEFAULT_NUM_CTX,
         num_predict: int = 256,
         keep_alive: str = "30m",
         timeout_s: int = 300,

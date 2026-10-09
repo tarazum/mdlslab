@@ -2990,3 +2990,71 @@ gate RE-RUN (all zero GPU), determinism double-checked.
   V2.md, CONT-006-DESIGN-V2.md.
 - NEXT: RC-6 step 2 — Fable independent review (queue: Fable -> Opus ->
   GLM 5.3 Flash), then co-owner, then owner accept.
+
+## 2026-10-09 — RC-6 STEP 2/4: FABLE INDEPENDENT REVIEW — GO-with-changes; K-1..K-5 + Б-1..Б-7 folded same session, verify-battery all green
+
+Reviewer: Fable (queue head; probe answered, not limit-blocked; doc/code
+review by reading, no python — declared). Raw output verbatim (16.3 KB) +
+curation appendix: docs/REVIEW-FABLE-CONT006-V2.md. Curation: 100% of
+load-bearing claims reproduced by the implementer BEFORE folding.
+
+- Fable verdict: "пакет суттєво сильніший за V1"; all F-1..F-3 and most
+  C/D findings honestly folded; independent CN-012 trace census matches
+  the self-review exactly; BUT 5 new defects, 3 of the
+  declared-but-not-mechanical class:
+  K-1 (freeze artifact): bundle grouping was id-suffix-based and
+    misclassified cr sub-types — cr-x003 is vce (not euc); the "euc"
+    bundle contained ONLY FP-3a scenarios; cr-FP3a-vce was 12 repeats of
+    one scenario. FOLD: groups derive from the fixtures' actual sub_type
+    (9 bundles: vce/vct/euc/sc/retraction + cu/rt/dx/dr), scenario-
+    diversity interleave (Б-5), artifact regenerated + determinism
+    double-run; composition verified per bundle (classes homogeneous,
+    >=2 scenarios, >=5 traces except the 2-scenario retraction/vct
+    groups which span 12 traces).
+  K-2 (declared-not-mechanical): "fresh worlds" was prose. CONFIRMED
+    collisions: cu-7101 = v3h planetarium world down to the opening
+    phrase; cu-7104 = v3l pottery-kiln world (v3l = the calibration
+    contamination surface!); own scan also found cr-7005 sharing office
+    decorations with v3l cr-6005. FOLD: cu-7101 -> ropewalk (hemp
+    strands), cu-7104 -> tannery (soak pit hides), cr-7005 decorations
+    re-worded (memo/pinned snapshot/moved); NEW validator check V18
+    world-freshness (rare-vocab >=4 with register-verb stoplist +
+    first-session opening 5-gram) — verified BOTH ways (FAIL on the old
+    fixtures naming all three collisions; PASS on the new); v3m now PASS
+    20/20, suite sha256 6c82a3710158fea9… (was cb5975d6…); regressions
+    x6 PASS; 4-gram counterfactual re-check vs the re-worlded v3m PASS.
+    (v3m already said "watch sheet", not v3l's "watch list" — no change
+    needed there.)
+  K-3 (cap bypass): an untagged/mistagged worker lesson bypassed the
+    FP-6 cap (invalid class -> "" -> accepted anyway). FOLD: candidate
+    without a valid class field = REJECTED as schema violation
+    (fail-closed); prereg wording now declares the cap is mechanical over
+    the worker's model-declared classification.
+  K-4 (smoke coverage): "every memory arm" was false — R1 and RGOLD
+    absent; the C.5 episode-derived-reflection assert did not exist.
+    FOLD: smoke now runs ALL SIX arms; R1 wired run_cont006-style (engine
+    shares the runner's memory+journal objects, per-run selfmodel copy);
+    asserts reflection.start events carry non-empty evidence_episode_ids
+    (the invalid run's episode-starved R1 mode is now distinguishable).
+  K-5 (gate doc-code gaps): T2 checked membership but not EARLIER-order;
+    "session >= 2" promised but unchecked; T3 forbidden branch only
+    watched lessons.injected while the runner emits lessons.retrieve/
+    render/digest/status. FOLD: T2 seq-ordering + session>=2; T3 covers
+    all lessons.* types; T4 missing-usage now fails (Б-2); NUM_CTX
+    imported from provider.DEFAULT_NUM_CTX structural pin (Б-3).
+    --self-test re-run PASS both directions; invalid run still exit 2.
+  Б-1 cap wording ("keep-first in acceptance order") fixed in A.4;
+  Б-4 cross-comment on the V1/V2 digest-logic duplication added;
+  Б-6 inert scripted_agent_answer key documented in CR_SUBTYPE_CLASS;
+  Б-7 Phase V layout verified compatible with the gate glob.
+- Self-review §A "fresh world (planetarium)" claim corrected in place
+  (Fable: "єдина фактична хиба" — now annotated with the K-2 fold).
+- Full battery after folds: validators x7 PASS; v3m rebuild deterministic;
+  smoke 6 arms PASS; gate self-test both directions PASS; gate on the
+  invalid run FAIL exit 2; audit PASS; bundles deterministic; recap
+  deterministic (7 lessons); 4-gram PASS; power re-run exit 0.
+- Fable's closing: after these folds the package is ready for step 3
+  (co-owner) without another full Fable round — a diff pass suffices.
+- NEXT: RC-6 step 3 — co-owner review (owner routes; brief in
+  docs/RC6-NEXT-STEPS note in the step-2 report), then step 4 — OWNER
+  ACCEPT (never-autonomous; zero behavioral inference before it).
