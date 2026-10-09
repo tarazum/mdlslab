@@ -247,6 +247,24 @@ the pre-declared ones: calibration out-of-band -> STOP + owner; the
 pilot-gate checkpoint outcome; any halt-and-investigate firing
 (anchor-divergence, live-gate FAIL, freeze-digest guard).
 
+## Owner decisions — recorded 2026-10-10 (CONT-006 V2 calibration STOP: all three brief defaults ACCEPTED)
+
+Basis: the calibration STOP record
+(results/CONT-006-CAL/cont006-cal-20261010-000940/calibration-verdict.json
+— family-headroom breach dx=1.0/dr=1.0 both arms, cr floor R0 0.25 / R2
+0.0; anchor PASS 0.533 vs 0.525; live gate PASS) and the plain-language
+owner brief `docs/OWNER-BRIEF-CONT006-V2-CAL-STOP.md`. Owner verdict
+(chat): **"ок по дефолтах"** — all three defaults accepted: (1) NEW suite
+(v3n) authoring AUTHORIZED (harder dx/dr, easier cr, fresh worlds, zero
+v3m text reuse); (2) the zero-GPU diagnostic read of the cr calibration
+traces AUTHORIZED and runs FIRST (its findings feed the v3n authoring);
+(3) the CONT-006 arc is NOT stopped. The V2 stores (W2 worker output +
+R3 recap) are suite-independent artifacts and remain valid evidence; the
+re-run chain (re-freeze on v3n -> Fable diff-pass per its closing note ->
+calibration -> V -> P -> C) is prepared as DRAFT amendments, and any
+behavioral inference on v3n requires the next pre-registration
+acceptance (never-autonomous clause unchanged).
+
 ## Never autonomous (unchanged)
 
 - CONT-002 behavioral experiments — anything that measures transfer quality. The single exception is the M2b mechanics smoke (owner-ordered 2026-10-01): export/import plumbing proof only, explicitly no behavioral claims.
