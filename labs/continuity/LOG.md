@@ -3433,3 +3433,27 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   reviewer routing incl. the working codex/gpt-6-astra invocation;
   non-goals keep the registered verdict and artifacts immutable).
   Kickoff line in the brief.
+
+## 2026-10-10 — CONT-006 step 1 START: DELIVERY-DIAG pre-registered + frozen (zero GPU so far; 192-call head-to-head next)
+
+- Milestone per docs/SESSION-BRIEF-CONT006-DELIVERY.md (owner kickoff
+  verbatim). Entry conditions verified: git clean @ f18c61c, Ollama
+  0.34.2 + granite-code:8b 36c3c3b9683b, all three run roots present.
+- PRE-REGISTRATION BEFORE ANY NEW INFERENCE: docs/PREREG-CONT006-DELIVERY-
+  DIAG.md — probe set 84 cells (cr-8003/8004, dx-8401/8402, rt-8203/8204 ×
+  7 seeds × R2/R3), variants (a) recorded + 24 a-replay noise-floor
+  replays, (b) corrected delivery (probe-time routing, pre-registered
+  applicability annotation incl. judgment calls, full Rule-field render,
+  no budget), (c) memory-only; predictions P1/P1a/P2/P3/P4 with fixed
+  thresholds; decision directions; non-goals (executed chain untouched).
+- Zero-GPU reconstruction gates G-A..G-E PASS 84/84: as-executed lesson
+  blocks reproduced (ids + chars) from the pinned stores; memory episode
+  contents sqlite==trace; fixture probes == recorded expected @ s3t2;
+  options == pins; store digests pinned per root (P-root R2 = reused CAL2
+  w2 store f82efc3f, P-root R3/C = active stores, V = w2 stores).
+- Freeze manifest experiments/cont006/delivery-v2-freeze.json (118
+  digests: prereg + module + brief + frozen sources + stores + all read
+  traces/memories/summaries) emitted AFTER gates, committed BEFORE the
+  GPU part. Preflight PASS (model digest pinned post-warmup).
+- Next command (exact): python experiments/cont006/delivery_v2_diagnostic.py
+  --run  →  --analyze results/CONT-006-DELIVERY-DIAG/cont006-dd-<ts>
