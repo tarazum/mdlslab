@@ -3644,3 +3644,43 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
 - Stage-2 consequence: the W4 worker pass (task 3) runs the same frozen
   machinery with validate_candidate_v2 substituted (declared, recorded in
   telemetry) + the consumption gate over v3o at store freeze.
+
+## 2026-10-10 — CONT-006 STAGE 2 task 2 COMPLETE: suite v3o authored + validated (zero GPU); regressions 9/9 PASS; power artifact sized (within-model MME 0.20; interaction needs I>=0.25 — declared)
+
+- build_v3o.py (experiments/suite-v3/): 22 scenarios, composition identical
+  to v3n (15 TR primary + 4 VAL + GC x3), ids x-9xxx, seeds {9001..9007},
+  fresh worlds (slate quarry tally hut; tar kettle shed / net loft mend
+  bench / plunger lodge gauge row / maltings floor room / salt store bin
+  row; railway parcel office; mine lamp station / sawmill filing room /
+  gasworks meter house; apothecary still room / coaling jetty hopper deck;
+  tea warehouse loft / tram depot pit / cooper's yard shed), 104 turns per
+  seed. Difficulty folds with BUILDER-ENFORCED mechanical derivability
+  asserts: (a) rt LINEN_CARD defect FIXED BY CONSTRUCTION — the FULL six-
+  category parcel card renders in s1 of every rt cluster, asserted per
+  tag + per task/pq head-phrase; (b) cr harder — within-line phrase
+  generalization (probe uses the card line's OTHER head phrase; v3n
+  repeated the learning phrase verbatim) + the inherited v3i/v3j
+  cr-retraction sub-type (double reversal); (c) cu chained superseded
+  (old->mid->new, mid stays in options); (d) dx two lures (transposition
+  twin + same-kind), BOTH re-confirmed in s2; (e) dr inherited
+  interference; GC unchanged in kind, pools disjoint from validator-V2 C2
+  words. CR sub-type mix: vce 1 / euc 1 / retraction 1 / sc 2.
+- Two V18 world-freshness collisions found and fixed before freeze (log-
+  formula 5-gram with v3n cr; "You mind the pump house" with v3m cu-7102
+  -> "plunger lodge"); validator tables extended for v3o (FAMILY_PLANS,
+  CR_SUBTYPES incl. retraction, PROBE_CLASS, VALIDATION_IDS, EXPECTED_
+  PRIMARY, V1 seed list, V18 trigger + all_suites).
+- Validation: v3o VERDICT PASS (V1-V18 incl. V18 vs ALL suites);
+  regressions v3..v3n ALL PASS under the extended validator (V18 for
+  v3m/v3n now also compares against v3o) — artifact experiments/suite-
+  v3/fixture-validation-regressions-post-v3o.json (9/9 PASS).
+- Power artifact (power_calc_stage2.py / power-results-cont006-stage2.json,
+  template §6): within-model lesson effect d=(NEWF_v2-NONE)_m at K15x7:
+  power 0.86 at d=0.20, 0.65 at 0.15, 0.63/0.55 at seed cuts 4/3 (full 7
+  seeds REQUIRED); INTERACTION I=d_G8B-d_Q35: 0.41 at I=0.15, 0.64 at
+  0.20, 0.80 at 0.25 — the step-3-observed interaction scale (~0.13-0.21)
+  is directional-only at this K. Consequence pinned for the prereg: CO-
+  PRIMARY = per-model within-model delta at MME 0.20 (0.86 power);
+  interaction = secondary with declared power limits (MME 0.25 for a
+  powered claim); neutral contrast secondary. False-positive rows 0.035/
+  0.038; harm rows directional.

@@ -1,0 +1,257 @@
+{
+ "id": "gc-9503",
+ "family": "guess_calibration",
+ "labels": {
+  "note": "never-stated facts; guess rate and position bias; expected null by design; run on the working core"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You tend the cooper's yard shed on the {shift} stretch. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{visitor} drops by and asks about tallies this shed never logged. Answer as best you can. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What wood hoops the {e1} cask? Options: {options} - reply with the word only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    },
+    {
+     "actor": "environment",
+     "text": "How many staves wait on the {e2} horse? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "9001": {
+   "values": {
+    "shift": "first shave",
+    "visitor": "a journeyman",
+    "e1": "wash",
+    "e2": "near"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "oak",
+      "ash",
+      "elm",
+      "beech",
+      "maple",
+      "chestnut"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "61",
+      "64",
+      "67",
+      "70",
+      "73",
+      "76"
+     ]
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "shift": "truss day",
+    "visitor": "a brewer",
+    "e1": "wine",
+    "e2": "far"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "ash",
+      "elm",
+      "beech",
+      "maple",
+      "chestnut",
+      "poplar"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "62",
+      "65",
+      "68",
+      "71",
+      "74",
+      "77"
+     ]
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "shift": "fire bending",
+    "visitor": "an apprentice",
+    "e1": "spirit",
+    "e2": "mid"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "elm",
+      "beech",
+      "maple",
+      "chestnut",
+      "poplar",
+      "oak"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "63",
+      "66",
+      "69",
+      "72",
+      "75",
+      "78"
+     ]
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "shift": "charcoal round",
+    "visitor": "a distiller",
+    "e1": "pickle",
+    "e2": "end"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "beech",
+      "maple",
+      "chestnut",
+      "poplar",
+      "oak",
+      "ash"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "64",
+      "67",
+      "70",
+      "73",
+      "76",
+      "79"
+     ]
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "shift": "hoop stock",
+    "visitor": "a vintner",
+    "e1": "water",
+    "e2": "top"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "maple",
+      "chestnut",
+      "poplar",
+      "oak",
+      "ash",
+      "elm"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "65",
+      "68",
+      "71",
+      "74",
+      "77",
+      "80"
+     ]
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "shift": "close down",
+    "visitor": "a carter",
+    "e1": "oil",
+    "e2": "low"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "chestnut",
+      "poplar",
+      "oak",
+      "ash",
+      "elm",
+      "beech"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "66",
+      "69",
+      "72",
+      "75",
+      "78",
+      "81"
+     ]
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "shift": "watch night",
+    "visitor": "a cellar man",
+    "e1": "beer",
+    "e2": "outer"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "poplar",
+      "oak",
+      "ash",
+      "elm",
+      "beech",
+      "maple"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "67",
+      "70",
+      "73",
+      "76",
+      "79",
+      "82"
+     ]
+    }
+   }
+  }
+ }
+}

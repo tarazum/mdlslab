@@ -1,0 +1,195 @@
+{
+ "id": "cu-9104",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{new}",
+  "mechanism": "retracted_correction"
+ },
+ "labels": {
+  "note": "maltings turn counts corrected then withdrawn; probe expects ORIGINAL (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You run the maltings floor room. For the log: the floor malt takes {old} turn spans per day. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the rakes were re-set; the floor malt now takes {new} turn spans per day, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "The maltster says the correction is withdrawn: the re-set slip came from the steep house floor and does not apply; the standing turns from the first log hold as before. Amend in one short line."
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A kiln man asks; the floor card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many turn spans does the floor malt take per day? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "9001": {
+   "values": {
+    "old": "17",
+    "new": "23"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "12",
+      "28",
+      "7",
+      "33",
+      "17",
+      "23"
+     ],
+     "expected": "17"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "old": "20",
+    "new": "26"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "31",
+      "10",
+      "36",
+      "20",
+      "26",
+      "15"
+     ],
+     "expected": "20"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "old": "23",
+    "new": "29"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "13",
+      "39",
+      "23",
+      "29",
+      "18",
+      "34"
+     ],
+     "expected": "23"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "old": "26",
+    "new": "32"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "42",
+      "26",
+      "32",
+      "21",
+      "37",
+      "16"
+     ],
+     "expected": "26"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "old": "29",
+    "new": "35"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "29",
+      "35",
+      "24",
+      "40",
+      "19",
+      "45"
+     ],
+     "expected": "29"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "old": "32",
+    "new": "38"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "38",
+      "27",
+      "43",
+      "22",
+      "48",
+      "32"
+     ],
+     "expected": "32"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "old": "35",
+    "new": "41"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "30",
+      "46",
+      "25",
+      "51",
+      "35",
+      "41"
+     ],
+     "expected": "35"
+    }
+   }
+  }
+ }
+}

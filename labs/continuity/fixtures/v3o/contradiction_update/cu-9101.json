@@ -1,0 +1,185 @@
+{
+ "id": "cu-9101",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "labels": {
+  "note": "tar kettle shed pail counts corrected; probe expects NEW value (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You keep the tar kettle shed book. For the log: the boiling kettle takes {old} tallow pails per charge. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the ladle size changed; the boiling kettle now takes {new} tallow pails per charge, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A tar hand asks; the shed book is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many tallow pails does the boiling kettle take per charge? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "9001": {
+   "values": {
+    "old": "43",
+    "new": "49"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "49",
+      "39",
+      "53",
+      "35",
+      "57",
+      "43"
+     ],
+     "expected": "49"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "old": "46",
+    "new": "52"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "42",
+      "56",
+      "38",
+      "60",
+      "46",
+      "52"
+     ],
+     "expected": "52"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "old": "49",
+    "new": "55"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "59",
+      "41",
+      "63",
+      "49",
+      "55",
+      "45"
+     ],
+     "expected": "55"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "old": "52",
+    "new": "58"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "44",
+      "66",
+      "52",
+      "58",
+      "48",
+      "62"
+     ],
+     "expected": "58"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "old": "55",
+    "new": "61"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "69",
+      "55",
+      "61",
+      "51",
+      "65",
+      "47"
+     ],
+     "expected": "61"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "old": "58",
+    "new": "64"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "58",
+      "64",
+      "54",
+      "68",
+      "50",
+      "72"
+     ],
+     "expected": "64"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "old": "61",
+    "new": "67"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "67",
+      "57",
+      "71",
+      "53",
+      "75",
+      "61"
+     ],
+     "expected": "67"
+    }
+   }
+  }
+ }
+}

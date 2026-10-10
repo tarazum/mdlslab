@@ -1,0 +1,202 @@
+{
+ "id": "dr-9301",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "essence cabinet code stated at learning; s2 logs TWO other entities' codes of the same kind (interference); probe asks the essence cabinet code with all three in options; lure_value = the first interference code (FP-5 binding under interference)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the apothecary still room. For the still room ledger: the essence cabinet code is {code}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "For the log: the retort stand code is {o1}; the oil press code is {o2}; all else stands as before. {chore} finished. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the still room ledger is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the essence cabinet code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{o1}",
+ "variants": {
+  "9001": {
+   "values": {
+    "code": "V21",
+    "o1": "V27",
+    "o2": "V33",
+    "chore": "the worm coil wipe",
+    "role": "apothecary"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V21",
+      "V27",
+      "V33",
+      "V39",
+      "V45",
+      "V51"
+     ],
+     "expected": "V21"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "code": "V27",
+    "o1": "V33",
+    "o2": "V39",
+    "chore": "the alembic joint paste",
+    "role": "journeyman"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V33",
+      "V39",
+      "V45",
+      "V51",
+      "V57",
+      "V27"
+     ],
+     "expected": "V27"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "code": "V33",
+    "o1": "V39",
+    "o2": "V45",
+    "chore": "the jar shelf count",
+    "role": "herb wife"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V45",
+      "V51",
+      "V57",
+      "V63",
+      "V33",
+      "V39"
+     ],
+     "expected": "V33"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "code": "V39",
+    "o1": "V45",
+    "o2": "V51",
+    "chore": "the brazier rake",
+    "role": "porter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V57",
+      "V63",
+      "V69",
+      "V39",
+      "V45",
+      "V51"
+     ],
+     "expected": "V39"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "code": "V45",
+    "o1": "V51",
+    "o2": "V57",
+    "chore": "the funnel rinse",
+    "role": "physician"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V69",
+      "V75",
+      "V45",
+      "V51",
+      "V57",
+      "V63"
+     ],
+     "expected": "V45"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "code": "V51",
+    "o1": "V57",
+    "o2": "V63",
+    "chore": "the bench dust",
+    "role": "clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V81",
+      "V51",
+      "V57",
+      "V63",
+      "V69",
+      "V75"
+     ],
+     "expected": "V51"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "code": "V57",
+    "o1": "V63",
+    "o2": "V69",
+    "chore": "the dusk shutter bar",
+    "role": "night watch"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "V57",
+      "V63",
+      "V69",
+      "V75",
+      "V81",
+      "V87"
+     ],
+     "expected": "V57"
+    }
+   }
+  }
+ }
+}

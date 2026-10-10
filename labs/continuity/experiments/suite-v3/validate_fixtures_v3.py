@@ -77,6 +77,8 @@ EXPECTED_PRIMARY = {
             "distractor_recall": 2, "delayed_recall": 2},
     "v3n": {"correction_reuse": 4, "contradiction_update": 4, "repeated_task": 3,
             "distractor_recall": 2, "delayed_recall": 2},
+    "v3o": {"correction_reuse": 4, "contradiction_update": 4, "repeated_task": 3,
+            "distractor_recall": 2, "delayed_recall": 2},
 }
 # Complete per-suite family plans (scenario BASE counts, not multiplied by
 # seeds). v3-v3j layouts are exactly what the pre-v3k V1/V7 checks enforced;
@@ -98,6 +100,9 @@ FAMILY_PLANS = {
     "v3m": {"correction_reuse": 5, "contradiction_update": 5, "repeated_task": 4,
             "distractor_recall": 3, "delayed_recall": 2, "guess_calibration": 3},
     "v3n": {"correction_reuse": 5, "contradiction_update": 5, "repeated_task": 4,
+            "distractor_recall": 3, "delayed_recall": 2, "guess_calibration": 3},
+    # v3o (CONT-006 stage 2): composition identical to v3n.
+    "v3o": {"correction_reuse": 5, "contradiction_update": 5, "repeated_task": 4,
             "distractor_recall": 3, "delayed_recall": 2, "guess_calibration": 3},
 }
 CR_SUBTYPES = {
@@ -157,6 +162,14 @@ CR_SUBTYPES = {
         "erroneous_user_correction": 1,
         "source_conflict": 2,
     },
+    # v3o (CONT-006 stage 2): one vce, one euc, one retraction (inherited
+    # v3i/v3j mechanism — the double-reversal difficulty fold) + sc x2.
+    "v3o": {
+        "valid_correction_environment": 1,
+        "erroneous_user_correction": 1,
+        "retraction": 1,
+        "source_conflict": 2,
+    },
 }
 # Primary probe class per suite: rm_eligible = repeated-mistake endpoint
 # (CONT-001/CONT-005); transfer_eligible = the CONT-002 R = dB/dA analogue
@@ -170,13 +183,15 @@ PROBE_CLASS = {
     "v3l": "transfer_eligible",
     "v3m": "transfer_eligible",
     "v3n": "transfer_eligible",
+    "v3o": "transfer_eligible",
 }
-# v3l/v3m/v3n validation clusters (activation decisions only): excluded from
+# v3l/v3m/v3n/v3o validation clusters (activation decisions only): excluded from
 # the V7 primary expectation and the primary endpoint, never guess_calibration.
 VALIDATION_IDS = {
     "v3l": {"cr-6005", "cu-6105", "rt-6204", "dx-6403"},
     "v3m": {"cr-7005", "cu-7105", "rt-7204", "dx-7403"},
     "v3n": {"cr-8005", "cu-8105", "rt-8204", "dx-8403"},
+    "v3o": {"cr-9005", "cu-9105", "rt-9204", "dx-9403"},
 }
 # Families whose primaries carry the trap/seed_error structure checked by V8.
 TRAP_PRIMARY_FAMILIES = {"correction_reuse", "contradiction_update", "repeated_task"}
@@ -276,6 +291,7 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
             "v3l": fixtures_root / "v3l",
             "v3m": fixtures_root / "v3m",
             "v3n": fixtures_root / "v3n",
+            "v3o": fixtures_root / "v3o",
         }.items()
         if name != suite and p.exists()
     ]
@@ -301,7 +317,7 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
         and fams == expected_families
         and declared_primary == primary_families
         and manifest.get("primary_cluster_count") == primary_total
-        and (seeds_ok if suite in ("v3i", "v3j", "v3k", "v3l", "v3m", "v3n") else True)
+        and (seeds_ok if suite in ("v3i", "v3j", "v3k", "v3l", "v3m", "v3n", "v3o") else True)
     )
     record("V1-manifest", ok,
            f"suite={suite}; protocol/version ok; families={sorted(fams)}; primary={sorted(declared_primary)} "
@@ -764,7 +780,7 @@ def validate(fixtures_root: Path, suite: str = "v3") -> dict:
     #  (b) opening-phrase reuse: no shared 5-gram across suites within the
     #      first 8 words of any session-opening turn (the world-
     #      establishing prefix; protocol closings come later and differ).
-    if suite in ("v3m", "v3n"):
+    if suite in ("v3m", "v3n", "v3o"):
         ok, detail = check_world_freshness(fixtures_root, suite, scenarios)
         record("V18-world-freshness", ok, detail)
 
@@ -827,7 +843,7 @@ def check_world_freshness(fixtures_root: Path, suite: str,
     property, not prose. Reads raw fixtures of ALL suites from disk; the
     suite under test is compared against every OTHER suite (v3n thus also
     checks against v3m)."""
-    all_suites = ("v3", "v3h", "v3i", "v3j", "v3k", "v3l", "v3m", "v3n")
+    all_suites = ("v3", "v3h", "v3i", "v3j", "v3k", "v3l", "v3m", "v3n", "v3o")
     vocab: dict[str, set[str]] = {}
     openings: dict[str, set[tuple[str, ...]]] = {}
     for s_name in all_suites:

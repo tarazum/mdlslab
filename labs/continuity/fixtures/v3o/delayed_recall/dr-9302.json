@@ -1,0 +1,202 @@
+{
+ "id": "dr-9302",
+ "family": "delayed_recall",
+ "labels": {
+  "note": "grab crane code stated at learning; s2 logs TWO other entities' codes of the same kind (interference); probe asks the grab crane code with all three in options; lure_value = the first interference code (FP-5 binding under interference)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the coaling jetty hopper deck. For the hopper deck slate: the grab crane code is {code}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "For the log: the trim hopper code is {o1}; the spurn guard code is {o2}; all else stands as before. {chore} finished. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives; the hopper deck slate is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the grab crane code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{o1}",
+ "variants": {
+  "9001": {
+   "values": {
+    "code": "W24",
+    "o1": "W30",
+    "o2": "W36",
+    "chore": "the chute gate oil",
+    "role": "wharfinger"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W24",
+      "W30",
+      "W36",
+      "W42",
+      "W48",
+      "W54"
+     ],
+     "expected": "W24"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "code": "W30",
+    "o1": "W36",
+    "o2": "W42",
+    "chore": "the boom brace check",
+    "role": "hoist man"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W36",
+      "W42",
+      "W48",
+      "W54",
+      "W60",
+      "W30"
+     ],
+     "expected": "W30"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "code": "W36",
+    "o1": "W42",
+    "o2": "W48",
+    "chore": "the bucket count",
+    "role": "trimmer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W48",
+      "W54",
+      "W60",
+      "W66",
+      "W36",
+      "W42"
+     ],
+     "expected": "W36"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "code": "W42",
+    "o1": "W48",
+    "o2": "W54",
+    "chore": "the screen rake",
+    "role": "tally clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W60",
+      "W66",
+      "W72",
+      "W42",
+      "W48",
+      "W54"
+     ],
+     "expected": "W42"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "code": "W48",
+    "o1": "W54",
+    "o2": "W60",
+    "chore": "the apron sweep",
+    "role": "barge mate"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W72",
+      "W78",
+      "W48",
+      "W54",
+      "W60",
+      "W66"
+     ],
+     "expected": "W48"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "code": "W54",
+    "o1": "W60",
+    "o2": "W66",
+    "chore": "the rail dust",
+    "role": "coal viewer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W84",
+      "W54",
+      "W60",
+      "W66",
+      "W72",
+      "W78"
+     ],
+     "expected": "W54"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "code": "W60",
+    "o1": "W66",
+    "o2": "W72",
+    "chore": "the dusk lamp round",
+    "role": "night watch"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "W60",
+      "W66",
+      "W72",
+      "W78",
+      "W84",
+      "W90"
+     ],
+     "expected": "W60"
+    }
+   }
+  }
+ }
+}

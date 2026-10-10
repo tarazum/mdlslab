@@ -1,0 +1,197 @@
+{
+ "id": "rt-9204",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "packing",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "counter sheet pins 'packing'; standing card says sorting; FULL card stated in s1; probe expects sorting (FP-2)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Pick exactly one tag: booking | sorting | packing | securing | hauling | filing. Errand: '{task}.' Reply with the tag only.",
+     "initial_expected": "packing"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier counter sheet tags {task} as 'packing'. The standing parcel card: waybill takes and fare notes are booking; bin drops and shelf stackings are sorting; string ties and wrapper seals are packing; strap tensions and corner guards are securing; trolley runs and yard pushes are hauling; signature slips and receipt stubs are filing. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Counter handover before {slot}. The standing parcel card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "New round opens at the parcel counter. The slate cards are locked away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Pick one tag for this errand. No cards are in reach. Errand: '{pq}.' Options: {options} - reply with the tag only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "9001": {
+   "values": {
+    "task": "the bin drop round for the letter flats",
+    "pq": "the shelf stacking round for the morning flats",
+    "slot": "morning"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "booking",
+      "sorting",
+      "packing",
+      "securing",
+      "hauling",
+      "filing"
+     ],
+     "expected": "sorting"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "task": "the bin drop round for the parcel tubs",
+    "pq": "the shelf stacking round before the van load",
+    "slot": "van load"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "sorting",
+      "packing",
+      "securing",
+      "hauling",
+      "filing",
+      "booking"
+     ],
+     "expected": "sorting"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "task": "the bin drop round on the paper sacks",
+    "pq": "the shelf stacking round on the spare sacks",
+    "slot": "lunch"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "packing",
+      "securing",
+      "hauling",
+      "filing",
+      "booking",
+      "sorting"
+     ],
+     "expected": "sorting"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "task": "the bin drop round for the sample trays",
+    "pq": "the shelf stacking round for the mail tubs",
+    "slot": "mail day"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "securing",
+      "hauling",
+      "filing",
+      "booking",
+      "sorting",
+      "packing"
+     ],
+     "expected": "sorting"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "task": "the bin drop round for the news bundles",
+    "pq": "the shelf stacking round at the east wall",
+    "slot": "afternoon"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "hauling",
+      "filing",
+      "booking",
+      "sorting",
+      "packing",
+      "securing"
+     ],
+     "expected": "sorting"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "task": "the bin drop round on the label racks",
+    "pq": "the shelf stacking round for the wire trays",
+    "slot": "express"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "filing",
+      "booking",
+      "sorting",
+      "packing",
+      "securing",
+      "hauling"
+     ],
+     "expected": "sorting"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "task": "the bin drop round for the night sacks",
+    "pq": "the shelf stacking round after the count",
+    "slot": "night shift"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "sorting",
+      "booking",
+      "packing",
+      "securing",
+      "hauling",
+      "filing"
+     ],
+     "expected": "sorting"
+    }
+   }
+  }
+ }
+}

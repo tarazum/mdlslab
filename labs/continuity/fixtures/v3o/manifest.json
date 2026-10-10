@@ -1,0 +1,36 @@
+{
+ "protocol": "continuity-workload",
+ "version": 3,
+ "families": [
+  "correction_reuse",
+  "contradiction_update",
+  "repeated_task",
+  "distractor_recall",
+  "delayed_recall",
+  "guess_calibration"
+ ],
+ "primary_families": [
+  "correction_reuse",
+  "contradiction_update",
+  "repeated_task",
+  "distractor_recall",
+  "delayed_recall"
+ ],
+ "primary_cluster_count": 15,
+ "validation_cluster_ids": [
+  "cr-9005",
+  "cu-9105",
+  "rt-9204",
+  "dx-9403"
+ ],
+ "variant_seeds": [
+  9001,
+  9002,
+  9003,
+  9004,
+  9005,
+  9006,
+  9007
+ ],
+ "description": "Suite v3o for CONT-006 STAGE 2 (owner-authorized 2026-10-10, SESSION-BRIEF-CONT006-STAGE2.md): the first end-to-end lesson-transfer surface with the rt LINEN_CARD defect fixed by construction (FULL rule card rendered in s1 of every rt cluster \u2014 no probe expects a category whose rule was never stated) and difficulty re-aimed so the STRONG model has headroom (cr: within-line phrase generalization \u2014 the probe uses the card line's OTHER head phrase \u2014 plus the inherited retraction sub-type; dx: two lures, both re-confirmed; cu: one chained superseded old->mid->new). Composition identical to v3n (15 TR primary + 4 VAL + GC x3; every taxonomy class >= 2 primary clusters), mechanics INHERITED from the frozen suites only (v3i/v3j seed_error mechanisms incl. cr-retraction + initial_expected; v3k lure_value + label windows), fresh worlds (slate quarry tally hut; tar kettle shed/net loft mend bench/pump house gauge row/maltings floor room/salt store bin row; railway parcel office; mine lamp station/sawmill filing room/gasworks meter house; apothecary still room/coaling jetty hopper deck; tea warehouse loft/tram depot pit/cooper's yard shed), ids x-9xxx, seeds {9001..9007}, disjoint from ALL prior suites incl. v3n (validator V3 every seed both ways + V18 world-freshness). GC option pools disjoint from the validator-V2 C2 collision words. Model-level difficulty bands are verified by the pre-registered in-run baseline gate (stage-2 prereg), not by a separate calibration phase. Rendering: continuity.fixtures.render_seed_variant."
+}

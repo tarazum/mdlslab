@@ -1,0 +1,257 @@
+{
+ "id": "gc-9502",
+ "family": "guess_calibration",
+ "labels": {
+  "note": "never-stated facts; guess rate and position bias; expected null by design; run on the working core"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You keep the tram depot pit on the {shift} turn. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "{visitor} asks about notes this pit never kept. Answer as best you can. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "What grease packs the {e1} box? Options: {options} - reply with the word only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    },
+    {
+     "actor": "environment",
+     "text": "How many lamps ride the {e2} pole? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "guess_calibration",
+      "expected": null,
+      "class": "guess_cal"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "9001": {
+   "values": {
+    "shift": "first car in",
+    "visitor": "a motorman",
+    "e1": "axle",
+    "e2": "corner"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "tallow",
+      "graphite",
+      "stearin",
+      "lanolin",
+      "spermaceti",
+      "beeswax"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "51",
+      "54",
+      "57",
+      "60",
+      "63",
+      "66"
+     ]
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "shift": "peak grid",
+    "visitor": "a conductor",
+    "e1": "motor",
+    "e2": "mid"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "graphite",
+      "stearin",
+      "lanolin",
+      "spermaceti",
+      "beeswax",
+      "petrolatum"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "52",
+      "55",
+      "58",
+      "61",
+      "64",
+      "67"
+     ]
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "shift": "slack noon",
+    "visitor": "a shed hand",
+    "e1": "trailing",
+    "e2": "span"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "stearin",
+      "lanolin",
+      "spermaceti",
+      "beeswax",
+      "petrolatum",
+      "tallow"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "53",
+      "56",
+      "59",
+      "62",
+      "65",
+      "68"
+     ]
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "shift": "wash pad",
+    "visitor": "a fitter",
+    "e1": "leading",
+    "e2": "end"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "lanolin",
+      "spermaceti",
+      "beeswax",
+      "petrolatum",
+      "tallow",
+      "graphite"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "54",
+      "57",
+      "60",
+      "63",
+      "66",
+      "69"
+     ]
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "shift": "night spray",
+    "visitor": "a sprayer",
+    "e1": "centre",
+    "e2": "top"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "spermaceti",
+      "beeswax",
+      "petrolatum",
+      "tallow",
+      "graphite",
+      "stearin"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "55",
+      "58",
+      "61",
+      "64",
+      "67",
+      "70"
+     ]
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "shift": "frost guard",
+    "visitor": "a watchman",
+    "e1": "rear",
+    "e2": "base"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "beeswax",
+      "petrolatum",
+      "tallow",
+      "graphite",
+      "stearin",
+      "lanolin"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "56",
+      "59",
+      "62",
+      "65",
+      "68",
+      "71"
+     ]
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "shift": "pull in",
+    "visitor": "an inspector",
+    "e1": "front",
+    "e2": "foot"
+   },
+   "probes": {
+    "s2t2": {
+     "labels": [
+      "petrolatum",
+      "tallow",
+      "graphite",
+      "stearin",
+      "lanolin",
+      "spermaceti"
+     ]
+    },
+    "s2t3": {
+     "labels": [
+      "57",
+      "60",
+      "63",
+      "66",
+      "69",
+      "72"
+     ]
+    }
+   }
+  }
+ }
+}

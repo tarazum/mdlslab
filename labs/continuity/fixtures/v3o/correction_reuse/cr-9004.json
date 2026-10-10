@@ -1,0 +1,207 @@
+{
+ "id": "cr-9004",
+ "family": "correction_reuse",
+ "sub_type": "retraction",
+ "seed_error": {
+  "value": "hogging",
+  "mechanism": "retracted_correction"
+ },
+ "labels": {
+  "note": "plane pass correctly 'dressing'; bulletin briefly routes under 'hogging', then withdrawn; probe expects dressing (FP-1 retraction, double reversal; probe uses the line's OTHER phrase: edge trim)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "For the quarry desk: log this report under exactly one label: riving | dressing | hogging | holing | bedding | hauloff. Report: '{bk} on the day sheet.' Reply with the label only.",
+     "initial_expected": "dressing"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing quarry card: froe splits and cleave runs are riving; plane passes and edge trims are dressing; coarse saws and bulk rips are hogging; hole punches and slot drills are holing; mortar beds and pin sets are bedding; sledge runs and wagon loads are hauloff. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Quarry bulletin: the engine bench covers {bk} this week; classify such work under the coarse-saw rule for now. Amend in one short line. Amend in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "The bulletin is withdrawn: it was misrouted from the engine bench and does not apply here; the standing card holds as before. Amend in one short line. Amend in one short line."
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Night desk at the quarry hut on {day}. The quarry card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "File this report. The quarry card is not at hand. Report: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "9001": {
+   "values": {
+    "bk": "the plane pass for the sill stock",
+    "pq": "the edge trim before the night cast",
+    "day": "monday"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "riving",
+      "dressing",
+      "hogging",
+      "holing",
+      "bedding",
+      "hauloff"
+     ],
+     "expected": "dressing"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "bk": "the plane pass at the long bench",
+    "pq": "the edge trim past the gate close",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "dressing",
+      "hogging",
+      "holing",
+      "bedding",
+      "hauloff",
+      "riving"
+     ],
+     "expected": "dressing"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "bk": "the plane pass on the lintel set",
+    "pq": "the edge trim on the spare lintels",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "hogging",
+      "holing",
+      "bedding",
+      "hauloff",
+      "riving",
+      "dressing"
+     ],
+     "expected": "dressing"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "bk": "the plane pass for the step pieces",
+    "pq": "the edge trim for the day steps",
+    "day": "thursday"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "holing",
+      "bedding",
+      "hauloff",
+      "riving",
+      "dressing",
+      "hogging"
+     ],
+     "expected": "dressing"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "bk": "the plane pass at the west bench",
+    "pq": "the edge trim at the far bench",
+    "day": "friday"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "bedding",
+      "hauloff",
+      "riving",
+      "dressing",
+      "hogging",
+      "holing"
+     ],
+     "expected": "dressing"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "bk": "the plane pass on the cill blocks",
+    "pq": "the edge trim for the door lots",
+    "day": "saturday"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "hauloff",
+      "riving",
+      "dressing",
+      "hogging",
+      "holing",
+      "bedding"
+     ],
+     "expected": "dressing"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "bk": "the plane pass for the door stock",
+    "pq": "the edge trim under the tally rule",
+    "day": "sunday"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "dressing",
+      "riving",
+      "hogging",
+      "holing",
+      "bedding",
+      "hauloff"
+     ],
+     "expected": "dressing"
+    }
+   }
+  }
+ }
+}

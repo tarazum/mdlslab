@@ -1,0 +1,202 @@
+{
+ "id": "dx-9402",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "three codes stated at learning (blade crate target; swage box and gauge kit lures); BOTH lures are re-confirmed in s2 while the target code is stated once (v3o difficulty fold); probe asks the target with all three in options; lure_value declared for validator V8R (FP-4)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the sawmill filing room. For the filing room book: the blade crate code is {code}; the swage box code is {lurea}; the gauge kit code is {lureb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Reminder from the log scale office: the swage box code {lurea} and the gauge kit code {lureb} were re-checked this morning and still stand. {chore} finished. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives from the log scale office run; the filing room book is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the blade crate code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{lurea}",
+ "variants": {
+  "9001": {
+   "values": {
+    "code": "G17",
+    "lurea": "G71",
+    "lureb": "G32",
+    "chore": "the swage seat clean",
+    "role": "filer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G17",
+      "G71",
+      "G32",
+      "G45",
+      "G68",
+      "G91"
+     ],
+     "expected": "G17"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "code": "G23",
+    "lurea": "G32",
+    "lureb": "G54",
+    "chore": "the gauge set oil",
+    "role": "saw doctor"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G32",
+      "G54",
+      "G68",
+      "G19",
+      "G62",
+      "G23"
+     ],
+     "expected": "G23"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "code": "G45",
+    "lurea": "G54",
+    "lureb": "G86",
+    "chore": "the anvil toll count",
+    "role": "mill man"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G86",
+      "G19",
+      "G26",
+      "G83",
+      "G45",
+      "G54"
+     ],
+     "expected": "G45"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "code": "G68",
+    "lurea": "G86",
+    "lureb": "G91",
+    "chore": "the hammer face polish",
+    "role": "bench hand"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G26",
+      "G38",
+      "G71",
+      "G68",
+      "G86",
+      "G91"
+     ],
+     "expected": "G68"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "code": "G19",
+    "lurea": "G91",
+    "lureb": "G62",
+    "chore": "the rivet tray sort",
+    "role": "log clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G17",
+      "G32",
+      "G19",
+      "G91",
+      "G62",
+      "G38"
+     ],
+     "expected": "G19"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "code": "G26",
+    "lurea": "G62",
+    "lureb": "G83",
+    "chore": "the bench dust",
+    "role": "carriage setter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G54",
+      "G26",
+      "G62",
+      "G83",
+      "G17",
+      "G23"
+     ],
+     "expected": "G26"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "code": "G38",
+    "lurea": "G83",
+    "lureb": "G71",
+    "chore": "the dusk shutter bar",
+    "role": "night miller"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "G38",
+      "G83",
+      "G71",
+      "G23",
+      "G45",
+      "G86"
+     ],
+     "expected": "G38"
+    }
+   }
+  }
+ }
+}

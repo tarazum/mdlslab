@@ -1,0 +1,184 @@
+{
+ "kind": "cont006-stage2-power-calc",
+ "endpoint": "within-model d_m = (NEWF_v2 - NONE)_m pass-rate delta on the v3o primary clusters (15 = CR4+CU4+RT3+DX2+DR2) and the primary interaction I = d_G8B - d_Q35; two-sided 95% cluster percentile bootstrap; planned K = 15 x 7 seeds (v3o 9001..9007)",
+ "model": "per cluster c, seed s: eps~N(0,sig_shared) shared by EVERY cell (same rendered v3o content; cancels in every difference); eta~N(0,sig_cell) per observation-cell; clip [0.02,0.98]; planning bases G8B 0.35 / Q35 0.65 (v3o design bands, verified by the pre-registered in-run baseline gate)",
+ "mme": {
+  "d": null,
+  "rationale": "laddered below: the smallest 0.05-step effect with detection power >= 0.80 on the conservative row (sig_shared .20, sig_cell .10) at the planned K; the template guessing-band floor is 0.15 (closed 6-option probes, guess 1/6); effects below the MME are NOT claimable at this design's power (declared limitation; CONT-002 / V2 sizing precedent). The MME is pinned by the rows in this artifact at prereg."
+ },
+ "seeds": {
+  "sim_rng": 20261010,
+  "REPS": 3000,
+  "BOOT": 4000
+ },
+ "results": [
+  {
+   "label": "W1 G8B binomial sanity, d .20",
+   "family": "within_model",
+   "detect": 0.846,
+   "estab": 0.846,
+   "harm": 0.0,
+   "width": 0.248
+  },
+  {
+   "label": "W2 G8B conservative, d .20, K15x7",
+   "family": "within_model",
+   "detect": 0.859,
+   "estab": 0.859,
+   "harm": 0.0,
+   "width": 0.229
+  },
+  {
+   "label": "W3 G8B conservative, d .15, K15x7",
+   "family": "within_model",
+   "detect": 0.654,
+   "estab": 0.654,
+   "harm": 0.0,
+   "width": 0.229
+  },
+  {
+   "label": "W4 G8B conservative, d .10, K15x7",
+   "family": "within_model",
+   "detect": 0.358,
+   "estab": 0.0,
+   "harm": 0.0,
+   "width": 0.229
+  },
+  {
+   "label": "W5 G8B conservative, d .20, K15x4 [seed cut - record]",
+   "family": "within_model",
+   "detect": 0.627,
+   "estab": 0.627,
+   "harm": 0.0,
+   "width": 0.3
+  },
+  {
+   "label": "W6 G8B conservative, d .20, K15x3 [seed cut - record]",
+   "family": "within_model",
+   "detect": 0.55,
+   "estab": 0.55,
+   "harm": 0.0,
+   "width": 0.356
+  },
+  {
+   "label": "W7 G8B conservative, d .15, K15x4 [seed cut]",
+   "family": "within_model",
+   "detect": 0.41,
+   "estab": 0.41,
+   "harm": 0.0,
+   "width": 0.3
+  },
+  {
+   "label": "W8 G8B weaker base .30, d .15",
+   "family": "within_model",
+   "detect": 0.665,
+   "estab": 0.665,
+   "harm": 0.0,
+   "width": 0.229
+  },
+  {
+   "label": "W9 Q35 base .65, d .15",
+   "family": "within_model",
+   "detect": 0.646,
+   "estab": 0.646,
+   "harm": 0.0,
+   "width": 0.21
+  },
+  {
+   "label": "W10 Q35 base .65, d .10",
+   "family": "within_model",
+   "detect": 0.365,
+   "estab": 0.0,
+   "harm": 0.001,
+   "width": 0.219
+  },
+  {
+   "label": "W11 G8B d 0.0 false-positive",
+   "family": "within_model",
+   "detect": 0.035,
+   "estab": 0.0,
+   "harm": 0.034,
+   "width": 0.229
+  },
+  {
+   "label": "W12 G8B d -0.15 harm",
+   "family": "within_model",
+   "detect": 0.0,
+   "estab": 0.0,
+   "harm": 0.636,
+   "width": 0.21
+  },
+  {
+   "label": "I1 interaction d_G8B .15 d_Q35 .0 (I=.15), K15x7",
+   "family": "interaction",
+   "detect_up": 0.405,
+   "detect_down": 0.0,
+   "width": 0.324,
+   "d_true_I": 0.15
+  },
+  {
+   "label": "I2 interaction d_G8B .20 d_Q35 .0 (I=.20), K15x7",
+   "family": "interaction",
+   "detect_up": 0.635,
+   "detect_down": 0.0,
+   "width": 0.324,
+   "d_true_I": 0.2
+  },
+  {
+   "label": "I3 interaction d_G8B .0 d_Q35 .0 (I=0, false positive), K15x7",
+   "family": "interaction",
+   "detect_up": 0.038,
+   "detect_down": 0.041,
+   "width": 0.314,
+   "d_true_I": 0.0
+  },
+  {
+   "label": "I4 interaction d_G8B -.15 d_Q35 .0 (I=-.15, harm side), K15x7",
+   "family": "interaction",
+   "detect_up": 0.0,
+   "detect_down": 0.377,
+   "width": 0.305,
+   "d_true_I": -0.15
+  },
+  {
+   "label": "I5 interaction d_G8B .15 d_Q35 .05 (I=.10), K15x7",
+   "family": "interaction",
+   "detect_up": 0.254,
+   "detect_down": 0.002,
+   "width": 0.324,
+   "d_true_I": 0.1
+  },
+  {
+   "label": "I8 interaction d_G8B .25 d_Q35 .0 (I=.25), K15x7",
+   "family": "interaction",
+   "detect_up": 0.8,
+   "detect_down": 0.0,
+   "width": 0.324,
+   "d_true_I": 0.25
+  },
+  {
+   "label": "I9 interaction d_G8B .30 d_Q35 .0 (I=.30), K15x7 [0.80 pin]",
+   "family": "interaction",
+   "detect_up": 0.913,
+   "detect_down": 0.0,
+   "width": 0.314,
+   "d_true_I": 0.3
+  },
+  {
+   "label": "I6 interaction I=.15, K15x4 [seed cut - record]",
+   "family": "interaction",
+   "detect_up": 0.265,
+   "detect_down": 0.002,
+   "width": 0.417,
+   "d_true_I": 0.15
+  },
+  {
+   "label": "I7 interaction I=.15, K15x3 [seed cut - record]",
+   "family": "interaction",
+   "detect_up": 0.231,
+   "detect_down": 0.002,
+   "width": 0.489,
+   "d_true_I": 0.15
+  }
+ ]
+}

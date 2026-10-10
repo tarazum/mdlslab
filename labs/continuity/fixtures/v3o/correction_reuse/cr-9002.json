@@ -1,0 +1,202 @@
+{
+ "id": "cr-9002",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {
+  "value": "hogging",
+  "mechanism": "source_conflict"
+ },
+ "labels": {
+  "note": "slot drill correctly 'holing'; unreviewed rack slate claims 'hogging' (FP-3b); probe uses the line's OTHER phrase (hole punch)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "For the quarry desk: log this report under exactly one label: riving | dressing | hogging | holing | bedding | hauloff. Report: '{bk} on the watch sheet.' Reply with the label only.",
+     "initial_expected": "holing"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing quarry card: froe splits and cleave runs are riving; plane passes and edge trims are dressing; coarse saws and bulk rips are hogging; hole punches and slot drills are holing; mortar beds and pin sets are bedding; sledge runs and wagon loads are hauloff. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "The bench clerk's memo, quarry-verified: hole punches and slot drills stay with holing, and {bk} stays as the card has it. Note it in one short line."
+    },
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "An unreviewed rack slate by the skip door claims every slot drill, {bk} included, was moved to the saw bench today."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Night desk at the quarry hut on {day}. The quarry card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "File this report. The quarry card is not at hand. Report: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "9001": {
+   "values": {
+    "bk": "the slot drill for the door stock",
+    "pq": "the hole punch before the night cast",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "riving",
+      "dressing",
+      "hogging",
+      "holing",
+      "bedding",
+      "hauloff"
+     ],
+     "expected": "holing"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "bk": "the slot drill on the stair pieces",
+    "pq": "the hole punch past the gate close",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "dressing",
+      "hogging",
+      "holing",
+      "bedding",
+      "hauloff",
+      "riving"
+     ],
+     "expected": "holing"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "bk": "the slot drill at the gate jamb",
+    "pq": "the hole punch on the spare jambs",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "hogging",
+      "holing",
+      "bedding",
+      "hauloff",
+      "riving",
+      "dressing"
+     ],
+     "expected": "holing"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "bk": "the slot drill for the sill bolts",
+    "pq": "the hole punch for the day sills",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "holing",
+      "bedding",
+      "hauloff",
+      "riving",
+      "dressing",
+      "hogging"
+     ],
+     "expected": "holing"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "bk": "the slot drill on the ridge pieces",
+    "pq": "the hole punch at the far bench",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "bedding",
+      "hauloff",
+      "riving",
+      "dressing",
+      "hogging",
+      "holing"
+     ],
+     "expected": "holing"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "bk": "the slot drill at the lintel bore",
+    "pq": "the hole punch for the ridge lots",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "hauloff",
+      "riving",
+      "dressing",
+      "hogging",
+      "holing",
+      "bedding"
+     ],
+     "expected": "holing"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "bk": "the slot drill for the porch set",
+    "pq": "the hole punch under the tally rule",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "dressing",
+      "riving",
+      "hogging",
+      "holing",
+      "bedding",
+      "hauloff"
+     ],
+     "expected": "holing"
+    }
+   }
+  }
+ }
+}

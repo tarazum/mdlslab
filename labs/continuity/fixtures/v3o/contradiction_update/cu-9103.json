@@ -1,0 +1,195 @@
+{
+ "id": "cu-9103",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{new}",
+  "mechanism": "retracted_correction"
+ },
+ "labels": {
+  "note": "plunger lodge stroke counts corrected then withdrawn; probe expects ORIGINAL (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You mind the plunger lodge gauge row. For the log: the force pump counts {old} stroke turns per hour. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the valve cam was swapped; the force pump now counts {new} stroke turns per hour, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "The pump master says the correction is withdrawn: the swapped cam belonged to the standby pump and does not apply here; the standing count from the first log holds as before. Amend in one short line."
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A fitter asks; the lodge card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many stroke turns does the force pump count per hour? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "9001": {
+   "values": {
+    "old": "34",
+    "new": "39"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "29",
+      "44",
+      "24",
+      "49",
+      "34",
+      "39"
+     ],
+     "expected": "34"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "old": "37",
+    "new": "42"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "47",
+      "27",
+      "52",
+      "37",
+      "42",
+      "32"
+     ],
+     "expected": "37"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "old": "40",
+    "new": "45"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "30",
+      "55",
+      "40",
+      "45",
+      "35",
+      "50"
+     ],
+     "expected": "40"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "old": "43",
+    "new": "48"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "58",
+      "43",
+      "48",
+      "38",
+      "53",
+      "33"
+     ],
+     "expected": "43"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "old": "46",
+    "new": "51"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "46",
+      "51",
+      "41",
+      "56",
+      "36",
+      "61"
+     ],
+     "expected": "46"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "old": "49",
+    "new": "54"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "54",
+      "44",
+      "59",
+      "39",
+      "64",
+      "49"
+     ],
+     "expected": "49"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "old": "52",
+    "new": "57"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "47",
+      "62",
+      "42",
+      "67",
+      "52",
+      "57"
+     ],
+     "expected": "52"
+    }
+   }
+  }
+ }
+}

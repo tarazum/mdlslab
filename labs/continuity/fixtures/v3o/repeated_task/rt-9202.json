@@ -1,0 +1,197 @@
+{
+ "id": "rt-9202",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "booking",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "counter sheet pins 'booking'; standing card says filing; FULL card stated in s1; probe expects filing (FP-2)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Pick exactly one tag: booking | sorting | packing | securing | hauling | filing. Errand: '{task}.' Reply with the tag only.",
+     "initial_expected": "booking"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier counter sheet tags {task} as 'booking'. The standing parcel card: waybill takes and fare notes are booking; bin drops and shelf stackings are sorting; string ties and wrapper seals are packing; strap tensions and corner guards are securing; trolley runs and yard pushes are hauling; signature slips and receipt stubs are filing. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Counter handover before {slot}. The standing parcel card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "New round opens at the parcel counter. The slate cards are locked away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Pick one tag for this errand. No cards are in reach. Errand: '{pq}.' Options: {options} - reply with the tag only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "9001": {
+   "values": {
+    "task": "the signature slip round for the claim desk",
+    "pq": "the receipt stub round for the dawn bag",
+    "slot": "morning"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "booking",
+      "sorting",
+      "packing",
+      "securing",
+      "hauling",
+      "filing"
+     ],
+     "expected": "filing"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "task": "the signature slip round for the dead letter room",
+    "pq": "the receipt stub round before the mail day",
+    "slot": "van load"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "sorting",
+      "packing",
+      "securing",
+      "hauling",
+      "filing",
+      "booking"
+     ],
+     "expected": "filing"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "task": "the signature slip round on the insured tray",
+    "pq": "the receipt stub round on the late tray",
+    "slot": "lunch"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "packing",
+      "securing",
+      "hauling",
+      "filing",
+      "booking",
+      "sorting"
+     ],
+     "expected": "filing"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "task": "the signature slip round for the penny post",
+    "pq": "the receipt stub round for the sample post",
+    "slot": "mail day"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "securing",
+      "hauling",
+      "filing",
+      "booking",
+      "sorting",
+      "packing"
+     ],
+     "expected": "filing"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "task": "the signature slip round for the cod counter",
+    "pq": "the receipt stub round at the side desk",
+    "slot": "afternoon"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "hauling",
+      "filing",
+      "booking",
+      "sorting",
+      "packing",
+      "securing"
+     ],
+     "expected": "filing"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "task": "the signature slip round on the ledger shelf",
+    "pq": "the receipt stub round for the cod bags",
+    "slot": "express"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "filing",
+      "booking",
+      "sorting",
+      "packing",
+      "securing",
+      "hauling"
+     ],
+     "expected": "filing"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "task": "the signature slip round for the night bag",
+    "pq": "the receipt stub round after the count",
+    "slot": "night shift"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "sorting",
+      "booking",
+      "packing",
+      "securing",
+      "hauling",
+      "filing"
+     ],
+     "expected": "filing"
+    }
+   }
+  }
+ }
+}

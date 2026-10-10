@@ -1,0 +1,197 @@
+{
+ "id": "rt-9203",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "sorting",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "counter sheet pins 'sorting'; standing card says securing; FULL card stated in s1; probe expects securing (FP-2)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Pick exactly one tag: booking | sorting | packing | securing | hauling | filing. Errand: '{task}.' Reply with the tag only.",
+     "initial_expected": "sorting"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier counter sheet tags {task} as 'sorting'. The standing parcel card: waybill takes and fare notes are booking; bin drops and shelf stackings are sorting; string ties and wrapper seals are packing; strap tensions and corner guards are securing; trolley runs and yard pushes are hauling; signature slips and receipt stubs are filing. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Counter handover before {slot}. The standing parcel card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "New round opens at the parcel counter. The slate cards are locked away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Pick one tag for this errand. No cards are in reach. Errand: '{pq}.' Options: {options} - reply with the tag only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "9001": {
+   "values": {
+    "task": "the strap tension check for the crate lot",
+    "pq": "the corner guard round for the evening lot",
+    "slot": "morning"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "booking",
+      "sorting",
+      "packing",
+      "securing",
+      "hauling",
+      "filing"
+     ],
+     "expected": "securing"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "task": "the strap tension check for the mirror crate",
+    "pq": "the corner guard round before the express",
+    "slot": "van load"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "sorting",
+      "packing",
+      "securing",
+      "hauling",
+      "filing",
+      "booking"
+     ],
+     "expected": "securing"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "task": "the strap tension check on the tool chest",
+    "pq": "the corner guard round on the spare chest",
+    "slot": "lunch"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "packing",
+      "securing",
+      "hauling",
+      "filing",
+      "booking",
+      "sorting"
+     ],
+     "expected": "securing"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "task": "the strap tension check for the clock case",
+    "pq": "the corner guard round for the frame case",
+    "slot": "mail day"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "securing",
+      "hauling",
+      "filing",
+      "booking",
+      "sorting",
+      "packing"
+     ],
+     "expected": "securing"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "task": "the strap tension check for the organ crate",
+    "pq": "the corner guard round at the north door",
+    "slot": "afternoon"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "hauling",
+      "filing",
+      "booking",
+      "sorting",
+      "packing",
+      "securing"
+     ],
+     "expected": "securing"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "task": "the strap tension check on the glass rack",
+    "pq": "the corner guard round for the slate rack",
+    "slot": "express"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "filing",
+      "booking",
+      "sorting",
+      "packing",
+      "securing",
+      "hauling"
+     ],
+     "expected": "securing"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "task": "the strap tension check for the tile box",
+    "pq": "the corner guard round after the tally",
+    "slot": "night shift"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "sorting",
+      "booking",
+      "packing",
+      "securing",
+      "hauling",
+      "filing"
+     ],
+     "expected": "securing"
+    }
+   }
+  }
+ }
+}

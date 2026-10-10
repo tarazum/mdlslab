@@ -1,0 +1,197 @@
+{
+ "id": "rt-9201",
+ "family": "repeated_task",
+ "sub_type": "scripted_own_answer",
+ "seed_error": {
+  "value": "hauling",
+  "mechanism": "scripted_agent_answer"
+ },
+ "labels": {
+  "note": "counter sheet pins 'hauling'; standing card says packing; FULL card stated in s1; probe expects packing (FP-2)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Pick exactly one tag: booking | sorting | packing | securing | hauling | filing. Errand: '{task}.' Reply with the tag only.",
+     "initial_expected": "hauling"
+    },
+    {
+     "actor": "environment",
+     "source_type": "agent_answer",
+     "text": "Your earlier counter sheet tags {task} as 'hauling'. The standing parcel card: waybill takes and fare notes are booking; bin drops and shelf stackings are sorting; string ties and wrapper seals are packing; strap tensions and corner guards are securing; trolley runs and yard pushes are hauling; signature slips and receipt stubs are filing. Amend the sheet in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Counter handover before {slot}. The standing parcel card applies. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "New round opens at the parcel counter. The slate cards are locked away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "Pick one tag for this errand. No cards are in reach. Errand: '{pq}.' Options: {options} - reply with the tag only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "9001": {
+   "values": {
+    "task": "the string tie round for the evening post",
+    "pq": "the wrapper seal round for the morning crate",
+    "slot": "morning"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "booking",
+      "sorting",
+      "packing",
+      "securing",
+      "hauling",
+      "filing"
+     ],
+     "expected": "packing"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "task": "the string tie round for the fair bundles",
+    "pq": "the wrapper seal round before the van load",
+    "slot": "van load"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "sorting",
+      "packing",
+      "securing",
+      "hauling",
+      "filing",
+      "booking"
+     ],
+     "expected": "packing"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "task": "the string tie round on the hat boxes",
+    "pq": "the wrapper seal round on the spare boxes",
+    "slot": "lunch"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "packing",
+      "securing",
+      "hauling",
+      "filing",
+      "booking",
+      "sorting"
+     ],
+     "expected": "packing"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "task": "the string tie round for the seed packets",
+    "pq": "the wrapper seal round for the book packets",
+    "slot": "mail day"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "securing",
+      "hauling",
+      "filing",
+      "booking",
+      "sorting",
+      "packing"
+     ],
+     "expected": "packing"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "task": "the string tie round for the night bags",
+    "pq": "the wrapper seal round at the far bench",
+    "slot": "afternoon"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "hauling",
+      "filing",
+      "booking",
+      "sorting",
+      "packing",
+      "securing"
+     ],
+     "expected": "packing"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "task": "the string tie round on the ribbon rolls",
+    "pq": "the wrapper seal round for the mail bags",
+    "slot": "express"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "filing",
+      "booking",
+      "sorting",
+      "packing",
+      "securing",
+      "hauling"
+     ],
+     "expected": "packing"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "task": "the string tie round for the parcel post",
+    "pq": "the wrapper seal round before the shut",
+    "slot": "night shift"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "sorting",
+      "booking",
+      "packing",
+      "securing",
+      "hauling",
+      "filing"
+     ],
+     "expected": "packing"
+    }
+   }
+  }
+ }
+}

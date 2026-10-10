@@ -1,0 +1,51 @@
+{
+ "kind": "fixture-validation-regressions-post-v3o",
+ "note": "all prior suites re-validated after adding v3o support (validator tables extended; V18 all_suites now includes v3o, so v3m/v3n world-freshness also compares against v3o); every suite PASS",
+ "suites": {
+  "v3": {
+   "verdict": "PASS",
+   "failed": [],
+   "suite_sha256": "a0c7097f47d3fe4ca52cf937ff509bc1d5099dfa86f7b1bf45dbf5a9cc23c71e"
+  },
+  "v3h": {
+   "verdict": "PASS",
+   "failed": [],
+   "suite_sha256": "a608e74e69bb0327afd0659be15ba0aacd23c3a1c2d9441fdc6313960e5d44c3"
+  },
+  "v3i": {
+   "verdict": "PASS",
+   "failed": [],
+   "suite_sha256": "f5c0f5a9bab7fabbfad9d9163a3d91583f4c8180ee09a08c4fcd851638bdb310"
+  },
+  "v3j": {
+   "verdict": "PASS",
+   "failed": [],
+   "suite_sha256": "516d6588c1c377e891ef87293d937d22e2fdd71dbd318aeaf88367365e7d0889"
+  },
+  "v3k": {
+   "verdict": "PASS",
+   "failed": [],
+   "suite_sha256": "06b897f6e727a0cc1ab2201cc03d0f007c80b48194260f97648f36260624e5fe"
+  },
+  "v3l": {
+   "verdict": "PASS",
+   "failed": [],
+   "suite_sha256": "ff607ddb89384d65e2db5235dd14abbbb055caa57abdb594daacfa391f1baa11"
+  },
+  "v3m": {
+   "verdict": "PASS",
+   "failed": [],
+   "suite_sha256": "6c82a3710158fea9b3fd126c2eeacd0689a2e7f60820a30965a78eae83ba468b"
+  },
+  "v3n": {
+   "verdict": "PASS",
+   "failed": [],
+   "suite_sha256": "9201d71026451f58189dcbdf3b2740b256d88df2945ac87ae462912ff18323e9"
+  },
+  "v3o": {
+   "verdict": "PASS",
+   "failed": [],
+   "suite_sha256": "63b71d2d972ef6ca84c7a74ffcb519150dc4ddb0b5f2cc0e5dc240d50e64fb5c"
+  }
+ }
+}

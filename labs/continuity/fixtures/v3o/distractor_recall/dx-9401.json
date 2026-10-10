@@ -1,0 +1,202 @@
+{
+ "id": "dx-9401",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "three codes stated at learning (self-rescuer cabinet target; battery tray and cap lamp rail lures); BOTH lures are re-confirmed in s2 while the target code is stated once (v3o difficulty fold); probe asks the target with all three in options; lure_value declared for validator V8R (FP-4)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the mine lamp station. For the lamp station book: the self-rescuer cabinet code is {code}; the battery tray code is {lurea}; the cap lamp rail code is {lureb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Reminder from the pit top office: the battery tray code {lurea} and the cap lamp rail code {lureb} were re-checked this morning and still stand. {chore} finished. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives from the pit top office run; the lamp station book is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the self-rescuer cabinet code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{lurea}",
+ "variants": {
+  "9001": {
+   "values": {
+    "code": "L17",
+    "lurea": "L71",
+    "lureb": "L32",
+    "chore": "the cage gate grease",
+    "role": "banksman"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "L17",
+      "L71",
+      "L32",
+      "L45",
+      "L68",
+      "L91"
+     ],
+     "expected": "L17"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "code": "L23",
+    "lurea": "L32",
+    "lureb": "L54",
+    "chore": "the lamp rack wipe",
+    "role": "lamp man"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "L32",
+      "L54",
+      "L68",
+      "L19",
+      "L62",
+      "L23"
+     ],
+     "expected": "L23"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "code": "L45",
+    "lurea": "L54",
+    "lureb": "L86",
+    "chore": "the oil can fill",
+    "role": "onsetter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "L86",
+      "L19",
+      "L26",
+      "L83",
+      "L45",
+      "L54"
+     ],
+     "expected": "L45"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "code": "L68",
+    "lurea": "L86",
+    "lureb": "L91",
+    "chore": "the reflector polish",
+    "role": "shaft keeper"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "L26",
+      "L38",
+      "L71",
+      "L68",
+      "L86",
+      "L91"
+     ],
+     "expected": "L68"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "code": "L19",
+    "lurea": "L91",
+    "lureb": "L62",
+    "chore": "the trough rinse",
+    "role": "road layer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "L17",
+      "L32",
+      "L19",
+      "L91",
+      "L62",
+      "L38"
+     ],
+     "expected": "L19"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "code": "L26",
+    "lurea": "L62",
+    "lureb": "L83",
+    "chore": "the bench brush",
+    "role": "cage tender"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "L54",
+      "L26",
+      "L62",
+      "L83",
+      "L17",
+      "L23"
+     ],
+     "expected": "L26"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "code": "L38",
+    "lurea": "L83",
+    "lureb": "L71",
+    "chore": "the dusk lamp count",
+    "role": "night viewer"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "L38",
+      "L83",
+      "L71",
+      "L23",
+      "L45",
+      "L86"
+     ],
+     "expected": "L38"
+    }
+   }
+  }
+ }
+}

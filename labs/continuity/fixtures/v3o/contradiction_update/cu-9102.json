@@ -1,0 +1,202 @@
+{
+ "id": "cu-9102",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "labels": {
+  "note": "net loft patch counts corrected TWICE (old->mid->new); probe expects NEW (FP-1, chained)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You tend the net loft mend bench. For the log: the drift net takes {old} mesh patches per panel. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the twine gauge changed; the drift net now takes {mid} mesh patches per panel, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Further correction for the records: the panel width was re-cut; the drift net now takes {new} mesh patches per panel, not {mid}. Note this correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A skipper asks; the loft bench card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many mesh patches does the drift net take per panel? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "9001": {
+   "values": {
+    "old": "25",
+    "mid": "27",
+    "new": "31"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "27",
+      "31",
+      "20",
+      "33",
+      "35",
+      "25"
+     ],
+     "expected": "31"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "old": "28",
+    "mid": "30",
+    "new": "34"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "34",
+      "23",
+      "36",
+      "38",
+      "28",
+      "30"
+     ],
+     "expected": "34"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "old": "31",
+    "mid": "33",
+    "new": "37"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "26",
+      "39",
+      "41",
+      "31",
+      "33",
+      "37"
+     ],
+     "expected": "37"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "old": "34",
+    "mid": "36",
+    "new": "40"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "42",
+      "44",
+      "34",
+      "36",
+      "40",
+      "29"
+     ],
+     "expected": "40"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "old": "37",
+    "mid": "39",
+    "new": "43"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "47",
+      "37",
+      "39",
+      "43",
+      "32",
+      "45"
+     ],
+     "expected": "43"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "old": "40",
+    "mid": "42",
+    "new": "46"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "40",
+      "42",
+      "46",
+      "35",
+      "48",
+      "50"
+     ],
+     "expected": "46"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "old": "43",
+    "mid": "45",
+    "new": "49"
+   },
+   "probes": {
+    "s4t2": {
+     "labels": [
+      "45",
+      "49",
+      "38",
+      "51",
+      "53",
+      "43"
+     ],
+     "expected": "49"
+    }
+   }
+  }
+ }
+}

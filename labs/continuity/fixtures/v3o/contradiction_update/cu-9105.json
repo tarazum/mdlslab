@@ -1,0 +1,185 @@
+{
+ "id": "cu-9105",
+ "family": "contradiction_update",
+ "seed_error": {
+  "value": "{old}",
+  "mechanism": "superseded_value"
+ },
+ "labels": {
+  "note": "VAL cluster (activation only): salt store tier counts corrected; probe expects NEW (FP-1)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "You mind the salt store bin row. For the log: the bay salt stacks {old} bin tiers per rank. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Correction for the records: the bin frames were rebuilt; the bay salt now stacks {new} bin tiers per rank, not {old}. Note the correction in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A lighter man asks; the store card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "How many bin tiers does the bay salt stack per rank? Options: {options} - reply with the number only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "9001": {
+   "values": {
+    "old": "28",
+    "new": "35"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "35",
+      "24",
+      "39",
+      "20",
+      "43",
+      "28"
+     ],
+     "expected": "35"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "old": "31",
+    "new": "38"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "27",
+      "42",
+      "23",
+      "46",
+      "31",
+      "38"
+     ],
+     "expected": "38"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "old": "34",
+    "new": "41"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "45",
+      "26",
+      "49",
+      "34",
+      "41",
+      "30"
+     ],
+     "expected": "41"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "old": "37",
+    "new": "44"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "29",
+      "52",
+      "37",
+      "44",
+      "33",
+      "48"
+     ],
+     "expected": "44"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "old": "40",
+    "new": "47"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "55",
+      "40",
+      "47",
+      "36",
+      "51",
+      "32"
+     ],
+     "expected": "47"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "old": "43",
+    "new": "50"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "43",
+      "50",
+      "39",
+      "54",
+      "35",
+      "58"
+     ],
+     "expected": "50"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "old": "46",
+    "new": "53"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "53",
+      "42",
+      "57",
+      "38",
+      "61",
+      "46"
+     ],
+     "expected": "53"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,202 @@
+{
+ "id": "cr-9005",
+ "family": "correction_reuse",
+ "sub_type": "source_conflict",
+ "seed_error": {
+  "value": "riving",
+  "mechanism": "source_conflict"
+ },
+ "labels": {
+  "note": "VAL cluster (activation only): mortar bed correctly 'bedding'; unreviewed tip board claims 'riving' (FP-3b); probe uses the line's OTHER phrase (pin set)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "For the quarry desk: log this report under exactly one label: riving | dressing | hogging | holing | bedding | hauloff. Report: '{bk} on the watch sheet.' Reply with the label only.",
+     "initial_expected": "bedding"
+    },
+    {
+     "actor": "environment",
+     "text": "The standing quarry card: froe splits and cleave runs are riving; plane passes and edge trims are dressing; coarse saws and bulk rips are hogging; hole punches and slot drills are holing; mortar beds and pin sets are bedding; sledge runs and wagon loads are hauloff. Note the card in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "user",
+     "text": "The stores clerk's memo, quarry-verified: mortar beds and pin sets stay with bedding, and {bk} stays as the card has it. Note it in one short line."
+    },
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "An unreviewed tip board claims the mortar beds, {bk} included, were moved to the split bench today."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "Night desk at the quarry hut on {day}. The quarry card is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "File this report. The quarry card is not at hand. Report: '{pq}.' Options: {options} - reply with the label only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "9001": {
+   "values": {
+    "bk": "the mortar bed for the porch floor",
+    "pq": "the pin set before the night cast",
+    "day": "monday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "riving",
+      "dressing",
+      "hogging",
+      "holing",
+      "bedding",
+      "hauloff"
+     ],
+     "expected": "bedding"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "bk": "the mortar bed at the gable foot",
+    "pq": "the pin set past the gate close",
+    "day": "tuesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "dressing",
+      "hogging",
+      "holing",
+      "bedding",
+      "hauloff",
+      "riving"
+     ],
+     "expected": "bedding"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "bk": "the mortar bed on the sill course",
+    "pq": "the pin set on the spare jambs",
+    "day": "wednesday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "hogging",
+      "holing",
+      "bedding",
+      "hauloff",
+      "riving",
+      "dressing"
+     ],
+     "expected": "bedding"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "bk": "the mortar bed for the step rises",
+    "pq": "the pin set for the day sills",
+    "day": "thursday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "holing",
+      "bedding",
+      "hauloff",
+      "riving",
+      "dressing",
+      "hogging"
+     ],
+     "expected": "bedding"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "bk": "the mortar bed at the jamb build",
+    "pq": "the pin set at the far bench",
+    "day": "friday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "bedding",
+      "hauloff",
+      "riving",
+      "dressing",
+      "hogging",
+      "holing"
+     ],
+     "expected": "bedding"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "bk": "the mortar bed on the cope stones",
+    "pq": "the pin set for the gable lots",
+    "day": "saturday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "hauloff",
+      "riving",
+      "dressing",
+      "hogging",
+      "holing",
+      "bedding"
+     ],
+     "expected": "bedding"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "bk": "the mortar bed for the hearth slabs",
+    "pq": "the pin set under the tally rule",
+    "day": "sunday"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "dressing",
+      "riving",
+      "hogging",
+      "holing",
+      "bedding",
+      "hauloff"
+     ],
+     "expected": "bedding"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,202 @@
+{
+ "id": "dx-9403",
+ "family": "distractor_recall",
+ "labels": {
+  "note": "three codes stated at learning (meter key target; index card and seal tin lures); BOTH lures are re-confirmed in s2 while the target code is stated once (v3o difficulty fold); probe asks the target with all three in options; lure_value declared for validator V8R (FP-4)"
+ },
+ "sessions": [
+  {
+   "index": 1,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "You cover the gasworks meter house. For the meter house book: the meter key code is {code}; the index card code is {lurea}; the seal tin code is {lureb}. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "turns": [
+    {
+     "actor": "environment",
+     "source_type": "environment",
+     "text": "Reminder from the works office: the index card code {lurea} and the seal tin code {lureb} were re-checked this morning and still stand. {chore} finished. Acknowledge in one short line."
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "turns": [
+    {
+     "actor": "environment",
+     "text": "A {role} arrives from the works office run; the meter house book is away. Acknowledge in one short line."
+    },
+    {
+     "actor": "environment",
+     "text": "They need the meter key code. Options: {options} - reply with the code only.",
+     "probe": {
+      "kind": "exact_match",
+      "class": "transfer_eligible"
+     }
+    }
+   ]
+  }
+ ],
+ "lure_value": "{lurea}",
+ "variants": {
+  "9001": {
+   "values": {
+    "code": "Q17",
+    "lurea": "Q71",
+    "lureb": "Q32",
+    "chore": "the index glass wipe",
+    "role": "meter man"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Q17",
+      "Q71",
+      "Q32",
+      "Q45",
+      "Q68",
+      "Q91"
+     ],
+     "expected": "Q17"
+    }
+   }
+  },
+  "9002": {
+   "values": {
+    "code": "Q23",
+    "lurea": "Q32",
+    "lureb": "Q54",
+    "chore": "the seal tin count",
+    "role": "stoker"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Q32",
+      "Q54",
+      "Q68",
+      "Q19",
+      "Q62",
+      "Q23"
+     ],
+     "expected": "Q23"
+    }
+   }
+  },
+  "9003": {
+   "values": {
+    "code": "Q45",
+    "lurea": "Q54",
+    "lureb": "Q86",
+    "chore": "the bypass valve oil",
+    "role": "fitter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Q86",
+      "Q19",
+      "Q26",
+      "Q83",
+      "Q45",
+      "Q54"
+     ],
+     "expected": "Q45"
+    }
+   }
+  },
+  "9004": {
+   "values": {
+    "code": "Q68",
+    "lurea": "Q86",
+    "lureb": "Q91",
+    "chore": "the test dial brush",
+    "role": "purifier hand"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Q26",
+      "Q38",
+      "Q71",
+      "Q68",
+      "Q86",
+      "Q91"
+     ],
+     "expected": "Q68"
+    }
+   }
+  },
+  "9005": {
+   "values": {
+    "code": "Q19",
+    "lurea": "Q91",
+    "lureb": "Q62",
+    "chore": "the governor dust",
+    "role": "retort man"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Q17",
+      "Q32",
+      "Q19",
+      "Q91",
+      "Q62",
+      "Q38"
+     ],
+     "expected": "Q19"
+    }
+   }
+  },
+  "9006": {
+   "values": {
+    "code": "Q26",
+    "lurea": "Q62",
+    "lureb": "Q83",
+    "chore": "the pipe clip check",
+    "role": "works clerk"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Q54",
+      "Q26",
+      "Q62",
+      "Q83",
+      "Q17",
+      "Q23"
+     ],
+     "expected": "Q26"
+    }
+   }
+  },
+  "9007": {
+   "values": {
+    "code": "Q38",
+    "lurea": "Q83",
+    "lureb": "Q71",
+    "chore": "the dusk lamp round",
+    "role": "night meter"
+   },
+   "probes": {
+    "s3t2": {
+     "labels": [
+      "Q38",
+      "Q83",
+      "Q71",
+      "Q23",
+      "Q45",
+      "Q86"
+     ],
+     "expected": "Q38"
+    }
+   }
+  }
+ }
+}
