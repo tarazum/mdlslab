@@ -1,0 +1,288 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-c-20261010-144817",
+ "arm": "R2",
+ "seed": 8007,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": "f99be96f2bad3e030c76cefa40f5d8f6cbc6cde64cd39471da392ffb25059302",
+ "lesson_store_status": "active",
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "moulding",
+   "observed_normalized": "moulding",
+   "observed_label": "moulding",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "tuning",
+   "observed_normalized": "acknowledged.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8002",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "dispatch",
+   "observed_normalized": "the report is filed under the label 'dispatch'.",
+   "observed_label": "dispatch",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "pouring",
+   "observed_normalized": "the metal tap for the last pour is in the pouring category.",
+   "observed_label": "pouring",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8004",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "71",
+   "observed_normalized": "71",
+   "observed_label": "71",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "46",
+   "observed_normalized": "46",
+   "observed_label": "46",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8102",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "56",
+   "observed_normalized": "61",
+   "observed_label": "61",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-8103",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "32",
+   "observed_normalized": "38",
+   "observed_label": "38",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-8104",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "N59",
+   "observed_normalized": "n59.",
+   "observed_label": "N59",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-8301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "R66",
+   "observed_normalized": "r66",
+   "observed_label": "R66",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-8302",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "C38",
+   "observed_normalized": "c38",
+   "observed_label": "C38",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "M38",
+   "observed_normalized": "m83",
+   "observed_label": "M83",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8402",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the metal that rings in the ember peal is bronze.",
+   "observed_label": "bronze",
+   "observed_position": 1,
+   "labels": [
+    "gunmetal",
+    "bronze",
+    "brass",
+    "copper",
+    "pewter",
+    "iron"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "there are 27 rope coils hanging on the wheel pegs.",
+   "observed_label": "27",
+   "observed_position": 3,
+   "labels": [
+    "18",
+    "21",
+    "24",
+    "27",
+    "30",
+    "33"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the word \"bastard\" is the correct answer. the other options are not related to the question.",
+   "observed_label": "bastard",
+   "observed_position": 2,
+   "labels": [
+    "coal",
+    "stockholm",
+    "bastard",
+    "pitch",
+    "rosin",
+    "birch"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the number \"34\" is the correct answer. the other options are not related to the question.",
+   "observed_label": "34",
+   "observed_position": 2,
+   "labels": [
+    "28",
+    "31",
+    "34",
+    "37",
+    "40",
+    "43"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "saw",
+   "observed_label": "saw",
+   "observed_position": 2,
+   "labels": [
+    "chisel",
+    "pick",
+    "saw",
+    "tongs",
+    "hook",
+    "spade"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "60",
+   "observed_label": "60",
+   "observed_position": 4,
+   "labels": [
+    "48",
+    "51",
+    "54",
+    "57",
+    "60",
+    "63"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "pressing",
+   "observed_normalized": "collection.",
+   "observed_label": "collection",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "mending",
+   "observed_normalized": "the patch round after the sort is mending.",
+   "observed_label": "mending",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8202",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "folding",
+   "observed_normalized": "acknowledged.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8203",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 9,
+ "probes_total": 21,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 168,
+ "duration_s": 214.3,
+ "memory_guard": {
+  "appends": 168,
+  "injections_nonempty": 35,
+  "passed": true
+ },
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

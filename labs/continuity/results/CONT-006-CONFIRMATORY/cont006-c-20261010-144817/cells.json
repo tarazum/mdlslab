@@ -1,0 +1,114 @@
+{
+ "kind": "cont006-cells",
+ "run_id": "cont006-c-20261010-144817",
+ "phase": "C",
+ "derived": true,
+ "cells": {
+  "R0/seed-8003": {
+   "wall_s": 215.7,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 10,
+   "lesson_store_sha256": null
+  },
+  "R0/seed-8004": {
+   "wall_s": 238.3,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 8,
+   "lesson_store_sha256": null
+  },
+  "R0/seed-8005": {
+   "wall_s": 227.0,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 8,
+   "lesson_store_sha256": null
+  },
+  "R0/seed-8006": {
+   "wall_s": 227.6,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 9,
+   "lesson_store_sha256": null
+  },
+  "R0/seed-8007": {
+   "wall_s": 215.7,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 10,
+   "lesson_store_sha256": null
+  },
+  "R2/seed-8003": {
+   "wall_s": 216.5,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 9,
+   "lesson_store_sha256": "f99be96f2bad3e030c76cefa40f5d8f6cbc6cde64cd39471da392ffb25059302"
+  },
+  "R2/seed-8004": {
+   "wall_s": 206.5,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 8,
+   "lesson_store_sha256": "f99be96f2bad3e030c76cefa40f5d8f6cbc6cde64cd39471da392ffb25059302"
+  },
+  "R2/seed-8005": {
+   "wall_s": 224.2,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 8,
+   "lesson_store_sha256": "f99be96f2bad3e030c76cefa40f5d8f6cbc6cde64cd39471da392ffb25059302"
+  },
+  "R2/seed-8006": {
+   "wall_s": 210.8,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 7,
+   "lesson_store_sha256": "f99be96f2bad3e030c76cefa40f5d8f6cbc6cde64cd39471da392ffb25059302"
+  },
+  "R2/seed-8007": {
+   "wall_s": 214.3,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 9,
+   "lesson_store_sha256": "f99be96f2bad3e030c76cefa40f5d8f6cbc6cde64cd39471da392ffb25059302"
+  },
+  "R3/seed-8003": {
+   "wall_s": 222.6,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 10,
+   "lesson_store_sha256": "b2500b6b542a906d2a7ee3d1cfcd21cfd2b950abc24079dd1b3c12a5065c12cb"
+  },
+  "R3/seed-8004": {
+   "wall_s": 226.0,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 7,
+   "lesson_store_sha256": "b2500b6b542a906d2a7ee3d1cfcd21cfd2b950abc24079dd1b3c12a5065c12cb"
+  },
+  "R3/seed-8005": {
+   "wall_s": 239.6,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 7,
+   "lesson_store_sha256": "b2500b6b542a906d2a7ee3d1cfcd21cfd2b950abc24079dd1b3c12a5065c12cb"
+  },
+  "R3/seed-8006": {
+   "wall_s": 217.5,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 6,
+   "lesson_store_sha256": "b2500b6b542a906d2a7ee3d1cfcd21cfd2b950abc24079dd1b3c12a5065c12cb"
+  },
+  "R3/seed-8007": {
+   "wall_s": 231.8,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 5,
+   "lesson_store_sha256": "b2500b6b542a906d2a7ee3d1cfcd21cfd2b950abc24079dd1b3c12a5065c12cb"
+  }
+ },
+ "total_wall_s": 3334.4
+}

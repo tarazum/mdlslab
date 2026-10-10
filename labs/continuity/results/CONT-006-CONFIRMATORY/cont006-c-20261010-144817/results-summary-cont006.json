@@ -1,0 +1,145 @@
+{
+ "kind": "cont006-confirmatory",
+ "primary": {
+  "endpoint": "delta = S(R2) - S(R0), 15 TR clusters x 7 seeds",
+  "mme": 0.2,
+  "band_note": "MME 0.20 absolute; band caveat-only (A.5) \u2014 see secondaries.guess_band_and_position",
+  "bootstrap": {
+   "draws": 10000,
+   "rng_seed": 20261008,
+   "method": "cluster percentile, same indices reused for every CI in this record"
+  },
+  "delta": -0.0667,
+  "ci_lo": -0.1333,
+  "ci_hi": 0.0,
+  "ci_excludes_0_up": false,
+  "ci_excludes_0_down": false
+ },
+ "verdict": "no confirmatory difference established",
+ "secondaries": {
+  "note": "exploratory, never promotable (prereg \u00a714)",
+  "r3_minus_r0_channel_viability": {
+   "delta": -0.1048,
+   "ci_lo": -0.1905,
+   "ci_hi": -0.0286,
+   "ci_excludes_0_up": false,
+   "ci_excludes_0_down": true
+  },
+  "r1_minus_r0_parroting_replication": {
+   "note": "NOT ESTIMABLE this run (A.11: R1 dropped at the pilot gate \u2014 T4 context overflow, 6 truncated generations in its pilot cells; the R1<=R0 parroting-replication hypothesis stays OPEN; the flagged cells remain committed as exploratory evidence in the Phase-P root)"
+  },
+  "invalid_format_decomposition": {
+   "R0": {
+    "probes": 105,
+    "wrong_label": 29,
+    "format_miss": 12,
+    "format_miss_share": 0.1143
+   },
+   "R2": {
+    "probes": 105,
+    "wrong_label": 35,
+    "format_miss": 13,
+    "format_miss_share": 0.1238
+   },
+   "R3": {
+    "probes": 105,
+    "wrong_label": 38,
+    "format_miss": 14,
+    "format_miss_share": 0.1333
+   }
+  },
+  "per_taxonomy_class_delta": {
+   "FP-1": {
+    "clusters": [
+     "cu-8101",
+     "cu-8102",
+     "cu-8103",
+     "cu-8104"
+    ],
+    "delta_mean_r2_minus_r0": -0.0714,
+    "delta_mean_r3_minus_r0": -0.0714
+   },
+   "FP-2": {
+    "clusters": [
+     "rt-8201",
+     "rt-8202",
+     "rt-8203"
+    ],
+    "delta_mean_r2_minus_r0": 0.0476,
+    "delta_mean_r3_minus_r0": -0.0476
+   },
+   "FP-3a": {
+    "clusters": [
+     "cr-8001",
+     "cr-8002"
+    ],
+    "delta_mean_r2_minus_r0": 0.0,
+    "delta_mean_r3_minus_r0": 0.0714
+   },
+   "FP-3b": {
+    "clusters": [
+     "cr-8003",
+     "cr-8004"
+    ],
+    "delta_mean_r2_minus_r0": -0.2143,
+    "delta_mean_r3_minus_r0": -0.2857
+   },
+   "FP-4": {
+    "clusters": [
+     "dx-8401",
+     "dx-8402"
+    ],
+    "delta_mean_r2_minus_r0": -0.2143,
+    "delta_mean_r3_minus_r0": -0.2857
+   },
+   "FP-5": {
+    "clusters": [
+     "dr-8301",
+     "dr-8302"
+    ],
+    "delta_mean_r2_minus_r0": 0.0,
+    "delta_mean_r3_minus_r0": -0.0714
+   }
+  },
+  "guess_band_and_position": {
+   "R0": {
+    "n": 42,
+    "valid_share": 0.5952,
+    "position0_share": 0.0,
+    "band_dev": 0.1667
+   },
+   "R2": {
+    "n": 42,
+    "valid_share": 0.8571,
+    "position0_share": 0.1667,
+    "band_dev": 0.0
+   },
+   "R3": {
+    "n": 42,
+    "valid_share": 0.9286,
+    "position0_share": 0.0513,
+    "band_dev": 0.1154
+   }
+  }
+ },
+ "header": {
+  "revs": "recorded from env.json files at run-record assembly",
+  "wall_reconciliation": "per-arm totals = sum over arm-seed summaries across BOTH roots (template \u00a75)",
+  "carried_notes": {
+   "CN-012-INVALIDATION": "the V1 chain (v3l, frozen-config-cont006.json) ran every R-arm MEMORYLESS \u2014 the runner's append tuple omitted the R-arms (CN-012); its verdict 'no confirmatory difference' (\u0394 = 0.019) is INVALID as a test of the registered arms and is preserved as an unregistered exploratory datapoint (an accidental lessons-WITHOUT-memory ablation \u2248 prereg critical test 1)",
+   "V2-AMENDMENTS": "A.1 suite v3m (fresh worlds; V3+V18 disjointness); A.2 memory discipline (MEMORY_ARMS single source + live-telemetry gate before every analyzer); A.3 calibration pilot (family bands + anchor 0.525\u00b10.15); A.4 worker v2 multi-trace bundles + FP-6 store cap + class schema; A.5 MME 0.20 absolute, band caveat-only; A.6 chain/gates order; A.7 arms/endpoint/decision-rule unchanged (R1 stays; parroting-replication R1<=R0 finally testable with memory alive)",
+   "V3M-CAL-STOP": "the v3m chain stopped at calibration 2026-10-10 (family bands: dx/dr 1.0 ceiling both arms, cr 0.25/0.0 floor; verdict results/CONT-006-CAL/cont006-cal-20261010-000940/calibration-verdict.json); v3n re-aims difficulty (cr easier / dx lure-salience / dr interference) per DIAGNOSTIC-CONT006-V2-CR.md",
+   "CORPUS-COVERAGE": "worker lessons are corpus-shaped: the experience corpus (CONT-005-C2) never contains transfer-inference probes, so its lessons prescribe 'answer what the instruction states' \u2014 on cr clusters the R2-R0 contrast reads as transfer-vs-suppression of memory-based inference (declared reading note, not an endpoint change)",
+   "V2-STORES": "R2 store = the W2 worker-v2 pass output (multi-trace bundles, FP-6 cap, class-coverage telemetry); R3 store = the blind-authored gold recap with declared classes + the same FP-6 cap (LL-G-008 dropped, 8->7; recap artifact r3-store-v2.json); both activated per the +0.05 store-level rule at Phase V",
+   "CN-A": "power-model caveats: paired-eps assumption narrows \u0394's CI; b0 anchored to C2 T-arms (corrected 0.525, PR-REVIEW-CONT006 RC-1) \u2014 if R0 behaves differently the realized power shifts; the pilot-gate re-check governs",
+   "CN-B": "pilot GO criteria 1\u20132 condition the LAUNCH, not the estimate \u2014 no endpoint-value condition selects the dataset; the headroom criterion reads R0 only",
+   "CN-C": "pilot criterion 1(ii) runs on ~14 probes (binomial sd ~0.12); a violation routes to the owner gate, never an automatic stop",
+   "N-3": "FP-3a clusters (cr-8001/8002) seed the agent's own wrong first answer by construction \u2014 per-class \u0394 partially co-measures FP-2 susceptibility; class attribution reads weaker than it looks",
+   "PW-6": "worker sampling config frozen since FREEZE is num_ctx 8192 / num_predict 768 (reflection_v2.WORKER_OPTIONS) while prereg \u00a71 quotes the WORKING-CORE config 4096/256 \u2014 different roles, declared per GATE-CONT006-POSTW condition 10 (low materiality)",
+   "PW-OVERRIDE-2": "OWNER OVERRIDE 2026-10-10 (this chain): the pilot NO-GO on criterion 2 (RGOLD invalid-format 0.143 -> 0.357 via list-echoing \u2014 the trivially-benign format lesson DEGRADES format on this model) was OVERRIDDEN ('\u0432\u0441\u0435 \u043f\u043e \u0434\u0435\u0444\u043e\u043b\u0442\u0443 - \u043e\u043a...', ROADMAP A.11). The finding rides as a headline secondary (third independent appearance of lesson-prescriptions breaking probe behavior); the primary R2-R0 is unaffected (counterfactual arms never enter it)",
+   "R1-DROP": "A.11: R1 absent from the confirmatory dataset (defective pilot cells \u2014 context overflow at the 18-scenario scale); R1-R0 not estimable; completeness is 15x7x3",
+   "PW-OVERRIDE": "OWNER OVERRIDE 2026-10-09 (V1 chain history): the V1 pilot NO-GO (criterion 1(i) BAD-lesson parroting \u2014 an agent quoted the injected bad lesson verbatim and acted on it; criterion 2 0.071 < 0.10) was explicitly OVERRIDDEN by the owner ('(b) \u0414\u043e\u0437\u0432\u043e\u043b\u0438\u0442\u0438 \u0444\u0456\u043d\u0430\u043b\u044c\u043d\u0438\u0439 \u0437\u0430\u0431\u0456\u0433 \u043f\u043e\u043f\u0440\u0438 NO-GO', ROADMAP Owner decisions 2026-10-09). That V1 confirmatory is the invalidated memoryless run; the harm-containment finding rides THIS run record as a headline secondary, and the primary R2-R0 endpoint is unaffected (counterfactual arms never enter it)"
+  },
+  "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+ }
+}

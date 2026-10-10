@@ -1,0 +1,288 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-c-20261010-144817",
+ "arm": "R2",
+ "seed": 8003,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": "f99be96f2bad3e030c76cefa40f5d8f6cbc6cde64cd39471da392ffb25059302",
+ "lesson_store_status": "active",
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "moulding",
+   "observed_normalized": "moulding",
+   "observed_label": "moulding",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "tuning",
+   "observed_normalized": "acknowledged.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8002",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "dispatch",
+   "observed_normalized": "the report is filed under the label 'dispatch'.",
+   "observed_label": "dispatch",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "pouring",
+   "observed_normalized": "the metal tap at the spout is not on the foundry card.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8004",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "59",
+   "observed_normalized": "59",
+   "observed_label": "59",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "34",
+   "observed_normalized": "34",
+   "observed_label": "34",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8102",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "44",
+   "observed_normalized": "49",
+   "observed_label": "49",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-8103",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "20",
+   "observed_normalized": "26",
+   "observed_label": "26",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-8104",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "N37",
+   "observed_normalized": "n37",
+   "observed_label": "N37",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-8301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "R44",
+   "observed_normalized": "r44",
+   "observed_label": "R44",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-8302",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "C45",
+   "observed_normalized": "c45",
+   "observed_label": "C45",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "M45",
+   "observed_normalized": "m45",
+   "observed_label": "M45",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8402",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the metal that rings in the funeral peal is iron.",
+   "observed_label": "iron",
+   "observed_position": 2,
+   "labels": [
+    "copper",
+    "pewter",
+    "iron",
+    "steel",
+    "gunmetal",
+    "bronze"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "there are 29 rope coils hanging on the west pegs.",
+   "observed_label": "29",
+   "observed_position": 5,
+   "labels": [
+    "14",
+    "17",
+    "20",
+    "23",
+    "26",
+    "29"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the correct answer is \"rosin\". the tar seals the seams of the knee brace, and the options provided are not the correct materials that would be used to seal the seams. pitch is a type of wood that is often used in furniture making, but it is not a suitable material for sealing the seams of a knee brace. rosin is a type of resin that is often used as a sealant in various applications, including in the automotive industry. birch is another type of wood that is sometimes used in furniture making, but it is not a suitable material for sealing the seams of a knee brace. pine is a soft and durable wood that is often used in furniture making, but it is not a suitable material for sealing the seams of a knee brace. coal is a type of fuel that is often used in power generation, but it is not a suitable material for sealing the seams of a knee brace. stockholm is a city in sweden, but it is not a suitable material for sealing the seams of a knee brace.",
+   "observed_label": null,
+   "observed_position": null,
+   "labels": [
+    "pitch",
+    "rosin",
+    "birch",
+    "pine",
+    "coal",
+    "stockholm"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the correct answer is \"30\". the number of fenders that ride the inner rail is 30. the options provided are not the correct number of fenders that would ride the inner rail. 24 is too few, 27 is too few, 33 is too many, 36 is too many, 39 is too many, and 30 is the correct number.",
+   "observed_label": null,
+   "observed_position": null,
+   "labels": [
+    "24",
+    "27",
+    "30",
+    "33",
+    "36",
+    "39"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "chisel",
+   "observed_label": "chisel",
+   "observed_position": 4,
+   "labels": [
+    "tongs",
+    "hook",
+    "spade",
+    "auger",
+    "chisel",
+    "pick"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "50",
+   "observed_label": "50",
+   "observed_position": 2,
+   "labels": [
+    "44",
+    "47",
+    "50",
+    "53",
+    "56",
+    "59"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "pressing",
+   "observed_normalized": "collection.",
+   "observed_label": "collection",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "mending",
+   "observed_normalized": "the patch round on the bed sets is mending.",
+   "observed_label": "mending",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8202",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "folding",
+   "observed_normalized": "collection.",
+   "observed_label": "collection",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8203",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 9,
+ "probes_total": 21,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 168,
+ "duration_s": 216.5,
+ "memory_guard": {
+  "appends": 168,
+  "injections_nonempty": 35,
+  "passed": true
+ },
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

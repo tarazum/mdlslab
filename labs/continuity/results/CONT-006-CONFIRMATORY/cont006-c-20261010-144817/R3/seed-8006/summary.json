@@ -1,0 +1,288 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-c-20261010-144817",
+ "arm": "R3",
+ "seed": 8006,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": "b2500b6b542a906d2a7ee3d1cfcd21cfd2b950abc24079dd1b3c12a5065c12cb",
+ "lesson_store_status": "active",
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "moulding",
+   "observed_normalized": "dispatch.",
+   "observed_label": "dispatch",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "tuning",
+   "observed_normalized": "the note listen on the small bell is a strike check and note listen: tuning under the standing card. the old 'fettling' filing is out of date.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8002",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "dispatch",
+   "observed_normalized": "dispatch.",
+   "observed_label": "dispatch",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "pouring",
+   "observed_normalized": "the ladle melt on the late charge was moved to the hauler slate today.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8004",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "68",
+   "observed_normalized": "68",
+   "observed_label": "68",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "43",
+   "observed_normalized": "43",
+   "observed_label": "43",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8102",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "53",
+   "observed_normalized": "58",
+   "observed_label": "58",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-8103",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "29",
+   "observed_normalized": "35.",
+   "observed_label": "35",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-8104",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "N53",
+   "observed_normalized": "n53.",
+   "observed_label": "N53",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-8301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "R60",
+   "observed_normalized": "r60",
+   "observed_label": "R60",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-8302",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "C26",
+   "observed_normalized": "c62",
+   "observed_label": "C62",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "M26",
+   "observed_normalized": "m26",
+   "observed_label": "M26",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8402",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the metal that rings in the midnight peal is steel.",
+   "observed_label": "steel",
+   "observed_position": 0,
+   "labels": [
+    "steel",
+    "gunmetal",
+    "bronze",
+    "brass",
+    "copper",
+    "pewter"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "there are 29 rope coils hanging on the ringing pegs.",
+   "observed_label": "29",
+   "observed_position": 4,
+   "labels": [
+    "17",
+    "20",
+    "23",
+    "26",
+    "29",
+    "32"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the word is \"rosin\".",
+   "observed_label": "rosin",
+   "observed_position": 5,
+   "labels": [
+    "pine",
+    "coal",
+    "stockholm",
+    "bastard",
+    "pitch",
+    "rosin"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the number is \"30\".",
+   "observed_label": "30",
+   "observed_position": 1,
+   "labels": [
+    "27",
+    "30",
+    "33",
+    "36",
+    "39",
+    "42"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "saw",
+   "observed_label": "saw",
+   "observed_position": 3,
+   "labels": [
+    "auger",
+    "chisel",
+    "pick",
+    "saw",
+    "tongs",
+    "hook"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "56",
+   "observed_label": "56",
+   "observed_position": 3,
+   "labels": [
+    "47",
+    "50",
+    "53",
+    "56",
+    "59",
+    "62"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "pressing",
+   "observed_normalized": "collection.",
+   "observed_label": "collection",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "mending",
+   "observed_normalized": "collection.",
+   "observed_label": "collection",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8202",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "folding",
+   "observed_normalized": "collection.",
+   "observed_label": "collection",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8203",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 6,
+ "probes_total": 21,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 168,
+ "duration_s": 217.5,
+ "memory_guard": {
+  "appends": 168,
+  "injections_nonempty": 35,
+  "passed": true
+ },
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}
