@@ -3581,3 +3581,18 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   prerequisite: anti-salience validator audit (blocked-vocab collisions).
 - Docs: PREREG-/RESULTS-/OWNER-BRIEF-/REVIEW-ASTRA-CONT006-CAPACITY-
   CONTENT.md. Registered verdicts untouched.
+
+## 2026-10-10 — CONT-006 STAGE 2 HANDOFF: owner «йдемо за рекомендацією» (+ «нова сесія» resolved); SESSION-BRIEF-CONT006-STAGE2.md prepared and pushed
+
+- Stage 2 authorized by the owner in chat after the step-3 close-out
+  (recommendation accepted). Session question answered: NEXT SESSION —
+  house one-milestone-per-fresh-session; this session carried steps 1
+  and 3 to completion and hands off via the brief (repo = state carrier).
+- docs/SESSION-BRIEF-CONT006-STAGE2.md: binding order (validator audit
+  FIRST — blocked-vocab collisions, NEW versioned code, frozen
+  lessons.py untouched; v3o authoring with rt mappings supplied
+  in-session + strong-model headroom calibration; balanced faithful
+  corpus + W4 with the audited validator; prereg with per-position
+  neutral controls and the session-start arm as an OPEN hypothesis;
+  phased execution with checkpoints; Fable→codex review routing;
+  non-goals). Kickoff line in the brief. Entry conditions on ≥ 7ceddc6.
