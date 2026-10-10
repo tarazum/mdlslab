@@ -56,7 +56,10 @@ CLASS_OF = {"cr-8001": "FP-3a", "cr-8002": "FP-3a", "cr-8003": "FP-3b",
             "cu-8103": "FP-1", "cu-8104": "FP-1", "rt-8201": "FP-2",
             "rt-8202": "FP-2", "rt-8203": "FP-2", "dx-8401": "FP-4",
             "dx-8402": "FP-4", "dr-8301": "FP-5", "dr-8302": "FP-5"}
-ARMS = ["R0", "R1", "R2", "R3"]
+# A.11 (owner-accepted 2026-10-10): R1 dropped from the confirmatory —
+# its pilot cells are defective (A.10/T4 context overflow, 6 truncated
+# generations); the primary never involves R1. Completeness 15x7x3.
+ARMS = ["R0", "R2", "R3"]
 SEEDS = [8001, 8002, 8003, 8004, 8005, 8006, 8007]
 BOOT = 10_000
 RNG_SEED = 20261008
@@ -117,6 +120,18 @@ CARRIED = {
             "num_predict 768 (reflection_v2.WORKER_OPTIONS) while prereg §1 "
             "quotes the WORKING-CORE config 4096/256 — different roles, "
             "declared per GATE-CONT006-POSTW condition 10 (low materiality)",
+    "PW-OVERRIDE-2": "OWNER OVERRIDE 2026-10-10 (this chain): the pilot "
+                     "NO-GO on criterion 2 (RGOLD invalid-format 0.143 -> "
+                     "0.357 via list-echoing — the trivially-benign format "
+                     "lesson DEGRADES format on this model) was OVERRIDDEN "
+                     "('все по дефолту - ок...', ROADMAP A.11). The finding "
+                     "rides as a headline secondary (third independent "
+                     "appearance of lesson-prescriptions breaking probe "
+                     "behavior); the primary R2-R0 is unaffected "
+                     "(counterfactual arms never enter it)",
+    "R1-DROP": "A.11: R1 absent from the confirmatory dataset (defective "
+               "pilot cells — context overflow at the 18-scenario scale); "
+               "R1-R0 not estimable; completeness is 15x7x3",
     "PW-OVERRIDE": "OWNER OVERRIDE 2026-10-09 (V1 chain history): the V1 "
                    "pilot NO-GO (criterion 1(i) BAD-lesson parroting — an "
                    "agent quoted the injected bad lesson verbatim and acted "
@@ -226,11 +241,9 @@ def analyze(pilot_root: Path | None, conf_root: Path | None) -> dict:
                 "missing_cell_probes": missing, "header": header}
     r0 = arm_cluster_pass(data, "R0", SEEDS)
     r2 = arm_cluster_pass(data, "R2", SEEDS)
-    r1 = arm_cluster_pass(data, "R1", SEEDS)
     r3 = arm_cluster_pass(data, "R3", SEEDS)
     d_primary = np.array([r2[s] - r0[s] for s in TR_IDS], dtype=float)
     d_r3 = np.array([r3[s] - r0[s] for s in TR_IDS], dtype=float)
-    d_r1 = np.array([r1[s] - r0[s] for s in TR_IDS], dtype=float)
     idx = rng.integers(0, len(TR_IDS), size=(BOOT, len(TR_IDS)))  # ONE draw, shared
     # MME 0.20 ABSOLUTE (A.5): the empirical guessing band is reported in
     # secondaries.guess_band_and_position as a caveat and NEVER moves the
@@ -240,7 +253,12 @@ def analyze(pilot_root: Path | None, conf_root: Path | None) -> dict:
                  "secondaries.guess_band_and_position")
     prim = delta_ci(d_primary, idx)
     sec_r3 = delta_ci(d_r3, idx)
-    sec_r1 = delta_ci(d_r1, idx)
+    sec_r1 = {"note": "NOT ESTIMABLE this run (A.11: R1 dropped at the "
+                      "pilot gate — T4 context overflow, 6 truncated "
+                      "generations in its pilot cells; the R1<=R0 "
+                      "parroting-replication hypothesis stays OPEN; the "
+                      "flagged cells remain committed as exploratory "
+                      "evidence in the Phase-P root)"}
     # invalid-format decomposition per arm (TR probes)
     fmt = {}
     for arm in ARMS:

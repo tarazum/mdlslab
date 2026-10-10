@@ -79,7 +79,7 @@ from continuity.reflection import ReflectionEngine  # noqa: E402
 from continuity.runner import Budget, run_scenario  # noqa: E402
 
 SUITE_DIR = LAB_ROOT / "fixtures" / "v3n"
-FREEZE_MANIFEST = LAB_ROOT / "experiments" / "suite-v3" / "frozen-config-cont006-v3b.json"
+FREEZE_MANIFEST = LAB_ROOT / "experiments" / "suite-v3" / "frozen-config-cont006-v3c.json"
 CORPUS_MANIFEST = LAB_ROOT / "experiments" / "cont006" / "experience-corpus-manifest.json"
 CF_LESSONS = LAB_ROOT / "experiments" / "cont006" / "counterfactual-lessons.json"
 WORKER_V2_BUNDLES = LAB_ROOT / "experiments" / "cont006" / "worker_v2_bundles.json"
@@ -173,6 +173,7 @@ FROZEN_PATHS = [
     # -- A.9 additions (dx/dr band exemption; owner-accepted 2026-10-10) --
     "docs/EVALUATION-PREP-CONT006-V2-A9.md",
     "docs/EVALUATION-PREP-CONT006-V2-A10.md",
+    "docs/EVALUATION-PREP-CONT006-V2-A11.md",
 ]
 DETERMINISM_CAVEAT = ("greedy+seed does not guarantee identical outputs "
                       "(PB-071, CN-003); per-seed content variants make seeds "
@@ -687,7 +688,8 @@ def main() -> int:
         if active is None or not (active / "active-store-r2.json").exists():
             raise SystemExit("FAIL-CLOSED: Phase C needs --active-dir with the "
                              "frozen ACTIVE stores")
-        run_transfer_phase("C", MAIN_ARMS, [s for s in ALL_SEEDS if s not in PILOT_SEEDS],
+        conf_arms = ["R0", "R2", "R3"]  # A.11: R1 dropped (defective pilot cells)
+        run_transfer_phase("C", conf_arms, [s for s in ALL_SEEDS if s not in PILOT_SEEDS],
                            TR_IDS + GC_IDS, args.base_url, store_dir=active,
                            store_kind="active", resume_root=_opt(args.resume_root),
                            gc_trim=args.gc_trim)

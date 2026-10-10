@@ -1,0 +1,166 @@
+{
+ "kind": "cont006-freeze-manifest-v3",
+ "created_utc": "2026-10-10T11:47:31Z",
+ "prereg": "docs/EVALUATION-PREP-CONT006-V2.md (A.1-A.7) + A.8 (EVALUATION-PREP-CONT006-V2-A8.md; owner-accepted 2026-10-10)",
+ "supersedes": "frozen-config-cont006.json (V1, invalidated by CN-012) and frozen-config-cont006-v2.json (V2, calibration STOP-OUT-OF-BAND on v3m); records kept byte-untouched",
+ "seeds": {
+  "all": [
+   8001,
+   8002,
+   8003,
+   8004,
+   8005,
+   8006,
+   8007
+  ],
+  "pilot": [
+   8001,
+   8002
+  ],
+  "validation_clusters": [
+   "cr-8005",
+   "cu-8105",
+   "rt-8204",
+   "dx-8403"
+  ],
+  "cf_subset": [
+   "cr-8001",
+   "cr-8003",
+   "rt-8201",
+   "rt-8202",
+   "cu-8101",
+   "dx-8401",
+   "dr-8301",
+   "gc-8501"
+  ]
+ },
+ "models": {
+  "working_core": {
+   "name": "granite-code:8b",
+   "digest_prefix": "36c3c3b9683b"
+  },
+  "reflector": {
+   "name": "qwen36-35b-a3b:mdlslab",
+   "digest_prefix": "8a0fd5da454e",
+   "options": "worker options frozen in reflection_v2.WORKER_OPTIONS"
+  }
+ },
+ "environment_pin": {
+  "ollama_version_prefix": "0.34"
+ },
+ "execution": {
+  "phase_order": [
+   "W2",
+   "CAL",
+   "V",
+   "V-activate",
+   "P",
+   "C"
+  ],
+  "arms": {
+   "R0": "flat memory",
+   "R1": "MVP reflection (byte-stable)",
+   "R2": "worker v2 store via lesson channel",
+   "R3": "gold recap store (classes + FP-6 cap) via lesson channel",
+   "RBAD": "counterfactual BAD",
+   "RGOLD": "counterfactual GOLD-TRIV"
+  },
+  "stores": {
+   "R2_evidence": "results/CONT-006-WORKER/cont006-worker-v2-20261010-000332/r2-store-v2.json (A.8: reused byte-identically; suite-independent)",
+   "R3_evidence": "experiments/cont006/r3-store-v2.json",
+   "counterfactual": "experiments/cont006/counterfactual-lessons.json"
+  },
+  "temperature": 0.0,
+  "num_ctx": 4096,
+  "num_predict": 256,
+  "keep_alive": "30m",
+  "wall_guard_s": 16200,
+  "declared_gpu_cap_s": 18000,
+  "budget_per_arm_seed": {
+   "max_turns": 130,
+   "max_total_tokens": 400000,
+   "wall_clock_s": 5400.0
+  },
+  "activation_threshold": 0.05
+ },
+ "digests": {
+  "fixtures/v3l_rendered_seed6001": "2e3ee0443c70b0cbd89441450339ea5b0a187beaf9f612a8a80ce34646e0c4cf",
+  "fixtures/v3l_rendered_seed6002": "140efa386e9393d678d08caeafdd72c4b09e2fdf2b80cb71056b83b0c83b4af5",
+  "fixtures/v3l_rendered_seed6003": "64b281e7944e741ffb8e29feba5d89a9f491199e96aa77d1fdbebac362bcc3ed",
+  "fixtures/v3l_rendered_seed6004": "d85a3c6c38b0f6b24693ae9aaa5b7ea22dfa6034390d00cbc02dfcbd1f4ef3e4",
+  "fixtures/v3l_rendered_seed6005": "a0662da47d0a0c345e9a5fbf53677460b2377f85436a91afa63708669b96b0dd",
+  "fixtures/v3l_rendered_seed6006": "1ba3c5005db3fb45943ea9ca3fd46f0cd8bc96389944858dca6a94e9da6b6b1f",
+  "fixtures/v3l_rendered_seed6007": "e85da3abdca55aa01d4089e960f7274f443ec4addd3a4375a13a1b0dc493fdae",
+  "fixtures/v3l_suite": "ff607ddb89384d65e2db5235dd14abbbb055caa57abdb594daacfa391f1baa11",
+  "fixtures/v3m_rendered_seed7001": "0631428c00cb0790c823cded981fde4425b35eeff9be2b6521dadd743ae51c48",
+  "fixtures/v3m_rendered_seed7002": "cc1219e92b6f63e1bc8b93e8f5e8fac6fe88a9bf56c204fe7379bc7f3cf62ff6",
+  "fixtures/v3m_rendered_seed7003": "529888f7af2f65e24ba453e66edac21c3d9006fbef99da6b63d257dfbb0104e7",
+  "fixtures/v3m_rendered_seed7004": "28cafe0a44463e1aaef40e170107423ba2a51cbbbbd7850a8492a1393bb0f4aa",
+  "fixtures/v3m_rendered_seed7005": "55a0d4687c242b01cbd930e20147467b83fffe75e64e9c2b7b529f75b1ac0396",
+  "fixtures/v3m_rendered_seed7006": "c337c87f7eac19a09d948a18c8ca6b509d08f8cafd0ce304984e810f2ee8aeb5",
+  "fixtures/v3m_rendered_seed7007": "deadfe6ac9f653ae5ff850947a79785ceaff97081700591301682305936f0540",
+  "fixtures/v3m_suite": "6c82a3710158fea9b3fd126c2eeacd0689a2e7f60820a30965a78eae83ba468b",
+  "fixtures/v3n_rendered_seed8001": "18d4fb26304adb2f8e209cf9c8bc99f68f6b42de27986a94be92b2a7555c24f3",
+  "fixtures/v3n_rendered_seed8002": "fe1ed484d3f673da0a627a562a28390d645d3c723b1b8fe5384b8d1225780207",
+  "fixtures/v3n_rendered_seed8003": "bf25efe557cb35e7961efc0158fb7084b50c1dbab8030b8091be21f7e9dc8cab",
+  "fixtures/v3n_rendered_seed8004": "d69515536fc5bf50e9fe0eedc0665b2b09a443ee521dcac65224ef410b1228ad",
+  "fixtures/v3n_rendered_seed8005": "2c42a427a9b5fc1d182b2d1d426da3ac0e48ae0a4be601a0f60b45258393da14",
+  "fixtures/v3n_rendered_seed8006": "0ad5127af25bd360d7cea09b3e0d5e506e42c64bb74baead7e42e114ecce1dd0",
+  "fixtures/v3n_rendered_seed8007": "7e3224e83aa78d94a3c381cfb15942ba636535d59869488bbdee2a633d029f86",
+  "fixtures/v3n_suite": "9201d71026451f58189dcbdf3b2740b256d88df2945ac87ae462912ff18323e9",
+  "docs/EVALUATION-PREP-CONT006.md": "0bbae231d71e759d274988795eb8f6f2042570ba39cd41d5c59b0e65395b3ec9",
+  "docs/CONT-006-DESIGN.md": "398eb38f6786f3ec646c23764d77b25ad65e204b4e5dec2214fc2e86b3df9418",
+  "docs/PR-REVIEW-CONT006.md": "3b729abce4c79f547fd0b98e82522fd4a7b787fb50c9379c45665f68d95e6141",
+  "docs/PREREG-REQUIREMENTS-V2.md": "b843888eab0934583270a5b0b7b12cab697fba779c0314a1a5ee4af5605ef2cc",
+  "docs/SUITE-V3-DESIGN.md": "442d438526b7985704d97bf2fda9a6a14ee5b6119f2a3e10c771c98aa83535d0",
+  "docs/CONT006-TAXONOMY.md": "c93088bfb697bef39a4859e053300dbdbfd50ccebf0e91ad62b36abf8bd30a81",
+  "experiments/cont006/experience-corpus-manifest.json": "6f8f885a29ecfa6eebeb8620cb3dceeedd2525f061ca0a7e58187e19e4f0d89f",
+  "experiments/cont006/select_experience_corpus.py": "82596816e9421b48093a99eda55fcd2d9ce4c5e21415ff1121dcac6649c94407",
+  "experiments/cont006/counterfactual-lessons.json": "cdc53a4d708ef7bc97624e8d28217eb1060ed9d23377693adee3fd917566ea19",
+  "experiments/cont006/check_counterfactual_lessons.py": "da98e8bbbebc7e835671c88cf45ead74ae6d92cbc31bd1538c000c0131e185a8",
+  "experiments/cont006/revalidate_stores.py": "7230daf7ad779c95509aa187ef47e04b2cd1e71a2f88fb2e3a102758535b841f",
+  "experiments/cont006/combined_channel_smoke.py": "89d07a034da903ce7c5771af0e147a4fdd5226fc926e282137d2ac2c7ac6ca7a",
+  "experiments/suite-v3/validate_fixtures_v3.py": "97762fb217f66851c2e0732a55edcb436c6c31e35a7314844f01e8b32871c4f0",
+  "experiments/suite-v3/build_v3l.py": "cec8769c5280c80a7863ccedcd877d1de019a697be0785a7707b1cab89cadb25",
+  "experiments/suite-v3/run_cont006.py": "af554e4cebf6f4ba617a0dc958d6d31f2087b707244a127d785b0e69b35f6cc1",
+  "experiments/suite-v3/analyze_pilot_cont006.py": "d28946f930d88cdca1bbb16101a9ac4a738f22f35ba5752ce5fd08dd9478f486",
+  "experiments/suite-v3/analyze_confirmatory_cont006.py": "288b3b012a4368d8f1a14bf2e7d6da770c63e64387dd8e8fc28e69e9f3d738f9",
+  "experiments/suite-v3/power_calc_cont006.py": "a1e36ee691760d745b7c5c0b915686bb3c6d839fb9cc13f2465120f5c767e4c5",
+  "experiments/suite-v3/power-results-cont006.json": "2055d79782619aea1642037b4aba483b6ba0ccbbd7504d358803e6e231400cf8",
+  "experiments/suite-v3/fixture-validation-v3l.json": "b8e6e8776f174407438356d7567b624d0618e824939f5ede119077e01409557f",
+  "src/continuity/runner.py": "289ddfdd8b3203d1681760824badeb2ce384974092e072aa1a9ce440e6198d0d",
+  "src/continuity/provider.py": "c5b241ae7b6f83cc8fa97b5ab04fa0589797b4756c948b3fed151ad2f9bc915f",
+  "src/continuity/memory.py": "1ef4291641fd6be73d888e65452c778687e156393cd54df597bcbc72202a394b",
+  "src/continuity/fixtures.py": "4270a0916ab227c89b46c5cbe03525fa364831bf0353f91ee6c4fcef2b3f9f7d",
+  "src/continuity/events.py": "4fc9ba4fcbf3998489715c817ae5a2b3eefe678811ee8bf38250d4ab0f0e2f38",
+  "src/continuity/claims.py": "028e5e1f2de2e997dc1b21c2be7d16d5fe2efc54646ee915d10ce45f91d0303a",
+  "src/continuity/lessons.py": "b69b5553815ebff8bb3cc8b932c818bcf11df647ee29bc1b7d701b6c52da4c0e",
+  "src/continuity/reflection_v2.py": "d9f3b7446c6ab3ceae4aa9c4acc396d5175a0109d802fa07bbadc7d0a7fa5ec4",
+  "src/continuity/reflection.py": "07079eeefc1a463d925acc36f799bf894257edb0e17c6bc711f20c89912a1364",
+  "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json": "1545f365d3f97a87bbfb4887abb493c2bfa844165dcde0e40598616a80807c0d",
+  "docs/EVALUATION-PREP-CONT006-V2.md": "3cdbc2f566073975039a1a9c56872c251e2de1bc144e49be802b47f915107156",
+  "docs/CONT-006-DESIGN-V2.md": "37bfac2c29c84ed4959d6daa603ffaf7b16d5c18d3d894cba0b35bef8bf4c4a1",
+  "experiments/suite-v3/build_v3m.py": "1557ed2c1f5727ef830e4272c2efcf4b136494af49a72520848fa2c13d20d162",
+  "experiments/suite-v3/fixture-validation-v3m.json": "3b38836b8ef2b0ffb323e454dd3dbe64cf39826a39c376e5e85918f681e2282b",
+  "experiments/suite-v3/power_calc_cont006_v2.py": "daf43014687639de28b7d31410f75d9f444dae2fe308131f799c7120215d354d",
+  "experiments/suite-v3/power-results-cont006-v2.json": "cab2e513ea8e9b8e14041486386e385186d4da78b744e1e9242aa72584245cff",
+  "experiments/suite-v3/analyze_calibration.py": "eb1e744c57ab2ffc8ea26615a21c33397441e59dc896b4c37def2f9291d67863",
+  "experiments/cont006/worker_v2_bundles.py": "e06f528d38dde1fd2b2245ffd8d6920200d79abe3e06ee2e38e5fc0164a6b80a",
+  "experiments/cont006/worker_v2_bundles.json": "c69d38a4e330c7dfe805b143900e0b28e16d818694a3d43f6057ed2a529ad7c6",
+  "experiments/cont006/gold-lesson-classes.json": "6215d729b417e185dec3a47ff174670db3cd56d27696e5fa57941d2ca34719c6",
+  "experiments/cont006/recap_r3_v2.py": "e3e7f6f7055fda0b76db6b7f0e5d507112542bb29040659ccd71a7ba60d5ab7b",
+  "experiments/cont006/r3-validation-v3.json": "5f5df0bf95ca601cd7aea6fe5af317c05e5a4361994e4f2f6b93d8dd7dd0b7fe",
+  "experiments/cont006/r3-store-v2.json": "00fc09ca4ea69cdbe0c518a311fc69a4f05fcbb39147e5b20ea0ab97e09a0daf",
+  "experiments/cont006/live_telemetry_gate.py": "f7ec6eae57f1bda6f737a08b696edc34444cd4b968767e03d562b752d7a44ba3",
+  "experiments/cont006/arm_equivalence_audit.py": "dcc9995d4403a7c86eab10caa6d67be1cba10d89cfed23b826fc16982138d168",
+  "experiments/cont006/arm-equivalence-audit.json": "d59894f61bd762b2d13051f94a934999c00f259ac11675ebfe7d83a809f3f6bb",
+  "docs/EVALUATION-PREP-CONT006-V2-A8.md": "d30363ce43c629595658d76f05a8afad54512fbf05d786d50d09786cc4a582d4",
+  "docs/DIAGNOSTIC-CONT006-V2-CR.md": "60be44b4e1807ecfa49f634edd2cb6a82d0a913b76bd9704c2e5690d3ac246a8",
+  "experiments/suite-v3/build_v3n.py": "5f3269b1b2d65f8fe14abb053df272b9d92a79f7a2b2b6515fdeb0f2bb5ec488",
+  "experiments/suite-v3/fixture-validation-v3n.json": "472e5bea3c3484081731f1093f8b0bbfe0ddbd59d2eacc17f5bc736561e69b08",
+  "experiments/cont006/contamination_gate_v2.py": "2694c5e5843f62b644d99ad0433e137c77fb72af91b08597e54d375b459dd108",
+  "docs/EVALUATION-PREP-CONT006-V2-A9.md": "944a80a48ace260788870219a54292a4ef26b2b3b092ecf47451adab305d72b8",
+  "docs/EVALUATION-PREP-CONT006-V2-A10.md": "f92d3624683d0323854b95b48b4af0f7ef25ddfc150afbe81e7bce181816a83c",
+  "docs/EVALUATION-PREP-CONT006-V2-A11.md": "055e5e7a805c1cc4bec914569a629ae1a738545e7ee3e572cf38891c0b3aefaa"
+ }
+}

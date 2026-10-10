@@ -302,6 +302,25 @@ close-out) under the standing authorization and its binding stop
 branches; (3) the arc is NOT stopped. No v3n edits, no parameter moves,
 no MME moves.
 
+## Owner decisions — recorded 2026-10-10 (CONT-006 A.11: pilot NO-GO OVERRIDDEN; R1 dropped from the confirmatory)
+
+Basis: the pilot-gate checkpoint record
+(results/CONT-006-PILOT/cont006-p-20261010-132230/pilot-gate-cont006.json
+— criterion 2 FAIL: RGOLD invalid-format 0.143→0.357 via list-echoing;
+criterion 1 PASS, no parroting; criteria 3-6 PASS) + the A.10/T4 audit
+(R1 context overflow: max prompt 4085/4096, 6/168 generations truncated)
++ the owner brief docs/OWNER-BRIEF-CONT006-V2A-PILOT-GATE.md. Owner
+verdict (chat): **"все по дефолту - ок. давай іти і доводити експеримент
+до успіху. коли вже він стартує?"** — (1) the pilot NO-GO is OVERRIDDEN
+(PW-OVERRIDE-2; the RGOLD finding rides as a headline secondary; the
+primary R2−R0 is unaffected); (2) R1 is DROPPED from the confirmatory
+(A.11: analyzer arm set + Phase-C arm list → R0/R2/R3; completeness
+15×7×3; R1−R0 not estimable this run, hypothesis stays open; no healthy
+cell re-run — CAL/V/P stay the single-freeze dataset); (3) Phase C is
+authorized immediately under the standing autonomous-completion
+authorization with the binding gates unchanged (live gate before the
+analyzer; any halt-and-investigate firing → halt).
+
 ## Never autonomous (unchanged)
 
 - CONT-002 behavioral experiments — anything that measures transfer quality. The single exception is the M2b mechanics smoke (owner-ordered 2026-10-01): export/import plumbing proof only, explicitly no behavioral claims.
