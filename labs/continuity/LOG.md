@@ -3369,3 +3369,57 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
 - Declared deviations: reviewer-model substitution (Fable/Opus →
   GLM 5.3); one analyzer-before-green-gate slip (Phase P; verdict of
   record unaffected); model/tool substitutions otherwise none.
+
+## 2026-10-10 — owner REJECTS provisional acceptance; post-verdict audit + independent GPT-6 Astra review: numbers stand, FIVE pipeline defects found; no acceptance recorded
+
+- Owner (chat): "не приймаю поки акцепт. пошукай сам проблеми… може справа
+  в тому що малі і локальні моделі… треба вдоль і впоперек пройтися по
+  експерименту, викликати незалежних агентів. якщо не получається
+  викликати фабл чи опус, досліди як викликати codex, модель GPT-6.1 Sol
+  чи GPT-6 Astra." — provisional acceptance REJECTED; audit ordered.
+- Implementer audit (docs/AUDIT-CONT006-V2A-POSTVERDICT.md): VAL-vs-TR
+  asymmetry decomposed (the +0.214 activation is 5/6 rt-8204; R0's
+  rt-8204 failure mode is probe-time deflection 'Acknowledged.', R2/R3
+  answer decisively — the SAME push that cures rt breaks cr/dx);
+  harm-cluster errors are 5/6 format-degeneration for R2 (R0: 0
+  format-miss on the same clusters).
+- Independent review: Fable AND Opus limit-blocked; codex CLI researched
+  (gpt-6.1-sol not ChatGPT-account-supported; gpt-6-astra required a
+  newer CLI) and updated 0.148.0 → 0.162.1; reviewer = gpt-6-astra,
+  reasoning high, read-only, 87,962 tokens, two sub-agents, 473
+  responses rescored (zero discrepancies), both CIs reproduced
+  (docs/REVIEW-ASTRA-CONT006-V2A.md, verbatim + curation appendix).
+- Astra findings (curated: all verified except one sub-claim refuted):
+  (1) ALL 9 worker bundles contain ZERO source-marked evidence lines —
+  governing cards, corrections, authority data are LOST in bundle
+  preparation; the corpus itself DOES contain transfer-inference tasks
+  (rt-4201 counterexample) — the implementer's "corpus-coverage" story
+  CORRECTED; (2) 97/108 mined scenario-runs come from arm A (NO-MEMORY)
+  — fails-first sampling bias; (3) lesson retrieval is lexical
+  token-overlay keyed on the SESSION'S FIRST TURN (an acknowledge
+  request), never refreshed at the probe; lessons delivered at ALL 105
+  primary probes — zero conditional application; (4) the renderer omits
+  the lesson FIELD (title+applicability+behavior only) and its greedy
+  165-word budget dropped the retrieved-and-relevant G005 at exactly the
+  harm clusters cr-8003/8004; (5) build_v3n defines the full LINEN_CARD
+  but never uses it — rt-8203 and the main activation driver rt-8204
+  expect categories whose rules are never supplied (underspecified
+  probes); (6) aggregate negative is predominantly wrong-label
+  (29→35→38) with format nearly flat; (7) fresh-seeds-only sensitivity:
+  R2 −0.053, R3 −0.133 — not a reused-pilot artifact; (8) the A.9
+  "power ~0.79-0.80 at K11" figure was bracketed, not computed —
+  overstated.
+- Warranted conclusion (audit + review converge): the registered numbers
+  stand FOR THE EXECUTED PIPELINE; the defensible claim is "this
+  generation-and-delivery implementation failed on this surface" — NOT
+  "lessons don't transfer" and NOT "small models can't absorb lessons"
+  (the channel demonstrably moves the 8B). Lesson content, routing, and
+  conditional-use capacity remain separable open hypotheses.
+- Discriminating experiments adopted (Astra ranking): (1) corrected
+  DELIVERY on the existing 8B (probe-time routing, applicability
+  checked, rule field rendered, no budget drops); (2) faithful worker
+  evidence + balanced memory-condition sampling + rt mappings fixed in a
+  NEW suite; (3) capacity × content comparison measuring the
+  lesson-minus-baseline interaction per model; (4) Stage B / the owner's
+  actual workflow construct. No acceptance recorded; the run stays
+  closed-pending-owner.
