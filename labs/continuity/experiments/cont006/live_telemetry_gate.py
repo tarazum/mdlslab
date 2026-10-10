@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import tempfile
 from pathlib import Path
@@ -70,11 +71,33 @@ def check_trace(trace_path: Path, arm: str) -> tuple[bool, list[str]]:
         for a in appends:
             key = (a["scenario"], a["payload"]["turn_ref"], a["payload"]["role"])
             appended_refs[key] = min(appended_refs.get(key, a["seq"]), a["seq"])
+        # A.10 (EVALUATION-PREP-CONT006-V2-A10.md): the R1 reflection engine
+        # commits its session summary via the SAME MemoryStore.append_episode
+        # API (turn_ref f"s{N}-summary", role "reflection.summary") but the
+        # trace records it as reflection.proposal/commit, not memory.append —
+        # those refs resolve against accepted episode_summary proposals
+        # committed EARLIER in the same scenario/session.
+        summary_sources: dict[tuple, int] = {}
+        for e in events:
+            if e["type"] == "reflection.proposal":
+                pl = e.get("payload") or {}
+                if pl.get("type") == "episode_summary" and pl.get("accepted") is True:
+                    key = (e.get("scenario"), e.get("session"))
+                    summary_sources[key] = min(summary_sources.get(key, e["seq"]), e["seq"])
         for e in inj_ok:
             for ref in e["payload"].get("episode_refs", []):
                 turn_ref, role = ref.rsplit("|", 1)
                 key = (e["scenario"], turn_ref, role)
-                if key not in appended_refs:
+                if role == "reflection.summary" and re.fullmatch(r"s(\d+)-summary", turn_ref):
+                    skey = (e["scenario"], int(turn_ref[:-8][1:]))
+                    if skey not in summary_sources:
+                        problems.append(f"T2: injected ref {ref!r} has no accepted "
+                                        f"episode_summary proposal in its scenario/session")
+                    elif summary_sources[skey] >= e["seq"]:
+                        problems.append(f"T2: injected ref {ref!r} resolves to a summary "
+                                        f"committed at seq {summary_sources[skey]} >= "
+                                        f"injection seq {e['seq']} (not earlier)")
+                elif key not in appended_refs:
                     problems.append(f"T2: injected ref {ref!r} does not resolve "
                                     f"to an append")
                 elif appended_refs[key] >= e["seq"]:
@@ -97,20 +120,29 @@ def check_trace(trace_path: Path, arm: str) -> tuple[bool, list[str]]:
             problems.append(f"T4: prompt_tokens {pt} within {HEADROOM} of "
                             f"num_ctx {NUM_CTX} (silent clip risk)")
             break
-    # T5 (summary cross-check): episodes are 1:1 with append events
+    # T5 (summary cross-check): store episodes == memory.append events +
+    # accepted episode_summary proposals (A.10: the R1 reflection summaries
+    # ARE store appends via MemoryStore.append_episode — they simply are not
+    # journaled as memory.append events; both classes count 1:1)
     summary = trace_path.parent / "summary.json"
     if not summary.exists():
         problems.append("T5: summary.json missing")
     else:
         data = json.loads(summary.read_text(encoding="utf-8"))
         episodes = data.get("memory_episodes", 0)
+        summary_appends = sum(
+            1 for e in events
+            if e["type"] == "reflection.proposal"
+            and (e.get("payload") or {}).get("type") == "episode_summary"
+            and (e.get("payload") or {}).get("accepted") is True)
         if not data.get("completed"):
             problems.append("T5: summary not completed (memory guard tripped?)")
         elif episodes == 0:
             problems.append("T5: completed summary reports 0 memory episodes")
-        elif episodes != len(appends):
+        elif episodes != len(appends) + summary_appends:
             problems.append(f"T5: summary memory_episodes {episodes} != "
-                            f"{len(appends)} memory.append events")
+                            f"{len(appends)} memory.append events + "
+                            f"{summary_appends} reflection summaries")
     return (not problems), problems
 
 
@@ -231,10 +263,51 @@ def self_test() -> int:
     print(f"self-test healthy-root PASS: {healthy}")
     print(f"self-test CN-012-sim FAIL: {not ok_broken} "
           f"({'; '.join(why_broken[:3])})")
-    if not healthy or ok_broken:
+    # A.10 both-ways (EVALUATION-PREP-CONT006-V2-A10.md): a reflection-
+    # summary ref resolves against an accepted episode_summary proposal
+    # committed EARLIER (healthy); the same ref WITHOUT a proposal FAILs.
+    def _summary_trace(with_proposal: bool) -> Path:
+        d = root / ("R1s" if with_proposal else "R1b") / "seed-9911"
+        d.mkdir(parents=True)
+        ev: list[dict] = []
+        seq = 0
+
+        def emit(t: str, pl: dict, session: int = 1) -> None:
+            nonlocal seq
+            seq += 1
+            ev.append({"seq": seq, "type": t, "payload": pl,
+                       "scenario": "cr-8001", "session": session,
+                       "run_id": "a10-selftest"})
+
+        emit("memory.append", {"turn_ref": "s1t1", "role": "environment"})
+        emit("agent.response", {"content": "ok", "usage": {"prompt_tokens": 50}})
+        if with_proposal:
+            emit("reflection.proposal",
+                 {"type": "episode_summary", "accepted": True,
+                  "summary_episode_id": 1})
+        emit("memory.injected", {"episode_count": 2, "injected": True,
+                                 "episode_refs": ["s1t1|environment",
+                                                  "s1-summary|reflection.summary"]},
+             session=2)
+        emit("memory.append", {"turn_ref": "s2t1", "role": "environment"}, session=2)
+        (d / "trace.jsonl").write_text(
+            "\n".join(json.dumps(e, ensure_ascii=True) for e in ev) + "\n",
+            encoding="utf-8")
+        (d / "summary.json").write_text(json.dumps({
+            "kind": "cont006-arm-seed-summary", "arm": "R1", "seed": 9911,
+            "completed": True, "memory_episodes": 3}, indent=1) + "\n",
+            encoding="utf-8")
+        return d / "trace.jsonl"
+
+    ok_sum, why_sum = check_trace(_summary_trace(True), "R1")
+    ok_nosum, why_nosum = check_trace(_summary_trace(False), "R1")
+    print(f"self-test A.10 summary-ref healthy PASS: {ok_sum}")
+    print(f"self-test A.10 missing-proposal FAIL: {not ok_nosum} "
+          f"({'; '.join(why_nosum[:2])})")
+    if not healthy or ok_broken or not ok_sum or ok_nosum:
         print("GATE SELF-TEST: FAIL")
         return 2
-    print("GATE SELF-TEST: PASS (both directions verified)")
+    print("GATE SELF-TEST: PASS (all four directions verified)")
     return 0
 
 

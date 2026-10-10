@@ -1,0 +1,7 @@
+{
+ "kind": "cont006-live-telemetry-gate",
+ "run_root": "C:\\projects\\mdlslab\\labs\\continuity\\results\\CONT-006-PILOT\\cont006-p-20261010-132230",
+ "traces_checked": 12,
+ "failures": 2,
+ "verdict": "FAIL"
+}

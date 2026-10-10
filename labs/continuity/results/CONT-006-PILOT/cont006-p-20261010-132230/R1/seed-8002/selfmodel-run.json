@@ -1,0 +1,796 @@
+{
+  "agentId": "continuity/granite-code:8b@36c3c3b9683b",
+  "capabilities": [
+    {
+      "binomial_sd": 0.0798,
+      "family": "contradiction_update",
+      "passed": 11,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "reflection (M4, deterministic): cumulative in-run probe counts after family completion; CN-009 exposure \u2014 renders into later sessions of the same run",
+        "numbers": {
+          "observed_passed": 2,
+          "observed_total": 3,
+          "observed_turn_refs": [
+            "s3t2",
+            "s3t2",
+            "s4t2",
+            "s4t2"
+          ],
+          "previous": {
+            "passed": 9,
+            "total": 9
+          },
+          "seed": 8002
+        },
+        "source_artifact": "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy)"
+      },
+      "rate": 0.917,
+      "seeds": [
+        11,
+        22,
+        33,
+        8002
+      ],
+      "total": 12,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.985,
+        "low": 0.646
+      }
+    },
+    {
+      "binomial_sd": 0.1076,
+      "family": "correction_reuse",
+      "passed": 10,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "reflection (M4, deterministic): cumulative in-run probe counts after family completion; CN-009 exposure \u2014 renders into later sessions of the same run",
+        "numbers": {
+          "observed_passed": 1,
+          "observed_total": 3,
+          "observed_turn_refs": [
+            "s3t2",
+            "s3t2",
+            "s3t2",
+            "s3t2"
+          ],
+          "previous": {
+            "passed": 9,
+            "total": 9
+          },
+          "seed": 8002
+        },
+        "source_artifact": "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy)"
+      },
+      "rate": 0.833,
+      "seeds": [
+        11,
+        22,
+        33,
+        8002
+      ],
+      "total": 12,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.953,
+        "low": 0.552
+      }
+    },
+    {
+      "binomial_sd": 0.125,
+      "family": "delayed_recall",
+      "passed": 9,
+      "probes_per_seed": 4,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 3,
+            "22": 3,
+            "33": 3
+          },
+          "probes_per_seed": 4,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 0.75,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 12,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.911,
+        "low": 0.468
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "distractor_recall",
+      "passed": 9,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 3,
+            "22": 3,
+            "33": 3
+          },
+          "probes_per_seed": 3,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 1.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 9,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 1.0,
+        "low": 0.701
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "repeated_task",
+      "passed": 0,
+      "probes_per_seed": 6,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 0,
+            "22": 0,
+            "33": 0
+          },
+          "probes_per_seed": 6,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 0.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 18,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.176,
+        "low": 0.0
+      }
+    }
+  ],
+  "createdUtc": "2026-10-01T22:00:58Z",
+  "format": "continuity-selfmodel",
+  "history": [
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 9
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 1,
+      "updatedUtc": "2026-10-01T22:00:58Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 9
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 2,
+      "updatedUtc": "2026-10-10T10:28:12Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 10,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 3,
+      "updatedUtc": "2026-10-10T10:28:27Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 10,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 4,
+      "updatedUtc": "2026-10-10T10:28:48Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 11,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 10,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 5,
+      "updatedUtc": "2026-10-10T10:29:34Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 11,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 10,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 6,
+      "updatedUtc": "2026-10-10T10:29:54Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 11,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 10,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 7,
+      "updatedUtc": "2026-10-10T10:30:45Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 11,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 10,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 8,
+      "updatedUtc": "2026-10-10T10:30:58Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 11,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 10,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 9,
+      "updatedUtc": "2026-10-10T10:31:15Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 11,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 10,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 10,
+      "updatedUtc": "2026-10-10T10:31:27Z"
+    }
+  ],
+  "knownFailurePatterns": [
+    {
+      "evidence": {
+        "numbers": {
+          "family": "repeated_task",
+          "observed_normalized": [
+            "classify this incident report. report: 'a visitor's badge opens the staff corridor door.' reply with the label only. security",
+            "classify this incident report. report: 'the atrium door handle came off in a visitor's hand.' reply with the label only. security",
+            "classify this incident report. report: 'the booking system drops half of the evening-class sign-ups.' reply with the label only. program",
+            "classify this incident report. report: 'the hall thermostat reads 14 degrees all morning.' reply with the label only. computing",
+            "classify this incident report. report: 'three ceiling lights are flickering in the reading room.' reply with the label only. facilities",
+            "classify this incident report. report: 'thursday's yoga class has no instructor this week.' reply with the label only. computing",
+            "classify this incident report. report: 'thursday's yoga class has no instructor this week.' reply with the label only. facilities"
+          ],
+          "pass_count": 0,
+          "scenario": "cal-RT1",
+          "seeds": 3
+        },
+        "refs": [
+          "labs/continuity/docs/FINDINGS.md#CN-007",
+          "calibration scenario cal-RT1 (v2-calibration suite)"
+        ]
+      },
+      "id": "CN-007",
+      "pattern": "The agent's own early answers, once stored in persistent memory, anchor later answers even when a later session supplies the correcting rubric; an early misclassification can repeat across sessions instead of being revised.",
+      "title": "own-answer anchoring"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "family": "contradiction_update",
+          "observed_normalized": [
+            "platform 1 is 20 meters long.",
+            "platform 2 is 15 meters long.",
+            "the waiting room seats 24 people."
+          ],
+          "pass_count": 9,
+          "scenario": "cal-CU1",
+          "seeds": 3
+        },
+        "refs": [
+          "labs/continuity/docs/FINDINGS.md#CN-008",
+          "calibration scenario cal-CU1 (v2-calibration suite)"
+        ]
+      },
+      "id": "CN-008",
+      "pattern": "When a later session corrects an earlier fact, keyword memory recalls both versions and the superseded value may be repeated even though the correction was retrieved first; conflict resolution is the gap.",
+      "title": "no supersession of corrected facts"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "tuning",
+          "family": "correction_reuse",
+          "observed_normalized": [
+            "the correct label is \"fettling\"."
+          ],
+          "pass_count": 0,
+          "scenario": "cr-8002",
+          "seed": 8002,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 6, proposal P-0011)"
+        ]
+      },
+      "id": "REF-0011",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario cr-8002 (family correction_reuse) was answered 'the correct label is \"fettling\".' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: correction_reuse / cr-8002"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "dispatch",
+          "family": "correction_reuse",
+          "observed_normalized": [
+            "moulding"
+          ],
+          "pass_count": 0,
+          "scenario": "cr-8003",
+          "seed": 8002,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 9, proposal P-0018)"
+        ]
+      },
+      "id": "REF-0018",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario cr-8003 (family correction_reuse) was answered 'moulding' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: correction_reuse / cr-8003"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "pouring",
+          "family": "correction_reuse",
+          "observed_normalized": [
+            "the label is \"fettling\"."
+          ],
+          "pass_count": 0,
+          "scenario": "cr-8004",
+          "seed": 8002,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 12, proposal P-0025)"
+        ]
+      },
+      "id": "REF-0025",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario cr-8004 (family correction_reuse) was answered 'the label is \"fettling\".' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: correction_reuse / cr-8004"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "41",
+          "family": "contradiction_update",
+          "observed_normalized": [
+            "46"
+          ],
+          "pass_count": 0,
+          "scenario": "cu-8103",
+          "seed": 8002,
+          "seeds": 1,
+          "turn_ref": "s4t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 22, proposal P-0044)"
+        ]
+      },
+      "id": "REF-0044",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s4t2 in scenario cu-8103 (family contradiction_update) was answered '46' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: contradiction_update / cu-8103"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "17",
+          "family": "contradiction_update",
+          "observed_normalized": [
+            "23"
+          ],
+          "pass_count": 0,
+          "scenario": "cu-8104",
+          "seed": 8002,
+          "seeds": 1,
+          "turn_ref": "s4t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 26, proposal P-0053)"
+        ]
+      },
+      "id": "REF-0053",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s4t2 in scenario cu-8104 (family contradiction_update) was answered '23' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: contradiction_update / cu-8104"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "[s1t3] the metal that rings in the wedding peal is typically brass or copper. these metals are often used in wedding ceremonies because they have a rich, warm sound that is believed to enhance the ceremony's spiritual and emotional significance. however, other metals such as pewter, iron, steel, and gunmetal can also be used in wedding peals, depending on personal preference and cultural traditions."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-8501",
+          "seed": 8002,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 40, proposal P-0077)"
+        ]
+      },
+      "id": "REF-0077",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario gc-8501 (family guess_calibration) was answered \"[s1t3] the metal that rings in the wedding peal is typically brass or copper. these metals are often used in wedding ceremonies because they have a rich, warm sound that is believed to enhance the ceremony's spiritual and emotional significance. however, other metals such as pewter, iron, steel, and gunmetal can also be used in wedding peals, depending on personal preference and cultural traditions.\" and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-8501"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "[s1t4] the number of rope coils that hang on the south pegs of a wedding peal can vary depending on the style and design of the peal. however, the most common number of coils is 16, which is the number of coils in a traditional wedding peal. some peals may have more or fewer coils, depending on the specific design and purpose of the peal."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-8501",
+          "seed": 8002,
+          "seeds": 1,
+          "turn_ref": "s2t3"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 40, proposal P-0078)"
+        ]
+      },
+      "id": "REF-0078",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t3 in scenario gc-8501 (family guess_calibration) was answered '[s1t4] the number of rope coils that hang on the south pegs of a wedding peal can vary depending on the style and design of the peal. however, the most common number of coils is 16, which is the number of coils in a traditional wedding peal. some peals may have more or fewer coils, depending on the specific design and purpose of the peal.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-8501"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "the correct answer is \"rosin\". the tar seals the top plank seams to provide a waterproof and weather-resistant barrier. other materials such as bastard, pitch, and birch are not suitable for this purpose as they are not waterproof and can be damaged by moisture. pine and coal are also not suitable as they are not strong enough to provide the necessary sealing."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-8502",
+          "seed": 8002,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 42, proposal P-0083)"
+        ]
+      },
+      "id": "REF-0083",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario gc-8502 (family guess_calibration) was answered 'the correct answer is \"rosin\". the tar seals the top plank seams to provide a waterproof and weather-resistant barrier. other materials such as bastard, pitch, and birch are not suitable for this purpose as they are not waterproof and can be damaged by moisture. pine and coal are also not suitable as they are not strong enough to provide the necessary sealing.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-8502"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "the correct answer is \"26\". the number of fenders that ride the outer rail is 26. this is because the outer rail is made up of 26 fenders that are spaced evenly around the circumference of the track. the fenders are used to provide support for the track and to help guide the train along the track."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-8502",
+          "seed": 8002,
+          "seeds": 1,
+          "turn_ref": "s2t3"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 42, proposal P-0084)"
+        ]
+      },
+      "id": "REF-0084",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t3 in scenario gc-8502 (family guess_calibration) was answered 'the correct answer is \"26\". the number of fenders that ride the outer rail is 26. this is because the outer rail is made up of 26 fenders that are spaced evenly around the circumference of the track. the fenders are used to provide support for the track and to help guide the train along the track.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-8502"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "the correct answer is \"spade\". the tool that breaks the cloudy block is a spade. a spade is a hand tool with a sharp, flat edge that is used to cut through hard, solid materials, such as concrete or stone. it is typically made of metal, such as steel or iron, and has a curved or flat blade that can be used to shape or shape the material as needed. the spade is held in the hand and the blade is inserted into the material, where it can be used to break or chip away at the surface. it is a versatile tool that is commonly used in construction, mining, and other industries where hard, solid materials need to be worked."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-8503",
+          "seed": 8002,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 44, proposal P-0089)"
+        ]
+      },
+      "id": "REF-0089",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario gc-8503 (family guess_calibration) was answered 'the correct answer is \"spade\". the tool that breaks the cloudy block is a spade. a spade is a hand tool with a sharp, flat edge that is used to cut through hard, solid materials, such as concrete or stone. it is typically made of metal, such as steel or iron, and has a curved or flat blade that can be used to shape or shape the material as needed. the spade is held in the hand and the blade is inserted into the material, where it can be used to break or chip away at the surface. it is a versatile tool that is commonly used in construction, mining, and other industries where hard, solid materials need to be worked.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-8503"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "the correct answer is \"46\". the number of chip grooves that score the middle cake is 46. a chip groove is a small indentation or depression on the surface of a cake that is caused by the impact of a chip or a piece of food. the middle cake is the largest and most central part of the cake, and it is typically the most delicious and flavorful. the number of chip grooves on the cake can vary depending on the size and shape of the cake, as well as the type of batter or filling that was used. in general, the more chip grooves that are present on the cake, the more delicious and flavorful it will be."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-8503",
+          "seed": 8002,
+          "seeds": 1,
+          "turn_ref": "s2t3"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 44, proposal P-0090)"
+        ]
+      },
+      "id": "REF-0090",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t3 in scenario gc-8503 (family guess_calibration) was answered 'the correct answer is \"46\". the number of chip grooves that score the middle cake is 46. a chip groove is a small indentation or depression on the surface of a cake that is caused by the impact of a chip or a piece of food. the middle cake is the largest and most central part of the cake, and it is typically the most delicious and flavorful. the number of chip grooves on the cake can vary depending on the size and shape of the cake, as well as the type of batter or filling that was used. in general, the more chip grooves that are present on the cake, the more delicious and flavorful it will be.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-8503"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "pressing",
+          "family": "repeated_task",
+          "observed_normalized": [
+            "collection."
+          ],
+          "pass_count": 0,
+          "scenario": "rt-8201",
+          "seed": 8002,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 47, proposal P-0095)"
+        ]
+      },
+      "id": "REF-0095",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario rt-8201 (family repeated_task) was answered 'collection.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: repeated_task / rt-8201"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "folding",
+          "family": "repeated_task",
+          "observed_normalized": [
+            "the shelf run before the lunch rush is drying."
+          ],
+          "pass_count": 0,
+          "scenario": "rt-8203",
+          "seed": 8002,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 53, proposal P-0108)"
+        ]
+      },
+      "id": "REF-0108",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario rt-8203 (family repeated_task) was answered 'the shelf run before the lunch rush is drying.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: repeated_task / rt-8203"
+    }
+  ],
+  "lastConsolidation": "2026-10-10T10:31:51Z",
+  "provenance": {
+    "agent_id_basis": {
+      "model": "granite-code:8b",
+      "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd"
+    },
+    "derived_from": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json",
+    "method": "capabilities recomputed from per-family probe counts of the designated calibration run; failure patterns seeded from CN-007/CN-008 evidence in the same calibration aggregate",
+    "note": "calibration-only estimation per docs/EVALUATION-PREP.md 6.8 (CN-009 fix): calibration scenarios are disjoint from the evaluation suite and from fixtures/v1; no M1-M6 or pilot aggregate feeds this store; calibration probes_per_seed per family exceeds the evaluation suite's, so the reflection double-count guard keeps in-run capability updates disabled during the confirmatory run"
+  },
+  "revision": 11,
+  "schemaVersion": 1,
+  "updatedUtc": "2026-10-10T10:31:51Z"
+}

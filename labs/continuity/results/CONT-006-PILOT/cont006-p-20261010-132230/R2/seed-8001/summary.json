@@ -1,0 +1,328 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-cal-20261010-012838",
+ "arm": "R2",
+ "seed": 8001,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": "f82efc3fcffe17e88ff714656326b4cbf4a2b1cb0e574b8b0e9be226346320b2",
+ "lesson_store_status": "evidence-validated",
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "moulding",
+   "observed_normalized": "moulding | pouring | tuning | fettling | stocking | dispatch",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "tuning",
+   "observed_normalized": "the strike check for the dusk round is a moulding task.",
+   "observed_label": "moulding",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8002",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "dispatch",
+   "observed_normalized": "acknowledge.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "pouring",
+   "observed_normalized": "the metal tap for the dusk melt is a pouring operation. therefore, the correct label is \"pouring\".",
+   "observed_label": "pouring",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8004",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "stocking",
+   "observed_normalized": "the correct label for this report is \"fettling\".",
+   "observed_label": "fettling",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8005",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "53",
+   "observed_normalized": "53",
+   "observed_label": "53",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "28",
+   "observed_normalized": "28",
+   "observed_label": "28",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8102",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "38",
+   "observed_normalized": "43",
+   "observed_label": "43",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-8103",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "14",
+   "observed_normalized": "20",
+   "observed_label": "20",
+   "passed": false,
+   "turn_ref": "s4t2",
+   "scenario": "cu-8104",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "37",
+   "observed_normalized": "37",
+   "observed_label": "37",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8105",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "N26",
+   "observed_normalized": "n26",
+   "observed_label": "N26",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-8301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "R33",
+   "observed_normalized": "r33",
+   "observed_label": "R33",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-8302",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "C17",
+   "observed_normalized": "c17.",
+   "observed_label": "C17",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "M17",
+   "observed_normalized": "m71.",
+   "observed_label": "M71",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8402",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "S17",
+   "observed_normalized": "s17",
+   "observed_label": "S17",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8403",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the metal that rings in the evensong peal is bronze.",
+   "observed_label": "bronze",
+   "observed_position": 0,
+   "labels": [
+    "bronze",
+    "brass",
+    "copper",
+    "pewter",
+    "iron",
+    "steel"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "there are 12 rope coils hanging on the north pegs.",
+   "observed_label": "12",
+   "observed_position": 0,
+   "labels": [
+    "12",
+    "15",
+    "18",
+    "21",
+    "24",
+    "27"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the correct answer is \"stockholm\". the other options are not related to tar seals or gangways.",
+   "observed_label": "stockholm",
+   "observed_position": 0,
+   "labels": [
+    "stockholm",
+    "bastard",
+    "pitch",
+    "rosin",
+    "birch",
+    "pine"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the correct answer is \"25\". the other options are not related to the number of fenders on a pontoon rail.",
+   "observed_label": "25",
+   "observed_position": 1,
+   "labels": [
+    "22",
+    "25",
+    "28",
+    "31",
+    "34",
+    "37"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8502",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the word \"saw\" is the best answer. the other tools listed are not specifically designed for breaking through ice or snow. the saw is a versatile tool that can be used for a variety of tasks, including cutting through ice and snow. it is also a more common tool in many households, making it a likely choice for the person asking the question.",
+   "observed_label": "saw",
+   "observed_position": 1,
+   "labels": [
+    "pick",
+    "saw",
+    "tongs",
+    "hook",
+    "spade",
+    "auger"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "the number \"48\" is the best answer. the other numbers listed are not specifically related to the number of chip grooves on a cake. the number of chip grooves on a cake is typically determined by the size and shape of the cake, as well as the type of cookie or treat that was used to make it. the number 48 is a commonly used number for a standard-sized cake, and it is likely that the person asking the question is referring to a standard-sized cake.",
+   "observed_label": "48",
+   "observed_position": 2,
+   "labels": [
+    "42",
+    "45",
+    "48",
+    "51",
+    "54",
+    "57"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8503",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "pressing",
+   "observed_normalized": "collection.",
+   "observed_label": "collection",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "mending",
+   "observed_normalized": "the patch round for the day coats is mending.",
+   "observed_label": "mending",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8202",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "folding",
+   "observed_normalized": "the stack set for the morning store is 'folding'.",
+   "observed_label": "folding",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8203",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "collection",
+   "observed_normalized": "collection.",
+   "observed_label": "collection",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8204",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 11,
+ "probes_total": 25,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 206,
+ "duration_s": 264.3,
+ "memory_guard": {
+  "appends": 206,
+  "injections_nonempty": 43,
+  "passed": true
+ },
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

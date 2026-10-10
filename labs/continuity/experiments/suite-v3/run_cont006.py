@@ -79,7 +79,7 @@ from continuity.reflection import ReflectionEngine  # noqa: E402
 from continuity.runner import Budget, run_scenario  # noqa: E402
 
 SUITE_DIR = LAB_ROOT / "fixtures" / "v3n"
-FREEZE_MANIFEST = LAB_ROOT / "experiments" / "suite-v3" / "frozen-config-cont006-v3a.json"
+FREEZE_MANIFEST = LAB_ROOT / "experiments" / "suite-v3" / "frozen-config-cont006-v3b.json"
 CORPUS_MANIFEST = LAB_ROOT / "experiments" / "cont006" / "experience-corpus-manifest.json"
 CF_LESSONS = LAB_ROOT / "experiments" / "cont006" / "counterfactual-lessons.json"
 WORKER_V2_BUNDLES = LAB_ROOT / "experiments" / "cont006" / "worker_v2_bundles.json"
@@ -172,6 +172,7 @@ FROZEN_PATHS = [
     "experiments/cont006/contamination_gate_v2.py",
     # -- A.9 additions (dx/dr band exemption; owner-accepted 2026-10-10) --
     "docs/EVALUATION-PREP-CONT006-V2-A9.md",
+    "docs/EVALUATION-PREP-CONT006-V2-A10.md",
 ]
 DETERMINISM_CAVEAT = ("greedy+seed does not guarantee identical outputs "
                       "(PB-071, CN-003); per-seed content variants make seeds "

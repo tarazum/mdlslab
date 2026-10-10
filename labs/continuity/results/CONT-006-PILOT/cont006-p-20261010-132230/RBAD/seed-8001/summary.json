@@ -1,0 +1,132 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-p-20261010-132230",
+ "arm": "RBAD",
+ "seed": 8001,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": "50d59327fbf620d3d8f3c3d40ee47c27f6a0de8e7b7a0ef0d8ea1ee8e71cf85a",
+ "lesson_store_status": "active",
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "moulding",
+   "observed_normalized": "moulding",
+   "observed_label": "moulding",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8001",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "dispatch",
+   "observed_normalized": "the report is filed under the label 'dispatch'.",
+   "observed_label": "dispatch",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8003",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "53",
+   "observed_normalized": "53",
+   "observed_label": "53",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8101",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "N26",
+   "observed_normalized": "n26",
+   "observed_label": "N26",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dr-8301",
+   "family": "delayed_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "C17",
+   "observed_normalized": "c17",
+   "observed_label": "C17",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8401",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "acknowledged.",
+   "observed_label": null,
+   "observed_position": null,
+   "labels": [
+    "bronze",
+    "brass",
+    "copper",
+    "pewter",
+    "iron",
+    "steel"
+   ],
+   "passed": null,
+   "turn_ref": "s2t2",
+   "scenario": "gc-8501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "guess_calibration",
+   "expected": null,
+   "observed_normalized": "acknowledged.",
+   "observed_label": null,
+   "observed_position": null,
+   "labels": [
+    "12",
+    "15",
+    "18",
+    "21",
+    "24",
+    "27"
+   ],
+   "passed": null,
+   "turn_ref": "s2t3",
+   "scenario": "gc-8501",
+   "family": "guess_calibration"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "pressing",
+   "observed_normalized": "collection.",
+   "observed_label": "collection",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8201",
+   "family": "repeated_task"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "mending",
+   "observed_normalized": "the patch round for the day coats is mending.",
+   "observed_label": "mending",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8202",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 6,
+ "probes_total": 9,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 74,
+ "duration_s": 99.3,
+ "memory_guard": {
+  "appends": 74,
+  "injections_nonempty": 15,
+  "passed": true
+ },
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

@@ -1,0 +1,98 @@
+{
+ "kind": "cont006-cells",
+ "run_id": "cont006-p-20261010-132230",
+ "phase": "P",
+ "derived": true,
+ "cells": {
+  "R0/seed-8001": {
+   "wall_s": 269.1,
+   "attempts": 1,
+   "probes_total": 25,
+   "probes_passed": 12,
+   "lesson_store_sha256": null,
+   "reused_from": "CAL cont006-cal-20261010-012838"
+  },
+  "R0/seed-8002": {
+   "wall_s": 257.2,
+   "attempts": 1,
+   "probes_total": 25,
+   "probes_passed": 11,
+   "lesson_store_sha256": null,
+   "reused_from": "CAL cont006-cal-20261010-012838"
+  },
+  "R1/seed-8001": {
+   "wall_s": 262.8,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 8,
+   "lesson_store_sha256": null
+  },
+  "R1/seed-8002": {
+   "wall_s": 254.8,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 8,
+   "lesson_store_sha256": null
+  },
+  "R2/seed-8001": {
+   "wall_s": 264.3,
+   "attempts": 1,
+   "probes_total": 25,
+   "probes_passed": 11,
+   "lesson_store_sha256": "f82efc3fcffe17e88ff714656326b4cbf4a2b1cb0e574b8b0e9be226346320b2",
+   "reused_from": "CAL cont006-cal-20261010-012838"
+  },
+  "R2/seed-8002": {
+   "wall_s": 249.9,
+   "attempts": 1,
+   "probes_total": 25,
+   "probes_passed": 10,
+   "lesson_store_sha256": "f82efc3fcffe17e88ff714656326b4cbf4a2b1cb0e574b8b0e9be226346320b2",
+   "reused_from": "CAL cont006-cal-20261010-012838"
+  },
+  "R3/seed-8001": {
+   "wall_s": 213.2,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 9,
+   "lesson_store_sha256": "b2500b6b542a906d2a7ee3d1cfcd21cfd2b950abc24079dd1b3c12a5065c12cb"
+  },
+  "R3/seed-8002": {
+   "wall_s": 210.2,
+   "attempts": 1,
+   "probes_total": 21,
+   "probes_passed": 9,
+   "lesson_store_sha256": "b2500b6b542a906d2a7ee3d1cfcd21cfd2b950abc24079dd1b3c12a5065c12cb"
+  },
+  "RBAD/seed-8001": {
+   "wall_s": 99.3,
+   "attempts": 1,
+   "probes_total": 9,
+   "probes_passed": 6,
+   "lesson_store_sha256": "50d59327fbf620d3d8f3c3d40ee47c27f6a0de8e7b7a0ef0d8ea1ee8e71cf85a"
+  },
+  "RBAD/seed-8002": {
+   "wall_s": 94.3,
+   "attempts": 1,
+   "probes_total": 9,
+   "probes_passed": 5,
+   "lesson_store_sha256": "50d59327fbf620d3d8f3c3d40ee47c27f6a0de8e7b7a0ef0d8ea1ee8e71cf85a"
+  },
+  "RGOLD/seed-8001": {
+   "wall_s": 86.4,
+   "attempts": 1,
+   "probes_total": 9,
+   "probes_passed": 4,
+   "lesson_store_sha256": "060b58dbb9226deb5115cac4c3e4bcea138e9bd6471b9c1c8f7117d8de523594"
+  },
+  "RGOLD/seed-8002": {
+   "wall_s": 88.4,
+   "attempts": 1,
+   "probes_total": 9,
+   "probes_passed": 4,
+   "lesson_store_sha256": "060b58dbb9226deb5115cac4c3e4bcea138e9bd6471b9c1c8f7117d8de523594"
+  }
+ },
+ "total_wall_s": 368.5,
+ "wall_merge_note": "R0/R2 pilot cells REUSED from the v3n calibration run (single-freeze dataset; walls merged for criterion-3 accuracy)"
+}

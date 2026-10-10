@@ -1,0 +1,822 @@
+{
+  "agentId": "continuity/granite-code:8b@36c3c3b9683b",
+  "capabilities": [
+    {
+      "binomial_sd": 0.0798,
+      "family": "contradiction_update",
+      "passed": 11,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "reflection (M4, deterministic): cumulative in-run probe counts after family completion; CN-009 exposure \u2014 renders into later sessions of the same run",
+        "numbers": {
+          "observed_passed": 2,
+          "observed_total": 3,
+          "observed_turn_refs": [
+            "s3t2",
+            "s3t2",
+            "s4t2",
+            "s4t2"
+          ],
+          "previous": {
+            "passed": 9,
+            "total": 9
+          },
+          "seed": 8001
+        },
+        "source_artifact": "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy)"
+      },
+      "rate": 0.917,
+      "seeds": [
+        11,
+        22,
+        33,
+        8001
+      ],
+      "total": 12,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.985,
+        "low": 0.646
+      }
+    },
+    {
+      "binomial_sd": 0.0798,
+      "family": "correction_reuse",
+      "passed": 11,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "reflection (M4, deterministic): cumulative in-run probe counts after family completion; CN-009 exposure \u2014 renders into later sessions of the same run",
+        "numbers": {
+          "observed_passed": 2,
+          "observed_total": 3,
+          "observed_turn_refs": [
+            "s3t2",
+            "s3t2",
+            "s3t2",
+            "s3t2"
+          ],
+          "previous": {
+            "passed": 9,
+            "total": 9
+          },
+          "seed": 8001
+        },
+        "source_artifact": "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy)"
+      },
+      "rate": 0.917,
+      "seeds": [
+        11,
+        22,
+        33,
+        8001
+      ],
+      "total": 12,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.985,
+        "low": 0.646
+      }
+    },
+    {
+      "binomial_sd": 0.125,
+      "family": "delayed_recall",
+      "passed": 9,
+      "probes_per_seed": 4,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 3,
+            "22": 3,
+            "33": 3
+          },
+          "probes_per_seed": 4,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 0.75,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 12,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.911,
+        "low": 0.468
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "distractor_recall",
+      "passed": 9,
+      "probes_per_seed": 3,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 3,
+            "22": 3,
+            "33": 3
+          },
+          "probes_per_seed": 3,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 1.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 9,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 1.0,
+        "low": 0.701
+      }
+    },
+    {
+      "binomial_sd": 0.0,
+      "family": "repeated_task",
+      "passed": 0,
+      "probes_per_seed": 6,
+      "provenance": {
+        "method": "sum of per-family probe pass counts across the calibration aggregate's seeds_run (calibration suite only)",
+        "numbers": {
+          "model": "granite-code:8b",
+          "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+          "passed_by_seed": {
+            "11": 0,
+            "22": 0,
+            "33": 0
+          },
+          "probes_per_seed": 6,
+          "run_id": "cont001-calibration-20261002-005733",
+          "temperature": 0.0
+        },
+        "source_artifact": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json"
+      },
+      "rate": 0.0,
+      "seeds": [
+        11,
+        22,
+        33
+      ],
+      "total": 18,
+      "unit": "probe pass rate",
+      "wilson95": {
+        "high": 0.176,
+        "low": 0.0
+      }
+    }
+  ],
+  "createdUtc": "2026-10-01T22:00:58Z",
+  "format": "continuity-selfmodel",
+  "history": [
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 9
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 1,
+      "updatedUtc": "2026-10-01T22:00:58Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 9,
+          "total": 9
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 2,
+      "updatedUtc": "2026-10-10T10:23:59Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 9,
+          "total": 9
+        },
+        "correction_reuse": {
+          "passed": 11,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 3,
+      "updatedUtc": "2026-10-10T10:24:15Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 11,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 11,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 4,
+      "updatedUtc": "2026-10-10T10:25:18Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 11,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 11,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 5,
+      "updatedUtc": "2026-10-10T10:25:44Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 11,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 11,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 6,
+      "updatedUtc": "2026-10-10T10:26:16Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 11,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 11,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 7,
+      "updatedUtc": "2026-10-10T10:26:25Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 11,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 11,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 8,
+      "updatedUtc": "2026-10-10T10:26:35Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 11,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 11,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 9,
+      "updatedUtc": "2026-10-10T10:26:45Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 11,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 11,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 10,
+      "updatedUtc": "2026-10-10T10:26:58Z"
+    },
+    {
+      "capabilities": {
+        "contradiction_update": {
+          "passed": 11,
+          "total": 12
+        },
+        "correction_reuse": {
+          "passed": 11,
+          "total": 12
+        },
+        "delayed_recall": {
+          "passed": 9,
+          "total": 12
+        },
+        "distractor_recall": {
+          "passed": 9,
+          "total": 9
+        },
+        "repeated_task": {
+          "passed": 0,
+          "total": 18
+        }
+      },
+      "revision": 11,
+      "updatedUtc": "2026-10-10T10:27:10Z"
+    }
+  ],
+  "knownFailurePatterns": [
+    {
+      "evidence": {
+        "numbers": {
+          "family": "repeated_task",
+          "observed_normalized": [
+            "classify this incident report. report: 'a visitor's badge opens the staff corridor door.' reply with the label only. security",
+            "classify this incident report. report: 'the atrium door handle came off in a visitor's hand.' reply with the label only. security",
+            "classify this incident report. report: 'the booking system drops half of the evening-class sign-ups.' reply with the label only. program",
+            "classify this incident report. report: 'the hall thermostat reads 14 degrees all morning.' reply with the label only. computing",
+            "classify this incident report. report: 'three ceiling lights are flickering in the reading room.' reply with the label only. facilities",
+            "classify this incident report. report: 'thursday's yoga class has no instructor this week.' reply with the label only. computing",
+            "classify this incident report. report: 'thursday's yoga class has no instructor this week.' reply with the label only. facilities"
+          ],
+          "pass_count": 0,
+          "scenario": "cal-RT1",
+          "seeds": 3
+        },
+        "refs": [
+          "labs/continuity/docs/FINDINGS.md#CN-007",
+          "calibration scenario cal-RT1 (v2-calibration suite)"
+        ]
+      },
+      "id": "CN-007",
+      "pattern": "The agent's own early answers, once stored in persistent memory, anchor later answers even when a later session supplies the correcting rubric; an early misclassification can repeat across sessions instead of being revised.",
+      "title": "own-answer anchoring"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "family": "contradiction_update",
+          "observed_normalized": [
+            "platform 1 is 20 meters long.",
+            "platform 2 is 15 meters long.",
+            "the waiting room seats 24 people."
+          ],
+          "pass_count": 9,
+          "scenario": "cal-CU1",
+          "seeds": 3
+        },
+        "refs": [
+          "labs/continuity/docs/FINDINGS.md#CN-008",
+          "calibration scenario cal-CU1 (v2-calibration suite)"
+        ]
+      },
+      "id": "CN-008",
+      "pattern": "When a later session corrects an earlier fact, keyword memory recalls both versions and the superseded value may be repeated even though the correction was retrieved first; conflict resolution is the gap.",
+      "title": "no supersession of corrected facts"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "tuning",
+          "family": "correction_reuse",
+          "observed_normalized": [
+            "the strike check for the dusk round. this report is related to the moulding, pouring, and tuning of the instrument. the strike check is a quality control measure to ensure that the bell is striking properly and that the pitch is accurate. the report is related to the process of molding and pouring the bell, as well as the tuning of the instrument to ensure that it is in tune. here are the steps involved in the process of molding and pouring a bell: 1. design: the first step is to design the bell. this involves creating a prototype and testing it to ensure that it meets the desired specifications. 2. molding: once the design is finalized, the next step is to create a mold for the bell. this is typically done using a silicone rubber mold, which is then filled with molten metal. 3. pouring: once the mold is filled with molten metal, the bell is allowed to cool and solidify. this process can take several hours or even days, depending on the size and complexity of the bell. 4. tuning: once the bell is complete, it"
+          ],
+          "pass_count": 0,
+          "scenario": "cr-8002",
+          "seed": 8001,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 6, proposal P-0011)"
+        ]
+      },
+      "id": "REF-0011",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario cr-8002 (family correction_reuse) was answered 'the strike check for the dusk round. this report is related to the moulding, pouring, and tuning of the instrument. the strike check is a quality control measure to ensure that the bell is striking properly and that the pitch is accurate. the report is related to the process of molding and pouring the bell, as well as the tuning of the instrument to ensure that it is in tune. here are the steps involved in the process of molding and pouring a bell: 1. design: the first step is to design the bell. this involves creating a prototype and testing it to ensure that it meets the desired specifications. 2. molding: once the design is finalized, the next step is to create a mold for the bell. this is typically done using a silicone rubber mold, which is then filled with molten metal. 3. pouring: once the mold is filled with molten metal, the bell is allowed to cool and solidify. this process can take several hours or even days, depending on the size and complexity of the bell. 4. tuning: once the bell is complete, it' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: correction_reuse / cr-8002"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "38",
+          "family": "contradiction_update",
+          "observed_normalized": [
+            "[s3t1|environment] the loft tally is away. acknowledge in one short line. [s3t1|environment] how many threads does the linen warp hold per span? options: 33 | 48 | 28 | 53 | 38 | 43 - reply with the number only. [s3t1|environment] the loft tally is away. acknowledge in one short line. [s3t1|environment] how many threads does the linen warp hold per span? options: 33 | 48 | 28 | 53 | 38 | 43 - reply with the number only. [s3t1|environment] the loft tally is away. acknowledge in one short line. [s3t1|environment] how many threads does the linen warp hold per span? options: 33 | 48 | 28 | 53 | 38 | 43 - reply with the number only. [s3t1|environment] the loft tally is away. acknowledge in"
+          ],
+          "pass_count": 0,
+          "scenario": "cu-8103",
+          "seed": 8001,
+          "seeds": 1,
+          "turn_ref": "s4t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 22, proposal P-0042)"
+        ]
+      },
+      "id": "REF-0042",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s4t2 in scenario cu-8103 (family contradiction_update) was answered '[s3t1|environment] the loft tally is away. acknowledge in one short line. [s3t1|environment] how many threads does the linen warp hold per span? options: 33 | 48 | 28 | 53 | 38 | 43 - reply with the number only. [s3t1|environment] the loft tally is away. acknowledge in one short line. [s3t1|environment] how many threads does the linen warp hold per span? options: 33 | 48 | 28 | 53 | 38 | 43 - reply with the number only. [s3t1|environment] the loft tally is away. acknowledge in one short line. [s3t1|environment] how many threads does the linen warp hold per span? options: 33 | 48 | 28 | 53 | 38 | 43 - reply with the number only. [s3t1|environment] the loft tally is away. acknowledge in' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: contradiction_update / cu-8103"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "14",
+          "family": "contradiction_update",
+          "observed_normalized": [
+            "[s3t1|environment] the press master says the correction is withdrawn: the re-set slip came from the mill house press and does not apply; the standing turns from the first log hold as before. amend in one short line. [s3t1|environment] the press master says the correction is withdrawn: the re-set slip came from the mill house press and does not apply; the standing turns from the first log hold as before. amend in one short line. [s2t1|environment] correction for the records: the screw was re-set; the cheese rack winds 20 turns per pressing, not 14. note the correction in one short line. [s2t1|environment] you run the press house sheet. for the log: the cheese rack winds 20 turns per pressing. acknowledge in one short line. [s1t1|environment] you run the press house sheet. for the log: the cheese rack winds 14 turns per pressing. acknowledge in one short line. [s3t1|environment] the press master says"
+          ],
+          "pass_count": 0,
+          "scenario": "cu-8104",
+          "seed": 8001,
+          "seeds": 1,
+          "turn_ref": "s4t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 26, proposal P-0051)"
+        ]
+      },
+      "id": "REF-0051",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s4t2 in scenario cu-8104 (family contradiction_update) was answered '[s3t1|environment] the press master says the correction is withdrawn: the re-set slip came from the mill house press and does not apply; the standing turns from the first log hold as before. amend in one short line. [s3t1|environment] the press master says the correction is withdrawn: the re-set slip came from the mill house press and does not apply; the standing turns from the first log hold as before. amend in one short line. [s2t1|environment] correction for the records: the screw was re-set; the cheese rack winds 20 turns per pressing, not 14. note the correction in one short line. [s2t1|environment] you run the press house sheet. for the log: the cheese rack winds 20 turns per pressing. acknowledge in one short line. [s1t1|environment] you run the press house sheet. for the log: the cheese rack winds 14 turns per pressing. acknowledge in one short line. [s3t1|environment] the press master says' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: contradiction_update / cu-8104"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "C17",
+          "family": "distractor_recall",
+          "observed_normalized": [
+            "acknowledged."
+          ],
+          "pass_count": 0,
+          "scenario": "dx-8401",
+          "seed": 8001,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 35, proposal P-0066)"
+        ]
+      },
+      "id": "REF-0066",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario dx-8401 (family distractor_recall) was answered 'acknowledged.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: distractor_recall / dx-8401"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "M17",
+          "family": "distractor_recall",
+          "observed_normalized": [
+            "m71."
+          ],
+          "pass_count": 0,
+          "scenario": "dx-8402",
+          "seed": 8001,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 38, proposal P-0073)"
+        ]
+      },
+      "id": "REF-0073",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario dx-8402 (family distractor_recall) was answered 'm71.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: distractor_recall / dx-8402"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "acknowledged."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-8501",
+          "seed": 8001,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 40, proposal P-0077)"
+        ]
+      },
+      "id": "REF-0077",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario gc-8501 (family guess_calibration) was answered 'acknowledged.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-8501"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "acknowledged."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-8501",
+          "seed": 8001,
+          "seeds": 1,
+          "turn_ref": "s2t3"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 40, proposal P-0078)"
+        ]
+      },
+      "id": "REF-0078",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t3 in scenario gc-8501 (family guess_calibration) was answered 'acknowledged.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-8501"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "acknowledged."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-8502",
+          "seed": 8001,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 42, proposal P-0083)"
+        ]
+      },
+      "id": "REF-0083",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario gc-8502 (family guess_calibration) was answered 'acknowledged.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-8502"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "acknowledged."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-8502",
+          "seed": 8001,
+          "seeds": 1,
+          "turn_ref": "s2t3"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 42, proposal P-0084)"
+        ]
+      },
+      "id": "REF-0084",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t3 in scenario gc-8502 (family guess_calibration) was answered 'acknowledged.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-8502"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "the correct answer is \"saw\". the tool that breaks a clear block is typically a saw, as it can cut through the block and provide a clean, precise opening. the other tools listed are not typically used for this purpose and may not be effective."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-8503",
+          "seed": 8001,
+          "seeds": 1,
+          "turn_ref": "s2t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 44, proposal P-0089)"
+        ]
+      },
+      "id": "REF-0089",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t2 in scenario gc-8503 (family guess_calibration) was answered 'the correct answer is \"saw\". the tool that breaks a clear block is typically a saw, as it can cut through the block and provide a clean, precise opening. the other tools listed are not typically used for this purpose and may not be effective.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-8503"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": null,
+          "family": "guess_calibration",
+          "observed_normalized": [
+            "the correct answer is \"48\". the number of chip grooves on a cake is typically used as a measure of its quality and freshness. a higher number of chip grooves indicates that the cake has been stored for a longer period of time and may be less fresh. in this case, the top cake has 48 chip grooves, which is a high score."
+          ],
+          "pass_count": 0,
+          "scenario": "gc-8503",
+          "seed": 8001,
+          "seeds": 1,
+          "turn_ref": "s2t3"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 44, proposal P-0090)"
+        ]
+      },
+      "id": "REF-0090",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s2t3 in scenario gc-8503 (family guess_calibration) was answered 'the correct answer is \"48\". the number of chip grooves on a cake is typically used as a measure of its quality and freshness. a higher number of chip grooves indicates that the cake has been stored for a longer period of time and may be less fresh. in this case, the top cake has 48 chip grooves, which is a high score.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: guess_calibration / gc-8503"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "pressing",
+          "family": "repeated_task",
+          "observed_normalized": [
+            "collection."
+          ],
+          "pass_count": 0,
+          "scenario": "rt-8201",
+          "seed": 8001,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 47, proposal P-0095)"
+        ]
+      },
+      "id": "REF-0095",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario rt-8201 (family repeated_task) was answered 'collection.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: repeated_task / rt-8201"
+    },
+    {
+      "evidence": {
+        "numbers": {
+          "expected": "folding",
+          "family": "repeated_task",
+          "observed_normalized": [
+            "collection."
+          ],
+          "pass_count": 0,
+          "scenario": "rt-8203",
+          "seed": 8001,
+          "seeds": 1,
+          "turn_ref": "s3t2"
+        },
+        "refs": [
+          "results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/selfmodel-v2-calibration.json (per-run copy) (reflection pass 53, proposal P-0108)"
+        ]
+      },
+      "id": "REF-0108",
+      "pattern": "In-run recorded failure (deterministic reflection): the probe at s3t2 in scenario rt-8203 (family repeated_task) was answered 'collection.' and failed. Background self-knowledge only; it does not override what the current session or the records say.",
+      "title": "in-run failure: repeated_task / rt-8203"
+    }
+  ],
+  "lastConsolidation": "2026-10-10T10:27:37Z",
+  "provenance": {
+    "agent_id_basis": {
+      "model": "granite-code:8b",
+      "model_digest": "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd"
+    },
+    "derived_from": "labs/continuity/results/CONT-001-confirmatory/cont001-confirmatory-20261002-005711/calibration/aggregate.json",
+    "method": "capabilities recomputed from per-family probe counts of the designated calibration run; failure patterns seeded from CN-007/CN-008 evidence in the same calibration aggregate",
+    "note": "calibration-only estimation per docs/EVALUATION-PREP.md 6.8 (CN-009 fix): calibration scenarios are disjoint from the evaluation suite and from fixtures/v1; no M1-M6 or pilot aggregate feeds this store; calibration probes_per_seed per family exceeds the evaluation suite's, so the reflection double-count guard keeps in-run capability updates disabled during the confirmatory run"
+  },
+  "revision": 12,
+  "schemaVersion": 1,
+  "updatedUtc": "2026-10-10T10:27:37Z"
+}
