@@ -3268,3 +3268,58 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   no]; (3) stop the arc [default no].
 - Declared deviations: reviewer-model substitution (Fable/Opus → GLM 5.3,
   queue rule). Model/tool substitutions otherwise: none.
+
+## 2026-10-10 — V2A chain to the PILOT-GATE CHECKPOINT: Phase V activated both stores; Phase P complete; A.10 gate fold; pilot NO-GO (owner checkpoint; chain halted before Phase C)
+
+- A.9 executed: freeze v3a (76 digests; preflight PASS); the calibration
+  verdict RECOMPUTED under A.9 from the SAME committed run (zero repeated
+  inference; A.3 STOP preserved as calibration-verdict-a3-stop.json) —
+  **GO** (cr/cu/rt in band both arms; dx/dr exempt with caveat).
+- Phase V (results/CONT-006-VAL/cont006-v-20261010-130154): 21/21 cells,
+  live gate PASS before anything read the root; A.6 operator-side anchor
+  check PASS (S0 = R0 pooled VAL = 0.500 vs 0.525, dev 0.025);
+  V-activate: **R2 ACTIVATED +0.2143 (SX 0.7143), R3 ACTIVATED +0.2143**,
+  0 invalid probes; active stores frozen (r2 f99be96f…, r3 b2500b6b…)
+  before any transfer request; stores-provenance recorded.
+- Phase P (results/CONT-006-PILOT/cont006-p-20261010-132230): the four
+  CAL cells (R0/R2 × 8001/8002) copied into the fresh P root (declared
+  mechanical copy; single-freeze dataset, zero repeated inference; CAL
+  walls merged into cells.json for criterion-3 accuracy); R1/R3 fresh +
+  RBAD/RGOLD on the CF subset. 12/12 cells.
+- Live gate over the P root FAILED on the two R1 traces (T2:
+  's1-summary|reflection.summary' refs unresolved). Investigation (source
+  + traces): the R1 reflection engine commits its session summaries via
+  the SAME MemoryStore.append_episode API but the trace records them as
+  reflection.proposal/commit, not memory.append — a GATE ACCOUNTING GAP,
+  first observable now (first R1-with-memory run). **A.10 folded**
+  (EVALUATION-PREP-CONT006-V2-A10.md): T2 resolves summary refs against
+  earlier accepted episode_summary proposals; T5 counts episodes =
+  appends + accepted summaries. Both-ways verified: 4-direction
+  self-test; the amended gate still FAILs the invalid V1 run 20/20;
+  re-gating P leaves ONLY the two R1 traces failing — on T4 alone.
+- **T4 finding (REAL, not a gate bug)**: R1/seed-8001 max prompt
+  4085/4096 (within the 512 headroom), R1/seed-8002 3729; audit: 6 of 168
+  R1 generations hit the num_predict cap (actual truncation: 5 + 1).
+  The R1 pilot cells are defective (context overflow at the 18-scenario
+  scale); the primary R0/R2 contrast and every other arm are unaffected.
+- Declared process slip: the pilot analyzer was invoked once BEFORE the
+  gate verdict was green (a chained shell command; hard rule 1 slip).
+  The verdict of record is unaffected — criterion 2 reads R0/RGOLD only.
+- **Pilot-gate verdict: NO-GO.** Criterion 1 PASS (parroting 4-gram hits
+  none; RBAD CF-subset 0.786 vs R0 0.714, floor 0.614). Criterion 2
+  FAIL: RGOLD invalid-format 0.143 → 0.357 (improvement −0.214, need
+  ≥ +0.10; failure mode: list-echoing — the model repeats the entire
+  option list under the trivially-benign format lesson; misses on
+  dx-8401 ×2, rt-8202, cr-8001, rt-8201). Criteria 3/4/5/6 PASS;
+  band caveat-only (A.5). Consistent with the suppression diagnosis:
+  lesson-prescribed output behavior interacts badly with probe
+  instructions on this model.
+- Freeze v3b emitted (77 digests; A.10 digested; preflight PASS) before
+  anything further. Chain HALTED before Phase C per the binding
+  pilot-gate stop branch. Owner brief:
+  docs/OWNER-BRIEF-CONT006-V2A-PILOT-GATE.md — options: (1) override
+  NO-GO + drop R1 from the confirmatory (A.11 analyzer-scope amendment;
+  dataset preserved; ~1–1.5 h GPU) [default YES]; (2) override + uniform
+  num_ctx 6144 + full re-run (~3 h; provider/arm-equivalence amendment)
+  [default NO]; (3) accept NO-GO and close the arc at the pilot record
+  [default NO].
