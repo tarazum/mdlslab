@@ -1,12 +1,12 @@
 {
  "kind": "cont006-calibration-verdict",
- "prereg": "EVALUATION-PREP-CONT006-V2.md A.3 as amended by EVALUATION-PREP-CONT006-V2-A9.md (owner-accepted 2026-10-10)",
+ "prereg": "EVALUATION-PREP-CONT006-V2.md A.3 (frozen check)",
  "run_root": "C:\\projects\\mdlslab\\labs\\continuity\\results\\CONT-006-CAL\\cont006-cal-20261010-012838",
  "criteria": [
   {
    "criterion": "1-family-headroom",
-   "status": "PASS",
-   "detail": "R0/cr=0.625; R0/cu=0.625; R0/rt=0.1667; R0/dx=1.0; R0/dr=1.0; R2/cr=0.375; R2/cu=0.5; R2/rt=0.3333; R2/dx=0.75; R2/dr=1.0; exempt out-of-band (A.9): ['R0/dx=1.0 (A.9 exemption: reported, not gated \u2014 improvement unmeasurable at ceiling, harm measurable)', 'R0/dr=1.0 (A.9 exemption: reported, not gated \u2014 improvement unmeasurable at ceiling, harm measurable)', 'R2/dr=1.0 (A.9 exemption: reported, not gated \u2014 improvement unmeasurable at ceiling, harm measurable)']"
+   "status": "STOP",
+   "detail": "R0/cr=0.625; R0/cu=0.625; R0/rt=0.1667; R0/dx=1.0; R0/dr=1.0; R2/cr=0.375; R2/cu=0.5; R2/rt=0.3333; R2/dx=0.75; R2/dr=1.0; breaches (need strictly inside (0.15, 0.85)): ['R0/dx=1.0', 'R0/dr=1.0', 'R2/dr=1.0']"
   },
   {
    "criterion": "2-anchor",
@@ -24,8 +24,10 @@
    "detail": "invalid-format share per arm {'R0': 0.1316, 'R2': 0.0789} (< 0.3 each)"
   }
  ],
- "verdict": "GO",
- "offending": [],
+ "verdict": "STOP-OUT-OF-BAND",
+ "offending": [
+  "1-family-headroom"
+ ],
  "consequence": "OUT OF BAND: the chain STOPS \u2014 commit the record, write the owner brief, NO v3m edits, NO parameter moves; a NEW suite is authored only after the owner decides",
  "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless",
  "family_means": {
@@ -44,7 +46,6 @@
    "dr": 1.0
   }
  },
- "a9_note": "family bands gate cr/cu/rt only; dx/dr exempt with the ceiling caveat (improvement unmeasurable at 1.0, harm measurable; the primary leans on the 11/15 in-band clusters, power ~0.79-0.80 retained)",
  "r0_tr_pooled": 0.6333333333333333,
  "anchor_dev": 0.1083,
  "invalid_share": {
