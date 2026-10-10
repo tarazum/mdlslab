@@ -1,5 +1,5 @@
-"""Frozen CONT-006 V2 calibration verdict (prereg A.3, EVALUATION-PREP-
-CONT006-V2.md; DESIGN-V2 §9).
+"""Frozen CONT-006 V2A calibration verdict (prereg A.3 as amended by A.9,
+EVALUATION-PREP-CONT006-V2-A9.md, owner-accepted 2026-10-10; DESIGN-V2 §9).
 
 Written BEFORE the calibration pilot runs (template §1; RC-4b discipline:
 the --self-test over synthetic run roots ran BEFORE this file was digested
@@ -10,9 +10,11 @@ live-telemetry gate verdict that must have been produced FIRST (A.2.2
 binding order: gate exit 0 before any analyzer reads the root).
 
 Pre-declared checks (GO required for the transfer phases):
-  1. Per-family headroom: EVERY TR family mean pass in (0.15, 0.85) for
-     BOTH R0 and R2 (families cr/cu/rt/dx/dr; means over both seeds' probes
-     pooled; exact_match probes only, gc excluded).
+  1. Per-family headroom (A.9): the BAND (0.15, 0.85) gates cr/cu/rt for
+     BOTH R0 and R2; dx/dr are EXEMPT and reported with the ceiling caveat
+     (improvement unmeasurable at 1.0, harm measurable; two suites placed
+     R0 dx/dr at a structural ceiling). Means over both seeds' probes
+     pooled; exact_match probes only, gc excluded.
   2. Anchor: |R0 pooled TR pass - 0.525| <= 0.15 (the C2 memory-armed
      anchor; a larger divergence = halt & investigate — F-3).
   3. Live-telemetry gate verdict file present and PASS.
@@ -49,7 +51,12 @@ TR_IDS = ["cr-8001", "cr-8002", "cr-8003", "cr-8004", "cu-8101", "cu-8102",
 VAL_IDS = ["cr-8005", "cu-8105", "rt-8204", "dx-8403"]
 CAL_SEEDS = [8001, 8002]
 CAL_ARMS = ["R0", "R2"]
-FAMILIES = ["cr", "cu", "rt", "dx", "dr"]
+# A.9 (owner-accepted 2026-10-10): the headroom band gates cr/cu/rt ONLY;
+# dx/dr are exempt and REPORTED with the ceiling caveat (improvement
+# unmeasurable at 1.0, harm measurable) — two suites placed R0 dx/dr at a
+# structural ceiling for granite+memory at this task scale.
+BAND_FAMILIES = ["cr", "cu", "rt"]
+EXEMPT_FAMILIES = ["dx", "dr"]
 FAMILY_LO = 0.15
 FAMILY_HI = 0.85
 ANCHOR = 0.525
@@ -102,25 +109,34 @@ def analyze(root: Path) -> dict:
                                  if c["status"] == "STOP"])
         return report
 
-    # 1 per-family headroom (both arms; TR families only; pooled both seeds)
+    # 1 per-family headroom (A.9: band gates cr/cu/rt only; dx/dr exempt
+    # with the ceiling caveat; all family means reported either way)
     family_means: dict[str, dict[str, float]] = {}
     breaches: list[str] = []
+    exempt_notes: list[str] = []
     for arm in CAL_ARMS:
         family_means[arm] = {}
-        for fam in FAMILIES:
+        for fam in BAND_FAMILIES + EXEMPT_FAMILIES:
             ids = [sid for sid in TR_IDS if sid.startswith(fam + "-")]
             probes = [p for sd in CAL_SEEDS
                       for p in scored_probes(cells[(arm, sd)], ids)]
             mean = (sum(1 for p in probes if p.get("passed") is True) / len(probes)
                     if probes else None)
             family_means[arm][fam] = round(mean, 4) if mean is not None else None
-            if mean is None or not (FAMILY_LO < mean < FAMILY_HI):
+            if fam in EXEMPT_FAMILIES:
+                if mean is None or not (FAMILY_LO < mean < FAMILY_HI):
+                    exempt_notes.append(
+                        f"{arm}/{fam}={mean} (A.9 exemption: reported, not "
+                        f"gated — improvement unmeasurable at ceiling, harm "
+                        f"measurable)")
+            elif mean is None or not (FAMILY_LO < mean < FAMILY_HI):
                 breaches.append(f"{arm}/{fam}={mean}")
     rec("1-family-headroom", "PASS" if not breaches else "STOP",
         "; ".join(f"{a}/{f}={v}" for a in family_means for f, v in
                   family_means[a].items())
-        + (f"; breaches (need strictly inside ({FAMILY_LO}, {FAMILY_HI})): "
-           f"{breaches}" if breaches else ""))
+        + (f"; breaches (band families {BAND_FAMILIES} need strictly inside "
+           f"({FAMILY_LO}, {FAMILY_HI})): {breaches}" if breaches else "")
+        + (f"; exempt out-of-band (A.9): {exempt_notes}" if exempt_notes else ""))
 
     # 2 anchor (R0 pooled TR pass over both seeds)
     tr_probes = [p for sd in CAL_SEEDS for p in scored_probes(cells[("R0", sd)], TR_IDS)]
@@ -166,6 +182,11 @@ def analyze(root: Path) -> dict:
                      f"{GPU_CAP_S}s (NOTE: reported, not gating)")
     out = verdict_record(root, criteria, None, None)
     out["family_means"] = family_means
+    out["a9_note"] = ("family bands gate cr/cu/rt only; dx/dr exempt with the "
+                      "ceiling caveat (improvement unmeasurable at 1.0, harm "
+                      "measurable; the primary leans on the 11/15 in-band "
+                      "clusters, power ~0.79-0.80 retained)"
+                      if exempt_notes else None)
     out["r0_tr_pooled"] = r0_tr
     out["anchor_dev"] = None if anchor_dev is None else round(anchor_dev, 4)
     out["invalid_share"] = invalid
@@ -180,7 +201,8 @@ def verdict_record(root: Path, criteria: list[dict], verdict: str | None,
                    offending: list[str] | None) -> dict:
     return {
         "kind": "cont006-calibration-verdict",
-        "prereg": "EVALUATION-PREP-CONT006-V2.md A.3 (frozen check)",
+        "prereg": "EVALUATION-PREP-CONT006-V2.md A.3 as amended by "
+                 "EVALUATION-PREP-CONT006-V2-A9.md (owner-accepted 2026-10-10)",
         "run_root": str(root),
         "criteria": criteria,
         "verdict": verdict,
@@ -253,11 +275,16 @@ def self_test() -> int:
     assert r["verdict"] == "GO", r
     assert not r["offending"], r
     print("SELF-TEST PASS: in-band GO case")
-    # family-band breach: cr family forced to 1.0 (> 0.85) — STOP
+    # family-band breach on a GATED family (cr): forced to 1.0 — STOP
     r = analyze(_synthetic_root(tmp, "fam", 16 / 30, family_override=("cr", 1.0)))
     assert r["verdict"] == "STOP-OUT-OF-BAND", r
     assert "1-family-headroom" in r["offending"], r
-    print("SELF-TEST PASS: family-band breach -> STOP-OUT-OF-BAND")
+    print("SELF-TEST PASS: family-band breach (gated cr) -> STOP-OUT-OF-BAND")
+    # A.9 exemption: dx forced to 1.0 (ceiling) — NOT a stop; caveat recorded
+    r = analyze(_synthetic_root(tmp, "dxceil", 16 / 30, family_override=("dx", 1.0)))
+    assert r["verdict"] == "GO", r
+    assert r.get("a9_note"), r
+    print("SELF-TEST PASS: A.9 dx ceiling exemption -> GO with caveat")
     # anchor breach: R0 TR pass 6/30 = 0.2 -> |0.2-0.525| = 0.325 > 0.15
     r = analyze(_synthetic_root(tmp, "anchor", 6 / 30))
     assert r["verdict"] == "STOP-OUT-OF-BAND", r

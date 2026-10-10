@@ -284,6 +284,24 @@ binding: calibration out-of-band → STOP + record + owner; pilot-gate NO-GO
 anchor/family-band/freeze-guard/live-gate failure → halt. The v3m
 calibration cells are NOT part of the v3n dataset.
 
+## Owner decisions — recorded 2026-10-10 (CONT-006 A.9 ACCEPTED: dx/dr band exemption + full chain continuation; arc NOT stopped)
+
+Basis: the second calibration STOP record (v3n;
+results/CONT-006-CAL/cont006-cal-20261010-012838/calibration-verdict.json)
+and the owner brief docs/OWNER-BRIEF-CONT006-V2A-CAL-STOP.md. Owner
+verdict (chat): "1. ок, дефолт … 3. по дефолту, ні" — (1) amendment A.9
+ACCEPTED: the per-family headroom band (0.15, 0.85) applies to cr/cu/rt
+ONLY; dx/dr are EXEMPT from the band and REPORTED with the declared
+ceiling caveat (improvement unmeasurable at 1.0, harm measurable); the
+primary endpoint leans on the 11/15 in-band clusters (power ~0.8
+retained; the v3n CAL cells already collected stay part of the final
+dataset — the verdict is recomputed under A.9 from the SAME committed
+run, zero repeated inference); (2) the chain continues AUTONOMOUSLY to
+the full confirmatory verdict on v3n (Phase V → P → C → run record →
+close-out) under the standing authorization and its binding stop
+branches; (3) the arc is NOT stopped. No v3n edits, no parameter moves,
+no MME moves.
+
 ## Never autonomous (unchanged)
 
 - CONT-002 behavioral experiments — anything that measures transfer quality. The single exception is the M2b mechanics smoke (owner-ordered 2026-10-01): export/import plumbing proof only, explicitly no behavioral claims.
