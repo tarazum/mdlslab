@@ -1,0 +1,27 @@
+{
+ "kind": "cont006-worker-v2-telemetry",
+ "calls": 9,
+ "parse_error_calls": 0,
+ "truncated_call_count": 0,
+ "no_lesson_bundles": 0,
+ "candidate_lessons": 9,
+ "accepted": 4,
+ "rejected_duplicates": 0,
+ "rejected_unsupported": 0,
+ "rejected_too_specific_or_unsafe": 5,
+ "untagged_or_invalid_class": 0,
+ "dropped_by_fp6_cap": [],
+ "class_coverage_pre_cap": {
+  "FP-3a": 2,
+  "FP-3b": 2
+ },
+ "class_coverage_store": {
+  "FP-3a": 2,
+  "FP-3b": 2
+ },
+ "created_utc": "2026-10-10T17:41:23Z",
+ "r2_store_sha256": "a670b941c7fbc1206f242fe6cae38503afb0f03d42a2a4b5263f475480533d4c",
+ "declared_deviation": {
+  "worker_num_ctx": "8192 (frozen WORKER_OPTIONS) -> 16384 via custom provider; faithful digests are ~10.1k prompt tokens and the frozen ctx rejects them (exceed_context_size_error); all else identical"
+ }
+}

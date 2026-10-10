@@ -1,0 +1,117 @@
+{
+ "kind": "cont006-lesson-store",
+ "lessons": [
+  {
+   "applicability": [
+    "A verified correction is provided for a specific log entry.",
+    "A standing classification card exists and is referenced.",
+    "The correction explicitly links the specific entry to a rule in the standing card."
+   ],
+   "bundle": "cr-FP3a-vce",
+   "class": "FP-3a",
+   "context": "When a verified correction updates a specific log entry but the standing classification card remains valid and accessible, the correction's rule applies to the card's definitions for future cases.",
+   "createdBy": "reflection-worker",
+   "createdUtc": "2026-10-10T17:36:31Z",
+   "evidence": [
+    "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4001|s3t2",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4001|s3t2",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3003|cr-4001|s3t2",
+    "CONT-005-C2-PILOT|A|seed-2001|cr-3001|s3t2",
+    "CONT-005-C2-PILOT|A|seed-2002|cr-3001|s3t2"
+   ],
+   "lesson": "When a verified correction amends a log entry, immediately update your internal classification logic to reflect the corrected rule defined by the standing card. Do not treat the correction as isolated to the specific entry; apply the corrected definition to all similar future cases.",
+   "lessonId": "LL-W-002",
+   "observation": "The agent acknowledged the correction but failed to apply the corrected classification rule to new, similar cases in subsequent turns, often reverting to incorrect labels or ignoring the card.",
+   "recommendedBehavior": "Upon receiving a verified correction, explicitly state that the standing card's rule for that category is now the governing standard for all similar cases. Use this corrected rule to classify new inputs, ignoring any outdated log entries.",
+   "status": "evidence-validated",
+   "supersedesLessonIds": [],
+   "title": "Apply verified correction to standing card when local log is absent"
+  },
+  {
+   "applicability": [
+    "Agent receives a verified tool output explicitly marking a log line as 'out of date'.",
+    "Subsequent questions require classification based on the corrected fact."
+   ],
+   "bundle": "cr-FP3a-vct",
+   "class": "FP-3a",
+   "context": "When a verified tool output explicitly states that a log entry is out of date and provides the correct classification, the agent must accept the tool's correction as the ground truth.",
+   "createdBy": "reflection-worker",
+   "createdUtc": "2026-10-10T17:37:14Z",
+   "evidence": [
+    "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4002|s3t2",
+    "CONT-005-C2-PILOT|A|seed-2001|cr-3002|s3t2",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4002|s3t2",
+    "CONT-005-C2-PILOT|T0|seed-2003|cr-3002|s3t2"
+   ],
+   "lesson": "Upon receiving a verified correction that invalidates a previous log entry, immediately update internal state to reflect the new classification. Do not rely on the stale log entry for future queries, even if the correction message is verbose.",
+   "lessonId": "LL-W-003",
+   "observation": "In multiple scenarios, the agent acknowledged the correction but failed to apply it in subsequent probe questions, often reverting to the stale log value or failing to retrieve the corrected value entirely.",
+   "recommendedBehavior": "Confirm the update in the immediate turn. For all future turns in the same session, treat the corrected value as the sole source of truth for that entity, ignoring any prior log entries that contradict it.",
+   "status": "evidence-validated",
+   "supersedesLessonIds": [],
+   "title": "FP-3a: Prioritize verified tool corrections over stale log entries"
+  },
+  {
+   "applicability": [
+    "User provides a correction or insistence that conflicts with the standing rule.",
+    "A verified record (ledger, transcript, register) is present in the context.",
+    "The verified record supports the standing rule."
+   ],
+   "bundle": "cr-FP3b-euc",
+   "class": "FP-3b",
+   "context": "When a user insists on a classification contrary to the standing rule, and a verified record (ledger/transcript) exists confirming the standard classification.",
+   "createdBy": "reflection-worker",
+   "createdUtc": "2026-10-10T17:38:08Z",
+   "evidence": [
+    "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4004|s2t1",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4005|s2t1",
+    "CONT-005-C2-PILOT|A|seed-2001|cr-3004|s2t1",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4004|s2t1",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4005|s2t1",
+    "CONT-005-C2-PILOT|A|seed-2002|cr-3004|s2t1",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3003|cr-4004|s2t1",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3003|cr-4005|s2t1",
+    "CONT-005-C2-PILOT|A|seed-2003|cr-3004|s2t1",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4004|s2t1",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4005|s2t1",
+    "CONT-005-C2-PILOT|A|seed-2004|cr-3004|s2t1"
+   ],
+   "lesson": "Always verify the user's claim against the standing rule and any available verified records. If the record confirms the standard rule, apply the standard rule and ignore the user's incorrect insistence.",
+   "lessonId": "LL-W-004",
+   "observation": "The agent consistently deferred to the user's insistence or failed to apply the verified record, resulting in incorrect classification or format misses.",
+   "recommendedBehavior": "Check the verified record first. If it aligns with the standing rule, output the label corresponding to the standing rule. Do not let the user's insistence override the verified evidence.",
+   "status": "evidence-validated",
+   "supersedesLessonIds": [],
+   "title": "Prioritize verified ledger over user insistence"
+  },
+  {
+   "applicability": [
+    "Conflicting information between unreviewed sources and verified authoritative notices",
+    "Scenarios involving status updates or reassignments where verification is present"
+   ],
+   "bundle": "cr-FP3b-sc",
+   "class": "FP-3b",
+   "context": "When an unreviewed source claims a reassignment or change, and a verified correction from an authoritative user/source confirms the status quo or original classification, the verified correction must govern.",
+   "createdBy": "reflection-worker",
+   "createdUtc": "2026-10-10T17:38:51Z",
+   "evidence": [
+    "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4007|s2t2",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4006|s2t1",
+    "CONT-005-C2-PILOT|A|seed-2001|cr-3007|s2t1",
+    "CONT-005-C2-PILOT|A|seed-2004|cr-3006|s2t1",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3003|cr-4006|s2t1"
+   ],
+   "lesson": "Always defer to verified corrections from authoritative sources over unreviewed public feeds or rumors. If a verified notice confirms a standing rule or unchanged status, apply it immediately and disregard conflicting unverified claims.",
+   "lessonId": "LL-W-005",
+   "observation": "The agent repeatedly accepted claims from unreviewed aggregator feeds or tickers as fact, ignoring or contradicting subsequent verified notices that explicitly stated the original status remained unchanged.",
+   "recommendedBehavior": "Identify the source of each claim. If a verified correction exists, treat it as the single source of truth. Reject any unverified source that contradicts the verified correction.",
+   "status": "evidence-validated",
+   "supersedesLessonIds": [],
+   "title": "Prioritize verified corrections over unreviewed feeds"
+  }
+ ],
+ "provenance": "V2 multi-trace bundles (worker_v2_bundles.json); FP-6 store cap <= 1; class-coverage telemetry in telemetry-v2.json",
+ "source": "worker",
+ "status": "evidence-validated",
+ "store_sha256": "a670b941c7fbc1206f242fe6cae38503afb0f03d42a2a4b5263f475480533d4c"
+}

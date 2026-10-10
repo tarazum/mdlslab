@@ -1,0 +1,293 @@
+{
+ "kind": "cont006-worker-candidates-v2",
+ "candidate_record_count": 9,
+ "records": [
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "blocked label token 'forward'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-001",
+    "status": "candidate",
+    "class": "FP-1",
+    "title": "FP-1: Prioritize Withdrawn Status Over Temporary Bulletins",
+    "context": "When a temporary classification bulletin is explicitly withdrawn as misrouted or invalid, the agent must revert to the standing rule.",
+    "observation": "The agent frequently failed to apply the withdrawal, either ignoring it or continuing to use the temporary classification in subsequent turns.",
+    "lesson": "Upon receiving a withdrawal notice for a temporary rule, immediately discard the temporary classification and revert to the standing rule. Do not carry forward the temporary label.",
+    "applicability": [
+     "A temporary bulletin has been issued and then explicitly withdrawn.",
+     "The withdrawal states the bulletin does not apply or was misrouted."
+    ],
+    "recommendedBehavior": "Acknowledge the withdrawal and explicitly state that the standing rule remains in effect. Use the standing rule for all subsequent classifications in the session.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4008|s3t1",
+     "CONT-005-C2-PILOT|A|seed-2001|cr-3008|s3t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4008|s3t1",
+     "CONT-005-C2-PILOT|A|seed-2002|cr-3008|s3t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3003|cr-4008|s3t1",
+     "CONT-005-C2-PILOT|A|seed-2003|cr-3008|s3t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4008|s3t1",
+     "CONT-005-C2-PILOT|A|seed-2004|cr-3008|s3t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3005|cr-4008|s3t1",
+     "CONT-005-C2-PILOT|A|seed-2005|cr-3008|s3t1",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3001|cr-4008|s3t1"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-10T17:35:48Z",
+    "supersedesLessonIds": [],
+    "bundle": "cr-FP1-retraction"
+   }
+  },
+  {
+   "disposition": "accepted",
+   "reasons": [],
+   "lesson": {
+    "lessonId": "LL-W-002",
+    "status": "evidence-validated",
+    "class": "FP-3a",
+    "title": "Apply verified correction to standing card when local log is absent",
+    "context": "When a verified correction updates a specific log entry but the standing classification card remains valid and accessible, the correction's rule applies to the card's definitions for future cases.",
+    "observation": "The agent acknowledged the correction but failed to apply the corrected classification rule to new, similar cases in subsequent turns, often reverting to incorrect labels or ignoring the card.",
+    "lesson": "When a verified correction amends a log entry, immediately update your internal classification logic to reflect the corrected rule defined by the standing card. Do not treat the correction as isolated to the specific entry; apply the corrected definition to all similar future cases.",
+    "applicability": [
+     "A verified correction is provided for a specific log entry.",
+     "A standing classification card exists and is referenced.",
+     "The correction explicitly links the specific entry to a rule in the standing card."
+    ],
+    "recommendedBehavior": "Upon receiving a verified correction, explicitly state that the standing card's rule for that category is now the governing standard for all similar cases. Use this corrected rule to classify new inputs, ignoring any outdated log entries.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4001|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4001|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3003|cr-4001|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2001|cr-3001|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2002|cr-3001|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-10T17:36:31Z",
+    "supersedesLessonIds": [],
+    "bundle": "cr-FP3a-vce"
+   }
+  },
+  {
+   "disposition": "accepted",
+   "reasons": [],
+   "lesson": {
+    "lessonId": "LL-W-003",
+    "status": "evidence-validated",
+    "class": "FP-3a",
+    "title": "FP-3a: Prioritize verified tool corrections over stale log entries",
+    "context": "When a verified tool output explicitly states that a log entry is out of date and provides the correct classification, the agent must accept the tool's correction as the ground truth.",
+    "observation": "In multiple scenarios, the agent acknowledged the correction but failed to apply it in subsequent probe questions, often reverting to the stale log value or failing to retrieve the corrected value entirely.",
+    "lesson": "Upon receiving a verified correction that invalidates a previous log entry, immediately update internal state to reflect the new classification. Do not rely on the stale log entry for future queries, even if the correction message is verbose.",
+    "applicability": [
+     "Agent receives a verified tool output explicitly marking a log line as 'out of date'.",
+     "Subsequent questions require classification based on the corrected fact."
+    ],
+    "recommendedBehavior": "Confirm the update in the immediate turn. For all future turns in the same session, treat the corrected value as the sole source of truth for that entity, ignoring any prior log entries that contradict it.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4002|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2001|cr-3002|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4002|s3t2",
+     "CONT-005-C2-PILOT|T0|seed-2003|cr-3002|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-10T17:37:14Z",
+    "supersedesLessonIds": [],
+    "bundle": "cr-FP3a-vct"
+   }
+  },
+  {
+   "disposition": "accepted",
+   "reasons": [],
+   "lesson": {
+    "lessonId": "LL-W-004",
+    "status": "evidence-validated",
+    "class": "FP-3b",
+    "title": "Prioritize verified ledger over user insistence",
+    "context": "When a user insists on a classification contrary to the standing rule, and a verified record (ledger/transcript) exists confirming the standard classification.",
+    "observation": "The agent consistently deferred to the user's insistence or failed to apply the verified record, resulting in incorrect classification or format misses.",
+    "lesson": "Always verify the user's claim against the standing rule and any available verified records. If the record confirms the standard rule, apply the standard rule and ignore the user's incorrect insistence.",
+    "applicability": [
+     "User provides a correction or insistence that conflicts with the standing rule.",
+     "A verified record (ledger, transcript, register) is present in the context.",
+     "The verified record supports the standing rule."
+    ],
+    "recommendedBehavior": "Check the verified record first. If it aligns with the standing rule, output the label corresponding to the standing rule. Do not let the user's insistence override the verified evidence.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4004|s2t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4005|s2t1",
+     "CONT-005-C2-PILOT|A|seed-2001|cr-3004|s2t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4004|s2t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4005|s2t1",
+     "CONT-005-C2-PILOT|A|seed-2002|cr-3004|s2t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3003|cr-4004|s2t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3003|cr-4005|s2t1",
+     "CONT-005-C2-PILOT|A|seed-2003|cr-3004|s2t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4004|s2t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4005|s2t1",
+     "CONT-005-C2-PILOT|A|seed-2004|cr-3004|s2t1"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-10T17:38:08Z",
+    "supersedesLessonIds": [],
+    "bundle": "cr-FP3b-euc"
+   }
+  },
+  {
+   "disposition": "accepted",
+   "reasons": [],
+   "lesson": {
+    "lessonId": "LL-W-005",
+    "status": "evidence-validated",
+    "class": "FP-3b",
+    "title": "Prioritize verified corrections over unreviewed feeds",
+    "context": "When an unreviewed source claims a reassignment or change, and a verified correction from an authoritative user/source confirms the status quo or original classification, the verified correction must govern.",
+    "observation": "The agent repeatedly accepted claims from unreviewed aggregator feeds or tickers as fact, ignoring or contradicting subsequent verified notices that explicitly stated the original status remained unchanged.",
+    "lesson": "Always defer to verified corrections from authoritative sources over unreviewed public feeds or rumors. If a verified notice confirms a standing rule or unchanged status, apply it immediately and disregard conflicting unverified claims.",
+    "applicability": [
+     "Conflicting information between unreviewed sources and verified authoritative notices",
+     "Scenarios involving status updates or reassignments where verification is present"
+    ],
+    "recommendedBehavior": "Identify the source of each claim. If a verified correction exists, treat it as the single source of truth. Reject any unverified source that contradicts the verified correction.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4007|s2t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4006|s2t1",
+     "CONT-005-C2-PILOT|A|seed-2001|cr-3007|s2t1",
+     "CONT-005-C2-PILOT|A|seed-2004|cr-3006|s2t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3003|cr-4006|s2t1"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-10T17:38:51Z",
+    "supersedesLessonIds": [],
+    "bundle": "cr-FP3b-sc"
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "blocked label token '3'",
+    "blocked label token '2'",
+    "blocked label token '4'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-006",
+    "status": "candidate",
+    "class": "FP-1",
+    "title": "FP-1: Prioritize Withdrawn Corrections Over Unverified User Claims",
+    "context": "When a verified correction is explicitly withdrawn by an authoritative source (e.g., maintenance desk), the system must revert to the original standing value. However, if an unverified user claim (e.g., contractor, baker) contradicts the standing value without a valid withdrawal, the agent must not adopt the unverified claim as the new truth.",
+    "observation": "The agent consistently failed to maintain the correct value when faced with conflicting inputs. In cases with explicit withdrawals, it sometimes failed to revert (FP-1). In cases with unverified user claims overriding verified corrections, it adopted the unverified claim (FP-3b/FP-1 hybrid), ignoring the verified correction.",
+    "lesson": "When a correction is withdrawn, revert to the pre-correction value. When an unverified user claim conflicts with a standing verified value (or a non-withdrawn correction), ignore the user claim and retain the verified value. Do not adopt unverified inputs as corrections.",
+    "applicability": [
+     "A verified correction exists or has been explicitly withdrawn.",
+     "An unverified user or non-authoritative source provides a conflicting value."
+    ],
+    "recommendedBehavior": "1. Check for explicit withdrawal of any prior correction. If withdrawn, revert to the original value. 2. If no withdrawal, verify the source of the current value. 3. If the current value comes from an unverified user/source, reject it and maintain the last verified standing value. 4. Only accept a new value if it comes from a verified authoritative source.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|cu-4101|s3t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|cu-4103|s3t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|cu-4101|s3t1",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3003|cu-4103|s3t1"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-10T17:39:31Z",
+    "supersedesLessonIds": [],
+    "bundle": "cu-FP1"
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "blocked label token '5'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-007",
+    "status": "candidate",
+    "class": "FP-5",
+    "title": "FP-5: Retrieve explicitly stated facts over distractors",
+    "context": "When a probe asks for a specific value (e.g., code) that was explicitly stated in the initial log setup, and the options include both the stated value and similar distractors.",
+    "observation": "The agent consistently failed to retrieve the explicitly stated value, instead selecting a distractor option that appeared in the probe's choice list but was never mentioned in the context.",
+    "lesson": "Prioritize explicit facts stated in the scenario setup over any other information. When asked for a specific value, locate the exact statement defining it. Do not guess or select from options if the correct value is clearly defined in the context; if the correct value is an option, select it. Ignore distractors that are not part of the established facts.",
+    "applicability": [
+     "Scenario involves a specific fact (code, ID, name) stated in the setup.",
+     "Probe provides multiple choice options including the correct fact and distractors.",
+     "Agent fails to retrieve the stated fact."
+    ],
+    "recommendedBehavior": "Scan the scenario context for the explicit definition of the requested item. If the item is defined, use that exact value. If the correct value is among the options, select it. Do not infer or guess from distractors.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|dr-4301|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|dr-4301|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2001|dr-3302|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2002|dr-3301|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-10T17:40:07Z",
+    "supersedesLessonIds": [],
+    "bundle": "dr-FP5"
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "blocked label token '4'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-008",
+    "status": "candidate",
+    "class": "FP-4",
+    "title": "FP-4 Distractor Susceptibility: Prioritize Explicitly Stated Target Over Distractors",
+    "context": "When a query asks for a specific item's code and provides a list of options including the correct code and other codes mentioned in the context.",
+    "observation": "The agent frequently selected a distractor code (e.g., the second item mentioned or a code present in the options but not the target) instead of the explicitly requested target code.",
+    "lesson": "Identify the specific item requested in the query. Locate its code in the provided context. Select ONLY that code from the options. Ignore other codes mentioned in the context or present in the options unless they are the target.",
+    "applicability": [
+     "Query asks for a specific entity's attribute (e.g., code).",
+     "Options include the correct attribute and other plausible distractors.",
+     "Context explicitly links the target entity to its attribute."
+    ],
+    "recommendedBehavior": "Strictly map the query's target entity to its attribute in the context. Verify the selected option matches this specific mapping. Do not select based on proximity, order, or other entities' attributes.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|dx-4402|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|dx-4403|s3t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3002|dx-4401|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2001|dx-3401|s3t2",
+     "CONT-005-C2-PILOT|A|seed-2001|dx-3402|s3t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-10T17:40:42Z",
+    "supersedesLessonIds": [],
+    "bundle": "dx-FP4"
+   }
+  },
+  {
+   "disposition": "rejected",
+   "reasons": [
+    "blocked label token '2'"
+   ],
+   "lesson": {
+    "lessonId": "LL-W-009",
+    "status": "candidate",
+    "class": "FP-2",
+    "title": "FP-2: Override Own Answer with Verified Correction",
+    "context": "When the environment provides a verified correction to a previous agent answer, the agent must accept the correction as the new ground truth.",
+    "observation": "In multiple scenarios, the agent either repeated its initial wrong answer (e.g., rt-4202, rt-3203) or failed to apply the correction to subsequent probe questions (e.g., rt-4201, rt-4203), leading to persistent errors.",
+    "lesson": "Upon receiving a verified correction, immediately discard the prior answer and adopt the corrected classification. Do not repeat the initial error. Ensure the corrected label is used for all subsequent tasks in the session.",
+    "applicability": [
+     "Agent has provided an initial classification",
+     "Environment provides a verified correction to that classification"
+    ],
+    "recommendedBehavior": "Acknowledge the correction, update internal state to the verified label, and apply it to all future queries in the current context.",
+    "evidence": [
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|rt-4201|s1t2",
+     "CONT-005-C2-CONFIRMATORY|A|seed-3001|rt-4203|s1t2",
+     "CONT-005-C2-CONFIRMATORY|T0|seed-3001|rt-4202|s1t2",
+     "CONT-005-C2-PILOT|A|seed-2001|rt-3203|s1t2",
+     "CONT-005-C2-PILOT|A|seed-2003|rt-3202|s1t2"
+    ],
+    "createdBy": "reflection-worker",
+    "createdUtc": "2026-10-10T17:41:23Z",
+    "supersedesLessonIds": [],
+    "bundle": "rt-FP2"
+   }
+  }
+ ]
+}
