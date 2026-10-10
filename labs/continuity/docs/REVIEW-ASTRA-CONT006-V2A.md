@@ -1,0 +1,383 @@
+# REVIEW — CONT-006 V2A post-verdict independent audit (GPT-6 Astra, 2026-10-10)
+
+Provenance: the owner rejected provisional acceptance and ordered an
+independent audit ("викликати незалежних агентів… досліди як викликати
+codex, модель GPT-6.1 Sol чи GPT-6 Astra"). Fable and Opus were both
+session-limit-blocked; the codex CLI was researched and updated
+0.148.0 -> 0.162.1 (gpt-6.1-sol is not ChatGPT-account-supported;
+gpt-6-astra required the newer CLI). Reviewer: gpt-6-astra, reasoning
+effort high, read-only sandbox, 87,962 tokens, cwd = repo root; per its
+own report it ran two independent review sub-agents, recomputed the
+statistics, and rescored 473 recorded responses (zero discrepancies).
+Prompt: docs/_astra_prompt.md (the owner's challenge verbatim + the
+implementer's audit pulls). Raw log kept in git alongside this file.
+
+## Implementer curation appendix (mandatory house check)
+
+Verified by direct reads AFTER the review:
+- worker bundles contain ZERO source-marked ENV lines (all 9 bundles) —
+  CONFIRMED (worker_v2_bundles.json).
+- 97/108 mined scenario-runs from arm A (no-memory) — CONFIRMED.
+- full LINEN_CARD absent from every v3n fixture; rt-8203/8204 expect
+  categories whose rules are never supplied — CONFIRMED
+  (build_v3n.py defines the constant; the s1t2 inline covers only
+  mending/pressing).
+- retrieval keys on the session's FIRST turn ("Acknowledge…"),
+  not the probe — CONFIRMED (runner.py: selected =
+  lessons.retrieve(session["turns"][0]["text"])).
+- G005 retrieved-then-dropped at cr-8003/8004 (retrieved [G003,G004,G005]
+  -> injected [G003,G004], budget_dropped 1) — CONFIRMED
+  (C/R3/seed-8003 trace).
+- renderer emits title + applicability + recommendedBehavior only (the
+  lesson FIELD itself is not rendered) — CONFIRMED (lessons.py
+  render_block).
+- REFUTED (the review's 4.B first bullet): "G001/G002 rendered at zero
+  primary probes" — direct reads show G001+G002 injected at cu-81xx
+  probes across seeds (e.g. C/R3/seed-8003: cu-8101 [G001,G002,G006,
+  G007]). The G005 misrouting claim stands; the G001/G002-zero claim
+  does not.
+- The review's headline reading adopted here with one precision: the
+  aggregate negative is predominantly wrong-label (29->35->38) with
+  format-miss nearly flat (12->13->14); the format-degeneration
+  signature is real but LOCAL to the instruction-conflict clusters.
+
+## Verbatim review (as returned)
+
+1. Verification
+
+The numerical result is reproducible. The implementer’s explanation is not fully supported: I found concrete defects in experience preparation, lesson delivery, and fixture construction.
+
+I verified the files read-only, used two independent review agents, independently recomputed the statistics, and rescored 473 recorded responses across validation, pilot, and confirmatory runs. There were zero scoring discrepancies.
+
+Paths below are relative to labs/continuity/. Run-root abbreviations:
+
+V = results/CONT-006-VAL/cont006-v-20261010-130154
+P = results/CONT-006-PILOT/cont006-p-20261010-132230
+C = results/CONT-006-CONFIRMATORY/cont006-c-20261010-144817
+
+The registered seven-seed result combines P seeds 8001–8002 with C seeds 8003–8007. Phase C itself contains five seeds.
+
+Recomputed primary scores:
+
+R0: 64/105 = 0.6095
+R2: 57/105 = 0.5429
+R3: 53/105 = 0.5048
+
+Using the registered cluster order, 10,000 bootstrap draws, and RNG seed 20261008:
+
+R2−R0: −0.0667; 95% CI [−0.1333, 0.0000].
+R3−R0: −0.1048; 95% CI [−0.1905, −0.0286].
+
+These match C/results-summary-cont006.json and experiments/suite-v3/analyze_confirmatory_cont006.py. MME is 0.20 absolute. The primary verdict is correctly “no confirmatory difference established.” R3’s interval excludes zero downward, but this is an exploratory secondary, not a separately established general claim about gold lessons.
+
+Per-cluster counts computed from */seed-*/summary.json follow. Within every triple, arm order is R0/R2/R3.
+
+Cluster       Pilot, /2     Phase C, /5     Combined, /7
+cr-8001       1/1/2         3/4/3           4/5/5
+cr-8002       0/0/0         1/0/1           1/0/1
+cr-8003       2/1/2         5/5/2           7/6/4
+cr-8004       2/1/2         2/1/1           4/2/3
+cu-8101       2/2/2         5/5/5           7/7/7
+cu-8102       2/2/2         5/5/5           7/7/7
+cu-8103       0/0/0         0/0/0           0/0/0
+cu-8104       1/0/0         1/0/0           2/0/0
+rt-8201       0/0/0         0/0/0           0/0/0
+rt-8202       1/1/1         3/3/2           4/4/3
+rt-8203       0/1/0         0/0/0           0/1/0
+dx-8401       2/2/2         5/4/2           7/6/4
+dx-8402       2/1/1         5/4/5           7/5/6
+dr-8301       2/2/2         5/5/4           7/7/6
+dr-8302       2/2/2         5/5/5           7/7/7
+
+The reused R0/R2 pilot summaries also contain calibration VAL probes. Those must be excluded from the primary calculation; the registered analyzer correctly excludes them.
+
+Validation counts, again R0/R2/R3:
+
+cr-8005: 0/7, 0/7, 0/7
+cu-8105: 6/7, 7/7, 7/7
+dx-8403: 7/7, 7/7, 7/7
+rt-8204: 1/7, 6/7, 6/7
+Total: 14/28, 20/28, 20/28
+
+Thus both +0.2143 activations are correct. Five of the six additional successes come from rt-8204. However, the proposed explanation that this task supplies the answer through an explicit governing instruction is incorrect; see task 4.
+
+The harm-class pull also checks out. Across cr-8003/8004 and dx-8401/8402, 28 probes per arm:
+
+R0: 25 correct, 3 wrong-label, 0 format-miss.
+R2: 19 correct, 4 wrong-label, 5 format-miss.
+R3: 17 correct, 7 wrong-label, 4 format-miss.
+
+Across all 105 primary probes, however:
+
+R0: 29 wrong-label, 12 format-miss.
+R2: 35 wrong-label, 13 format-miss.
+R3: 38 wrong-label, 14 format-miss.
+
+Therefore local format deterioration is real, but the aggregate negative result is predominantly increased wrong-label errors. It is not explained entirely by formatting.
+
+Other verified checks:
+
+- RGOLD pilot subset: format-miss rises from 2/14 to 5/14, matching 0.143→0.357. Those five RGOLD failures comprise one whole-list echo and four acknowledgement responses. “Via list-echoing” is an incomplete description.
+- Invalidated V1: R0 has 17/105 format misses; R2 has 1/105, confirming 0.1619→0.0095. This establishes behavioral responsiveness, not valid evidence for the intended memory-plus-lessons contrast.
+- C/live-telemetry-gate.json records PASS, 15 traces, zero failures.
+- The pinned working model is granite-code:8b; the worker reflector is qwen36-35b-a3b:mdlslab. The 4.6 GB description appears in LOG.md:9.
+- All 54 ordinary file digests in frozen-config-cont006-v3c.json matched current files. This check excludes its separately encoded suite/rendered-fixture digest entries.
+
+
+2. Construct validity
+
+“Lessons do not improve transfer,” without qualification, is overbroad. The actual preregistration is narrower: docs/EVALUATION-PREP-CONT006.md:444–453 explicitly disclaims broad model and domain generalization. The defensible claim concerns this particular generation-and-delivery pipeline on this synthetic surface.
+
+The most serious construct break occurs before the working model receives any lesson.
+
+A. The worker does not receive faithful experiences.
+
+experiments/cont006/worker_v2_bundles.py:113–139 retains:
+
+- First environment instruction: 12 words.
+- Probe question: 8 words.
+- Selected model responses: 6 words.
+- Expected and observed labels.
+- Intermediate instructions only when the journal payload contains source_type.
+
+The source traces omit source_type from env.turn payloads. Consequently, all nine actual bundles contain zero “ENV [source:” lines. Governing cards, corrections, retractions, and authority information disappear. The truncated probe often also loses the actual item requiring classification.
+
+The worker is asked to infer mechanisms from impoverished fragments plus answer keys. That is substantially different from learning a causal lesson from an intelligible failure.
+
+B. The “corpus contains NO transfer-inference tasks” explanation is false.
+
+A direct counterexample is:
+
+results/CONT-005-C2-CONFIRMATORY/confirm-c2-20261006-230445/A/seed-3001/trace.jsonl
+
+For rt-4201, the earlier card states that docent-guided visits and walking programs are tours. The later probe asks about “queue the school group for the cellar walk.” This requires applying a prior rule to a new item. fixtures/v3j/repeated_task/rt-4201.json confirms the construction.
+
+cr-4001 supplies another example involving a standing card, verified correction, and novel booking.
+
+The correct diagnosis is loss of inference-relevant evidence during worker input preparation, not absence of inference tasks from the original corpus.
+
+C. The selected failures overwhelmingly come from a different memory condition.
+
+I counted 108 scenario-runs in worker_v2_bundles.json:
+
+A: 97
+T0: 10
+T1: 1
+T2/T3: 0
+
+Arm A explicitly has no persistent memory: src/continuity/runner.py:263–270.
+
+Thus 89.8% of the selected experiences come from the no-memory arm, while the treatment is evaluated as an addition to functioning memory. Fails-first selection and deterministic ordering produce a severe sampling bias. Instructions learned from information-unavailable failures need not help an agent that already possesses the missing information.
+
+D. R3 is not simply another collection of blunt prescriptions.
+
+experiments/cont006/r3-store-v2.json contains recognizable mechanisms:
+
+- G002: restore the standing value after retraction.
+- G003: derive fresh classifications from the governing card.
+- G005: require authoritative confirmation before adopting conflicting claims.
+- G006: preserve entity–identifier bindings.
+
+These are closer to the owner’s proposed construct. Their harm prevents explaining everything through poor worker wording. But the channel systematically fails to deliver several of these lessons where needed.
+
+Also, “human-authored” is not established by the inspected provenance. docs/GATE-CONT006-CONTAMINATION.md describes a blind authoring subagent. The supported description is “blind, separately authored gold,” not necessarily human-authored.
+
+The owner’s workflow practice additionally includes task-specific curation, revision, applicability judgment, tool use, and realistic outcomes. This run does not isolate that package. Conversely, the owner’s experience is motivation for a better experiment, not grounds for changing the observed scores.
+
+
+3. Model capacity
+
+The evidence rejects the simplest small-model explanation: “the 8B model cannot absorb injected lessons at all.”
+
+The channel demonstrably changes behavior:
+
+- V1 nearly eliminates format misses.
+- rt-8204 gains five successes.
+- RGOLD increases failures.
+- R3 sometimes reproduces injected lesson text.
+
+What remains plausible is difficulty resolving conditions, competing instructions, source authority, and irrelevant guidance. But this run confounds those difficulties with demonstrably defective lesson selection.
+
+R1’s context failure does not explain R2/R3’s result.
+
+R1’s pilot reaches 4,085 prompt tokens within a 4,096 context configuration, with six responses reaching the 256-token generation limit.
+
+In Phase C, maximum prompt tokens are:
+
+R0: 813
+R2: 969
+R3: 1,166
+
+The primary arms are far from the same context boundary. R1 establishes a separate context-management defect.
+
+The discriminating signatures should be:
+
+- Routing artifact: the same 8B model improves when the appropriate existing lesson is delivered and irrelevant lessons are withheld.
+- Content defect: correctly routed original worker lessons hurt both models, while faithful, scoped replacements help both.
+- Conditional-use capacity: a stronger model benefits from the same applicable lesson and resists the same inapplicable lesson, while 8B over-applies it.
+- Generic prompt interference: matched neutral instruction blocks cause similar degradation.
+- Experience-preparation defect: lessons generated from complete source experiences outperform lessons generated from the current fragments, with consumer and delivery held fixed.
+
+A stronger model merely obtaining a higher baseline score would not establish better lesson use. Measure the lesson-minus-baseline interaction within each model. Changing model family also changes training, instruction tuning, tokenizer, and prompt behavior; it does not isolate parameter count.
+
+
+4. Artifact hunt
+
+A. Applicability matching is mostly lexical coincidence.
+
+src/continuity/lessons.py:321–347 counts raw token overlap. It retains stopwords and repeated query words. There is no logical condition check or meaningful applicability threshold.
+
+src/continuity/runner.py:344–371 retrieves against the session’s first turn, often an acknowledgement request, rather than the actual probe. Retrieval is not refreshed when the probe arrives.
+
+Example query:
+
+“A cloth merchant asks; the loft tally is away. Acknowledge in one short line.”
+
+G006 and G007 win on “asks”, “the”, and “one.” The relevant amendment/retraction lessons score lower.
+
+Both R2 and R3 receive lessons at all 105 primary probes. This is not selective application.
+
+B. The gold mechanisms are systematically missing at their intended probes.
+
+Across all seven seeds:
+
+- G001 amendment and G002 retraction are rendered at zero primary probes.
+- Every cu-8101/02/03/04 probe instead receives entity-binding plus formatting guidance.
+- cr-8003/8004 receive G003 and G004. The appropriate G005—resist unverified changes—is retrieved third and dropped.
+- G005 appears only at dr-8302 primary probes.
+- dx-8402 lacks its intended entity-binding lesson.
+
+Concrete evidence: C/R3/seed-8003/trace.jsonl, events seq 100 and 138 show G005 retrieved but omitted.
+
+This makes “gold lessons hurt” a finding about the entire gold-store/retrieval/rendering treatment, not a clean test of the intended gold mechanisms.
+
+C. The renderer changes and truncates the treatment.
+
+src/continuity/lessons.py:361–380 renders title, applicability, and recommendedBehavior. It omits the lesson field itself, contextual explanation, observations, and evidence.
+
+Its 165-word budget greedily stops at the first non-fitting lesson. Across Phase C:
+
+R2: 265/265 sessions injected; 73 selected lessons dropped.
+R3: 265/265 sessions injected; one selected lesson dropped in every session.
+
+The missing G005 is therefore a deterministic delivery failure, not evidence that the model read and rejected the appropriate rule.
+
+D. Two RT fixtures omit their governing mapping.
+
+experiments/suite-v3/build_v3n.py:383–386 defines a full LINEN_CARD containing folding and collection mappings. That constant is never used.
+
+Instead, line 405 inserts only:
+
+“stitch and patch work is mending; iron and steam passes are pressing.”
+
+Consequences:
+
+- Primary rt-8203 expects folding without supplying its intended folding rule.
+- Validation rt-8204 expects collection without supplying its intended collection rule.
+- Their metadata nevertheless claims that the standing card supplies those answers.
+
+Some examples remain answerable through everyday semantics, such as hamper pickup→collection. “Ward round before the theatre list” is less determinate without the omitted rule.
+
+Therefore the main activation gain is a genuine response change on a partly underspecified task. It does not demonstrate transfer of the intended supplied rule.
+
+E. Activation is too concentrated to validate the store’s mechanisms.
+
+The activation gate averages four clusters. One is at floor, one at ceiling, and five-sixths of the gain comes from the defective rt-8204 construction.
+
+Passing this gate establishes aggregate improvement on those four clusters. It does not establish applicability, authority handling, or benefit across the lesson classes.
+
+F. Scoring is more permissive than its name suggests.
+
+src/continuity/runner.py:105–117 and 137–146 accept surrounding prose if exactly one distinct allowed label occurs.
+
+“The report is filed under the label ‘dispatch’” can pass.
+
+“Format-miss” includes no-label nonanswers and ambiguous multi-label responses. It is not merely a penalty for explanations. Conversely, label extraction does not validate reasoning: a negated or otherwise misleading sentence containing one label can still be classified by that label.
+
+I found no implementation discrepancy in the 473 rescored responses. The issue is what the metric measures, not an arithmetic scoring bug.
+
+G. Ceiling and power limitations are understated.
+
+A.9 explicitly exempts four dx/dr clusters from the ceiling gate. In the completed result, seven of fifteen clusters have R0=1.0.
+
+Four flat ceiling clusters mean a +0.20 whole-suite gain requires +0.2727 across the remaining eleven. Allowing those ceiling clusters to deteriorate makes the requirement harder.
+
+The A.9 estimate of approximately 0.79–0.80 power for eleven clusters is not substantiated by power-results-cont006-v2.json. Its twelve-cluster detection result is 0.781; there is no eleven-cluster row. The simulation also does not reproduce the amended mixture of ceilinged and non-ceilinged clusters.
+
+This limits sensitivity and interpretation. It does not manufacture the observed failures.
+
+H. The final dataset is not an untouched holdout.
+
+Calibration screened R0 and R2 outcomes. A.9 changed the gate after those outcomes were observed, and the calibration seeds were retained in the final estimate. Owner authorization makes that change transparent; it does not remove statistical adaptation.
+
+However, excluding those seeds does not rescue a positive effect:
+
+Fresh Phase C only:
+R0: 45/75 = 0.6000
+R2: 41/75 = 0.5467; delta −0.0533
+R3: 35/75 = 0.4667; delta −0.1333
+
+These are descriptive sensitivity results, not replacement confirmatory tests.
+
+I found no direct cross-scenario memory-contamination path from the extra calibration VAL scenarios: memory retrieval is scoped by scenario in src/continuity/memory.py:146.
+
+I. Telemetry PASS does not mean generation was healthy.
+
+experiments/cont006/live_telemetry_gate.py:127–135 checks prompt headroom. It does not certify absence of output-cap failures.
+
+Phase C responses reaching 256 generated tokens:
+
+R0: 5/420
+R2: 1/420
+R3: 8/420
+
+C/R3/seed-8005/trace.jsonl contains a cr-8003 probe that chooses the wrong label and then copies lesson text until the cap. That answer is already wrong before truncation. The observation supports interference, not a simple “increase context and the result disappears” explanation.
+
+
+5. Discriminating experiments, ranked by cost/information
+
+1. Correct delivery on the existing 8B model.
+
+Use the existing gold wording, independently annotate applicability, deliver only the relevant lesson, and eliminate budget dropping. Compare against memory-only and the original automatic channel. Include cases where the lesson must not apply.
+
+Use identical recorded memory inputs for a probe-level diagnostic, followed by an end-to-end check.
+
+This is the cheapest direct test of the strongest demonstrated defect. If it works, weak model capacity is not necessary to explain the original failure.
+
+2. Repair the worker’s view of experience.
+
+Compare current compressed bundles with complete, faithful evidence containing governing rules, source identity, corrections, retractions, and the novel query. Balance the experience sample across memory conditions instead of allowing arm A to dominate.
+
+Generate both stores without viewing evaluation outcomes, then test them through the same corrected delivery mechanism. This separates lesson-generation failure from consumer failure.
+
+Repair the missing RT mappings in a separately named suite with fresh matched instances. Preserve the original run as executed; do not retroactively relabel corrected-fixture results as its confirmation.
+
+3. Run a small capacity × content comparison.
+
+For 8B and a stronger instruction-following model, evaluate:
+
+- Memory only.
+- Original worker lessons.
+- Faithfully generated or independently curated conditional lessons.
+
+Hold lesson routing and available evidence fixed. Add a matched neutral-text control on the diagnostic subset. Evaluate both applicable and inapplicable situations.
+
+The original frozen suite is useful as a bridge comparison, but its unsupported RT items must remain explicitly flagged. Confirmatory conclusions should use a fresh, corrected surface with usable baseline headroom.
+
+4. Test the owner’s actual construct, including hosted Stage B.
+
+Use curated lessons derived from earlier workflow failures, paired applicable/inapplicable tasks, and held-out repository or tool-use outcomes. Test a frontier-class consumer if the intended claim concerns frontier agents.
+
+Include memory-only controls, objective task success, regressions, and operational cost. Freeze lesson selection before evaluation.
+
+This is necessary for ecological validity. A larger model on the same defective psychometric pipeline would still not settle whether the owner’s daily lesson practice works.
+
+The minimal high-information sequence is corrected delivery, faithful worker evidence, then the model/content comparison. Hosted workflow replication addresses the owner’s external claim after those mechanisms have been separated.
+
+
+6. Verdict
+
+This run establishes that the executed lesson pipelines did not improve the registered aggregate endpoint on granite-code:8b, and that the executed gold pipeline produced a negative exploratory contrast; those numerical findings survive independent recomputation and exclusion of reused pilot seeds. It does not establish that learned lessons generally fail, that properly delivered conditional gold lessons fail, or that small-model capacity is the cause. The experiment contains substantial construct defects: lossy worker evidence, heavy sampling of no-memory failures, systematic applicability errors, dropped relevant gold lessons, and missing fixture rules—including the main activation driver. The implementer’s “no inference tasks in the corpus” explanation is factually wrong. The owner is justified in rejecting broad acceptance and demanding further investigation, while the negative result itself must remain on record. The warranted conclusion is failure of this particular generation-and-delivery implementation; content, routing, and conditional-use capacity remain distinguishable hypotheses, not settled explanations.
+tokens used
+87,962
+
