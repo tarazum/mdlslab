@@ -3423,3 +3423,13 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   lesson-minus-baseline interaction per model; (4) Stage B / the owner's
   actual workflow construct. No acceptance recorded; the run stays
   closed-pending-owner.
+
+- Session handoff prepared (house pattern): docs/SESSION-BRIEF-
+  CONT006-DELIVERY.md — step 1 of the ranked follow-ups (corrected
+  lesson DELIVERY on the same 8B: probe-time routing, strict annotated
+  applicability, full-rule rendering, no budget drops; zero-GPU trace
+  reconstruction first, small GPU head-to-head second; pre-registered
+  predictions; separate delivery-v2 mechanism, executed chain untouched;
+  reviewer routing incl. the working codex/gpt-6-astra invocation;
+  non-goals keep the registered verdict and artifacts immutable).
+  Kickoff line in the brief.
