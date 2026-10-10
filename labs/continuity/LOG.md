@@ -3512,3 +3512,25 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   evidence + repaired rt fixtures folded in as common prerequisites
   (implementer recommendation, reviewer concurs). If corrected delivery
   had WON cleanly, the next brief would have been step 2 — it did not.
+
+## 2026-10-10 — CONT-006 step 3 START (owner: «йдемо далі за рекомендацією»): capacity × content, крок 2 згорнуто як передумови
+
+- Milestone: step 3 per RESULTS-CONT006-DELIVERY-DIAG §Next-step (owner
+  accepted in chat). Models: granite-code:8b (36c3c3b9683b) vs
+  qwen36-35b-a3b:mdlslab (8a0fd5da454e) — both local, no downloads.
+  Conditions: NONE / NEUTRAL (matched control) / OLDW / OLDG / NEWF
+  (faithful-evidence worker store), corrected delivery (delivery-v2
+  machinery) held fixed for all lesson conditions. Probe-level replay on
+  the step-1 84-cell set (same histories → same prompts across models).
+- Step-2 fold #1 DONE (zero GPU): worker_v3_bundles.py + 
+  worker_v3_bundles.json — same selection/grouping/cap as v2 (isolates
+  evidence fidelity), evidence RESTORED: all env turns verbatim,
+  source_type/actor recovered positionally from the rendered corpus
+  fixtures, agent replies every turn (80w cap), full probe questions.
+  Gates: env coverage 48..66/48..66 = FULL per bundle; source-marked
+  lines 124 (cr 96) vs v2's 0; ctx trim rule declared (4 bundles lost
+  1-2 lowest-ranked runs). Defect 2 (arm-A sampling) declared OPEN —
+  belongs to the end-to-end stage-2 suite.
+- Next exact command: the W3 worker pass (run_worker_v2 over
+  worker_v3_bundles.json, reflector pinned) in background; then
+  prereg + freeze BEFORE any consumer inference.
