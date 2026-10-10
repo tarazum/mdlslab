@@ -546,10 +546,16 @@ def analyze(run_root: Path) -> dict:
         "P3_discriminating": {
             "b_le_a": p1_delta <= 0,
             "b_lt_c": harm_b < harm_c,
-            "reading": ("delivery defects alone do NOT explain (b<=a); "
-                        "corrected lessons actively hurt vs none (b<c) -> "
-                        "content/capacity strengthen" if harm_b < harm_c else
-                        "see per-cluster detail"),
+            "reading": (
+                "b>a beyond noise: delivery defects are a REAL partial "
+                "explanation; AND b<c on identical histories: correctly-"
+                "delivered lessons still net-hurt vs memory-only on the "
+                "harm clusters -> content/capacity residual stands (step 3 "
+                "discriminates it)" if (harm_b < harm_c and p1_delta > 0)
+                else ("delivery defects alone do NOT explain (b<=a); "
+                      "content/capacity strengthen" if p1_delta <= 0
+                      else "b>=c: corrected delivery at least matches "
+                           "memory-only on harm clusters")),
         },
         "P4_noise_floor": {
             "replays": len(replays), "exact_content_matches": exact,
@@ -558,8 +564,10 @@ def analyze(run_root: Path) -> dict:
         "c_memory_only_harm_pooled": f"{harm_c}/56",
     }
     per_cluster = {}
+    R0_REFS = {"cr-8003": "7/7", "cr-8004": "4/7", "dx-8401": "7/7",
+               "dx-8402": "7/7", "rt-8203": "0/7", "rt-8204": "1/7"}
     for cluster in DIAG_CLUSTERS:
-        row = {"r0_reference": None, "a": None, "b": None, "c": None}
+        row = {"r0_reference": R0_REFS[cluster]}
         for variant in ("a", "b", "c"):
             hit, tot = rate(variant, (cluster,), ARMS)
             row[variant] = f"{hit}/{tot}"
@@ -602,14 +610,11 @@ def analyze(run_root: Path) -> dict:
     import random
     rng = random.Random(BOOT_SEED)
     boot = {}
-    for label, variant in (("b_minus_a", "b"), ("b_minus_c", "c")):
+    for label, vx, vy in (("b_minus_a", "b", "a"), ("b_minus_c", "b", "c")):
         deltas = []
         for cluster in HARM_CLUSTERS:
-            hit_x, tot = rate(variant, (cluster,), ARMS)
-            if variant == "b":
-                hit_y, _ = rate("a", (cluster,), ARMS)
-            else:
-                hit_y, _ = rate("c", (cluster,), ARMS)
+            hit_x, tot = rate(vx, (cluster,), ARMS)
+            hit_y, _ = rate(vy, (cluster,), ARMS)
             deltas.append(hit_x / tot - hit_y / tot)
         stars = []
         for _ in range(BOOT_DRAWS):

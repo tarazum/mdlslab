@@ -3457,3 +3457,58 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   GPU part. Preflight PASS (model digest pinned post-warmup).
 - Next command (exact): python experiments/cont006/delivery_v2_diagnostic.py
   --run  →  --analyze results/CONT-006-DELIVERY-DIAG/cont006-dd-<ts>
+
+## 2026-10-10 — CONT-006 step 1 CLOSE: DELIVERY-DIAG executed (192/192), Astra-reviewed and folded; MIXED narrow verdict; owner gate pending
+
+- Run root results/CONT-006-DELIVERY-DIAG/cont006-dd-20261010-183404:
+  192 calls (84 b corrected delivery / 84 c memory-only / 24 a-replay
+  noise floor), preflight + freeze verified pre-run, 0 headroom
+  violations, prompt max 972 tokens, all calls first-attempt.
+- Headline (reviewer rescored 192 replies + 84 recorded baselines, ZERO
+  discrepancies): harm pooled a 36/56 -> b 40/56 (+0.071, above the
+  1/24 replay score-disagreement rate; meaningful band 42/56 NOT met);
+  R3 17 -> 21/28 (band MET; memory-only parity c 22/28); R2 19 -> 19/28
+  (NO recovery; c 25/28 — the pooled b<c residual −0.125, exploratory CI
+  [−0.232, −0.071], is predominantly R2); rt-8204 b 10/14 vs c 3/14
+  (lesson-block-ASSOCIATED gain; not validated rule transfer — probe
+  underspecified, defect 5); rt-8203 floor 1/14 in every variant;
+  b-format-miss 10 vs c 4 on harm clusters; zero verbatim lesson echo.
+- Post-review (narrower) reading: corrected delivery is CONSISTENT WITH
+  partial recovery concentrated in the GOLD arm; the worker-arm harm is
+  deeper than delivery; the residual vs memory-only has COMPETING
+  explanations (lesson content / conditional-application capacity /
+  generic prompt interference — no neutral-block control in this
+  design).
+- Review routing: Fable not reset (blocked earlier today; 2:30am Kyiv
+  reset) -> codex gpt-6-astra (CLI 0.162.1, reasoning high, read-only):
+  re-executed the frozen runner offline over recorded replies (all 84
+  cells' injection events + probe contexts matched), matched all 192
+  context hashes, audited the freeze (117/118 byte-match; sole mismatch
+  = the declared module edit, diff confirmed analysis-only). Findings:
+  3 MAJOR (causal overclaiming in draft-1 conclusions; annotation
+  disagreements — G003/W005 at rt-8203/8204 withhold under literal
+  reading, W006@dx borderline; "confirmed/material/~half" too strong) +
+  2 MINOR (replay terminology; post-freeze provenance) + gate-hardening
+  notes for future runs. ALL FOLDED: results + owner docs rewritten
+  (R2/R3 decomposition as the headline table; three-way replay counts
+  20/24 byte, 23/24 trimmed, 23/24 score; corrected post-freeze note),
+  disagreements recorded in the curation appendix, the pre-registered
+  annotation PRESERVED as the executed treatment per the reviewer's own
+  instruction.
+- Declared post-freeze analysis-path fix (PREREG-REQUIREMENTS-V2 §2):
+  bootstrap compared variant c to itself (always 0), the P3 reading
+  string could mislead on compound outcomes, per-cluster R0-reference
+  fields were empty. Fix rides THIS commit; calls.jsonl, gates, pins
+  untouched; commit 2a24ce6 preserves the pre-inference module bytes the
+  freeze digested.
+- Docs: PREREG-CONT006-DELIVERY-DIAG (pre-inference), RESULTS- (post-
+  fold), OWNER-BRIEF- (plain language, «підтвердилось, але
+  понадворушку»), REVIEW-ASTRA- (verbatim + curation). Non-goals held:
+  the executed V2A chain and its registered verdict untouched.
+- Next (OWNER GATE): step 3 — capacity × content comparison with
+  corrected delivery held fixed AND a matched neutral-block control
+  added, old/new content explicitly crossed with model,
+  lesson-minus-baseline interaction per model; step 2's faithful worker
+  evidence + repaired rt fixtures folded in as common prerequisites
+  (implementer recommendation, reviewer concurs). If corrected delivery
+  had WON cleanly, the next brief would have been step 2 — it did not.

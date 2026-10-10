@@ -1,0 +1,289 @@
+{
+ "kind": "cont006-delivery-diag-results",
+ "run_root": "results\\CONT-006-DELIVERY-DIAG\\cont006-dd-20261010-183404",
+ "prereg": "docs/PREREG-CONT006-DELIVERY-DIAG.md",
+ "completeness": {
+  "calls": 192,
+  "planned": 192,
+  "missing": [],
+  "headroom_violations": 0
+ },
+ "recorded_baselines": {
+  "harm_pooled": {
+   "R0": "25/28",
+   "R2(a)": "19/28",
+   "R3(a)": "17/28"
+  }
+ },
+ "predictions": {
+  "P1_delivery_fixes_harm": {
+   "b_pooled": "40/56",
+   "a_pooled": "36/56",
+   "delta": 0.0714,
+   "directional": true,
+   "beyond_noise": true,
+   "meaningful_band_ge": "42/56",
+   "meaningful_band_met": false
+  },
+  "P1a_r3_recovery": {
+   "b_r3": "21/28",
+   "a_r3": "17/28",
+   "directional": true,
+   "band_ge": "21/28",
+   "band_met": true
+  },
+  "P2_rt8204_gains_retained": {
+   "b_pooled": "10/14",
+   "threshold_ge": "7/14",
+   "met": true,
+   "recorded_a": "12/14",
+   "recorded_r0": "2/14"
+  },
+  "P3_discriminating": {
+   "b_le_a": false,
+   "b_lt_c": true,
+   "reading": "b>a beyond noise: delivery defects are a REAL partial explanation; AND b<c on identical histories: correctly-delivered lessons still net-hurt vs memory-only on the harm clusters -> content/capacity residual stands (step 3 discriminates it)"
+  },
+  "P4_noise_floor": {
+   "replays": 24,
+   "exact_content_matches": 23,
+   "score_agreements": 23,
+   "noise_rate": 0.041666666666666664
+  },
+  "c_memory_only_harm_pooled": "47/56"
+ },
+ "per_cluster_arms_pooled": {
+  "cr-8003": {
+   "r0_reference": "7/7",
+   "a": "10/14",
+   "b": "7/14",
+   "c": "11/14"
+  },
+  "cr-8004": {
+   "r0_reference": "4/7",
+   "a": "5/14",
+   "b": "7/14",
+   "c": "8/14"
+  },
+  "dx-8401": {
+   "r0_reference": "7/7",
+   "a": "10/14",
+   "b": "13/14",
+   "c": "14/14"
+  },
+  "dx-8402": {
+   "r0_reference": "7/7",
+   "a": "11/14",
+   "b": "13/14",
+   "c": "14/14"
+  },
+  "rt-8203": {
+   "r0_reference": "0/7",
+   "a": "1/14",
+   "b": "1/14",
+   "c": "1/14"
+  },
+  "rt-8204": {
+   "r0_reference": "1/7",
+   "a": "12/14",
+   "b": "10/14",
+   "c": "3/14"
+  }
+ },
+ "per_arm_detail": {
+  "R2": {
+   "a": {
+    "cr-8003": [
+     6,
+     7
+    ],
+    "cr-8004": [
+     2,
+     7
+    ],
+    "dx-8401": [
+     6,
+     7
+    ],
+    "dx-8402": [
+     5,
+     7
+    ],
+    "rt-8203": [
+     1,
+     7
+    ],
+    "rt-8204": [
+     6,
+     7
+    ]
+   },
+   "b": {
+    "cr-8003": [
+     4,
+     7
+    ],
+    "cr-8004": [
+     3,
+     7
+    ],
+    "dx-8401": [
+     6,
+     7
+    ],
+    "dx-8402": [
+     6,
+     7
+    ],
+    "rt-8203": [
+     1,
+     7
+    ],
+    "rt-8204": [
+     6,
+     7
+    ]
+   },
+   "c": {
+    "cr-8003": [
+     6,
+     7
+    ],
+    "cr-8004": [
+     5,
+     7
+    ],
+    "dx-8401": [
+     7,
+     7
+    ],
+    "dx-8402": [
+     7,
+     7
+    ],
+    "rt-8203": [
+     1,
+     7
+    ],
+    "rt-8204": [
+     1,
+     7
+    ]
+   }
+  },
+  "R3": {
+   "a": {
+    "cr-8003": [
+     4,
+     7
+    ],
+    "cr-8004": [
+     3,
+     7
+    ],
+    "dx-8401": [
+     4,
+     7
+    ],
+    "dx-8402": [
+     6,
+     7
+    ],
+    "rt-8203": [
+     0,
+     7
+    ],
+    "rt-8204": [
+     6,
+     7
+    ]
+   },
+   "b": {
+    "cr-8003": [
+     3,
+     7
+    ],
+    "cr-8004": [
+     4,
+     7
+    ],
+    "dx-8401": [
+     7,
+     7
+    ],
+    "dx-8402": [
+     7,
+     7
+    ],
+    "rt-8203": [
+     0,
+     7
+    ],
+    "rt-8204": [
+     4,
+     7
+    ]
+   },
+   "c": {
+    "cr-8003": [
+     5,
+     7
+    ],
+    "cr-8004": [
+     3,
+     7
+    ],
+    "dx-8401": [
+     7,
+     7
+    ],
+    "dx-8402": [
+     7,
+     7
+    ],
+    "rt-8203": [
+     0,
+     7
+    ],
+    "rt-8204": [
+     2,
+     7
+    ]
+   }
+  }
+ },
+ "error_modes_harm_clusters": {
+  "b": {
+   "wrong_label": 6,
+   "format_miss": 10
+  },
+  "c": {
+   "wrong_label": 5,
+   "format_miss": 4
+  }
+ },
+ "lesson_echo_b_variant": {
+  "count": 0,
+  "of": 84
+ },
+ "bootstrap_exploratory": {
+  "b_minus_a": {
+   "mean": 0.0714,
+   "ci_lo": -0.125,
+   "ci_hi": 0.1964,
+   "note": "exploratory diagnostic; never promotable"
+  },
+  "b_minus_c": {
+   "mean": -0.125,
+   "ci_lo": -0.2321,
+   "ci_hi": -0.0714,
+   "note": "exploratory diagnostic; never promotable"
+  }
+ },
+ "usage": {
+  "prompt_tokens_max": 972,
+  "eval_tokens_max": 256
+ },
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); the a-replay subset measures the resulting noise floor directly",
+ "non_goals": "registered V2A verdict and artifacts untouched; diagnostic only"
+}
