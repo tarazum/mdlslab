@@ -3596,3 +3596,20 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   neutral controls and the session-start arm as an OPEN hypothesis;
   phased execution with checkpoints; Fable→codex review routing;
   non-goals). Kickoff line in the brief. Entry conditions on ≥ 7ceddc6.
+
+## 2026-10-10 — CONT-006 STAGE 2 START (owner kickoff via SESSION-BRIEF-CONT006-STAGE2.md): task 1 validator audit open (zero GPU)
+
+- Entry conditions verified: git clean at 8edd003 (≥ 7ceddc6), Ollama
+  0.34.2 up, granite-code:8b 36c3c3b9683b + qwen36-35b-a3b:mdlslab
+  8a0fd5da454e present, all four step-1/3 artifact paths exist, LOG
+  step-3 close + handoff entries intact.
+- Open findings re-read (house rule 4): CN-012 stays OPEN — its runner
+  fix + fail-closed memory guard are prerequisites carried by the
+  end-to-end runner wiring (stage-2 task 4/5); this stage closes nothing
+  silently. CN-002 (wall-clock budgeting), CN-003 (temp-0 noise), CN-005
+  (GPU attribution) are operational constraints for task 5.
+- Task 1 scope (binding order, brief §1): enumerate the frozen
+  anti-salience blocked-vocabulary collisions that rejected 5/9 W3
+  candidates; pre-register the fix rule; fix as NEW versioned code
+  (frozen src/continuity/lessons.py untouched); re-run the W3
+  disposition audit against the v2 rule.
