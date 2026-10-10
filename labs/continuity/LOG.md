@@ -3323,3 +3323,49 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   num_ctx 6144 + full re-run (~3 h; provider/arm-equivalence amendment)
   [default NO]; (3) accept NO-GO and close the arc at the pilot record
   [default NO].
+
+## 2026-10-10 — CONT-006 V2A CONFIRMATORY VERDICT: "no confirmatory difference established" (Δ = −0.0667, CI [−0.1333, 0.0000]); R3−R0 SIGNIFICANT HARM (−0.1048, CI excludes 0 downward); arc complete pending owner acceptance
+
+- A.11 folded (owner "все по дефолту - ок"): PW-OVERRIDE-2 (pilot
+  criterion-2 NO-GO overridden; RGOLD list-echo finding rides as a
+  headline secondary) + R1 dropped (analyzer ARMS R0/R2/R3; completeness
+  15×7×3; R1−R0 not estimable; no healthy cell re-run). Freeze v3c (78
+  digests) + preflight PASS.
+- Phase C LAUNCHED 14:48 (results/CONT-006-CONFIRMATORY/
+  cont006-c-20261010-144817): R0/R2/R3 × seeds 8003..8007 × TR+GC =
+  15/15 cells, wall 3334.4s. LIVE GATE PASS 15/15 BEFORE the analyzer.
+- Frozen confirmatory analyzer over the single-freeze dataset (pilot
+  root incl. reused CAL cells + C root):
+  - PRIMARY: Δ = S(R2) − S(R0) = −0.0667, 95% CI [−0.1333, 0.0000],
+    MME 0.20 absolute → **"no confirmatory difference established"**
+    (CI upper exactly 0.0 — the harm branch requires hi < 0 strictly,
+    so neither branch fires; directionally negative).
+  - SECONDARY R3−R0 = −0.1048, CI [−0.1905, −0.0286] — CI EXCLUDES 0
+    DOWNWARD: the blind-authored gold lessons ACTIVELY HURT transfer
+    (the strongest significant effect of the run).
+  - Per-class R2−R0: FP-3b −0.2143, FP-4 −0.2143 (the
+    lesson-prescriptions-vs-memory-inference classes — the suppression
+    mechanism diagnosed at calibration, confirmed at scale); FP-2
+    +0.0476 (the only positive); FP-1 −0.0714; FP-3a/FP-5 0.0.
+  - Invalid-format flat (R0 0.1143 / R2 0.1238 / R3 0.1333 — the damage
+    is semantic, not format); guess band caveat-only (pos0 R0 0.000 /
+    R2 0.1667 / R3 0.0513).
+  - R1−R0: not estimable (A.11; hypothesis OPEN).
+  - Run-record header (CARRIED in results-summary-cont006.json):
+    CN-012 invalidation, V1 accidental-ablation label, PW-OVERRIDE ×2,
+    amendments A.1–A.11, V3M-CAL-STOP, CORPUS-COVERAGE, R1-DROP.
+- Coherent reading across the arc: the lesson channel is LIVE and
+  STRONG (VAL activation +0.214 both stores; V1's format effect;
+  RGOLD's behavioral override) — but THIS generation of lessons
+  (corpus-shaped "answer what the instruction states" prescriptions,
+  worker or blind-gold alike) does not transfer benefit to novel
+  inference tasks; where lesson prescriptions conflict with probe
+  demands, performance drops (FP-3b/FP-4 −0.21; R3 significant harm;
+  RGOLD list-echo). Memory-only (R0) remains the best configuration on
+  this surface.
+- Owner brief: docs/OWNER-BRIEF-CONT006-V2A-CONFIRMATORY.md (plain
+  language: НЕ ПІДТВЕРДИЛОСЬ; R3 significant harm; what is and is not
+  claimed). Arc closes pending owner acceptance.
+- Declared deviations: reviewer-model substitution (Fable/Opus →
+  GLM 5.3); one analyzer-before-green-gate slip (Phase P; verdict of
+  record unaffected); model/tool substitutions otherwise none.
