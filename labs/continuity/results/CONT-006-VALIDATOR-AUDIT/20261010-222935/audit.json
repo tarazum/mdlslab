@@ -1,0 +1,6637 @@
+{
+ "kind": "cont006-validator-v2-audit",
+ "prereg": "docs/PREREG-CONT006-VALIDATOR-V2.md",
+ "frozen_lessons_sha256": "b69b5553815ebff8bb3cc8b932c818bcf11df647ee29bc1b7d701b6c52da4c0e",
+ "collision_report": {
+  "kind": "cont006-validator-v2-collision-report",
+  "v1_blocked_tokens": 498,
+  "v2_blocked_tokens": 440,
+  "phrase_entries": 25,
+  "c1_structural_digits": [
+   {
+    "token": "2",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "3",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "4",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "5",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "6",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "cu-3103",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "expected",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "cu-6102",
+      "field": "label",
+      "answerable": true
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": true
+   },
+   {
+    "token": "7",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "expected",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": true
+   },
+   {
+    "token": "8",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "cu-3103",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3i",
+      "fixture": "cu-3103",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "expected",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": true
+   },
+   {
+    "token": "9",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "label",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "cu-4104",
+      "field": "expected",
+      "answerable": true
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "cu-6102",
+      "field": "label",
+      "answerable": true
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": true
+   }
+  ],
+  "c2_expected_null_option_words": [
+   {
+    "token": "abaft",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "abeam",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "alder",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "amber",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "amidships",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "astern",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "birch",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "blue",
+    "provenance": [
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "cedar",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "clover",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "cocoa",
+    "provenance": [
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "cream",
+    "provenance": [
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "crimson",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "drab",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "east",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "forward",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "green",
+    "provenance": [
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "grenadine",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "hawthorn",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "honey",
+    "provenance": [
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "indigo",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "isabella",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "lovage",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "lower",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "mazarine",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "mint",
+    "provenance": [
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "myrtle",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "north",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "ochre",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "olive",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "orange",
+    "provenance": [
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "plum",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "portside",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "red",
+    "provenance": [
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "rowan",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "ruby",
+    "provenance": [
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4501",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "sage",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6501",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "sorrel",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "south",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "starboard",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "tansy",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "teal",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "upper",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "vervain",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "violet",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "walnut",
+    "provenance": [
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3l",
+      "fixture": "gc-6502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "west",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3501",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4502",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "white",
+    "provenance": [
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "willow",
+    "provenance": [
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3i",
+      "fixture": "gc-3503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   },
+   {
+    "token": "yellow",
+    "provenance": [
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     },
+     {
+      "suite": "v3j",
+      "fixture": "gc-4503",
+      "field": "label",
+      "answerable": false
+     }
+    ],
+    "also_expected_answer_of_answerable_probe": false
+   }
+  ],
+  "c3_retained_count": 440,
+  "c3_retained": [
+   {
+    "token": "10",
+    "provenance_count": 25,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "11",
+    "provenance_count": 12,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "12",
+    "provenance_count": 14,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "13",
+    "provenance_count": 5,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "14",
+    "provenance_count": 6,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "15",
+    "provenance_count": 5,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "16",
+    "provenance_count": 9,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "17",
+    "provenance_count": 3,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "18",
+    "provenance_count": 12,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "19",
+    "provenance_count": 9,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "20",
+    "provenance_count": 13,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "21",
+    "provenance_count": 11,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "22",
+    "provenance_count": 21,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "23",
+    "provenance_count": 12,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "24",
+    "provenance_count": 21,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "25",
+    "provenance_count": 18,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "26",
+    "provenance_count": 24,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "27",
+    "provenance_count": 14,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "28",
+    "provenance_count": 20,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "29",
+    "provenance_count": 14,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "30",
+    "provenance_count": 20,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "31",
+    "provenance_count": 11,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "32",
+    "provenance_count": 18,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "33",
+    "provenance_count": 11,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "34",
+    "provenance_count": 15,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "35",
+    "provenance_count": 12,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "36",
+    "provenance_count": 14,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "37",
+    "provenance_count": 10,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "38",
+    "provenance_count": 13,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "39",
+    "provenance_count": 8,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "40",
+    "provenance_count": 10,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "41",
+    "provenance_count": 9,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "42",
+    "provenance_count": 7,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "43",
+    "provenance_count": 5,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "44",
+    "provenance_count": 11,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "45",
+    "provenance_count": 5,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "46",
+    "provenance_count": 8,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "47",
+    "provenance_count": 5,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "48",
+    "provenance_count": 8,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "49",
+    "provenance_count": 7,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "50",
+    "provenance_count": 9,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "51",
+    "provenance_count": 7,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "52",
+    "provenance_count": 7,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "53",
+    "provenance_count": 5,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "54",
+    "provenance_count": 9,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "55",
+    "provenance_count": 6,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "56",
+    "provenance_count": 4,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "57",
+    "provenance_count": 8,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "58",
+    "provenance_count": 7,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "59",
+    "provenance_count": 4,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "60",
+    "provenance_count": 7,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "61",
+    "provenance_count": 5,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "62",
+    "provenance_count": 4,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "63",
+    "provenance_count": 5,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "64",
+    "provenance_count": 3,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "65",
+    "provenance_count": 3,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "66",
+    "provenance_count": 3,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "67",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "68",
+    "provenance_count": 3,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "69",
+    "provenance_count": 5,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "70",
+    "provenance_count": 3,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "71",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "72",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "73",
+    "provenance_count": 4,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "74",
+    "provenance_count": 5,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "75",
+    "provenance_count": 3,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "76",
+    "provenance_count": 4,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "77",
+    "provenance_count": 5,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "78",
+    "provenance_count": 5,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "79",
+    "provenance_count": 3,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "80",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "81",
+    "provenance_count": 5,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "82",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "83",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "84",
+    "provenance_count": 3,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "85",
+    "provenance_count": 3,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "86",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "87",
+    "provenance_count": 3,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "88",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "89",
+    "provenance_count": 3,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "90",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "91",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "92",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "93",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "95",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "accounts",
+    "provenance_count": 20,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "aquafit",
+    "provenance_count": 25,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "b15",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "b24",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "b34",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "b39",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "b55",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "b67",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "b79",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "berthing",
+    "provenance_count": 49,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "berths",
+    "provenance_count": 41,
+    "fields": [
+     "expected",
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "c21",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "c38",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "c45",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "c47",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "c68",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "c78",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "c87",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "cargo",
+    "provenance_count": 43,
+    "fields": [
+     "expected",
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "charters",
+    "provenance_count": 37,
+    "fields": [
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "command",
+    "provenance_count": 21,
+    "fields": [
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "conservation",
+    "provenance_count": 42,
+    "fields": [
+     "expected",
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "cr-3001",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-3002",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-3003",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-3004",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-3005",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-3006",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-3007",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-3008",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-4001",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-4002",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-4003",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-4004",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-4005",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-4006",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-4007",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-4008",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-6001",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-6002",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-6003",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-6004",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cr-6005",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "crewing",
+    "provenance_count": 42,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "cu-3101",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cu-3102",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cu-3103",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cu-3104",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cu-4101",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cu-4102",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cu-4103",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cu-4104",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cu-6101",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cu-6102",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cu-6103",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cu-6104",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "cu-6105",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "d14",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "d35",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "d41",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "d47",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "d53",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "d57",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "d59",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "d65",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "d71",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "d74",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "d77",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "d84",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "d92",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "disposal",
+    "provenance_count": 29,
+    "fields": [
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "dr-3301",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dr-3302",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dr-3303",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dr-4301",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dr-4302",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dr-4303",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dr-6301",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dr-6302",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dx-3401",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dx-3402",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dx-3403",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dx-4401",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dx-4402",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dx-4403",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dx-6401",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dx-6402",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "dx-6403",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "e17",
+    "provenance_count": 8,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "e23",
+    "provenance_count": 8,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "e27",
+    "provenance_count": 3,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "e29",
+    "provenance_count": 8,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "e35",
+    "provenance_count": 8,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "e41",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "e47",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "e49",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "e53",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "e63",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "engine",
+    "provenance_count": 26,
+    "fields": [
+     "expected",
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "exhibits",
+    "provenance_count": 41,
+    "fields": [
+     "expected",
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "f14",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "f19",
+    "provenance_count": 3,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "f25",
+    "provenance_count": 4,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "f30",
+    "provenance_count": 5,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "f33",
+    "provenance_count": 4,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "f34",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "f36",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "f41",
+    "provenance_count": 7,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "f47",
+    "provenance_count": 7,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "f52",
+    "provenance_count": 5,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "f53",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "f58",
+    "provenance_count": 4,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "f63",
+    "provenance_count": 3,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "f66",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "f69",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "f74",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "f78",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "f81",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "facilities",
+    "provenance_count": 40,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "fuel",
+    "provenance_count": 50,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "fueling",
+    "provenance_count": 42,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "g28",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "g41",
+    "provenance_count": 5,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "g48",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "g67",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "g75",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "gc-3501",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "gc-3502",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "gc-3503",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "gc-4501",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "gc-4502",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "gc-4503",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "gc-6501",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "gc-6502",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "gc-6503",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "gear",
+    "provenance_count": 25,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "guests",
+    "provenance_count": 16,
+    "fields": [
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "h17",
+    "provenance_count": 10,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "h23",
+    "provenance_count": 8,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "h29",
+    "provenance_count": 14,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "h35",
+    "provenance_count": 8,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "h36",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "h41",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "h47",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "h53",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "h56",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "j23",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "j24",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "j29",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "j48",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "j52",
+    "provenance_count": 5,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "j67",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "k31",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "k38",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "k52",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "k55",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "k62",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "k64",
+    "provenance_count": 4,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "k72",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "l36",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "l41",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "l46",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "l48",
+    "provenance_count": 3,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "l69",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "l75",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "l78",
+    "provenance_count": 3,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "ladder",
+    "provenance_count": 21,
+    "fields": [
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "lending",
+    "provenance_count": 36,
+    "fields": [
+     "expected",
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "lessons",
+    "provenance_count": 25,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "m41",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "m44",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "m47",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "m53",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "m59",
+    "provenance_count": 7,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "m61",
+    "provenance_count": 4,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "m65",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "m71",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "m77",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "m81",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "m85",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "memberships",
+    "provenance_count": 38,
+    "fields": [
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "moorings",
+    "provenance_count": 45,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "n17",
+    "provenance_count": 8,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "n23",
+    "provenance_count": 8,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "n29",
+    "provenance_count": 8,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "n35",
+    "provenance_count": 10,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "n37",
+    "provenance_count": 5,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "n41",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "n47",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "n48",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "n53",
+    "provenance_count": 3,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "n58",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "n63",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "n93",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "n97",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "p17",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "p29",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "p45",
+    "provenance_count": 7,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "p47",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "p52",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "p62",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "patrol",
+    "provenance_count": 16,
+    "fields": [
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "posters",
+    "provenance_count": 20,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "q25",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "q29",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "q38",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "q52",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "q64",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "q77",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "q79",
+    "provenance_count": 5,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "q83",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "r34",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "r39",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "r41",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "r45",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "r47",
+    "provenance_count": 3,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "r53",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "r56",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "r59",
+    "provenance_count": 4,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "r64",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "r65",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "r67",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "r71",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "r77",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "r83",
+    "provenance_count": 4,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "radio",
+    "provenance_count": 20,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "rentals",
+    "provenance_count": 16,
+    "fields": [
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "repair",
+    "provenance_count": 20,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "repairs",
+    "provenance_count": 38,
+    "fields": [
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "rescue",
+    "provenance_count": 25,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "rt-3201",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "rt-3202",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "rt-3203",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "rt-3204",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "rt-3205",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "rt-3206",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "rt-4201",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "rt-4202",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "rt-4203",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "rt-4204",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "rt-4205",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "rt-4206",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "rt-6201",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "rt-6202",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "rt-6203",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "rt-6204",
+    "provenance_count": 1,
+    "fields": [
+     "id"
+    ]
+   },
+   {
+    "token": "s23",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "s28",
+    "provenance_count": 3,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "s34",
+    "provenance_count": 4,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "s39",
+    "provenance_count": 7,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "s45",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "s47",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "s48",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "s50",
+    "provenance_count": 7,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "s55",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "s56",
+    "provenance_count": 7,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "s57",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "s61",
+    "provenance_count": 5,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "s66",
+    "provenance_count": 4,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "s67",
+    "provenance_count": 4,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "s69",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "s72",
+    "provenance_count": 3,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "s76",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "s78",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "s83",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "s85",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "s96",
+    "provenance_count": 3,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "safety",
+    "provenance_count": 78,
+    "fields": [
+     "expected",
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "seating",
+    "provenance_count": 15,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "security",
+    "provenance_count": 41,
+    "fields": [
+     "expected",
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "servicing",
+    "provenance_count": 35,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "squad",
+    "provenance_count": 22,
+    "fields": [
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "storage",
+    "provenance_count": 35,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "supply",
+    "provenance_count": 20,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "t28",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "t46",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "t53",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "t54",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "t55",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "t58",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "t63",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "t68",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "t74",
+    "provenance_count": 5,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "t75",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "t78",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "t88",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "t96",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "tanker",
+    "provenance_count": 25,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "therapy",
+    "provenance_count": 26,
+    "fields": [
+     "expected",
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "tickets",
+    "provenance_count": 58,
+    "fields": [
+     "expected",
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "tours",
+    "provenance_count": 50,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "training",
+    "provenance_count": 36,
+    "fields": [
+     "expected",
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "transport",
+    "provenance_count": 29,
+    "fields": [
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "u48",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "u51",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "u61",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "u62",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "u64",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "u74",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "u88",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "upkeep",
+    "provenance_count": 21,
+    "fields": [
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "ushering",
+    "provenance_count": 16,
+    "fields": [
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "utility",
+    "provenance_count": 26,
+    "fields": [
+     "expected",
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "v18",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "v32",
+    "provenance_count": 5,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "v56",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "v61",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "v65",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "v71",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "v72",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "v79",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "v82",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "v86",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "v93",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "w21",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "w27",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "w47",
+    "provenance_count": 4,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "w57",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "w63",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "w67",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "w73",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "w78",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "w85",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "w86",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "w92",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "weather",
+    "provenance_count": 16,
+    "fields": [
+     "label",
+     "seed_error"
+    ]
+   },
+   {
+    "token": "x35",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "x43",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "x69",
+    "provenance_count": 4,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "x71",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "x77",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "x83",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "x85",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "x91",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "x94",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "y26",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "y36",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "y43",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "y49",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "y54",
+    "provenance_count": 2,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "y58",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "y72",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "y82",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "y84",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "y97",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "z19",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "z21",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "z28",
+    "provenance_count": 2,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "z35",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "z49",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "z51",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "z56",
+    "provenance_count": 6,
+    "fields": [
+     "expected",
+     "label"
+    ]
+   },
+   {
+    "token": "z64",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "z86",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   },
+   {
+    "token": "z93",
+    "provenance_count": 1,
+    "fields": [
+     "label"
+    ]
+   }
+  ]
+ },
+ "w3_disposition_rerun": {
+  "candidates": [
+   {
+    "lessonId": "LL-W-001",
+    "class": "FP-1",
+    "v1_disposition": "rejected",
+    "v1_reasons": [
+     "blocked label token 'forward'"
+    ],
+    "v2_disposition": "accepted",
+    "v2_reasons": []
+   },
+   {
+    "lessonId": "LL-W-002",
+    "class": "FP-3a",
+    "v1_disposition": "accepted",
+    "v1_reasons": [],
+    "v2_disposition": "accepted",
+    "v2_reasons": []
+   },
+   {
+    "lessonId": "LL-W-003",
+    "class": "FP-3a",
+    "v1_disposition": "accepted",
+    "v1_reasons": [],
+    "v2_disposition": "accepted",
+    "v2_reasons": []
+   },
+   {
+    "lessonId": "LL-W-004",
+    "class": "FP-3b",
+    "v1_disposition": "accepted",
+    "v1_reasons": [],
+    "v2_disposition": "accepted",
+    "v2_reasons": []
+   },
+   {
+    "lessonId": "LL-W-005",
+    "class": "FP-3b",
+    "v1_disposition": "accepted",
+    "v1_reasons": [],
+    "v2_disposition": "accepted",
+    "v2_reasons": []
+   },
+   {
+    "lessonId": "LL-W-006",
+    "class": "FP-1",
+    "v1_disposition": "rejected",
+    "v1_reasons": [
+     "blocked label token '3'",
+     "blocked label token '2'",
+     "blocked label token '4'"
+    ],
+    "v2_disposition": "accepted",
+    "v2_reasons": []
+   },
+   {
+    "lessonId": "LL-W-007",
+    "class": "FP-5",
+    "v1_disposition": "rejected",
+    "v1_reasons": [
+     "blocked label token '5'"
+    ],
+    "v2_disposition": "accepted",
+    "v2_reasons": []
+   },
+   {
+    "lessonId": "LL-W-008",
+    "class": "FP-4",
+    "v1_disposition": "rejected",
+    "v1_reasons": [
+     "blocked label token '4'"
+    ],
+    "v2_disposition": "accepted",
+    "v2_reasons": []
+   },
+   {
+    "lessonId": "LL-W-009",
+    "class": "FP-2",
+    "v1_disposition": "rejected",
+    "v1_reasons": [
+     "blocked label token '2'"
+    ],
+    "v2_disposition": "accepted",
+    "v2_reasons": []
+   }
+  ],
+  "would_be_store_classes": {
+   "FP-1": 2,
+   "FP-3a": 2,
+   "FP-3b": 2,
+   "FP-5": 1,
+   "FP-4": 1,
+   "FP-2": 1
+  },
+  "would_be_store_size": 9
+ }
+}

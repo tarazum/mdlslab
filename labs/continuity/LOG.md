@@ -3613,3 +3613,34 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   candidates; pre-register the fix rule; fix as NEW versioned code
   (frozen src/continuity/lessons.py untouched); re-run the W3
   disposition audit against the v2 rule.
+
+## 2026-10-10 — CONT-006 STAGE 2 task 1 COMPLETE: validator V2 audit — ALL 5 rejected W3 candidates would pass; NEWF's cr-only coverage now quantified as validator-selected (zero GPU)
+
+- Pre-registered rule FIRST (docs/PREREG-CONT006-VALIDATOR-V2.md, committed
+  before the re-run): two exemptions on the frozen blocked-TOKEN set —
+  C1 standalone digits 0-9 (structural: numbered steps, FP-taxonomy class
+  numbers), C2 tokens whose ENTIRE label provenance is expected-null probe
+  options (guess_calibration: no correct answer exists by design, so
+  naming them cannot leak an answer). Everything else byte-identical;
+  frozen src/continuity/lessons.py untouched; new versioned module
+  experiments/cont006/lessons_v2.py (collision report + validate_candidate_v2
+  + fail-closed CONSUMPTION GATE closing the declared v1 gap — v3n/v3o
+  consumption labels were never checked by v1).
+- Collision report (results/CONT-006-VALIDATOR-AUDIT/20261010-222935/
+  audit.json; lockstep assertion v2-walk == frozen BLOCKED_VOCAB PASSED):
+  498 v1 tokens -> 440 v2. C1 = digits 2-9; DECLARED RESIDUAL RISK made
+  concrete: 6/7/8/9 are expected answers of answerable cu-probes (numeric
+  corrections) — mitigated by the consumption gate at W4 store freeze.
+  C2 = 50 expected-null GC option words (forward/abaft/starboard,
+  colors, trees, flavors — ordinary English).
+- W3 disposition re-run (same 9 candidates, same order, sequential dedup,
+  same corpus index): LL-W-001(FP-1), LL-W-006(FP-1), LL-W-007(FP-5),
+  LL-W-008(FP-4), LL-W-009(FP-2) ALL rejected->accepted; the 4 executed
+  acceptances unchanged. Would-be store: 9 lessons, all six FP classes
+  (FP-1 x2, FP-2..FP-5, FP-3a/3b x2), no FP-6 cap interplay. The executed
+  W3 store stands frozen (this is a counterfactual report); Addendum A's
+  "coverage is validator-selected" is now quantified: the v1 rejections
+  killed exactly the dx/rt/dr/cu coverage classes.
+- Stage-2 consequence: the W4 worker pass (task 3) runs the same frozen
+  machinery with validate_candidate_v2 substituted (declared, recorded in
+  telemetry) + the consumption gate over v3o at store freeze.
