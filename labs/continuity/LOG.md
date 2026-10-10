@@ -3534,3 +3534,50 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
 - Next exact command: the W3 worker pass (run_worker_v2 over
   worker_v3_bundles.json, reflector pinned) in background; then
   prereg + freeze BEFORE any consumer inference.
+
+## 2026-10-10 — CONT-006 step 3 CLOSE: CAPACITY-×-CONTENT executed (696+168=864 records), Astra-reviewed, folded; strong-model contrast + per-condition interference; owner gate pending
+
+- Chain: owner «йдемо далі за рекомендацією» → faithful bundles v3
+  (1b69ff2; same grouping/cap as v2, evidence restored positionally —
+  full env turns 100% coverage, 124 source-marked lines vs v2's 0) →
+  W3 worker pass (cont006-worker-v3-20261010-203420: 4 lessons
+  FP-3a×2/FP-3b×2, 5 validator rejections — POST-REVIEW CORRECTED:
+  lexical accidents 'forward'/'2/3/4/5' from class titles, not evidence
+  quotes; declared num_ctx 8192→16384 deviation after the frozen ctx
+  rejected the 10.1k-token digests) → PREREG + freeze 129 digests BEFORE
+  consumer inference (0d49be2; gates incl. byte-equality of all 168
+  reused step-1 calls) → run cont006-cap-20261010-204517 (696 new:
+  G8B NEUTRAL/NEWF/cross-arm + Q35 5 conditions + 24 determinism
+  duplicates; 864/864 records, 0 headroom; Q35 duplicates 24/24
+  identical).
+- Results (all reviewer-reproduced): Q35 56/56 harm in EVERY condition
+  (ceiling; injection-robust, lesson benefit unmeasurable); G8B NONE
+  47/56 → NEUTRAL 36 / OLDW 39 / OLDG 40 / NEWF 35. E1 interactions
+  +8/+7/+12 = mechanically the G8B block losses at Q35 ceiling (bounded
+  reading: observed model contrast, NOT capacity/size identification;
+  bootstrap includes 0). E2 per registered rule: OLDW/NEWF reproduced by
+  filler, OLDG mixed (gap 4) with losses concentrated at cr-8003
+  (8/9 pass→fail cells; overlap with NEUTRAL losses 2/9; different
+  error-mode signatures) — no single "generic interference" mechanism.
+  rt-8204 gain decomposes as FILLER-ASSOCIATED (NEUTRAL 12 ≈ OLDW 13 ≫
+  NONE 3; OLDG 7; Q35 all conditions 12/14 — the registered Q35
+  lesson-gain prediction FAILED). Lesson-echo 0/84 everywhere. E3: this
+  W3 store did not benefit G8B (−12 vs OLDW −8; pipeline confounds in
+  Addenda A/B: validator-induced coverage + bundle trim + worker ctx).
+- Review: codex gpt-6-astra (high, read-only): every number reproduced
+  (incl. W3 regeneration and freeze chronology); 5 MAJOR (pooled
+  interference overclaim; capacity-confirmed overclaim; my wrong W3
+  rejection explanation — corrected; "same selection" overstatement —
+  addendum; NEUTRAL control matched to OLDG only + format-ish content)
+  + 2 MINOR (exact cr-8003 losses; error-mode distributions; missing
+  echo analysis — computed and added) — ALL folded: results/owner docs
+  rewritten (per-condition E2, bounded capacity language, three
+  addenda), no findings rejected. Verdict: numbers stand; conclusions
+  narrowed; no integrity blocker.
+- Next (OWNER GATE): stage-2 v3o end-to-end suite — repaired rt
+  mappings, balanced sampling, difficulty calibrated for STRONG-model
+  headroom, corrected delivery fixed, neutral controls per delivery
+  position, session-start delivery arm for the 8B as an OPEN hypothesis;
+  prerequisite: anti-salience validator audit (blocked-vocab collisions).
+- Docs: PREREG-/RESULTS-/OWNER-BRIEF-/REVIEW-ASTRA-CONT006-CAPACITY-
+  CONTENT.md. Registered verdicts untouched.

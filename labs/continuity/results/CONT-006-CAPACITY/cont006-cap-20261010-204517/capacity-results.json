@@ -1,0 +1,214 @@
+{
+ "kind": "cont006-capacity-results",
+ "run_root": "results\\CONT-006-CAPACITY\\cont006-cap-20261010-204517",
+ "prereg": "docs/PREREG-CONT006-CAPACITY-CONTENT.md",
+ "completeness": {
+  "records": 864,
+  "planned": 864,
+  "headroom_violations": 0,
+  "reused": 168
+ },
+ "harm_pools": {
+  "G8B/NONE": "47/56",
+  "G8B/NEUTRAL": "36/56",
+  "G8B/OLDW": "39/56",
+  "G8B/OLDG": "40/56",
+  "G8B/NEWF": "35/56",
+  "Q35/NONE": "56/56",
+  "Q35/NEUTRAL": "56/56",
+  "Q35/OLDW": "56/56",
+  "Q35/OLDG": "56/56",
+  "Q35/NEWF": "56/56"
+ },
+ "E1_capacity": {
+  "I_OLDW": {
+   "interaction_probes": 8,
+   "q35_delta_probes": 0,
+   "g8b_delta_probes": -8,
+   "positive": true,
+   "band_met": true
+  },
+  "I_OLDG": {
+   "interaction_probes": 7,
+   "q35_delta_probes": 0,
+   "g8b_delta_probes": -7,
+   "positive": true,
+   "band_met": true
+  },
+  "I_NEWF": {
+   "interaction_probes": 12,
+   "q35_delta_probes": 0,
+   "g8b_delta_probes": -12,
+   "positive": true,
+   "band_met": true
+  }
+ },
+ "E2_interference": {
+  "neutral_minus_none_probes": {
+   "G8B": -11,
+   "Q35": 0
+  },
+  "neutral_reproduces_at_least_-3": true,
+  "neutral_within_3_of_none": false,
+  "neutral_vs_oldg_gap_le_3": false,
+  "reading": "mixed/indeterminate (see pools)"
+ },
+ "E3_fidelity": {
+  "G8B": {
+   "newf_delta_probes": -12,
+   "oldw_delta_probes": -8,
+   "newf_ge_oldw": false
+  },
+  "Q35": {
+   "newf_delta_probes": 0,
+   "oldw_delta_probes": 0,
+   "newf_ge_oldw": true
+  }
+ },
+ "E4_level_nonprimary": {
+  "q35_none": [
+   56,
+   56
+  ],
+  "g8b_none": [
+   47,
+   56
+  ]
+ },
+ "noise_floors": {
+  "g8b_step1_replay": "1/24 score disagreement (carried)",
+  "q35_duplicates": {
+   "n": 24,
+   "score_agreements": 24
+  },
+  "q35_dup_noise_rate": 0.0
+ },
+ "per_cluster": {
+  "cr-8003": {
+   "G8B/NONE": "11/14",
+   "G8B/NEUTRAL": "10/14",
+   "G8B/OLDW": "7/14",
+   "G8B/OLDG": "4/14",
+   "G8B/NEWF": "3/14",
+   "Q35/NONE": "14/14",
+   "Q35/NEUTRAL": "14/14",
+   "Q35/OLDW": "14/14",
+   "Q35/OLDG": "14/14",
+   "Q35/NEWF": "14/14"
+  },
+  "cr-8004": {
+   "G8B/NONE": "8/14",
+   "G8B/NEUTRAL": "5/14",
+   "G8B/OLDW": "8/14",
+   "G8B/OLDG": "8/14",
+   "G8B/NEWF": "4/14",
+   "Q35/NONE": "14/14",
+   "Q35/NEUTRAL": "14/14",
+   "Q35/OLDW": "14/14",
+   "Q35/OLDG": "14/14",
+   "Q35/NEWF": "14/14"
+  },
+  "dx-8401": {
+   "G8B/NONE": "14/14",
+   "G8B/NEUTRAL": "11/14",
+   "G8B/OLDW": "12/14",
+   "G8B/OLDG": "14/14",
+   "G8B/NEWF": "14/14",
+   "Q35/NONE": "14/14",
+   "Q35/NEUTRAL": "14/14",
+   "Q35/OLDW": "14/14",
+   "Q35/OLDG": "14/14",
+   "Q35/NEWF": "14/14"
+  },
+  "dx-8402": {
+   "G8B/NONE": "14/14",
+   "G8B/NEUTRAL": "10/14",
+   "G8B/OLDW": "12/14",
+   "G8B/OLDG": "14/14",
+   "G8B/NEWF": "14/14",
+   "Q35/NONE": "14/14",
+   "Q35/NEUTRAL": "14/14",
+   "Q35/OLDW": "14/14",
+   "Q35/OLDG": "14/14",
+   "Q35/NEWF": "14/14"
+  },
+  "rt-8203": {
+   "G8B/NONE": "1/14",
+   "G8B/NEUTRAL": "1/14",
+   "G8B/OLDW": "1/14",
+   "G8B/OLDG": "1/14",
+   "G8B/NEWF": "1/14",
+   "Q35/NONE": "12/14",
+   "Q35/NEUTRAL": "12/14",
+   "Q35/OLDW": "12/14",
+   "Q35/OLDG": "12/14",
+   "Q35/NEWF": "12/14"
+  },
+  "rt-8204": {
+   "G8B/NONE": "3/14",
+   "G8B/NEUTRAL": "12/14",
+   "G8B/OLDW": "13/14",
+   "G8B/OLDG": "7/14",
+   "G8B/NEWF": "3/14",
+   "Q35/NONE": "12/14",
+   "Q35/NEUTRAL": "12/14",
+   "Q35/OLDW": "12/14",
+   "Q35/OLDG": "12/14",
+   "Q35/NEWF": "12/14"
+  }
+ },
+ "error_modes_harm": {
+  "G8B/NONE": {
+   "wrong_label": 5,
+   "format_miss": 4
+  },
+  "G8B/NEUTRAL": {
+   "wrong_label": 15,
+   "format_miss": 5
+  },
+  "G8B/OLDW": {
+   "wrong_label": 8,
+   "format_miss": 9
+  },
+  "G8B/OLDG": {
+   "wrong_label": 6,
+   "format_miss": 10
+  },
+  "G8B/NEWF": {
+   "wrong_label": 9,
+   "format_miss": 12
+  },
+  "Q35/NONE": {
+   "wrong_label": 0,
+   "format_miss": 0
+  },
+  "Q35/NEUTRAL": {
+   "wrong_label": 0,
+   "format_miss": 0
+  },
+  "Q35/OLDW": {
+   "wrong_label": 0,
+   "format_miss": 0
+  },
+  "Q35/OLDG": {
+   "wrong_label": 0,
+   "format_miss": 0
+  },
+  "Q35/NEWF": {
+   "wrong_label": 0,
+   "format_miss": 0
+  }
+ },
+ "usage": {
+  "prompt_tokens_max": 1030,
+  "eval_tokens_max": 256
+ },
+ "bootstrap_I_OLDG_exploratory": {
+  "mean": 0.125,
+  "ci_lo": 0.0,
+  "ci_hi": 0.375,
+  "note": "exploratory diagnostic; never promotable"
+ },
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); the a-replay subset measures the resulting noise floor directly",
+ "non_goals": "registered verdicts untouched; stage-2 suite (v3o, balanced sampling, end-to-end) is a separate brief"
+}
