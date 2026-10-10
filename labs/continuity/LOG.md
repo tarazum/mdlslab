@@ -3684,3 +3684,17 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   interaction = secondary with declared power limits (MME 0.25 for a
   powered claim); neutral contrast secondary. False-positive rows 0.035/
   0.038; harm rows directional.
+
+## 2026-10-10 — CONT-006 STAGE 2 task 3 START: balanced v4 bundles built (gates green); W4 pass next (small GPU, Q35 reflector)
+
+- worker_v4_bundles.py: v3 faithful rendering + V4 BALANCED selection
+  (per-arm cap 3, total 12, rank order identical to v2/v3 — repairs audit
+  defect 2). Gates green: 9 bundles, 99 runs, arm A 27% (vs ~90% executed
+  v3), full env coverage 100%, source-marked lines 124 (cr: 90), per-bundle
+  trim 0-3 declared. dx/dr bundles now carry memory-arm PASSES alongside
+  failures (declared: balanced evidence, not fails-only).
+- _w4_driver.py: frozen run_worker_v2 machinery, TWO declared substitutions
+  (worker_v4_bundles.json; validator V2 into the frozen namespace with
+  collision-report sha recorded; num_ctx 16384 deviation as W3) + the v3o
+  CONSUMPTION GATE post-pass (any answer-vocab hit excludes a lesson,
+  fail-closed). Post-gate store = stage-2 NEWF-v2. No consumer inference.
