@@ -3698,3 +3698,39 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   collision-report sha recorded; num_ctx 16384 deviation as W3) + the v3o
   CONSUMPTION GATE post-pass (any answer-vocab hit excludes a lesson,
   fail-closed). Post-gate store = stage-2 NEWF-v2. No consumer inference.
+
+## 2026-10-10 — CONT-006 STAGE 2 task 3 COMPLETE + CHECKPOINT (session handoff per the parent brief): W4 executed (9/9), NEWF-v2 store FROZEN (8 lessons) before any consumer inference; execution half (tasks 4-6) → next session via the addendum brief
+
+- W4 worker pass (results/CONT-006-WORKER/cont006-worker-v4-20261010-
+  224921): Q35 reflector pinned 8a0fd5da454e; validator V2 substituted
+  into the frozen namespace (declared deviation block in telemetry with
+  the collision-report sha 3e7896a8c6bb; frozen lessons.py untouched);
+  num_ctx 16384 (same rationale as W3). 9/9 calls, 0 parse errors,
+  0 truncated, 10 candidates -> 9 accepted (LL-W-008 FP-5 rejected for
+  1-trace support — honest validator, not a collision) -> no FP-6 cap.
+  Class coverage: FP-1 x3, FP-3a x2, FP-3b x2, FP-4 x1, FP-2 x1 — the
+  balanced corpus + audited validator produced cross-family coverage
+  (cr/cu/rt/dx) vs the executed NEWF's cr-only 4.
+- Consumption gate over v3o (prereg validator-V2 §4): 1 fail-closed
+  exclusion — LL-W-010 (FP-2 rt lesson) names 'sorting' in applicability,
+  a v3o PARCEL answer tag. The gate demonstrably closes the declared v1
+  gap (v1 never checked the consumption surface). NEWF-v2 store =
+  newf2-store-postgate.json: 8 lessons, store sha 145cc88cca587459…;
+  classes FP-1 x3, FP-3a x2, FP-3b x2, FP-4 x1.
+- FREEZE: experiments/cont006/stage2-freeze.json (26 digests: validator
+  V2 + audit, v3o suite + validation + power, bundles + W4 run artifacts +
+  NEWF-v2 store, OLDG reference, corpus manifest, frozen src modules,
+  both model pins) — committed BEFORE any consumer inference (house
+  rule). Builder of the manifest: _stage2_freeze.py (deterministic).
+- CHECKPOINT FIRED (parent brief: tasks (1)-(3) complete and the session
+  deep → stop after the freeze commit). Execution half (task 4 prereg
+  FIRST — design points pinned in the addendum incl. co-primary MME 0.20,
+  interaction directional-only below I 0.25, per-position NEUTRAL texts,
+  session-start as OPEN hypothesis, in-run baseline difficulty gate
+  [Q35 0.35-0.85 / G8B 0.15-0.85, STOP-OUT-OF-BAND], runner wiring as new
+  versioned code with the CN-012 memory guard, budget/Q35-latency
+  measurement at preflight; then task 5 phased execution; task 6 review +
+  close-out) → docs/SESSION-BRIEF-CONT006-STAGE2-ADDENDUM.md with entry
+  conditions and its own kickoff line. Session summary: tasks 1-3 done
+  (validator V2 + v3o + balanced W4/freeze), zero consumer inference, no
+  registered verdict touched.

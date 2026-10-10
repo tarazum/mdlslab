@@ -1,0 +1,16 @@
+{
+ "kind": "cont006-stage2-consumption-gate",
+ "suite": "fixtures/v3o",
+ "vocab_tokens": 199,
+ "vocab_phrases": 0,
+ "pre_gate_lessons": 9,
+ "excluded": [
+  {
+   "lessonId": "LL-W-010",
+   "hits": [
+    "sorting"
+   ]
+  }
+ ],
+ "kept": 8
+}
