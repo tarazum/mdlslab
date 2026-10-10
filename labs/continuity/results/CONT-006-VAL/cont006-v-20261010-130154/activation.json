@@ -1,0 +1,25 @@
+{
+ "kind": "cont006-activation",
+ "val_root": "C:\\projects\\mdlslab\\labs\\continuity\\results\\CONT-006-VAL\\cont006-v-20261010-130154",
+ "threshold": 0.05,
+ "arms": {
+  "R2": {
+   "activated": true,
+   "note": "SX-S0 = 0.2143 (0.7143 vs 0.5000, n=28); ACTIVATE",
+   "active_store": "active-store-r2.json",
+   "active_store_sha256": "f99be96f2bad3e030c76cefa40f5d8f6cbc6cde64cd39471da392ffb25059302",
+   "s0": 0.5,
+   "sx": 0.7143,
+   "invalid_probes": 0
+  },
+  "R3": {
+   "activated": true,
+   "note": "SX-S0 = 0.2143 (0.7143 vs 0.5000, n=28); ACTIVATE",
+   "active_store": "active-store-r3.json",
+   "active_store_sha256": "b2500b6b542a906d2a7ee3d1cfcd21cfd2b950abc24079dd1b3c12a5065c12cb",
+   "s0": 0.5,
+   "sx": 0.7143,
+   "invalid_probes": 0
+  }
+ }
+}

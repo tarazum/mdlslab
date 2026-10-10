@@ -1,0 +1,64 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-v-20261010-130154",
+ "arm": "R0",
+ "seed": 8007,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": null,
+ "lesson_store_status": null,
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "stocking",
+   "observed_normalized": "the unreviewed pinboard by the shed door claims that the clapper store for the new pin was moved to the loam bench today. the standing foundry card reads: \"loam builds and cope ramming are moulding; metal taps and ladle melts are pouring; strike checks and note listens are tuning; flash trims and seam scrapes are fettling; clapper stores and wedge racks are stocking; crated loads and hauler pickups are dispatch.\" the stores clerk's memo, foundry-verified: clapper stores stay with stocking, and the clapper store for the spare set stays as the card has it. note it in one short line. the unreviewed pinboard by the shed door claims that the clapper store for the new pin was moved to the loam bench today. the standing foundry card reads: \"loam builds and cope ramming are moulding; metal taps and ladle melts are pouring; strike checks and note listens are tuning; flash trims and seam scrapes are fettling; clapper stores and wedge",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8005",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "55",
+   "observed_normalized": "55",
+   "observed_label": "55",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8105",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "S38",
+   "observed_normalized": "s38",
+   "observed_label": "S38",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8403",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "collection",
+   "observed_normalized": "acknowledged.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8204",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 2,
+ "probes_total": 4,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 38,
+ "duration_s": 61.6,
+ "memory_guard": {
+  "appends": 38,
+  "injections_nonempty": 8,
+  "passed": true
+ },
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

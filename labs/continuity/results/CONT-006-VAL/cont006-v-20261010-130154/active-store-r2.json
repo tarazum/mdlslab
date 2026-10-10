@@ -1,0 +1,130 @@
+{
+ "kind": "cont006-lesson-store",
+ "lessons": [
+  {
+   "applicability": [
+    "Scenario contains a correction or re-classification instruction",
+    "Correction contradicts prior agent output"
+   ],
+   "bundle": "cr-FP3a-vce",
+   "class": "FP-3a",
+   "context": "When a scenario includes an explicit correction or re-classification instruction that contradicts an initial or default classification, the corrected value must be applied.",
+   "createdBy": "reflection-worker",
+   "createdUtc": "2026-10-09T21:04:59Z",
+   "evidence": [
+    "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4001|s3t2",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4001|s3t2",
+    "CONT-005-C2-PILOT|A|seed-2001|cr-3001|s3t2",
+    "CONT-005-C2-PILOT|A|seed-2002|cr-3001|s3t2"
+   ],
+   "lesson": "Always treat the latest explicit correction as the ground truth. Discard previous classifications immediately upon receiving a verified correction, regardless of initial confidence or pattern matching.",
+   "lessonId": "LL-W-002",
+   "observation": "The agent repeatedly failed to apply the corrected label provided in the probe, instead reverting to an initial guess, a distractor, or a format error.",
+   "recommendedBehavior": "Identify the corrected value in the prompt. Output ONLY the corrected label. Do not re-evaluate or justify based on initial impressions.",
+   "status": "evidence-validated",
+   "supersedesLessonIds": [],
+   "title": "Prioritize Explicit Correction Over Initial Classification"
+  },
+  {
+   "applicability": [
+    "Scenario contains a correction or probe",
+    "Initial classification differs from correction"
+   ],
+   "bundle": "cr-FP3a-vct",
+   "class": "FP-3a",
+   "context": "When a scenario includes a verified correction or probe that contradicts an initial agent classification, the initial classification must be discarded.",
+   "createdBy": "reflection-worker",
+   "createdUtc": "2026-10-09T21:05:22Z",
+   "evidence": [
+    "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4002|s3t2",
+    "CONT-005-C2-PILOT|A|seed-2001|cr-3002|s3t2",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4002|s3t2",
+    "CONT-005-C2-PILOT|A|seed-2003|cr-3002|s3t2"
+   ],
+   "lesson": "Always prioritize the verified correction or probe instruction over the initial classification. If a correction is provided, the final answer must reflect the corrected value, not the initial guess.",
+   "lessonId": "LL-W-003",
+   "observation": "The agent repeatedly failed to apply the corrected target label provided in the probe phase, instead retaining its initial wrong label or failing to output a valid label.",
+   "recommendedBehavior": "Upon receiving a correction or probe, immediately update the classification to match the verified target. Do not rely on the initial assessment.",
+   "status": "evidence-validated",
+   "supersedesLessonIds": [],
+   "title": "FP-3a: Apply Verified Corrections to Override Initial Classification"
+  },
+  {
+   "applicability": [
+    "Task involves classification or logging into a specific category.",
+    "The instruction explicitly names the target category or action.",
+    "Context contains similar or related categories that could act as distractors."
+   ],
+   "bundle": "cr-FP3b-euc",
+   "class": "FP-3b",
+   "context": "When a task instruction explicitly defines the target classification or action, and the surrounding context or previous turns contain similar but distinct values or labels.",
+   "createdBy": "reflection-worker",
+   "createdUtc": "2026-10-09T21:05:47Z",
+   "evidence": [
+    "CONT-005-C2-PILOT|A|seed-2001|cr-3004|s3t2",
+    "CONT-005-C2-PILOT|A|seed-2002|cr-3004|s3t2",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4005|s3t2",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4005|s3t2"
+   ],
+   "lesson": "Always resolve the target value strictly from the explicit instruction provided in the current turn. Ignore or deprioritize similar values mentioned in the context, previous turns, or distractor text. Do not infer the target from surrounding semantic cues if the instruction is explicit.",
+   "lessonId": "LL-W-004",
+   "observation": "The agent consistently selected a label present in the immediate context or derived from prior turns (e.g., 'utility', 'conservation') instead of the specific label mandated by the current explicit instruction (e.g., 'engine', 'tours').",
+   "recommendedBehavior": "Identify the explicit target in the instruction. Verify it against the allowed options. Output only that target. Do not use context to override the explicit instruction.",
+   "status": "evidence-validated",
+   "supersedesLessonIds": [],
+   "title": "FP-3b: Prioritize Explicit Instruction Over Contextual Distractors"
+  },
+  {
+   "applicability": [
+    "Probe questions contain explicit references to verification artifacts",
+    "Initial classification conflicts with the verification source",
+    "Task requires sorting or logging into a specific label"
+   ],
+   "bundle": "cr-FP3b-sc",
+   "class": "FP-3b",
+   "context": "When a probe question explicitly references a verification artifact (e.g., 'desk card', 'roster card') that contradicts or refines an initial classification, the agent must defer to the verified state.",
+   "createdBy": "reflection-worker",
+   "createdUtc": "2026-10-09T21:06:11Z",
+   "evidence": [
+    "CONT-005-C2-CONFIRMATORY|A|seed-3001|cr-4007|s3t2",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3002|cr-4007|s3t2",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3003|cr-4007|s3t2",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3004|cr-4006|s3t2"
+   ],
+   "lesson": "When a probe explicitly references a verification source (card, roster, office record), treat that source as the ground truth. Override any initial classification or heuristic guess with the value derived from the verified source.",
+   "lessonId": "LL-W-005",
+   "observation": "The agent repeatedly ignored explicit verification cues in probe questions, defaulting to initial guesses or distractor values instead of applying the corrected classification.",
+   "recommendedBehavior": "Identify the verification source mentioned in the probe. Extract the correct label/value from that source. Output only that label, ignoring initial impressions or similar distractors.",
+   "status": "evidence-validated",
+   "supersedesLessonIds": [],
+   "title": "FP-3b: Prioritize Explicit Verification Over Initial Classification"
+  },
+  {
+   "applicability": [
+    "The environment prompt contains a specific value for the queried entity.",
+    "The query asks for that specific entity's value."
+   ],
+   "bundle": "cu-FP1",
+   "class": "FP-1",
+   "context": "When the environment provides a specific value for a log entry, that value overrides any default, implied, or previously held assumptions about the entity.",
+   "createdBy": "reflection-worker",
+   "createdUtc": "2026-10-09T21:06:37Z",
+   "evidence": [
+    "CONT-005-C2-CONFIRMATORY|A|seed-3001|cu-4103|s4t2",
+    "CONT-005-C2-PILOT|A|seed-2001|cu-3101|s3t2",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3002|cu-4102|s3t2",
+    "CONT-005-C2-CONFIRMATORY|A|seed-3003|cu-4103|s4t2"
+   ],
+   "lesson": "Always extract the value explicitly stated in the current environment prompt for the specific entity asked. Do not rely on implicit defaults, similar-looking numbers in options, or prior knowledge if a specific value is provided in the immediate context.",
+   "lessonId": "LL-W-006",
+   "observation": "Across multiple scenarios, the agent failed to retrieve the explicitly stated value (e.g., '24', '30', '28') and instead provided an incorrect value (e.g., '22', '26', '36'), often matching a distractor or a default assumption.",
+   "recommendedBehavior": "Identify the specific value assigned to the entity in the current environment description. Select the option that matches this value exactly. Ignore other numbers in the options or context unless they are explicitly linked to the target entity.",
+   "status": "evidence-validated",
+   "supersedesLessonIds": [],
+   "title": "FP-1: Prioritize Explicitly Stated Values Over Implicit or Default Assumptions"
+  }
+ ],
+ "source": "worker",
+ "status": "active",
+ "store_sha256": "f99be96f2bad3e030c76cefa40f5d8f6cbc6cde64cd39471da392ffb25059302"
+}

@@ -1,0 +1,64 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-v-20261010-130154",
+ "arm": "R0",
+ "seed": 8006,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": null,
+ "lesson_store_status": null,
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "stocking",
+   "observed_normalized": "the report is filed under the label 'dispatch'.",
+   "observed_label": "dispatch",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8005",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "52",
+   "observed_normalized": "52",
+   "observed_label": "52",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8105",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "S26",
+   "observed_normalized": "s26",
+   "observed_label": "S26",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8403",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "collection",
+   "observed_normalized": "the tag that best fits the description of the errand \"the ward round at the east desk\" is \"collection\". this is because the errand involves gathering items that need to be collected, such as clothing, personal items, and other household items. the other tags listed in the prompt, such as washing, drying, mending, pressing, and folding, do not apply to this type of errand.",
+   "observed_label": null,
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8204",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 2,
+ "probes_total": 4,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 38,
+ "duration_s": 57.1,
+ "memory_guard": {
+  "appends": 38,
+  "injections_nonempty": 8,
+  "passed": true
+ },
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

@@ -1,0 +1,11 @@
+{
+ "kind": "cont006-val-stores-provenance",
+ "R2": {
+  "src": "C:\\projects\\mdlslab\\labs\\continuity\\results\\CONT-006-WORKER\\cont006-worker-v2-20261010-000332\\r2-store-v2.json",
+  "sha256": "66b2ba543c5e594277d81bc9b3d31878345e46b78011849c6d24e0a012498940"
+ },
+ "R3": {
+  "src": "C:\\projects\\mdlslab\\labs\\continuity\\experiments\\cont006\\r3-store-v2.json",
+  "sha256": "00fc09ca4ea69cdbe0c518a311fc69a4f05fcbb39147e5b20ea0ab97e09a0daf"
+ }
+}

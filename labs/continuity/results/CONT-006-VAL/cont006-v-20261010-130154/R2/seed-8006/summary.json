@@ -1,0 +1,64 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-v-20261010-130154",
+ "arm": "R2",
+ "seed": 8006,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": "f82efc3fcffe17e88ff714656326b4cbf4a2b1cb0e574b8b0e9be226346320b2",
+ "lesson_store_status": "evidence-validated",
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "stocking",
+   "observed_normalized": "the report is labeled as \"dispatch\".",
+   "observed_label": "dispatch",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8005",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "52",
+   "observed_normalized": "52",
+   "observed_label": "52",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8105",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "S26",
+   "observed_normalized": "s26",
+   "observed_label": "S26",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8403",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "collection",
+   "observed_normalized": "collection",
+   "observed_label": "collection",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8204",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 3,
+ "probes_total": 4,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 38,
+ "duration_s": 47.4,
+ "memory_guard": {
+  "appends": 38,
+  "injections_nonempty": 8,
+  "passed": true
+ },
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}

@@ -1,0 +1,64 @@
+{
+ "kind": "cont006-arm-seed-summary",
+ "run_id": "cont006-v-20261010-130154",
+ "arm": "R0",
+ "seed": 8003,
+ "model": "granite-code:8b",
+ "lesson_store_sha256": null,
+ "lesson_store_status": null,
+ "probes": [
+  {
+   "kind": "exact_match",
+   "expected": "stocking",
+   "observed_normalized": "the report is labeled as \"moulding\".",
+   "observed_label": "moulding",
+   "passed": false,
+   "turn_ref": "s3t2",
+   "scenario": "cr-8005",
+   "family": "correction_reuse"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "43",
+   "observed_normalized": "[s1t1|environment] the gallery's clock bench card indicates 43 ticks per swing. acknowledge in one short line. [s1t1|assistant] understood. the gallery's clock bench card is set to 43 ticks per swing.",
+   "observed_label": "43",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "cu-8105",
+   "family": "contradiction_update"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "S45",
+   "observed_normalized": "s45",
+   "observed_label": "S45",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "dx-8403",
+   "family": "distractor_recall"
+  },
+  {
+   "kind": "exact_match",
+   "expected": "collection",
+   "observed_normalized": "collection.",
+   "observed_label": "collection",
+   "passed": true,
+   "turn_ref": "s3t2",
+   "scenario": "rt-8204",
+   "family": "repeated_task"
+  }
+ ],
+ "probes_passed": 3,
+ "probes_total": 4,
+ "stopped": false,
+ "budget_violation": null,
+ "memory_episodes": 38,
+ "duration_s": 59.7,
+ "memory_guard": {
+  "appends": 38,
+  "injections_nonempty": 8,
+  "passed": true
+ },
+ "completed": true,
+ "determinism_caveat": "greedy+seed does not guarantee identical outputs (PB-071, CN-003); per-seed content variants make seeds true replicates regardless"
+}
