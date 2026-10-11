@@ -1,0 +1,26 @@
+=== PHASE 8 START 16:54:05 ===
+  seed 9001: pass 18/25 invalid=False 350.9s
+  seed 9002: pass 18/25 invalid=False 351.5s
+  seed 9003: pass 18/25 invalid=False 351.1s
+  seed 9004: pass 18/25 invalid=False 350.6s
+  seed 9005: pass 18/25 invalid=False 350.9s
+  seed 9006: pass 18/25 invalid=False 348.4s
+  seed 9007: pass 18/25 invalid=False 351.3s
+{
+ "phase": 8,
+ "model": "Q35",
+ "content": "NONE",
+ "position": "none",
+ "executed": 7
+}
+{
+ "model": "Q35",
+ "pooled_primary": "98/105",
+ "rate": 0.9333,
+ "band": [
+  0.35,
+  0.85
+ ],
+ "ok": false
+}
+=== PHASE 8 EXIT 0 17:35:26 ===

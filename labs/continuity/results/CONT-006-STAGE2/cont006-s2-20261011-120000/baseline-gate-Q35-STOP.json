@@ -1,0 +1,10 @@
+{
+ "model": "Q35",
+ "pooled_primary": "98/105",
+ "rate": 0.9333,
+ "band": [
+  0.35,
+  0.85
+ ],
+ "ok": false
+}

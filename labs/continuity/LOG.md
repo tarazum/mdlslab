@@ -3783,3 +3783,38 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   stage2-freeze.json) committed BEFORE the first --run-phase. Addendum
   brief updated: next session is EXECUTION-ONLY (smoke -> preflight ->
   phases 1-14 with baseline gates -> gate -> analyzer -> review chain).
+
+## 2026-10-11 — CONT-006 STAGE 2 EXECUTION: STOP-OUT-OF-BAND at the Q35 baseline gate (prereg branch P0 fired); G8B block (phases 1-7) complete + sealed; owner gate BEFORE any next step
+
+- Execution session per the addendum brief (owner kickoff: full chain).
+  Entry conditions verified: git clean @ 5cddde3, ollama 0.34.2, model
+  pins OK (granite 36c3c3b9683b, qwen 8a0fd5da454e), 26+12 freeze
+  digests all verify. SMOKE PASS; PREFLIGHT PASS (Q35 latency probes
+  3.3s / 2.9s; Q35 real call mean 1.4s — MoE fast on short structured
+  prompts, budget comfortably inside wall guards).
+- Phase 1 (G8B NONE, 22 scenarios x 7 seeds): 7/7, 0 invalid; baseline
+  gate G8B pooled primary 58/105 = 0.5524 in [0.15, 0.85] — PASS.
+- Phases 2-7 (G8B NEWF2/NEUTRAL/OLDG x probe_time/session_start): all
+  6 cells x 7 seeds, 0 invalid, no wall trips (~25-30 min/cell).
+- Phase 8 (Q35 NONE): 7/7, 0 invalid; baseline gate Q35 pooled primary
+  98/105 = 0.9333 > 0.85 upper band — FAIL (ceiling side). Formal
+  --baseline-gate Q35 re-invocation recorded: baseline-gate-Q35-STOP.json.
+  STOP-OUT-OF-BAND per prereg §3 P0 / §5 step 4: phases 9-14 NOT
+  started; --gate NOT run; analyzer NOT run (fail-closed without
+  gate-PASS.json — by design).
+- Family table (NONE, pooled 7 seeds): cr G8B 0.40 / Q35 1.00 (35/35
+  perfect); rt 0.32 / 1.00 (28/28); dx 0.90 / 1.00; dr 1.00 / 1.00;
+  cu 0.57 / 0.80. v3o separates the 8B mid-band but taxes the 35B MoE
+  only on cu — the pre-registered ceiling branch, working as designed.
+  GC monitoring: pass 0/42 on BOTH models at NONE (expected-null
+  probes; not a gate input; flagged in the STOP record).
+- G8B block stays SEALED: no G8B-only analysis (the frozen analyzer
+  requires the full 14-cell gate; partial analysis would be a post-hoc
+  deviation — owner decision, listed as option C in the STOP record).
+- Halt record: results/CONT-006-STAGE2/cont006-s2-20261011-120000/
+  STOP-OUT-OF-BAND.md (gate JSON, family table, options A-D).
+  Options for owner: A new-suite v3p for Q35 per the declared branch;
+  B drop Q35 arm, G8B-only prereg addendum; C exploratory G8B look now;
+  D fold "v3o does not tax a 35B MoE at baseline" as a measured result.
+- No frozen file / verdict / committed artifact modified. Run root
+  committed at halt (180 files, 16 MB).

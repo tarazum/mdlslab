@@ -1,0 +1,91 @@
+=== PHASE 2 START 14:29:36 ===
+  seed 9001: pass 9/19 invalid=False 235.3s
+  seed 9002: pass 9/19 invalid=False 229.2s
+  seed 9003: pass 13/19 invalid=False 239.2s
+  seed 9004: pass 9/19 invalid=False 227.7s
+  seed 9005: pass 12/19 invalid=False 238.4s
+  seed 9006: pass 12/19 invalid=False 235.2s
+  seed 9007: pass 11/19 invalid=False 229.3s
+{
+ "phase": 2,
+ "model": "G8B",
+ "content": "NEWF2",
+ "position": "probe_time",
+ "executed": 7
+}
+=== PHASE 3 START 14:56:54 ===
+  seed 9001: pass 7/15 invalid=False 185.5s
+  seed 9002: pass 7/15 invalid=False 187.1s
+  seed 9003: pass 7/15 invalid=False 185.7s
+  seed 9004: pass 6/15 invalid=False 176.5s
+  seed 9005: pass 8/15 invalid=False 185.8s
+  seed 9006: pass 9/15 invalid=False 178.7s
+  seed 9007: pass 8/15 invalid=False 183.8s
+{
+ "phase": 3,
+ "model": "G8B",
+ "content": "NEUTRAL",
+ "position": "probe_time",
+ "executed": 7
+}
+=== PHASE 4 START 15:18:22 ===
+  seed 9001: pass 8/15 invalid=False 195.8s
+  seed 9002: pass 10/15 invalid=False 196.0s
+  seed 9003: pass 9/15 invalid=False 177.4s
+  seed 9004: pass 7/15 invalid=False 207.3s
+  seed 9005: pass 9/15 invalid=False 208.3s
+  seed 9006: pass 7/15 invalid=False 219.5s
+  seed 9007: pass 7/15 invalid=False 217.0s
+{
+ "phase": 4,
+ "model": "G8B",
+ "content": "NEWF2",
+ "position": "session_start",
+ "executed": 7
+}
+=== PHASE 5 START 15:42:08 ===
+  seed 9001: pass 7/15 invalid=False 190.2s
+  seed 9002: pass 8/15 invalid=False 188.5s
+  seed 9003: pass 8/15 invalid=False 184.3s
+  seed 9004: pass 7/15 invalid=False 178.3s
+  seed 9005: pass 7/15 invalid=False 192.3s
+  seed 9006: pass 10/15 invalid=False 177.9s
+  seed 9007: pass 9/15 invalid=False 181.2s
+{
+ "phase": 5,
+ "model": "G8B",
+ "content": "OLDG",
+ "position": "probe_time",
+ "executed": 7
+}
+=== PHASE 6 START 16:03:45 ===
+  seed 9001: pass 8/15 invalid=False 192.0s
+  seed 9002: pass 9/15 invalid=False 178.3s
+  seed 9003: pass 8/15 invalid=False 171.5s
+  seed 9004: pass 7/15 invalid=False 179.4s
+  seed 9005: pass 7/15 invalid=False 171.4s
+  seed 9006: pass 8/15 invalid=False 193.5s
+  seed 9007: pass 9/15 invalid=False 204.9s
+{
+ "phase": 6,
+ "model": "G8B",
+ "content": "OLDG",
+ "position": "session_start",
+ "executed": 7
+}
+=== PHASE 7 START 16:25:21 ===
+  seed 9001: pass 6/15 invalid=False 193.7s
+  seed 9002: pass 8/15 invalid=False 191.6s
+  seed 9003: pass 9/15 invalid=False 193.0s
+  seed 9004: pass 7/15 invalid=False 200.5s
+  seed 9005: pass 9/15 invalid=False 200.1s
+  seed 9006: pass 9/15 invalid=False 188.9s
+  seed 9007: pass 8/15 invalid=False 197.9s
+{
+ "phase": 7,
+ "model": "G8B",
+ "content": "NEUTRAL",
+ "position": "session_start",
+ "executed": 7
+}
+=== CHAIN DONE 16:48:11 ===

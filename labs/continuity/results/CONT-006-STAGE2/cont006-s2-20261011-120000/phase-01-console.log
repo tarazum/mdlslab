@@ -1,0 +1,24 @@
+  seed 9001: pass 12/25 invalid=False 282.8s
+  seed 9002: pass 8/25 invalid=False 282.1s
+  seed 9003: pass 11/25 invalid=False 281.6s
+  seed 9004: pass 8/25 invalid=False 275.5s
+  seed 9005: pass 10/25 invalid=False 299.3s
+  seed 9006: pass 14/25 invalid=False 400.6s
+  seed 9007: pass 13/25 invalid=False 333.2s
+{
+ "phase": 1,
+ "model": "G8B",
+ "content": "NONE",
+ "position": "none",
+ "executed": 7
+}
+{
+ "model": "G8B",
+ "pooled_primary": "58/105",
+ "rate": 0.5524,
+ "band": [
+  0.15,
+  0.85
+ ],
+ "ok": true
+}
