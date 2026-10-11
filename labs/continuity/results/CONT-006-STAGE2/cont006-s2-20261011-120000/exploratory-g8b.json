@@ -1,0 +1,221 @@
+{
+ "kind": "cont006-stage2-exploratory-g8b",
+ "status": "EXPLORATORY ONLY \u2014 owner-authorized diagnostics on the sealed G8B block after STOP-OUT-OF-BAND; no confirmatory verdict, no retroactive endpoint change; Q35 treatment cells were never run",
+ "run_root": "cont006-s2-20261011-120000",
+ "seeds": [
+  9001,
+  9002,
+  9003,
+  9004,
+  9005,
+  9006,
+  9007
+ ],
+ "primary_clusters": 15,
+ "g8b_pooled_primary": {
+  "NONE@none": 0.5524,
+  "NEWF2@probe_time": 0.5333,
+  "NEWF2@session_start": 0.5429,
+  "NEUTRAL@probe_time": 0.4952,
+  "NEUTRAL@session_start": 0.5333,
+  "OLDG@probe_time": 0.5333,
+  "OLDG@session_start": 0.5333
+ },
+ "contrasts_descriptive": {
+  "NEWF2@pt - NONE": {
+   "d": -0.019,
+   "ci95": [
+    -0.1238,
+    0.0667
+   ],
+   "ci_excludes_zero": false
+  },
+  "NEWF2@ss - NONE": {
+   "d": -0.0095,
+   "ci95": [
+    -0.1333,
+    0.1238
+   ],
+   "ci_excludes_zero": false
+  },
+  "NEWF2@pt - NEUTRAL@pt": {
+   "d": 0.0381,
+   "ci95": [
+    0.0,
+    0.0857
+   ],
+   "ci_excludes_zero": false
+  },
+  "NEWF2@ss - NEUTRAL@ss": {
+   "d": 0.0095,
+   "ci95": [
+    -0.1143,
+    0.1143
+   ],
+   "ci_excludes_zero": false
+  },
+  "OLDG@pt - NEWF2@pt": {
+   "d": 0.0,
+   "ci95": [
+    -0.0571,
+    0.0476
+   ],
+   "ci_excludes_zero": false
+  },
+  "OLDG@ss - NEWF2@ss": {
+   "d": -0.0095,
+   "ci95": [
+    -0.1143,
+    0.1238
+   ],
+   "ci_excludes_zero": false
+  },
+  "position ss-pt (NEWF2)": {
+   "d": 0.0095,
+   "ci95": [
+    -0.1048,
+    0.1238
+   ],
+   "ci_excludes_zero": false
+  },
+  "position ss-pt (NEUTRAL)": {
+   "d": 0.0381,
+   "ci95": [
+    -0.0476,
+    0.1238
+   ],
+   "ci_excludes_zero": false
+  },
+  "position ss-pt (OLDG)": {
+   "d": 0.0,
+   "ci95": [
+    -0.0571,
+    0.0762
+   ],
+   "ci_excludes_zero": false
+  }
+ },
+ "val_activation": {
+  "clusters": 4,
+  "NONE": 0.6429,
+  "NEWF2@pt": 0.6786,
+  "delta_ci": {
+   "d": 0.0357,
+   "ci95": [
+    0.0,
+    0.1071
+   ],
+   "ci_excludes_zero": false
+  }
+ },
+ "g8b_family_rates": {
+  "cr": {
+   "NONE@none": 0.4286,
+   "NEWF2@probe_time": 0.2857,
+   "NEWF2@session_start": 0.2857,
+   "NEUTRAL@probe_time": 0.25,
+   "NEUTRAL@session_start": 0.2143,
+   "OLDG@probe_time": 0.3571,
+   "OLDG@session_start": 0.25
+  },
+  "cu": {
+   "NONE@none": 0.4643,
+   "NEWF2@probe_time": 0.4286,
+   "NEWF2@session_start": 0.3929,
+   "NEUTRAL@probe_time": 0.3929,
+   "NEUTRAL@session_start": 0.3929,
+   "OLDG@probe_time": 0.3929,
+   "OLDG@session_start": 0.3571
+  },
+  "rt": {
+   "NONE@none": 0.2857,
+   "NEWF2@probe_time": 0.381,
+   "NEWF2@session_start": 0.4762,
+   "NEUTRAL@probe_time": 0.2857,
+   "NEUTRAL@session_start": 0.5238,
+   "OLDG@probe_time": 0.3333,
+   "OLDG@session_start": 0.5238
+  },
+  "dx": {
+   "NONE@none": 0.9286,
+   "NEWF2@probe_time": 1.0,
+   "NEWF2@session_start": 1.0,
+   "NEUTRAL@probe_time": 1.0,
+   "NEUTRAL@session_start": 1.0,
+   "OLDG@probe_time": 1.0,
+   "OLDG@session_start": 1.0
+  },
+  "dr": {
+   "NONE@none": 1.0,
+   "NEWF2@probe_time": 1.0,
+   "NEWF2@session_start": 1.0,
+   "NEUTRAL@probe_time": 1.0,
+   "NEUTRAL@session_start": 1.0,
+   "OLDG@probe_time": 1.0,
+   "OLDG@session_start": 1.0
+  }
+ },
+ "g8b_error_modes_primary": {
+  "NONE@none": {
+   "wrong_label": 32,
+   "format_miss": 15
+  },
+  "NEWF2@probe_time": {
+   "wrong_label": 31,
+   "format_miss": 18
+  },
+  "NEWF2@session_start": {
+   "wrong_label": 26,
+   "format_miss": 22
+  },
+  "NEUTRAL@probe_time": {
+   "wrong_label": 35,
+   "format_miss": 18
+  },
+  "NEUTRAL@session_start": {
+   "wrong_label": 29,
+   "format_miss": 20
+  },
+  "OLDG@probe_time": {
+   "wrong_label": 28,
+   "format_miss": 21
+  },
+  "OLDG@session_start": {
+   "wrong_label": 31,
+   "format_miss": 18
+  }
+ },
+ "g8b_lesson_echo_6gram": {
+  "NEWF2@probe_time": 0,
+  "NEWF2@session_start": 0,
+  "NEUTRAL@probe_time": 0,
+  "NEUTRAL@session_start": 0,
+  "OLDG@probe_time": 0,
+  "OLDG@session_start": 0
+ },
+ "oldg_sorting_confound_rt": {
+  "OLDG@probe_time": 2,
+  "OLDG@session_start": 0
+ },
+ "g8b_gc_monitoring": {
+  "note": "GC probes ran only in the NONE cell (FULL scope)",
+  "NONE": "0/21"
+ },
+ "q35_ceiling_record": {
+  "status": "bounded measurement result (STOP option D): property of the v3o surface for a stronger consumer; NOT a Reflection success/failure",
+  "pooled_primary": 0.9333,
+  "pooled_primary_counts": "98/105",
+  "family_rates": {
+   "cr": 1.0,
+   "cu": 0.75,
+   "rt": 1.0,
+   "dx": 1.0,
+   "dr": 1.0
+  },
+  "band": [
+   0.35,
+   0.85
+  ],
+  "gate": "0.9333 > 0.85 upper bound \u2014 STOP-OUT-OF-BAND (prereg P0)"
+ }
+}

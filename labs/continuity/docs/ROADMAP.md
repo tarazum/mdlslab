@@ -321,6 +321,47 @@ authorized immediately under the standing autonomous-completion
 authorization with the binding gates unchanged (live gate before the
 analyzer; any halt-and-investigate firing → halt).
 
+## Owner decisions — recorded 2026-10-11 (CONT-006 stage-2 STOP-OUT-OF-BAND: exit direction ACCEPTED)
+
+Basis: `results/CONT-006-STAGE2/cont006-s2-20261011-120000/STOP-OUT-OF-BAND.md`
+(commit ffbbf22; Q35 baseline gate 98/105 = 0.9333 > 0.85 ceiling band;
+G8B block complete and sealed) + the owner's direction review
+`docs/REVIEW-CONT006-EXIT-DIRECTION.md` (commit 3b62e9a, endorsed in
+chat: «Там зафіксував усе, про що ми щойно домовилися»). Owner verdict:
+**exit-oriented direction ACCEPTED — closure, not expansion.**
+
+1. **v3p is NOT the default continuation.** No benchmark escalation on
+   v3o/v3p; no synthetic-suite re-tuning to force a mid-band for a
+   stronger model.
+2. **Exploratory-only analysis of the sealed G8B stage-2 block:
+   AUTHORIZED** (STOP option C). No confirmatory verdict, no
+   retroactive endpoint changes; diagnostics only (NEWF2 vs NONE,
+   NEWF2 vs matched NEUTRAL, session-start vs probe-time, OLDG vs
+   NEWF2, family-level error-mode decomposition).
+3. **Q35 v3o ceiling RECORDED as a bounded measurement result**
+   (STOP option D): "On v3o with persistent memory and no lesson
+   layer, Q35 scores 93.3% pooled primary and 100% on four of five
+   primary families." Not a Reflection success or failure — a property
+   of the measurement surface.
+4. **Final experiment direction: procedural Lessons Learned transfer**
+   (the original Reflection-v2 motivation): work sessions →
+   reflection → generalized procedural lesson → surface-different,
+   structurally related task; arms A / M / L / M+L (L = validated
+   lessons only — the new decisive arm); primary endpoint = recurrence
+   of the target failure class; small number of high-quality failure
+   classes; gold-lesson and neutral-note controls.
+5. **Hosted strong-model replication: OPTIONAL SECOND EXPERIMENT ONLY**,
+   gated on experiment 1 producing a meaningful signal or a clearly
+   diagnosed consumer-capability limitation; tiny headroom pilot
+   first; never a v3o ceiling re-run.
+6. **Hard exit criterion: at most 1–2 further experiments, then FREEZE
+   CONT-006** — final synthesis with claims classified
+   established / directional / unresolved / falsified-on-tested-scope;
+   reusable infrastructure retained; no v3p/v3q for difficulty
+   chasing. Any further work requires a NEW research question. A
+   negative result with a localized cause (extraction / delivery /
+   consumer capacity / the lessons idea itself) is a valid ending.
+
 ## Never autonomous (unchanged)
 
 - CONT-002 behavioral experiments — anything that measures transfer quality. The single exception is the M2b mechanics smoke (owner-ordered 2026-10-01): export/import plumbing proof only, explicitly no behavioral claims.

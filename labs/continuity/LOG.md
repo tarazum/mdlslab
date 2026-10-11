@@ -3818,3 +3818,48 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   D fold "v3o does not tax a 35B MoE at baseline" as a measured result.
 - No frozen file / verdict / committed artifact modified. Run root
   committed at halt (180 files, 16 MB).
+
+## 2026-10-11 — CONT-006 EXIT DIRECTION ACCEPTED (owner review 3b62e9a): C+D executed same-session (exploratory G8B report + Q35 ceiling record), v3p NOT default, final experiment = Procedural Lessons Transfer (design draft); hard freeze cap recorded
+
+- Owner pushed docs/REVIEW-CONT006-EXIT-DIRECTION.md (3b62e9a) and
+  endorsed it in chat. Recorded verbatim in ROADMAP ("Owner decisions —
+  recorded 2026-10-11"): (1) no v3p/benchmark escalation; (2) G8B
+  stage-2 block opened EXPLORATORY-ONLY; (3) Q35 ceiling recorded as a
+  bounded measurement result; (4) final direction = procedural Lessons
+  Learned transfer, arms A/M/L/M+L; (5) hosted replication = optional
+  experiment 2 only; (6) hard cap: 1-2 experiments then FREEZE with a
+  final synthesis; negative-with-localized-cause is a valid ending.
+- C EXECUTED (zero new GPU): experiments/cont006/explore_stage2_g8b.py
+  (new versioned code; frozen analyzer's loaders imported read-only;
+  prereg branch language deliberately stripped) over the committed G8B
+  block. Output: exploratory-g8b.json + EXPLORATORY-G8B-REPORT.md in
+  the run root. Headline diagnostics: ALL block cells land within
+  +-0.04 of each other pooled (0.4952-0.5524); NO contrast CI excludes
+  zero (NEWF2@pt-NONE -0.019 [-0.124, 0.067]; NEWF2@pt vs matched
+  NEUTRAL@pt +0.038 [0.0000, 0.0857] — CI touches zero, suggestive
+  only); position ss>=pt for every content (+0.00..+0.04, flat); block
+  presence effect survives ONLY on rt (0.286 -> 0.33-0.52, not
+  lesson-specific); G8B local ceilings dx/dr=1.0 everywhere; 6-gram
+  lesson echo 0 in every cell; OLDG 'sorting' confound 2@pt/0@ss;
+  VAL activation not separable from zero. Diagnostic conclusion: no
+  v3o-cell mechanism is worth carrying into a confirmatory — direct
+  empirical support for the exit review's direction.
+- D EXECUTED: Q35 ceiling recorded as a bounded result (98/105=0.9333
+  pooled primary; cr/rt/dx/dr 1.00, cu 0.75; treatment cells never ran)
+  — property of the v3o surface for a stronger consumer, NOT a
+  Reflection success/failure.
+- Final-experiment design DRAFTED: docs/DESIGN-CONT006-PLT.md —
+  procedural Lessons Transfer: 5 failure classes with deterministic
+  checkers (stale-revision edit / schema-change-without-validation /
+  no-smallest-test / stale-generated-artifact / invalid-retry; FC-6
+  candidate), scripted experience histories (deterministic, zero GPU)
+  -> blind reflection worker (Q35) -> validated lessons -> live G8B
+  transfer in a bounded sandbox; arms A/M/L/M+L + GOLD-L/NEUTRAL-L
+  controls; primary = recurrence L-A, paired cluster bootstrap;
+  localization matrix maps outcomes to extraction/delivery/interference/
+  idea-failure; tiny headroom pilot with stop branches FIRST (no
+  difficulty escalation); sizing artifact required at prereg. 5 open
+  questions flagged for the reviewer.
+- NEXT: review chain on DESIGN-CONT006-PLT.md (Fable if reset — check
+  on the spot; else codex gpt-6-astra high read-only) -> fold -> owner
+  gate -> only then authoring/freeze (never-autonomous).
