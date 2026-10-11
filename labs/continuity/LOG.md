@@ -3912,3 +3912,54 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
 - NEXT: owner gate on DESIGN rev 2 (accept / amend). Only after
   accept: power artifact -> prereg authoring -> EXEC FREEZE ->
   non-executor gate -> pilot (first GPU) per the staged plan.
+
+## 2026-10-11 (night) — PLT prereg authored + power artifact v3 (conjunctive decision rule) + Opus verify-pass FOLDED; authoring half handed off via SESSION-BRIEF-CONT006-PLT-AUTHORING.md; zero GPU
+
+- Owner accept «ок» recorded in ROADMAP (design rev 2 + the chain
+  power -> prereg -> freeze -> pilot).
+- power_calc_plt.py + power-results-plt.json (experiments/cont006/):
+  cluster=(class,instance) 25x7; model with EXPLICIT class structure
+  (kappa class baseline cancels in pairing; delta_class effect
+  heterogeneity does NOT cancel; sig_dinst instance effect spread per
+  V-12; band-edge bases .30/.90). v1 computed CI-only rows; v2 added
+  the CONJUNCTIVE decision rule (CI + |d-hat|>=m + all-5-LOO +
+  two-level, inside one replication); v3 decoupled the claim threshold
+  m=0.20 from the true-effect ladder after the coupling produced the
+  structural ~0.5 median-event ceiling. FINAL: CI-only reference d.20
+  -> 0.918 (NOT the decision power); conjunctive: d .30 -> 0.899,
+  .25 -> 0.733, .20 -> 0.472, FP(d=0) -> 0.002. **MME = 0.30;
+  declared honest limitation: effects in [0.20, 0.30) usually resolve
+  directional** (price of claim discipline + class structure; removing
+  it needs more classes or difficulty tuning — both banned).
+- PREREG-CONT006-PLT.md rev 2: compound decision rule; task-success
+  blocks only on PROVEN harm (V-2 option 3 — soft-NI at -0.10 would be
+  a coin flip at CI half-width); estimator = unweighted cluster-mean
+  (not pooled rate), cluster-level pairing; temperatures pinned
+  (consumer 0.3 / worker 0.2); rejected lesson = delivery-failure
+  result (episodes stay in primary, per-class delivery-status table,
+  new localization cell); trigger-absent = paralysis (not invalid);
+  cluster eligibility >=3/arm; Q35 pre-run STOP branch (dead-on-G8B +
+  alive-on-Q35 -> consumer-capacity localization on ~90 episodes, not
+  700); pilot classes FC-1/FC-3 named now; flips denominator = >=2 of
+  15 class-episodes; >=4 classes in band else directional-only, <=3
+  STOP; stage-2 criterion precise (NEUTRAL never triggers); >=3
+  histories/class (V-10 contradiction fixed); A5-bis stub-dry-run +
+  known-answer traces + 6-gram gate digested; GPU estimate 20-40h
+  stage-1 (resumable, preflight re-estimate); BOOT 10k analysis / 4k
+  power approximation declared.
+- Review chain: Fable probed again — limit-blocked; Opus verify-pass
+  (doc-level, ~17 KB raw) = GO-with-changes: fold verified 14 OK / 5
+  PARTIAL / 0 MISSED; blockers V-1 (power-vs-decision-rule mismatch),
+  V-2 (NI margin at CI half-width), V-3 (rejected-lesson accounting),
+  V-4 (Q35 branch) — ALL folded same-session; V-5..V-12 + 10
+  completeness items folded. Saved curated:
+  docs/REVIEW-OPUS-CONT006-PLT-PREREG.md (curation: the reviewer's
+  analytic predictions reproduced numerically — compound ~0.5 at MME ->
+  simulated 0.472; honest MME 0.25-0.30 -> 0.30). Reviewer's exit
+  note accepted: no further review round before freeze; next
+  independent check = non-executor gate on frozen artifacts.
+- SESSION-BRIEF-CONT006-PLT-AUTHORING.md prepared (handoff): next
+  session = A1-A5 authoring (harness + simulator + >=15 histories +
+  checkers + dev validation + GOLD freeze-order + 25 transfer
+  instances + NEUTRAL + analyzer-first + dry-run) + EXEC FREEZE prep;
+  ZERO GPU; pilot only after non-executor gate + owner kickoff.

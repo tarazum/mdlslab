@@ -362,6 +362,13 @@ chat: «Там зафіксував усе, про що ми щойно домо
    negative result with a localized cause (extraction / delivery /
    consumer capacity / the lessons idea itself) is a valid ending.
 
+### Owner accept of the PLT design (recorded 2026-10-11, later same day)
+
+Owner verdict (chat): **"ок"** — accepts DESIGN-CONT006-PLT.md rev 2 and
+the proposed chain (power artifact -> prereg -> freeze -> pilot).
+Execution-only rule stays: GPU starts only after the non-executor gate
+on the frozen prereg artifacts; any halt branch reports to the owner.
+
 ## Never autonomous (unchanged)
 
 - CONT-002 behavioral experiments — anything that measures transfer quality. The single exception is the M2b mechanics smoke (owner-ordered 2026-10-01): export/import plumbing proof only, explicitly no behavioral claims.

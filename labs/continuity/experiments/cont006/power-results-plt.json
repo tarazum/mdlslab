@@ -1,0 +1,202 @@
+{
+ "kind": "cont006-plt-power-calc",
+ "endpoint": "recurrence of target failure class, L - A; cluster = (class, instance); K = 5 classes x 5 instances = 25 x 7 seeds; binary episode outcomes with trigger-predicate eligibility (R-2); paired cluster percentile bootstrap (BOOT 4000; the frozen analyzer will use 10k \u2014 power approximation declared); MANDATORY pre-registered sensitivity: leave-one-class-out (all 5 drops, computed inside each replication of the decision rule) + two-level class->instance bootstrap; class-level generalization NOT inferred; scope = the 5 tested classes",
+ "model": "kappa[class] baseline (paired, cancels); delta_class ~ N(d_true, sig_dclass) EFFECT heterogeneity across classes (does NOT cancel); d_inst ~ N(0, sig_dinst) instance-level effect heterogeneity (V-12); eps[instance] baseline (paired, cancels); eta[cluster,arm,seed]; clip [0.02,0.98]; planning base A-recurrence 0.60 (pilot verifies band [0.3,0.9] per class); conservative row sig_kappa .15 / sig_inst .10 / sig_cell .10 / sig_dclass .10 / sig_dinst .05",
+ "mme_rule": "DECISION RULE (conjunctive, review V-1): established = CI95 entirely below 0 AND point |d| >= MME AND every leave-one-class-out drop keeps CI below 0 AND the two-level bootstrap CI below 0 \u2014 all inside one replication. MME = the smallest 0.05-step effect where the CONJUNCTIVE power (C-rows) >= 0.80 on the conservative row at K25x7. CI-only rows (P-family) are reported for reference and must NOT be quoted as the power of the decision. Effects below MME are NOT claimable; the sensitivity terms exist to price the class structure honestly",
+ "seeds": {
+  "sim_rng": 20261011,
+  "REPS": 3000,
+  "BOOT": 4000
+ },
+ "results": [
+  {
+   "label": "P1 binomial sanity (no noise), d .20",
+   "family": "primary",
+   "detect_benefit": 0.961,
+   "detect_harm": 0.0,
+   "width": 0.2
+  },
+  {
+   "label": "P2 CI-ONLY conservative, d .20, K25x7",
+   "family": "ci_only",
+   "detect_benefit": 0.918,
+   "detect_harm": 0.0,
+   "width": 0.2
+  },
+  {
+   "label": "P3 CI-ONLY conservative, d .15, K25x7",
+   "family": "ci_only",
+   "detect_benefit": 0.738,
+   "detect_harm": 0.0,
+   "width": 0.2
+  },
+  {
+   "label": "P4 CI-ONLY conservative, d .10, K25x7",
+   "family": "ci_only",
+   "detect_benefit": 0.483,
+   "detect_harm": 0.001,
+   "width": 0.2
+  },
+  {
+   "label": "P5 CI-ONLY conservative, d .25, K25x7",
+   "family": "ci_only",
+   "detect_benefit": 0.978,
+   "detect_harm": 0.0,
+   "width": 0.194
+  },
+  {
+   "label": "P6 d 0.0 false-positive (CI-only), K25x7",
+   "family": "ci_only",
+   "detect_benefit": 0.062,
+   "detect_harm": 0.061,
+   "width": 0.2
+  },
+  {
+   "label": "P7 interference d -0.15 (recurrence UP), K25x7",
+   "family": "primary",
+   "detect_benefit": 0.001,
+   "detect_harm": 0.728,
+   "width": 0.189
+  },
+  {
+   "label": "P8 base .45, d .15",
+   "family": "ci_only",
+   "detect_benefit": 0.722,
+   "detect_harm": 0.0,
+   "width": 0.194
+  },
+  {
+   "label": "P9 base .75, d .15",
+   "family": "ci_only",
+   "detect_benefit": 0.746,
+   "detect_harm": 0.0,
+   "width": 0.189
+  },
+  {
+   "label": "P8b band edge base .30, d .15",
+   "family": "ci_only",
+   "detect_benefit": 0.688,
+   "detect_harm": 0.0,
+   "width": 0.172
+  },
+  {
+   "label": "P9b band edge base .90, d .15",
+   "family": "ci_only",
+   "detect_benefit": 0.75,
+   "detect_harm": 0.0,
+   "width": 0.166
+  },
+  {
+   "label": "P10 no effect heterogeneity (sig_dclass 0), d .15",
+   "family": "ci_only",
+   "detect_benefit": 0.848,
+   "detect_harm": 0.0,
+   "width": 0.189
+  },
+  {
+   "label": "P11 strong effect heterogeneity (sig_dclass .15), d .15",
+   "family": "ci_only",
+   "detect_benefit": 0.677,
+   "detect_harm": 0.0,
+   "width": 0.211
+  },
+  {
+   "label": "P11b strong heterogeneity, d .20 (V-12)",
+   "family": "ci_only",
+   "detect_benefit": 0.843,
+   "detect_harm": 0.0,
+   "width": 0.206
+  },
+  {
+   "label": "P12 leave-one-class-out approx (K20x7), d .15",
+   "family": "sensitivity",
+   "detect_benefit": 0.675,
+   "detect_harm": 0.0,
+   "width": 0.221
+  },
+  {
+   "label": "P13 LOO approx (K20x7), d .20",
+   "family": "sensitivity",
+   "detect_benefit": 0.858,
+   "detect_harm": 0.0,
+   "width": 0.221
+  },
+  {
+   "label": "P14 two-level bootstrap, d .15, K25x7",
+   "family": "sensitivity",
+   "detect_benefit": 0.529,
+   "detect_harm": 0.0,
+   "width": 0.274
+  },
+  {
+   "label": "P15 two-level bootstrap, d .20, K25x7",
+   "family": "sensitivity",
+   "detect_benefit": 0.76,
+   "detect_harm": 0.0,
+   "width": 0.269
+  },
+  {
+   "label": "C1 conjunctive (claim m .20), d_true 0.20",
+   "family": "decision_rule",
+   "ci_only": 0.91,
+   "conjunctive_established": 0.472,
+   "width": 0.2
+  },
+  {
+   "label": "C1 conjunctive (claim m .20), d_true 0.25",
+   "family": "decision_rule",
+   "ci_only": 0.982,
+   "conjunctive_established": 0.733,
+   "width": 0.194
+  },
+  {
+   "label": "C1 conjunctive (claim m .20), d_true 0.30",
+   "family": "decision_rule",
+   "ci_only": 0.996,
+   "conjunctive_established": 0.899,
+   "width": 0.194
+  },
+  {
+   "label": "C1 conjunctive (claim m .20), d_true 0.35",
+   "family": "decision_rule",
+   "ci_only": 1.0,
+   "conjunctive_established": 0.983,
+   "width": 0.189
+  },
+  {
+   "label": "C1e conjunctive (claim m .25), d_true .30 [sensitivity]",
+   "family": "decision_rule",
+   "ci_only": 0.995,
+   "conjunctive_established": 0.711,
+   "width": 0.194
+  },
+  {
+   "label": "C2 conjunctive rule, d 0.0 false-positive, K25x7",
+   "family": "decision_rule",
+   "ci_only": 0.07,
+   "conjunctive_established": 0.002,
+   "width": 0.194
+  },
+  {
+   "label": "C3 conjunctive (claim m .20), d .25, no effect het.",
+   "family": "decision_rule",
+   "ci_only": 0.999,
+   "conjunctive_established": 0.818,
+   "width": 0.183
+  },
+  {
+   "label": "P16 rev-1 geometry (5 classes x 3 inst = K15x7), d .20",
+   "family": "rejected",
+   "detect_benefit": 0.792,
+   "detect_harm": 0.0,
+   "width": 0.248
+  },
+  {
+   "label": "P17 seed cut n=4, K25x4, d .20 [record]",
+   "family": "rejected",
+   "detect_benefit": 0.757,
+   "detect_harm": 0.0,
+   "width": 0.25
+  }
+ ]
+}
