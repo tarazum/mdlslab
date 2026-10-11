@@ -1,0 +1,40 @@
+{
+ "kind": "cont006-stage2-exec-freeze",
+ "created_utc": "2026-10-11T10:25:17Z",
+ "prereg": "docs/PREREG-CONT006-STAGE2.md",
+ "note": "execution half pinned BEFORE any v3o consumer inference: prereg (endpoints/MME 0.20/predictions/gates), design tables (annotations + neutral pool + composer), the end-to-end wrapper (positions, CN-012 guard, phases, wall guards), the frozen analyzer (self-test PASS), and the task-3 store freeze (stage2-freeze.json). --smoke PASS is a precondition for --preflight and --run-phase (PREREG \u00a76).",
+ "model_pins": {
+  "G8B": "granite-code:8b 36c3c3b9683b",
+  "Q35": "qwen36-35b-a3b:mdlslab 8a0fd5da454e"
+ },
+ "phases": [
+  "1 G8B NONE (baseline gate)",
+  "2 G8B NEWF2@pt",
+  "3 G8B NEUTRAL@pt",
+  "4 G8B NEWF2@ss",
+  "5 G8B OLDG@pt",
+  "6 G8B OLDG@ss",
+  "7 G8B NEUTRAL@ss",
+  "8 Q35 NONE (baseline gate)",
+  "9 Q35 NEWF2@pt",
+  "10 Q35 NEUTRAL@pt",
+  "11 Q35 NEWF2@ss",
+  "12 Q35 OLDG@pt",
+  "13 Q35 OLDG@ss",
+  "14 Q35 NEUTRAL@ss"
+ ],
+ "digests": {
+  "docs/PREREG-CONT006-STAGE2.md": "70592c520e050612bc18e1995528104f0d8c55e6d6833ea4b4ca3ff10c579b16",
+  "docs/SESSION-BRIEF-CONT006-STAGE2.md": "dc6402fda121f7dacf5448a78ae7183d3c7c004e106cbbee0208255f4f7d8b25",
+  "docs/SESSION-BRIEF-CONT006-STAGE2-ADDENDUM.md": "a1791a4a58a4b22a52a2ac83c081c6e83dc1244cab608bcf0652bf1d2686c48b",
+  "experiments/cont006/stage2_design.py": "7c1ef2c3f8861dc80ae87b8583c9fba5ff6f68f1f95c31291a5fe66486f75d0e",
+  "experiments/cont006/stage2_endtoend.py": "950cfa567fac345c5f7056bf006f212a461993c3c11bb0f608fd5e8b40b34964",
+  "experiments/cont006/analyze_stage2.py": "9898564a6704e0ec572ad73a3f9b8ee736ebaf66206c1180e9f82c531f31b56f",
+  "experiments/cont006/stage2-freeze.json": "fb091ccaec4e9f0d4e52a9e05b306ddf66da77b11dd13b3f8152642bd770e912",
+  "src/continuity/runner.py": "47ec961fcf67186fd1c7899d24b8cdbac9de51dc38527d48b2f1de54048d14c3",
+  "src/continuity/provider.py": "c5b241ae7b6f83cc8fa97b5ab04fa0589797b4756c948b3fed151ad2f9bc915f",
+  "src/continuity/memory.py": "1ef4291641fd6be73d888e65452c778687e156393cd54df597bcbc72202a394b",
+  "src/continuity/events.py": "4fc9ba4fcbf3998489715c817ae5a2b3eefe678811ee8bf38250d4ab0f0e2f38",
+  "src/continuity/fixtures.py": "467a1deec48504a3357c0b9337d441d7f1cef83bdcc83f8e5e693eb6c7ec9713"
+ }
+}

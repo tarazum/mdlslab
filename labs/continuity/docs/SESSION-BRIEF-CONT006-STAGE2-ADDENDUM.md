@@ -46,65 +46,53 @@ experiments/suite-v3/power-results-cont006-stage2.json → LOG.md
   FREEZE: experiments/cont006/stage2-freeze.json (26 digests) committed
   BEFORE any consumer inference.
 
-## Next session order (binding)
+## STATUS UPDATE 2026-10-11 (task 4 COMPLETE — prereg half done in-session)
 
-1. **Task 4 — PREREG FIRST (zero GPU).** Author docs/PREREG-CONT006-
-   STAGE2.md (capacity prereg structure; house template PREREG-
-   REQUIREMENTS-V2 incl. §6 power) and commit it BEFORE any v3o consumer
-   inference. Design points already pinned by the parent brief + this
-   session's power artifact — adjust only with recorded justification:
-   - Cells per model: NONE (position-invariant BY CONSTRUCTION — nothing
-     delivered at either position; declared, one run set reused for both
-     positions) + {session-start, probe-time} x {NEUTRAL, NEWF-v2, OLDG} =
-     7 distinct cells per model, K = 15 primary clusters x 7 seeds = 105
-     runs/cell.
-   - Co-primary (per model): d_m = pass(NEWF-v2, probe-time) −
-     pass(NONE), pooled; MME 0.20 (power 0.86 at K15x7; seed cuts K15x4/3
-     drop to 0.63/0.55 — full 7 seeds REQUIRED). Interaction
-     I = d_G8B − d_Q35 is SECONDARY: powered only at I ≥ 0.25 (0.80);
-     at the step-3-observed scale (~0.13-0.21) it is directional-only —
-     declared. Neutral contrast and session-start contrasts secondary.
-   - Session-start arm for the 8B = OPEN HYPOTHESIS (no presumption).
-   - NEUTRAL controls matched PER POSITION to the NEWF-v2 block actually
-     delivered (word total ±25%, same header/numbered skeleton, NO
-     format/workflow instructions, no surface vocabulary — Addendum C
-     lesson). Author the two texts at prereg from the frozen store's
-     rendered blocks and pin them in the prereg.
-   - In-run baseline difficulty gate (replaces a separate calibration
-     phase): after the NONE cells, Q35 pooled pass must lie in [0.35,
-     0.85] and G8B in [0.15, 0.85]; outside → STOP-OUT-OF-BAND (new suite,
-     never a v3o edit) — v3m precedent branch A.3.
-   - End-to-end runner wiring = NEW versioned code (wrapper/module pattern
-     like delivery_v2/capacity_content_diag; runner.py frozen). Contract:
-     persistent memory ON for every cell (CN-012-fixed semantics — the
-     fail-closed memory guard is a prerequisite gate), corrected delivery
-     mechanics (applicability-annotated routing, full-rule rendering incl.
-     the lesson field, no budget drops) at BOTH positions; OLDG uses the
-     step-1 G-annotation unchanged; NEWF-v2 gets a fresh annotation filled
-     from the frozen store BEFORE the execution freeze.
-   - Budget at prereg: G8B ≈ 2.3 s/call (CN-002); Q35 consumer latency
-     UNMEASURED — measure at preflight (one warm call) and re-estimate;
-     phased execution cell-by-cell with wall guards + checkpoint/resume;
-     the run may span sessions (declare the phase order deterministic).
-   - Sampling pins: temperature 0.0, seed = run seed, num_predict 256,
-     think:false, keep_alive 30m; num_ctx declared in the prereg (the
-     corrected full-rule blocks make prompts larger than the replay
-     calls; 8192 recommended, headroom-checked at preflight).
-   - GC battery + VAL clusters: measured in NONE and NEWF-v2 probe-time
-     cells (both models) as declared secondary monitoring (capacity
-     degradation + activation); no verdict machinery on them.
-2. **Task 5 — execution** (GPU, owner kickoff per phase batch or one
-   kickoff with wall guards — record the choice): preflight (digests vs
-   stage2-freeze.json, model pins, GPU lock) → NONE cells first (baseline
-   gate) → the rest in declared phase order → live telemetry gate before
-   analyzers → completeness.
-3. **Task 6 — review + close-out**: Fable first if its limit has reset
-   (check on the spot; last known reset window 2:30am Kyiv) else codex
-   gpt-6-astra (`codex exec -m gpt-6-astra -c model_reasoning_effort=
-   '"high"' --sandbox read-only - < prompt.md`); diff-pass on prereg +
-   results; fold; owner gate; RESULTS doc + plain-language owner brief
-   («підтвердилось/ні» first); LOG; safety scan; push (GitHub links to the
-   owner, not local paths).
+Task 4 is DONE and frozen; the next session is EXECUTION-ONLY. Completed
+after the checkpoint with owner approval («Тут, зараз — задача 4;
+GPU-виконання — у свіжій сесії»):
+
+- **PREREG-CONT006-STAGE2.md** — full prereg: cells (7/model; NONE
+  position-invariant), co-primary per model d_m = NEWF2@pt − NONE at MME
+  0.20 (power 0.86; 7 seeds REQUIRED), interaction directional-only below
+  I=0.25 (declared), predictions P1–P6, in-run baseline difficulty gate
+  (G8B [0.15,0.85], Q35 [0.35,0.85], STOP-OUT-OF-BAND), phases 1–14,
+  wall guards, budget (≈7,600 calls; Q35 latency measured at preflight).
+- **stage2_design.py** — annotations (NEWF2 19 clusters, OLDG 15; flagged
+  calls F1–F4), neutral pool + mechanical composer (all 15 clusters in
+  ±25% band), vocab checks (NEWF2/NEUTRAL fail-closed clean; the OLDG
+  'sorting' collision DECLARED as the old-generation confound, measured
+  by the analyzer, never edited).
+- **stage2_endtoend.py** — the end-to-end wrapper (NEW versioned code;
+  frozen runner imported read-only): R0-equivalent mechanics + positional
+  delivery, CN-012 fail-closed guard, 14 phases, resumable, wall-guarded,
+  per-cell calls telemetry. **--smoke PASS incl. NONE-parity vs the
+  frozen runner (byte-equal message sequences)**.
+- **analyze_stage2.py** — frozen analyzer (self-test PASS); refuses to
+  run before --gate PASS.
+- **stage2-exec-freeze.json** — 12 digests, committed BEFORE any v3o
+  consumer inference.
+
+## Next session order (binding, EXECUTION ONLY)
+
+1. `python experiments/cont006/stage2_endtoend.py --smoke` — MUST PASS
+   (zero GPU precondition re-verification).
+2. `--preflight` — freeze digests (stage2-freeze + stage2-exec-freeze),
+   model pins, ollama version, Q35 latency (2 timed calls) + budget
+   re-estimate BEFORE phase 8.
+3. `--run-phase N --run-root <path>` in order 1..14 (G8B block first);
+   after phases 1 and 8 evaluate `--baseline-gate G8B|Q35` — violation =
+   STOP-OUT-OF-BAND (halt + owner brief). Phases resumable; wall guard
+   4 h/phase; Q35 phases may span sessions.
+4. `--gate --run-root <path>` — live telemetry + completeness; MUST PASS;
+   writes gate-PASS.json (the analyzer refuses to run without it).
+5. `python experiments/cont006/analyze_stage2.py --run-root <path>` —
+   frozen analysis → stage2-results.json.
+6. Review + close-out (unchanged): Fable if reset (check on the spot;
+   2:30am Kyiv window) else codex gpt-6-astra (working invocation in the
+   parent brief §6); diff-pass on prereg + results; fold; owner gate;
+   RESULTS doc + plain-language owner brief («підтвердилось/ні» first);
+   LOG; safety scan; push (GitHub links to the owner).
 
 ## Entry conditions (verify before any work)
 

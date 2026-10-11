@@ -3734,3 +3734,52 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
   conditions and its own kickoff line. Session summary: tasks 1-3 done
   (validator V2 + v3o + balanced W4/freeze), zero consumer inference, no
   registered verdict touched.
+
+## 2026-10-11 — CONT-006 STAGE 2 task 4 COMPLETE (owner: «Тут, зараз — задача 4»; GPU → fresh session): PREREG + design tables + end-to-end wrapper + frozen analyzer + EXEC FREEZE — all BEFORE any v3o consumer inference; smoke/preflight PASS; CN-013 (autocrlf digests) caught and closed same day
+
+- PREREG-CONT006-STAGE2.md: 7 cells/model (NONE position-invariant by
+  construction; NEWF2/NEUTRAL/OLDG x probe-time/session-start), co-primary
+  per model d_m = NEWF2@pt − NONE at MME 0.20 (power 0.86; full 7 seeds
+  REQUIRED), interaction directional-only below I=0.25 (declared), P1-P6
+  fixed predictions (P1 G8B d<=0; P2 Q35 d>=0; P3 interference isolation;
+  P4 session-start OPEN; P5 OLDG <= NEWF2; P6 interaction at step-3
+  scale), in-run baseline difficulty gate (G8B [0.15,0.85] / Q35
+  [0.35,0.85]; STOP-OUT-OF-BAND), phases 1-14, budget ~7,600 calls.
+- stage2_design.py (single source, digested): NEWF2 annotation (19
+  clusters incl. VAL; flagged calls F1-F4 — rt gets W-002+W-003 because
+  the FP-2 lesson was consumption-gate-excluded; dr gets the FP-4 lesson
+  because FP-5 failed mining validation), OLDG annotation (mechanism-fit
+  + G-007 everywhere, step-1 pattern), NEUTRAL pool + mechanical
+  composer (line-count matched, word total in ±25% band per cluster —
+  all 15 verified; no instructions/surface vocabulary, Addendum-C
+  lesson), answer-vocab checks: NEWF2/NEUTRAL fail-closed CLEAN; the
+  OLDG 'sorting' collision (LL-G-003 text contains a v3o answer tag)
+  DECLARED as the old-generation confound — delivered as authored,
+  MEASURED by the analyzer (rt observed-label counts), never edited.
+- stage2_endtoend.py (NEW versioned code; frozen runner imported
+  read-only): R0-equivalent mechanics + positional delivery (probe-time:
+  one system message immediately before the probe turn; session-start:
+  every session, frozen R2/R3 slot after memory), CN-012 fail-closed
+  memory guard, per-cell calls telemetry, 14 phases (G8B block, then
+  Q35), resumable, 4h/phase wall guard, per-cell-seed budget (V2A
+  convention), --smoke/--preflight/--run-phase/--gate/--baseline-gate.
+  SMOKE PASS incl. NONE PARITY: the wrapper's provider message sequences
+  are BYTE-EQUAL to the frozen run_scenario arm R0 (stub provider) — the
+  baseline cell is mechanically the frozen runner by construction.
+- analyze_stage2.py (frozen, self-test PASS): co-primary branches,
+  interaction with power caveat, neutral/session-start/OLDG contrasts,
+  per-family + error modes + lesson-echo 6-gram + 'sorting' confound
+  count + GC/VAL monitoring; refuses to run before gate-PASS.json.
+- CN-013 (found by the exec preflight BEFORE any consumer inference):
+  the first stage2-freeze emit hashed pre-normalization LF bytes; git
+  autocrlf checkout (the rebase) invalidated 5/26 raw digests — all
+  content-equal after CR-strip. Fix: ALL stage-2 digests CRLF-normalized
+  (CR-LF stripped before hashing, checkout-independent); both manifests
+  re-emitted once with the declared digest_note; preflight verifies the
+  same way. PREFLIGHT PASS: 26+12 digests, both model pins, ollama
+  0.34.2, Q35 latency 2.8-3.3s on a 67-token probe (real end-to-end
+  calls will be slower; budget re-estimated at execution preflight).
+- EXEC FREEZE stage2-exec-freeze.json (12 digests incl. the prereg and
+  stage2-freeze.json) committed BEFORE the first --run-phase. Addendum
+  brief updated: next session is EXECUTION-ONLY (smoke -> preflight ->
+  phases 1-14 with baseline gates -> gate -> analyzer -> review chain).

@@ -11,7 +11,11 @@ LAB = Path(__file__).resolve().parents[2]
 
 
 def sha(rel: str) -> str:
-    return hashlib.sha256((LAB / rel).read_bytes()).hexdigest()
+    """Line-ending-INDEPENDENT digest (git autocrlf normalizes the working
+    tree between platforms/checkouts; the frozen content is the bytes with
+    CR-LF stripped). Declared at re-emit — see manifest note."""
+    raw = (LAB / rel).read_bytes()
+    return hashlib.sha256(raw.replace(b"\r\n", b"\n")).hexdigest()
 
 
 W4 = "results/CONT-006-WORKER/cont006-worker-v4-20261010-224921"
@@ -84,6 +88,12 @@ manifest = {
         (LAB / "experiments/suite-v3/fixture-validation-v3o.json")
         .read_text(encoding="utf-8"))["suite_sha256"],
     "digests": digests,
+    "digest_note": "digests are CRLF-normalized (CR-LF stripped before "
+                   "hashing): the first emit hashed pre-normalization LF "
+                   "bytes and git's autocrlf checkout invalidated 5/26 raw "
+                   "digests (all verified content-equal after CR-strip — "
+                   "caught by the exec preflight BEFORE any consumer "
+                   "inference; re-emitted once, here, never after)",
 }
 out = LAB / "experiments" / "cont006" / "stage2-freeze.json"
 out.write_text(json.dumps(manifest, indent=1, ensure_ascii=True) + "\n",
