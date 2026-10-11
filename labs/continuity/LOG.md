@@ -3863,3 +3863,52 @@ owner-accept entry present (line 224, the never-autonomous gate); Ollama
 - NEXT: review chain on DESIGN-CONT006-PLT.md (Fable if reset — check
   on the spot; else codex gpt-6-astra high read-only) -> fold -> owner
   gate -> only then authoring/freeze (never-autonomous).
+
+## 2026-10-11 (later) — PLT design reviewed (Opus, GO-with-changes R-1..R-19) and FOLDED same-session (DESIGN rev 2); Fable limit-blocked, queue discipline exercised; owner gate next
+
+- Review chain per the standing queue: Fable probed (cheap call) —
+  limit-blocked ("Fable 5 limit"); Opus probed — available; took the
+  review. Doc-level, stdin prompt, repo root, ~26 KB verbatim raw
+  output; saved curated as docs/REVIEW-OPUS-CONT006-PLT.md (provenance
+  header + curation appendix). Curation 4/4 load-bearing claims
+  CONFIRMED against artifacts: stage-2 power geometry K15x7/detect
+  0.846@d0.20 (power artifact), Q35 cr 35/35 perfect across seeds
+  (exploratory-g8b.json), episode arithmetic 630 vs 700, rt
+  presence-effect precedent (step-3 + exploratory report §5.4).
+  R-11 accepted as a stricter reading of an underspecified pilot cell.
+- Verdict GO-with-changes. CRITICAL: R-1 bootstrap unit (5 class
+  clusters structurally weak -> cluster=(class,instance), 25x7 with
+  5 instances; power artifact BEFORE prereg freeze; mandatory
+  leave-one-class-out + two-level bootstrap sensitivity; scope claim
+  "on the 5 tested classes"); R-2 recurrence falsifiability
+  (trigger-predicate episode eligibility + task-success co-endpoint +
+  paralysis-rate secondary — "cautious do-nothing" cannot pose as
+  lesson benefit); R-3 seed semantics (declared mechanism + pilot
+  seed-variation check, effective-n recompute BEFORE the full run).
+  MAJOR folded: full-run per-class baseline gate with declared-out
+  branch (R-4); staged arms {A,L,GOLD-L,NEUTRAL-L} -> conditional
+  {M,M+L}, -33% budget protecting decisive contrasts (R-5);
+  consumption gate REDEFINED for procedural lessons: surface-leak ban
+  + declared-permitted generic procedural lexicon (R-6); experience
+  explicitness standard + auto-lint + human spot-check (R-7); blind
+  lesson-quality rubric vs gold (R-8); blind-gold mechanized by
+  freeze-ordering (GOLD digests BEFORE transfer instances exist)
+  (R-9); checker validation with acceptance numbers >=20 traces/class,
+  100% agreement (R-10); pilot upgraded to 5 seeds + screening
+  criterion + declared data status + max-one-repeat-after-owner-gate,
+  difficulty change = freeze outright (R-11/E.3); per-episode
+  fail-closed invariants + >10%-invalid halt + no silent re-runs
+  (R-12); Q35-as-consumer in the PILOT on GOLD-L only — consumer
+  selection, not replication; null scoped to "mid-band 8B consumer"
+  (R-13). MINOR folded: R-14 (FC-6 out, FC-5 exact action-signature),
+  R-15 (single confirmatory L-A), R-16 (localization matrix completed:
+  M+L<max, L>GOLD anomaly-investigate branch), R-17 (identifier
+  disjointness matrix), R-18 ("cheap repair" = <=1 session, no new
+  module, no freeze-surface change), R-19 (binding close-out artifact
+  list: synthesis + claims table + typology mapping + infra
+  inventory). Section 11 open questions RESOLVED per the review's
+  recommendations.
+- DESIGN-CONT006-PLT.md rewritten as rev 2 (review-folded). Zero GPU.
+- NEXT: owner gate on DESIGN rev 2 (accept / amend). Only after
+  accept: power artifact -> prereg authoring -> EXEC FREEZE ->
+  non-executor gate -> pilot (first GPU) per the staged plan.
