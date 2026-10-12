@@ -37,6 +37,20 @@ Suggested controlled benchmark:
 
 **Relation:** Could strengthen evidence-validation practices across `mdlslab`, especially Continuity and model-evaluation reports. Do not make a proprietary platform a prerequisite; compare with an open retrieval baseline.
 
+
+### Follow-up lead (2026-10-12): Consensus MCP integration
+
+A subsequent Consensus newsletter described agent-facing integrations via MCP, including ChatGPT, Claude and Claude Code, and filters by journal quality, study type and sample size. It also claimed more than 4 million connector uses and cited an Owkin full-text research use case. **All availability, usage and corpus claims remain unverified** and must be checked against official documentation and applicable access terms.
+
+If this proposal is revisited, test the **MCP retrieval interface** as an optional path in the existing abstract-versus-full-text evidence benchmark, not as a new lab or separate experiment:
+
+- Determine which tool methods, filters, citations and full-text passages are actually exposed to an agent.
+- Trace a claim from the agent's answer to the exact supporting passage, with clear distinction between full text and abstract-only access.
+- Include cases where the paper is unavailable, paywalled, contradictory, or insufficient; reward honest abstention.
+- Compare with an open-access retrieval baseline on the same questions, including tool-call count, latency, cost and provenance quality.
+
+**Queue discipline:** research note only; no new active work, no automatic reprioritization. Preserve for review after the current pause in experimental work.
+
 ## Suggested next step
 
 Perform a short **primary-source feasibility review** for both leads, then decide whether either warrants a narrowly scoped benchmark. Preserve the current experiment queue; these are investigation candidates, not adopted designs.
